@@ -41,109 +41,250 @@
 
         
 
-        <!-- Navbar & Hero Start -->
-        <div class="container-fluid header-top">
-            <div class="container d-flex align-items-center">
-                <div class="d-flex align-items-center h-100">
-                    <a href="#" class="navbar-brand" style="height: 125px;">
-                        <h1 class="text-primary mb-0"><i class="fas fa-bolt"></i> Electra</h1>
-                        <!-- <img src="img/logo.png" alt="Logo"> -->
-                    </a>
-                </div>
-                <div class="w-100 h-100">
-                    <div class="topbar px-0 py-2 d-none d-lg-block" style="height: 45px;">
-                        <div class="row gx-0 align-items-center">
-                            <div class="col-lg-8 text-center text-lg-center mb-lg-0">
-                                <div class="d-flex flex-wrap">
-                                    <div class="border-end border-primary pe-3">
-                                        <a href="#" class="text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
-                                    </div>
-                                    <div class="ps-3">
-                                        <a href="mailto:example@gmail.com" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>example@gmail.com</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 text-center text-lg-end">
-                                <div class="d-flex justify-content-end">
-                                    <div class="d-flex border-end border-primary pe-3">
-                                        <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a>
-                                        <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-instagram"></i></a>
-                                        <a class="btn p-0 text-primary me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                    </div>
-                                    <div class="dropdown ms-3">
-                                        <a href="#" class="dropdown-toggle text-white" data-bs-toggle="dropdown"><small class="text-body"><i class="fas fa-globe-europe text-primary me-2"></i> English</small></a>
-                                        <div class="dropdown-menu">
-                                            <a href="#" class="dropdown-item">English</a>
-                                            <a href="#" class="dropdown-item">Bangla</a>
-                                            <a href="#" class="dropdown-item">French</a>
-                                            <a href="#" class="dropdown-item">Spanish</a>
-                                            <a href="#" class="dropdown-item">Arabic</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="nav-bar px-0 py-lg-0" style="height: 80px;">
-                        <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-lg-end">
-                            <a href="#" class="navbar-brand-2">
-                                <h1 class="text-primary mb-0"><i class="fas fa-bolt"></i> Electra</h1>
-                                <!-- <img src="img/logo.png" alt="Logo"> -->
-                            </a>  
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                                <span class="fa fa-bars"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarCollapse">
-                                <div class="navbar-nav mx-0 mx-lg-auto bg-white">
-                                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                                    <a href="about.html" class="nav-item nav-link">About</a>
-                                    <a href="service.html" class="nav-item nav-link">Service</a>
-                                    <a href="blog.html" class="nav-item nav-link">Blog</a>
-                                    <div class="nav-item dropdown">
-                                        <a href="#" class="nav-link" data-bs-toggle="dropdown">
-                                            <span class="dropdown-toggle">Pages</span>
-                                        </a>
-                                        <div class="dropdown-menu">
-                                            <a href="project.html" class="dropdown-item">Our projects</a>
-                                            <a href="team.html" class="dropdown-item">Our team</a>
-                                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                            <a href="404.html" class="dropdown-item">404 Page</a>
-                                        </div>
-                                    </div>
-                                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                                    <div class="nav-btn ps-3">
-                                        <button class="btn-search btn btn-primary btn-md-square mt-2 mt-lg-0 mb-4 mb-lg-0 flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
-                                        <a href="#" class="btn btn-primary py-2 px-4 ms-0 ms-lg-3"> Get Solution</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Navbar & Hero End -->
+    
+<header>
+  <div class="header-wrap position-relative">
+    <a href="#"><img src="img/arcotlogo.png" alt="Logo" class="logo"></a>
+    <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
+    <nav class="navmenu" id="mainNav">
+      <ul class="mb-0">
+        <li>
+          <a href="#" onclick="toggleMegaMenu(event)">Products <i class="bi bi-chevron-down ms-1"></i></a>
+        </li>
+        <li><a href="#">Sectors</a></li>
+        <li><a href="#">OCTO</a></li>
+        <li><a href="#">Support & Training</a></li>
+        <li><a href="#">Articles</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#"><i class="bi bi-search"></i></a></li>
+      </ul>
+    </nav>
+  </div>
 
-        <!-- Modal Search Start -->
-        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content rounded-0">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body d-flex align-items-center bg-primary">
-                        <div class="input-group w-75 mx-auto d-flex">
-                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
-                            <span id="search-icon-1" class="btn bg-light border nput-group-text p-3"><i class="fa fa-search"></i></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div id="megaMenu" class="mega-menu">
+    <div class="row">
+      <div class="col-md-3">
+        <h5 class="section-title">Products</h5>
+        <div class="underline"></div>
+        <p class="description">
+          We are a leading manufacturer of quality internal and external lighting products for commercial, industrial and retail applications.
+        </p>
+        <a href="#" style="color:#8a2042; font-weight:600;">View all products <i class="bi bi-arrow-right"></i></a>
+      </div>
+      <div class="col-md-9">
+        <h5 class="section-title">Product Types</h5>
+        <div class="underline"></div>
+        <div class="d-flex flex-wrap">
+          <a href="#">Smart Lighting</a>
+          <a href="#">Downlights</a>
+          <a href="#">Track Lighting</a>
+          <a href="#">Pendants</a>
+          <a href="#">Wall Lights</a>
+          <a href="#">LED Strip</a>
+          <a href="#">Bespoke LED Strip Service</a>
+          <a href="#">Cabinet and Bathroom Fittings</a>
+          <a href="#">Bulkheads</a>
+          <a href="#">Bollards</a>
+          <a href="#">Feature Lighting</a>
+          <a href="#">Floodlights</a>
+          <a href="#">Street Lights</a>
+          <a href="#">High/Low Bay</a>
+          <a href="#">Battens and Weatherproofs</a>
+          <a href="#">Commercial Linear</a>
+          <a href="#">Commercial Modular</a>
+          <a href="#">Emergency</a>
+          <a href="#">AFIX</a>
+          <a href="#">Electrical Accessories</a>
+          <a href="#">Product Data Downloads</a>
+          <a href="#">Inspiration</a>
         </div>
-        <!-- Modal Search End -->
+      </div>
+    </div>
+  </div>
+</header>
 
+<script>
+  function toggleMegaMenu(event) {
+    event.preventDefault();
+    const menu = document.getElementById('megaMenu');
+    menu.classList.toggle('show');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('mainNav');
+    const btn = document.getElementById('menuBtn');
+    nav.classList.toggle('show');
+    btn.innerHTML = nav.classList.contains('show')
+      ? '<i class="bi bi-x-lg"></i>'
+      : '<i class="bi bi-list"></i>';
+  }
+
+  document.addEventListener('click', function (e) {
+    const menu = document.getElementById('megaMenu');
+    const nav = document.getElementById('mainNav');
+    if (!e.target.closest('.navmenu') && !e.target.closest('#megaMenu') && !e.target.closest('#menuBtn')) {
+      menu.classList.remove('show');
+    }
+  });
+</script>
+  <style>
+
+    header {
+      background: #070707;
+  border-bottom: 1px solid #030303;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+      
+    }
+
+    .header-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+    }
+
+    .logo {
+      max-height: 60px;
+    }
+
+    .navmenu {
+      display: flex;
+      
+    }
+
+    .navmenu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .navmenu ul li {
+      position: relative;
+    }
+
+    .navmenu ul li a {
+      text-decoration: none;
+      color: #fffcfc;
+      font-weight: 300;
+    }
+
+    .mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100vw;
+      background: #070707;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      display: none;
+      padding: 30px 60px;
+      z-index: 1000;
+    }
+
+    .mega-menu.show {
+      /* top: 100px; */
+      display: block;
+    }
+
+    .section-title {
+      font-weight: 300;
+      color: #8a2042;
+      margin-bottom: 10px;
+    }
+
+    .underline {
+      height: 2px;
+      background: #8a2042;
+      width: 40px;
+      margin-bottom: 15px;
+    }
+
+    .description {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .mega-menu a {
+      font-size: 14px;
+      color: #fdfbfb;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 20px 10px 0;
+      min-width: 180px;
+    }
+
+    .mega-menu a:hover {
+      text-decoration: underline;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+    }
+
+    /* Mobile View */
+    @media (max-width: 768px) {
+      .header-wrap {
+        padding: 15px 20px;
+      }
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 22px;
+        z-index: 1001;
+      }
+
+      .navmenu {
+        width: 100%;
+        flex-direction: column;
+        display: none;
+      }
+
+      .navmenu.show {
+        display: flex;
+        padding-top: 70px;
+      }
+
+      .navmenu ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        padding: 0 20px;
+      }
+
+      .mega-menu {
+        position: static;
+        padding: 20px;
+        display: none;
+      }
+
+      .mega-menu.show {
+        display: block;
+        top: auto;
+      }
+
+      .mega-menu .row {
+        flex-direction: column;
+      }
+
+      .mega-menu .d-flex {
+        flex-direction: column;
+      }
+
+      .mega-menu a {
+        min-width: unset;
+        margin: 5px 0;
+      }
+    }
+  </style>
 
         <!-- Carousel Start -->
         <div class="header-carousel owl-carousel overflow-hidden">
@@ -155,14 +296,14 @@
                         <div class="row g-4 align-items-center">
                             <div class="col-lg-7 animated fadeInLeft">
                                 <div class="text-sm-center text-md-start">
-                                    <h4 class="text-white text-uppercase fw-bold mb-4">Current Electricity Services</h4>
-                                    <h1 class="display-2 text-white mb-4">Power for Seamless Electricity Solutions</h1>
-                                    <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy... 
-                                    </p>
-                                    <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
+                                    <h4 class="text-white text-uppercase fw-bold mb-4">ARCOT INDUSTRIES PRIVATE LIMITED</h4>
+                                    <h1 class="display-2 text-white mb-4">Product</h1>
+                                    <!-- <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy... 
+                                    </p> -->
+                                    <!-- <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
                                         <a class="btn btn-light py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
                                         <a class="btn btn-primary py-3 px-4 px-md-5 ms-2" href="#">Learn More</a>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -177,14 +318,14 @@
                         <div class="row g-4 align-items-center">
                             <div class="col-lg-7 animated fadeInLeft">
                                 <div class="text-sm-center text-md-start">
-                                    <h4 class="text-white text-uppercase fw-bold mb-4">Current Electricity Services</h4>
-                                    <h1 class="display-2 text-white mb-4">Experience the power of professionalism</h1>
-                                    <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy... 
-                                    </p>
-                                    <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
+                                    <h4 class="text-white text-uppercase fw-bold mb-4">ARCOT INDUSTRIES PRIVATE LIMITED</h4>
+                                    <h1 class="display-2 text-white mb-4">Product</h1>
+                                    <!-- <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy... 
+                                    </p> -->
+                                    <!-- <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
                                         <a class="btn btn-light py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
                                         <a class="btn btn-primary py-3 px-4 px-md-5 ms-2" href="#">Learn More</a>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -193,6 +334,116 @@
             </div>
         </div>
         <!-- Carousel End -->
+
+
+<!--about-->
+  <section class="aboutthe-section p-5">
+    <div class="row mb-4 align-items-start">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="d-flex align-items-center">
+          <div class="aboutthe-dot">&#9679;</div>
+          <div class="aboutthe-title">ABOUT US</div>
+        </div>
+        <p class="aboutthe-description mt-3">
+          LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM,
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <div class="aboutthe-image-grid aboutthe-grid">
+          <div class="aboutthe-img1"><img src="img/tran.jpg" alt="img1"></div>
+          <div class="aboutthe-img2"><img src="img/tran.jpg" alt="img2"></div>
+          <div class="aboutthe-img3"><img src="img/tran.jpg" alt="img3"></div>
+          <div class="aboutthe-img4"><img src="img/tran.jpg" alt="img4"></div>
+          <div class="aboutthe-img5"><img src="img/tran.jpg" alt="img5"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--about-->
+
+    <style>
+    .aboutthe-section {
+      padding: 60px 20px;
+      background-color: #030303;
+    }
+
+    .aboutthe-title {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .aboutthe-description {
+      color: #fcf8f8;
+      font-size: 0.95rem;
+      margin-top: 15px;
+    }
+
+    .aboutthe-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .aboutthe-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .aboutthe-dot {
+      color: #ff2e63;
+      font-size: 2rem;
+      margin-right: 10px;
+    }
+
+    .aboutthe-image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 10px;
+    }
+
+    .aboutthe-image-grid div {
+      overflow: hidden;
+    }
+
+    .aboutthe-img1 { grid-column: 1 / 2; aspect-ratio: 1 / 1.2; }
+    .aboutthe-img2 { grid-column: 2 / 3; aspect-ratio: 1 / 1.2; }
+    .aboutthe-img3 { grid-column: 3 / 4; aspect-ratio: 1 / 1.2; }
+    .aboutthe-img4 { grid-column: 1 / 3; aspect-ratio: 2 / 1; }
+    .aboutthe-img5 { grid-column: 3 / 4; aspect-ratio: 1 / 1; }
+
+    /* Mobile View Only */
+    @media (max-width: 576px) {
+      .aboutthe-image-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 10px;
+        padding-bottom: 10px;
+      }
+
+      .aboutthe-image-grid div {
+        flex: 0 0 auto;
+        width: 220px;
+        aspect-ratio: 1 / 1.2;
+        scroll-snap-align: start;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .aboutthe-image-grid img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+    }
+  </style>
+
+
+
 
 
         <!-- About Start -->
