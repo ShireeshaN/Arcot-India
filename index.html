@@ -44,7 +44,7 @@
     
 <header>
   <div class="header-wrap position-relative">
-    <a href="#"><img src="img/arcotlogo.png" alt="Logo" class="logo"></a>
+    <a href="#"><img src="img/logos.png" alt="Logo" class="logo"></a>
     <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
     <nav class="navmenu" id="mainNav">
       <ul class="mb-0">
@@ -146,7 +146,7 @@
     }
 
     .logo {
-      max-height: 60px;
+      max-height: 80px;
     }
 
     .navmenu {
@@ -171,6 +171,15 @@
       text-decoration: none;
       color: #fffcfc;
       font-weight: 300;
+     font-family: 'Six Caps', sans-serif;
+ 
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #fff;
+
+  padding: 3px 5px;
+  display: inline-block;
+  text-transform: uppercase;
     }
 
     .mega-menu {
@@ -215,6 +224,7 @@
       display: inline-block;
       margin: 0 20px 10px 0;
       min-width: 180px;
+       font-family: 'Six Caps', sans-serif;
     }
 
     .mega-menu a:hover {
@@ -337,109 +347,110 @@
 
 
 <!--about-->
-  <section class="aboutthe-section p-5">
-    <div class="row mb-4 align-items-start">
-      <div class="col-lg-6 mb-4 mb-lg-0">
-        <div class="d-flex align-items-center">
-          <div class="aboutthe-dot">&#9679;</div>
+<!--about-->
+<section class="aboutthe-section p-5">
+  <div class="row mb-4 align-items-start">
+    <div class="col-lg-6 mb-4 mb-lg-0">
+      <div class="glass-card p-4">
+        <div class="d-flex align-items-center mb-3">
+          <!-- <div class="aboutthe-dot">&#9679;</div> -->
           <div class="aboutthe-title">ABOUT US</div>
         </div>
-        <p class="aboutthe-description mt-3">
-          LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM,
-        </p>
-      </div>
-      <div class="col-lg-6">
-        <div class="aboutthe-image-grid aboutthe-grid">
-          <div class="aboutthe-img1"><img src="img/tran.jpg" alt="img1"></div>
-          <div class="aboutthe-img2"><img src="img/tran.jpg" alt="img2"></div>
-          <div class="aboutthe-img3"><img src="img/tran.jpg" alt="img3"></div>
-          <div class="aboutthe-img4"><img src="img/tran.jpg" alt="img4"></div>
-          <div class="aboutthe-img5"><img src="img/tran.jpg" alt="img5"></div>
-        </div>
+        <p class="aboutthe-description">
+  <strong>Arcot Industries Private Limited</strong> delivers innovative solutions across <strong>power, energy, lighting automation, smart city infrastructure,</strong> and <strong>R&D</strong>.  
+  <br><br>
+  We are committed to building sustainable, tech-driven environments through engineering excellence and continuous innovation.
+</p>
+
+
       </div>
     </div>
-  </section>
+    <div class="col-lg-6">
+      <div class="aboutthe-image-grid aboutthe-grid">
+        <div class="aboutthe-img"><img src="img/abouimg/aboutimg1 (1).png" alt="img1"></div>
+        <div class="aboutthe-img"><img src="img/abouimg/aboutimg1 (5).png" alt="img2"></div>
+        <div class="aboutthe-img"><img src="img/abouimg/aboutimg1 (4).png" alt="img3"></div>
+        <div class="aboutthe-img"><img src="img/abouimg/aboutimg1 (6).png" alt="img4"></div>
+        <div class="aboutthe-img"><img src="img/abouimg/aboutimg1 (3).png" alt="img5"></div>
+        <div class="aboutthe-img"><img src="img/abouimg/aboutimg1 (2).png" alt="img6"></div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<!--about-->
+
   <!--about-->
 
     <style>
-    .aboutthe-section {
-      padding: 60px 20px;
-      background-color: #030303;
-    }
+  .aboutthe-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  color: #ffffff;
+ font-family: 'Six Caps', sans-serif;
+}
 
-    .aboutthe-title {
-      font-size: 3rem;
-      font-weight: bold;
-    }
 
-    .aboutthe-description {
-      color: #fcf8f8;
-      font-size: 0.95rem;
-      margin-top: 15px;
-    }
 
-    .aboutthe-grid img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
+.aboutthe-title {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #ffffff;
+  letter-spacing: 1px;
+   font-family: 'Six Caps', sans-serif;
+}
 
-    .aboutthe-grid img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-    }
+.aboutthe-dot {
+  color: #ff4a57;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
 
-    .aboutthe-dot {
-      color: #ff2e63;
-      font-size: 2rem;
-      margin-right: 10px;
-    }
+.aboutthe-description {
+  color: #e0e0e0;
+   font-family: 'Six Caps', sans-serif;
+  font-size: 13px;
+  letter-spacing: 3px;
 
-    .aboutthe-image-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto auto;
-      gap: 10px;
-    }
+  display: inline-block;
 
-    .aboutthe-image-grid div {
-      overflow: hidden;
-    }
+}
 
-    .aboutthe-img1 { grid-column: 1 / 2; aspect-ratio: 1 / 1.2; }
-    .aboutthe-img2 { grid-column: 2 / 3; aspect-ratio: 1 / 1.2; }
-    .aboutthe-img3 { grid-column: 3 / 4; aspect-ratio: 1 / 1.2; }
-    .aboutthe-img4 { grid-column: 1 / 3; aspect-ratio: 2 / 1; }
-    .aboutthe-img5 { grid-column: 3 / 4; aspect-ratio: 1 / 1; }
+.aboutthe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
 
-    /* Mobile View Only */
-    @media (max-width: 576px) {
-      .aboutthe-image-grid {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        gap: 10px;
-        padding-bottom: 10px;
-      }
+.aboutthe-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
 
-      .aboutthe-image-grid div {
-        flex: 0 0 auto;
-        width: 220px;
-        aspect-ratio: 1 / 1.2;
-        scroll-snap-align: start;
-        border-radius: 10px;
-        overflow: hidden;
-      }
+.aboutthe-img img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
 
-      .aboutthe-image-grid img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-      }
-    }
+/* Responsive Mobile View */
+@media (max-width: 768px) {
+  .aboutthe-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    padding-bottom: 10px;
+  }
+
+  .aboutthe-img {
+    flex: 0 0 auto;
+    width: 220px;
+    scroll-snap-align: center;
+  }
+}
+
   </style>
 
 
