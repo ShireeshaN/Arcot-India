@@ -2,612 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lighting Segments Scroll</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Impact Section Animation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      font-family: 'Poppins', sans-serif;
+    }
 
-</head>
-<body class="basic-bg">
+    .impact-section {
+      width: 100%;
+      height: 250px;
+      padding-left: 20px;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+      font-size: 3.5rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      white-space: nowrap;
+      background-color: #030303;
+    }
 
-  <!-- SECTION 1 -->
-  <section id="basic-lighting">
-    <div class="section-header">
-      <h1>POWER</h1>
-      <p>Architectural & Industrial Lights</p>
-    </div>
-    <div class="gallery-wrapper">
-      <div class="gallery" id="basic-gallery">
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Basic Light A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Basic Light A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Add more cards as needed -->
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Basic Light B" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Basic Light B</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Basic Light C" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Basic Light C</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
+    .impact-section span {
+      opacity: 0;
+      display: inline-block;
+      animation: fadeInImpact 0.5s forwards;
+      margin-right: 10px;
+      animation-play-state: paused;
+    }
 
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Basic Light C" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Basic Light C</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Basic Light C" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Basic Light C</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Basic Light C" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Basic Light C</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="arrow-nav">
-        <button class="arrow-button" onclick="scrollGallery('basic-gallery', -1)">&#x2190;</button>
-        <button class="arrow-button" onclick="scrollGallery('basic-gallery', 1)">&#x2192;</button>
-      </div>
-    </div>
-    <a href="#emergency-lighting" class="scroll-arrow">&#x2193;</a>
-  </section>
-
-  <!-- SECTION 2 -->
-  <section id="emergency-lighting">
-    <div class="section-header">
-      <h1>ENERGY GENERATION</h1>
-      <p>Reliable safety lighting solutions</p>
-    </div>
-    <div class="gallery-wrapper">
-      <div class="gallery" id="emergency-gallery">
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Emergency Light A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Emergency Light A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Emergency Light B" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Emergency Light B</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Emergency Light B" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Emergency Light B</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Emergency Light B" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Emergency Light B</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Emergency Light B" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Emergency Light B</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Emergency Light B" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Emergency Light B</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Add more cards as needed -->
-      </div>
-      <div class="arrow-nav">
-        <button class="arrow-button" onclick="scrollGallery('emergency-gallery', -1)">&#x2190;</button>
-        <button class="arrow-button" onclick="scrollGallery('emergency-gallery', 1)">&#x2192;</button>
-      </div>
-    </div>
-    <a href="#fire-systems" class="scroll-arrow">&#x2193;</a>
-  </section>
-
-  <!-- SECTION 3 -->
-  <section id="fire-systems">
-    <div class="section-header">
-      <h1>LIGHTING</h1>
-      <p>Advanced fire safety infrastructure</p>
-    </div>
-    <div class="gallery-wrapper">
-      <div class="gallery" id="fire-gallery">
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Fire System A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Fire System A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Fire System A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Fire System A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Fire System A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Fire System A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Fire System A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Fire System A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Fire System A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Fire System A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Fire System A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Fire System A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Fire System A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Fire System A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Add more cards as needed -->
-      </div>
-      <div class="arrow-nav">
-        <button class="arrow-button" onclick="scrollGallery('fire-gallery', -1)">&#x2190;</button>
-        <button class="arrow-button" onclick="scrollGallery('fire-gallery', 1)">&#x2192;</button>
-      </div>
-    </div>
-    <a href="#automation" class="scroll-arrow">&#x2193;</a>
-  </section>
-
-  <!-- SECTION 4 -->
-  <section id="automation">
-    <div class="section-header">
-      <h1>AUTOMATION</h1>
-      <p>Industrial, Home, Hospital, Residential, Hotel, Commercial, IoT</p>
-    </div>
-    <div class="gallery-wrapper">
-      <div class="gallery" id="automation-gallery">
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Automation A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Automation A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Automation A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Automation A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Automation A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Automation A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Automation A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Automation A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Automation A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Automation A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Automation A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Automation A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Automation A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Automation A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Add more cards as needed -->
-      </div>
-      <div class="arrow-nav">
-        <button class="arrow-button" onclick="scrollGallery('automation-gallery', -1)">&#x2190;</button>
-        <button class="arrow-button" onclick="scrollGallery('automation-gallery', 1)">&#x2192;</button>
-      </div>
-    </div>
-    <a href="#energy" class="scroll-arrow">&#x2193;</a>
-  </section>
-
-  <!-- SECTION 5 -->
-  <section id="energy">
-    <div class="section-header">
-      <h1>SMART CITY</h1>
-      <p>Solar, Wind, Biomass Solutions</p>
-    </div>
-    <div class="gallery-wrapper">
-      <div class="gallery" id="energy-gallery">
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Energy A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Energy A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-         <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Energy A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Energy A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-         <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Energy A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Energy A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-         <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Energy A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Energy A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-         <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Energy A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Energy A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-         <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Energy A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Energy A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-         <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Energy A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Energy A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Add more cards as needed -->
-      </div>
-      <div class="arrow-nav">
-        <button class="arrow-button" onclick="scrollGallery('energy-gallery', -1)">&#x2190;</button>
-        <button class="arrow-button" onclick="scrollGallery('energy-gallery', 1)">&#x2192;</button>
-      </div>
-    </div>
-    <a href="#smartcity" class="scroll-arrow">&#x2193;</a>
-  </section>
-
-  <!-- SECTION 6 -->
-  <section id="smartcity">
-    <div class="section-header">
-      <h1>R&D</h1>
-      <p>Conference Hall, Smart Pole, Smart Counters, Smart Window Leaf A/C</p>
-    </div>
-    <div class="gallery-wrapper">
-      <div class="gallery" id="smartcity-gallery">
-        <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Smart City A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Smart City A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-         <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Smart City A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Smart City A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-         <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Smart City A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Smart City A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-         <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Smart City A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Smart City A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-         <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Smart City A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Smart City A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-         <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Smart City A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Smart City A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-         <div class="gallery-item">
-          <div class="product-card">
-            <img src="img/grid-thumb.webp" alt="Smart City A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Smart City A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Add more cards as needed -->
-      </div>
-      <div class="arrow-nav">
-        <button class="arrow-button" onclick="scrollGallery('smartcity-gallery', -1)">&#x2190;</button>
-        <button class="arrow-button" onclick="scrollGallery('smartcity-gallery', 1)">&#x2192;</button>
-      </div>
-    </div>
-    <a href="#basic-lighting" class="scroll-arrow up">&#x2191;</a>
-  </section>
-
-<script>
-  // Change background color based on visible section
-  const sections = document.querySelectorAll("section");
-  const bgClasses = {
-    "basic-lighting": "basic-bg",
-    "emergency-lighting": "emergency-bg",
-    "fire-systems": "fire-bg",
-    "automation": "automation-bg",
-    "energy": "energy-bg",
-    "smartcity": "smartcity-bg",
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        document.body.className = "";
-        const newClass = bgClasses[entry.target.id];
-        if (newClass) document.body.classList.add(newClass);
+    @keyframes fadeInImpact {
+      to {
+        opacity: 1;
       }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .impact-section {
+        font-size: 2rem;
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .impact-section {
+        font-size: 1.6rem;
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="impact-section" id="impact-text"></section>
+
+  <script>
+    const slogan = "From Power to Smart City – We Own All 6.";
+    const container = document.getElementById('impact-text');
+
+    // Split the slogan into words and wrap each word in a span
+    const words = slogan.split(' ');
+    container.innerHTML = '';
+    words.forEach((word, index) => {
+      const span = document.createElement('span');
+      span.textContent = word;
+      span.style.animationDelay = (index * 0.6) + 's';
+      container.appendChild(span);
     });
-  }, { threshold: 0.6 });
 
-  sections.forEach(section => observer.observe(section));
+    // Animate only when the section is visible
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          container.querySelectorAll('span').forEach(span => {
+            span.style.animationPlayState = 'running';
+          });
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
 
-  // Scroll gallery function for arrow buttons
-  function scrollGallery(galleryId, direction) {
-    const gallery = document.getElementById(galleryId);
-    if (!gallery) return;
-    const scrollAmount = 350; // Adjust to your card width + gap
-    gallery.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
-  }
-</script>
+    observer.observe(container);
+  </script>
 
 </body>
 </html>
