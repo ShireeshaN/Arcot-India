@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Electra - Electrical Website Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body style="background-color:#060505">
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+    <header>
+  <div class="header-wrap position-relative">
+    <a href="#"><img src="img/logos.png" alt="Logo" class="logo"></a>
+    <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
+    <nav class="navmenu" id="mainNav">
+      <ul class="mb-0">
+        <li>
+          <a href="#" onclick="toggleMegaMenu(event)">Products <i class="bi bi-chevron-down ms-1"></i></a>
+        </li>
+        <li><a href="#">Sectors</a></li>
+        <li><a href="#">OCTO</a></li>
+        <li><a href="#">Support & Training</a></li>
+        <li><a href="#">Articles</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#"><i class="bi bi-search"></i></a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div id="megaMenu" class="mega-menu">
+    <div class="row">
+      <div class="col-md-3">
+        <h5 class="section-title">Products</h5>
+        <div class="underline"></div>
+        <p class="description">
+          We are a leading manufacturer of quality internal and external lighting products for commercial, industrial and retail applications.
+        </p>
+        <a href="#" style="color:#8a2042; font-weight:600;">View all products <i class="bi bi-arrow-right"></i></a>
+      </div>
+      <div class="col-md-9">
+        <h5 class="section-title">Product Types</h5>
+        <div class="underline"></div>
+        <div class="d-flex flex-wrap">
+          <a href="#">Smart Lighting</a>
+          <a href="#">Downlights</a>
+          <a href="#">Track Lighting</a>
+          <a href="#">Pendants</a>
+          <a href="#">Wall Lights</a>
+          <a href="#">LED Strip</a>
+          <a href="#">Bespoke LED Strip Service</a>
+          <a href="#">Cabinet and Bathroom Fittings</a>
+          <a href="#">Bulkheads</a>
+          <a href="#">Bollards</a>
+          <a href="#">Feature Lighting</a>
+          <a href="#">Floodlights</a>
+          <a href="#">Street Lights</a>
+          <a href="#">High/Low Bay</a>
+          <a href="#">Battens and Weatherproofs</a>
+          <a href="#">Commercial Linear</a>
+          <a href="#">Commercial Modular</a>
+          <a href="#">Emergency</a>
+          <a href="#">AFIX</a>
+          <a href="#">Electrical Accessories</a>
+          <a href="#">Product Data Downloads</a>
+          <a href="#">Inspiration</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  function toggleMegaMenu(event) {
+    event.preventDefault();
+    const menu = document.getElementById('megaMenu');
+    menu.classList.toggle('show');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('mainNav');
+    const btn = document.getElementById('menuBtn');
+    nav.classList.toggle('show');
+    btn.innerHTML = nav.classList.contains('show')
+      ? '<i class="bi bi-x-lg"></i>'
+      : '<i class="bi bi-list"></i>';
+  }
+
+  document.addEventListener('click', function (e) {
+    const menu = document.getElementById('megaMenu');
+    const nav = document.getElementById('mainNav');
+    if (!e.target.closest('.navmenu') && !e.target.closest('#megaMenu') && !e.target.closest('#menuBtn')) {
+      menu.classList.remove('show');
+    }
+  });
+</script>
+  <style>
+
+    header {
+      background: #070707;
+  border-bottom: 1px solid #030303;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+      
+    }
+
+    .header-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+    }
+
+    .logo {
+      max-height: 80px;
+    }
+
+    .navmenu {
+      display: flex;
+      
+    }
+
+    .navmenu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .navmenu ul li {
+      position: relative;
+    }
+
+    .navmenu ul li a {
+      text-decoration: none;
+      color: #fffcfc;
+      font-weight: 300;
+     font-family: 'Six Caps', sans-serif;
+ 
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #fff;
+
+  padding: 3px 5px;
+  display: inline-block;
+  text-transform: uppercase;
+    }
+
+    .mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100vw;
+      background: #070707;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      display: none;
+      padding: 30px 60px;
+      z-index: 1000;
+    }
+
+    .mega-menu.show {
+      /* top: 100px; */
+      display: block;
+    }
+
+    .section-title {
+      font-weight: 300;
+      color: #8a2042;
+      margin-bottom: 10px;
+    }
+
+    .underline {
+      height: 2px;
+      background: #8a2042;
+      width: 40px;
+      margin-bottom: 15px;
+    }
+
+    .description {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .mega-menu a {
+      font-size: 14px;
+      color: #fdfbfb;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 20px 10px 0;
+      min-width: 180px;
+       font-family: 'Six Caps', sans-serif;
+    }
+
+    .mega-menu a:hover {
+      text-decoration: underline;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+    }
+
+    /* Mobile View */
+    @media (max-width: 768px) {
+      .header-wrap {
+        padding: 15px 20px;
+      }
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 22px;
+        z-index: 1001;
+      }
+
+      .navmenu {
+        width: 100%;
+        flex-direction: column;
+        display: none;
+      }
+
+      .navmenu.show {
+        display: flex;
+        padding-top: 70px;
+      }
+
+      .navmenu ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        padding: 0 20px;
+      }
+
+      .mega-menu {
+        position: static;
+        padding: 20px;
+        display: none;
+      }
+
+      .mega-menu.show {
+        display: block;
+        top: auto;
+      }
+
+      .mega-menu .row {
+        flex-direction: column;
+      }
+
+      .mega-menu .d-flex {
+        flex-direction: column;
+      }
+
+      .mega-menu a {
+        min-width: unset;
+        margin: 5px 0;
+      }
+    }
+  </style>  
+  
+  
+    <style>
+  
+  .overview {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .overview h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .overview-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .step-link  {
+      text-decoration: none;
+      color: #aaa;
+      transition: 0.3s ease;
+    }
+
+    .step-link:hover .step-title {
+      color: white;
+    }
+
+    .step-link:hover .step-num {
+      transform: scale(1.2);
+    }
+
+    .step-num {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: transparent;
+      -webkit-text-stroke: 1px white;
+      transition: transform 0.3s ease;
+    }
+
+    .step-title {
+      font-weight: bold;
+      margin-top: 0.5rem;
+      color: #aaa;
+      
+    }
+
+    .step-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 10%;
+      gap: 40px;
+      position: relative;
+     
+    }
+  
+
+    .text-step {
+  flex: 1 1 400px;
+  padding: 40px;
+  min-height: 400px;
+  position: relative;
+  z-index: 1; /* Keep it lower than arrow */
+  transition: background-color 0.3s ease;
+}
+
+.text-step:hover {
+  background-color:#222222;
+  z-index: 1; /* Keep it low so arrow is still above */
+}
+
+
+    .step-count {
+      font-size: 5rem;
+      -webkit-text-stroke: 1px white;
+      color: transparent;
+      font-weight: bold;
+    }
+
+    .step-heading {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+    .step{
+      font-size: 20px;
+
+    }
+
+    .step-desc {
+      margin-top: 1rem;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    .step-img {
+      flex: 1 1 400px;
+    }
+
+    .step-img img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+   .arrow {
+  display: block;
+  text-align: center;
+  margin-top: -80px;
+  margin-bottom: -80px;
+  z-index: 10; /* Ensure it's above cards */
+  position: relative;
+  pointer-events: none; /* So it doesn't block hover effects */
+}
+
+
+.arrow svg {
+  width: 200px;
+  height: auto;
+}
+
+
+    @media (max-width: 768px) {
+      .overview-steps {
+        grid-template-columns: 1fr;
+      }
+      .step-section {
+        flex-direction: column;
+      }
+    }
+  </style>
+
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Projects</h4>
+                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item active text-primary">Project</li>
+                </ol>    
+            </div>
+        </div>
+        <!-- Header End -->
+
+
+
+          <!-- Overview Section -->
+  <section class="overview">
+    <h2 style="color:#fff">6 Stages of Turnkey Delivery</h2>
+    <div class="overview-steps">
+      <a href="#step-1" class="step-link">
+        <div class="step-num">01</div>
+        <div class="step-title">Design</div>
+      </a>
+      <a href="#step-2" class="step-link">
+        <div class="step-num">02</div>
+        <div class="step-title">Development</div>
+      </a>
+      <a href="#step-3" class="step-link">
+        <div class="step-num">03</div>
+        <div class="step-title">Manufacturing</div>
+      </a>
+      <a href="#step-4" class="step-link">
+        <div class="step-num">04</div>
+        <div class="step-title">Installation</div>
+      </a>
+      <a href="#step-5" class="step-link">
+        <div class="step-num">05</div>
+        <div class="step-title">Testing</div>
+      </a>
+      <a href="#step-6" class="step-link">
+        <div class="step-num">06</div>
+        <div class="step-title">Commisioning</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Step 1 -->
+  <section id="step-1" class="step-section">
+    <div class="text-step">
+      <small class="step">Step</small>
+      <div class="step-count ">01</div>
+      <div class="step-heading">Design</div>
+      <div class="step-desc">
+        At Arcot Industries, our design process is driven by innovation, precision, and client-specific requirements. We create smart, scalable, and customized solutions tailored to each project—across power, lighting, automation, and smart infrastructure. Every design is engineered for performance, safety, and seamless execution from concept to commissioning.
+      </div>
+    </div>
+    <div class="step-img">
+      <img src="https://exaktor.com/wp-content/uploads/2024/01/group-1411-2-1.jpg" alt="Step 1 Image">
+    </div>
+  </section>
+
+  <!-- Arrow between steps -->
+<div class="arrow">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="20 20 300 460">
+    <defs>
+      <marker id="arrowhead" markerWidth="8" markerHeight="8"
+              refX="4" refY="4" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,8 L8,4 Z" fill="white" />
+      </marker>
+    </defs>
+    <path d="M0,0 C 200 ,200 200,-100 300,400"
+          stroke="white" stroke-width="4" stroke-dasharray="10,10"
+          fill="none" marker-end="url(#arrowhead)" />
+  </svg>
+</div>
+
+
+
+
+
+  <!-- Step 2 -->
+  <section id="step-2" class="step-section">
+    <div class="step-img">
+      <img src="https://exaktor.com/wp-content/uploads/2024/01/bild-diagram-1.jpg" alt="Step 2 Image">
+    </div>
+    <div class="text-step">
+      <small class="step">Step</small>
+      <div class="step-count">02</div>
+      <div class="step-heading">Development</div>
+      <div class="step-desc">
+        Our development process transforms innovative designs into high-performance, functional solutions with a focus on quality and efficiency. Leveraging advanced engineering tools and cross-domain expertise, we build systems that are reliable, scalable, and tailored to client needs. Every product is developed with precision, adhering to the highest industry standards and future-ready practices.
+      </div>
+    </div>
+  </section>
+
+<!-- Arrow from top-right to bottom-left -->
+<div class="arrow">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 420">
+    <defs>
+      <marker id="arrowhead" markerWidth="12" markerHeight="12"
+              refX="10" refY="5" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,10 L10,5 Z" fill="white" />
+      </marker>
+    </defs>
+    <path d="M400,0 C 100,350 150,10 40,400"
+          stroke="white" stroke-width="4" stroke-dasharray="10,10"
+          fill="none" marker-end="url(#arrowhead)" />
+  </svg>
+</div>
+
+
+
+
+ <!-- Step 3 -->
+  <section id="step-3" class="step-section">
+    <div class="text-step">
+      <small class="step">Step</small>
+      <div class="step-count ">03</div>
+      <div class="step-heading">Manufacturing</div>
+      <div class="step-desc">
+        At Arcot Industries, we combine cutting-edge technology with robust engineering to manufacture products that meet global quality standards. Our state-of-the-art facilities enable precise fabrication, rigorous quality control, and seamless integration of custom specifications. We ensure durability, consistency, and performance in every component we produce.
+      </div>
+    </div>
+    <div class="step-img">
+      <img src="https://exaktor.com/wp-content/uploads/2024/01/group-1411-2-1.jpg" alt="Step 1 Image">
+    </div>
+  </section>
+
+    <!-- Arrow between steps -->
+<div class="arrow">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="20 20 300 460">
+    <defs>
+      <marker id="arrowhead" markerWidth="8" markerHeight="8"
+              refX="4" refY="4" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,8 L8,4 Z" fill="white" />
+      </marker>
+    </defs>
+    <path d="M0,0 C 200 ,200 200,-100 300,400"
+          stroke="white" stroke-width="4" stroke-dasharray="10,10"
+          fill="none" marker-end="url(#arrowhead)" />
+  </svg>
+</div>
+
+
+
+  <!-- Step 4 -->
+  <section id="step-4" class="step-section">
+    <div class="step-img">
+      <img src="https://exaktor.com/wp-content/uploads/2024/01/bild-diagram-1.jpg" alt="Step 2 Image">
+    </div>
+    <div class="text-step">
+      <small class="step">Step</small>
+      <div class="step-count">04</div>
+      <div class="step-heading">Installation</div>
+      <div class="step-desc">
+        Our expert installation teams ensure seamless on-site execution with precision, safety, and adherence to project timelines. From complex power systems to smart lighting and automation setups, we handle every installation with technical accuracy and minimal disruption. We ensure full system integration and operational readiness from day one.
+      </div>
+    </div>
+  </section>
+
+<!-- Arrow from top-right to bottom-left -->
+<div class="arrow">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 420">
+    <defs>
+      <marker id="arrowhead" markerWidth="12" markerHeight="12"
+              refX="10" refY="5" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,10 L10,5 Z" fill="white" />
+      </marker>
+    </defs>
+    <path d="M400,0 C 100,350 150,10 40,400"
+          stroke="white" stroke-width="4" stroke-dasharray="10,10"
+          fill="none" marker-end="url(#arrowhead)" />
+  </svg>
+</div>
+
+
+
+  <!-- Step 5 -->
+  <section id="step-5" class="step-section">
+    <div class="text-step">
+      <small class="step">Step</small>
+      <div class="step-count ">05</div>
+      <div class="step-heading">Testing</div>
+      <div class="step-desc">
+        We conduct rigorous testing at every stage to ensure system reliability, safety, and peak performance. Each component and integrated system undergoes functional, environmental, and quality checks to meet both industry standards and client expectations. Our testing process guarantees flawless operation before final deployment.
+      </div>
+    </div>
+    <div class="step-img">
+      <img src="https://exaktor.com/wp-content/uploads/2024/01/group-1411-2-1.jpg" alt="Step 1 Image">
+    </div>
+  </section>
+
+  <!-- Arrow between steps -->
+<div class="arrow">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="20 20 300 460">
+    <defs>
+      <marker id="arrowhead" markerWidth="8" markerHeight="8"
+              refX="4" refY="4" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,8 L8,4 Z" fill="white" />
+      </marker>
+    </defs>
+    <path d="M0,0 C 200 ,200 200,-100 300,400"
+          stroke="white" stroke-width="4" stroke-dasharray="10,10"
+          fill="none" marker-end="url(#arrowhead)" />
+  </svg>
+</div>
+
+
+
+
+
+  <!-- Step 2 -->
+  <section id="step-6" class="step-section">
+    <div class="step-img">
+      <img src="https://exaktor.com/wp-content/uploads/2024/01/bild-diagram-1.jpg" alt="Step 2 Image">
+    </div>
+    <div class="text-step">
+      <small class="step">Step</small>
+      <div class="step-count">06</div>
+      <div class="step-heading">Commisioning</div>
+      <div class="step-desc">
+        Our commissioning process ensures that every system is fully functional, optimized, and ready for long-term performance. We conduct final validations, safety checks, and client walkthroughs to ensure seamless handover. With a focus on reliability and efficiency, we deliver solutions that are deployment-ready from day one.
+      </div>
+    </div>
+  </section>
+
+
+
+
+        <!-- Projects Start -->
+        <div class="container-fluid projects bg-light py-5">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div>
+                            <h4 class="text-primary">Our Projects</h4>
+                            <h1 class="display-4 mb-4">How to work Our Electricity Projects</h1>
+                            <p class="mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum fugiat quae nihil obcaecati,</p>
+                            <ul class="nav">
+                                <li class="nav-item bg-white mb-4 w-100">
+                                    <a class="d-flex align-items-center h4 mb-0 p-3 active" data-bs-toggle="pill" href="#ProjectsTab-1">
+                                        <div class="projects-icon btn-md-square bg-primary text-white me-3"><span class="fas fa-bolt small"></span></div><span>Power Path Unveiling Our process</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item bg-white mb-4 w-100">
+                                    <a class="d-flex align-items-center h4 mb-0 p-3" data-bs-toggle="pill" href="#ProjectsTab-2">
+                                        <div class="projects-icon btn-md-square bg-primary text-white me-3"><span class="fas fa-charging-station small"></span></div><span>Electro Flow Decoding Our method</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item bg-white mb-4 w-100">
+                                    <a class="d-flex align-items-center h4 mb-0 p-3" data-bs-toggle="pill" href="#ProjectsTab-3">
+                                        <div class="projects-icon btn-md-square bg-primary text-white me-3"><span class="fas fa-broadcast-tower small"></span></div><span>Energetic Engine Behind Scenes</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item bg-white mb-4 w-100">
+                                    <a class="d-flex align-items-center h4 mb-0 p-3" data-bs-toggle="pill" href="#ProjectsTab-4">
+                                        <div class="projects-icon btn-md-square bg-primary text-white me-3"><span class="fas fa-bolt small"></span></div><span>Watt Works Discover Operations</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.2s">
+                        <div class="tab-content">
+                            <div id="ProjectsTab-1" class="tab-pane fade show p-0 active">
+                                <div class="projects-item">
+                                    <img src="img/industrial-1.jpg" class="img-fluid w-100" alt="">
+                                    <div class="projects-content bg-white p-4">
+                                        <h4 class="mb-3">Power Path Unveiling Our process</h4>
+                                        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, quo? Enim facere, praesentium voluptatem vero officiis libero fuga rem autem amet recusandae voluptates, dolorem quo magni. Corporis eveniet consequuntur accusantium.
+                                        </p>
+                                        <a class="btn btn-primary py-2 px-4" href="#">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ProjectsTab-2" class="tab-pane fade show p-0">
+                                <div class="projects-item">
+                                    <img src="img/industrial-2.jpg" class="img-fluid w-100" alt="">
+                                    <div class="projects-content bg-white p-4">
+                                        <h4 class="mb-3">Electro Flow Decoding Our method</h4>
+                                        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, quo? Enim facere, praesentium voluptatem vero officiis libero fuga rem autem amet recusandae voluptates, dolorem quo magni. Corporis eveniet consequuntur accusantium.
+                                        </p>
+                                        <a class="btn btn-primary py-2 px-4" href="#">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ProjectsTab-3" class="tab-pane fade show p-0">
+                                <div class="projects-item">
+                                    <img src="img/commercial-1.jpg" class="img-fluid w-100" alt="">
+                                    <div class="projects-content bg-white p-4">
+                                        <h4 class="mb-3">Energetic Engine Behind Scenes</h4>
+                                        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, quo? Enim facere, praesentium voluptatem vero officiis libero fuga rem autem amet recusandae voluptates, dolorem quo magni. Corporis eveniet consequuntur accusantium.
+                                        </p>
+                                        <a class="btn btn-primary py-2 px-4" href="#">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ProjectsTab-4" class="tab-pane fade show p-0">
+                                <div class="projects-item">
+                                    <img src="img/commercial-2.jpg" class="img-fluid w-100" alt="">
+                                    <div class="projects-content bg-white p-4">
+                                        <h4 class="mb-4">Watt Works Discover Operations</h4>
+                                        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, quo? Enim facere, praesentium voluptatem vero officiis libero fuga rem autem amet recusandae voluptates, dolorem quo magni. Corporis eveniet consequuntur accusantium.
+                                        </p>
+                                        <a class="btn btn-primary py-2 px-4" href="#">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Projects End -->
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container py-5">
+                <div class="row g-5 mb-5 align-items-center">
+                    <div class="col-lg-7">
+                        <div class="position-relative mx-auto">
+                            <input class="form-control w-100 py-3 ps-4 pe-5" type="text" placeholder="Email address to Subscribe">
+                            <button type="button" class="btn btn-primary position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-light btn-md-square me-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <div class="footer-item">
+                                <h3 class="text-white mb-4"><i class="fas fa-bolt text-primary me-3"></i>Electra</h3>
+                                <p class="mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Quick Links</h4>
+                            <a href="#"> Home</a>
+                            <a href="#"> About us</a>
+                            <a href="#"> Service</a>
+                            <a href="#"> Testimonial</a>
+                            <a href="#"> Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Electricity service</h4>
+                            <a href="#"> Air Conditioning</a>
+                            <a href="#"> Electrical Panels</a>
+                            <a href="#"> Security System</a>
+                            <a href="#"> Indoor Lighting</a>
+                            <a href="#"> Electrical Services</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Contact Info</h4>
+                            <a href="#"><i class="fa fa-map-marker-alt text-primary me-2"></i> 123 Street, New York, USA</a>
+                            <a href="mailto:info@example.com"><i class="fas fa-envelope text-primary me-2"></i> info@example.com</a>
+                            <a href="mailto:info@example.com"><i class="fas fa-envelope text-primary me-2"></i> info@example.com</a>
+                            <a href="tel:+012 345 67890"><i class="fas fa-phone text-primary me-2"></i> +012 345 67890</a>
+                            <a href="tel:+012 345 67890" class="mb-3"><i class="fas fa-print text-primary me-2"></i> +012 345 67890</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-body">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+         
+
+
+        
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+
+</html>

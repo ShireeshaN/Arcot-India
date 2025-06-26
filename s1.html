@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lighting Steps with Arrows from Card to Card</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #49232F;
+      color: white;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    .step {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 120px;
+      gap: 30px;
+      position: relative;
+    }
+    .step.reverse {
+      flex-direction: row-reverse;
+    }
+    .text-box {
+      flex: 0 0 45%;
+      background-color: #6b3246;
+      padding: 40px 30px;
+      border-radius: 12px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: background 0.3s;
+      z-index: 2;
+    }
+    .step:hover .text-box {
+      background-color: #813b58;
+    }
+    .step-number {
+      font-size: 64px;
+      font-weight: bold;
+      -webkit-text-stroke: 1px white;
+      color: transparent;
+    }
+    .step-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .step-desc {
+      font-size: 18px;
+      margin-top: 16px;
+    }
+    .image-box {
+      flex: 0 0 45%;
+      height: 400px;
+    }
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    .arrow-connector {
+      position: absolute;
+      bottom: -90px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 100px;
+      z-index: 0;
+    }
+    .arrow-connector svg {
+      width: 100%;
+      height: 100%;
+    }
+    .arrow-connector path {
+      stroke: white;
+      stroke-width: 2;
+      stroke-dasharray: 6,6;
+      fill: none;
+      /* removed marker-end so only dotted line shows */
+    }
+    @media (max-width: 768px) {
+      .step {
+        flex-direction: column !important;
+      }
+      .step.reverse {
+        flex-direction: column !important;
+      }
+      .text-box, .image-box {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="step">
+    <div class="text-box">
+      <div class="step-number">01</div>
+      <div class="step-title">Contact / Inquiry</div>
+      <div class="step-desc">We help with everything from small to large projects. Then we book a visit.</div>
+    </div>
+    <div class="image-box">
+      <img src="https://exaktor.com/wp-content/uploads/2024/01/group-1409-1.jpg" alt="Step 1">
+    </div>
+    <div class="arrow-connector">
+      <svg viewBox="0 0 200 100">
+        <path d="M 20 10 C 100 140, 100 140, 180 10" />
+      </svg>
+    </div>
+  </div>
+
+  <div class="step reverse">
+    <div class="text-box">
+      <div class="step-number">02</div>
+      <div class="step-title">Visit and Energy Calculation</div>
+      <div class="step-desc">A site visit is done to inspect energy use and lighting needs.</div>
+    </div>
+    <div class="image-box">
+      <img src="https://exaktor.com/wp-content/uploads/2024/01/bild-diagram-1.jpg" alt="Step 2">
+    </div>
+    <div class="arrow-connector">
+      <svg viewBox="0 0 200 100">
+        <path d="M 180 10 C 100 140, 100 140, 20 10" />
+      </svg>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

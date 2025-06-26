@@ -46,7 +46,7 @@
             <div class="container d-flex align-items-center">
                 <div class="d-flex align-items-center h-100">
                     <a href="#" class="navbar-brand" style="height: 125px;">
-                        <h1 class="text-primary mb-0"><i class="fas fa-bolt"></i> Arcot</h1>
+                        <h1 class="text-primary mb-0"><i class="fas fa-bolt"></i> Electra</h1>
                         <!-- <img src="img/logo.png" alt="Logo"> -->
                     </a>
                 </div>
@@ -100,7 +100,7 @@
                                     <a href="about.html" class="nav-item nav-link">About</a>
                                     <a href="service.html" class="nav-item nav-link">Service</a>
                                     <a href="blog.html" class="nav-item nav-link">Blog</a>
-                                    <div class="nav-item dropdown active">
+                                    <div class="nav-item dropdown">
                                         <a href="#" class="nav-link" data-bs-toggle="dropdown">
                                             <span class="dropdown-toggle">Pages</span>
                                         </a>
@@ -108,10 +108,10 @@
                                             <a href="project.html" class="dropdown-item">Our projects</a>
                                             <a href="team.html" class="dropdown-item">Our team</a>
                                             <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                            <a href="404.html" class="dropdown-item active">404 Page</a>
+                                            <a href="404.html" class="dropdown-item">404 Page</a>
                                         </div>
                                     </div>
-                                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                                    <a href="contact.html" class="nav-item nav-link active">Contact</a>
                                     <div class="nav-btn ps-3">
                                         <button class="btn-search btn btn-primary btn-md-square mt-2 mt-lg-0 mb-4 mb-lg-0 flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
                                         <a href="#" class="btn btn-primary py-2 px-4 ms-0 ms-lg-3"> Get Solution</a>
@@ -148,19 +148,252 @@
         <!-- Header Start -->
         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">404 Page</h4>
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Contact Us</h4>
                 <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-primary">404 Page</li>
+                    <li class="breadcrumb-item active text-primary">Contact</li>
                 </ol>    
             </div>
         </div>
         <!-- Header End -->
 
+          <style>
+   
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+       background-color: #000;
+      color: #fff;
+    }
+    .title {
+      font-size: 38px;
+      font-weight: 700;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+      color: #ffd700;
+      letter-spacing: 2px;
+    }
+   
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .image-box {
+      width: 50%;
+      height: 600px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(255, 255, 0, 0.4);
+    }
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.5s ease;
+      border-radius: 16px;
+    }
+    .steps-box {
+      width: 50%;
+      height: 600px;
+      display: grid;
+      grid-template-rows: repeat(17, 1fr);
+      position: relative;
+      padding: 10px;
+    }
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background-color: rgba(20, 20, 20, 0.8);
+      padding: 6px 12px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, background 0.3s ease;
+      cursor: pointer;
+      width: 90%;
+      margin: 0 auto;
+    }
+    .step:hover,
+    .step.active {
+      background: linear-gradient(90deg, #ffd70044, #ffaa00aa);
+      transform: scale(1.03);
+    }
+    .step-number {
+      font-size: 32px;
+      font-weight: bold;
+      color: #ffd700;
+      min-width: 50px;
+      text-align: center;
+    }
+    .step-content {
+      text-align: left;
+    }
+    .step-title {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    .step-description {
+      font-size: 13px;
+      color: #bbb;
+    }
+    .arrow-line {
+      width: 2px;
+      height: 100%;
+      background: repeating-linear-gradient(to bottom, #ffd700, #ffd700 4px, transparent 4px, transparent 8px);
+      margin: 0 auto;
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+    .arrow-tip {
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 10px solid #ffd700;
+      margin: 0 auto;
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.2; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(3px); }
+      100% { opacity: 0.2; transform: translateY(0); }
+    }
+    @media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
 
-        <!-- 404 Start -->
-      <section class="fancy-gallery">
+  .image-box {
+    width: 100%;
+    height: 300px;
+    order: 1;
+  }
+
+  .steps-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: auto;
+    order: 2;
+    padding: 0 10px;
+  }
+
+  .step {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 10px;
+    gap: 12px;
+  }
+
+  .step-number {
+    font-size: 24px;
+    min-width: 40px;
+  }
+
+  .step-title {
+    font-size: 16px;
+  }
+
+  .step-description {
+    font-size: 13px;
+  }
+
+  .arrow-line, .arrow-tip {
+    display: none;
+  }
+}
+
+  </style>
+
+
+        <!-- 6 steps Start -->
+
+         <section class="section">
+    <h1 class="title">Our Lighting Process</h1>
+    <div class="container">
+      <!-- Image Box -->
+      <div class="image-box" id="imageBox">
+        <img id="stepImage" src="img/about-2.jpg" alt="Lighting Step">
+      </div>
+
+      <!-- Steps Box -->
+      <div class="steps-box">
+        <div class="step" style="grid-row: 1" onmouseover="showStep(0, this)">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <div class="step-title">Design</div>
+            <div class="step-description">Custom lighting plan matching layout & aesthetics.</div>
+          </div>
+        </div>
+        <div class="arrow-line" style="grid-row: 2"></div>
+        <div class="arrow-tip" style="grid-row: 3"></div>
+
+        <div class="step" style="grid-row: 4" onmouseover="showStep(1, this)">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <div class="step-title">Development</div>
+            <div class="step-description">Technical drawings, photometric simulation.</div>
+          </div>
+        </div>
+        <div class="arrow-line" style="grid-row: 5"></div>
+        <div class="arrow-tip" style="grid-row: 6"></div>
+
+        <div class="step" style="grid-row: 7" onmouseover="showStep(2, this)">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <div class="step-title">Manufacturing</div>
+            <div class="step-description">Fixture production using certified LEDs.</div>
+          </div>
+        </div>
+        <div class="arrow-line" style="grid-row: 8"></div>
+        <div class="arrow-tip" style="grid-row: 9"></div>
+
+        <div class="step" style="grid-row: 10" onmouseover="showStep(3, this)">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <div class="step-title">Installation</div>
+            <div class="step-description">Site setup by professional lighting team.</div>
+          </div>
+        </div>
+        <div class="arrow-line" style="grid-row: 11"></div>
+        <div class="arrow-tip" style="grid-row: 12"></div>
+
+        <div class="step" style="grid-row: 13" onmouseover="showStep(4, this)">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <div class="step-title">Testing</div>
+            <div class="step-description">Performance and safety validations.</div>
+          </div>
+        </div>
+        <div class="arrow-line" style="grid-row: 14"></div>
+        <div class="arrow-tip" style="grid-row: 15"></div>
+
+        <div class="step" style="grid-row: 16" onmouseover="showStep(5, this)">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <div class="step-title">Commissioning</div>
+            <div class="step-description">Handover with smart control integration.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+       
+        <!-- 6 steps End -->
+
+
+
+              <section class="fancy-gallery">
   <h2 class="gallery-heading">Visual Lighting Showcase</h2>
   <div class="gallery-wrap">
     <div class="gallery-card">
@@ -214,7 +447,7 @@
   </div>
       </section>
 
-      <style>
+<style>
     .fancy-gallery {
   background: #000;
   padding: 60px 20px;
@@ -284,8 +517,7 @@
   }
 }
 
-       </style>
-        <!-- 404 End -->
+</style>
 
         <!-- Footer Start -->
         <div class="container-fluid footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
@@ -310,7 +542,7 @@
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <div class="footer-item">
-                                <h3 class="text-white mb-4"><i class="fas fa-bolt text-primary me-3"></i>Arcot </h3>
+                                <h3 class="text-white mb-4"><i class="fas fa-bolt text-primary me-3"></i>Electra</h3>
                                 <p class="mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
                             </div>
                         </div>
@@ -359,8 +591,10 @@
                         <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
                     </div>
                     <div class="col-md-6 text-center text-md-end text-body">
-                       
-                        Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">Arcot Industries Private Limited</a>
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>
                     </div>
                 </div>
             </div>
@@ -388,6 +622,40 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+
+         <script>
+    const stepImage = document.getElementById('stepImage');
+    const steps = document.querySelectorAll('.step');
+    const images = [
+      'img/about-2.jpg',
+      'img/about-2.jpg',
+      'img/about-2.jpg',
+      'img/about-2.jpg',
+      'img/about-2.jpg',
+      'img/about-2.jpg'
+    ];
+
+    let current = 0;
+    function highlightStep(index) {
+      steps.forEach((step, i) => {
+        step.classList.toggle('active', i === index);
+      });
+    }
+
+    function showStep(index, element = null) {
+      stepImage.style.opacity = 0;
+      setTimeout(() => {
+        stepImage.src = images[index];
+        stepImage.style.opacity = 1;
+      }, 300);
+      highlightStep(index);
+    }
+
+    setInterval(() => {
+      showStep(current);
+      current = (current + 1) % images.length;
+    }, 4000);
+  </script>
     </body>
 
 </html>

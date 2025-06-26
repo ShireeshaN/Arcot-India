@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Process Replica</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #060505 ;
+      color: white;
+    }
+
+    .overview {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .overview h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .overview-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .step-link  {
+      text-decoration: none;
+      color: #aaa;
+      transition: 0.3s ease;
+    }
+
+    .step-link:hover .step-title {
+      color: white;
+    }
+
+    .step-link:hover .step-num {
+      transform: scale(1.2);
+    }
+
+    .step-num {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: transparent;
+      -webkit-text-stroke: 1px white;
+      transition: transform 0.3s ease;
+    }
+
+    .step-title {
+      font-weight: bold;
+      margin-top: 0.5rem;
+      color: #aaa;
+      
+    }
+
+    .step-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 10%;
+      gap: 40px;
+      position: relative;
+     
+    }
+  
+
+    .text-step {
+  flex: 1 1 400px;
+  padding: 40px;
+  min-height: 400px;
+  position: relative;
+  z-index: 1; /* Keep it lower than arrow */
+  transition: background-color 0.3s ease;
+}
+
+.text-step:hover {
+  background-color:#222222;
+  z-index: 1; /* Keep it low so arrow is still above */
+}
+
+
+    .step-count {
+      font-size: 5rem;
+      -webkit-text-stroke: 1px white;
+      color: transparent;
+      font-weight: bold;
+    }
+
+    .step-heading {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+    .step{
+      font-size: 20px;
+
+    }
+
+    .step-desc {
+      margin-top: 1rem;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    .step-img {
+      flex: 1 1 400px;
+    }
+
+    .step-img img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+   .arrow {
+  display: block;
+  text-align: center;
+  margin-top: -80px;
+  margin-bottom: -80px;
+  z-index: 10; /* Ensure it's above cards */
+  position: relative;
+  pointer-events: none; /* So it doesn't block hover effects */
+}
+
+
+.arrow svg {
+  width: 200px;
+  height: auto;
+}
+
+
+    @media (max-width: 768px) {
+      .overview-steps {
+        grid-template-columns: 1fr;
+      }
+      .step-section {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Overview Section -->
+  <section class="overview">
+    <h2>6 Stages of Turnkey Delivery</h2>
+    <div class="overview-steps">
+      <a href="#step-1" class="step-link">
+        <div class="step-num">01</div>
+        <div class="step-title">Design</div>
+      </a>
+      <a href="#step-2" class="step-link">
+        <div class="step-num">02</div>
+        <div class="step-title">Development</div>
+      </a>
+      <a href="#step-3" class="step-link">
+        <div class="step-num">03</div>
+        <div class="step-title">Manufacturing</div>
+      </a>
+      <a href="#step-4" class="step-link">
+        <div class="step-num">04</div>
+        <div class="step-title">Installation</div>
+      </a>
+      <a href="#step-5" class="step-link">
+        <div class="step-num">05</div>
+        <div class="step-title">Testing</div>
+      </a>
+      <a href="#step-6" class="step-link">
+        <div class="step-num">06</div>
+        <div class="step-title">Commisioning</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Step 1 -->
+  <section id="step-1" class="step-section">
+    <div class="text-step">
+      <small class="step">Step</small>
+      <div class="step-count ">01</div>
+      <div class="step-heading">Design</div>
+      <div class="step-desc">
+        At Arcot Industries, our design process is driven by innovation, precision, and client-specific requirements. We create smart, scalable, and customized solutions tailored to each project—across power, lighting, automation, and smart infrastructure. Every design is engineered for performance, safety, and seamless execution from concept to commissioning.
+      </div>
+    </div>
+    <div class="step-img">
+      <img src="https://exaktor.com/wp-content/uploads/2024/01/group-1411-2-1.jpg" alt="Step 1 Image">
+    </div>
+  </section>
+
+  <!-- Arrow between steps -->
+<div class="arrow">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="20 20 300 460">
+    <defs>
+      <marker id="arrowhead" markerWidth="8" markerHeight="8"
+              refX="4" refY="4" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,8 L8,4 Z" fill="white" />
+      </marker>
+    </defs>
+    <path d="M0,0 C 200 ,200 200,-100 300,400"
+          stroke="white" stroke-width="4" stroke-dasharray="10,10"
+          fill="none" marker-end="url(#arrowhead)" />
+  </svg>
+</div>
+
+
+
+
+
+  <!-- Step 2 -->
+  <section id="step-2" class="step-section">
+    <div class="step-img">
+      <img src="https://exaktor.com/wp-content/uploads/2024/01/bild-diagram-1.jpg" alt="Step 2 Image">
+    </div>
+    <div class="text-step">
+      <small class="step">Step</small>
+      <div class="step-count">02</div>
+      <div class="step-heading">Development</div>
+      <div class="step-desc">
+        Our development process transforms innovative designs into high-performance, functional solutions with a focus on quality and efficiency. Leveraging advanced engineering tools and cross-domain expertise, we build systems that are reliable, scalable, and tailored to client needs. Every product is developed with precision, adhering to the highest industry standards and future-ready practices.
+      </div>
+    </div>
+  </section>
+
+<!-- Arrow from top-right to bottom-left -->
+<div class="arrow">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 420">
+    <defs>
+      <marker id="arrowhead" markerWidth="12" markerHeight="12"
+              refX="10" refY="5" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,10 L10,5 Z" fill="white" />
+      </marker>
+    </defs>
+    <path d="M400,0 C 100,350 150,10 40,400"
+          stroke="white" stroke-width="4" stroke-dasharray="10,10"
+          fill="none" marker-end="url(#arrowhead)" />
+  </svg>
+</div>
+
+
+
+
+ <!-- Step 3 -->
+  <section id="step-3" class="step-section">
+    <div class="text-step">
+      <small class="step">Step</small>
+      <div class="step-count ">03</div>
+      <div class="step-heading">Manufacturing</div>
+      <div class="step-desc">
+        At Arcot Industries, we combine cutting-edge technology with robust engineering to manufacture products that meet global quality standards. Our state-of-the-art facilities enable precise fabrication, rigorous quality control, and seamless integration of custom specifications. We ensure durability, consistency, and performance in every component we produce.
+      </div>
+    </div>
+    <div class="step-img">
+      <img src="https://exaktor.com/wp-content/uploads/2024/01/group-1411-2-1.jpg" alt="Step 1 Image">
+    </div>
+  </section>
+
+    <!-- Arrow between steps -->
+<div class="arrow">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="20 20 300 460">
+    <defs>
+      <marker id="arrowhead" markerWidth="8" markerHeight="8"
+              refX="4" refY="4" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,8 L8,4 Z" fill="white" />
+      </marker>
+    </defs>
+    <path d="M0,0 C 200 ,200 200,-100 300,400"
+          stroke="white" stroke-width="4" stroke-dasharray="10,10"
+          fill="none" marker-end="url(#arrowhead)" />
+  </svg>
+</div>
+
+
+
+  <!-- Step 4 -->
+  <section id="step-4" class="step-section">
+    <div class="step-img">
+      <img src="https://exaktor.com/wp-content/uploads/2024/01/bild-diagram-1.jpg" alt="Step 2 Image">
+    </div>
+    <div class="text-step">
+      <small class="step">Step</small>
+      <div class="step-count">04</div>
+      <div class="step-heading">Installation</div>
+      <div class="step-desc">
+        Our expert installation teams ensure seamless on-site execution with precision, safety, and adherence to project timelines. From complex power systems to smart lighting and automation setups, we handle every installation with technical accuracy and minimal disruption. We ensure full system integration and operational readiness from day one.
+      </div>
+    </div>
+  </section>
+
+<!-- Arrow from top-right to bottom-left -->
+<div class="arrow">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 420">
+    <defs>
+      <marker id="arrowhead" markerWidth="12" markerHeight="12"
+              refX="10" refY="5" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,10 L10,5 Z" fill="white" />
+      </marker>
+    </defs>
+    <path d="M400,0 C 100,350 150,10 40,400"
+          stroke="white" stroke-width="4" stroke-dasharray="10,10"
+          fill="none" marker-end="url(#arrowhead)" />
+  </svg>
+</div>
+
+
+
+  <!-- Step 5 -->
+  <section id="step-5" class="step-section">
+    <div class="text-step">
+      <small class="step">Step</small>
+      <div class="step-count ">05</div>
+      <div class="step-heading">Testing</div>
+      <div class="step-desc">
+        We conduct rigorous testing at every stage to ensure system reliability, safety, and peak performance. Each component and integrated system undergoes functional, environmental, and quality checks to meet both industry standards and client expectations. Our testing process guarantees flawless operation before final deployment.
+      </div>
+    </div>
+    <div class="step-img">
+      <img src="https://exaktor.com/wp-content/uploads/2024/01/group-1411-2-1.jpg" alt="Step 1 Image">
+    </div>
+  </section>
+
+  <!-- Arrow between steps -->
+<div class="arrow">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="20 20 300 460">
+    <defs>
+      <marker id="arrowhead" markerWidth="8" markerHeight="8"
+              refX="4" refY="4" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,8 L8,4 Z" fill="white" />
+      </marker>
+    </defs>
+    <path d="M0,0 C 200 ,200 200,-100 300,400"
+          stroke="white" stroke-width="4" stroke-dasharray="10,10"
+          fill="none" marker-end="url(#arrowhead)" />
+  </svg>
+</div>
+
+
+
+
+
+  <!-- Step 2 -->
+  <section id="step-6" class="step-section">
+    <div class="step-img">
+      <img src="https://exaktor.com/wp-content/uploads/2024/01/bild-diagram-1.jpg" alt="Step 2 Image">
+    </div>
+    <div class="text-step">
+      <small class="step">Step</small>
+      <div class="step-count">06</div>
+      <div class="step-heading">Commisioning</div>
+      <div class="step-desc">
+        Our commissioning process ensures that every system is fully functional, optimized, and ready for long-term performance. We conduct final validations, safety checks, and client walkthroughs to ensure seamless handover. With a focus on reliability and efficiency, we deliver solutions that are deployment-ready from day one.
+      </div>
+    </div>
+  </section>
+
+
+
+</body>
+</html>
+

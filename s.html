@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lighting Process Steps</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #3b1f2b;
+      color: #fff;
+    }
+    .steps-nav {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      padding: 60px 20px 30px;
+      background-color: #4b2936;
+    }
+    .step-nav-item {
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .step-nav-item:hover .number,
+    .step-nav-item:hover .label {
+      color: #fff;
+    }
+    .number {
+      font-size: 32px;
+      color: #888;
+      font-weight: bold;
+    }
+    .label {
+      color: #aaa;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    section.step {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 60px;
+      position: relative;
+    }
+    section.step:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .step-content {
+      width: 45%;
+    }
+    .step-content h2 {
+      font-size: 42px;
+      margin: 0;
+    }
+    .step-content p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-top: 10px;
+      color: #ddd;
+    }
+    .step-image {
+      width: 45%;
+    }
+    .step-image img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .arrow {
+      position: absolute;
+      width: 80px;
+      height: 120px;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: none;
+    }
+    .arrow::before {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 120px;
+      border-right: 2px dashed #fff;
+      border-bottom: 2px dashed #fff;
+      border-radius: 0 0 100px 100px;
+      transform: rotate(45deg);
+    }
+    .arrow::after {
+      content: "\203A";
+      position: absolute;
+      font-size: 28px;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+    }
+    @media (max-width: 768px) {
+      section.step {
+        flex-direction: column !important;
+        padding: 40px 20px;
+      }
+      .step-content, .step-image {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="steps-nav">
+    <div class="step-nav-item" onclick="document.getElementById('step1').scrollIntoView({ behavior: 'smooth' })">
+      <div class="number">01</div>
+      <div class="label">Contact / Inquiry</div>
+    </div>
+    <div class="step-nav-item" onclick="document.getElementById('step2').scrollIntoView({ behavior: 'smooth' })">
+      <div class="number">02</div>
+      <div class="label">Energy Calculation</div>
+    </div>
+    <div class="step-nav-item" onclick="document.getElementById('step3').scrollIntoView({ behavior: 'smooth' })">
+      <div class="number">03</div>
+      <div class="label">Solution Suggestion</div>
+    </div>
+    <div class="step-nav-item" onclick="document.getElementById('step4').scrollIntoView({ behavior: 'smooth' })">
+      <div class="number">04</div>
+      <div class="label">Lighting Calculation</div>
+    </div>
+    <div class="step-nav-item" onclick="document.getElementById('step5').scrollIntoView({ behavior: 'smooth' })">
+      <div class="number">05</div>
+      <div class="label">Delivery</div>
+    </div>
+    <div class="step-nav-item" onclick="document.getElementById('step6').scrollIntoView({ behavior: 'smooth' })">
+      <div class="number">06</div>
+      <div class="label">Follow-up</div>
+    </div>
+  </div>
+
+  <section class="step" id="step1">
+    <div class="step-content">
+      <h2>STEP 01 - Contact / Inquiry</h2>
+      <p>You contact us with your request and tell us more about your needs. We help with everything from small to large projects that require documentation and planning. Then we book a visit.</p>
+    </div>
+    <div class="step-image">
+      <img src="https://via.placeholder.com/500x300?text=Contact" alt="Step 1">
+    </div>
+    <div class="arrow"></div>
+  </section>
+
+  <section class="step" id="step2">
+    <div class="step-content">
+      <h2>STEP 02 - Visit and Energy Calculation</h2>
+      <p>We visit the site and calculate the energy consumption and lighting requirements based on your space and usage.</p>
+    </div>
+    <div class="step-image">
+      <img src="https://via.placeholder.com/500x300?text=Energy" alt="Step 2">
+    </div>
+    <div class="arrow"></div>
+  </section>
+
+  <section class="step" id="step3">
+    <div class="step-content">
+      <h2>STEP 03 - Suggested Solution</h2>
+      <p>We prepare a custom solution with the right fixtures, layout, and smart integration for your space.</p>
+    </div>
+    <div class="step-image">
+      <img src="https://via.placeholder.com/500x300?text=Solution" alt="Step 3">
+    </div>
+    <div class="arrow"></div>
+  </section>
+
+  <section class="step" id="step4">
+    <div class="step-content">
+      <h2>STEP 04 - Lighting Calculation</h2>
+      <p>Detailed lighting calculation and layout planning using latest software and photometric data.</p>
+    </div>
+    <div class="step-image">
+      <img src="https://via.placeholder.com/500x300?text=Calculation" alt="Step 4">
+    </div>
+    <div class="arrow"></div>
+  </section>
+
+  <section class="step" id="step5">
+    <div class="step-content">
+      <h2>STEP 05 - Delivery</h2>
+      <p>Fixtures and accessories are packed and delivered to site based on agreed timeline and project needs.</p>
+    </div>
+    <div class="step-image">
+      <img src="https://via.placeholder.com/500x300?text=Delivery" alt="Step 5">
+    </div>
+    <div class="arrow"></div>
+  </section>
+
+  <section class="step" id="step6">
+    <div class="step-content">
+      <h2>STEP 06 - Follow-up</h2>
+      <p>Post-delivery support, commissioning, and warranty coverage. We ensure complete satisfaction and performance.</p>
+    </div>
+    <div class="step-image">
+      <img src="https://via.placeholder.com/500x300?text=Follow-up" alt="Step 6">
+    </div>
+  </section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Process - Exaktor Replica</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #4d2737;
+      color: white;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .overview-heading {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .step-box {
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .step-box:hover {
+      transform: scale(1.05);
+    }
+
+    .step-number {
+      font-size: 48px;
+      font-weight: bold;
+      color: transparent;
+      -webkit-text-stroke: 1.5px white;
+    }
+
+    .step-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 10px;
+      color: #e2e2e2;
+    }
+
+    .step-box:hover .step-title {
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <div class="overview-heading">an overview of the next step.</div>
+
+    <div class="steps-grid">
+      <a class="step-box" href="#step-1">
+        <div class="step-number">01</div>
+        <div class="step-title">Contact / Inquiry</div>
+      </a>
+      <a class="step-box" href="#step-2">
+        <div class="step-number">02</div>
+        <div class="step-title">Visit and energy calculation</div>
+      </a>
+      <a class="step-box" href="#step-3">
+        <div class="step-number">03</div>
+        <div class="step-title">Suggested solution</div>
+      </a>
+      <a class="step-box" href="#step-4">
+        <div class="step-number">04</div>
+        <div class="step-title">Quote and lighting calculation</div>
+      </a>
+      <a class="step-box" href="#step-5">
+        <div class="step-number">05</div>
+        <div class="step-title">Delivery</div>
+      </a>
+      <a class="step-box" href="#step-6">
+        <div class="step-number">06</div>
+        <div class="step-title">Follow-up</div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
