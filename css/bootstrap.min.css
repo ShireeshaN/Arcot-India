@@ -232,12 +232,12 @@ sup {
 }
 
 a {
-    color: #f68a0a;
+    color: #8f8e8d;
     text-decoration: none
 }
 
 a:hover {
-    color: #c56e08
+    color: #6b6a68
 }
 
 a:not([href]):not([class]),
@@ -8284,7 +8284,7 @@ fieldset:disabled .btn {
 }
 
 .text-primary {
-    color: #f68a0a !important
+    color: white !important
 }
 
 .text-secondary {
