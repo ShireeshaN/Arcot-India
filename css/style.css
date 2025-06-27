@@ -77,13 +77,13 @@
 }
 
 .btn.btn-light {
-    color: var(--bs-primary);
+    color: rgb(5, 5, 5);
     border: none;
 }
 
 .btn.btn-light:hover {
-    color: var(--bs-white);
-    background: var(--bs-primary);
+    color: black;
+    background: white;
 }
 
 
@@ -186,7 +186,7 @@
     width: 60px;
     height: 60px;
     background:rgb(26, 26, 26);
-    color: #f2660f;
+    color: #fbfaf9;
     font-size: 26px;
     display: flex;
     align-items: center;
@@ -256,68 +256,7 @@
 /*** Single Page Hero Header End ***/
 
 
-/*** Banner Start ***/
-.banner {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../img/banner-img.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 9;
-}
 
-.banner .container {
-    position: relative;
-    z-index: 99;
-}
-
-.banner::after {
-    content: "";
-    position: absolute;
-    width: 100px;
-    height: 500px;
-    top: -200px;
-    left: 0;
-    background: var(--bs-primary);
-    transform: rotate(45deg);
-    z-index: 1;
-}
-
-.banner::before {
-    content: "";
-    position: absolute;
-    width: 100px;
-    height: 500px;
-    bottom: -200px;
-    right: 0;
-    background: var(--bs-primary);
-    transform: rotate(45deg);
-    z-index: 1;
-}
-
-.banner .banner-design-1 {
-    position: absolute;
-    width: 30px;
-    height: 500px;
-    top: -165px;
-    left: 0;
-    background: var(--bs-dark);
-    transform: rotate(45deg);
-    z-index: 2;
-}
-
-.banner .banner-design-2 {
-    position: absolute;
-    width: 30px;
-    height: 500px;
-    bottom: -165px;
-    right: 0;
-    background: var(--bs-dark);
-    transform: rotate(45deg);
-    z-index: 2;
-}
-/*** Banner End ***/
 
 /*** Service Start ***/
 .service .nav .nav-item {
@@ -550,25 +489,116 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
 }
 /*** Team End ***/
-
 /*** FAQs Start ***/
+
+/* FAQ section with transparent bg image and dark overlay */
+.faq-section {
+    position: relative;
+    background-color: #121212; /* fallback dark */
+    background-image: url('../img/application/appli (1).png'); /* replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Dark transparent overlay */
+.faq-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(18, 18, 18, 0.75); /* 75% opacity dark overlay */
+    z-index: 0;
+}
+
+/* Ensure content is above overlay */
+.faq-section > .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* FAQ container and items */
 .faq-section .accordion .accordion-item {
-    margin-bottom: 20px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
+    margin-bottom: 16px;
     border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #1a1a1a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.faq-section .accordion .accordion-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Accordion question button */
 .faq-section .accordion .accordion-item .accordion-header .accordion-button {
-    color: var(--bs-white);
-    background: rgba(246, 138, 10, .9);
-    font-size: 18px;
+    background-color: #101010;
+    color: #f1f1f1;
+    font-size: 13px; /* smaller font for questions */
+    font-weight: 600;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    padding: 0.85rem 1.25rem;
+    transition: background 0.3s ease, color 0.3s ease;
+    box-shadow: none;
+    outline: none;
+    border-radius: 0;
 }
 
-.faq-section .accordion .accordion-item .accordion-header .accordion-button.collapsed {
-    color: var(--bs-dark);
-    background: var(--bs-light);
+/* Rotate arrow on expand */
+.faq-section .accordion .accordion-item .accordion-header .accordion-button::after {
+    transition: transform 0.3s ease;
 }
-/*** FAQs End ***/
+
+.faq-section .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed)::after {
+    transform: rotate(180deg);
+}
+
+/* Collapsed state style */
+.faq-section .accordion .accordion-item .accordion-header .accordion-button.collapsed {
+    background-color: #f9f9f9;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Smooth collapse/expand transition */
+.faq-section .accordion .accordion-collapse {
+    transition: height 0.35s ease;
+}
+
+/* Accordion answer body */
+.faq-section .accordion .accordion-body {
+    background-color: #222;
+    color: #bbb;
+    font-size: 12.5px; /* smaller font for answers */
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    padding: 1rem 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    line-height: 1.6;
+}
+
+/* Left side headings and text */
+.faq-section h4.text-primary {
+    font-size: 16px;  /* smaller heading */
+    font-weight: 600;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+.faq-section h1.display-5 {
+    font-size: 26px; /* decreased heading size */
+    font-weight: 700;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.faq-section p.mb-4 {
+    font-size: 14px;
+    color:
+
+
 
 /*** Testimonial Start ***/
 .testimonial-carousel .owl-stage-outer {
