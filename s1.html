@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zigzag Circle to Circle</title>
+  <title>Zigzag Circle to Circle Final</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
   <style>
     body {
@@ -15,7 +15,7 @@
     }
 
     .timeline {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
       position: relative;
     }
@@ -53,15 +53,15 @@
     }
 
     .circle {
-      width: 60px;
-      height: 60px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       background-color: #1a1a1a;
-      border: 2px solid #999;
+      border: 2px solid #888;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
+      font-size: 24px;
       color: #fff;
       position: relative;
       z-index: 3;
@@ -73,7 +73,7 @@
 
     .text h4 {
       margin: 0;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: white;
     }
 
@@ -86,24 +86,38 @@
     .connector {
       position: absolute;
       height: 2px;
-      background-color: #555;
+      background-color: #666;
       z-index: 1;
       transform-origin: left center;
+      transition: all 0.4s ease-in-out;
     }
 
-    /* Position connectors manually between step-wrapper */
-    .connector-1 {
-      top: 130px;
-      left: 60px;
-      width: 880px;
-      transform: rotate(5deg);
+    .connector.l1 {
+      top: 40px;
+      left: 50px;
+      width: calc(100% - 100px);
+      transform: rotate(11deg);
     }
 
-    .connector-2 {
-      top: 130px;
-      right: 60px;
-      width: 880px;
-      transform: rotate(-5deg);
+    .connector.l2 {
+      top: 240px;
+      right: 50px;
+      width: calc(100% - 80px);
+      transform: rotate(-11deg);
+    }
+
+    .connector.l3 {
+      top: 40px;
+      left: 50px;
+      width: calc(100% - 100px);
+      transform: rotate(11deg);
+    }
+
+    .connector.l4 {
+      top: 240px;
+      right: 50px;
+      width: calc(100% - 80px);
+      transform: rotate(-11deg);
     }
 
     @media (max-width: 768px) {
@@ -127,7 +141,7 @@
 
   <div class="timeline">
 
-    <!-- Step 1 (Left) -->
+    <!-- Step 1 -->
     <div class="step-wrapper">
       <div class="step left">
         <div class="circle"><i class="fas fa-cogs"></i></div>
@@ -136,10 +150,10 @@
           <p>We manage the full project lifecycle from design to delivery.</p>
         </div>
       </div>
-      <div class="connector connector-1"></div>
+      <div class="connector l1"></div>
     </div>
 
-    <!-- Step 2 (Right) -->
+    <!-- Step 2 -->
     <div class="step-wrapper">
       <div class="step right">
         <div class="circle"><i class="fas fa-shield-alt"></i></div>
@@ -148,10 +162,10 @@
           <p>Adhering to BIS/IEC/IS standards for unmatched safety.</p>
         </div>
       </div>
-      <div class="connector connector-2"></div>
+      <div class="connector l2"></div>
     </div>
 
-    <!-- Step 3 (Left) -->
+    <!-- Step 3 -->
     <div class="step-wrapper">
       <div class="step left">
         <div class="circle"><i class="fas fa-users-cog"></i></div>
@@ -160,10 +174,10 @@
           <p>Certified professionals ensuring high-quality execution.</p>
         </div>
       </div>
-      <div class="connector connector-1"></div>
+      <div class="connector l3"></div>
     </div>
 
-    <!-- Step 4 (Right) -->
+    <!-- Step 4 -->
     <div class="step-wrapper">
       <div class="step right">
         <div class="circle"><i class="fas fa-eye"></i></div>
@@ -172,10 +186,10 @@
           <p>Live tracking and diagnostics to avoid system failure.</p>
         </div>
       </div>
-      <div class="connector connector-2"></div>
+      <div class="connector l4"></div>
     </div>
 
-    <!-- Step 5 (Left) -->
+    <!-- Step 5 -->
     <div class="step-wrapper">
       <div class="step left">
         <div class="circle"><i class="fas fa-leaf"></i></div>

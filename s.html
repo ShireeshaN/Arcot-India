@@ -1,185 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why Choose Arcor</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zigzag Circle to Circle Final</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
   <style>
     body {
-      margin: 0;
+      background: #0b0b0b;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #0b0b0b;
-      color: #f1f1f1;
-    }
-
-    .section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 80px 20px;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 80px;
       color: white;
+      margin: 0;
+      padding: 80px 0;
     }
 
-    .flow-container {
+    .timeline {
+      max-width: 1100px;
+      margin: auto;
       position: relative;
-      margin: 0 auto;
-      width: 90%;
-      max-width: 900px;
     }
 
-    .line-path {
-      position: absolute;
-      top: 30px;
-      left: 30px;
-      width: 2px;
-      height: calc(100% - 60px);
-      background: #555;
-      z-index: 0;
+    .step-wrapper {
+      position: relative;
+      margin: 100px 0;
     }
 
     .step {
-      position: relative;
       display: flex;
       align-items: center;
-      margin-bottom: 100px;
-      z-index: 1;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
     }
 
-    .step:last-child {
-      margin-bottom: 0;
+    .step.left .circle {
+      order: 0;
+    }
+
+    .step.left .text {
+      order: 1;
+      text-align: left;
+      margin-left: 20px;
+      animation-delay: 0.3s;
+
+    }
+
+    .step.right {
+      flex-direction: row-reverse;
+    }
+
+    .step.right .text {
+      margin-right: 20px;
+      text-align: right;
+      animation-delay: 0.4s;
+
     }
 
     .circle {
-      width: 60px;
-      height: 60px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
-      background-color: #1e1e1e;
+      background-color: #1a1a1a;
       border: 2px solid #888;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
+      font-size: 24px;
       color: #fff;
-      flex-shrink: 0;
-      z-index: 2;
       position: relative;
+      z-index: 3;
+      animation: circleGlow 2s ease-in-out infinite;
+
+
     }
 
-    .step-content {
-      margin-left: 40px;
-      max-width: 600px;
+    .text {
+      max-width: 300px;
     }
 
-    .step-content h4 {
+    .text h4 {
       margin: 0;
       font-size: 1.2rem;
-      color: #fff;
+      color: white;
     }
 
-    .step-content p {
-      margin-top: 6px;
+    .text p {
       font-size: 0.95rem;
       color: #bbb;
-      line-height: 1.5;
+      margin-top: 5px;
     }
 
-    .connector-line {
+    .connector {
       position: absolute;
-      width: 2px;
-      height: 100px;
-      background-color: #555;
-      left: 29px;
-      top: 60px;
-      z-index: 0;
+      height: 2px;
+      background-color: #666;
+      z-index: 1;
+      transform-origin: left center;
+      overflow: hidden;
     }
 
-    .step:last-child .connector-line {
-      display: none;
+    .connector::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(to right, #0b0b0b00, #ffffff88, #0b0b0b00);
+      animation: glowMove 1.5s linear infinite;
+
+    }
+
+    @keyframes circleGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px #00ffe0, 0 0 20px #00ffe066, 0 0 30px #00ffe033;
+  }
+  50% {
+    box-shadow: 0 0 20px #00ffe0, 0 0 40px #00ffe088, 0 0 60px #00ffe04f;
+  }
+}
+
+
+    @keyframes fadeSlideLeft {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeSlideRight {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomIn {
+  0% { transform: scale(0.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+    @keyframes glowMove {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    .connector.l1 {
+      top: 40px;
+      left: 50px;
+      width: calc(100% - 100px);
+      transform: rotate(11deg);
+    }
+
+    .connector.l2 {
+      top: 240px;
+      right: 50px;
+      width: calc(100% - 80px);
+      transform: rotate(-11deg);
+    }
+
+    .connector.l3 {
+      top: 40px;
+      left: 50px;
+      width: calc(100% - 100px);
+      transform: rotate(11deg);
+      animation-delay: 1s;
+    }
+
+    .connector.l4 {
+      top: 240px;
+      right: 50px;
+      width: calc(100% - 80px);
+      transform: rotate(-11deg);
+      animation-delay: 2s;
     }
 
     @media (max-width: 768px) {
       .step {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column !important;
+        text-align: center;
       }
 
-      .step-content {
-        margin-left: 0;
-        margin-top: 15px;
+      .text {
+        margin: 20px 0 0;
+        text-align: center !important;
       }
 
-      .line-path {
-        left: 29px;
-      }
-
-      .connector-line {
-        left: 29px;
+      .connector {
+        display: none;
       }
     }
+    .section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 60px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
   </style>
 </head>
 <body>
 
-  <section class="section">
-    <div class="section-title">Why Choose Arcor for Transmission?</div>
+  <h2 class="section-title">Why Choose Arcot for Transmission</h2>
 
-    <div class="flow-container">
-      
-      <div class="step">
-        <div class="circle"><i class="fas fa-project-diagram"></i></div>
-        <div class="step-content">
-          <h4>100% Turnkey Execution</h4>
-          <p>We handle everything from design to testing, delivering seamless results.</p>
-        </div>
-        <div class="connector-line"></div>
-      </div>
 
-      <div class="step">
-        <div class="circle"><i class="fas fa-certificate"></i></div>
-        <div class="step-content">
-          <h4>Standards Compliance</h4>
-          <p>Adhering to BIS/IEC/IS norms to ensure safety and quality.</p>
-        </div>
-        <div class="connector-line"></div>
-      </div>
+  <div class="timeline">
 
-      <div class="step">
-        <div class="circle"><i class="fas fa-users-cog"></i></div>
-        <div class="step-content">
-          <h4>Expert Engineering Team</h4>
-          <p>Certified and experienced professionals managing each step with precision.</p>
-        </div>
-        <div class="connector-line"></div>
-      </div>
-
-      <div class="step">
-        <div class="circle"><i class="fas fa-eye"></i></div>
-        <div class="step-content">
-          <h4>Smart Monitoring Systems</h4>
-          <p>Real-time tracking tools integrated for full visibility and uptime.</p>
-        </div>
-        <div class="connector-line"></div>
-      </div>
-
-      <div class="step">
-        <div class="circle"><i class="fas fa-shield-alt"></i></div>
-        <div class="step-content">
-          <h4>Safety & Sustainability</h4>
-          <p>Our projects meet global safety and environmental standards without compromise.</p>
+    <!-- Step 1 -->
+    <div class="step-wrapper">
+      <div class="step left">
+        <div class="circle"><i class="fas fa-cogs"></i></div>
+        <div class="text">
+          <h4>Turnkey Execution</h4>
+          <p>We manage the full project lifecycle from design to delivery.</p>
         </div>
       </div>
-
-      <!-- Vertical main path line -->
-      <div class="line-path"></div>
-
+      <div class="connector l1"></div>
     </div>
-  </section>
+
+    <!-- Step 2 -->
+    <div class="step-wrapper">
+      <div class="step right">
+        <div class="circle"><i class="fas fa-shield-alt"></i></div>
+        <div class="text">
+          <h4>Safety & Compliance</h4>
+          <p>Adhering to BIS/IEC/IS standards for unmatched safety.</p>
+        </div>
+      </div>
+      <div class="connector l2"></div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step-wrapper">
+      <div class="step left">
+        <div class="circle"><i class="fas fa-users-cog"></i></div>
+        <div class="text">
+          <h4>Expert Engineers</h4>
+          <p>Certified professionals ensuring high-quality execution.</p>
+        </div>
+      </div>
+      <div class="connector l3"></div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step-wrapper">
+      <div class="step right">
+        <div class="circle"><i class="fas fa-eye"></i></div>
+        <div class="text">
+          <h4>Real-time Monitoring</h4>
+          <p>Live tracking and diagnostics to avoid system failure.</p>
+        </div>
+      </div>
+      <div class="connector l4"></div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step-wrapper">
+      <div class="step left">
+        <div class="circle"><i class="fas fa-leaf"></i></div>
+        <div class="text">
+          <h4>Sustainability</h4>
+          <p>Eco-conscious practices for a greener future.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
 </body>
 </html>
