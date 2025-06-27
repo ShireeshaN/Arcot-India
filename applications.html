@@ -368,25 +368,18 @@
       }
     }
   </style>
-  
-  
-   
-
         <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
+        <div class="container-fluid bg-dark">
             <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Projects</h4>
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Applications</h4>
                 <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-primary">Project</li>
+                    <li class="breadcrumb-item active text-primary">Project</li> -->
                 </ol>    
             </div>
         </div>
-        <!-- Header End -->
-
-
-       
+        <!-- Header End -->     
      <style>
  
 
@@ -475,6 +468,243 @@
     }
   </style>
        
+
+
+
+<!-- start -->
+<!-- Applications Showcase -->
+<section class="arcot-applications">
+
+  <!-- Power -->
+  <div id="segment1" class="app-segment" style="background-image: url('img/application/appli (1).png');">
+    <div class="overlay">
+      <h2>🔌 Power</h2>
+      <ul>
+        <li>LT & HT Panel Boards</li>
+        <li>Transmission Line Setups</li>
+        <li>Substation Infrastructure</li>
+      </ul>
+    </div>
+    <button class="down-arrow" onclick="scrollToSegment('segment2')">↓</button>
+  </div>
+
+  <!-- Energy -->
+  <div id="segment2" class="app-segment" style="background-image: url('img/application/appli (3).png');">
+    <div class="overlay">
+      <h2>🌞 Energy</h2>
+      <ul>
+        <li>Solar Rooftop Systems</li>
+        <li>Wind Hybrid Solutions</li>
+        <li>Biomass Power Units</li>
+      </ul>
+    </div>
+    <button class="down-arrow" onclick="scrollToSegment('segment3')">↓</button>
+  </div>
+
+  <!-- Lighting -->
+  <div id="segment3" class="app-segment" style="background-image: url('img/application/appli (2).png');">
+    <div class="overlay">
+      <h2>💡 Lighting</h2>
+      <ul>
+        <li>Facade & Architectural Lighting</li>
+        <li>Smart Street Poles</li>
+        <li>Stage & Highmast Lighting</li>
+      </ul>
+    </div>
+    <button class="down-arrow" onclick="scrollToSegment('segment4')">↓</button>
+  </div>
+
+  <!-- Automation -->
+  <div id="segment4" class="app-segment" style="background-image: url('img/application/appli (4).png');">
+    <div class="overlay">
+      <h2>🤖 Automation</h2>
+      <ul>
+        <li>Home/Building Automation</li>
+        <li>IoT Enabled Control Panels</li>
+        <li>Smart HVAC Systems</li>
+      </ul>
+    </div>
+    <button class="down-arrow" onclick="scrollToSegment('segment5')">↓</button>
+  </div>
+
+  <!-- Smart City -->
+  <div id="segment5" class="app-segment" style="background-image: url('img/application/appli (1).png');">
+    <div class="overlay">
+      <h2>🏙️ Smart City</h2>
+      <ul>
+        <li>EV-Enabled Smart Poles</li>
+        <li>Smart Surveillance Systems</li>
+        <li>IoT Traffic Monitoring</li>
+      </ul>
+    </div>
+    <button class="down-arrow" onclick="scrollToSegment('segment6')">↓</button>
+  </div>
+
+  <!-- R&D -->
+  <div id="segment6" class="app-segment" style="background-image: url('img/application/appli (2).png');">
+    <div class="overlay">
+      <h2>🧪 R & D</h2>
+      <ul>
+        <li>Embedded Systems R&D</li>
+        <li>Energy Optimization</li>
+        <li>Prototyping & Innovation</li>
+      </ul>
+    </div>
+    <button class="down-arrow" onclick="scrollToSegment('segment1')">↑</button>
+  </div>
+
+</section>
+
+<!-- STYLES -->
+<style>
+.arcot-applications {
+  display: block;
+  width: 100%;
+}
+
+.app-segment {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6);
+  transition: filter 0.5s ease;
+  margin-bottom: 60px;
+  overflow: hidden;
+}
+
+.app-segment:hover {
+  filter: brightness(1);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00f9ff88;
+  max-width: 500px;
+}
+
+.overlay h2 {
+  font-size: 2.5rem;
+  color: #00f9ff;
+}
+
+.overlay ul {
+  margin-top: 1rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.overlay li {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.overlay li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #00ffae;
+}
+
+/* Arrow Button Style */
+.down-arrow {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  color: white;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  animation: bounce 1.8s infinite;
+}
+
+.down-arrow:hover {
+  border-color: white;
+  color: white;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 8px);
+  }
+}
+
+@media (max-width: 768px) {
+  .app-segment {
+    height: 60vh; /* reduce height for mobile */
+    margin-bottom: 40px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .overlay {
+    bottom: 5%;
+    left: 5%;
+    padding: 1.2rem;
+    max-width: 90%;
+  }
+
+  .overlay h2 {
+    font-size: 1.5rem;
+  }
+
+  .overlay li {
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
+
+  .down-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
+    bottom: 20px;
+  }
+}
+
+
+</style>
+
+<!-- SCROLL FUNCTION -->
+<script>
+  function scrollToSegment(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+</script>
+
+
+
+
+
+<!-- startend -->
+
+
+
+
+
 
 
 
