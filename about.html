@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>ARCOT INDUSTRIES</title>
+        <title>Arcot Industries Private Limited</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
@@ -27,6 +27,7 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+           <link href="css/segments.css" rel="stylesheet">
     </head>
 
     <body>
@@ -41,497 +42,668 @@
 
         
 
-        <!-- Navbar & Hero Start -->
-        <div class="container-fluid header-top">
-            <div class="container d-flex align-items-center">
-                <div class="d-flex align-items-center h-100">
-                    <a href="#" class="navbar-brand" style="height: 125px;">
-                        <h1 class="text-primary mb-0"><i class="fas fa-bolt"></i> Electra</h1>
-                        <!-- <img src="img/logo.png" alt="Logo"> -->
-                    </a>
-                </div>
-                <div class="w-100 h-100">
-                    <div class="topbar px-0 py-2 d-none d-lg-block" style="height: 45px;">
-                        <div class="row gx-0 align-items-center">
-                            <div class="col-lg-8 text-center text-lg-center mb-lg-0">
-                                <div class="d-flex flex-wrap">
-                                    <div class="border-end border-primary pe-3">
-                                        <a href="#" class="text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
-                                    </div>
-                                    <div class="ps-3">
-                                        <a href="mailto:example@gmail.com" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>example@gmail.com</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 text-center text-lg-end">
-                                <div class="d-flex justify-content-end">
-                                    <div class="d-flex border-end border-primary pe-3">
-                                        <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a>
-                                        <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-instagram"></i></a>
-                                        <a class="btn p-0 text-primary me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                    </div>
-                                    <div class="dropdown ms-3">
-                                        <a href="#" class="dropdown-toggle text-white" data-bs-toggle="dropdown"><small class="text-body"><i class="fas fa-globe-europe text-primary me-2"></i> English</small></a>
-                                        <div class="dropdown-menu">
-                                            <a href="#" class="dropdown-item">English</a>
-                                            <a href="#" class="dropdown-item">Bangla</a>
-                                            <a href="#" class="dropdown-item">French</a>
-                                            <a href="#" class="dropdown-item">Spanish</a>
-                                            <a href="#" class="dropdown-item">Arabic</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="nav-bar px-0 py-lg-0" style="height: 80px;">
-                        <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-lg-end">
-                            <a href="#" class="navbar-brand-2">
-                                <h1 class="text-primary mb-0"><i class="fas fa-bolt"></i> Electra</h1>
-                                <!-- <img src="img/logo.png" alt="Logo"> -->
-                            </a>  
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                                <span class="fa fa-bars"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarCollapse">
-                                <div class="navbar-nav mx-0 mx-lg-auto bg-white">
-                                    <a href="index.html" class="nav-item nav-link">Home</a>
-                                    <a href="about.html" class="nav-item nav-link active">About</a>
-                                    <a href="service.html" class="nav-item nav-link">Service</a>
-                                    <a href="blog.html" class="nav-item nav-link">Blog</a>
-                                    <div class="nav-item dropdown">
-                                        <a href="#" class="nav-link" data-bs-toggle="dropdown">
-                                            <span class="dropdown-toggle">Pages</span>
-                                        </a>
-                                        <div class="dropdown-menu">
-                                            <a href="project.html" class="dropdown-item">Our projects</a>
-                                            <a href="team.html" class="dropdown-item">Our team</a>
-                                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                            <a href="404.html" class="dropdown-item">404 Page</a>
-                                        </div>
-                                    </div>
-                                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                                    <div class="nav-btn ps-3">
-                                        <button class="btn-search btn btn-primary btn-md-square mt-2 mt-lg-0 mb-4 mb-lg-0 flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
-                                        <a href="#" class="btn btn-primary py-2 px-4 ms-0 ms-lg-3"> Get Solution</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Navbar & Hero End -->
+    
+<header>
+  <div class="header-wrap position-relative">
+    <a href="#"><img src="img/logos.png" alt="Logo" class="logo"></a>
+    <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
+    <nav class="navmenu" id="mainNav">
+      <ul class="mb-0">
+         <li><a  href="index.html">Home</a></li>
+             <li><a class="active" href="about.html">About</a></li>
+        <li>
+          <a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a>
+        </li>
+        <li><a href="#">Solutions</a></li>
+        <li><a href="#">Applications</a></li>
+        <li><a href="#">Gallery</a></li>
+           <li><a href="#">Contact</a></li>
+        <li><a href="#"><i class="bi bi-search"></i></a></li>
+      </ul>
+    </nav>
+  </div>
 
-        <!-- Modal Search Start -->
-        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content rounded-0">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body d-flex align-items-center bg-primary">
-                        <div class="input-group w-75 mx-auto d-flex">
-                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
-                            <span id="search-icon-1" class="btn bg-light border nput-group-text p-3"><i class="fa fa-search"></i></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal Search End -->
+  <div id="megaMenu" class="mega-menu">
+    <div class="row">
+     
+<div class="underline"></div>
+<div class="service-submenus d-flex flex-wrap">
+  <div class="service-group">
+    <h6>Energy</h6>
+    <ul>
+      <li><a href="#">Solar</a></li>
+      <li><a href="#">Wind</a></li>
+      <li><a href="#">Biomass</a></li>
+          <li><a href="#">Hydel Power</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Power</h6>
+    <ul>
+      <li><a href="#">transmission</a></li>
+      <li><a href="#">distribution</a></li>
+      <li><a href="#">Low Tention</a></li>
+        <li><a href="#">High Tention</a></li>
+         <li><a href="#">Panel Boards</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Lighting</h6>
+    <ul>
+      <li><a href="#">Residential</a></li>
+      <li><a href="#">Facade</a></li>
+      <li><a href="#">Commercial</a></li>
+       <li><a href="#">Industrial</a></li>
+      <li><a href="#">Street</a></li>
+      <li><a href="#">Park</a></li>
+      <li><a href="#">Stadium</a></li>
+      <li><a href="#">Hospital</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Automation</h6>
+    <ul>
+   
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Commercial</a></li>
+         <li><a href="#">Industrial</a></li>
+           <li><a href="#">Hospital</a></li>
+      <li><a href="#">IOT Based Automation</a></li>
+         <li><a href="#">Hotel</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Smart City</h6>
+    <ul>
+      <li><a href="#">Smart Pole</a></li>
+      <li><a href="#">Smart Conference Hall</a></li>
+       <li><a href="#">Smart Bollards</a></li>
+          <li><a href="#">Smart Bar Counter</a></li>
+              <li><a href="#">Smart Window Leaf AC</a></li>
+    </ul>
+  </div>
 
+   <div class="service-group">
+    <h6>R & D</h6>
+    <ul>
+      <li><a href="#">Smart Pole</a></li>
+    </ul>
+  </div>
+
+   
+</div>
+
+    </div>
+  </div>
+</header>
+
+<script>
+  function toggleMegaMenu(event) {
+    event.preventDefault();
+    const menu = document.getElementById('megaMenu');
+    menu.classList.toggle('show');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('mainNav');
+    const btn = document.getElementById('menuBtn');
+    nav.classList.toggle('show');
+    btn.innerHTML = nav.classList.contains('show')
+      ? '<i class="bi bi-x-lg"></i>'
+      : '<i class="bi bi-list"></i>';
+  }
+
+  document.addEventListener('click', function (e) {
+    const menu = document.getElementById('megaMenu');
+    const nav = document.getElementById('mainNav');
+    if (!e.target.closest('.navmenu') && !e.target.closest('#megaMenu') && !e.target.closest('#menuBtn')) {
+      menu.classList.remove('show');
+    }
+  });
+</script>
+  <style>
+
+    .service-submenus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.service-group {
+  min-width: 200px;
+}
+
+.service-group h6 {
+  font-size: 14px;
+  color: #fcfafa;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: bold;
+}
+
+.service-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-group ul li {
+  margin-bottom: 8px;
+}
+
+.service-group ul li a {
+  color: #fdfbfb;
+  font-size: 13px;
+  text-decoration: none;
+  font-family: 'Six Caps', sans-serif;
+  letter-spacing: 1.5px;
+}
+
+.service-group ul li a:hover {
+  text-decoration: underline;
+}
+
+
+    header {
+      background: #070707;
+  border-bottom: 1px solid #030303;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+      
+    }
+
+    .header-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+    }
+
+    .logo {
+      max-height: 80px;
+    }
+
+    .navmenu {
+      display: flex;
+      
+    }
+
+    .navmenu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .navmenu ul li {
+      position: relative;
+    }
+
+    .navmenu ul li a {
+      text-decoration: none;
+      color: #fffcfc;
+      font-weight: 300;
+     font-family: 'Six Caps', sans-serif;
+ 
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #fff;
+
+  padding: 3px 5px;
+  display: inline-block;
+  text-transform: uppercase;
+    }
+
+    .mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100vw;
+      background: #070707;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      display: none;
+      padding: 30px 60px;
+      z-index: 1000;
+    }
+
+    .mega-menu.show {
+      /* top: 100px; */
+      display: block;
+    }
+
+    .section-title {
+      font-weight: 300;
+      color: #f3ebee;
+      margin-bottom: 10px;
+    }
+
+    .underline {
+      height: 2px;
+      background: #fdfcfd;
+      width: 40px;
+      margin-bottom: 15px;
+    }
+
+    .description {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .mega-menu a {
+      font-size: 14px;
+      color: #fdfbfb;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 20px 10px 0;
+      min-width: 180px;
+       font-family: 'Six Caps', sans-serif;
+    }
+
+    .mega-menu a:hover {
+      text-decoration: underline;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+    }
+
+    /* Mobile View */
+    @media (max-width: 768px) {
+      .header-wrap {
+        padding: 15px 20px;
+      }
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 22px;
+        z-index: 1001;
+      }
+
+      .navmenu {
+        width: 100%;
+        flex-direction: column;
+        display: none;
+      }
+
+      .navmenu.show {
+        display: flex;
+        padding-top: 70px;
+      }
+
+      .navmenu ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        padding: 0 20px;
+      }
+
+      .mega-menu {
+        position: static;
+        padding: 20px;
+        display: none;
+      }
+
+      .mega-menu.show {
+        display: block;
+        top: auto;
+      }
+
+      .mega-menu .row {
+        flex-direction: column;
+      }
+
+      .mega-menu .d-flex {
+        flex-direction: column;
+      }
+
+      .mega-menu a {
+        min-width: unset;
+        margin: 5px 0;
+      }
+    }
+  </style>
 
         <!-- Header Start -->
         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">About Us</h4>
+                <h4 class="text-white display-6 mb-4 wow fadeInDown" data-wow-delay="0.1s">WHO WE ARE ?</h4>
                 <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-primary">About</li>
+                    <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> -->
+                  
                 </ol>    
             </div>
         </div>
         <!-- Header End -->
 
 
-        <!-- About Start -->
-        <div class="container-fluid about py-5">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.2s">
-                        <div class="h-100">
-                            <h4 class="text-primary">About Us</h4>
-                            <h1 class="display-4 mb-4">Providing you with the highest quality of features</h1>
-                            <div class="row g-4 mb-4">
-                                <div class="col-md-6">
-                                    <a href="#" class="d-flex">
-                                        <span class="fas fa-bolt fa-3x me-3"></span>
-                                        <h4 class="mb-0">Emergency Power Solution</h4>
-                                    </a>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="#" class="d-flex">
-                                        <span class="fas fa-broadcast-tower fa-3x me-3"></span>
-                                        <h4 class="mb-0">Full-Service Electrical Layout</h4>
-                                    </a>
-                                </div>
-                            </div>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, minus. At velit nam, animi culpa fugiat neque facere illum, eum possimus omnis accusantium deleniti consectetur temporibus necessitatibus asperiores sunt dicta?
-                            </p>
-                            <div class="text-dark mb-4">
-                                <p class="fs-5"><span class="fa fa-check text-primary me-2"></span> Installed, maintained and repaired lighting for clients.</p>
-                                <p class="fs-5"><span class="fa fa-check text-primary me-2"></span> Increasingly popular way to generate electricity.</p>
-                                <p class="fs-5"><span class="fa fa-check text-primary me-2"></span> Protect electrical devices from damage.</p>
-                            </div>
-                            <a class="btn btn-primary py-3 px-4 px-md-5 ms-2" href="#">Contact us</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="position-relative h-100">
-                            <img src="img/about-1.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="">
-                            <div class="bg-white">
-                                <div class="position-absolute pt-3 bg-white" style="width: 50%; left: 0; bottom: 0;">
-                                    <div class="bg-primary p-4">
-                                        <h4 class="display-2 mb-0">25+</h4>
-                                        <p class="text-white fs-5 mb-0">years of experience</p>
-                                    </div>
-                                </div>
-                                <div class="position-absolute p-3 bg-white pb-0 pe-0" style="width: 50%; bottom: 0; right: 0;">
-                                    <img src="img/about-2.jpg" class="img-fluid" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- About Section Start -->
+<section class="about-arcot py-5" style="background-color: #0a0a0a;">
+  <div class="container text-white">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-10 text-center">
+        <h3 class="text-center text-white mb-5">🚀 Why Choose Arcot?</h3>
+        <p class="lead animate__animated animate__fadeInUp" style="color: #bbb; font-family: 'Jost', sans-serif;">
+          We are a next-generation engineering company offering end-to-end services in Power, Energy, Lighting, Automation, Smart City, and R&D. With innovation and intelligence at our core, we deliver scalable and sustainable solutions for industries and cities of the future.
+        </p>
+      </div>
+    </div>
+
+    <!-- Why Choose Arcot Radial Graphs -->
+    <div class="p-5 animate__animated animate__fadeInUp animate__delay-1s">
+      <div class="radial-grid">
+        <div class="radial-container">
+          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
+            <circle class="circle-bg" cx="60" cy="60" r="54" />
+            <circle class="circle-progress" cx="60" cy="60" r="54" />
+          </svg>
+          <div class="percentage">100%</div>
+          <div class="radial-label">Custom End-to-End Solutions</div>
         </div>
-        <!-- About End -->
 
-
-        <!-- Banner Start -->
-         <div class="container-fluid banner py-5 wow zoomIn" data-wow-delay="0.2s">
-            <div class="banner-design-1"></div>
-            <div class="banner-design-2"></div>
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-lg-8">
-                        <div class="">
-                            <h4 class="text-white">Contact With Me</h4>
-                            <h1 class="display-4 text-white mb-0">We provide professional electric services for our customer</h1>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-lg-end h-100">
-                            <a class="btn btn-primary py-3 px-4 px-md-5 ms-2" href="#">EXPLORE MORE</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-         </div>
-        <!-- Banner End -->
-
-        <!-- Projects Start -->
-        <div class="container-fluid projects bg-light py-5">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.2s">
-                        <div>
-                            <h4 class="text-primary">Our Projects</h4>
-                            <h1 class="display-4 mb-4">How to work Our Electricity Projects</h1>
-                            <p class="mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum fugiat quae nihil obcaecati,</p>
-                            <ul class="nav">
-                                <li class="nav-item bg-white mb-4 w-100">
-                                    <a class="d-flex align-items-center h4 mb-0 p-3 active" data-bs-toggle="pill" href="#ProjectsTab-1">
-                                        <div class="projects-icon btn-md-square bg-primary text-white me-3"><span class="fas fa-bolt small"></span></div><span>Power Path Unveiling Our process</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item bg-white mb-4 w-100">
-                                    <a class="d-flex align-items-center h4 mb-0 p-3" data-bs-toggle="pill" href="#ProjectsTab-2">
-                                        <div class="projects-icon btn-md-square bg-primary text-white me-3"><span class="fas fa-charging-station small"></span></div><span>Electro Flow Decoding Our method</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item bg-white mb-4 w-100">
-                                    <a class="d-flex align-items-center h4 mb-0 p-3" data-bs-toggle="pill" href="#ProjectsTab-3">
-                                        <div class="projects-icon btn-md-square bg-primary text-white me-3"><span class="fas fa-broadcast-tower small"></span></div><span>Energetic Engine Behind Scenes</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item bg-white mb-4 w-100">
-                                    <a class="d-flex align-items-center h4 mb-0 p-3" data-bs-toggle="pill" href="#ProjectsTab-4">
-                                        <div class="projects-icon btn-md-square bg-primary text-white me-3"><span class="fas fa-bolt small"></span></div><span>Watt Works Discover Operations</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="tab-content">
-                            <div id="ProjectsTab-1" class="tab-pane fade show p-0 active">
-                                <div class="projects-item">
-                                    <img src="img/industrial-1.jpg" class="img-fluid w-100" alt="">
-                                    <div class="projects-content bg-white p-4">
-                                        <h4 class="mb-3">Power Path Unveiling Our process</h4>
-                                        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, quo? Enim facere, praesentium voluptatem vero officiis libero fuga rem autem amet recusandae voluptates, dolorem quo magni. Corporis eveniet consequuntur accusantium.
-                                        </p>
-                                        <a class="btn btn-primary py-2 px-4" href="#">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="ProjectsTab-2" class="tab-pane fade show p-0">
-                                <div class="projects-item">
-                                    <img src="img/industrial-2.jpg" class="img-fluid w-100" alt="">
-                                    <div class="projects-content bg-white p-4">
-                                        <h4 class="mb-3">Electro Flow Decoding Our method</h4>
-                                        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, quo? Enim facere, praesentium voluptatem vero officiis libero fuga rem autem amet recusandae voluptates, dolorem quo magni. Corporis eveniet consequuntur accusantium.
-                                        </p>
-                                        <a class="btn btn-primary py-2 px-4" href="#">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="ProjectsTab-3" class="tab-pane fade show p-0">
-                                <div class="projects-item">
-                                    <img src="img/commercial-1.jpg" class="img-fluid w-100" alt="">
-                                    <div class="projects-content bg-white p-4">
-                                        <h4 class="mb-3">Energetic Engine Behind Scenes</h4>
-                                        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, quo? Enim facere, praesentium voluptatem vero officiis libero fuga rem autem amet recusandae voluptates, dolorem quo magni. Corporis eveniet consequuntur accusantium.
-                                        </p>
-                                        <a class="btn btn-primary py-2 px-4" href="#">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="ProjectsTab-4" class="tab-pane fade show p-0">
-                                <div class="projects-item">
-                                    <img src="img/commercial-2.jpg" class="img-fluid w-100" alt="">
-                                    <div class="projects-content bg-white p-4">
-                                        <h4 class="mb-4">Watt Works Discover Operations</h4>
-                                        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, quo? Enim facere, praesentium voluptatem vero officiis libero fuga rem autem amet recusandae voluptates, dolorem quo magni. Corporis eveniet consequuntur accusantium.
-                                        </p>
-                                        <a class="btn btn-primary py-2 px-4" href="#">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="radial-container">
+          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
+            <circle class="circle-bg" cx="60" cy="60" r="54" />
+            <circle class="circle-progress" cx="60" cy="60" r="54" />
+          </svg>
+          <div class="percentage">100%</div>
+          <div class="radial-label">Smart Tech & Embedded Innovation</div>
         </div>
-        <!-- Projects End -->
+
+        <div class="radial-container">
+          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
+            <circle class="circle-bg" cx="60" cy="60" r="54" />
+            <circle class="circle-progress" cx="60" cy="60" r="54" />
+          </svg>
+          <div class="percentage">100%</div>
+          <div class="radial-label">Quality & Safety Compliant</div>
+        </div>
+
+        <div class="radial-container">
+          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
+            <circle class="circle-bg" cx="60" cy="60" r="54" />
+            <circle class="circle-progress" cx="60" cy="60" r="54" />
+          </svg>
+          <div class="percentage">100%</div>
+          <div class="radial-label">Sustainable Green Practices</div>
+        </div>
+
+        <div class="radial-container">
+          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
+            <circle class="circle-bg" cx="60" cy="60" r="54" />
+            <circle class="circle-progress" cx="60" cy="60" r="54" />
+          </svg>
+          <div class="percentage">100%</div>
+          <div class="radial-label">IoT & Smart City Integration</div>
+        </div>
+
+       
+      </div>
+    </div>
+
+    <!-- Services Boxes -->
+    <div class="row g-4 mb-5">
+      <div class="col-md-6 col-lg-4">
+        <div class="card-style animate__animated animate__fadeInLeft">
+          <div class="icon-box"><i class="fas fa-bolt"></i></div>
+          <h5>Power Solutions</h5>
+          <p>Advanced T&D, HT/LT Panel Boards, Substations, Power Audits.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-style animate__animated animate__fadeInUp">
+          <div class="icon-box"><i class="fas fa-solar-panel"></i></div>
+          <h5>Energy Solutions</h5>
+          <p>Solar, Wind, Biomass, BESS, Hybrid & Smart Grid Integration.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-style animate__animated animate__fadeInRight">
+          <div class="icon-box"><i class="fas fa-lightbulb"></i></div>
+          <h5>Lighting Solutions</h5>
+          <p>Facade, Stadium, Commercial & Industrial Lighting Design.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-style animate__animated animate__fadeInLeft">
+          <div class="icon-box"><i class="fas fa-home"></i></div>
+          <h5>Automation</h5>
+          <p>Smart Home, Industrial, IoT-based Monitoring & Controls.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-style animate__animated animate__fadeInUp">
+          <div class="icon-box"><i class="fas fa-city"></i></div>
+          <h5>Smart City</h5>
+          <p>Smart Poles, Counters, Environment Monitoring, AI Integration.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-style animate__animated animate__fadeInRight">
+          <div class="icon-box"><i class="fas fa-brain"></i></div>
+          <h5>R&D</h5>
+          <p>Custom Embedded Devices, IoT & AI Prototyping, Innovation Labs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 💫 Style -->
+<style>
+.card-style {
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-style:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(79, 195, 247, 0.6);
+}
+.card-style h5 {
+  font-weight: 600;
+  color: #f0f0f0;
+  margin-top: 15px;
+  font-size: 1.25rem;
+}
+.card-style p {
+  font-size: 14px;
+  color: #bbb;
+  margin-top: 12px;
+  line-height: 1.5;
+}
+.card-style .icon-box {
+  font-size: 38px;
+  color: #4fc3f7;
+}
+
+/* Radial Grid */
+.radial-grid {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+.radial-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 140px;
+  position: relative;
+}
+.radial-ring {
+  transform: rotate(-90deg);
+}
+.circle-bg {
+  fill: none;
+  stroke: #2a2a2a;
+  stroke-width: 6px;
+}
+.circle-progress {
+  fill: none;
+  stroke: #4fc3f7;
+  stroke-width: 6px;
+  stroke-linecap: round;
+  stroke-dasharray: 339.292;
+  stroke-dashoffset: 339.292;
+}
+@keyframes progress-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.percentage {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  font-size: 22px;
+  font-weight: 700;
+  color: #4fc3f7;
+  font-family: 'Jost', sans-serif;
+}
+.radial-label {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 15px;
+  color: #ccc;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .radial-grid {
+    gap: 80px;
+    justify-content: center;
+  }
+  .radial-container {
+    width: 120px;
+    margin-bottom: 40px;
+  }
+}
+</style>
+
+<!-- 🔥 Scroll Animation Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const radialContainers = document.querySelectorAll(".radial-container");
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.3,
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        const progress = entry.target.querySelector(".circle-progress");
+        progress.style.animation = `progress-animation 1.8s ease forwards ${0.2 + index * 0.2}s`;
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  radialContainers.forEach(container => {
+    observer.observe(container);
+  });
+});
+</script>
 
 
-        <!-- FAQ Start -->
-        <div class="container-fluid faq-section bg-light pb-5">
-            <div class="container pb-5">
-                <div class="row g-5">
-                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
-                        <h4 class="text-primary">Some Important FAQ's</h4>
-                        <h1 class="display-4 mb-4">Common Frequently Asked Questions?</h1>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet pariatur sapiente, modi perspiciatis earum ab inventore vitae consequatur tempore quibusdam?
-                        </p>
-                        <a class="btn btn-primary py-3 px-5" href="#">Have Any Questions</a>
-                    </div>
-                    <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
-                        <div class="h-100">
-                            <div class="accordion" id="accordionExample">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Q: How Do I Sing Up For Your Electricity Services?
-                                        </button>
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show active" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Q: What Types Of Electricity Plans Do You Offer?
-                                        </button>
-                                    </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingThree">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Q: What Are Your Billing And Payment Options?
-                                        </button>
-                                    </h2>
-                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingFour">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                            Q: How Can I Track My Energy Usage With Your Services?
-                                        </button>
-                                    </h2>
-                                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-         </div>
-        <!-- FAQ End -->
 
 
-        <!-- Team Start -->
-         <div class="container-fluid team py-5">
-            <div class="container py-5">
-                <div class="d-flex flex-column mx-auto text-center mb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Team</h4>
-                    <h1 class="display-4 mb-4">Electricity Service offerings</h1>
-                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, deserunt provident ab voluptates rerum eaque eum magni autem atque in minus laboriosam corrupti deleniti voluptatibus rem reiciendis modi veniam animi?
-                    </p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-1.jpg" class="img-fluid w-100" alt="">
-                                <div class="team-icon">
-                                    <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-content bg-light text-center p-4">
-                                <h4>Shoaib Bashir</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-2.jpg" class="img-fluid w-100" alt="">
-                                <div class="team-icon">
-                                    <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-content bg-light text-center p-4">
-                                <h4>Shoaib Bashir</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-3.jpg" class="img-fluid w-100" alt="">
-                                <div class="team-icon">
-                                    <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-content bg-light text-center p-4">
-                                <h4>Shoaib Bashir</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-4.jpg" class="img-fluid w-100" alt="">
-                                <div class="team-icon">
-                                    <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-primary mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-content bg-light text-center p-4">
-                                <h4>Shoaib Bashir</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-         </div>
-        <!-- Team End -->
+
+
+
 
         <!-- Footer Start -->
         <div class="container-fluid footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
             <div class="container py-5">
                 <div class="row g-5 mb-5 align-items-center">
-                    <div class="col-lg-7">
+                    <!-- <div class="col-lg-7">
                         <div class="position-relative mx-auto">
                             <input class="form-control w-100 py-3 ps-4 pe-5" type="text" placeholder="Email address to Subscribe">
                             <button type="button" class="btn btn-primary position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
                         </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
-                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-light btn-md-square me-0" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
+                    </div> -->
+                   
                 </div>
                 <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
+                    <!-- <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <div class="footer-item">
                                 <h3 class="text-white mb-4"><i class="fas fa-bolt text-primary me-3"></i>Electra</h3>
                                 <p class="mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="text-white mb-4">Quick Links</h4>
-                            <a href="#"> Home</a>
-                            <a href="#"> About us</a>
-                            <a href="#"> Service</a>
-                            <a href="#"> Testimonial</a>
-                            <a href="#"> Contact Us</a>
+                            <a href="#">Home</a>
+                            <a href="#">About us</a>
+                            <a href="#">Solutions</a>
+                            <a href="#">Applications</a>
+                            <a href="#">Gallery</a>
+                            <a href="#">R & D</a>
+                            <a href="#">Contact</a>
                         </div>
                     </div>
+
+                      <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Services</h4>
+                            <a href="#"> Energy</a>
+                            <a href="#"> Power</a>
+                            <a href="#"> Lighting</a>
+                            <a href="#"> Automation</a>
+                            <a href="#"> Smart City</a>
+                             <a href="#"> R & D</a>
+                        </div>
+                    </div>
+                    
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Electricity service</h4>
-                            <a href="#"> Air Conditioning</a>
-                            <a href="#"> Electrical Panels</a>
-                            <a href="#"> Security System</a>
+                            <h4 class="text-white mb-4">Applications</h4>
+                            <a href="#">Energy Generation</a>
+                            <a href="#"> Power</a>
+                            <a href="#"> Lighting</a>
                             <a href="#"> Indoor Lighting</a>
-                            <a href="#"> Electrical Services</a>
+                            <a href="#"> Automation</a>
+                              <a href="#"> Smart City</a>
+                               <a href="#"> R & D</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="text-white mb-4">Contact Info</h4>
-                            <a href="#"><i class="fa fa-map-marker-alt text-primary me-2"></i> 123 Street, New York, USA</a>
-                            <a href="mailto:info@example.com"><i class="fas fa-envelope text-primary me-2"></i> info@example.com</a>
-                            <a href="mailto:info@example.com"><i class="fas fa-envelope text-primary me-2"></i> info@example.com</a>
-                            <a href="tel:+012 345 67890"><i class="fas fa-phone text-primary me-2"></i> +012 345 67890</a>
-                            <a href="tel:+012 345 67890" class="mb-3"><i class="fas fa-print text-primary me-2"></i> +012 345 67890</a>
+                            <a href="#"><i class="fa fa-map-marker-alt text-primary me-2"></i> Apurupa Towers, Road No:36, JubileeHills, Hyderabad, Telangana-500033 </a>
+                            <a href="mailto:info@example.com"><i class="fas fa-envelope text-primary me-2"></i>info@arcotindia.in </a>
+        
+                            <a href="tel:+012 345 67890"><i class="fas fa-phone text-primary me-2"></i> +919848189899</a>
+                         
+                        </div>
+                    </div>
+
+
+                     <div class="col-lg-5">
+                        <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-light btn-md-square me-0" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
@@ -541,27 +713,20 @@
 
         
         <!-- Copyright Start -->
-        <div class="container-fluid copyright py-4">
+        <div class="container-fluid copyright py-4 bg-dark">
             <div class="container">
                 <div class="row g-4 align-items-center">
                     <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+                        <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>ARCOT INDUSTRIES</a>, All right reserved.</span>
                     </div>
                     <div class="col-md-6 text-center text-md-end text-body">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>
+                     
+                        Designed By <a class="border-bottom text-white" href="arcotindia.in">ARCOT INDUSTRIES</a>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Copyright End -->
-
-         
-
-
-        
 
 
         <!-- Back to Top -->
@@ -579,6 +744,10 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script>AOS.init();</script>
+
     </body>
 
 </html>
