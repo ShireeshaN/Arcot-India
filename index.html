@@ -49,14 +49,15 @@
     <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
     <nav class="navmenu" id="mainNav">
       <ul class="mb-0">
+         <li><a href="index.html">Home</a></li>
+             <li><a href="about.html">About</a></li>
         <li>
-          <a href="#" onclick="toggleMegaMenu(event)">Home <i class="bi bi-chevron-down ms-1"></i></a>
+          <a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a>
         </li>
-        <li><a href="#">Sectors</a></li>
-        <li><a href="#">OCTO</a></li>
-        <li><a href="#">Support & Training</a></li>
-        <li><a href="#">Articles</a></li>
-        <li><a href="#">About Us</a></li>
+        <li><a href="#">Solutions</a></li>
+        <li><a href="#">Applications</a></li>
+        <li><a href="#">Gallery</a></li>
+           <li><a href="#">Contact</a></li>
         <li><a href="#"><i class="bi bi-search"></i></a></li>
       </ul>
     </nav>
@@ -64,42 +65,74 @@
 
   <div id="megaMenu" class="mega-menu">
     <div class="row">
-      <div class="col-md-3">
-        <h5 class="section-title">Products</h5>
-        <div class="underline"></div>
-        <p class="description">
-          We are a leading manufacturer of quality internal and external lighting products for commercial, industrial and retail applications.
-        </p>
-        <a href="#" style="color:#8a2042; font-weight:600;">View all products <i class="bi bi-arrow-right"></i></a>
-      </div>
-      <div class="col-md-9">
-        <h5 class="section-title">Product Types</h5>
-        <div class="underline"></div>
-        <div class="d-flex flex-wrap">
-          <a href="#">Smart Lighting</a>
-          <a href="#">Downlights</a>
-          <a href="#">Track Lighting</a>
-          <a href="#">Pendants</a>
-          <a href="#">Wall Lights</a>
-          <a href="#">LED Strip</a>
-          <a href="#">Bespoke LED Strip Service</a>
-          <a href="#">Cabinet and Bathroom Fittings</a>
-          <a href="#">Bulkheads</a>
-          <a href="#">Bollards</a>
-          <a href="#">Feature Lighting</a>
-          <a href="#">Floodlights</a>
-          <a href="#">Street Lights</a>
-          <a href="#">High/Low Bay</a>
-          <a href="#">Battens and Weatherproofs</a>
-          <a href="#">Commercial Linear</a>
-          <a href="#">Commercial Modular</a>
-          <a href="#">Emergency</a>
-          <a href="#">AFIX</a>
-          <a href="#">Electrical Accessories</a>
-          <a href="#">Product Data Downloads</a>
-          <a href="#">Inspiration</a>
-        </div>
-      </div>
+     
+<div class="underline"></div>
+<div class="service-submenus d-flex flex-wrap">
+  <div class="service-group">
+    <h6>Energy</h6>
+    <ul>
+      <li><a href="#">Solar</a></li>
+      <li><a href="#">Wind</a></li>
+      <li><a href="#">Biomass</a></li>
+          <li><a href="#">Hydel Power</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Power</h6>
+    <ul>
+      <li><a href="#">transmission</a></li>
+      <li><a href="#">distribution</a></li>
+      <li><a href="#">Low Tention</a></li>
+        <li><a href="#">High Tention</a></li>
+         <li><a href="#">Panel Boards</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Lighting</h6>
+    <ul>
+      <li><a href="#">Residential</a></li>
+      <li><a href="#">Facade</a></li>
+      <li><a href="#">Commercial</a></li>
+       <li><a href="#">Industrial</a></li>
+      <li><a href="#">Street</a></li>
+      <li><a href="#">Park</a></li>
+      <li><a href="#">Stadium</a></li>
+      <li><a href="#">Hospital</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Automation</h6>
+    <ul>
+   
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Commercial</a></li>
+         <li><a href="#">Industrial</a></li>
+           <li><a href="#">Hospital</a></li>
+      <li><a href="#">IOT Based Automation</a></li>
+         <li><a href="#">Hotel</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Smart City</h6>
+    <ul>
+      <li><a href="#">Smart Pole</a></li>
+      <li><a href="#">Smart Conference Hall</a></li>
+       <li><a href="#">Smart Bollards</a></li>
+          <li><a href="#">Smart Bar Counter</a></li>
+              <li><a href="#">Smart Window Leaf AC</a></li>
+    </ul>
+  </div>
+
+   <div class="service-group">
+    <h6>R & D</h6>
+    <ul>
+      <li><a href="#">Smart Pole</a></li>
+    </ul>
+  </div>
+
+   
+</div>
+
     </div>
   </div>
 </header>
@@ -129,6 +162,49 @@
   });
 </script>
   <style>
+
+    .service-submenus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.service-group {
+  min-width: 200px;
+}
+
+.service-group h6 {
+  font-size: 14px;
+  color: #fcfafa;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: bold;
+}
+
+.service-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-group ul li {
+  margin-bottom: 8px;
+}
+
+.service-group ul li a {
+  color: #fdfbfb;
+  font-size: 13px;
+  text-decoration: none;
+  font-family: 'Six Caps', sans-serif;
+  letter-spacing: 1.5px;
+}
+
+.service-group ul li a:hover {
+  text-decoration: underline;
+}
+
 
     header {
       background: #070707;
@@ -202,13 +278,13 @@
 
     .section-title {
       font-weight: 300;
-      color: #8a2042;
+      color: #f3ebee;
       margin-bottom: 10px;
     }
 
     .underline {
       height: 2px;
-      background: #8a2042;
+      background: #fdfcfd;
       width: 40px;
       margin-bottom: 15px;
     }
@@ -297,54 +373,55 @@
     }
   </style>
 
-        <!-- Carousel Start -->
-        <div class="header-carousel owl-carousel overflow-hidden">
-            <div class="header-carousel-item hero-section">
-                <div class="hero-bg-half-1"></div>
-                <div class="hero-shape-1"></div>
-                <div class="carousel-caption">
-                    <div class="container">
-                        <div class="row g-4 align-items-center">
-                            <div class="col-lg-7 animated fadeInLeft">
-                                <div class="text-sm-center text-md-start">
-                                    <h4 class="text-white text-uppercase fw-bold mb-4">Empowering the Future with Integrated Smart Solutions</h4>
-                                    <h1 class="display-2 text-white mb-4">Product</h1>
-                                    <!-- <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy... 
-                                    </p> -->
-                                    <!-- <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
-                                        <a class="btn btn-light py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
-                                        <a class="btn btn-primary py-3 px-4 px-md-5 ms-2" href="#">Learn More</a>
-                                    </div> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="header-carousel-item hero-section">
-                <div class="hero-bg-half-2"></div>
-                <div class="hero-shape-2"></div>
-                <div class="carousel-caption">
-                    <div class="container">
-                        <div class="row g-4 align-items-center">
-                            <div class="col-lg-7 animated fadeInLeft">
-                                <div class="text-sm-center text-md-start">
-                                    <h4 class="text-white text-uppercase fw-bold mb-4">ARCOT INDUSTRIES PRIVATE LIMITED</h4>
-                                    <h1 class="display-2 text-white mb-4">Product</h1>
-                                    <!-- <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy... 
-                                    </p> -->
-                                    <!-- <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
-                                        <a class="btn btn-light py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
-                                        <a class="btn btn-primary py-3 px-4 px-md-5 ms-2" href="#">Learn More</a>
-                                    </div> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Carousel End -->
+  <section class="banner-video-section">
+  <video autoplay muted loop playsinline class="banner-video">
+    <source src="media/Pastel Playful Welcome Video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="banner-content">
+    <h1 class="text-white">Arcot Industries PVT Limited</h1>
+  </div>
+</section>
+
+
+<style>
+.banner-video-section {
+  position: relative;
+  width: 100%;
+  height: 900px; /* Your desired height */
+  overflow: hidden;
+}
+
+.banner-video {
+  width: 100%;
+  height: 900px;
+  object-fit: fill; /* or try 'contain' if you want no cropping */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white !important;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.banner-content h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+
+</style>
+
 
 
 <!--about-->
@@ -1060,13 +1137,602 @@
 
 
 
+ <!-- DESKTOP VIEW -->
+  <div class="solumens-desktop-container">
 
+     <video class="solumens-bg-video" autoplay muted loop playsinline>
+    <source src="media/vv.mp4" type="video/mp4" />
+  </video>
+
+    <div class="solumens-bg-circle"></div>
+
+    <div class="solumens-center-circle">
+      <h1>END TO END SOLUTIONS</h1>
+    </div>
+
+    <div class="solumens-flip-card solumens-box1">
+      <div class="solumens-flip-inner">
+        <div class="solumens-front"><div class="solumens-icon"><i class="fas fa-search"></i></div><div class="solumens-title">DESIGN</div></div>
+        <div class="solumens-back"><img src="img/software_17122633.gif" alt="Design GIF" class="solumens-gif" /></div>
+      </div>
+    </div>
+
+    <div class="solumens-flip-card solumens-box2">
+      <div class="solumens-flip-inner">
+        <div class="solumens-front"><div class="solumens-icon"><i class="fas fa-lightbulb"></i></div><div class="solumens-title">DEVELOP</div></div>
+        <div class="solumens-back"><img src="img/design_19012557.gif" alt="Develop GIF" class="solumens-gif" /></div>
+      </div>
+    </div>
+
+    <div class="solumens-flip-card solumens-box3">
+      <div class="solumens-flip-inner">
+        <div class="solumens-front"><div class="solumens-icon"><i class="fas fa-chart-pie"></i></div><div class="solumens-title">MANUFACTURING</div></div>
+        <div class="solumens-back"><img src="img/maintenance_17122601.gif" alt="Manufacturing GIF" class="solumens-gif" /></div>
+      </div>
+    </div>
+
+    <div class="solumens-flip-card solumens-box4">
+      <div class="solumens-flip-inner">
+        <div class="solumens-front"><div class="solumens-icon"><i class="fas fa-chart-line"></i></div><div class="solumens-title">INSTALLATION</div></div>
+        <div class="solumens-back"><img src="img/robot-arm_19000852.gif" alt="Installation GIF" class="solumens-gif" /></div>
+      </div>
+    </div>
+
+    <div class="solumens-flip-card solumens-box5">
+      <div class="solumens-flip-inner">
+        <div class="solumens-front"><div class="solumens-icon"><i class="fas fa-bullseye"></i></div><div class="solumens-title">TESTING</div></div>
+        <div class="solumens-back"><img src="img/testing_17122608.gif" alt="Testing GIF" class="solumens-gif" /></div>
+      </div>
+    </div>
+
+    <div class="solumens-flip-card solumens-box6">
+      <div class="solumens-flip-inner">
+        <div class="solumens-front"><div class="solumens-icon"><i class="fas fa-dollar-sign"></i></div><div class="solumens-title">COMMISSIONING</div></div>
+        <div class="solumens-back"><img src="img/sale_19001242.gif" alt="Commissioning GIF" class="solumens-gif" /></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE VIEW -->
+  <div class="solumens-mobile-container">
+    <div class="solumens-mobile-heading">END TO END SOLUTIONS</div>
+    <div class="solumens-mobile-grid">
+      <!-- Same 6 flip cards -->
+      <div class="solumens-flip-card">
+        <div class="solumens-flip-inner">
+          <div class="solumens-front"><div class="solumens-icon"><i class="fas fa-search"></i></div><div class="solumens-title">DESIGN</div></div>
+          <div class="solumens-back"><img src="img/software_17122633.gif" alt="Design GIF" class="solumens-gif" /></div>
+        </div>
+      </div>
+      <div class="solumens-flip-card">
+        <div class="solumens-flip-inner">
+          <div class="solumens-front"><div class="solumens-icon"><i class="fas fa-lightbulb"></i></div><div class="solumens-title">DEVELOP</div></div>
+          <div class="solumens-back"><img src="img/design_19012557.gif" alt="Develop GIF" class="solumens-gif" /></div>
+        </div>
+      </div>
+      <div class="solumens-flip-card">
+        <div class="solumens-flip-inner">
+          <div class="solumens-front"><div class="solumens-icon"><i class="fas fa-chart-pie"></i></div><div class="solumens-title">MANUFACTURING</div></div>
+          <div class="solumens-back"><img src="img/maintenance_17122601.gif" alt="Manufacturing GIF" class="solumens-gif" /></div>
+        </div>
+      </div>
+      <div class="solumens-flip-card">
+        <div class="solumens-flip-inner">
+          <div class="solumens-front"><div class="solumens-icon"><i class="fas fa-chart-line"></i></div><div class="solumens-title">INSTALLATION</div></div>
+          <div class="solumens-back"><img src="img/robot-arm_19000852.gif" alt="Installation GIF" class="solumens-gif" /></div>
+        </div>
+      </div>
+      <div class="solumens-flip-card">
+        <div class="solumens-flip-inner">
+          <div class="solumens-front"><div class="solumens-icon"><i class="fas fa-bullseye"></i></div><div class="solumens-title">TESTING</div></div>
+          <div class="solumens-back"><img src="img/testing_17122608.gif" alt="Testing GIF" class="solumens-gif" /></div>
+        </div>
+      </div>
+      <div class="solumens-flip-card">
+        <div class="solumens-flip-inner">
+          <div class="solumens-front"><div class="solumens-icon"><i class="fas fa-dollar-sign"></i></div><div class="solumens-title">COMMISSIONING</div></div>
+          <div class="solumens-back"><img src="img/sale_19001242.gif" alt="Commissioning GIF" class="solumens-gif" /></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+   .solumens-desktop-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.solumens-bg-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.solumens-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for readability */
+  z-index: 1;
+}
+
+.solumens-bg-circle,
+.solumens-center-circle,
+.solumens-flip-card {
+  position: relative;
+  z-index: 2;
+}
+
+
+.solumens-flip-card {
+  position: relative;
+  background-color: transparent;
+  width: 250px;
+  height: 120px;
+  perspective: 1000px;
+  z-index: 15;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.solumens-flip-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('img/segmentimgs/smart4.jpg'); /* Your transparent PNG */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.3; /* Control how transparent it looks */
+  z-index: 1;
+}
+
+.solumens-flip-inner {
+  position: relative;
+  z-index: 2; /* Keep flip content on top */
+}
+
+
+
+    .solumens-flip-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .solumens-flip-card:hover .solumens-flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    .solumens-front,
+    .solumens-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background: #fbfafa;
+      color: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #000;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+    }
+
+    .solumens-front {
+      flex-direction: row;
+    }
+
+    .solumens-back {
+      transform: rotateY(180deg);
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 15px;
+      background: #fbfafa;
+    }
+
+    .solumens-back img.solumens-gif {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .solumens-icon {
+      font-size: 30px;
+      margin-right: 15px;
+      color: #2b2b2a;
+    }
+
+    .solumens-title {
+      font-size: 20px;
+      color: #030303;
+      font-weight: bold;
+    }
+
+    /* ================================
+       DESKTOP CONTAINER
+    ================================== */
+    .solumens-desktop-container {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+    }
+
+    .solumens-center-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: #222;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 0 20px #000;
+    }
+
+    .solumens-center-circle h1 {
+      color: #fbfaf7;
+      font-size: 20px;
+    }
+
+    .solumens-bg-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: #adadac;
+      z-index: 5;
+    }
+
+    /* Flip card positions for desktop */
+    .solumens-box1 { position: absolute; top: 35%; left: 22%; }
+    .solumens-box2 { position: absolute; top: 55%; left: 25%; }
+    .solumens-box3 { position: absolute; bottom: 8%; left: 30%; }
+    .solumens-box4 { position: absolute; top: 35%; right: 22%; }
+    .solumens-box5 { position: absolute; top: 55%; right: 25%; }
+    .solumens-box6 { position: absolute; bottom: 8%; right: 30%; }
+
+    /* ================================
+       MOBILE CONTAINER
+    ================================== */
+    .solumens-mobile-container {
+      display: none;
+      padding: 40px 10px;
+      text-align: center;
+    }
+
+    .solumens-mobile-heading {
+      font-size: 22px;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .solumens-mobile-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 10px;
+    }
+
+    .solumens-mobile-grid .solumens-flip-card {
+      position: static !important;
+      width: 100%;
+      height: 150px;
+      margin: 0 auto;
+    }
+
+    /* ================================
+       RESPONSIVE SWITCHING
+    ================================== */
+    @media (max-width: 768px) {
+      .solumens-desktop-container {
+        display: none;
+      }
+
+      .solumens-mobile-container {
+        display: block;
+      }
+
+      .solumens-title {
+      font-size: 11px;
+      color: #030303;
+      font-weight: bold;
+    }
+    }
+  </style>
+
+
+<!-- Applications Section -->
+<section class="appliarco-slider-container">
+  <div class="appliarco-slider-arrow up" onclick="prevSlide()">❮</div>
+
+  <div class="appliarco-slider-inner" id="sliderInner">
+    <!-- Slide 1 -->
+    <div class="appliarco-slide">
+      <div class="appliarco-slide-content">
+        <h4>High Bay</h4>
+        <h2>HBL</h2>
+        <div class="appliarco-buttons">
+          <button class="active">Product Detail</button>
+          <button class="active">Discover All</button>
+        </div>
+        <p class="appliarco-slide-description">
+          HBL is a high-performance High Bay luminaire designed for industrial and commercial spaces. With excellent energy efficiency and long-lasting durability.
+        </p>
+      </div>
+      <div class="appliarco-slide-image">
+        <img src="img/application/appli (1).png" alt="HBL" />
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="appliarco-slide">
+      <div class="appliarco-slide-content">
+        <h4>Linear</h4>
+        <h2>LNR</h2>
+        <div class="appliarco-buttons">
+          <button class="active">Product Detail</button>
+          <button class="active">Discover All</button>
+        </div>
+        <p class="appliarco-slide-description">
+          LNR offers sleek linear lighting ideal for offices and modern interiors. Seamless installation, making it a go-to for architectural lighting.
+        </p>
+      </div>
+      <div class="appliarco-slide-image">
+        <img src="img/application/appli (2).png" alt="LNR" />
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="appliarco-slide">
+      <div class="appliarco-slide-content">
+        <h4>Downlight</h4>
+        <h2>RDL</h2>
+        <div class="appliarco-buttons">
+          <button class="active">Product Detail</button>
+          <button class="active">Discover All</button>
+        </div>
+        <p class="appliarco-slide-description">
+          RDL is a recessed downlight providing glare-free lighting. Perfect for retail, hospitality, and residential applications.
+        </p>
+      </div>
+      <div class="appliarco-slide-image">
+        <img src="img/application/appli (5).png" alt="RDL" />
+      </div>
+    </div>
+  </div>
+
+  <div class="appliarco-slider-arrow down" onclick="nextSlide()">❯</div>
+</section>
+
+<!-- STYLES -->
+<style>
+  .appliarco-slider-container {
+    height: 90vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #000 !important;
+  }
+
+  .appliarco-slider-inner {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.8s ease;
+  }
+
+  .appliarco-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 95vh;
+    width: 100%;
+    padding: 0 5vw;
+    flex-shrink: 0;
+  }
+
+  .appliarco-slide-content {
+    padding: 20px;
+    flex: 1;
+  }
+
+  .appliarco-slide-content h4 {
+    font-size: 16px;
+    color: #f9f7f7;
+  }
+
+  .appliarco-slide-content h2 {
+    font-size: 28px;
+    color: #fbf9f9;
+  }
+
+  .appliarco-buttons {
+    margin-top: 20px;
+  }
+
+  .appliarco-buttons button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    margin-right: 15px;
+    color: #eae6e6;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+  }
+
+  .appliarco-buttons button.active {
+    color: #fcfbfb;
+    border-color: #e60000;
+  }
+
+  .appliarco-slide-description {
+    margin-top: 20px;
+    font-size: 15px;
+    color: #fdf9f9;
+    line-height: 1.5;
+    max-width: 500px;
+  }
+
+  .appliarco-slide-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .appliarco-slide-image img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.8s ease;
+  }
+
+  .appliarco-slider-arrow {
+    position: absolute;
+    right: 10px;
+    font-size: 36px;
+    color: #aaa;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+  }
+
+  .appliarco-slider-arrow.down {
+    bottom: 20px;
+  }
+
+  .appliarco-slider-arrow.up {
+    top: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .appliarco-slide {
+      flex-direction: column;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .appliarco-slide-content,
+    .appliarco-slide-image {
+      width: 100%;
+    }
+
+    .appliarco-slide-content h2 {
+      font-size: 24px;
+    }
+
+    .appliarco-slide-content h4 {
+      font-size: 14px;
+    }
+
+    .appliarco-slider-arrow {
+      font-size: 30px;
+      padding: 8px;
+    }
+
+    .appliarco-slide-image img {
+      max-width: 80%;
+    }
+
+    .appliarco-slide-description {
+      font-size: 14px;
+      margin: 15px auto 0;
+    }
+  }
+</style>
+
+<!-- SCRIPT -->
+<script>
+  let currentSlide = 0;
+  const sliderInner = document.getElementById("sliderInner");
+  const slides = document.querySelectorAll(".appliarco-slide");
+  const totalSlides = slides.length;
+  const sliderWrapper = document.querySelector(".appliarco-slider-container");
+
+  function updateSlider() {
+    sliderInner.style.transform = `translateY(-${currentSlide * 100}vh)`;
+
+    // ✅ If last slide, allow scroll to continue
+    if (currentSlide === totalSlides - 1) {
+      enablePageScroll();
+    }
+  }
+
+  function nextSlide() {
+    if (currentSlide < totalSlides - 1) {
+      currentSlide++;
+      updateSlider();
+    }
+  }
+
+  function prevSlide() {
+    if (currentSlide > 0) {
+      currentSlide--;
+      updateSlider();
+    }
+  }
+
+  // 🚫 Disable full-page scroll inside slider
+  function disablePageScroll() {
+    window.addEventListener('wheel', wheelBlock, { passive: false });
+    window.addEventListener('touchmove', touchBlock, { passive: false });
+  }
+
+  // ✅ Re-enable scroll when done
+  function enablePageScroll() {
+    window.removeEventListener('wheel', wheelBlock, { passive: false });
+    window.removeEventListener('touchmove', touchBlock, { passive: false });
+  }
+
+  function wheelBlock(e) {
+    if (sliderWrapper.matches(':hover')) e.preventDefault();
+  }
+
+  function touchBlock(e) {
+    if (sliderWrapper.matches(':hover')) e.preventDefault();
+  }
+
+  // Auto slide (optional)
+  setInterval(() => {
+    if (currentSlide < totalSlides - 1) {
+      nextSlide();
+    }
+  }, 6000);
+
+  // Init block scroll
+  disablePageScroll();
+</script>
 
 
 
 
         <!-- About Start -->
-        <div class="container-fluid about py-5">
+        <!-- <div class="container-fluid about py-5">
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.2s">
@@ -1115,12 +1781,12 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- About End -->
 
 
         <!-- Banner Start -->
-         <div class="container-fluid banner py-5 wow zoomIn" data-wow-delay="0.2s">
+         <!-- <div class="container-fluid banner py-5 wow zoomIn" data-wow-delay="0.2s">
             <div class="banner-design-1"></div>
             <div class="banner-design-2"></div>
             <div class="container py-5">
@@ -1138,12 +1804,12 @@
                     </div>
                 </div>
             </div>
-         </div>
+         </div> -->
         <!-- Banner End -->
 
 
         <!-- Services Start -->
-        <div class="container-fluid service py-5">
+        <!-- <div class="container-fluid service py-5">
             <div class="container py-5">
                 <div class="d-flex flex-column mx-auto text-center mb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                     <h4 class="text-primary">Our Services</h4>
@@ -1270,11 +1936,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Services End -->
 
         <!-- Projects Start -->
-        <div class="container-fluid projects bg-light py-5">
+        <!-- <div class="container-fluid projects bg-light py-5">
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.2s">
@@ -1356,12 +2022,12 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Projects End -->
 
 
         <!-- Blog Start -->
-         <div class="container-fluid blog py-5">
+         <!-- <div class="container-fluid blog py-5">
             <div class="container py-5">
                 <div class="d-flex flex-column mx-auto text-center mb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                     <h4 class="text-primary">Our Blog</h4>
@@ -1429,11 +2095,11 @@
                     </div>
                 </div>
             </div>
-         </div>
+         </div> -->
         <!-- Blog End -->
 
         <!-- Team Start -->
-         <div class="container-fluid team pb-5">
+         <!-- <div class="container-fluid team pb-5">
             <div class="container pb-5">
                 <div class="d-flex flex-column mx-auto text-center mb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                     <h4 class="text-primary">Our Team</h4>
@@ -1512,12 +2178,12 @@
                     </div>
                 </div>
             </div>
-         </div>
+         </div> -->
         <!-- Team End -->
 
 
         <!-- Testimonial Start -->
-        <div class="container-fluid testimonial bg-dark py-5">
+        <!-- <div class="container-fluid testimonial bg-dark py-5">
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-6 col-xl-5 wow fadeInUp" data-wow-delay="0.2s">
@@ -1596,69 +2262,77 @@
                     </div>
                 </div>
             </div>
-         </div>
+         </div> -->
         <!-- Testimonial End -->
 
 
         <!-- FAQ Start -->
-         <div class="container-fluid faq-section bg-light py-5">
+         <div class="container-fluid faq-section bg-dark py-5">
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
                         <h4 class="text-primary">Some Important FAQ's</h4>
-                        <h1 class="display-4 mb-4">Common Frequently Asked Questions?</h1>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet pariatur sapiente, modi perspiciatis earum ab inventore vitae consequatur tempore quibusdam?
+                        <h1 class="display-5 mb-4 text-white">Common Frequently Asked Questions?</h1>
+                        <p class="mb-4">Power: Efficient power transmission & distribution.
+
+Energy: Clean solar, wind, and biomass solutions.
+
+Lighting: Smart lighting for every space.
+
+Automation: Intelligent automation for industry & home.
+
+Smart City & R&D: Innovative smart city tech & research.
                         </p>
-                        <a class="btn btn-primary py-3 px-5" href="#">Have Any Questions</a>
+                        <!-- <a class="btn btn-primary py-3 px-5" href="#">Have Any Questions</a> -->
                     </div>
                     <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
                         <div class="h-100">
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Q: How Do I Sing Up For Your Electricity Services?
+                                        <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Q: What industries does Arcot Industries serve?
                                         </button>
                                     </h2>
                                     <div id="collapseOne" class="accordion-collapse collapse show active" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
+                                            A: We specialize in Power, Energy, Lighting, Automation, Smart City solutions, and cutting-edge R&D services.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingTwo">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Q: What Types Of Electricity Plans Do You Offer?
+                                            Q: How does Arcot support sustainable energy solutions?
                                         </button>
                                     </h2>
                                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
+                                            A: We provide solar, wind, and biomass energy solutions designed for efficient, eco-friendly power generation.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingThree">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Q: What Are Your Billing And Payment Options?
+                                            Q: What types of automation services do you offer?
                                         </button>
                                     </h2>
                                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
+                                            A: Our automation covers industrial, residential, commercial, hospital, and IoT-enabled smart systems.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingFour">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                            Q: How Can I Track My Energy Usage With Your Services?
+                                            Q: Can Arcot Industries help with smart city infrastructure?
                                         </button>
                                     </h2>
                                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
+                                            A: Yes! We develop smart poles, conference halls, smart A/B counters, and integrated IoT solutions for modern cities.
                                         </div>
                                     </div>
                                 </div>
@@ -1674,58 +2348,78 @@
         <div class="container-fluid footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
             <div class="container py-5">
                 <div class="row g-5 mb-5 align-items-center">
-                    <div class="col-lg-7">
+                    <!-- <div class="col-lg-7">
                         <div class="position-relative mx-auto">
                             <input class="form-control w-100 py-3 ps-4 pe-5" type="text" placeholder="Email address to Subscribe">
                             <button type="button" class="btn btn-primary position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
                         </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
-                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-light btn-md-square me-0" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
+                    </div> -->
+                   
                 </div>
                 <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
+                    <!-- <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <div class="footer-item">
                                 <h3 class="text-white mb-4"><i class="fas fa-bolt text-primary me-3"></i>Electra</h3>
                                 <p class="mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="text-white mb-4">Quick Links</h4>
-                            <a href="#"> Home</a>
-                            <a href="#"> About us</a>
-                            <a href="#"> Service</a>
-                            <a href="#"> Testimonial</a>
-                            <a href="#"> Contact Us</a>
+                            <a href="#">Home</a>
+                            <a href="#">About us</a>
+                            <a href="#">Solutions</a>
+                            <a href="#">Applications</a>
+                            <a href="#">Gallery</a>
+                            <a href="#">R & D</a>
+                            <a href="#">Contact</a>
                         </div>
                     </div>
+
+                      <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Services</h4>
+                            <a href="#"> Energy</a>
+                            <a href="#"> Power</a>
+                            <a href="#"> Lighting</a>
+                            <a href="#"> Automation</a>
+                            <a href="#"> Smart City</a>
+                             <a href="#"> R & D</a>
+                        </div>
+                    </div>
+                    
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Electricity service</h4>
-                            <a href="#"> Air Conditioning</a>
-                            <a href="#"> Electrical Panels</a>
-                            <a href="#"> Security System</a>
+                            <h4 class="text-white mb-4">Applications</h4>
+                            <a href="#">Energy Generation</a>
+                            <a href="#"> Power</a>
+                            <a href="#"> Lighting</a>
                             <a href="#"> Indoor Lighting</a>
-                            <a href="#"> Electrical Services</a>
+                            <a href="#"> Automation</a>
+                              <a href="#"> Smart City</a>
+                               <a href="#"> R & D</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="text-white mb-4">Contact Info</h4>
-                            <a href="#"><i class="fa fa-map-marker-alt text-primary me-2"></i> 123 Street, New York, USA</a>
-                            <a href="mailto:info@example.com"><i class="fas fa-envelope text-primary me-2"></i> info@example.com</a>
-                            <a href="mailto:info@example.com"><i class="fas fa-envelope text-primary me-2"></i> info@example.com</a>
-                            <a href="tel:+012 345 67890"><i class="fas fa-phone text-primary me-2"></i> +012 345 67890</a>
-                            <a href="tel:+012 345 67890" class="mb-3"><i class="fas fa-print text-primary me-2"></i> +012 345 67890</a>
+                            <a href="#"><i class="fa fa-map-marker-alt text-primary me-2"></i> Apurupa Towers, Road No:36, JubileeHills, Hyderabad, Telangana-500033 </a>
+                            <a href="mailto:info@example.com"><i class="fas fa-envelope text-primary me-2"></i>info@arcotindia.in </a>
+        
+                            <a href="tel:+012 345 67890"><i class="fas fa-phone text-primary me-2"></i> +919848189899</a>
+                         
+                        </div>
+                    </div>
+
+
+                     <div class="col-lg-5">
+                        <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-light btn-md-square me-0" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1735,15 +2429,15 @@
 
         
         <!-- Copyright Start -->
-        <div class="container-fluid copyright py-4">
+        <div class="container-fluid copyright py-4 bg-dark">
             <div class="container">
                 <div class="row g-4 align-items-center">
                     <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+                        <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>ARCOT INDUSTRIES</a>, All right reserved.</span>
                     </div>
                     <div class="col-md-6 text-center text-md-end text-body">
                      
-                        Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>
+                        Designed By <a class="border-bottom text-white" href="arcotindia.in">ARCOT INDUSTRIES</a>
                     </div>
                 </div>
             </div>
