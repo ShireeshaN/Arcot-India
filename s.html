@@ -2,269 +2,224 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zigzag Circle to Circle Final</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Pole by Arcor</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
   <style>
+    :root {
+      --dark: #0b0b0b;
+      --gray: #222;
+      --light-gray: #aaa;
+      --white: #fff;
+      --accent: #00ffe7;
+    }
+
     body {
-      background: #0b0b0b;
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      color: white;
-      margin: 0;
-      padding: 80px 0;
+      background-color: var(--dark);
+      color: var(--white);
     }
 
-    .timeline {
-      max-width: 1100px;
-      margin: auto;
-      position: relative;
+    header {
+      text-align: center;
+      padding: 100px 20px 60px;
+      background: linear-gradient(to bottom, #0b0b0b, #1a1a1a);
     }
-
-    .step-wrapper {
-      position: relative;
-      margin: 100px 0;
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
     }
-
-    .step {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
-      z-index: 2;
-    }
-
-    .step.left .circle {
-      order: 0;
-    }
-
-    .step.left .text {
-      order: 1;
-      text-align: left;
-      margin-left: 20px;
-      animation-delay: 0.3s;
-
-    }
-
-    .step.right {
-      flex-direction: row-reverse;
-    }
-
-    .step.right .text {
-      margin-right: 20px;
-      text-align: right;
-      animation-delay: 0.4s;
-
-    }
-
-    .circle {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background-color: #1a1a1a;
-      border: 2px solid #888;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      color: #fff;
-      position: relative;
-      z-index: 3;
-      animation: circleGlow 2s ease-in-out infinite;
-
-
-    }
-
-    .text {
-      max-width: 300px;
-    }
-
-    .text h4 {
-      margin: 0;
+    header p {
+      color: var(--light-gray);
       font-size: 1.2rem;
-      color: white;
+    }
+    .hero-btn {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 40px;
+      background-color: var(--accent);
+      color: var(--dark);
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .hero-btn:hover {
+      background-color: #00ddcc;
     }
 
-    .text p {
-      font-size: 0.95rem;
-      color: #bbb;
-      margin-top: 5px;
+    .features {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 40px;
+    }
+    .feature {
+      text-align: center;
+      background: #111;
+      border: 1px solid #333;
+      padding: 30px 20px;
+      border-radius: 16px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.6s ease forwards;
+    }
+    .feature:nth-child(1) { animation-delay: 0.1s; }
+    .feature:nth-child(2) { animation-delay: 0.2s; }
+    .feature:nth-child(3) { animation-delay: 0.3s; }
+    .feature:nth-child(4) { animation-delay: 0.4s; }
+    .feature:nth-child(5) { animation-delay: 0.5s; }
+    .feature:nth-child(6) { animation-delay: 0.6s; }
+    .feature:nth-child(7) { animation-delay: 0.7s; }
+    .feature:nth-child(8) { animation-delay: 0.8s; }
+    .feature:nth-child(9) { animation-delay: 0.9s; }
+    .feature:nth-child(10) { animation-delay: 1s; }
+    .feature:nth-child(11) { animation-delay: 1.1s; }
+    .feature:nth-child(12) { animation-delay: 1.2s; }
+    .feature:nth-child(13) { animation-delay: 1.3s; }
+    .feature:nth-child(14) { animation-delay: 1.4s; }
+    .feature:nth-child(15) { animation-delay: 1.5s; }
+    .feature:nth-child(16) { animation-delay: 1.6s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .connector {
+    .feature i {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .feature p {
+      font-size: 1rem;
+      color: var(--light-gray);
+    }
+
+    .cta {
+      text-align: center;
+      padding: 80px 20px;
+      background: #111;
+      border-top: 1px solid #333;
+    }
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .cta p {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 12px 28px;
+      background-color: var(--accent);
+      color: var(--dark);
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .cta-button:hover {
+      background-color: #00ddcc;
+    }
+
+    .smartpole-visual {
+      text-align: center;
+      margin: 100px 20px 60px;
+    }
+    .smartpole-visual img {
+      max-width: 100%;
+      height: auto;
+    }
+    .tooltip {
+      position: relative;
+      cursor: pointer;
+    }
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 180px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px;
       position: absolute;
-      height: 2px;
-      background-color: #666;
       z-index: 1;
-      transform-origin: left center;
-      overflow: hidden;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
     }
-
-    .connector::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      height: 100%;
-      width: 100%;
-      background: linear-gradient(to right, #0b0b0b00, #ffffff88, #0b0b0b00);
-      animation: glowMove 1.5s linear infinite;
-
-    }
-
-    @keyframes circleGlow {
-  0%, 100% {
-    box-shadow: 0 0 10px #00ffe0, 0 0 20px #00ffe066, 0 0 30px #00ffe033;
-  }
-  50% {
-    box-shadow: 0 0 20px #00ffe0, 0 0 40px #00ffe088, 0 0 60px #00ffe04f;
-  }
-}
-
-
-    @keyframes fadeSlideLeft {
-  0% { opacity: 0; transform: translateX(-50px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes fadeSlideRight {
-  0% { opacity: 0; transform: translateX(50px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes zoomIn {
-  0% { transform: scale(0.6); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-
-    @keyframes glowMove {
-      0% { left: -100%; }
-      100% { left: 100%; }
-    }
-
-    .connector.l1 {
-      top: 40px;
-      left: 50px;
-      width: calc(100% - 100px);
-      transform: rotate(11deg);
-    }
-
-    .connector.l2 {
-      top: 240px;
-      right: 50px;
-      width: calc(100% - 80px);
-      transform: rotate(-11deg);
-    }
-
-    .connector.l3 {
-      top: 40px;
-      left: 50px;
-      width: calc(100% - 100px);
-      transform: rotate(11deg);
-      animation-delay: 1s;
-    }
-
-    .connector.l4 {
-      top: 240px;
-      right: 50px;
-      width: calc(100% - 80px);
-      transform: rotate(-11deg);
-      animation-delay: 2s;
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
     }
 
     @media (max-width: 768px) {
-      .step {
-        flex-direction: column !important;
-        text-align: center;
+      header h1 {
+        font-size: 2rem;
       }
-
-      .text {
-        margin: 20px 0 0;
-        text-align: center !important;
-      }
-
-      .connector {
-        display: none;
+      .features {
+        grid-template-columns: 1fr 1fr;
       }
     }
-    .section-title {
-  text-align: center;
-  font-size: 2rem;
-  color: #fff;
-  margin-bottom: 60px;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
 
+
+    
   </style>
 </head>
 <body>
+  <header>
+    <h1>Smart Pole</h1>
+    <p>The All-in-One Urban Infrastructure Solution</p>
+    <a href="#features" class="hero-btn">Explore Features</a>
+  </header>
 
-  <h2 class="section-title">Why Choose Arcot for Transmission</h2>
-
-
-  <div class="timeline">
-
-    <!-- Step 1 -->
-    <div class="step-wrapper">
-      <div class="step left">
-        <div class="circle"><i class="fas fa-cogs"></i></div>
-        <div class="text">
-          <h4>Turnkey Execution</h4>
-          <p>We manage the full project lifecycle from design to delivery.</p>
-        </div>
-      </div>
-      <div class="connector l1"></div>
+  <div class="smartpole-visual">
+    <img src="smartpole-diagram.png" alt="Smart Pole Illustration">
+    <!-- Tooltips Example -->
+    <div class="tooltip" style="position: absolute; top: 220px; left: 45%;">
+      <i class="fas fa-video"></i>
+      <div class="tooltiptext">AI Smart Camera with motion detection</div>
     </div>
-
-    <!-- Step 2 -->
-    <div class="step-wrapper">
-      <div class="step right">
-        <div class="circle"><i class="fas fa-shield-alt"></i></div>
-        <div class="text">
-          <h4>Safety & Compliance</h4>
-          <p>Adhering to BIS/IEC/IS standards for unmatched safety.</p>
-        </div>
-      </div>
-      <div class="connector l2"></div>
+    <div class="tooltip" style="position: absolute; top: 360px; left: 60%;">
+      <i class="fas fa-plug"></i>
+      <div class="tooltiptext">EV Charging Port</div>
     </div>
-
-    <!-- Step 3 -->
-    <div class="step-wrapper">
-      <div class="step left">
-        <div class="circle"><i class="fas fa-users-cog"></i></div>
-        <div class="text">
-          <h4>Expert Engineers</h4>
-          <p>Certified professionals ensuring high-quality execution.</p>
-        </div>
-      </div>
-      <div class="connector l3"></div>
-    </div>
-
-    <!-- Step 4 -->
-    <div class="step-wrapper">
-      <div class="step right">
-        <div class="circle"><i class="fas fa-eye"></i></div>
-        <div class="text">
-          <h4>Real-time Monitoring</h4>
-          <p>Live tracking and diagnostics to avoid system failure.</p>
-        </div>
-      </div>
-      <div class="connector l4"></div>
-    </div>
-
-    <!-- Step 5 -->
-    <div class="step-wrapper">
-      <div class="step left">
-        <div class="circle"><i class="fas fa-leaf"></i></div>
-        <div class="text">
-          <h4>Sustainability</h4>
-          <p>Eco-conscious practices for a greener future.</p>
-        </div>
-      </div>
-    </div>
-
+    <!-- Add more tooltips positioned accurately based on your image -->
   </div>
 
+  <section id="features" class="features">
+  <div class="feature"><img src="img/ev-charging.png" alt="EV Charging"><p>EV Charging</p></div>
+  <div class="feature"><img src="img/emergency-alert.png" alt="Emergency SOS"><p>Emergency SOS Alert</p></div>
+  <div class="feature"><img src="img/wired-charging.png" alt="Wired Charging"><p>Wired Charging</p></div>
+  <div class="feature"><img src="img/wireless-charging.png" alt="Wireless Charging"><p>Wireless Charging</p></div>
+  <div class="feature"><img src="img/air-sensor.png" alt="Air Sensor"><p>Air Quality Sensor</p></div>
+  <div class="feature"><img src="img/air-screen.png" alt="Air Quality Screen"><p>Air Quality Screen</p></div>
+  <div class="feature"><img src="img/street-lighting.png" alt="Street Lighting"><p>Street Lighting</p></div>
+  <div class="feature"><img src="img/speaker.png" alt="PA Speaker"><p>PA Loud Speaker</p></div>
+  <div class="feature"><img src="img/solar-panel.png" alt="Power Gen"><p>Power Generation</p></div>
+  <div class="feature"><img src="img/rgb-screen.png" alt="RGB LED"><p>RGB Pixel LED</p></div>
+  <div class="feature"><img src="img/motion-sensor.png" alt="Motion Detection"><p>Motion Detector</p></div>
+  <div class="feature"><img src="img/wifi.png" alt="WiFi Hotspot"><p>WiFi Hotspot</p></div>
+  <div class="feature"><img src="img/intercom.png" alt="Intercom"><p>Intercom</p></div>
+  <div class="feature"><img src="img/touchscreen.png" alt="Touch Screen"><p>Android Touch Screen</p></div>
+  <div class="feature"><img src="img/voice.png" alt="AI Voice"><p>AI Voice Communication</p></div>
+  <div class="feature"><img src="img/camera.png" alt="AI Camera"><p>AI Smart Camera</p></div>
+</section>
+
+  <section class="cta">
+    <h2>Want to Build Smarter Cities?</h2>
+    <p>Partner with us to deploy next-gen Smart Poles in your town, campus, or city.</p>
+    <a href="#contact" class="cta-button">Get in Touch</a>
+  </section>
 </body>
 </html>
