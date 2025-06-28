@@ -278,6 +278,28 @@
 /*** Single Page Hero Header End ***/
 
 
+/*** Single Page Hero Header Start ***/
+.bg-breadcrumb2 {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/contactimg.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 60px 0 60px 0;
+    transition: 0.5s;
+}
+
+.bg-breadcrumb2 .breadcrumb1 {
+    position: relative;
+}
+
+.bg-breadcrumb2 .breadcrumb1 .breadcrumb-item a {
+    color: var(--bs-white);
+}
+/*** Single Page Hero Header End ***/
+
+
 
 
 /*** Service Start ***/
