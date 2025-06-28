@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Electra - Electrical Website Template</title>
+        <title>Arcot Industries Private Limited</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
@@ -45,16 +45,16 @@
     <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
     <nav class="navmenu" id="mainNav">
       <ul class="mb-0">
-         <li><a href="index.html">Home</a></li>
+         <li><a href="index.html" >Home</a></li>
              <li><a href="about.html">About</a></li>
         <li>
           <a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a>
         </li>
         <li><a href="solution.html">Solutions</a></li>
-        <li><a href="applications.html">Applications</a></li>
-          <li><a class="active" href="gallery.html">Gallery</a></li>
-             <li><a href="contact.html">Contact</a></li>
-        <li><a href="#"><i class="bi bi-search"></i></a></li>
+    <li><a href="applications.html">Applications</a></li>
+   <li><a href="gallery.html" class="active">Gallery</a></li>
+           <li><a href="contact.html">Contact</a></li>
+        <!-- <li><a href="#"><i class="bi bi-search"></i></a></li> -->
       </ul>
     </nav>
   </div>
@@ -76,7 +76,7 @@
   <div class="service-group">
     <h6>Power</h6>
     <ul>
-      <li><a href="#">transmission</a></li>
+      <li><a href="transmission.html">transmission</a></li>
       <li><a href="#">distribution</a></li>
       <li><a href="#">Low Tention</a></li>
         <li><a href="#">High Tention</a></li>
@@ -111,7 +111,7 @@
   <div class="service-group">
     <h6>Smart City</h6>
     <ul>
-      <li><a class="active" href="smart-pole.html">Smart Pole</a></li>
+      <li><a href="smart-pole.html">Smart Pole</a></li>
       <li><a href="#">Smart Conference Hall</a></li>
        <li><a href="#">Smart Bollards</a></li>
           <li><a href="#">Smart Bar Counter</a></li>
@@ -122,7 +122,7 @@
    <div class="service-group">
     <h6>R & D</h6>
     <ul>
-      <li><a class="active" href="smart-pole.html">Smart Pole</a></li>
+      <li><a href="smart-pole.html">Smart Pole</a></li>
     </ul>
   </div>
 
@@ -471,7 +471,86 @@
         grid-template-columns: 1fr 1fr;
       }
     }
+
+
+    .gallery-heading {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInDown 1s ease;
+}
+
+.gallery-heading h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.gallery-heading h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #ffff;
+  margin: 8px auto 0;
+  border-radius: 2px;
+  animation: expandLine 1s ease forwards;
+}
+
+.gallery-heading p {
+  font-size: 16px;
+  color: #666;
+  margin-top: 10px;
+  animation: fadeInUp 1.2s ease;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expandLine {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 60px;
+    opacity: 1;
+  }
+}
+
   </style>
+
+
+
+<div class="gallery-heading">
+  <h2>Our Stunning Gallery</h2>
+  <p>Explore the brilliance of our lighting, power, and smart tech solutions</p>
+</div>
+
        
 
 
@@ -479,20 +558,22 @@
 
 <!-- Gallery Container -->
 <section class="gallery-container">
-
-  <!-- Gallery Items -->
-  <div class="gallery">
-    <img src="img/segmentimgs/lights1 (13).webp" alt="Image 1" />
-    <img src="img/segmentimgs/lights1 (13).webp" alt="Image 2" />
-    <img src="img/segmentimgs/lights1 (13).webp" alt="Image 3" />
-    <img src="img/segmentimgs/lights1 (13).webp" alt="Image 4" />
-    <img src="img/segmentimgs/lights1 (13).webp" alt="Image 5" />
-    <img src="img/segmentimgs/lights1 (13).webp" alt="Image 6" />
-    <img src="img/segmentimgs/lights1 (13).webp" alt="Image 7" />
-    <img src="img/segmentimgs/lights1 (13).webp" alt="Image 8" />
+  <div class="gallery-grid">
+    <img src="img/application/application1(1).jpg" alt="Image 1" />
+    <img src="img/application/application1(2).jpg" alt="Image 2" />
+    <img src="img/application/application1(3).jpg" alt="Image 3" />
+    <img src="img/application/application1(4).jpg" alt="Image 4" />
+    <img src="img/application/application1(5).jpg" alt="Image 5" />
+    <img src="img/application/application1(6).jpg" alt="Image 6" />
+    <img src="img/application/application1(1).jpg" alt="Image 7" />
+    <img src="img/segmentimgs/hospital-auto.jpg" alt="Image 8" />
+    <img src="img/segmentimgs/home-lighting.webp" alt="Image 8" />
+    <img src="img/segmentimgs/commercial-auto.jpg" alt="Image 8" />
+     <img src="img/segmentimgs/industrial-auto.jpg" alt="Image 8" />
+      <img src="img/segmentimgs/park-lighting.webp" alt="Image 8" />
   </div>
 
-  <!-- Lightbox Modal -->
+  <!-- Lightbox Modal (same as before) -->
   <div class="lightbox" id="lightbox">
     <button class="close-btn" id="closeBtn">&times;</button>
     <button class="prev-btn" id="prevBtn">&#10094;</button>
@@ -501,113 +582,99 @@
   </div>
 </section>
 
+
 <style>
-  /* Gallery Container */
   .gallery-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-  }
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
 
-  /* Masonry Gallery */
-  .gallery {
-    column-count: 4;
-    column-gap: 1rem;
-  }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
 
-  /* Responsive columns */
-  @media (max-width: 1024px) {
-    .gallery {
-      column-count: 3;
-    }
-  }
-  @media (max-width: 768px) {
-    .gallery {
-      column-count: 2;
-    }
-  }
-  @media (max-width: 480px) {
-    .gallery {
-      column-count: 1;
-    }
-  }
+.gallery-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
 
-  /* Gallery images */
-  .gallery img {
-    width: 100%;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: block;
-  }
+.gallery-grid img:hover {
+  transform: scale(1.05) rotateZ(1deg);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
 
-  /* Hover zoom and shadow */
-  .gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  }
+/* Lightbox overlay */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
 
-  /* Lightbox overlay */
-  .lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-  }
+.lightbox.active {
+  display: flex;
+}
 
-  .lightbox.active {
-    display: flex;
-  }
+#lightboxImage {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
 
-  /* Lightbox image */
-  #lightboxImage {
-    max-width: 90%;
-    max-height: 80vh;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.3);
-  }
+/* Buttons */
+.close-btn, .prev-btn, .next-btn {
+  position: absolute;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
 
-  /* Navigation buttons */
-  .close-btn, .prev-btn, .next-btn {
-    position: absolute;
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 3rem;
-    cursor: pointer;
-    user-select: none;
-    transition: color 0.3s ease;
-  }
+.close-btn:hover,
+.prev-btn:hover,
+.next-btn:hover {
+  color: #00f9ff;
+}
 
-  .close-btn:hover,
-  .prev-btn:hover,
-  .next-btn:hover {
-    color: #00f9ff;
-  }
+.close-btn {
+  top: 20px;
+  right: 30px;
+}
+.prev-btn {
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.next-btn {
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-  .close-btn {
-    top: 20px;
-    right: 30px;
+@media (max-width: 768px) {
+  .gallery-grid img {
+    height: 200px;
   }
+}
 
-  .prev-btn {
-    left: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .next-btn {
-    right: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
 </style>
 
 <script>

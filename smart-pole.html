@@ -45,16 +45,16 @@
     <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
     <nav class="navmenu" id="mainNav">
       <ul class="mb-0">
-         <li><a href="index.html">Home</a></li>
+         <li><a href="index.html" >Home</a></li>
              <li><a href="about.html">About</a></li>
         <li>
           <a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a>
         </li>
         <li><a href="solution.html">Solutions</a></li>
-     <li><a href="applications.html">Applications</a></li>
-   <li><a href="gallery.html">Gallery</a></li>
-             <li><a href="contact.html">Contact</a></li>
-        <li><a href="#"><i class="bi bi-search"></i></a></li>
+    <li><a href="applications.html">Applications</a></li>
+   <li><a href="gallery.html" >Gallery</a></li>
+           <li><a href="contact.html">Contact</a></li>
+        <!-- <li><a href="#"><i class="bi bi-search"></i></a></li> -->
       </ul>
     </nav>
   </div>
@@ -76,7 +76,7 @@
   <div class="service-group">
     <h6>Power</h6>
     <ul>
-      <li><a href="#">transmission</a></li>
+      <li><a href="transmission.html">transmission</a></li>
       <li><a href="#">distribution</a></li>
       <li><a href="#">Low Tention</a></li>
         <li><a href="#">High Tention</a></li>
@@ -109,9 +109,9 @@
     </ul>
   </div>
   <div class="service-group">
-    <h6>Smart City</h6>
+    <h6 class="active">Smart City</h6>
     <ul>
-      <li><a class="active" href="smart-pole.html">Smart Pole</a></li>
+      <li><a href="smart-pole.html" class="active">Smart Pole</a></li>
       <li><a href="#">Smart Conference Hall</a></li>
        <li><a href="#">Smart Bollards</a></li>
           <li><a href="#">Smart Bar Counter</a></li>
@@ -122,7 +122,7 @@
    <div class="service-group">
     <h6>R & D</h6>
     <ul>
-      <li><a class="active" href="smart-pole.html">Smart Pole</a></li>
+      <li><a href="smart-pole.html">Smart Pole</a></li>
     </ul>
   </div>
 
@@ -132,7 +132,6 @@
     </div>
   </div>
 </header>
-
 <script>
   function toggleMegaMenu(event) {
     event.preventDefault();
