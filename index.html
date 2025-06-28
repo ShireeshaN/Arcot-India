@@ -655,6 +655,134 @@
 </script>
 
 
+<style>
+/* Your existing glassy-dark overlay */
+.overlay-slide.glassy-dark {
+  background: rgba(15, 15, 15, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.5s ease-in-out;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.product-card:hover .overlay-slide.glassy-dark {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Content inside the overlay */
+.glass-content {
+  max-width: 90%;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 10px 10px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  animation: fadeInZoom 0.6s ease forwards;
+  transform: translateY(15px);
+  opacity: 0;
+}
+
+.glass-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Title */
+.glass-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  animation: fadeSlide 0.5s ease forwards;
+}
+
+/* Description */
+.glass-desc {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.5;
+  margin-bottom: 18px;
+  animation: fadeSlide 0.7s ease forwards;
+}
+
+/* Button */
+.glass-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+  color:#fff;
+}
+
+.glass-arrow {
+  width: 18px;
+  height: 18px;
+  stroke: #fff;
+  transition: transform 0.3s ease;
+}
+
+.glass-btn:hover .glass-arrow {
+  transform: translateX(4px);
+}
+
+/* Animations */
+@keyframes fadeInZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+</style>
+
+
 
 
 
@@ -671,35 +799,59 @@
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/seg1 (3).webp" alt="Basic Light A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Basic Light A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+   <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title">Transmission </h4>
+    <p class="glass-desc">
+      High-voltage transmission solutions for efficient bulk power transfer from generation stations to distribution networks with minimal losses.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
         <!-- Add more cards as needed -->
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/seg1 (2).webp" alt="Basic Light B" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Basic Light B</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+            <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title">Distribution </h4>
+    <p class="glass-desc">
+      Reliable medium and low-voltage distribution systems designed to safely deliver electricity to commercial, industrial, and residential endpoints.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/seg1 (1).webp" alt="Basic Light C" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Basic Light C</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+            <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title"> Low Tension (LT) Systems </h4>
+    <p class="glass-desc">
+     LT panels and cabling for safe and controlled power supply in residential and small-scale commercial setups, meeting all safety standards.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
 
@@ -707,12 +859,41 @@
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/seg1 (10).webp" alt="Basic Light C" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Basic Light C</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+            <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title"> High Tension (HT) Systems</h4>
+    <p class="glass-desc">
+      HT installations including transformers and switchgear for large-scale industries, ensuring stable, high-capacity energy delivery.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
+          </div>
+        </div>
+
+
+           <div class="gallery-item">
+          <div class="product-card">
+            <img src="img/segmentimgs/seg1 (10).webp" alt="Basic Light C" />
+            <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title"> Power Panels & Control Boards</h4>
+    <p class="glass-desc">
+      Custom-built LT & HT panels, control boards, and synchronizing panels for precise power management and operational safety.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
+              </div>
+             </div>
           </div>
         </div>
        
@@ -736,47 +917,79 @@
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/seg1 (11).webp" alt="Emergency Light A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Emergency Light A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+                 <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title"> Hydel Power</h4>
+    <p class="glass-desc">
+      Utilizing water flow to produce renewable electricity with small and medium-scale hydroelectric systems for long-term reliability.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/seg1 (8).webp" alt="Emergency Light B" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Emergency Light B</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+                 <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title"> Wind Energy</h4>
+    <p class="glass-desc">
+       Harnessing wind through efficient turbines for sustainable and continuous power generation in high-wind zones.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
 
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/seg1 (7).webp" alt="Emergency Light B" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Emergency Light B</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+                 <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title"> Solar Power</h4>
+    <p class="glass-desc">
+      Design and installation of solar PV systems for rooftops and open land, delivering clean and cost-effective energy using sunlight.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
 
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/seg1 (5).webp" alt="Emergency Light B" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Emergency Light B</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+                   <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title"> Biomass Power </h4>
+    <p class="glass-desc">
+      Eco-friendly energy generation from agricultural and organic waste, supporting circular energy systems and rural electrification.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
 
@@ -804,79 +1017,155 @@
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/lights1 (2).webp" alt="Fire System A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Fire System A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+               <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title"> Residential Lighting</h4>
+    <p class="glass-desc">
+      Elegant and efficient lighting solutions for homes, enhancing comfort, mood, and energy savings in living spaces.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
 
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/lights1 (12).webp" alt="Fire System A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Fire System A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+               <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title"> Facade Lighting</h4>
+    <p class="glass-desc">
+      Architectural facade illumination to highlight building features with dynamic, programmable light effects and color control.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/lights1 (13).webp" alt="Fire System A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Fire System A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+            <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title"> Commercial Lighting</h4>
+    <p class="glass-desc">
+      Smart and aesthetic lighting systems for offices, malls, showrooms, and retail spaces to improve ambiance and productivity.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/lights1 (6).webp" alt="Fire System A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Fire System A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+           <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title"> Industrial Lighting</h4>
+    <p class="glass-desc">
+      High-intensity, durable lighting for factories, warehouses, and plants to ensure safety, visibility, and operational efficiency.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/lights1 (4).webp" alt="Fire System A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Fire System A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+            <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title"> Street Lighting</h4>
+    <p class="glass-desc">
+      Energy-efficient and sensor-based lighting for roads and highways, improving visibility and safety in public spaces.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/lights1 (3).webp" alt="Fire System A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Fire System A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+           <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title">  Park Lighting</h4>
+    <p class="glass-desc">
+      Soft and decorative lighting for parks, pathways, and public gardens, designed for both beauty and safety during nighttime.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/lights1 (7).webp" alt="Fire System A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Fire System A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+            <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title"> Stadium Lighting</h4>
+    <p class="glass-desc">
+      High-lumen floodlighting for stadiums and sports arenas, offering uniform brightness and glare-free visibility for events.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
+          </div>
+        </div>
+
+          <div class="gallery-item">
+          <div class="product-card">
+            <img src="img/segmentimgs/lights1 (7).webp" alt="Fire System A" />
+            <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title"> Hospital Lighting</h4>
+    <p class="glass-desc">
+      Specialized lighting for healthcare environments with proper lux levels to support patient comfort and medical accuracy.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
+              </div>
+             </div>
           </div>
         </div>
 
@@ -901,48 +1190,123 @@
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/smart4.jpg" alt="Automation A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Automation A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+           <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title"> Residential Automation</h4>
+    <p class="glass-desc">
+      Smart home solutions for lighting, security, climate control, and appliances — all manageable through mobile or voice control.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
 
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/smart4.jpg" alt="Automation A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Automation A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+            <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title"> Commercial Automation</h4>
+    <p class="glass-desc">
+      Integrated automation systems for offices and retail spaces to control lighting, HVAC, access, and energy usage efficiently.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/smart4.jpg" alt="Automation A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Automation A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+           <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title"> Industrial Automation</h4>
+    <p class="glass-desc">
+     Advanced control systems, sensors, and PLC/SCADA setups to streamline operations, improve safety, and boost productivity.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/smart4.jpg" alt="Automation A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Automation A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+            <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title">  Hospital Automation</h4>
+    <p class="glass-desc">
+      Touchless controls, smart lighting, HVAC, and patient monitoring systems that enhance hygiene, comfort, and efficiency in healthcare spaces.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
+
+
+        <div class="gallery-item">
+          <div class="product-card">
+            <img src="img/segmentimgs/smart4.jpg" alt="Automation A" />
+            <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title">IoT-Based Automation</h4>
+    <p class="glass-desc">
+      Smart, sensor-driven systems connected via the Internet of Things (IoT) for real-time monitoring, control, and data-driven decisions.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
+              </div>
+             </div>
+          </div>
+        </div>
+
+
+
+      <div class="gallery-item">
+          <div class="product-card">
+            <img src="img/segmentimgs/smart4.jpg" alt="Automation A" />
+            <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title">  Hotel Automation</h4>
+    <p class="glass-desc">
+     Luxury-focused automation for lighting, AC, curtains, and service controls — enhancing guest experience and operational efficiency.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
+              </div>
+             </div>
+          </div>
+        </div>  
        
        
        
@@ -960,19 +1324,27 @@
   <section id="energy">
     <div class="section-header1">
       <h3>SMART CITY</h3>
-      <p>Solar, Wind, Biomass Solutions</p>
+      <p>Smart Pole , Smart Conference Table , Smart Bollards ,Smart Bar Counter ,Smart Window leaf AC</p>
     </div>
     <div class="gallery-wrapper">
       <div class="gallery" id="energy-gallery">
         <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/smart1.jpg" alt="Energy A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Energy A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+          <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title">Smart Pole</h4>
+    <p class="glass-desc">
+    Multi-functional poles equipped with EV charging, CCTV, Wi-Fi, SOS, LED screens, and environmental sensors — designed for urban efficiency and connectivity.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
 
@@ -980,48 +1352,80 @@
          <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/smart2.jpg" alt="Energy A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Energy A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+          <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title">  Smart Conference Table</h4>
+    <p class="glass-desc">
+     Technology-integrated tables with wireless charging, touchscreens, AV controls, and seamless connectivity for modern meeting rooms and collaborative spaces.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
 
          <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/smart3.jpg" alt="Energy A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Energy A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+           <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title">Smart Bollards</h4>
+    <p class="glass-desc">
+     Intelligent retractable or fixed bollards with lighting, traffic control, and surveillance features for enhanced urban safety and crowd management.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
 
          <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/smart5.jpg" alt="Energy A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Energy A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+          <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title">Smart Bar Counter </h4>
+    <p class="glass-desc">
+     Digitally controlled counters with embedded displays, LED lighting, cooling sections, and IoT integration for modern hospitality and entertainment zones.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
 
          <div class="gallery-item">
           <div class="product-card">
             <img src="img/segmentimgs/smart4.jpg" alt="Energy A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Energy A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+        <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title">   Smart Window Leaf AC</h4>
+    <p class="glass-desc">
+     Compact and energy-efficient air conditioners mounted on window leaves, offering smart controls, air quality monitoring, and low-noise operation for urban homes.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
 
@@ -1036,71 +1440,128 @@
     <a href="#smartcity" class="scroll-arrow">&#x2193;</a>
   </section>
 
-  <!-- SECTION 6 -->
+
+    <!-- SECTION 6 -->
   <section id="smartcity">
     <div class="section-header1">
       <h3>R&D</h3>
-      <p>Conference Hall, Smart Pole, Smart Counters, Smart Window Leaf A/C</p>
+      <p>Smart Pole , Smart Conference Table , Smart Bollards ,Smart Bar Counter ,Smart Window leaf AC</p>
     </div>
     <div class="gallery-wrapper">
-      <div class="gallery" id="smartcity-gallery">
+      <div class="gallery" id="energy-gallery">
         <div class="gallery-item">
           <div class="product-card">
-            <img src="img/segmentimgs/lights1 (4).webp" alt="Smart City A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Smart City A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+            <img src="img/segmentimgs/smart1.jpg" alt="Energy A" />
+          <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title">Smart Pole</h4>
+    <p class="glass-desc">
+    Multi-functional poles equipped with EV charging, CCTV, Wi-Fi, SOS, LED screens, and environmental sensors — designed for urban efficiency and connectivity.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
+          </div>
+        </div>
+
+
+         <div class="gallery-item">
+          <div class="product-card">
+            <img src="img/segmentimgs/smart2.jpg" alt="Energy A" />
+          <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title">  Smart Conference Table</h4>
+    <p class="glass-desc">
+     Technology-integrated tables with wireless charging, touchscreens, AV controls, and seamless connectivity for modern meeting rooms and collaborative spaces.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
+              </div>
+             </div>
           </div>
         </div>
 
          <div class="gallery-item">
           <div class="product-card">
-            <img src="img/segmentimgs/lights1 (7).webp" alt="Smart City A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Smart City A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+            <img src="img/segmentimgs/smart3.jpg" alt="Energy A" />
+           <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title">Smart Bollards</h4>
+    <p class="glass-desc">
+     Intelligent retractable or fixed bollards with lighting, traffic control, and surveillance features for enhanced urban safety and crowd management.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
 
          <div class="gallery-item">
           <div class="product-card">
-            <img src="img/segmentimgs/lights1 (11).webp" alt="Smart City A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Smart City A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+            <img src="img/segmentimgs/smart5.jpg" alt="Energy A" />
+          <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title">Smart Bar Counter </h4>
+    <p class="glass-desc">
+     Digitally controlled counters with embedded displays, LED lighting, cooling sections, and IoT integration for modern hospitality and entertainment zones.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
 
          <div class="gallery-item">
           <div class="product-card">
-            <img src="img/segmentimgs/seg1 (4).webp" alt="Smart City A" />
-            <div class="overlay-slide">
-              <div class="product-content">
-                <h4>Smart City A</h4>
-                <a href="details.html" class="arrow-btn">&#x2192;</a>
+            <img src="img/segmentimgs/smart4.jpg" alt="Energy A" />
+        <div class="overlay-slide glassy-dark">
+  <div class="glass-content">
+    <h4 class="glass-title">   Smart Window Leaf AC</h4>
+    <p class="glass-desc">
+     Compact and energy-efficient air conditioners mounted on window leaves, offering smart controls, air quality monitoring, and low-noise operation for urban homes.
+    </p>
+    <a href="details.html" class="glass-btn">
+      <span>Explore</span>
+      <svg class="glass-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+               </a>
               </div>
-            </div>
+             </div>
           </div>
         </div>
 
+        
         <!-- Add more cards as needed -->
       </div>
       <div class="arrow-nav">
-        <button class="arrow-button" onclick="scrollGallery('smartcity-gallery', -1)">&#x2190;</button>
-        <button class="arrow-button" onclick="scrollGallery('smartcity-gallery', 1)">&#x2192;</button>
+        <button class="arrow-button" onclick="scrollGallery('energy-gallery', -1)">&#x2190;</button>
+        <button class="arrow-button" onclick="scrollGallery('energy-gallery', 1)">&#x2192;</button>
       </div>
     </div>
-    <a href="#basic-lighting" class="scroll-arrow up">&#x2191;</a>
+    <a href="#smartcity" class="scroll-arrow">&#x2193;</a>
   </section>
+
+ 
 
 <script>
   // Change background color based on visible section
@@ -1470,59 +1931,104 @@
   <div class="appliarco-slider-arrow up" onclick="prevSlide()">❮</div>
 
   <div class="appliarco-slider-inner" id="sliderInner">
-    <!-- Slide 1 -->
-    <div class="appliarco-slide">
-      <div class="appliarco-slide-content">
-        <h4>High Bay</h4>
-        <h2>HBL</h2>
-        <div class="appliarco-buttons">
-          <button class="active">Product Detail</button>
-          <button class="active">Discover All</button>
-        </div>
-        <p class="appliarco-slide-description">
-          HBL is a high-performance High Bay luminaire designed for industrial and commercial spaces. With excellent energy efficiency and long-lasting durability.
-        </p>
-      </div>
-      <div class="appliarco-slide-image">
-        <img src="img/application/appli (1).png" alt="HBL" />
-      </div>
+  
+   <!-- Slide 1 -->
+<div class="appliarco-slide">
+  <div class="appliarco-slide-content">
+    <h2>Power</h2>
+    <p class="appliarco-slide-description">
+      Reliable solutions for transmission, distribution, and panel boards across HT & LT networks.
+    </p>
+    <div class="appliarco-buttons">
+      <button class="active">View More</button>
     </div>
+  </div>
+  <div class="appliarco-slide-image">
+    <img src="img/application/appli (1).png" alt="HBL" />
+  </div>
+</div>
 
-    <!-- Slide 2 -->
-    <div class="appliarco-slide">
-      <div class="appliarco-slide-content">
-        <h4>Linear</h4>
-        <h2>LNR</h2>
-        <div class="appliarco-buttons">
-          <button class="active">Product Detail</button>
-          <button class="active">Discover All</button>
-        </div>
-        <p class="appliarco-slide-description">
-          LNR offers sleek linear lighting ideal for offices and modern interiors. Seamless installation, making it a go-to for architectural lighting.
-        </p>
-      </div>
-      <div class="appliarco-slide-image">
-        <img src="img/application/appli (2).png" alt="LNR" />
-      </div>
+   <!-- Slide 2 -->
+<div class="appliarco-slide">
+  <div class="appliarco-slide-content">
+    <h2>Lighting</h2>
+    <p class="appliarco-slide-description">
+      Sleek linear lighting ideal for modern interiors and architectural spaces.Innovative lighting for residential, commercial, industrial, and public spaces with aesthetic precision.
+    </p>
+    <div class="appliarco-buttons">
+      <button class="active">View More</button>
     </div>
+  </div>
+  <div class="appliarco-slide-image">
+    <img src="img/application/appli (2).png" alt="LNR" />
+  </div>
+</div>
 
-    <!-- Slide 3 -->
-    <div class="appliarco-slide">
-      <div class="appliarco-slide-content">
-        <h4>Downlight</h4>
-        <h2>RDL</h2>
-        <div class="appliarco-buttons">
-          <button class="active">Product Detail</button>
-          <button class="active">Discover All</button>
-        </div>
-        <p class="appliarco-slide-description">
-          RDL is a recessed downlight providing glare-free lighting. Perfect for retail, hospitality, and residential applications.
-        </p>
-      </div>
-      <div class="appliarco-slide-image">
-        <img src="img/application/appli (5).png" alt="RDL" />
-      </div>
+
+   <!-- Slide 3 -->
+<div class="appliarco-slide">
+  <div class="appliarco-slide-content">
+    <h2>Energy</h2>
+    <p class="appliarco-slide-description">
+      Clean and hybrid energy generation from solar, wind, biomass, and hydel systems.
+    </p>
+    <div class="appliarco-buttons">
+      <button class="active">View More</button>
     </div>
+  </div>
+  <div class="appliarco-slide-image">
+    <img src="img/application/appli (5).png" alt="RDL" />
+  </div>
+</div>
+
+ <!-- Slide 4 -->
+<div class="appliarco-slide">
+  <div class="appliarco-slide-content">
+    <h2>Automation</h2>
+    <p class="appliarco-slide-description">
+      Smart automation for homes, offices, industries, hospitals, and IoT-integrated spaces.
+    </p>
+    <div class="appliarco-buttons">
+      <button class="active">View More</button>
+    </div>
+  </div>
+  <div class="appliarco-slide-image">
+    <img src="img/application/appli (1).png" alt="HBL" />
+  </div>
+</div>
+
+ <!-- Slide 5 -->
+<div class="appliarco-slide">
+  <div class="appliarco-slide-content">
+    <h2>Smart City</h2>
+    <p class="appliarco-slide-description">
+      Advanced urban solutions like smart poles, tables, ACs, bollards, and smart counters.
+    </p>
+    <div class="appliarco-buttons">
+      <button class="active">View More</button>
+    </div>
+  </div>
+  <div class="appliarco-slide-image">
+    <img src="img/application/appli (1).png" alt="HBL" />
+  </div>
+</div>
+
+ <!-- Slide 6 -->
+<div class="appliarco-slide">
+  <div class="appliarco-slide-content">
+    <h2>R&D Products</h2>
+    <p class="appliarco-slide-description">
+      Innovative and futuristic technology developed in-house for specialized applications.
+    </p>
+    <div class="appliarco-buttons">
+      <button class="active">View More</button>
+    </div>
+  </div>
+  <div class="appliarco-slide-image">
+    <img src="img/application/appli (1).png" alt="HBL" />
+  </div>
+</div>
+
   </div>
 
   <div class="appliarco-slider-arrow down" onclick="nextSlide()">❯</div>
