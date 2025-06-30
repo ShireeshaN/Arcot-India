@@ -1689,37 +1689,156 @@
   }
 
   @media (max-width: 768px) {
-    .appliarco-slide {
-      flex-direction: column;
-      padding: 20px;
-      text-align: center;
-    }
+   /* Main container */
+.appliarco-slider-container {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #000 !important;
+}
 
-    .appliarco-slide-content,
-    .appliarco-slide-image {
-      width: 100%;
-    }
+/* Inner vertical slider */
+.appliarco-slider-inner {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.8s ease;
+  height: 100%;
+}
 
-    .appliarco-slide-content h2 {
-      font-size: 24px;
-    }
+/* Each Slide */
+.appliarco-slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+  padding: 0 5vw;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
 
-    .appliarco-slide-content h4 {
-      font-size: 14px;
-    }
+/* Text Content */
+.appliarco-slide-content {
+  padding: 20px;
+  flex: 1;
+}
 
-    .appliarco-slider-arrow {
-      font-size: 30px;
-      padding: 8px;
-    }
+.appliarco-slide-content h2 {
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 10px;
+}
 
-    .appliarco-slide-image img {
-      max-width: 80%;
-    }
+.appliarco-slide-description {
+  font-size: 15px;
+  color: #ddd;
+  line-height: 1.5;
+  max-width: 500px;
+}
 
-    .appliarco-slide-description {
-      font-size: 14px;
-      margin: 15px auto 0;
-    }
+.appliarco-buttons {
+  margin-top: 20px;
+}
+
+.appliarco-buttons button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.appliarco-buttons button.active {
+  border-color: #fff;
+}
+
+/* Image */
+.appliarco-slide-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.appliarco-slide-image img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.8s ease;
+}
+
+/* Navigation arrows */
+.appliarco-slider-arrow {
+  position: absolute;
+  right: 10px;
+  font-size: 36px;
+  color: #ccc;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.appliarco-slider-arrow.up {
+  top: 20px;
+}
+
+.appliarco-slider-arrow.down {
+  bottom: 20px;
+}
+
+/* === Responsive Fixes for Mobile === */
+@media (max-width: 768px) {
+  .appliarco-slide {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px 10px;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+
+  .appliarco-slide-content {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .appliarco-slide-content h2 {
+    font-size: 22px;
+  }
+
+  .appliarco-slide-description {
+    font-size: 14px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  .appliarco-buttons {
+    margin-top: 15px;
+  }
+
+  .appliarco-slide-image {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .appliarco-slide-image img {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .appliarco-slider-arrow {
+    font-size: 28px;
+    padding: 6px;
+    right: 10px;
+  }
+}
+
   }
   /* applications */
