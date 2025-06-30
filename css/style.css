@@ -1589,7 +1589,7 @@
 
     /* applications */
     .appliarco-slider-container {
-    height: 90vh;
+    height: 50vh !important;
     width: 100%;
     overflow: hidden;
     position: relative;
