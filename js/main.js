@@ -118,3 +118,16 @@
 
 })(jQuery);
 
+
+
+
+  // This script highlights the current page in the header
+  document.querySelectorAll('.navmenu a, .mega-menu a').forEach(link => {
+    if (link.href === window.location.href) {
+      link.classList.add('active');
+      link.setAttribute("aria-current", "page");
+    }
+  });
+
+
+
