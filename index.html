@@ -437,38 +437,7 @@
 
 <style>
 
-  .animated-text {
-  display: inline-block;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: white;
-  overflow: hidden;
-  white-space: nowrap;
-}
 
-.animated-text span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: popIn 0.6s forwards;
-}
-
-@keyframes popIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Animate each letter with a delay */
-.animated-text span:nth-child(1) { animation-delay: 0.05s; }
-.animated-text span:nth-child(2) { animation-delay: 0.1s; }
-.animated-text span:nth-child(3) { animation-delay: 0.15s; }
-/* ...continue up to 30+ letters */
 
   .banner-video-carousel {
     position: relative;
@@ -527,6 +496,7 @@
 
 
   @media (max-width: 768px) {
+   
     .banner-content h1 {
       font-size: 1.5rem;
     }
