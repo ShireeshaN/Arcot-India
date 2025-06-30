@@ -131,3 +131,198 @@
 
 
 
+// header
+
+ // Toggle Mega Menu for "Services"
+  function toggleMegaMenu(event) {
+    event.preventDefault();
+    const menu = document.getElementById('megaMenu');
+    menu.classList.toggle('show');
+  }
+
+  // Toggle Mobile Menu (hamburger ↔ X)
+  function toggleMenu() {
+    const nav = document.getElementById('mainNav');
+    const btn = document.getElementById('menuBtn');
+    nav.classList.toggle('show');
+    btn.innerHTML = nav.classList.contains('show')
+      ? '<i class="bi bi-x-lg"></i>'
+      : '<i class="bi bi-list"></i>';
+  }
+
+  // Close mega menu if clicked outside
+  document.addEventListener('click', function (e) {
+    const menu = document.getElementById('megaMenu');
+    const nav = document.getElementById('mainNav');
+    if (!e.target.closest('.navmenu') && !e.target.closest('#megaMenu') && !e.target.closest('#menuBtn')) {
+      menu.classList.remove('show');
+    }
+  });
+
+  // ✅ Close mobile menu when a link is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll('.navmenu ul li a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const nav = document.getElementById('mainNav');
+        const btn = document.getElementById('menuBtn');
+
+        if (nav.classList.contains('show')) {
+          nav.classList.remove('show');
+          btn.innerHTML = '<i class="bi bi-list"></i>';
+        }
+      });
+    });
+  });
+
+//   header
+
+
+
+// banner
+
+ const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    allowTouchMove: true, // allow swipe gestures manually too
+  });
+
+  let timeoutId;
+
+  function playCurrentVideo() {
+    clearTimeout(timeoutId); // cancel any previously queued auto-slide
+
+    const currentSlide = swiper.slides[swiper.activeIndex];
+    const video = currentSlide.querySelector("video");
+
+    if (!video) return;
+
+    video.pause();
+    video.currentTime = 0;
+
+    video.onloadedmetadata = () => {
+      const duration = video.duration;
+      video.play();
+
+      // Slide after video duration
+      timeoutId = setTimeout(() => {
+        swiper.slideNext();
+      }, duration * 1000);
+    };
+
+    // If video already loaded, call manually
+    if (video.readyState >= 1) {
+      video.onloadedmetadata();
+    }
+  }
+
+  // Initial autoplay after load
+  window.addEventListener("load", () => {
+    setTimeout(playCurrentVideo, 500);
+  });
+
+  // Re-trigger play when user navigates manually
+  swiper.on("slideChange", () => {
+    // Wait a bit to ensure DOM settles before calling play
+    setTimeout(playCurrentVideo, 300);
+  });
+
+//   banner
+
+
+
+//heading segment
+
+const sloganText = "From Power to Smart City – We Own All 6";
+  const uniqueContainer = document.getElementById('unique-impact-text');
+
+  uniqueContainer.innerHTML = '';
+
+  [...sloganText].forEach((char, i) => {
+    const span = document.createElement('span');
+    span.innerHTML = char === ' ' ? '&nbsp;' : char;
+    span.style.animationDelay = (i * 0.06) + 's';
+    uniqueContainer.appendChild(span);
+  });
+
+  //heading segment
+
+
+//   segments
+
+ // Change background color based on visible section
+  const sections = document.querySelectorAll("section");
+  const bgClasses = {
+    "basic-lighting": "basic-bg",
+    "emergency-lighting": "emergency-bg",
+    "fire-systems": "fire-bg",
+    "automation": "automation-bg",
+    "energy": "energy-bg",
+    "smartcity": "smartcity-bg",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.body.className = "";
+        const newClass = bgClasses[entry.target.id];
+        if (newClass) document.body.classList.add(newClass);
+      }
+    });
+  }, { threshold: 0.6 });
+
+  sections.forEach(section => observer.observe(section));
+
+  // Scroll gallery function for arrow buttons
+  function scrollGallery(galleryId, direction) {
+    const gallery = document.getElementById(galleryId);
+    if (!gallery) return;
+    const scrollAmount = 350; // Adjust to your card width + gap
+    gallery.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+  }
+
+//   segments
+
+
+// applications
+
+  let currentSlide = 0;
+  const sliderInner = document.getElementById("sliderInner");
+  const slides = document.querySelectorAll(".appliarco-slide");
+  const totalSlides = slides.length;
+
+  function updateSlider() {
+    sliderInner.style.transform = `translateY(-${currentSlide * 100}vh)`;
+  }
+
+  function nextSlide() {
+    if (currentSlide < totalSlides - 1) {
+      currentSlide++;
+    } else {
+      currentSlide = 0; // loop back to first slide
+    }
+    updateSlider();
+  }
+
+  function prevSlide() {
+    if (currentSlide > 0) {
+      currentSlide--;
+    } else {
+      currentSlide = totalSlides - 1; // go to last slide if at first
+    }
+    updateSlider();
+  }
+
+  // ✅ AUTO SLIDE every 5 seconds
+  setInterval(() => {
+    nextSlide();
+  }, 5000);
+
+// applications
