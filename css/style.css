@@ -661,9 +661,10 @@
 
 .faq-section p.mb-4 {
     font-size: 14px;
-    color:
+    
 
 }
+
 
 /*** Testimonial Start ***/
 .testimonial-carousel .owl-stage-outer {
@@ -1158,58 +1159,87 @@
 
 
 /* about */
- .aboutthe-section {
+/* about */
+.aboutthe-section {
   padding: 60px 20px;
   background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
   color: #ffffff;
- font-family: 'Six Caps', sans-serif;
+  font-family: 'Six Caps', sans-serif;
 }
-
-
 
 .aboutthe-title {
   font-size: 2rem;
   font-weight: 300;
   color: #ffffff;
   letter-spacing: 1px;
-   font-family: 'Six Caps', sans-serif;
-}
-
-.aboutthe-dot {
-  color: #ff4a57;
-  font-size: 1.5rem;
-  margin-right: 10px;
+  font-family: 'Six Caps', sans-serif;
 }
 
 .aboutthe-description {
   color: #e0e0e0;
-   font-family: 'Six Caps', sans-serif;
+  font-family: 'Six Caps', sans-serif;
   font-size: 13px;
   letter-spacing: 3px;
-
   display: inline-block;
-
 }
 
 .aboutthe-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
+  padding-top: 10px;
+}
+
+.aboutthe-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+  animation: floatUp 5s ease-in-out infinite;
 }
 
 .aboutthe-img img {
   width: 100%;
   height: auto;
+  display: block;
   border-radius: 12px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.aboutthe-img img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+.aboutthe-img:hover img {
+  transform: scale(1.08) rotate3d(1, 1, 0, 4deg);
+  box-shadow: 0 12px 35px rgba(255, 255, 255, 0.2);
 }
 
-/* Responsive Mobile View */
+/* Optional glassy overlay on hover */
+.aboutthe-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.05);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 12px;
+}
+
+.aboutthe-img:hover::before {
+  opacity: 1;
+}
+
+/* Floating animation */
+@keyframes floatUp {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .aboutthe-grid {
     display: flex;
@@ -1224,7 +1254,12 @@
     width: 220px;
     scroll-snap-align: center;
   }
+
+  .aboutthe-img img {
+    border-radius: 12px;
+  }
 }
+
 /* about */
 
 
@@ -1588,125 +1623,20 @@
 
 
     /* applications */
-    .appliarco-slider-container {
-    height: 50vh !important;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    background-color: #000 !important;
-  }
-
-  .appliarco-slider-inner {
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.8s ease;
-  }
-
-  .appliarco-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    height: 95vh;
-    width: 100%;
-    padding: 0 5vw;
-    flex-shrink: 0;
-  }
-
-  .appliarco-slide-content {
-    padding: 20px;
-    flex: 1;
-  }
-
-  .appliarco-slide-content h4 {
-    font-size: 16px;
-    color: #f9f7f7;
-  }
-
-  .appliarco-slide-content h2 {
-    font-size: 28px;
-    color: #fbf9f9;
-  }
-
-  .appliarco-buttons {
-    margin-top: 20px;
-  }
-
-  .appliarco-buttons button {
-    background: none;
-    border: none;
-    font-size: 16px;
-    margin-right: 15px;
-    color: #eae6e6;
-    border-bottom: 2px solid transparent;
-    cursor: pointer;
-  }
-
-  .appliarco-buttons button.active {
-    color: #fcfbfb;
-    /* border-color: #e60000; */
-  }
-
-  .appliarco-slide-description {
-    margin-top: 20px;
-    font-size: 15px;
-    color: #fdf9f9;
-    line-height: 1.5;
-    max-width: 500px;
-  }
-
-  .appliarco-slide-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .appliarco-slide-image img {
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.8s ease;
-  }
-
-  .appliarco-slider-arrow {
-    position: absolute;
-    right: 10px;
-    font-size: 36px;
-    color: #aaa;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    user-select: none;
-    z-index: 10;
-  }
-
-  .appliarco-slider-arrow.down {
-    bottom: 20px;
-  }
-
-  .appliarco-slider-arrow.up {
-    top: 20px;
-  }
-
-  @media (max-width: 768px) {
-   /* Main container */
-.appliarco-slider-container {
-  height: 100vh;
+ .appliarco-slider-container {
   width: 100%;
   overflow: hidden;
   position: relative;
-  background-color: #000 !important;
+  background-color: #000;
+  height: 100vh;
 }
 
-/* Inner vertical slider */
 .appliarco-slider-inner {
   display: flex;
   flex-direction: column;
-  transition: transform 0.8s ease;
-  height: 100%;
+  transition: transform 0.8s ease-in-out;
 }
 
-/* Each Slide */
 .appliarco-slide {
   display: flex;
   align-items: center;
@@ -1715,14 +1645,13 @@
   height: 100vh;
   width: 100%;
   padding: 0 5vw;
-  flex-shrink: 0;
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 
-/* Text Content */
 .appliarco-slide-content {
+  flex: 0.8;
   padding: 20px;
-  flex: 1;
 }
 
 .appliarco-slide-content h2 {
@@ -1733,9 +1662,9 @@
 
 .appliarco-slide-description {
   font-size: 15px;
-  color: #ddd;
-  line-height: 1.5;
-  max-width: 500px;
+  color: #fdfdfd;
+  max-width: 400px;
+  line-height: 1.6;
 }
 
 .appliarco-buttons {
@@ -1743,22 +1672,16 @@
 }
 
 .appliarco-buttons button {
-  background: none;
-  border: none;
   font-size: 16px;
+  background: none;
   color: #fff;
+  border: none;
+  border-bottom: 2px solid #fff;
   cursor: pointer;
-  padding-bottom: 2px;
-  border-bottom: 2px solid transparent;
 }
 
-.appliarco-buttons button.active {
-  border-color: #fff;
-}
-
-/* Image */
 .appliarco-slide-image {
-  flex: 1;
+  flex: 1.2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1768,20 +1691,22 @@
 .appliarco-slide-image img {
   max-width: 100%;
   height: auto;
-  transition: transform 0.8s ease;
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
 }
 
-/* Navigation arrows */
+/* Arrows */
 .appliarco-slider-arrow {
   position: absolute;
   right: 10px;
   font-size: 36px;
-  color: #ccc;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 10px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
   cursor: pointer;
   z-index: 10;
+  user-select: none;
 }
 
 .appliarco-slider-arrow.up {
@@ -1792,53 +1717,65 @@
   bottom: 20px;
 }
 
-/* === Responsive Fixes for Mobile === */
+/* === MOBILE VIEW === */
 @media (max-width: 768px) {
   .appliarco-slide {
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 20px 10px;
+    align-items: stretch;
     height: 100vh;
-    box-sizing: border-box;
+    padding: 0;
+    text-align: center;
   }
 
   .appliarco-slide-content {
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
+    padding: 10px 15px 0;
+    margin: 0;
   }
 
   .appliarco-slide-content h2 {
-    font-size: 22px;
+    font-size: 20px;
+    margin: 10px 0 5px;
+    color: #fff;
   }
 
   .appliarco-slide-description {
     font-size: 14px;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 10px;
+    margin: 0;
+    padding: 0 5px;
+    color: #ddd;
+    line-height: 1.4;
   }
 
   .appliarco-buttons {
-    margin-top: 15px;
+    margin-top: 8px;
+  }
+
+  .appliarco-buttons button {
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: none;
+    color: #fff;
   }
 
   .appliarco-slide-image {
-    width: 100%;
-    padding: 10px;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .appliarco-slide-image img {
-    max-width: 90%;
+    max-width: 95%;
     height: auto;
-  }
-
-  .appliarco-slider-arrow {
-    font-size: 28px;
-    padding: 6px;
-    right: 10px;
+    transform: scale(1.1);
+    object-fit: contain;
   }
 }
 
-  }
+
   /* applications */
