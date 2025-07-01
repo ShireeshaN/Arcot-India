@@ -29,42 +29,6 @@
     transition: .5s;
 }
 
-.btn-square {
-    width: 32px;
-    height: 32px;
-}
-
-.btn-sm-square {
-    width: 34px;
-    height: 34px;
-}
-
-.btn-md-square {
-    width: 40px;
-    height: 40px;
-}
-
-.btn-lg-square {
-    width: 46px;
-    height: 46px;
-}
-
-.btn-xl-square {
-    width: 56px;
-    height: 56px;
-}
-
-.btn-square,
-.btn-sm-square,
-.btn-md-square,
-.btn-lg-square,
-.btn-xl-square {
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: normal;
-}
 
 .btn.btn-primary {
     color: var(--bs-white);
@@ -85,6 +49,7 @@
     color: black;
     background: white;
 }
+
 
 
 
