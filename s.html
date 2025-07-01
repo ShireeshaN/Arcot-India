@@ -1,0 +1,213 @@
+<section class="appliarco-slider-container">
+  <div class="appliarco-slider-arrow up" onclick="prevSlide()">❮</div>
+
+  <div class="appliarco-slider-inner" id="sliderInner">
+    
+    <!-- Slide 1 -->
+    <div class="appliarco-slide">
+      <div class="appliarco-slide-content">
+        <h2>Power</h2>
+        <p class="appliarco-slide-description">
+          Reliable solutions for transmission, distribution, and panel boards across HT & LT networks.
+        </p>
+        <div class="appliarco-buttons">
+          <button class="active">View More</button>
+        </div>
+      </div>
+      <div class="appliarco-slide-image">
+        <img src="img/application/69.png" alt="Power" />
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="appliarco-slide">
+      <div class="appliarco-slide-content">
+        <h2>Lighting</h2>
+        <p class="appliarco-slide-description">
+          Sleek linear lighting ideal for modern interiors and architectural spaces. Innovative lighting for residential, commercial, industrial, and public spaces with aesthetic precision.
+        </p>
+        <div class="appliarco-buttons">
+          <button class="active">View More</button>
+        </div>
+      </div>
+      <div class="appliarco-slide-image">
+        <img src="img/application/73.png" alt="Lighting" />
+      </div>
+    </div>
+
+    <!-- Add your other slides here in same format... -->
+
+  </div>
+
+  <div class="appliarco-slider-arrow down" onclick="nextSlide()">❯</div>
+</section>
+
+
+
+<style>
+    .appliarco-slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
+  height: 100vh;
+}
+
+.appliarco-slider-inner {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.8s ease-in-out;
+}
+
+.appliarco-slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+  padding: 0 5vw;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.appliarco-slide-content {
+  flex: 0.8;
+  padding: 20px;
+}
+
+.appliarco-slide-content h2 {
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.appliarco-slide-description {
+  font-size: 15px;
+  color: #fdfdfd;
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+.appliarco-buttons {
+  margin-top: 20px;
+}
+
+.appliarco-buttons button {
+  font-size: 16px;
+  background: none;
+  color: #fff;
+  border: none;
+  border-bottom: 2px solid #fff;
+  cursor: pointer;
+}
+
+.appliarco-slide-image {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.appliarco-slide-image img {
+  max-width: 100%;
+  height: auto;
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
+}
+
+/* Arrows */
+.appliarco-slider-arrow {
+  position: absolute;
+  right: 10px;
+  font-size: 36px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+}
+
+.appliarco-slider-arrow.up {
+  top: 20px;
+}
+
+.appliarco-slider-arrow.down {
+  bottom: 20px;
+}
+
+/* === MOBILE VIEW === */
+@media (max-width: 768px) {
+  .appliarco-slide {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .appliarco-slide-content {
+    padding: 0 10px;
+    width: 100%;
+  }
+
+  .appliarco-slide-content h2 {
+    font-size: 22px;
+  }
+
+  .appliarco-slide-description {
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  .appliarco-buttons button {
+    font-size: 14px;
+  }
+
+  .appliarco-slide-image {
+    padding: 0;
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .appliarco-slide-image img {
+    max-width: 90%;
+    height: auto;
+    transform: scale(1.15);
+  }
+}
+
+</style>
+
+
+<script>
+let currentSlide = 0;
+const sliderInner = document.getElementById("sliderInner");
+const slides = document.querySelectorAll(".appliarco-slide");
+const totalSlides = slides.length;
+
+function updateSlider() {
+  sliderInner.style.transform = `translateY(-${currentSlide * 100}vh)`;
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateSlider();
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  updateSlider();
+}
+
+setInterval(() => {
+  nextSlide();
+}, 5000);
+</script>

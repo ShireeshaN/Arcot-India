@@ -146,8 +146,9 @@
     const btn = document.getElementById('menuBtn');
     nav.classList.toggle('show');
     btn.innerHTML = nav.classList.contains('show')
-      ? '<i class="bi bi-x-lg"></i>'
-      : '<i class="bi bi-list"></i>';
+  ? '<i class="bi bi-x-lg"></i>'
+  : '<i class="bi bi-list"></i>';
+
   }
 
   // Close mega menu if clicked outside
@@ -293,36 +294,26 @@ const sloganText = "From Power to Smart City – We Own All 6";
 
 // applications
 
-  let currentSlide = 0;
-  const sliderInner = document.getElementById("sliderInner");
-  const slides = document.querySelectorAll(".appliarco-slide");
-  const totalSlides = slides.length;
+let currentSlide = 0;
+const sliderInner = document.getElementById("sliderInner");
+const slides = document.querySelectorAll(".appliarco-slide");
+const totalSlides = slides.length;
 
-  function updateSlider() {
-    sliderInner.style.transform = `translateY(-${currentSlide * 100}vh)`;
-  }
+function updateSlider() {
+  sliderInner.style.transform = `translateY(-${currentSlide * 100}vh)`;
+}
 
-  function nextSlide() {
-    if (currentSlide < totalSlides - 1) {
-      currentSlide++;
-    } else {
-      currentSlide = 0; // loop back to first slide
-    }
-    updateSlider();
-  }
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateSlider();
+}
 
-  function prevSlide() {
-    if (currentSlide > 0) {
-      currentSlide--;
-    } else {
-      currentSlide = totalSlides - 1; // go to last slide if at first
-    }
-    updateSlider();
-  }
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  updateSlider();
+}
 
-  // ✅ AUTO SLIDE every 5 seconds
-  setInterval(() => {
-    nextSlide();
-  }, 5000);
-
+setInterval(() => {
+  nextSlide();
+}, 5000);
 // applications
