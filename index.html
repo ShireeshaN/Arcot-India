@@ -1348,29 +1348,50 @@ Smart City & R&D: Innovative smart city tech & research.
             </div>
         </div>
         <!-- Footer End -->
+<style>
+  .btn-md-square {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* 👈 This makes it perfectly round */
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s ease;
+    background-color: #fff;
+    color: white;
+    border: 1px solid #333;
+  }
 
-        <style>
-           .btn-md-square {
-      width: 70px;
-      height: 50px;
-      border-radius: 50%;
-      font-size: 18px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.4s ease;
-      background-color: #fff;
-      color: white;
-      border: 1px solid #333;
-    }
-    .btn-md-square:hover {
-      background-color: #fff;
-      color: #0b0b0b;
-      transform: scale(1.15);
-      box-shadow: 0 0 10px #fff;
-    }
+  .btn-md-square:hover {
+    background-color: #fff;
+    color: #0b0b0b;
+    transform: scale(1.15);
+    box-shadow: 0 0 10px #fff;
+  }
 
-        </style>
+  /* Tablet */
+  @media (max-width: 768px) {
+    .btn-md-square {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+      border-radius: 50%; /* Still round */
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    .btn-md-square {
+      width: 36px;
+      height: 36px;
+      font-size: 14px;
+      border-radius: 50%; /* Super round for mobile */
+    }
+  }
+</style>
+
+
 
 
       
