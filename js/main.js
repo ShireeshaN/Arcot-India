@@ -317,3 +317,10 @@ setInterval(() => {
   nextSlide();
 }, 5000);
 // applications
+
+AOS.init({
+    duration: 2000,     // slow, elegant fade-up
+    easing: 'ease-out-cubic', // smooth easing
+    once: true,         // animate only once
+    offset: 100         // trigger animation a bit before entering viewport
+  });

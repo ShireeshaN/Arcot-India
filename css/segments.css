@@ -1,8 +1,8 @@
 
 
     section {
-      min-height: 100vh;
-      padding: 0px 40px 120px;
+      min-height: 70vh;
+      padding: 0px 40px 60px;
       position: relative;
     }
 
@@ -174,12 +174,12 @@
     }
 
     /* Background color for sections */
-    body.basic-bg { background-color: #686666; }
-    body.emergency-bg { background-color: #0e0e0e; }
-    body.fire-bg { background-color: #5b0000; }
-    body.automation-bg { background-color: #1b3a4b; }
-    body.energy-bg { background-color: #234f1e; }
-    body.smartcity-bg { background-color: #3a1b4b; }
+    body.basic-bg { background-color: #000000; }
+    body.emergency-bg { background-color:black ; }
+    body.fire-bg { background-color: #000000; }
+    body.automation-bg { background-color: #000000; }
+    body.energy-bg { background-color: #000000; }
+    body.smartcity-bg { background-color: #000000; }
 
     @media (max-width: 768px) {
       .gallery-item { width: 75vw; }
