@@ -236,7 +236,7 @@
 .bg-breadcrumb {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/bannerabout.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/bannerabout.webp);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -258,7 +258,7 @@
 .bg-breadcrumb1 {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/solutionbanners.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/solutionbanners.webp);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -280,7 +280,7 @@
 .bg-breadcrumb2 {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/contactimg.jpeg);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/contactimg.webp);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -301,7 +301,7 @@
 .bg-breadcrumb3 {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/smartpole.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/smartpole.webp);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -558,7 +558,7 @@
 .faq-section {
     position: relative;
     background-color: #121212; /* fallback dark */
-    background-image: url('../img/application/appli (1).png'); /* replace with your image path */
+    background-image: url('../img/application/appli (1).webp'); /* replace with your image path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
