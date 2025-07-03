@@ -1445,23 +1445,26 @@ Smart City & R&D: Innovative smart city tech & research.
         <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
 
         
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        
+       <!-- jQuery - must load first -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+<!-- Bootstrap & other libraries -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="lib/wow/wow.min.js" defer></script>
+<script src="lib/easing/easing.min.js" defer></script>
+<script src="lib/waypoints/waypoints.min.js" defer></script>
+<script src="lib/owlcarousel/owl.carousel.min.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-        <script>AOS.init();</script>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<!-- AOS with defer-safe init -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+<script defer>
+  window.addEventListener('DOMContentLoaded', () => {
+    AOS.init();
+  });
+</script>
+
 
 
       </body>
@@ -1472,50 +1475,3 @@ Smart City & R&D: Innovative smart city tech & research.
 
 
 
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-<!-- IoT Section -->
-<section class="iot-section">
-  <!-- Lottie Background -->
-  <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_iot-network.json"
-    background="transparent"
-    speed="1"
-    loop
-    autoplay>
-  </lottie-player>
-
-  <!-- Foreground Content -->
-  <div class="content">
-    <h2>Empowering IoT Networks</h2>
-    <p>Advanced smart integrations and real-time control</p>
-  </div>
-</section>
-
-
-<style>
- .iot-section {
-  position: relative;
-  background: #000; /* or gradient */
-  color: white;
-  padding: 120px 20px;
-  overflow: hidden;
-  min-height: 500px;
-}
-
-.iot-section lottie-player {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  opacity: 0.2; /* adjust visibility */
-  top: 0;
-  left: 0;
-}
-
-.iot-section .content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-}
-
-</style>
