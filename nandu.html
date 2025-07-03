@@ -1,0 +1,75 @@
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section");
+
+    sections.forEach((section, index) => {
+      const canvas = document.createElement("div");
+      const id = `tsparticles-${index}`;
+      canvas.id = id;
+      canvas.style.position = "absolute";
+      canvas.style.top = 0;
+      canvas.style.left = 0;
+      canvas.style.width = "100%";
+      canvas.style.height = "100%";
+      canvas.style.zIndex = 0;
+      section.style.position = "relative";
+      section.prepend(canvas);
+
+      tsParticles.load(id, {
+        fullScreen: { enable: false },
+        background: {
+          color: "transparent"
+        },
+        fpsLimit: 60,
+        interactivity: {
+          events: {
+            onHover: {
+              enable: true,
+              mode: "repulse"
+            },
+            resize: true
+          },
+          modes: {
+            repulse: {
+              distance: 100,
+              duration: 0.4
+            }
+          }
+        },
+        particles: {
+          color: { value: "#00cfff" },
+          links: {
+            color: "#00cfff",
+            distance: 120,
+            enable: true,
+            opacity: 0.4,
+            width: 1
+          },
+          collisions: { enable: false },
+          move: {
+            direction: "none",
+            enable: true,
+            outModes: { default: "bounce" },
+            random: true,
+            speed: 0.6,
+            straight: false
+          },
+          number: {
+            value: 60,
+            density: {
+              enable: true,
+              area: 800
+            }
+          },
+          opacity: { value: 0.5 },
+          shape: { type: "circle" },
+          size: {
+            value: { min: 1, max: 3 }
+          }
+        },
+        detectRetina: true
+      });
+      
+    });
+  });
+</script>
