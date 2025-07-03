@@ -174,12 +174,12 @@
     }
 
     /* Background color for sections */
-    body.basic-bg { background-color: #000000; }
+  body.basic-bg { background-color: #000000; }
     body.emergency-bg { background-color:black ; }
     body.fire-bg { background-color: #000000; }
     body.automation-bg { background-color: #000000; }
     body.energy-bg { background-color: #000000; }
-    body.smartcity-bg { background-color: #000000; }
+    body.smartcity-bg { background-color: #000000; } 
 
     @media (max-width: 768px) {
       .gallery-item { width: 75vw; }
