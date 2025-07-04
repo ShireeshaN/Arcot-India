@@ -33,7 +33,7 @@
     .gallery {
       display: flex;
       flex-wrap: nowrap;
-      gap: 15px;
+      gap: 18px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
@@ -229,4 +229,48 @@
   .scroll-arrow {
     font-size: 2rem;
   }
+}
+
+
+
+    /* Section position relative for overlays */
+.enhanced-section {
+  position: relative;
+  overflow: hidden;
+  background-color: #000; /* fallback */
+}
+
+/* Particle canvas fills section behind content */
+#particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Background image with blur and transparency */
+.enhanced-section .bg-image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background: url('img/carousel-1.webp') no-repeat center center;
+  background-size: cover;
+  filter: blur(2px) brightness(0.6);
+  opacity: 0.3;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Content sits above bg-image and particles */
+.enhanced-section > .section-header1,
+.enhanced-section > .gallery-wrapper,
+.enhanced-section > .scroll-arrow {
+  position: relative;
+  z-index: 3;
 }
