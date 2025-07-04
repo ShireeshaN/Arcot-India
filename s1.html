@@ -37,10 +37,18 @@
       align-items: stretch;
       justify-content: center;
       margin: 0;
+      opacity: 0;
+      transform: translateY(100px);
+      animation: slideFadeIn 1s ease-out forwards;
     }
 
     .feature-row.reverse {
       flex-direction: row-reverse;
+    }
+
+    .feature-row:hover {
+      transform: scale(1.01);
+      transition: transform 0.4s ease;
     }
 
     .feature-text {
@@ -51,24 +59,17 @@
       justify-content: center;
       padding: 60px;
       box-sizing: border-box;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeInUp 1s ease-out forwards;
+      transition: transform 0.6s ease, box-shadow 0.4s ease;
     }
 
-    .feature-row:nth-child(3) .feature-text {
-      animation-delay: 0.2s;
+    .feature-text:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
 
     .feature-image {
       flex: 0 0 60%;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeInUp 1s ease-out forwards;
-    }
-
-    .feature-row:nth-child(2) .feature-image {
-      animation-delay: 0.2s;
+      overflow: hidden;
     }
 
     .feature-image img {
@@ -76,6 +77,11 @@
       height: auto;
       object-fit: cover;
       display: block;
+      transition: transform 0.8s ease;
+    }
+
+    .feature-image:hover img {
+      transform: scale(1.05);
     }
 
     .feature-number {
@@ -109,25 +115,32 @@
       line-height: 1.8;
     }
 
+    @keyframes slideFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (max-width: 768px) {
       .feature-row, .feature-row.reverse {
         flex-direction: column;
+        animation: none;
+        opacity: 1;
+        transform: none;
       }
 
       .feature-text, .feature-image {
         flex: 1 1 100%;
         padding: 30px;
       }
-    }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      .feature-image img {
+        height: auto;
       }
     }
   </style>
