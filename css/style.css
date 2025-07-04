@@ -1440,7 +1440,7 @@
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('img/segmentimgs/smart4.jpg'); /* Your transparent PNG */
+  background-image: url('img/segmentimgs/smart4.webp'); /* Your transparent PNG */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -1822,3 +1822,21 @@
       border-radius: 50%; /* Super round for mobile */
     }
   }
+
+
+
+
+  @font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  src: url('https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff2') format('woff2');
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'bootstrap-icons';
+  src: url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/fonts/bootstrap-icons.woff2') format('woff2');
+  font-display: swap;
+}
