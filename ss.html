@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concept | Arcot Industries</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Jost', sans-serif; background: #fff; color: #333; }
+
+    .concept-section {
+      position: relative;
+      background: #f2f2f2;
+      text-align: center;
+    }
+
+    .concept-heading {
+      font-size: 2rem;
+      font-weight: 500;
+      padding: 60px 0 10px;
+      letter-spacing: 2px;
+      color: #222;
+      position: relative;
+    }
+
+    .concept-heading::after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 40px;
+      background-color: #555;
+      margin: 10px auto 0;
+    }
+
+    .concept-image-container {
+      position: relative;
+      background: url('img/bannerabout.webp') center/cover no-repeat;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .concept-text-box {
+      color: #fff;
+      max-width: 700px;
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+    }
+
+    .concept-text-box h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .concept-text-box p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+      .section {
+      padding: 60px 20px;
+      background: #e6e6e6;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: #222;
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .section h2::after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 40px;
+      background-color: #555;
+      margin: 10px auto 0;
+    }
+
+     .brand-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+      padding: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .brand-logo {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .brand-logo img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .brand-text {
+      flex: 2;
+      text-align: left;
+      min-width: 260px;
+    }
+
+    .brand-text p {
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .brand-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .brand-text {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .concept-heading {
+        font-size: 1.6rem;
+      }
+      .concept-image-container {
+        height: 420px;
+        padding: 0 20px;
+      }
+      .concept-text-box h3 {
+        font-size: 1.5rem;
+      }
+      .concept-text-box p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="concept-section">
+    <h2 class="concept-heading">CONCEPT</h2>
+    <div class="concept-image-container">
+      <div class="concept-text-box">
+        <h3>A new way to think;</h3>
+        <p>
+          with Arcot Smart Lighting,<br>
+          you control the orientation of the beautiful light<br>
+          output to where it is needed.<br><br>
+          Through innovative lighting,<br>
+          Arcot continues to evolve in response to the world’s lighting needs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND SECTION -->
+  <section class="section">
+    <h2>BRAND</h2>
+    <div class="brand-container">
+      <div class="brand-logo">
+        <img src="img/pr7.webp" alt="Arcot Lighting Logo">
+      </div>
+      <div class="brand-text">
+        <p>A manufacturer of precision components that deals in a product group boasting the highest share in the world.<br>The technology of Arcot Industries has been brought together to add new value to lighting.</p>
+        <p>Lighting equipment can be easily controlled with the development of our proprietary software that uses wireless technology and fresnel lenses just 1 mm thick created from resin molds developed for LED backlights. Using motor technology, we have enabled smooth, quiet movements.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="feature-section">
+  <div class="container">
+    <h2 class="section-title">FEATURE</h2>
+    <div class="divider"></div>
+    <div class="feature-content">
+      <div class="feature-text">
+        <div class="feature-label">FEATURE</div>
+        <div class="feature-number">01</div>
+        <h3 class="feature-heading">Creating spaces<br>by freely<br>controlling light</h3>
+        <p class="feature-description">
+          The brightness, color, lit area,<br>
+          and angle can all be controlled.<br>
+          Using a timer relay,<br>
+          lighting can be automatically<br>
+          changed to preset scenarios.<br>
+          We provide support for<br>
+          creating attractive spaces<br>
+          which expand the possibilities of presentation.
+        </p>
+      </div>
+      <div class="feature-image">
+        <img src="img/pr7.webp" alt="Creating spaces by freely controlling light">
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .feature-section {
+    background: #e6e7e7;
+    padding: 60px 20px;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .divider {
+    width: 2px;
+    height: 40px;
+    background: #555;
+    margin: 0 auto 50px;
+  }
+
+  .feature-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  .feature-text {
+    flex: 1;
+    min-width: 320px;
+  }
+
+  .feature-label {
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 10px;
+  }
+
+  .feature-number {
+    font-size: 48px;
+    font-weight: 300;
+    border-bottom: 2px solid #444;
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+
+  .feature-heading {
+    font-size: 30px;
+    line-height: 1.4;
+    color: #222;
+    margin-bottom: 20px;
+  }
+
+  .feature-description {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #444;
+  }
+
+  .feature-image {
+    flex: 1;
+    min-width: 320px;
+  }
+
+  .feature-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .feature-content {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+    .feature-heading {
+      font-size: 24px;
+    }
+    .feature-description {
+      font-size: 16px;
+    }
+    .feature-number {
+      font-size: 36px;
+    }
+  }
+</style>
+
+
+
+
+
+  
+</body>
+</html>
