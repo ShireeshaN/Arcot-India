@@ -241,13 +241,149 @@
 <!--about-->
 
 
+<style>
+    /* Section position relative for overlays */
+.enhanced-section {
+  position: relative;
+  overflow: hidden;
+  background-color: #000; /* fallback */
+}
+
+/* Particle canvas fills section behind content */
+#particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Background image with blur and transparency */
+.enhanced-section .bg-image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background: url('img/carousel-1.webp') no-repeat center center;
+  background-size: cover;
+  filter: blur(2px) brightness(0.6);
+  opacity: 0.3;
+  z-index: 2;
+  pointer-events: none;
+}
+.enhanced-section .bg-image1 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background: url('img/segmentimgs/seg1 (11).webp') no-repeat center center;
+  background-size: cover;
+  filter: blur(2px) brightness(0.6);
+  opacity: 0.3;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.enhanced-section .bg-image2 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background: url('img/segmentimgs/facadelights.webp') no-repeat center center;
+  background-size: cover;
+  filter: blur(2px) brightness(0.6);
+  opacity: 0.3;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.enhanced-section .bg-image3 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background: url('img/segmentimgs/seg1 (11).webp') no-repeat center center;
+  background-size: cover;
+  filter: blur(2px) brightness(0.6);
+  opacity: 0.3;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.enhanced-section .bg-image4 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background: url('img/segmentimgs/seg1 (11).webp') no-repeat center center;
+  background-size: cover;
+  filter: blur(2px) brightness(0.6);
+  opacity: 0.3;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.enhanced-section .bg-image5 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background: url('img/segmentimgs/seg1 (11).webp') no-repeat center center;
+  background-size: cover;
+  filter: blur(2px) brightness(0.6);
+  opacity: 0.3;
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+
+
+/* Content sits above bg-image and particles */
+.enhanced-section > .section-header1,
+.enhanced-section > .gallery-wrapper,
+.enhanced-section > .scroll-arrow {
+  position: relative;
+  z-index: 3;
+}
+
+</style>
+
+
+
+
+
+
+
 <!-- segment heading -->
 <sections class="unique-impact-wrapper" id="unique-impact-text">
     
 </sections>
 <!-- segment heading -->
   <!-- SECTION 1 -->
-  <section id="basic-lighting" class="bg-dark">
+ <section id="basic-lighting" class="bg-dark enhanced-section">
+  <!-- Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  
+  <!-- Background Image with Blur and Transparency -->
+  <div class="bg-image"></div>
+
+
     <div class="section-header1">
       <h3>POWER</h3>
       <p>Transmission/ Distribution/ Panel Boards/ Low Tension/High Tension</p>
@@ -348,7 +484,13 @@
     <a href="#emergency-lighting" class="scroll-arrow">&#x2193;</a>
   </section>
   <!-- SECTION 2 -->
-  <section id="emergency-lighting" >
+ <section id="basic-lighting" class="bg-dark enhanced-section">
+  <!-- Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  
+  <!-- Background Image with Blur and Transparency -->
+  <div class="bg-image1"></div>
     <div class="section-header1">
       <h3>ENERGY GENERATION</h3>
       <p>Solar/ Windmill/ Biomass/ Hydel Power/ Thermal Power</p>
@@ -475,7 +617,13 @@
   </section>
 
   <!-- SECTION 3 -->
-  <section id="fire-systems" class="bg-dark">
+   <section id="basic-lighting" class="bg-dark enhanced-section">
+  <!-- Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  
+  <!-- Background Image with Blur and Transparency -->
+  <div class="bg-image2"></div>
     <div class="section-header1">
       <h3>LIGHTING</h3>
       <p>Residential/ Facade/ Commercial/ Industrial/ Street/ Park/ Stadium/ Hospital</p>
