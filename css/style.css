@@ -1515,6 +1515,136 @@
     }
 
     /* ================================
+   UNIVERSAL RESPONSIVE SETTINGS
+==================================*/
+
+/* Medium-sized tablets (portrait and landscape) */
+@media (max-width: 1024px) {
+  .solumens-desktop-container {
+    transform: scale(0.85);
+    transform-origin: center;
+  }
+
+  .solumens-center-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .solumens-bg-circle {
+    width: 400px;
+    height: 400px;
+  }
+
+  .solumens-flip-card {
+    width: 200px;
+    height: 100px;
+  }
+
+  .solumens-title {
+    font-size: 16px;
+  }
+
+  .solumens-icon {
+    font-size: 24px;
+  }
+
+  .solumens-front,
+  .solumens-back {
+    padding: 15px;
+  }
+
+  .solumens-box1 { top: 30%; left: 20%; }
+  .solumens-box2 { top: 50%; left: 22%; }
+  .solumens-box3 { bottom: 12%; left: 26%; }
+  .solumens-box4 { top: 30%; right: 20%; }
+  .solumens-box5 { top: 50%; right: 22%; }
+  .solumens-box6 { bottom: 12%; right: 26%; }
+}
+
+
+/* Small tablets & large phones */
+@media (max-width: 820px) {
+  .solumens-desktop-container {
+    transform: scale(0.75);
+  }
+
+  .solumens-flip-card {
+    width: 180px;
+    height: 90px;
+  }
+
+  .solumens-title {
+    font-size: 14px;
+  }
+
+  .solumens-center-circle {
+    width: 180px;
+    height: 180px;
+  }
+
+  .solumens-bg-circle {
+    width: 350px;
+    height: 350px;
+  }
+
+  .solumens-box1 { top: 28%; left: 18%; }
+  .solumens-box2 { top: 48%; left: 20%; }
+  .solumens-box3 { bottom: 12%; left: 22%; }
+  .solumens-box4 { top: 28%; right: 18%; }
+  .solumens-box5 { top: 48%; right: 20%; }
+  .solumens-box6 { bottom: 12%; right: 22%; }
+}
+
+
+/* Mobile screens (already handled but can improve) */
+@media (max-width: 600px) {
+  .solumens-mobile-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .solumens-mobile-grid .solumens-flip-card {
+    height: 140px;
+  }
+
+  .solumens-title {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1020px) and (max-width: 1300px) {
+  .solumens-center-circle {
+    width: 220px;
+    height: 220px;
+  }
+
+  .solumens-bg-circle {
+    width: 430px;
+    height: 430px;
+  }
+
+  .solumens-flip-card {
+    width: 200px;
+    height: 100px;
+  }
+
+  .solumens-box1 { top: 30%; left: 20%; }
+  .solumens-box2 { top: 50%; left: 23%; }
+  .solumens-box3 { bottom: 10%; left: 26%; }
+  .solumens-box4 { top: 30%; right: 20%; }
+  .solumens-box5 { top: 50%; right: 23%; }
+  .solumens-box6 { bottom: 10%; right: 26%; }
+
+  /* Optional: give some breathing room */
+  .solumens-desktop-container {
+    padding-bottom: 60px;
+    height: auto; /* Instead of 100vh, if needed */
+  }
+}
+
+
+
+    /* ================================
        DESKTOP CONTAINER
     ================================== */
     .solumens-desktop-container {
