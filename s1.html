@@ -1,196 +1,222 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Features | Arcot Industries</title>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Jost', sans-serif;
-      background-color: #e5e6e6;
-    }
+    <!-- Why Choose Arcot Radial Graphs -->
+    <div class="p-5 animate__animated animate__fadeInUp animate__delay-1s">
+      <div class="radial-grid">
+        <div class="radial-container">
+          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
+            <circle class="circle-bg" cx="60" cy="60" r="54" />
+            <circle class="circle-progress" cx="60" cy="60" r="54" />
+          </svg>
+          <div class="percentage">100%</div>
+          <div class="radial-label">Custom End-to-End Solutions</div>
+        </div>
 
-    .feature-section {
-      padding: 60px 0;
-    }
+        <div class="radial-container">
+          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
+            <circle class="circle-bg" cx="60" cy="60" r="54" />
+            <circle class="circle-progress" cx="60" cy="60" r="54" />
+          </svg>
+          <div class="percentage">100%</div>
+          <div class="radial-label">Smart Tech & Embedded Innovation</div>
+        </div>
 
-    .section-heading {
-      text-align: center;
-      font-size: 36px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      color: #333;
-      margin-bottom: 0;
-    }
+        <div class="radial-container">
+          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
+            <circle class="circle-bg" cx="60" cy="60" r="54" />
+            <circle class="circle-progress" cx="60" cy="60" r="54" />
+          </svg>
+          <div class="percentage">100%</div>
+          <div class="radial-label">Quality & Safety Compliant</div>
+        </div>
 
-    .divider {
-      width: 1px;
-      height: 40px;
-      background-color: #333;
-      margin: 20px auto 50px;
-    }
+        <div class="radial-container">
+          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
+            <circle class="circle-bg" cx="60" cy="60" r="54" />
+            <circle class="circle-progress" cx="60" cy="60" r="54" />
+          </svg>
+          <div class="percentage">100%</div>
+          <div class="radial-label">Sustainable Green Practices</div>
+        </div>
 
-    .feature-row {
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      margin: 0;
-      opacity: 0;
-      transform: translateY(100px);
-      animation: slideFadeIn 1s ease-out forwards;
-    }
+        <div class="radial-container">
+          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
+            <circle class="circle-bg" cx="60" cy="60" r="54" />
+            <circle class="circle-progress" cx="60" cy="60" r="54" />
+          </svg>
+          <div class="percentage">100%</div>
+          <div class="radial-label">IOT & Smart City Integration</div>
+        </div>
 
-    .feature-row.reverse {
-      flex-direction: row-reverse;
-    }
-
-    .feature-row:hover {
-      transform: scale(1.01);
-      transition: transform 0.4s ease;
-    }
-
-    .feature-text {
-      flex: 0 0 40%;
-      background-color: transparent;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 60px;
-      box-sizing: border-box;
-      transition: transform 0.6s ease, box-shadow 0.4s ease;
-    }
-
-    .feature-text:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .feature-image {
-      flex: 0 0 60%;
-      overflow: hidden;
-    }
-
-    .feature-image img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.8s ease;
-    }
-
-    .feature-image:hover img {
-      transform: scale(1.05);
-    }
-
-    .feature-number {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    .feature-number .label {
-      font-size: 14px;
-      display: block;
-      color: #888;
-      letter-spacing: 1px;
-    }
-
-    .feature-number .number {
-      font-size: 56px;
-      border-bottom: 2px solid #333;
-      display: inline-block;
-    }
-
-    .feature-title {
-      font-size: 28px;
-      line-height: 1.4;
-      color: #333;
-      margin: 30px 0 20px;
-    }
-
-    .feature-description {
-      font-size: 18px;
-      color: #444;
-      line-height: 1.8;
-    }
-
-    @keyframes slideFadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(100px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .feature-row, .feature-row.reverse {
-        flex-direction: column;
-        animation: none;
-        opacity: 1;
-        transform: none;
-      }
-
-      .feature-text, .feature-image {
-        flex: 1 1 100%;
-        padding: 30px;
-      }
-
-      .feature-image img {
-        height: auto;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<section class="feature-section">
-  <h2 class="section-heading">FEATURE</h2>
-  <div class="divider"></div>
-
-  <!-- Feature 1 -->
-  <div class="feature-row">
-    <div class="feature-text">
-      <div class="feature-number">
-        <span class="label">FEATURE</span>
-        <span class="number">01</span>
+       
       </div>
-      <h3 class="feature-title">Creating spaces<br>by freely<br>controlling light</h3>
-      <p class="feature-description">
-        The brightness, color, lit area, and angle can all be controlled.<br>
-        Using a timer relay, lighting can be automatically changed to preset scenarios.<br>
-        We provide support for creating attractive spaces which expand the possibilities of presentation.
-      </p>
     </div>
-    <div class="feature-image">
-      <img src="img/carousel-1.webp" alt="Feature 01" />
-    </div>
-  </div>
 
-  <!-- Feature 2 -->
-  <div class="feature-row reverse">
-    <div class="feature-text">
-      <div class="feature-number">
-        <span class="label">FEATURE</span>
-        <span class="number">02</span>
+    <!-- Services Boxes -->
+    <div class="row g-4 mb-5">
+      <div class="col-md-6 col-lg-4">
+        <div class="card-style animate__animated animate__fadeInLeft">
+          <div class="icon-box"><i class="fas fa-bolt"></i></div>
+          <h5>Power Solutions</h5>
+          <p>Advanced T&D, HT/LT Panel Boards, Substations, Power Audits.</p>
+        </div>
       </div>
-      <h3 class="feature-title">The lighting equipment is<br>operated from handy<br>smartphones or tablets</h3>
-      <p class="feature-description">
-        Using a wireless Bluetooth Mesh<sup>&reg;</sup> connection,<br>
-        up to 100 lights can be controlled from a single smartphone or tablet.<br>
-        When a large number of lights need to be adjusted,<br>
-        such as when switching displayed items or changing layouts,<br>
-        being able to do so handily helps improve work efficiency and save human resources costs.
-      </p>
-    </div>
-    <div class="feature-image">
-      <img src="img/carousel-1.webp" alt="Feature 02" />
+      <div class="col-md-6 col-lg-4">
+        <div class="card-style animate__animated animate__fadeInUp">
+          <div class="icon-box"><i class="fas fa-solar-panel"></i></div>
+          <h5>Energy Solutions</h5>
+          <p>Solar, Wind, Biomass, BESS, Hybrid & Smart Grid Integration.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-style animate__animated animate__fadeInRight">
+          <div class="icon-box"><i class="fas fa-lightbulb"></i></div>
+          <h5>Lighting Solutions</h5>
+          <p>Facade, Stadium, Commercial & Industrial Lighting Design.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-style animate__animated animate__fadeInLeft">
+          <div class="icon-box"><i class="fas fa-home"></i></div>
+          <h5>Automation</h5>
+          <p>Smart Home, Industrial, IoT-based Monitoring & Controls.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-style animate__animated animate__fadeInUp">
+          <div class="icon-box"><i class="fas fa-city"></i></div>
+          <h5>Smart City</h5>
+          <p>Smart Poles, Counters, Environment Monitoring, AI Integration.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-style animate__animated animate__fadeInRight">
+          <div class="icon-box"><i class="fas fa-brain"></i></div>
+          <h5>R&D</h5>
+          <p>Custom Embedded Devices, IoT & AI Prototyping, Innovation Labs.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-</body>
-</html>
+<!-- 💫 Style -->
+<style>
+.card-style {
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-style:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(79, 195, 247, 0.6);
+}
+.card-style h5 {
+  font-weight: 600;
+  color: #f0f0f0;
+  margin-top: 15px;
+  font-size: 1.25rem;
+}
+.card-style p {
+  font-size: 14px;
+  color: #bbb;
+  margin-top: 12px;
+  line-height: 1.5;
+}
+.card-style .icon-box {
+  font-size: 38px;
+  color: #4fc3f7;
+}
+
+/* Radial Grid */
+.radial-grid {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+.radial-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 140px;
+  position: relative;
+}
+.radial-ring {
+  transform: rotate(-90deg);
+}
+.circle-bg {
+  fill: none;
+  stroke: #2a2a2a;
+  stroke-width: 6px;
+}
+.circle-progress {
+  fill: none;
+  stroke: #4fc3f7;
+  stroke-width: 6px;
+  stroke-linecap: round;
+  stroke-dasharray: 339.292;
+  stroke-dashoffset: 339.292;
+}
+@keyframes progress-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.percentage {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  font-size: 22px;
+  font-weight: 700;
+  color: #4fc3f7;
+  font-family: 'Jost', sans-serif;
+}
+.radial-label {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 15px;
+  color: #ccc;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .radial-grid {
+    gap: 80px;
+    justify-content: center;
+  }
+  .radial-container {
+    width: 120px;
+    margin-bottom: 40px;
+  }
+}
+</style>
+
+<!-- 🔥 Scroll Animation Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const radialContainers = document.querySelectorAll(".radial-container");
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.3,
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        const progress = entry.target.querySelector(".circle-progress");
+        progress.style.animation = `progress-animation 1.8s ease forwards ${0.2 + index * 0.2}s`;
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  radialContainers.forEach(container => {
+    observer.observe(container);
+  });
+});
+</script>
