@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hand Picking Cards</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background: #0d0d0d;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 80%;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      width: 150px;
+      height: 200px;
+      background: #1a1a1a;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    .card i {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .hand {
+      position: absolute;
+      width: 120px;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-30deg);
+      opacity: 0;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <img src="img/hn.pngpg" class="hand" id="hand" />
+  
+  <div class="card"><i class="fas fa-lightbulb"></i><h4>Innovation</h4></div>
+  <div class="card"><i class="fas fa-cogs"></i><h4>Automation</h4></div>
+  <div class="card"><i class="fas fa-bolt"></i><h4>Energy</h4></div>
+  <div class="card"><i class="fas fa-solar-panel"></i><h4>Solar</h4></div>
+  <div class="card"><i class="fas fa-network-wired"></i><h4>Network</h4></div>
+  <div class="card"><i class="fas fa-city"></i><h4>Smart City</h4></div>
+</div>
+
+<script>
+  const cards = document.querySelectorAll(".card");
+  const hand = document.getElementById("hand");
+
+  // Animate cards one by one with hand movement
+  let delay = 0;
+  cards.forEach((card, index) => {
+    gsap.to(card, {
+      opacity: 1,
+      y: 0,
+      delay: delay + 0.5,
+      duration: 0.5,
+      ease: "power2.out"
+    });
+
+    gsap.to(hand, {
+      opacity: 1,
+      x: (card.offsetLeft - 100),
+      y: -20,
+      delay: delay,
+      duration: 0.5,
+      onComplete: () => {
+        gsap.to(hand, {opacity: 0, duration: 0.3});
+      }
+    });
+
+    delay += 0.8;
+  });
+</script>
+
+</body>
+</html>
