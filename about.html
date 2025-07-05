@@ -153,240 +153,838 @@
         <!-- Header End -->
 
 
-<!-- About Section Start -->
-<section class="about-arcot py-5" style="background-color: #0a0a0a;">
-  <div class="container text-white">
-    <div class="row justify-content-center mb-5">
-      <div class="col-lg-10 text-center">
-        <h3 class="text-center text-white mb-5">🚀 Why Choose Arcot?</h3>
-        <p class="lead animate__animated animate__fadeInUp" style="color: #bbb; font-family: 'Jost', sans-serif;">
-          We are a next-generation engineering company offering end-to-end services in Power, Energy, Lighting, Automation, Smart City, and R&D. With innovation and intelligence at our core, we deliver scalable and sustainable solutions for industries and cities of the future.
-        </p>
-      </div>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+ body { font-family: 'Jost', sans-serif; background: #fff; color: #333; }
+
+  /* Main section structure */
+.concept-section {
+  position: relative;
+  background: #f2f2f2;
+  text-align: center;
+  overflow: hidden;
+}
+
+.concept-heading h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 60px 0 10px;
+  letter-spacing: 2px;
+  color: #fff important!;
+  position: relative;
+}
+.concept-heading::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 40px;
+  /* background-color: #555; */
+  margin: 10px auto 0;
+}
+
+.concept-image-container {
+  position: relative;
+  background: url('img/Untitled design.png') center/cover no-repeat;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: zoomIn 1.2s ease-out forwards;
+  transition: transform 0.6s ease;
+  will-change: transform;
+}
+
+/* 👇 Hover effect to zoom the background image */
+.concept-image-container:hover {
+  transform: scale(1.03);
+}
+/* Text box */
+.concept-text-box {
+  color: #fff;
+  max-width: 700px;
+  text-align: center;
+  padding: 20px 40px;
+  border-radius: 8px;
+  animation: fadeUp 1.4s ease-out forwards;
+}
+
+/* Optional hover glow effect */
+.concept-text-box:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+/* Headings */
+.concept-text-box h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.concept-text-box p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+  @media (max-width: 768px) {
+      .concept-heading {
+        font-size: 1.6rem;
+      }
+      .concept-image-container {
+        height: 420px;
+        padding: 0 20px;
+      }
+      .concept-text-box h3 {
+        font-size: 1.5rem;
+      }
+      .concept-text-box p {
+        font-size: 0.95rem;
+      }
+    }
+
+/* Animations */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(1.05);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Reuse class if needed */
+.animate-fade-up {
+  animation: fadeUp 1.2s ease-out forwards;
+}
+.animate-zoom-in {
+  animation: zoomIn 1s ease-out forwards;
+}
+
+      .section-brand {
+      padding: 60px 20px;
+      background: #e6e6e6;
+      text-align: center;
+    }
+
+    .section-brand h2 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: #222;
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .section-brand h2::after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 40px;
+      background-color: #555;
+      margin: 10px auto 0;
+    }
+
+.brand-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.brand-logo {
+  flex: 1 1 48%;
+  min-width: 300px;
+  text-align: center;
+}
+
+.brand-logo img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.brand-logo:hover img {
+  transform: scale(1.05);
+}
+
+.brand-text {
+  flex: 1 1 48%;
+  min-width: 300px;
+  text-align: left;
+  opacity: 0;
+  animation: fadeRight 1.2s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.brand-text p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.animate-left {
+  opacity: 0;
+  animation: fadeLeft 1.2s ease forwards;
+}
+
+.animate-right {
+  opacity: 0;
+  animation: fadeRight 1.2s ease forwards;
+}
+
+@keyframes fadeLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+   @media (max-width: 768px) {
+      .brand-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .brand-text {
+        text-align: center;
+      }
+    }
+
+
+    .feature-section {
+      padding: 60px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: #333;
+      margin-bottom: 0;
+    }
+
+    .divider {
+      width: 1px;
+      height: 40px;
+      background-color: #333;
+      margin: 20px auto 50px;
+    }
+
+    .feature-row {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .feature-row.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .feature-text {
+      flex: 0 0 40%;
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px;
+      box-sizing: border-box;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .feature-row:nth-child(3) .feature-text {
+      animation-delay: 0.2s;
+    }
+
+    .feature-image {
+      flex: 0 0 60%;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .feature-row:nth-child(2) .feature-image {
+      animation-delay: 0.2s;
+    }
+
+    .feature-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .feature-number {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .feature-number .label {
+      font-size: 14px;
+      display: block;
+      color: #888;
+      letter-spacing: 1px;
+    }
+
+    .feature-number .number {
+      font-size: 56px;
+      border-bottom: 2px solid #333;
+      display: inline-block;
+    }
+
+    .feature-title {
+      font-size: 28px;
+      line-height: 1.4;
+      color: #333;
+      margin: 30px 0 20px;
+    }
+
+    .feature-description {
+      font-size: 18px;
+      color: #444;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .feature-row, .feature-row.reverse {
+        flex-direction: column;
+      }
+
+      .feature-text, .feature-image {
+        flex: 1 1 100%;
+        padding: 30px;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+   
+
+      .why-section {
+      background: #e5e6e6;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .why-section h2 {
+      font-size: 36px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .why-section h2::after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 40px;
+      background-color: #333;
+      margin: 15px auto 40px;
+    }
+
+    .number-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 60px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+
+    .number-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 160px;
+    }
+
+    .number-value {
+      font-size: 48px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+    }
+
+    .number-label {
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+      max-width: 160px;
+    }
+
+    @media (max-width: 768px) {
+      .number-box {
+        width: 130px;
+      }
+      .number-value {
+        font-size: 36px;
+      }
+      .number-label {
+        font-size: 14px;
+      }
+    }
+
+
+
+
+    .services-section {
+  background-color: #e5e6e6;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.services-heading {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #222;
+  margin-bottom: 0;
+}
+
+.divider-line {
+  width: 1px;
+  height: 40px;
+  background-color: #333;
+  margin: 15px auto 50px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px #fff;
+}
+
+.service-card .icon {
+  font-size: 40px;
+  color: #000;
+  margin-bottom: 18px;
+}
+
+.service-card h5 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Tablet (2 per row) */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (1 per row) */
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-heading {
+    font-size: 28px;
+  }
+
+  .divider-line {
+    height: 30px;
+  }
+}
+
+
+
+.vision-mission-section {
+  background-color: #e5e6e6;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.vision-heading {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #222;
+  margin-bottom: 0;
+}
+
+.vision-divider {
+  width: 1px;
+  height: 40px;
+  background-color: #333;
+  margin: 15px auto 50px;
+}
+
+.vision-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.vision-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.08);
+  max-width: 480px;
+  flex: 1 1 400px;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.vision-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.vision-icon {
+  font-size: 36px;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.vision-card h4 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.vision-card p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* Animations (if used) */
+.animate-left {
+  animation: fadeLeft 1.2s ease forwards;
+}
+.animate-right {
+  animation: fadeRight 1.2s ease forwards;
+}
+@keyframes fadeLeft {
+  0% { opacity: 0; transform: translateX(-40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeRight {
+  0% { opacity: 0; transform: translateX(40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vision-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+
+
+ 
+
+  
+  </style>
+
+
+<!-- VISION & MISSION SECTION -->
+<section class="vision-mission-section">
+  <h2 class="vision-heading">VISION & MISSION</h2>
+  <div class="vision-divider"></div>
+
+  <div class="vision-container">
+    <!-- VISION -->
+    <div class="vision-card animate-left">
+      <div class="vision-icon"><i class="fas fa-eye"></i></div>
+      <h4>Our Vision</h4>
+      <p>To be a global leader in engineering innovation, delivering smart, sustainable, and scalable infrastructure solutions that transform industries and empower cities.</p>
     </div>
 
-    <!-- Why Choose Arcot Radial Graphs -->
-    <div class="p-5 animate__animated animate__fadeInUp animate__delay-1s">
-      <div class="radial-grid">
-        <div class="radial-container">
-          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
-            <circle class="circle-bg" cx="60" cy="60" r="54" />
-            <circle class="circle-progress" cx="60" cy="60" r="54" />
-          </svg>
-          <div class="percentage">100%</div>
-          <div class="radial-label">Custom End-to-End Solutions</div>
-        </div>
-
-        <div class="radial-container">
-          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
-            <circle class="circle-bg" cx="60" cy="60" r="54" />
-            <circle class="circle-progress" cx="60" cy="60" r="54" />
-          </svg>
-          <div class="percentage">100%</div>
-          <div class="radial-label">Smart Tech & Embedded Innovation</div>
-        </div>
-
-        <div class="radial-container">
-          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
-            <circle class="circle-bg" cx="60" cy="60" r="54" />
-            <circle class="circle-progress" cx="60" cy="60" r="54" />
-          </svg>
-          <div class="percentage">100%</div>
-          <div class="radial-label">Quality & Safety Compliant</div>
-        </div>
-
-        <div class="radial-container">
-          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
-            <circle class="circle-bg" cx="60" cy="60" r="54" />
-            <circle class="circle-progress" cx="60" cy="60" r="54" />
-          </svg>
-          <div class="percentage">100%</div>
-          <div class="radial-label">Sustainable Green Practices</div>
-        </div>
-
-        <div class="radial-container">
-          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
-            <circle class="circle-bg" cx="60" cy="60" r="54" />
-            <circle class="circle-progress" cx="60" cy="60" r="54" />
-          </svg>
-          <div class="percentage">100%</div>
-          <div class="radial-label">IOT & Smart City Integration</div>
-        </div>
-
-       
-      </div>
-    </div>
-
-    <!-- Services Boxes -->
-    <div class="row g-4 mb-5">
-      <div class="col-md-6 col-lg-4">
-        <div class="card-style animate__animated animate__fadeInLeft">
-          <div class="icon-box"><i class="fas fa-bolt"></i></div>
-          <h5>Power Solutions</h5>
-          <p>Advanced T&D, HT/LT Panel Boards, Substations, Power Audits.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card-style animate__animated animate__fadeInUp">
-          <div class="icon-box"><i class="fas fa-solar-panel"></i></div>
-          <h5>Energy Solutions</h5>
-          <p>Solar, Wind, Biomass, BESS, Hybrid & Smart Grid Integration.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card-style animate__animated animate__fadeInRight">
-          <div class="icon-box"><i class="fas fa-lightbulb"></i></div>
-          <h5>Lighting Solutions</h5>
-          <p>Facade, Stadium, Commercial & Industrial Lighting Design.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card-style animate__animated animate__fadeInLeft">
-          <div class="icon-box"><i class="fas fa-home"></i></div>
-          <h5>Automation</h5>
-          <p>Smart Home, Industrial, IoT-based Monitoring & Controls.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card-style animate__animated animate__fadeInUp">
-          <div class="icon-box"><i class="fas fa-city"></i></div>
-          <h5>Smart City</h5>
-          <p>Smart Poles, Counters, Environment Monitoring, AI Integration.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="card-style animate__animated animate__fadeInRight">
-          <div class="icon-box"><i class="fas fa-brain"></i></div>
-          <h5>R&D</h5>
-          <p>Custom Embedded Devices, IoT & AI Prototyping, Innovation Labs.</p>
-        </div>
-      </div>
+    <!-- MISSION -->
+    <div class="vision-card animate-right">
+      <div class="vision-icon"><i class="fas fa-bullseye"></i></div>
+      <h4>Our Mission</h4>
+      <p>To innovate and deliver integrated solutions in power, energy, lighting, automation, and smart city technologies through continuous R&D and exceptional service excellence.</p>
     </div>
   </div>
 </section>
 
-<!-- 💫 Style -->
-<style>
-.card-style {
-  background-color: #1a1a1a;
-  border-radius: 15px;
-  padding: 30px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.07);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card-style:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 30px rgba(79, 195, 247, 0.6);
-}
-.card-style h5 {
-  font-weight: 600;
-  color: #f0f0f0;
-  margin-top: 15px;
-  font-size: 1.25rem;
-}
-.card-style p {
-  font-size: 14px;
-  color: #bbb;
-  margin-top: 12px;
-  line-height: 1.5;
-}
-.card-style .icon-box {
-  font-size: 38px;
-  color: #4fc3f7;
-}
 
-/* Radial Grid */
-.radial-grid {
-  display: flex;
-  justify-content: center;
-  gap: 100px;
-  flex-wrap: wrap;
-}
-.radial-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 140px;
-  position: relative;
-}
-.radial-ring {
-  transform: rotate(-90deg);
-}
-.circle-bg {
-  fill: none;
-  stroke: #2a2a2a;
-  stroke-width: 6px;
-}
-.circle-progress {
-  fill: none;
-  stroke: #4fc3f7;
-  stroke-width: 6px;
-  stroke-linecap: round;
-  stroke-dasharray: 339.292;
-  stroke-dashoffset: 339.292;
-}
-@keyframes progress-animation {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-.percentage {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -55%);
-  font-size: 22px;
-  font-weight: 700;
-  color: #4fc3f7;
-  font-family: 'Jost', sans-serif;
-}
-.radial-label {
-  margin-top: 14px;
-  text-align: center;
-  font-size: 15px;
-  color: #ccc;
-  font-weight: 600;
-}
 
-/* Responsive */
-@media (max-width: 900px) {
-  .radial-grid {
-    gap: 80px;
-    justify-content: center;
-  }
-  .radial-container {
-    width: 120px;
-    margin-bottom: 40px;
-  }
-}
-</style>
 
-<!-- 🔥 Scroll Animation Script -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const radialContainers = document.querySelectorAll(".radial-container");
 
-  const observerOptions = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.3,
-  };
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        const progress = entry.target.querySelector(".circle-progress");
-        progress.style.animation = `progress-animation 1.8s ease forwards ${0.2 + index * 0.2}s`;
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
+ <!-- Concept Section -->
+<section class="concept-section section-brand">
+  <h2 class="concept-heading ">CONCEPT</h2>
+  <div class="concept-image-container animate-zoom-in">
+    <div class="concept-text-box animate-fade-up">
+      <h3 class="text-white">Innovation-Driven Engineering Excellence</h3>
+      <p>
+        At Arcot Industries,<br>
+        we believe innovation is the foundation of
+         sustainable progress.<br><br>
+        With a focus on smart lighting, intelligent infrastructure,<br>
+        and automation, we deliver cutting-edge engineering solutions that redefine 
+          the future of energy,
+        power, and smart cities.
+           
+      </p>
+    </div>
+  </div>
+</section>
 
-  radialContainers.forEach(container => {
-    observer.observe(container);
-  });
-});
-</script>
+
+<section class="why-section">
+  <h2>WHY CHOOSE ARCOT</h2>
+  <div class="number-wrapper">
+    <div class="number-box">
+      <div class="number-value" data-target="20">0+</div>
+      <div class="number-label">Founded Years</div>
+    </div>
+    <div class="number-box">
+      <div class="number-value" data-target="50">0+</div>
+      <div class="number-label">Product Sales Countries</div>
+    </div>
+    <div class="number-box">
+      <div class="number-value" data-target="100">0+</div>
+      <div class="number-label">Service Outdoor Projects</div>
+    </div>
+    <div class="number-box">
+      <div class="number-value" data-target="50">0+</div>
+      <div class="number-label">Production Base</div>
+    </div>
+    <div class="number-box">
+      <div class="number-value" data-target="100">0+</div>
+      <div class="number-label">R&D Products</div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- BRAND SECTION -->
+<section class="section-brand brand-section">
+  <h2>Powered by Precision. Driven by Purpose.</h2>
+  <div class="brand-container">
+    <div class="brand-logo animate-left">
+      <img src="img/pr7.webp" alt="Arcot Lighting Logo">
+    </div>
+    <div class="brand-text animate-right">
+      <p>
+        Arcot Industries is built on a legacy of precision engineering and visionary innovation. Our brand reflects a deep commitment to quality, functionality, and future-ready technology across lighting, power, and automation domains.
+      </p>
+      <p>
+        We combine advanced materials, wireless systems, and intelligent controls to create products that are not only smart, but also sustainable. From custom embedded solutions to city-scale infrastructure, Arcot is shaping the future—one breakthrough at a time.
+
+
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- OUR SERVICES SECTION -->
+<section class="services-section">
+  <h2 class="services-heading">OUR SERVICES</h2>
+  <div class="divider-line"></div>
+
+  <div class="services-grid">
+    <!-- Card 1 -->
+    <div class="service-card">
+      <div class="icon"><i class="fas fa-bolt"></i></div>
+      <h5>Power Solutions</h5>
+      <p>Advanced T&D, HT/LT Panel Boards, Substations, Power Audits.</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="service-card">
+      <div class="icon"><i class="fas fa-solar-panel"></i></div>
+      <h5>Energy Solutions</h5>
+      <p>Solar, Wind, Biomass, BESS, Hybrid & Smart Grid Integration.</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="service-card">
+      <div class="icon"><i class="fas fa-lightbulb"></i></div>
+      <h5>Lighting Solutions</h5>
+      <p>Facade, Stadium, Commercial & Industrial Lighting Design.</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="service-card">
+      <div class="icon"><i class="fas fa-home"></i></div>
+      <h5>Automation</h5>
+      <p>Smart Home, Industrial, IoT-based Monitoring & Controls.</p>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="service-card">
+      <div class="icon"><i class="fas fa-city"></i></div>
+      <h5>Smart City</h5>
+      <p>Smart Poles, Counters, Environment Monitoring, AI Integration.</p>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="service-card">
+      <div class="icon"><i class="fas fa-brain"></i></div>
+      <h5>R&D</h5>
+      <p>Custom Embedded Devices, IoT & AI Prototyping, Innovation Labs.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Features SECTION -->
+<section class="feature-section" style="background-color: #E6E6E6;">
+  <h2 class="section-heading">HISTORY OF INNOVATION</h2>
+  <div class="divider"></div>
+
+  <!-- Feature 1 -->
+  <div class="feature-row">
+    <div class="feature-text">
+      <div class="feature-number">
+        <span class="label">Milestone</span>
+        <span class="number">01</span>
+      </div>
+      <h3 class="feature-title"> Founded with a <br>Vision to <br>Engineer Excellence</h3>
+      <p class="feature-description">
+        Established in 2008, Arcot Industries began as a precision engineering company.<br>
+        focused on delivering custom power and lighting solutions. <br>
+        Our mission: to bring world-class innovation into India’s energy landscape.
+      </p>
+    </div>
+    
+    
+    
+    <div class="feature-image">
+      <img src="img/carousel-1.webp" alt="Feature 01" />
+    </div>
+  </div>
+
+  <!-- Feature 2 -->
+  <div class="feature-row reverse">
+    <div class="feature-text">
+      <div class="feature-number">
+        <span class="label">Milestone</span>
+        <span class="number">02</span>
+      </div>
+      <h3 class="feature-title">From Local <br>Projects <br>to Global Partnerships</h3>
+      <p class="feature-description"> 
+        What started with regional infrastructure deployments quickly expanded.<br>
+        to nationwide collaborations and exports to 50+ countries.<br>
+        power smart cities, commercial spaces, and industrial hubs worldwide.<br>
+    
+      </p>
+    </div>
+
+    <div class="feature-image">
+      <img src="img/carousel-1.webp" alt="Feature 02" />
+    </div>
+  </div>
+
+
+   <!-- Feature 3 -->
+  <div class="feature-row">
+    <div class="feature-text">
+      <div class="feature-number">
+        <span class="label">Milestone</span>
+        <span class="number">03</span>
+      </div>  
+      <h3 class="feature-title">Investing <br>in Innovation,<br>Leading the Change</h3>
+      <p class="feature-description">
+        With dedicated R&D facilities and in-house design teams, <br>
+        Arcot continues to push boundaries in IoT, automation, and sustainable energy.<br>
+        Our commitment to innovation drives our product excellence and market leadership.
+      </p>
+    </div>
+    <div class="feature-image">
+      <img src="img/carousel-1.webp" alt="Feature 01" />
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -512,8 +1110,45 @@ document.addEventListener("DOMContentLoaded", function () {
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-        <script>AOS.init();</script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+       <script>AOS.init();</script>
+
+
+
+        <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll(".number-value");
+
+    const options = {
+      threshold: 0.4
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          let count = 0;
+          const target = parseInt(el.dataset.target);
+          const speed = 3;
+
+          const updateCount = () => {
+            count++;
+            el.innerText = count + "+";
+            if (count < target) {
+              setTimeout(updateCount, speed * 10);
+            }
+          };
+          updateCount();
+          observer.unobserve(el);
+        }
+      });
+    }, options);
+
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  });
+</script>
 
     </body>
 
