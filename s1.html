@@ -1,196 +1,520 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Features | Arcot Industries</title>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Jost', sans-serif;
-      background-color: #e5e6e6;
-    }
 
-    .feature-section {
-      padding: 60px 0;
-    }
+    <head>
+        <meta charset="utf-8">
+        <title>Arcot Industries Private Limited</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="keywords" content="About Arcot Industries, Engineering Company India, Smart City Solutions, Power Solutions, Energy Solutions, Lighting Systems, Automation Systems, R&D in Technology, Sustainable Infrastructure, Hyderabad Engineering Company">
+        <meta name="description" content="Learn about Arcot Industries — a pioneering engineering company offering sustainable and innovative solutions in Power, Energy, Lighting, Automation, Smart City Infrastructure, and R&D. Driven by innovation, powered by excellence.">
+        <link rel="icon" href="img/logos.webp" type="image/x-icon">
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    .section-heading {
-      text-align: center;
-      font-size: 36px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      color: #333;
-      margin-bottom: 0;
-    }
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"> -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-    .divider {
-      width: 1px;
-      height: 40px;
-      background-color: #333;
-      margin: 20px auto 50px;
-    }
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    .feature-row {
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      margin: 0;
-      opacity: 0;
-      transform: translateY(100px);
-      animation: slideFadeIn 1s ease-out forwards;
-    }
 
-    .feature-row.reverse {
-      flex-direction: row-reverse;
-    }
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    .feature-row:hover {
-      transform: scale(1.01);
-      transition: transform 0.4s ease;
-    }
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+           <link href="css/segments.css" rel="stylesheet">
+    </head>
 
-    .feature-text {
-      flex: 0 0 40%;
-      background-color: transparent;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 60px;
-      box-sizing: border-box;
-      transition: transform 0.6s ease, box-shadow 0.4s ease;
-    }
+    <body>
 
-    .feature-text:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
 
-    .feature-image {
-      flex: 0 0 60%;
-      overflow: hidden;
-    }
+        
 
-    .feature-image img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.8s ease;
-    }
-
-    .feature-image:hover img {
-      transform: scale(1.05);
-    }
-
-    .feature-number {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    .feature-number .label {
-      font-size: 14px;
-      display: block;
-      color: #888;
-      letter-spacing: 1px;
-    }
-
-    .feature-number .number {
-      font-size: 56px;
-      border-bottom: 2px solid #333;
-      display: inline-block;
-    }
-
-    .feature-title {
-      font-size: 28px;
-      line-height: 1.4;
-      color: #333;
-      margin: 30px 0 20px;
-    }
-
-    .feature-description {
-      font-size: 18px;
-      color: #444;
-      line-height: 1.8;
-    }
-
-    @keyframes slideFadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(100px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .feature-row, .feature-row.reverse {
-        flex-direction: column;
-        animation: none;
-        opacity: 1;
-        transform: none;
-      }
-
-      .feature-text, .feature-image {
-        flex: 1 1 100%;
-        padding: 30px;
-      }
-
-      .feature-image img {
-        height: auto;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<section class="feature-section">
-  <h2 class="section-heading">FEATURE</h2>
-  <div class="divider"></div>
-
-  <!-- Feature 1 -->
-  <div class="feature-row">
-    <div class="feature-text">
-      <div class="feature-number">
-        <span class="label">FEATURE</span>
-        <span class="number">01</span>
-      </div>
-      <h3 class="feature-title">Creating spaces<br>by freely<br>controlling light</h3>
-      <p class="feature-description">
-        The brightness, color, lit area, and angle can all be controlled.<br>
-        Using a timer relay, lighting can be automatically changed to preset scenarios.<br>
-        We provide support for creating attractive spaces which expand the possibilities of presentation.
-      </p>
-    </div>
-    <div class="feature-image">
-      <img src="img/carousel-1.webp" alt="Feature 01" />
-    </div>
+    
+<header>
+  <div class="header-wrap position-relative">
+    <a href="index.html"><img src="img/logos.webp" alt="Logo" class="logo" loading="lazy"></a>
+    <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
+    <nav class="navmenu" id="mainNav">
+      <ul class="mb-0">
+         <li><a href="index.html" >Home</a></li>
+             <li><a href="about.html" class="active">About</a></li>
+        <li>
+          <a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a>
+        </li>
+        <li><a href="solution.html">Solutions</a></li>
+    <li><a href="applications.html">Applications</a></li>
+   <li><a href="gallery.html" >Gallery</a></li>
+           <li><a href="contact.html">Contact</a></li>
+        <!-- <li><a href="#"><i class="bi bi-search"></i></a></li> -->
+      </ul>
+    </nav>
   </div>
 
-  <!-- Feature 2 -->
-  <div class="feature-row reverse">
-    <div class="feature-text">
-      <div class="feature-number">
-        <span class="label">FEATURE</span>
-        <span class="number">02</span>
-      </div>
-      <h3 class="feature-title">The lighting equipment is<br>operated from handy<br>smartphones or tablets</h3>
-      <p class="feature-description">
-        Using a wireless Bluetooth Mesh<sup>&reg;</sup> connection,<br>
-        up to 100 lights can be controlled from a single smartphone or tablet.<br>
-        When a large number of lights need to be adjusted,<br>
-        such as when switching displayed items or changing layouts,<br>
-        being able to do so handily helps improve work efficiency and save human resources costs.
-      </p>
+  <div id="megaMenu" class="mega-menu">
+    <div class="row">
+     
+<div class="underline"></div>
+<div class="service-submenus d-flex flex-wrap">
+  <div class="service-group">
+    <h6>Energy</h6>
+    <ul>
+      <li><a href="#">Solar</a></li>
+      <li><a href="#">Wind</a></li>
+      <li><a href="#">Biomass</a></li>
+          <li><a href="#">Hydel Power</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Power</h6>
+    <ul>
+      <li><a href="transmission.html">transmission</a></li>
+      <li><a href="#">distribution</a></li>
+      <li><a href="#">Low Tention</a></li>
+        <li><a href="#">High Tention</a></li>
+         <li><a href="#">Panel Boards</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Lighting</h6>
+    <ul>
+      <li><a href="#">Residential</a></li>
+      <li><a href="#">Facade</a></li>
+      <li><a href="#">Commercial</a></li>
+       <li><a href="#">Industrial</a></li>
+      <li><a href="#">Street</a></li>
+      <li><a href="#">Park</a></li>
+      <li><a href="#">Stadium</a></li>
+      <li><a href="#">Hospital</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Automation</h6>
+    <ul>
+   
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Commercial</a></li>
+         <li><a href="#">Industrial</a></li>
+           <li><a href="#">Hospital</a></li>
+      <li><a href="#">IOT Based Automation</a></li>
+         <li><a href="#">Hotel</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Smart City</h6>
+    <ul>
+      <li><a href="smart-pole.html">Smart Pole</a></li>
+      <li><a href="#">Smart Conference Hall</a></li>
+       <li><a href="#">Smart Bollards</a></li>
+          <li><a href="#">Smart Bar Counter</a></li>
+              <li><a href="#">Smart Window Leaf AC</a></li>
+    </ul>
+  </div>
+
+   <div class="service-group">
+    <h6>R & D</h6>
+    <ul>
+      <li><a href="smart-pole.html">Smart Pole</a></li>
+    </ul>
+  </div>
+
+   
+</div>
+
     </div>
-    <div class="feature-image">
-      <img src="img/carousel-1.webp" alt="Feature 02" />
+  </div>
+</header>
+
+
+
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h1 class="text-white display-6 mb-4 wow fadeInDown" data-wow-delay="0.1s">WHO WE ARE ?</h1>
+                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                    <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> -->
+                  
+                </ol>    
+            </div>
+        </div>
+        <!-- Header End -->
+
+
+<!-- About Section Start -->
+<section class="about-arcot py-5" style="background-color: #0a0a0a;">
+  <div class="container text-white">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-10 text-center">
+        <h3 class="text-center text-white mb-5">🚀 Why Choose Arcot?</h3>
+        <p class="lead animate__animated animate__fadeInUp" style="color: #bbb; font-family: 'Jost', sans-serif;">
+          We are a next-generation engineering company offering end-to-end services in Power, Energy, Lighting, Automation, Smart City, and R&D. With innovation and intelligence at our core, we deliver scalable and sustainable solutions for industries and cities of the future.
+        </p>
+      </div>
+    </div>
+
+    <!-- Why Choose Arcot Radial Graphs -->
+    <div class="p-5 animate__animated animate__fadeInUp animate__delay-1s">
+      <div class="radial-grid">
+        <div class="radial-container">
+          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
+            <circle class="circle-bg" cx="60" cy="60" r="54" />
+            <circle class="circle-progress" cx="60" cy="60" r="54" />
+          </svg>
+          <div class="percentage">100%</div>
+          <div class="radial-label">Custom End-to-End Solutions</div>
+        </div>
+
+        <div class="radial-container">
+          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
+            <circle class="circle-bg" cx="60" cy="60" r="54" />
+            <circle class="circle-progress" cx="60" cy="60" r="54" />
+          </svg>
+          <div class="percentage">100%</div>
+          <div class="radial-label">Smart Tech & Embedded Innovation</div>
+        </div>
+
+        <div class="radial-container">
+          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
+            <circle class="circle-bg" cx="60" cy="60" r="54" />
+            <circle class="circle-progress" cx="60" cy="60" r="54" />
+          </svg>
+          <div class="percentage">100%</div>
+          <div class="radial-label">Quality & Safety Compliant</div>
+        </div>
+
+        <div class="radial-container">
+          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
+            <circle class="circle-bg" cx="60" cy="60" r="54" />
+            <circle class="circle-progress" cx="60" cy="60" r="54" />
+          </svg>
+          <div class="percentage">100%</div>
+          <div class="radial-label">Sustainable Green Practices</div>
+        </div>
+
+        <div class="radial-container">
+          <svg class="radial-ring" viewBox="0 0 120 120" width="120" height="120">
+            <circle class="circle-bg" cx="60" cy="60" r="54" />
+            <circle class="circle-progress" cx="60" cy="60" r="54" />
+          </svg>
+          <div class="percentage">100%</div>
+          <div class="radial-label">IOT & Smart City Integration</div>
+        </div>
+
+       
+      </div>
+    </div>
+
+    <!-- Services Boxes -->
+    <div class="row g-4 mb-5">
+      <div class="col-md-6 col-lg-4">
+        <div class="card-style animate__animated animate__fadeInLeft">
+          <div class="icon-box"><i class="fas fa-bolt"></i></div>
+          <h5>Power Solutions</h5>
+          <p>Advanced T&D, HT/LT Panel Boards, Substations, Power Audits.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-style animate__animated animate__fadeInUp">
+          <div class="icon-box"><i class="fas fa-solar-panel"></i></div>
+          <h5>Energy Solutions</h5>
+          <p>Solar, Wind, Biomass, BESS, Hybrid & Smart Grid Integration.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-style animate__animated animate__fadeInRight">
+          <div class="icon-box"><i class="fas fa-lightbulb"></i></div>
+          <h5>Lighting Solutions</h5>
+          <p>Facade, Stadium, Commercial & Industrial Lighting Design.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-style animate__animated animate__fadeInLeft">
+          <div class="icon-box"><i class="fas fa-home"></i></div>
+          <h5>Automation</h5>
+          <p>Smart Home, Industrial, IoT-based Monitoring & Controls.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-style animate__animated animate__fadeInUp">
+          <div class="icon-box"><i class="fas fa-city"></i></div>
+          <h5>Smart City</h5>
+          <p>Smart Poles, Counters, Environment Monitoring, AI Integration.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-style animate__animated animate__fadeInRight">
+          <div class="icon-box"><i class="fas fa-brain"></i></div>
+          <h5>R&D</h5>
+          <p>Custom Embedded Devices, IoT & AI Prototyping, Innovation Labs.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-</body>
+<!-- 💫 Style -->
+<style>
+.card-style {
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-style:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(79, 195, 247, 0.6);
+}
+.card-style h5 {
+  font-weight: 600;
+  color: #f0f0f0;
+  margin-top: 15px;
+  font-size: 1.25rem;
+}
+.card-style p {
+  font-size: 14px;
+  color: #bbb;
+  margin-top: 12px;
+  line-height: 1.5;
+}
+.card-style .icon-box {
+  font-size: 38px;
+  color: #4fc3f7;
+}
+
+/* Radial Grid */
+.radial-grid {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+.radial-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 140px;
+  position: relative;
+}
+.radial-ring {
+  transform: rotate(-90deg);
+}
+.circle-bg {
+  fill: none;
+  stroke: #2a2a2a;
+  stroke-width: 6px;
+}
+.circle-progress {
+  fill: none;
+  stroke: #4fc3f7;
+  stroke-width: 6px;
+  stroke-linecap: round;
+  stroke-dasharray: 339.292;
+  stroke-dashoffset: 339.292;
+}
+@keyframes progress-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.percentage {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  font-size: 22px;
+  font-weight: 700;
+  color: #4fc3f7;
+  font-family: 'Jost', sans-serif;
+}
+.radial-label {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 15px;
+  color: #ccc;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .radial-grid {
+    gap: 80px;
+    justify-content: center;
+  }
+  .radial-container {
+    width: 120px;
+    margin-bottom: 40px;
+  }
+}
+</style>
+
+<!-- 🔥 Scroll Animation Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const radialContainers = document.querySelectorAll(".radial-container");
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.3,
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        const progress = entry.target.querySelector(".circle-progress");
+        progress.style.animation = `progress-animation 1.8s ease forwards ${0.2 + index * 0.2}s`;
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  radialContainers.forEach(container => {
+    observer.observe(container);
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container py-5">
+                <div class="row g-5 mb-5 align-items-center">
+                 
+                   
+                </div>
+                <div class="row g-5">
+                   
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Quick Links</h4>
+                            <a href="index.html">Home</a>
+                            <a href="about.html">About us</a>
+                            <a href="solution.html">Solutions</a>
+                            <a href="applications.html">Applications</a>
+                            <a href="gallery.html">Gallery</a>
+                            <a href="smart-pole.html">R & D</a>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </div>
+
+                      <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Services</h4>
+                            <a href="#"> Energy</a>
+                            <a href="#"> Power</a>
+                            <a href="#"> Lighting</a>
+                            <a href="#"> Automation</a>
+                            <a href="#"> Smart City</a>
+                             <a href="#"> R & D</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Applications</h4>
+                            <a href="applications.html">Energy Generation</a>
+                            <a href="applications.html"> Power</a>
+                            <a href="applications.html"> Lighting</a>
+                            <a href="applications.html"> Indoor Lighting</a>
+                            <a href="applications.html"> Automation</a>
+                              <a href="applications.html"> Smart City</a>
+                               <a href="applications.html"> R & D</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Contact Info</h4>
+                            <a href="#"><i class="fa fa-map-marker-alt text-primary me-2"></i> Apurupa Towers, Road No:36, JubileeHills, Hyderabad, Telangana-500033 </a>
+                            <a href="mailto:info@arcotindia.in"><i class="fas fa-envelope text-primary me-2"></i>info@arcotindia.in </a>
+        
+                            <a href="tel:+91 98481 89899"><i class="fas fa-phone text-primary me-2"></i> +919848189899</a>
+                         
+                        </div>
+                    </div>
+
+
+                     <div class="col-lg-5">
+                        <div class="d-flex align-items-center justify-content-center justify-content-lg-end pl-5">
+                            <a class="btn btn-light btn-md-square me-3" href="https://www.facebook.com/profile.php?id=61575125369342" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-light btn-md-square me-3" href="https://x.com/Arcotluminaries" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-light btn-md-square me-3" href="https://www.instagram.com/arcotindia/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-light btn-md-square me-3" href="https://www.linkedin.com/in/arcot-luminaries-b4245935b/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                             <a class="btn btn-light btn-md-square me-3" href="https://www.youtube.com/@Arcotluminaries" target="_blank"><i class="fab fa-youtube"></i></a>
+                             <a class="btn btn-light btn-md-square me-3" href="https://in.pinterest.com/arcotsocialmedia/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+                              <a class="btn btn-light btn-md-square me-3" href="https://wa.me/919848189899"><i class="fab fa-whatsapp"></i></a>
+                              <a class="btn btn-light btn-md-square me-3" href="#"><i class="fab fa-telegram-plane"></i></a>
+                              <a class="btn btn-light btn-md-square me-3" href="https://www.reddit.com/user/Arcotluminaries/"><i class="fab fa-reddit-alien"></i></a>
+                              <a class="btn btn-light btn-md-square me-3" href="https://www.threads.com/@arcotindia">
+  <img src="img/icons/threads.svg" alt="Threads" style="width: 20px; height: 20px;" loading="lazy">
+</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+       <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4 bg-dark">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-body"><a href="https://arcotindia.com/" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>ARCOT </a>, All Right Reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-body">
+                     
+                        Designed By <a class="border-bottom text-white" href="https://arcotindia.com/">ARCOT </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+         
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script>AOS.init();</script>
+
+    </body>
+
 </html>
