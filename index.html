@@ -212,39 +212,6 @@
 
 
 
-<!--about-->
-<div class="aboutthe-section p-5">
-  <div class="row mb-4 align-items-start">
-    <div class="col-lg-6 mb-4 mb-lg-0">
-      <div class="glass-card p-4">
-        <div class="d-flex align-items-center mb-3">
-          <!-- <div class="aboutthe-dot">&#9679;</div> -->
-          <div class="aboutthe-title">ABOUT US</div>
-        </div>
-        <p class="aboutthe-description">
-  <strong>Arcot </strong> delivers innovative solutions across <strong>power, energy, lighting automation, smart city infrastructure,</strong> and <strong>R&D</strong>.  
-  <br><br>
-  We are committed to building sustainable, tech-driven environments through engineering excellence and continuous innovation.
-</p>
-
-
-      </div>
-    </div>
-    <div class="col-lg-6">
-      <div class="aboutthe-image-grid aboutthe-grid">
-        <div class="aboutthe-img"><img src="img/abouimg/aboutimg1 (1).webp" alt="power" loading="lazy"></div>
-        <div class="aboutthe-img"><img src="img/abouimg/aboutimg1 (5).webp" alt="energy" loading="lazy"></div>
-        <div class="aboutthe-img"><img src="img/abouimg/aboutimg1 (4).webp" alt="light" loading="lazy"></div>
-        <div class="aboutthe-img"><img src="img/abouimg/aboutimg1 (6).webp" alt="automation" loading="lazy"></div>
-        <div class="aboutthe-img"><img src="img/abouimg/aboutimg1 (3).webp" alt="smartcity" loading="lazy"></div>
-        <div class="aboutthe-img"><img src="img/abouimg/aboutimg1 (2).webp" alt="r&d" loading="lazy"></div>
-        
-      </div>
-    </div>
-  </div>
-</div>
-<!--about-->
-
 
 <style>
     /* Section position relative for overlays */
@@ -371,18 +338,273 @@
 
 
 
+  <style>
+  
+    .hello {
+      font-family: 'Jost', sans-serif;
+      background: #dddcdc;
+      color: #eee;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      overflow-x: hidden;
+    }
+
+    .aboutforarcot-wrapper {
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .aboutforarcot-textarea {
+      flex: 1.3;
+      min-width: 320px;
+    }
+
+    .aboutforarcot-textarea h1 {
+      font-weight: 600;
+      font-size: 3.2rem;
+      margin-bottom: 16px;
+      color: #000000;
+      position: relative;
+    }
+
+    .aboutforarcot-textarea h1::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #aaa, #fff);
+      animation: aboutforarcot-underline 3s infinite alternate ease-in-out;
+    }
+
+    @keyframes aboutforarcot-underline {
+      0% { left: 0; width: 70px; opacity: 1; }
+      50% { left: 50%; width: 110px; opacity: 0.8; }
+      100% { left: 0; width: 70px; opacity: 1; }
+    }
+
+    .aboutforarcot-textarea p {
+      color: #1a1919;
+      font-size: 1rem;
+      line-height: 1.5;
+      max-width: 480px;
+      font-weight: 400;
+    }
+
+    .aboutforarcot-carousel {
+      flex: 1;
+      min-width: 320px;
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+      border-radius: 16px;
+      background: #111;
+      user-select: none;
+    }
+
+    .aboutforarcot-blurwrap {
+      position: absolute;
+      inset: 0;
+      filter: blur(18px);
+      opacity: 0.06;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .aboutforarcot-blurwrap img {
+      width: 100%;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 8px;
+      opacity: 0.3;
+      filter: grayscale(100%) brightness(1.1);
+      transition: opacity 0.5s ease;
+    }
+
+    .aboutforarcot-blurwrap img.active {
+      opacity: 0.55;
+      filter: grayscale(50%) brightness(1);
+    }
+
+    .aboutforarcot-imagestack {
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .aboutforarcot-card {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 160px;
+      border-radius: 16px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      line-height: 1.2;
+      text-shadow: 0 0 4px rgba(0,0,0,0.6);
+      cursor: default;
+      user-select: text;
+      top: 0;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    @media (max-width: 900px) {
+      .aboutforarcot-wrapper {
+        flex-direction: column;
+      }
+      .aboutforarcot-carousel {
+        height: 360px;
+      }
+      .aboutforarcot-card {
+        height: 180px;
+        font-size: 1rem;
+        padding: 16px;
+      }
+      .aboutforarcot-textarea h1 {
+        font-size: 2.4rem;
+      }
+      .aboutforarcot-textarea p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+<div class="hello">
+  <div class="aboutforarcot-wrapper" role="main" aria-label="About ARCOT Industries">
+
+    <div class="aboutforarcot-textarea">
+      <h1>About</h1>
+      <p>
+        Pioneers in <strong>Power</strong>, <strong>Energy</strong>, <strong>Automation</strong>,<br />
+        <strong>Lighting</strong>, and <strong>Smart City</strong> solutions.<br />
+        Building scalable, future-ready infrastructure with innovation and precision.
+      </p>
+    </div>
+
+    <div class="aboutforarcot-carousel" aria-label="Services Image Carousel">
+      <div class="aboutforarcot-blurwrap" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="" />
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="" />
+        <img src="https://images.unsplash.com/photo-1521790366325-c7b6ff3b2526?auto=format&fit=crop&w=600&q=80" alt="" />
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=80" alt="" />
+        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=600&q=80" alt="" />
+        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=600&q=80" alt="" />
+      </div>
+
+      <div class="aboutforarcot-imagestack" aria-live="polite" aria-atomic="true">
+        <!-- JS will inject cards -->
+      </div>
+    </div>
+  </div>
+</div>
+  <script>
+    const aboutServices = [
+      { title: "Power Transmission & Distribution", img: "img/bannerabout.webp" },
+      { title: "Renewable Energy Solutions", img: "img/carousel-1.webp" },
+      { title: "Industrial & Home Automation", img: "img/bannerabout.webp" },
+      { title: "Smart & Commercial Lighting", img: "img/carousel-1.webp" },
+      { title: "Integrated Smart City Infrastructure", img: "img/bannerabout.webp" },
+      { title: "Research & Development Innovations", img: "img/carousel-1.webp" }
+    ];
+
+    const aboutStack = document.querySelector('.aboutforarcot-imagestack');
+    const blurImages = document.querySelectorAll('.aboutforarcot-blurwrap img');
+
+    let currentIdx = 0;
+
+    function createCard(item, top) {
+      const div = document.createElement('div');
+      div.className = 'aboutforarcot-card';
+      div.style.top = `${top}px`;
+      div.style.backgroundImage = `url(${item.img})`;
+      div.textContent = item.title;
+      return div;
+    }
+
+    let currentCards = [];
+    for (let i = 0; i < 2; i++) {
+      const card = createCard(aboutServices[(currentIdx + i) % aboutServices.length], i * 160);
+      aboutStack.appendChild(card);
+      currentCards.push(card);
+    }
+
+    function animateCarousel() {
+      const topCard = currentCards.shift();
+
+      gsap.to(topCard, {
+        duration: 1,
+        y: -160,
+        opacity: 0,
+        ease: "power2.inOut",
+        onComplete: () => topCard.remove()
+      });
+
+      if (currentCards.length > 0) {
+        gsap.to(currentCards[0], {
+          duration: 1,
+          top: 0,
+          ease: "power2.inOut",
+          y: 0,
+        });
+      }
+
+      currentIdx = (currentIdx + 1) % aboutServices.length;
+      const newCard = createCard(aboutServices[(currentIdx + 1) % aboutServices.length], 160);
+      newCard.style.opacity = 0;
+      aboutStack.appendChild(newCard);
+      currentCards.push(newCard);
+
+      gsap.fromTo(newCard, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, ease: "power2.inOut" });
+
+      blurImages.forEach((img, i) => {
+        img.classList.toggle('active', i === currentIdx);
+      });
+    }
+
+    setInterval(animateCarousel, 3000);
+
+    // Initial highlight
+    blurImages.forEach((img, i) => {
+      img.classList.toggle('active', i === currentIdx);
+    });
+  </script>
+
+
+
+
+
 
 
 
 <!-- segment heading -->
-<sections class="unique-impact-wrapper" id="unique-impact-text">
+<!-- <sections class="unique-impact-wrapper" id="unique-impact-text">
     
-</sections>
+</sections> -->
 <!-- segment heading -->
   <!-- SECTION 1 -->
  <section id="basic-lighting" class="bg-dark enhanced-section">
   <!-- Particle Canvas -->
-  <canvas id="particle-canvas"></canvas>
+  <canvas id="particle-canvas"></canvas> 
 
   
   <!-- Background Image with Blur and Transparency -->
@@ -1128,140 +1350,340 @@
   </section>
 
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll("section");
-
-    sections.forEach((section, index) => {
-      const canvas = document.createElement("div");
-      const id = `tsparticles-${index}`;
-      canvas.id = id;
-      canvas.style.position = "absolute";
-      canvas.style.top = 0;
-      canvas.style.left = 0;
-      canvas.style.width = "100%";
-      canvas.style.height = "100%";
-      canvas.style.zIndex = 0;
-      section.style.position = "relative";
-      section.prepend(canvas);
-
-      tsParticles.load(id, {
-        fullScreen: { enable: false },
-        background: {
-          color: "transparent"
-        },
-        fpsLimit: 60,
-        interactivity: {
-          events: {
-            onHover: {
-              enable: true,
-              mode: "repulse"
-            },
-            resize: true
-          },
-          modes: {
-            repulse: {
-              distance: 100,
-              duration: 0.4
-            }
-          }
-        },
-        particles: {
-          color: { value: "#00cfff" },
-          links: {
-            color: "#00cfff",
-            distance: 120,
-            enable: true,
-            opacity: 0.4,
-            width: 1
-          },
-          collisions: { enable: false },
-          move: {
-            direction: "none",
-            enable: true,
-            outModes: { default: "bounce" },
-            random: true,
-            speed: 0.6,
-            straight: false
-          },
-          number: {
-            value: 150,
-            density: {
-              enable: true,
-              area: 800
-            }
-          },
-          opacity: { value: 0.5 },
-          shape: { type: "circle" },
-          size: {
-            value: { min: 1, max: 3 }
-          }
-        },
-        detectRetina: true
-      });
-    });
-  });
-</script> -->
 
 
 
 <!-- applications -->
  <!-- DESKTOP VIEW -->
-  <div class="solumens-desktop-container">
+<!-- ARCOT Reveal Section -->
+<div class="wheelanimation-section ">
+  <canvas class="wheelanimation-network-bg" id="network-canvas"></canvas>
 
-     <video class="solumens-bg-video" autoplay muted loop playsinline>
-    <source src="media/applibackvi.mp4" type="video/mp4" />
-  </video>
-
-    <div class="solumens-bg-circle"></div>
-
-    <div class="solumens-center-circle">
-      <h2 class="text-white">END TO END SOLUTIONS</h2>
-    </div>
-
-    <div class="solumens-flip-card solumens-box1">
-      <div class="solumens-flip-inner">
-        <div class="solumens-front"><div class="solumens-icon"><i class="fas fa-search"></i></div><div class="solumens-title">DESIGN</div></div>
-        <div class="solumens-back"><img src="img/software_17122633.gif" alt="Design GIF" class="solumens-gif" loading="lazy"/></div>
+  <div class="wheelanimation-container">
+    <!-- Rotating Wheel -->
+    <div class="wheelanimation-wheel">
+      <div class="wheelanimation-orbit">
+        <div class="wheelanimation-glow-ball"></div>
       </div>
     </div>
 
-    <div class="solumens-flip-card solumens-box2">
-      <div class="solumens-flip-inner">
-        <div class="solumens-front"><div class="solumens-icon"><i class="fas fa-lightbulb"></i></div><div class="solumens-title">DEVELOP</div></div>
-        <div class="solumens-back"><img src="img/design_19012557.gif" alt="Develop GIF" class="solumens-gif" loading="lazy" /></div>
-      </div>
-    </div>
+    <!-- ARCOT Text -->
+    <div class="wheelanimation-text">ARCOT</div>
 
-    <div class="solumens-flip-card solumens-box3">
-      <div class="solumens-flip-inner">
-        <div class="solumens-front"><div class="solumens-icon"><i class="fas fa-chart-pie"></i></div><div class="solumens-title">MANUFACTURING</div></div>
-        <div class="solumens-back"><img src="img/maintenance_17122601.gif" alt="Manufacturing GIF" class="solumens-gif" loading="lazy" /></div>
-      </div>
-    </div>
+    <!-- Hand Image -->
+    <img src="img/hn.png" class="wheelanimation-hand" id="hand" />
 
-    <div class="solumens-flip-card solumens-box4">
-      <div class="solumens-flip-inner">
-        <div class="solumens-front"><div class="solumens-icon"><i class="fas fa-chart-line"></i></div><div class="solumens-title">INSTALLATION</div></div>
-        <div class="solumens-back"><img src="img/robot-arm_19000852.gif" alt="Installation GIF" class="solumens-gif" loading="lazy" /></div>
-      </div>
+    <!-- Cards with fixed GIFs -->
+    <div class="wheelanimation-card" id="card0">
+      <img src="img/design_19012557.gif" alt="Design" />
+      <h4>DESIGN</h4>
     </div>
-
-    <div class="solumens-flip-card solumens-box5">
-      <div class="solumens-flip-inner">
-        <div class="solumens-front"><div class="solumens-icon"><i class="fas fa-bullseye"></i></div><div class="solumens-title">TESTING</div></div>
-        <div class="solumens-back"><img src="img/testing_17122608.gif" alt="Testing GIF" class="solumens-gif" loading="lazy" /></div>
-      </div>
+    <div class="wheelanimation-card" id="card1">
+      <img src="img/software_17122633.gif" alt="Develop" />
+      <h4>DEVELOP</h4>
     </div>
-
-    <div class="solumens-flip-card solumens-box6">
-      <div class="solumens-flip-inner">
-        <div class="solumens-front"><div class="solumens-icon"><i class="fas fa-dollar-sign"></i></div><div class="solumens-title">COMMISSIONING</div></div>
-        <div class="solumens-back"><img src="img/sale_19001242.gif" alt="Commissioning GIF" class="solumens-gif" loading="lazy" /></div>
-      </div>
+    <div class="wheelanimation-card" id="card2">
+      <img src="img/robot-arm_19000852.gif" alt="Manufacturing" />
+      <h4>MANUFACTURING</h4>
+    </div>
+    <div class="wheelanimation-card" id="card3">
+      <img src="img/maintenance_17122601.gif" alt="Installation" />
+      <h4>INSTALLATION</h4>
+    </div>
+    <div class="wheelanimation-card" id="card4">
+      <img src="img/testing_17122608.gif" alt="Testing" />
+      <h4>TESTING</h4>
+    </div>
+    <div class="wheelanimation-card" id="card5">
+      <img src="img/sale_19001242.gif" alt="Commissioning" />
+      <h4>COMMISSIONING</h4>
     </div>
   </div>
+</div>
+
+<style>
+/* Hide whole section on mobile only */
+@media (max-width: 767px) {
+  .wheelanimation-section {
+    display: none !important;
+  }
+}
+
+/* Show on tablet and desktop */
+@media (min-width: 768px) {
+  .wheelanimation-section {
+    display: block;
+  }
+}
+
+.wheelanimation-section {
+  position: relative;
+  width: 100vw;
+  height: 120vh;
+  background: #0d0d0d;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: visible; /* Allow cards to show outside container if needed */
+  padding-bottom: 80px; /* Extra space at bottom for last cards */
+}
+
+.wheelanimation-network-bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.wheelanimation-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: visible; /* So cards won't get clipped */
+  z-index: 1;
+}
+
+/* Adjust wheel and text upward to create bottom space */
+.wheelanimation-wheel {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border: 6px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  top: 42%; /* Reduced from 50% to give bottom space */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: wheelanimation-rotateWheel 5s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
+}
+
+.wheelanimation-text {
+  position: absolute;
+  top: 42%; /* Match wheel position */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white !important;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  z-index: 3;
+}
+
+@keyframes wheelanimation-rotateWheel {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.wheelanimation-orbit {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: wheelanimation-orbitRotate 8s ease-in-out infinite;
+}
+
+@keyframes wheelanimation-orbitRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.wheelanimation-glow-ball {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 15px white, 0 0 30px #00ffff;
+  top: -7.5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.wheelanimation-card {
+  position: absolute;
+  background: transparent;
+  border: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.wheelanimation-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5px;
+  animation: wheelanimation-floatIcon 2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 4px rgba(255,255,255,0.4));
+}
+
+.wheelanimation-card h4 {
+  font-size: 18px;
+  font-weight: 500;
+  animation: wheelanimation-floatText 2s ease-in-out infinite alternate;
+  text-align: center;
+  margin: 0;
+  color: #fff; /* Force white */
+  text-shadow: 0 0 5px rgba(255,255,255,0.3);
+}
+
+@keyframes wheelanimation-floatIcon {
+  from { transform: translateY(0); }
+  to { transform: translateY(-6px); }
+}
+
+@keyframes wheelanimation-floatText {
+  from { transform: translateY(0); opacity: 0.8; }
+  to { transform: translateY(3px); opacity: 1; }
+}
+
+.wheelanimation-hand {
+  position: absolute;
+  width: 100px;
+  z-index: 10;
+  transform: translate(-50%, -50%) rotate(-20deg);
+  opacity: 0;
+  padding-top: 100px;
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".wheelanimation-card");
+  const hand = document.querySelector(".wheelanimation-hand");
+  const canvas = document.getElementById('network-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
+
+  const positions = [
+    {x: centerX - 300, y: centerY - 150},
+    {x: centerX + 300, y: centerY - 150},
+    {x: centerX + 350, y: centerY + 100},
+    {x: centerX - 350, y: centerY + 100},
+    {x: centerX - 200, y: centerY + 250},
+    {x: centerX + 200, y: centerY + 250},
+  ];
+
+  // Reset cards to center before animation
+  function resetCards() {
+    cards.forEach(card => {
+      gsap.set(card, {
+        x: centerX,
+        y: centerY,
+        opacity: 0
+      });
+    });
+  }
+
+  // Create repeating timeline
+  function playAnimationLoop() {
+    const tl = gsap.timeline({ repeat: -1, delay: 1 });
+
+    cards.forEach((card, index) => {
+      tl.to(hand, {
+        opacity: 1,
+        duration: 0.3,
+        x: centerX,
+        y: centerY,
+        ease: "power1.inOut",
+        onStart: () => {
+          gsap.set(card, { x: centerX, y: centerY, opacity: 0 });
+        }
+      })
+      .to(hand, {
+        x: positions[index].x,
+        y: positions[index].y,
+        duration: 0.5,
+        ease: "power1.inOut",
+      })
+      .to(card, {
+        x: positions[index].x,
+        y: positions[index].y,
+        duration: 0.6,
+        opacity: 1,
+        ease: "power1.out"
+      }, "<")
+      .to(hand, {
+        opacity: 0,
+        duration: 0.3,
+      }, "+=0.5");
+    });
+
+    tl.call(resetCards); // Reset cards after one loop
+  }
+
+  resetCards();
+  playAnimationLoop();
+
+  // Background Network Animation
+  const particles = [];
+  const particleCount = 60;
+
+  for (let i = 0; i < particleCount; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.7,
+      vy: (Math.random() - 0.5) * 0.7
+    });
+  }
+
+  function drawLines() {
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < 100) {
+          ctx.beginPath();
+          ctx.strokeStyle = 'rgba(255,255,255,0.07)';
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function animateNetwork() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+      ctx.fill();
+    });
+
+    drawLines();
+    requestAnimationFrame(animateNetwork);
+  }
+
+  animateNetwork();
+});
+</script>
+
+
+
 
   <!-- MOBILE VIEW -->
   <div class="solumens-mobile-container">
@@ -1310,9 +1732,6 @@
 
 
   <div class="appliarco-slider-container">
-   
-  
-
   <div class="appliarco-slider-inner" id="sliderInner">
     
     <!-- Slide 1 -->
@@ -1561,7 +1980,7 @@ Smart City & R&D: Innovative smart city tech & research.
                     </div>
 
 
-                     <div class="col-lg-5">
+                     <!-- <div class="col-lg-5">
                         <div class="d-flex align-items-center justify-content-center justify-content-lg-end pl-5">
                             <a class="btn btn-light btn-md-square me-3" href="https://www.facebook.com/profile.php?id=61575125369342" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-light btn-md-square me-3" href="https://x.com/Arcotluminaries" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -1577,7 +1996,7 @@ Smart City & R&D: Innovative smart city tech & research.
 </a>
 
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -1625,6 +2044,7 @@ Smart City & R&D: Innovative smart city tech & research.
 <script src="lib/owlcarousel/owl.carousel.min.js" defer></script>
 <script src="js/main.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 <!-- AOS with defer-safe init -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
