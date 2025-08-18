@@ -2,6 +2,295 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Renewable Energy Sources</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+    }
+
+    /* Left Section */
+    .left-section {
+      width: 35%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      padding: 20px;
+    }
+    .left-text {
+      max-width: 80%;
+    }
+    .left-text h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .left-text p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Glassy button */
+    .glass-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .glass-btn:hover {
+      background: rgba(133, 136, 135, 0.25);
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #fff;
+    }
+
+    /* Arc container */
+    .arc-container {
+      position: absolute;
+      left: 35%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 600px;
+      height: 700px;
+      z-index: 3;
+      pointer-events: none;
+    }
+    svg.arcs {
+      position: absolute;
+      top: 0;
+      left: -550px;
+      width: 600px;
+      height: 700px;
+      overflow: visible;
+    }
+    path {
+      fill: none;
+      stroke: #666;
+    }
+
+    /* Icons */
+    .icon {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(34,34,34,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      z-index: 4;
+    }
+    /* Hover effect - glowing pulse */
+    .icon:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 15px #787978, 0 0 25px rgba(72, 73, 73, 0.6);
+    }
+    /* Active effect - energy wave */
+    .icon.active {
+      background: rgba(101, 103, 102, 0.7);
+      border-color: #6f7271;
+      animation: pulse 1.5s infinite, spin 0.6s ease;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 5px #727372; }
+      50% { box-shadow: 0 0 20px #727372, 0 0 40px rgba(127, 128, 127, 0.7); }
+      100% { box-shadow: 0 0 5px #727372; }
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg) scale(1.15); }
+      to { transform: rotate(360deg) scale(1.15); }
+    }
+
+    /* Right Image - clipped to arc */
+    .right-bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80%;
+      height: 100%;
+      z-index: 1;
+    }
+    .right-bg svg {
+      width: 100%;
+      height: 100%;
+    }
+    .right-bg image {
+      width: 100%;
+      height: 100%;
+      preserveAspectRatio: xMidYMid slice;
+    }
+
+    /* Responsive design */
+    @media (max-width: 900px) {
+      body {
+        flex-direction: column;
+      }
+      .left-section {
+        width: 100%;
+        text-align: center;
+      }
+      .arc-container {
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.8);
+      }
+      .right-bg {
+        width: 100%;
+        height: 60%;
+        bottom: 0;
+      }
+      .left-text h2 { font-size: 24px; }
+      .left-text p { font-size: 14px; }
+    }
+    @media (max-width: 600px) {
+      .arc-container {
+        transform: translate(-50%, -50%) scale(0.6);
+      }
+      .icon {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Left Section -->
+  <div class="left-section">
+    <div class="left-text" id="leftText">
+      <h2>Renewable Energy</h2>
+      <p>
+        Harnessing clean and sustainable sources of energy to power our future.
+      </p>
+      <a href="#" class="glass-btn">Read More</a>
+    </div>
+  </div>
+
+  <!-- Middle arcs -->
+  <div class="arc-container">
+    <svg class="arcs" viewBox="0 0 600 700">
+      <path id="outerArc" d="M500 50 A450 450 0 0 1 500 650" stroke="#666" stroke-width="2"/>
+      <path d="M460 80 A410 410 0 0 1 460 620" stroke="#555" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <!-- Right background image clipped with SAME arc shape -->
+  <div class="right-bg">
+    <svg viewBox="0 0 1920 700" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <clipPath id="arcClip" clipPathUnits="userSpaceOnUse">
+          <path d="M500 50 A450 450 0 0 1 500 650 L1920 650 L1920 50 Z" />
+        </clipPath>
+      </defs>
+      <image id="bgImage" href="https://picsum.photos/id/1015/1920/1080"
+             clip-path="url(#arcClip)" />
+    </svg>
+  </div>
+
+  <script>
+    const data = [
+      { 
+        title: "Solar Energy", 
+        desc: "Solar panels capture sunlight and convert it into clean electricity.", 
+        icon: "☀️", 
+        bg: "https://picsum.photos/id/1011/1920/1080" 
+      },
+      { 
+        title: "Wind Power", 
+        desc: "Wind turbines harness the power of moving air to generate electricity.", 
+        icon: "🌬️", 
+        bg: "https://picsum.photos/id/1018/1920/1080" 
+      },
+      { 
+        title: "Biomass Energy", 
+        desc: "Organic matter such as plants and waste is used to produce energy sustainably.", 
+        icon: "🌱", 
+        bg: "https://picsum.photos/id/1025/1920/1080" 
+      },
+      { 
+        title: "Hydel Power", 
+        desc: "Hydropower plants generate electricity by using flowing water.", 
+        icon: "💧", 
+        bg: "https://picsum.photos/id/1031/1920/1080" 
+      }
+    ];
+
+    const arcPath = document.getElementById("outerArc");
+    const arcLength = arcPath.getTotalLength();
+    const container = document.querySelector(".arc-container");
+
+    // Place icons on arc
+    data.forEach((d, i) => {
+      const point = arcPath.getPointAtLength((arcLength / (data.length - 1)) * i);
+      const icon = document.createElement("div");
+      icon.className = "icon";
+      icon.dataset.index = i;
+      icon.textContent = d.icon;
+      const shiftX = -550;
+      icon.style.left = `${point.x + shiftX - 30}px`;
+      icon.style.top = `${point.y - 30}px`;
+      container.appendChild(icon);
+    });
+
+    const icons = document.querySelectorAll(".icon");
+    const leftText = document.getElementById("leftText");
+    const bgImage = document.getElementById("bgImage");
+    let current = 0;
+
+    function setActive(index) {
+      icons.forEach(i => i.classList.remove("active"));
+      icons[index].classList.add("active");
+      leftText.innerHTML = `<h2>${data[index].title}</h2><p>${data[index].desc}</p><a href='#' class='glass-btn'>Read More</a>`;
+      bgImage.setAttribute("href", data[index].bg);
+      current = index;
+    }
+
+    icons.forEach((icon, i) => {
+      icon.addEventListener("click", () => setActive(i));
+    });
+
+    setInterval(() => {
+      let next = (current + 1) % data.length;
+      setActive(next);
+    }, 5000);
+
+    setActive(0);
+  </script>
+</body>
+</html>
+
+
+ /* Energy generation segment */
+
+
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Automation Showcase</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -265,3 +554,10 @@
   </script>
 </body>
 </html>
+
+
+
+/*Automation Segment*/
+
+
+
