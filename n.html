@@ -1,267 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Automation Showcase</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Our Exclusive R&D Creations</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-  <style>
-    body {
-      background: #fff;
-      color: #000;
-      font-family: Arial, sans-serif;
-    }
+<style>
+  :root{
+    --bg:#f7f7f7;
+    --text:#111;
+    --muted:#666;
+    --line:#bbb;
+    --card:#ffffff;
+  }
 
-    /* IMAGE STYLING */
-    .left-image {
-      width: 100%;
-      height: 70vh;
-      object-fit: cover;
-      margin-top: 70px;
-      
-      /* animation: zoomInOut 12s ease-in-out infinite; */
-    }
+  body{background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+  .section-wrap{padding:64px 0 48px;}
 
-    @keyframes zoomInOut {
-      0% { transform: scale(1);}
-      50% { transform: scale(1.08);}
-      100% { transform: scale(1);}
-    }
+  /* Left text column */
+  .eyebrow{
+    font-size:clamp(2.4rem, 6vw, 5.2rem);
+    font-weight:700;
+    line-height:1.05;
+    letter-spacing:-.02em;
+    margin-bottom:.25em;
+    margin-top:-20px; /* pushes heading slightly above image */
+  }
+  .eyebrow .accent{color:var(--text);} /* keep grayscale */
+  .tagline{
+    font-size:clamp(1.2rem, 2.5vw, 2rem);
+    color:#222;
+    margin-bottom:1.2rem;
+  }
 
-    /* TEXT STYLING */
-    .text-section {
-      padding: 2rem;
-    }
+  .kicker{
+    margin:0; /* removed extra top space */
+    font-weight:600;
+    color:#333;
+    position:relative;
+    display:inline-block;
+    padding-right:0;
+  }
+  .kicker::after{
+    content:"";
+    position:absolute;
+    left:calc(100% + 16px);
+    top:50%;
+    transform:translateY(-50%);
+    height:2px;
+    width:120px;
+    background:linear-gradient(90deg,var(--line),#dedede);
+    animation:loadingLine 2.2s linear infinite;
+    transform-origin:left center;
+  }
+  @keyframes loadingLine{
+    0%{transform:translateY(-50%) scaleX(0);}
+    50%{transform:translateY(-50%) scaleX(1);}
+    100%{transform:translateY(-50%) scaleX(0);}
+  }
 
-    .heading {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      animation: fadeInUp 1s ease forwards;
-    }
+  .slide-title{
+    font-size:clamp(1.4rem, 2.2vw, 2.2rem);
+    font-weight:700;
+    letter-spacing:.01em;
+    margin:0 0 .4rem;
+  }
+  .slide-desc{
+    color:var(--muted);
+    max-width:56ch;
+  }
 
-    .tagline {
-      font-size: 1.3rem;
-      font-weight: 500;
-      margin-bottom: 0.8rem;
-      animation: fadeInUp 1.5s ease forwards;
-    }
+  .more-link{
+    display:inline-flex; align-items:center; gap:.5rem;
+    margin-top:14px; font-weight:600; color:#222; text-decoration:none;
+    position:relative;
+  }
+  .more-link i{font-size:1rem;}
+  .more-link:hover{opacity:.8; text-decoration:underline;}
 
-    .desc {
-      color: #555;
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      animation: fadeInUp 2s ease forwards;
-    }
+  /* Right image card */
+  .image-wrap{
+    position:relative;
+    overflow:hidden;
+    background:var(--card);
+    box-shadow:0 12px 30px rgba(0,0,0,.06);
+    margin-top:28px;
+  }
+  .hero-img{
+    width:100%; 
+    height:75vh; 
+    object-fit:cover;
+    animation:kenburns 14s ease-in-out infinite;
+    opacity:0; transition:opacity .7s ease;
+  }
+  .hero-img.show{opacity:1;}
+  @keyframes kenburns{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.06);}
+    100%{transform:scale(1);}
+  }
 
-    @keyframes fadeInUp {
-      0% {opacity: 0; transform: translateY(20px);}
-      100% {opacity: 1; transform: translateY(0);}
-    }
+  /* Arrows */
+  .nav-btn{
+    width:56px; height:56px; 
+    border-radius:50%;
+    border:1px solid #cfcfcf; 
+    background:#fff; color:#222;
+    display:flex; 
+    align-items:center; 
+    justify-content:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.06);
+    transition:.2s;
+  }
+  .nav-btn:hover{background:#111; color:#fff;}
+  .nav-group{gap:16px;}
 
-    /* ICONS */
-    .icon-box {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background: #e0e0e0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.4s ease;
-      cursor: pointer;
-    }
+  /* Layout spacing */
+  .text-col{padding-right:2rem;}
+  .image-col{padding-left:2rem;}
 
-    .icon-box.active,
-    .icon-box:hover {
-      background: #000;
-      color: #fff;
-      transform: scale(1.15) rotate(5deg);
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
-
-    .icon-title {
-      margin-top: 0.6rem;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .icon-sub {
-      font-size: 0.8rem;
-      color: #777;
-    }
-
-    .icons-grid {
-      margin-left: 0;
-    }
-
-    /* FADE */
-    .fade {
-      opacity: 0;
-      transition: opacity 0.8s ease-in-out;
-    }
-    .fade.show {
-      opacity: 1;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .left-image {
-        height: 40vh;
-        margin-top: 20px;
-      }
-      .heading {
-        font-size: 2rem;
-      }
-      .tagline {
-        font-size: 1.1rem;
-      }
-      .icons-grid .col-4 {
-        flex: 0 0 50%;
-        max-width: 50%;
-      }
-    }
-  </style>
+  /* Responsive */
+  @media (max-width: 991.98px){
+    .image-wrap{border-radius:20px; margin-top:18px;}
+    .hero-img{height:42vh;}
+    .text-col{padding-right:1rem;}
+    .image-col{padding-left:1rem;}
+    .nav-group{justify-content:flex-start;}
+  }
+</style>
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="row flex-column flex-md-row align-items-start">
-      <!-- Left side image -->
-      <div class="col-md-6 p-0 d-flex align-items-start justify-content-center">
-        <img id="mainImage" src="https://source.unsplash.com/900x500/?smart,home" class="left-image show fade" alt="">
-      </div>
 
-      <!-- Right side text and icons -->
-      <div class="col-md-6 d-flex flex-column justify-content-start pt-5 text-section">
-        <h1 id="mainHeading" class="heading">Home Automation</h1>
-        <h3 id="mainTagline" class="tagline">Smart homes make life simpler</h3>
-        <p id="mainDesc" class="desc">
-          Control lighting, temperature, and security systems for all-round residential intelligence.
+<div class="container-fluid section-wrap">
+  <div class="container">
+    <div class="row align-items-start">
+      <!-- LEFT: text -->
+      <div class="col-lg-5 text-col">
+        <h1 class="eyebrow">
+          <span class="accent">R&D Highlights</span>
+        </h1>
+        <div class="tagline">Pioneering designs from our research &amp; development team</div>
+
+        <div class="kicker">Brand Overview</div>
+
+        <h2 id="slideTitle" class="slide-title">
+          Smart Pole
+        </h2>
+        <p id="slideDesc" class="slide-desc">
+          A next-generation multifunctional pole that integrates EV charging, security cameras, public Wi-Fi, SOS alerts, LED displays, and environmental sensors — delivering safer, smarter, and more connected urban spaces.
         </p>
 
-        <!-- Icon Grid -->
-        <div class="row text-start g-4 icons-grid">
-          <div class="col-4" onmouseenter="setActive(0)">
-            <div class="icon-box active" id="icon0"><i class="bi bi-house-door fs-3"></i></div>
-            <p class="icon-title">Home Automation</p>
-            <p class="icon-sub">Home</p>
-          </div>
+        <div class="d-flex flex-column align-items-end">
+          <a id="moreLink" class="more-link" href="brands.html">
+            <span>+ more</span><i class="bi bi-arrow-right"></i>
+          </a>
 
-          <div class="col-4" onmouseenter="setActive(1)">
-            <div class="icon-box" id="icon1"><i class="bi bi-building fs-3"></i></div>
-            <p class="icon-title">Commercial Automation</p>
-            <p class="icon-sub">Commercial</p>
+          <div class="d-flex nav-group mt-3">
+            <button id="prevBtn" class="nav-btn" aria-label="Previous">
+              <i class="bi bi-arrow-left"></i>
+            </button>
+            <button id="nextBtn" class="nav-btn" aria-label="Next">
+              <i class="bi bi-arrow-right"></i>
+            </button>
           </div>
+        </div>
+      </div>
 
-          <div class="col-4" onmouseenter="setActive(2)">
-            <div class="icon-box" id="icon2"><i class="bi bi-gear fs-3"></i></div>
-            <p class="icon-title">Industrial Automation</p>
-            <p class="icon-sub">Industrial</p>
-          </div>
-
-          <div class="col-4" onmouseenter="setActive(3)">
-            <div class="icon-box" id="icon3"><i class="bi bi-hospital fs-3"></i></div>
-            <p class="icon-title">Hospital Automation</p>
-            <p class="icon-sub">Hospital</p>
-          </div>
-
-          <div class="col-4" onmouseenter="setActive(4)">
-            <div class="icon-box" id="icon4"><i class="bi bi-wifi fs-3"></i></div>
-            <p class="icon-title">IoT Automation</p>
-            <p class="icon-sub">IoT</p>
-          </div>
-
-          <div class="col-4" onmouseenter="setActive(5)">
-            <div class="icon-box" id="icon5"><i class="bi bi-buildings fs-3"></i></div>
-            <p class="icon-title">Hotel Automation</p>
-            <p class="icon-sub">Hotel</p>
-          </div>
+      <!-- RIGHT: image -->
+      <div class="col-lg-7 image-col hover-area">
+        <div class="image-wrap">
+          <img id="heroImg" class="hero-img show" src="img/brand-1.webp" alt="Featured brand image">
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <script>
-   const items = [
-  {
-    img: "img/carousel-1.webp",
-    heading: "Home Automation",
-    tagline: "Smarter living, greater comfort",
-    desc: "Automate lighting, climate, and security for a seamless, energy-efficient smart home experience."
-  },
-  {
-    img: "img/bannerabout.webp",
-    heading: "Commercial Automation",
-    tagline: "Efficiency that drives business",
-    desc: "Integrate smart solutions in offices, retail, and enterprises to optimize operations and reduce costs."
-  },
-  {
-    img: "img/carousel-2.webp",
-    heading: "Industrial Automation",
-    tagline: "Redefining productivity with Industry 4.0",
-    desc: "Harness robotics, sensors, and intelligent systems to enhance production, precision, and workplace safety."
-  },
-  {
-    img: "img/banner-hospital.webp",
-    heading: "Hospital Automation",
-    tagline: "Smart care for safer hospitals",
-    desc: "Automate facility management, patient monitoring, and safety systems to ensure better healthcare delivery."
-  },
-  {
-    img: "img/iot-automation.webp",
-    heading: "IoT Automation",
-    tagline: "Connected intelligence everywhere",
-    desc: "Enable devices, data, and AI-driven insights to create scalable, real-time IoT-powered automation solutions."
-  },
-  {
-    img: "img/hotel-automation.webp",
-    heading: "Hotel Automation",
-    tagline: "Luxury powered by intelligence",
-    desc: "Deliver superior guest experiences with smart room controls, energy management, and seamless hotel services."
+<script>
+  const slides = [
+    {
+      img: "img/bannerabout.webp",
+      title: "Smart Pole",
+      desc: "A next-generation multifunctional pole that integrates EV charging, security cameras, public Wi-Fi, SOS alerts, LED displays, and environmental sensors — delivering safer, smarter, and more connected urban spaces.",
+      moreHref: "brands/art-lighting.html"
+    },
+    {
+      img: "img/carousel-1.webp",
+      title: "Smart Conference Table",
+      desc: "A technology-enabled conference table designed for modern workplaces, featuring built-in wireless charging, interactive touchscreens, advanced AV controls, and seamless device connectivity — empowering productive meetings and effortless collaboration.",
+      moreHref: "brands/minimal-series.html"
+    },
+    {
+      img: "img/bannerabout.webp",
+      title: "Smart Bollard",
+      desc: "Intelligent retractable or fixed bollards equipped with integrated lighting, traffic management, and surveillance capabilities — enhancing urban safety, streamlining vehicle access control, and supporting efficient crowd management.",
+      moreHref: "brands/performance.html"
+    },
+    {
+      img: "img/bannerabout.webp",
+      title: "Smart Bar Counter",
+      desc: "Digitally controlled counters featuring embedded displays, dynamic LED lighting, integrated cooling units, and IoT connectivity — delivering modern, interactive experiences for hospitality, entertainment, and premium lifestyle venues.",
+      moreHref: "brands/performance.html"
+    },
+     {
+      img: "img/bannerabout.webp",
+      title: "Smart Window Leaf AC",
+      desc: "Compact, energy-efficient air conditioners designed for seamless window integration, equipped with smart controls, air-quality monitoring, and ultra-quiet performance — delivering comfort and sustainability for modern urban living.",
+      moreHref: "brands/performance.html"
+    }
+  ];
+
+  const imgEl   = document.getElementById('heroImg');
+  const titleEl = document.getElementById('slideTitle');
+  const descEl  = document.getElementById('slideDesc');
+  const moreEl  = document.getElementById('moreLink');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  let index = 0;
+  let timer = null;
+  const INTERVAL = 6000;
+
+  function render(i){
+    const s = slides[i];
+    imgEl.classList.remove('show');
+    setTimeout(()=>{
+      imgEl.src = s.img;
+      imgEl.alt = s.title;
+      titleEl.textContent = s.title;
+      descEl.textContent  = s.desc;
+      moreEl.href = s.moreHref;
+      requestAnimationFrame(()=>imgEl.classList.add('show'));
+    }, 220);
   }
-];
 
-    let activeIndex = 0;
-    let interval = setInterval(nextSlide, 5000);
+  function next(){
+    index = (index + 1) % slides.length;
+    render(index);
+  }
+  function prev(){
+    index = (index - 1 + slides.length) % slides.length;
+    render(index);
+  }
 
-    function setActive(index) {
-      activeIndex = index;
-      updateUI();
-      resetTimer();
-    }
+  function startAuto(){
+    stopAuto();
+    timer = setInterval(next, INTERVAL);
+  }
+  function stopAuto(){
+    if(timer) clearInterval(timer);
+    timer = null;
+  }
 
-    function nextSlide() {
-      activeIndex = (activeIndex + 1) % items.length;
-      updateUI();
-    }
+  nextBtn.addEventListener('click', ()=>{ next(); startAuto(); });
+  prevBtn.addEventListener('click', ()=>{ prev(); startAuto(); });
 
-    function updateUI() {
-      const image = document.getElementById("mainImage");
-      const heading = document.getElementById("mainHeading");
-      const tagline = document.getElementById("mainTagline");
-      const desc = document.getElementById("mainDesc");
+  document.querySelector('.hover-area').addEventListener('mouseenter', stopAuto);
+  document.querySelector('.hover-area').addEventListener('mouseleave', startAuto);
+  document.querySelector('.text-col').addEventListener('mouseenter', stopAuto);
+  document.querySelector('.text-col').addEventListener('mouseleave', startAuto);
 
-      image.classList.remove("show");
-      setTimeout(() => {
-        image.src = items[activeIndex].img;
-        heading.textContent = items[activeIndex].heading;
-        tagline.textContent = items[activeIndex].tagline;
-        desc.textContent = items[activeIndex].desc;
-        image.classList.add("show");
-      }, 200);
-
-      for (let i = 0; i < items.length; i++) {
-        document.getElementById("icon" + i).classList.remove("active");
-      }
-      document.getElementById("icon" + activeIndex).classList.add("active");
-    }
-
-    function resetTimer() {
-      clearInterval(interval);
-      interval = setInterval(nextSlide, 5000);
-    }
-  </script>
+  render(index);
+  startAuto();
+</script>
 </body>
 </html>
