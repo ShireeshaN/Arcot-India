@@ -24,7 +24,7 @@
   <!-- Icon Fonts -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <!-- Performance-optimized Libraries (Load non-critical with media='print') -->
   <link rel="stylesheet" href="lib/animate/animate.min.css" media="print" onload="this.media='all'">
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" media="print" onload="this.media='all'">
@@ -589,7 +589,126 @@
     });
   </script>
 
+<!-- POWER START -->
+<!-- ✅ Light Solutions Section Snippet (Mobile Top Text & Shorter Image) -->
+<section class="heros" aria-label="Light Solutions">
+  <div class="hero__bg" aria-hidden="true">
+    <img src="img/application/appli (1).webp" alt="" class="bg-img active" data-key="indoor">
+    <img src="img/application/68.webp" alt="" class="bg-img" data-key="outdoor">
+    <img src="img/application/appli (3).webp" alt="" class="bg-img" data-key="immersion">
+    <img src="img/application/69.webp" alt="" class="bg-img" data-key="linear">
+  </div>
 
+  <div class="hero__overlay">
+    <p class="eyebrow">LIGHT SOLUTIONS</p>
+    <ul class="menu" role="tablist" aria-label="Light Solution Categories">
+      <li class="active" data-key="indoor">Transmission <span class="cta"><span class="dot"></span> POWER</span></li>
+      <li data-key="outdoor">Distribution <span class="cta"><span class="dot"></span> POWER</span></li>
+      <li data-key="immersion">Low & High Tention <span class="cta"><span class="dot"></span> POWER</span></li>
+      <li data-key="linear">Panel Board <span class="cta"><span class="dot"></span> POWER</span></li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .heros{
+    position:relative;
+    height:100vh;
+    width:100%;
+    isolation:isolate;
+    background:radial-gradient(1200px 1200px at 85% 10%, #1c2a33 0%, #0c1114 55%);
+    font-family:"Poppins",sans-serif;
+  }
+  .hero__bg{position:absolute; inset:0; overflow:hidden; z-index:0;}
+  .hero__bg img{
+    position:absolute; inset:0;
+    width:100%; height:100%; object-fit:cover;
+    opacity:0; transform:scale(1.08) translateY(0);
+    transition:opacity 700ms ease, transform 6000ms ease;
+  }
+  .hero__bg img.active{opacity:1; transform:scale(1.02) translateY(-2%);}
+  .hero__overlay{position:absolute; left:min(6vw, 80px); top:50%; transform:translateY(-50%); z-index:2;}
+  .eyebrow{font-size:.85rem; letter-spacing:.18em; color:#b9c6cf; margin-bottom:12px;}
+  .menu{list-style:none;}
+  .menu li{
+    cursor:pointer; margin:14px 0;
+    color:#8fa1ad; font-weight:700;
+    font-size:clamp(2rem, 2.5rem + 2vw, 5rem);
+    transition:.3s;
+  }
+  .menu li.active{color:#fff;}
+  .menu li .cta{font-size:.8rem; font-weight:600; opacity:.8;}
+  .dot{width:.5em; height:.5em; border-radius:50%; background:#e7edf1; display:inline-block; margin-right:.4em;}
+  .heros::before{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(90deg, rgba(12,17,20,.75) 0%, rgba(12,17,20,.5) 20%, rgba(12,17,20,0) 55%);
+    z-index:1;
+  }
+
+  /* 📱 Mobile view adjustments */
+  @media (max-width: 768px){
+    .heros{height:auto; min-height:70vh;}
+    .hero__bg img{height:60vh;}   /* background image shorter */
+    .hero__overlay{
+      position:relative;
+      top:0; left:0;
+      transform:none;
+      padding:20px;
+      text-align:left;
+    }
+    .menu li{font-size:1.6rem; margin:10px 0;}
+    .eyebrow{font-size:.75rem;}
+  }
+
+  /* 📱 Tablet + Mobile view adjustments (iPad too) */
+@media (max-width: 1024px){
+  .heros{height:auto; min-height:70vh;}
+  .hero__bg img{height:60vh;}   /* background image shorter */
+  .hero__overlay{
+    position:relative;
+    top:0; left:0;
+    transform:none;
+    padding:20px;
+    text-align:left;
+  }
+  .menu li{font-size:1.6rem; margin:10px 0;}
+  .eyebrow{font-size:.75rem;}
+}
+
+</style>
+
+<script>
+  function setActive(key){
+    document.querySelectorAll('.menu li').forEach(li=>{
+      li.classList.toggle('active', li.dataset.key === key);
+    });
+    document.querySelectorAll('.hero__bg img').forEach(img=>{
+      const isActive = img.dataset.key === key;
+      img.classList.toggle('active', isActive);
+      if(isActive){
+        img.style.transform = 'scale(1.08) translateY(0)';
+        requestAnimationFrame(()=> {
+          img.style.transform = 'scale(1.02) translateY(-2%)';
+        });
+      }
+    });
+  }
+
+  // 👉 Support both hover (desktop) + click (mobile)
+  const isTouch = matchMedia('(hover: none)').matches;
+
+// 👉 Support both hover (desktop) + click/tap (mobile & iPad)
+document.querySelectorAll('.menu li').forEach(li=>{
+  const key = li.dataset.key;
+
+  li.addEventListener('click', ()=> setActive(key));      // Always support click/tap
+  li.addEventListener('mouseenter', ()=> setActive(key)); // Desktop hover
+  li.addEventListener('focus', ()=> setActive(key));      // Keyboard/tab focus
+});
+
+</script>
+
+<!-- POWER END -->
 
 
 
@@ -1418,7 +1537,7 @@
 
 .wheelanimation-section {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 120vh;
   background: #0d0d0d;
   font-family: 'Segoe UI', sans-serif;
@@ -1428,7 +1547,7 @@
 
 .wheelanimation-network-bg {
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
@@ -1437,7 +1556,7 @@
 
 .wheelanimation-container {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: visible; /* So cards won't get clipped */
   z-index: 1;
