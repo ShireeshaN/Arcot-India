@@ -1,417 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Energy Generation Slider</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Our Exclusive R&D Creations</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<style>
+  :root{
+    --bg:#f7f7f7;
+    --text:#111;
+    --muted:#666;
+    --line:#bbb;
+    --card:#ffffff;
+  }
 
-  <style>
-    /* === BACKGROUND IMAGE === */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('img/WIND POWER (1).png') no-repeat center center fixed;
-      background-size: cover;
-      position: relative;
-    }
+  body{background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+  .randd-section-wrap{padding:64px 0 48px;}
 
-    /* === OPTIONAL DARK OVERLAY FOR READABILITY === */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
-      z-index: -1;
-    }
+  /* Left text column */
+  .randd-eyebrow{
+    font-size:clamp(2.4rem, 6vw, 5.2rem);
+    font-weight:700;
+    line-height:1.05;
+    letter-spacing:-.02em;
+    margin-bottom:.25em;
+    margin-top:-20px;
+  }
+  .randd-eyebrow .randd-accent{color:var(--text);}
+  .randd-tagline{
+    font-size:clamp(1.2rem, 2.5vw, 2rem);
+    color:#222;
+    margin-bottom:1.2rem;
+  }
 
-    .carousel-section {
-      padding: 60px 0;
-      overflow: hidden;
-    }
+  .randd-kicker{
+    margin:0;
+    font-weight:600;
+    color:#333;
+    position:relative;
+    display:inline-block;
+    padding-right:0;
+  }
+  .randd-kicker::after{
+    content:"";
+    position:absolute;
+    left:calc(100% + 16px);
+    top:50%;
+    transform:translateY(-50%);
+    height:2px;
+    width:120px;
+    background:linear-gradient(90deg,var(--line),#dedede);
+    animation:randd-loadingLine 2.2s linear infinite;
+    transform-origin:left center;
+  }
+  @keyframes randd-loadingLine{
+    0%{transform:translateY(-50%) scaleX(0);}
+    50%{transform:translateY(-50%) scaleX(1);}
+    100%{transform:translateY(-50%) scaleX(0);}
+  }
 
-    .carousel-title {
-      color: white;
-      font-size: 48px;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 40px;
-    }
+  .randd-slide-title{
+    font-size:clamp(1.4rem, 2.2vw, 2.2rem);
+    font-weight:700;
+    letter-spacing:.01em;
+    margin:0 0 .4rem;
+  }
+  .randd-slide-desc{
+    color:var(--muted);
+    max-width:56ch;
+  }
 
-    .swiper {
-      padding: 0 80px 80px;
-    }
+  .randd-more-link{
+    display:inline-flex; align-items:center; gap:.5rem;
+    margin-top:14px; font-weight:600; color:#222; text-decoration:none;
+    position:relative;
+  }
+  .randd-more-link i{font-size:1rem;}
+  .randd-more-link:hover{opacity:.8; text-decoration:underline;}
 
-    .swiper-slide {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
+  /* Right image card */
+  .randd-image-wrap{
+    position:relative;
+    overflow:hidden;
+    background:var(--card);
+    box-shadow:0 12px 30px rgba(0,0,0,.06);
+    margin-top:28px;
+  }
+  .randd-hero-img{
+    width:100%; 
+    height:75vh; 
+    object-fit:cover;
+    animation:randd-kenburns 14s ease-in-out infinite;
+    opacity:0; transition:opacity .7s ease;
+  }
+  .randd-hero-img.show{opacity:1;}
+  @keyframes randd-kenburns{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.06);}
+    100%{transform:scale(1);}
+  }
 
-    .swiper-slide img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+  /* Arrows */
+  .randd-nav-btn{
+    width:56px; height:56px; 
+    border-radius:50%;
+    border:1px solid #cfcfcf; 
+    background:#fff; color:#222;
+    display:flex; 
+    align-items:center; 
+    justify-content:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.06);
+    transition:.2s;
+  }
+  .randd-nav-btn:hover{background:#111; color:#fff;}
+  .randd-nav-group{gap:16px;}
 
-    .swiper-button-prev,
-    .swiper-button-next {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.3);
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      top: 50%;
-      transform: translateY(-50%);
-      backdrop-filter: blur(5px);
-      z-index: 1;
-    }
+  /* Layout spacing */
+  .randd-text-col{padding-right:2rem;}
+  .randd-image-col{padding-left:2rem;}
 
-    .swiper-button-prev:hover,
-    .swiper-button-next:hover {
-      background: white;
-      color: #0074D9;
-    }
-
-    .swiper-button-next:after,
-    .swiper-button-prev:after {
-      font-size: 30px;
-    }
-
-    @media (max-width: 767px) {
-      .carousel-title {
-        font-size: 32px;
-        margin-bottom: 20px;
-      }
-
-      .swiper {
-        padding: 0 20px 60px;
-      }
-
-      .swiper-button-prev,
-      .swiper-button-next {
-        width: 30px;
-        height: 30px;
-      }
-
-      .swiper-button-next:after,
-      .swiper-button-prev:after {
-        font-size: 15px;
-      }
-=======
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Featured Own Brands</title>
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
-  <style>
-    body {
-      background: #f5f5f5;
-      color: #111;
-      font-family: Arial, sans-serif;
-    }
-
-    .hero-heading {
-      font-size: 2.8rem;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    .hero-tagline {
-      font-size: 1.2rem;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    .divider {
-      width: 60px;
-      height: 3px;
-      background: #333;
-      margin-bottom: 25px;
-    }
-
-    .hero-subheading {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .hero-desc {
-      font-size: 1rem;
-      color: #444;
-      margin-bottom: 20px;
-    }
-
-    .hero-more {
-      text-decoration: none;
-      font-weight: bold;
-      color: #111;
-      border-bottom: 2px solid #333;
-      padding-bottom: 3px;
-      transition: 0.3s;
-    }
-
-    .hero-more:hover {
-      color: #555;
-      border-color: #555;
-    }
-
-    .nav-btn {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-
-    .nav-btn:hover {
-      background: #eee;
-    }
-
-    /* Image */
-    .image-wrapper {
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
-    }
-
-    .hero-img {
-      width: 100%;
-      height: 80vh; /* big height */
-      object-fit: cover;
-      animation: kenburns 14s ease-in-out infinite;
-      opacity: 0;
-      transition: opacity .7s ease;
-    }
-
-    .hero-img.active {
-      opacity: 1;
-    }
-
-    @keyframes kenburns {
-      0%   {transform: scale(1.05);}
-      50%  {transform: scale(1.1);}
-      100% {transform: scale(1.05);}
-    }
-
-    /* Fade for text */
-    .fade {
-      opacity: 0;
-      transform: translateY(15px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .fade.show {
-      opacity: 1;
-<<<<<<< HEAD
->>>>>>> d5d586e6981d6ba2ec3ea94d4fdb995b81a7ace0
-=======
-      transform: translateY(0);
-    }
-
-    /* Mobile */
-    @media (max-width: 991.98px){
-      .hero-img {height: 60vh;} /* taller mobile too */
-      .hero-heading {font-size: 2rem;}
->>>>>>> 360ac340a8851b7ebff7beb163eaa3be1c42752a
-    }
-  </style>
+  /* Responsive */
+  @media (max-width: 991.98px){
+    .randd-image-wrap{border-radius:20px; margin-top:18px;}
+    .randd-hero-img{height:42vh;}
+    .randd-text-col{padding-right:1rem;}
+    .randd-image-col{padding-left:1rem;}
+    .randd-nav-group{justify-content:flex-start;}
+  }
+</style>
 </head>
 <body>
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-  <section class="carousel-section">
-    <div class="carousel-title">TRENDING</div>
-
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide">
-          <img src="img/Untitled design.png" alt="Solar Energy">
-        </div>
-        <div class="swiper-slide">
-          <img src="img/Untitled design.png" alt="Wind Energy">
-        </div>
-        <div class="swiper-slide">
-          <img src="img/Untitled design.png" alt="Biomass Energy">
-        </div>
-        <div class="swiper-slide">
-          <img src="img/Untitled design.png" alt="Hydel Power">
-        </div>
-      </div>
-
-      <!-- Navigation -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
-  </section>
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <!-- Swiper Initialization -->
-  <script>
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-      centeredSlides: true,
-      grabCursor: true,
-      spaceBetween: 30,
-      slidesPerView: 'auto',
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        320: {
-          spaceBetween: 20,
-        },
-        768: {
-          spaceBetween: 30,
-        },
-        1024: {
-          spaceBetween: 40,
-        }
-      }
-    });
-  </script>
-
-=======
-  <div class="container-fluid">
+<div class="container-fluid randd-section-wrap">
+  <div class="container">
     <div class="row align-items-start">
-      <!-- Left side image -->
-      <div class="col-md-6 p-0 d-flex align-items-start justify-content-center">
-        <img id="mainImage" src="https://source.unsplash.com/900x500/?home,interior" class="left-image show fade" alt="">
-      </div>
-=======
->>>>>>> 360ac340a8851b7ebff7beb163eaa3be1c42752a
+      <!-- LEFT: text -->
+      <div class="col-lg-5 randd-text-col">
+        <h1 class="randd-eyebrow">
+          <span class="randd-accent">R&D Highlights</span>
+        </h1>
+        <div class="randd-tagline">Pioneering designs from our research &amp; development team</div>
 
-<div class="container-fluid py-5">
-  <div class="row align-items-center">
-    
-    <!-- Text -->
-    <div class="col-lg-5 col-md-12 fade show" id="slideText">
-      <h1 class="hero-heading">Featured Own Brands</h1>
-      <p class="hero-tagline">Showcasing our research & developed products</p>
-      <div class="divider"></div>
-      <h3 class="hero-subheading" id="subHeading">Home Automation</h3>
-      <p class="hero-desc" id="desc">
-        Control lighting, temperature, and security systems for residential intelligence.
-      </p>
-      <a href="#" class="hero-more">+ more</a>
-      <div class="mt-4 d-flex gap-3">
-        <button class="nav-btn prev"><i class="fas fa-arrow-left"></i></button>
-        <button class="nav-btn next"><i class="fas fa-arrow-right"></i></button>
+        <div class="randd-kicker">Brand Overview</div>
+
+        <h2 id="randd-slideTitle" class="randd-slide-title">
+          Smart Pole
+        </h2>
+        <p id="randd-slideDesc" class="randd-slide-desc">
+          A next-generation multifunctional pole that integrates EV charging, security cameras, public Wi-Fi, SOS alerts, LED displays, and environmental sensors — delivering safer, smarter, and more connected urban spaces.
+        </p>
+
+        <div class="d-flex flex-column align-items-end">
+          <a id="randd-moreLink" class="randd-more-link" href="brands.html">
+            <span>+ more</span><i class="bi bi-arrow-right"></i>
+          </a>
+
+          <div class="d-flex randd-nav-group mt-3">
+            <button id="randd-prevBtn" class="randd-nav-btn" aria-label="Previous">
+              <i class="bi bi-arrow-left"></i>
+            </button>
+            <button id="randd-nextBtn" class="randd-nav-btn" aria-label="Next">
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: image -->
+      <div class="col-lg-7 randd-image-col randd-hover-area">
+        <div class="randd-image-wrap">
+          <img id="randd-heroImg" class="randd-hero-img show" src="img/brand-1.webp" alt="Featured brand image">
+        </div>
       </div>
     </div>
-
-    <!-- Image -->
-    <div class="col-lg-7 col-md-12">
-      <div class="image-wrapper">
-        <img src="img/carousel-1.webp" alt="Slide" class="hero-img active" id="slideImage">
-      </div>
-    </div>
-
   </div>
 </div>
 
-<!-- JS -->
 <script>
-  const slides = [
-    {
-      img: "img/carousel-1.webp",
-      heading: "Home Automation",
-      desc: "Control lighting, temperature, and security systems for residential intelligence."
-    },
+  const randdSlides = [
     {
       img: "img/bannerabout.webp",
-      heading: "Commercial Automation",
-      desc: "High-performance office environments for intelligent control and energy efficiency."
+      title: "Smart Pole",
+      desc: "A next-generation multifunctional pole that integrates EV charging, security cameras, public Wi-Fi, SOS alerts, LED displays, and environmental sensors — delivering safer, smarter, and more connected urban spaces.",
+      moreHref: "brands/art-lighting.html"
     },
     {
       img: "img/carousel-1.webp",
-      heading: "Industrial Automation",
-      desc: "Boost productivity and safety with next-gen Industry 4.0 automation."
+      title: "Smart Conference Table",
+      desc: "A technology-enabled conference table designed for modern workplaces, featuring built-in wireless charging, interactive touchscreens, advanced AV controls, and seamless device connectivity — empowering productive meetings and effortless collaboration.",
+      moreHref: "brands/minimal-series.html"
     },
     {
       img: "img/bannerabout.webp",
-      heading: "Hospital Automation",
-      desc: "Smart hospital facility management for safety and operational efficiency."
-    },
-    {
-      img: "img/carousel-1.webp",
-      heading: "IoT Automation",
-      desc: "Connect devices and data to create a complete intelligent ecosystem."
+      title: "Smart Bollard",
+      desc: "Intelligent retractable or fixed bollards equipped with integrated lighting, traffic management, and surveillance capabilities — enhancing urban safety, streamlining vehicle access control, and supporting efficient crowd management.",
+      moreHref: "brands/performance.html"
     },
     {
       img: "img/bannerabout.webp",
-      heading: "Hotel Automation",
-      desc: "Deliver seamless and personalized experiences for guests."
+      title: "Smart Bar Counter",
+      desc: "Digitally controlled counters featuring embedded displays, dynamic LED lighting, integrated cooling units, and IoT connectivity — delivering modern, interactive experiences for hospitality, entertainment, and premium lifestyle venues.",
+      moreHref: "brands/performance.html"
+    },
+     {
+      img: "img/bannerabout.webp",
+      title: "Smart Window Leaf AC",
+      desc: "Compact, energy-efficient air conditioners designed for seamless window integration, equipped with smart controls, air-quality monitoring, and ultra-quiet performance — delivering comfort and sustainability for modern urban living.",
+      moreHref: "brands/performance.html"
     }
   ];
 
-  let currentIndex = 0;
-  const imageEl = document.getElementById("slideImage");
-  const subHeading = document.getElementById("subHeading");
-  const desc = document.getElementById("desc");
-  const textBox = document.getElementById("slideText");
+  const imgEl   = document.getElementById('randd-heroImg');
+  const titleEl = document.getElementById('randd-slideTitle');
+  const descEl  = document.getElementById('randd-slideDesc');
+  const moreEl  = document.getElementById('randd-moreLink');
+  const prevBtn = document.getElementById('randd-prevBtn');
+  const nextBtn = document.getElementById('randd-nextBtn');
 
-  function showSlide(index){
-    const slide = slides[index];
-    imageEl.classList.remove("active");
-    textBox.classList.remove("show");
+  let index = 0;
+  let timer = null;
+  const INTERVAL = 6000;
 
+  function render(i){
+    const s = randdSlides[i];
+    imgEl.classList.remove('show');
     setTimeout(()=>{
-      imageEl.src = slide.img;
-      subHeading.textContent = slide.heading;
-      desc.textContent = slide.desc;
-
-      imageEl.classList.add("active");
-      textBox.classList.add("show");
-    },500);
+      imgEl.src = s.img;
+      imgEl.alt = s.title;
+      titleEl.textContent = s.title;
+      descEl.textContent  = s.desc;
+      moreEl.href = s.moreHref;
+      requestAnimationFrame(()=>imgEl.classList.add('show'));
+    }, 220);
   }
 
-  document.querySelector(".prev").addEventListener("click", ()=>{
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    showSlide(currentIndex);
-  });
+  function next(){
+    index = (index + 1) % randdSlides.length;
+    render(index);
+  }
+  function prev(){
+    index = (index - 1 + randdSlides.length) % randdSlides.length;
+    render(index);
+  }
 
-  document.querySelector(".next").addEventListener("click", ()=>{
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
-  });
+  function startAuto(){
+    stopAuto();
+    timer = setInterval(next, INTERVAL);
+  }
+  function stopAuto(){
+    if(timer) clearInterval(timer);
+    timer = null;
+  }
 
-  // Auto change
-  setInterval(()=>{
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
-  }, 6000);
+  nextBtn.addEventListener('click', ()=>{ next(); startAuto(); });
+  prevBtn.addEventListener('click', ()=>{ prev(); startAuto(); });
+
+  document.querySelector('.randd-hover-area').addEventListener('mouseenter', stopAuto);
+  document.querySelector('.randd-hover-area').addEventListener('mouseleave', startAuto);
+  document.querySelector('.randd-text-col').addEventListener('mouseenter', stopAuto);
+  document.querySelector('.randd-text-col').addEventListener('mouseleave', startAuto);
+
+  render(index);
+  startAuto();
 </script>
-
-<<<<<<< HEAD
-    function resetTimer() {
-      clearInterval(interval);
-      interval = setInterval(nextSlide, 4000);
-    }
-  </script>
->>>>>>> d5d586e6981d6ba2ec3ea94d4fdb995b81a7ace0
-=======
->>>>>>> 360ac340a8851b7ebff7beb163eaa3be1c42752a
 </body>
 </html>
