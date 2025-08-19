@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,33 +18,33 @@
   }
 
   body{background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
-  .randd-section-wrap{padding:64px 0 48px;}
+  .section-wrap{padding:64px 0 48px;}
 
   /* Left text column */
-  .randd-eyebrow{
+  .eyebrow{
     font-size:clamp(2.4rem, 6vw, 5.2rem);
     font-weight:700;
     line-height:1.05;
     letter-spacing:-.02em;
     margin-bottom:.25em;
-    margin-top:-20px;
+    margin-top:-20px; /* pushes heading slightly above image */
   }
-  .randd-eyebrow .randd-accent{color:var(--text);}
-  .randd-tagline{
+  .eyebrow .accent{color:var(--text);} /* keep grayscale */
+  .tagline{
     font-size:clamp(1.2rem, 2.5vw, 2rem);
     color:#222;
     margin-bottom:1.2rem;
   }
 
-  .randd-kicker{
-    margin:0;
+  .kicker{
+    margin:0; /* removed extra top space */
     font-weight:600;
     color:#333;
     position:relative;
     display:inline-block;
     padding-right:0;
   }
-  .randd-kicker::after{
+  .kicker::after{
     content:"";
     position:absolute;
     left:calc(100% + 16px);
@@ -52,58 +53,58 @@
     height:2px;
     width:120px;
     background:linear-gradient(90deg,var(--line),#dedede);
-    animation:randd-loadingLine 2.2s linear infinite;
+    animation:loadingLine 2.2s linear infinite;
     transform-origin:left center;
   }
-  @keyframes randd-loadingLine{
+  @keyframes loadingLine{
     0%{transform:translateY(-50%) scaleX(0);}
     50%{transform:translateY(-50%) scaleX(1);}
     100%{transform:translateY(-50%) scaleX(0);}
   }
 
-  .randd-slide-title{
+  .slide-title{
     font-size:clamp(1.4rem, 2.2vw, 2.2rem);
     font-weight:700;
     letter-spacing:.01em;
     margin:0 0 .4rem;
   }
-  .randd-slide-desc{
+  .slide-desc{
     color:var(--muted);
     max-width:56ch;
   }
 
-  .randd-more-link{
+  .more-link{
     display:inline-flex; align-items:center; gap:.5rem;
     margin-top:14px; font-weight:600; color:#222; text-decoration:none;
     position:relative;
   }
-  .randd-more-link i{font-size:1rem;}
-  .randd-more-link:hover{opacity:.8; text-decoration:underline;}
+  .more-link i{font-size:1rem;}
+  .more-link:hover{opacity:.8; text-decoration:underline;}
 
   /* Right image card */
-  .randd-image-wrap{
+  .image-wrap{
     position:relative;
     overflow:hidden;
     background:var(--card);
     box-shadow:0 12px 30px rgba(0,0,0,.06);
     margin-top:28px;
   }
-  .randd-hero-img{
+  .hero-img{
     width:100%; 
     height:75vh; 
     object-fit:cover;
-    animation:randd-kenburns 14s ease-in-out infinite;
+    animation:kenburns 14s ease-in-out infinite;
     opacity:0; transition:opacity .7s ease;
   }
-  .randd-hero-img.show{opacity:1;}
-  @keyframes randd-kenburns{
+  .hero-img.show{opacity:1;}
+  @keyframes kenburns{
     0%{transform:scale(1);}
     50%{transform:scale(1.06);}
     100%{transform:scale(1);}
   }
 
   /* Arrows */
-  .randd-nav-btn{
+  .nav-btn{
     width:56px; height:56px; 
     border-radius:50%;
     border:1px solid #cfcfcf; 
@@ -114,54 +115,54 @@
     box-shadow:0 6px 18px rgba(0,0,0,.06);
     transition:.2s;
   }
-  .randd-nav-btn:hover{background:#111; color:#fff;}
-  .randd-nav-group{gap:16px;}
+  .nav-btn:hover{background:#111; color:#fff;}
+  .nav-group{gap:16px;}
 
   /* Layout spacing */
-  .randd-text-col{padding-right:2rem;}
-  .randd-image-col{padding-left:2rem;}
+  .text-col{padding-right:2rem;}
+  .image-col{padding-left:2rem;}
 
   /* Responsive */
   @media (max-width: 991.98px){
-    .randd-image-wrap{border-radius:20px; margin-top:18px;}
-    .randd-hero-img{height:42vh;}
-    .randd-text-col{padding-right:1rem;}
-    .randd-image-col{padding-left:1rem;}
-    .randd-nav-group{justify-content:flex-start;}
+    .image-wrap{border-radius:20px; margin-top:18px;}
+    .hero-img{height:42vh;}
+    .text-col{padding-right:1rem;}
+    .image-col{padding-left:1rem;}
+    .nav-group{justify-content:flex-start;}
   }
 </style>
 </head>
 <body>
 
-<div class="container-fluid randd-section-wrap">
+<div class="container-fluid section-wrap">
   <div class="container">
     <div class="row align-items-start">
       <!-- LEFT: text -->
-      <div class="col-lg-5 randd-text-col">
-        <h1 class="randd-eyebrow">
-          <span class="randd-accent">R&D Highlights</span>
+      <div class="col-lg-5 text-col">
+        <h1 class="eyebrow">
+          <span class="accent">R&D Highlights</span>
         </h1>
-        <div class="randd-tagline">Pioneering designs from our research &amp; development team</div>
+        <div class="tagline">Pioneering designs from our research &amp; development team</div>
 
-        <div class="randd-kicker">Brand Overview</div>
+        <div class="kicker">Brand Overview</div>
 
-        <h2 id="randd-slideTitle" class="randd-slide-title">
+        <h2 id="slideTitle" class="slide-title">
           Smart Pole
         </h2>
-        <p id="randd-slideDesc" class="randd-slide-desc">
+        <p id="slideDesc" class="slide-desc">
           A next-generation multifunctional pole that integrates EV charging, security cameras, public Wi-Fi, SOS alerts, LED displays, and environmental sensors — delivering safer, smarter, and more connected urban spaces.
         </p>
 
         <div class="d-flex flex-column align-items-end">
-          <a id="randd-moreLink" class="randd-more-link" href="brands.html">
+          <a id="moreLink" class="more-link" href="brands.html">
             <span>+ more</span><i class="bi bi-arrow-right"></i>
           </a>
 
-          <div class="d-flex randd-nav-group mt-3">
-            <button id="randd-prevBtn" class="randd-nav-btn" aria-label="Previous">
+          <div class="d-flex nav-group mt-3">
+            <button id="prevBtn" class="nav-btn" aria-label="Previous">
               <i class="bi bi-arrow-left"></i>
             </button>
-            <button id="randd-nextBtn" class="randd-nav-btn" aria-label="Next">
+            <button id="nextBtn" class="nav-btn" aria-label="Next">
               <i class="bi bi-arrow-right"></i>
             </button>
           </div>
@@ -169,9 +170,9 @@
       </div>
 
       <!-- RIGHT: image -->
-      <div class="col-lg-7 randd-image-col randd-hover-area">
-        <div class="randd-image-wrap">
-          <img id="randd-heroImg" class="randd-hero-img show" src="img/brand-1.webp" alt="Featured brand image">
+      <div class="col-lg-7 image-col hover-area">
+        <div class="image-wrap">
+          <img id="heroImg" class="hero-img show" src="img/brand-1.webp" alt="Featured brand image">
         </div>
       </div>
     </div>
@@ -193,7 +194,7 @@
   </div>
 
 <script>
-  const randdSlides = [
+  const slides = [
     {
       img: "img/bannerabout.webp",
       title: "Smart Pole",
@@ -226,19 +227,19 @@
     }
   ];
 
-  const imgEl   = document.getElementById('randd-heroImg');
-  const titleEl = document.getElementById('randd-slideTitle');
-  const descEl  = document.getElementById('randd-slideDesc');
-  const moreEl  = document.getElementById('randd-moreLink');
-  const prevBtn = document.getElementById('randd-prevBtn');
-  const nextBtn = document.getElementById('randd-nextBtn');
+  const imgEl   = document.getElementById('heroImg');
+  const titleEl = document.getElementById('slideTitle');
+  const descEl  = document.getElementById('slideDesc');
+  const moreEl  = document.getElementById('moreLink');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
 
   let index = 0;
   let timer = null;
   const INTERVAL = 6000;
 
   function render(i){
-    const s = randdSlides[i];
+    const s = slides[i];
     imgEl.classList.remove('show');
     setTimeout(()=>{
       imgEl.src = s.img;
@@ -251,11 +252,11 @@
   }
 
   function next(){
-    index = (index + 1) % randdSlides.length;
+    index = (index + 1) % slides.length;
     render(index);
   }
   function prev(){
-    index = (index - 1 + randdSlides.length) % randdSlides.length;
+    index = (index - 1 + slides.length) % slides.length;
     render(index);
   }
 
@@ -271,10 +272,10 @@
   nextBtn.addEventListener('click', ()=>{ next(); startAuto(); });
   prevBtn.addEventListener('click', ()=>{ prev(); startAuto(); });
 
-  document.querySelector('.randd-hover-area').addEventListener('mouseenter', stopAuto);
-  document.querySelector('.randd-hover-area').addEventListener('mouseleave', startAuto);
-  document.querySelector('.randd-text-col').addEventListener('mouseenter', stopAuto);
-  document.querySelector('.randd-text-col').addEventListener('mouseleave', startAuto);
+  document.querySelector('.hover-area').addEventListener('mouseenter', stopAuto);
+  document.querySelector('.hover-area').addEventListener('mouseleave', startAuto);
+  document.querySelector('.text-col').addEventListener('mouseenter', stopAuto);
+  document.querySelector('.text-col').addEventListener('mouseleave', startAuto);
 
   render(index);
   startAuto();
