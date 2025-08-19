@@ -1,284 +1,254 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Our Exclusive R&D Creations</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Smart City Slider</title>
 <style>
+  /* Custom Theme Colors */
   :root{
-    --bg:#f7f7f7;
-    --text:#111;
-    --muted:#666;
-    --line:#bbb;
-    --card:#ffffff;
+    --sc-bg:#f5f5f6;
+    --sc-text:#1a1a1a;
+    --sc-muted:#555;
+    --sc-accent:#111; 
   }
 
-  body{background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
-  .section-wrap{padding:64px 0 48px;}
-
-  /* Left text column */
-  .eyebrow{
-    font-size:clamp(2.4rem, 6vw, 5.2rem);
-    font-weight:700;
-    line-height:1.05;
-    letter-spacing:-.02em;
-    margin-bottom:.25em;
-    margin-top:-20px; /* pushes heading slightly above image */
-  }
-  .eyebrow .accent{color:var(--text);} /* keep grayscale */
-  .tagline{
-    font-size:clamp(1.2rem, 2.5vw, 2rem);
-    color:#222;
-    margin-bottom:1.2rem;
+  body{
+    margin:0;
+    font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+    background:var(--sc-bg);
+    color:var(--sc-text);
   }
 
-  .kicker{
-    margin:0; /* removed extra top space */
-    font-weight:600;
-    color:#333;
-    position:relative;
-    display:inline-block;
-    padding-right:0;
-  }
-  .kicker::after{
-    content:"";
-    position:absolute;
-    left:calc(100% + 16px);
-    top:50%;
-    transform:translateY(-50%);
-    height:2px;
-    width:120px;
-    background:linear-gradient(90deg,var(--line),#dedede);
-    animation:loadingLine 2.2s linear infinite;
-    transform-origin:left center;
-  }
-  @keyframes loadingLine{
-    0%{transform:translateY(-50%) scaleX(0);}
-    50%{transform:translateY(-50%) scaleX(1);}
-    100%{transform:translateY(-50%) scaleX(0);}
-  }
-
-  .slide-title{
-    font-size:clamp(1.4rem, 2.2vw, 2.2rem);
-    font-weight:700;
-    letter-spacing:.01em;
-    margin:0 0 .4rem;
-  }
-  .slide-desc{
-    color:var(--muted);
-    max-width:56ch;
-  }
-
-  .more-link{
-    display:inline-flex; align-items:center; gap:.5rem;
-    margin-top:14px; font-weight:600; color:#222; text-decoration:none;
+  .smartcity-slider{
+    max-width:1200px;
+    margin:0 auto;
+    padding:60px 20px;
     position:relative;
   }
-  .more-link i{font-size:1rem;}
-  .more-link:hover{opacity:.8; text-decoration:underline;}
 
-  /* Right image card */
-  .image-wrap{
+  .sc-slide{
+    display:grid;
+    grid-template-columns: 55% 45%; 
+    align-items:center;
+    gap:30px;
+    position:relative;
+  }
+
+  /* --- IMAGE --- */
+  .sc-media{
+    height:340px;
+    overflow:hidden;
+    position:relative;
+  }
+  .sc-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    transform:translateX(80px) scale(1.05);
+    transition:all 1s ease;
+  }
+  .sc-media img.sc-active{
+    opacity:1;
+    transform:translateX(0) scale(1);
+  }
+
+  /* --- TEXT --- */
+  .sc-copy{
+    position:relative;
+    padding-bottom:50px;
+  }
+  .sc-title{
+    font-size:30px;font-weight:800;margin:0 0 14px;
+    opacity:0;transform:translateX(-80px);
+    transition:all 1s ease;
+  }
+  .sc-desc{
+    font-size:17px;line-height:1.6;color:var(--sc-muted);margin:0;
+    opacity:0;transform:translateX(-80px);
+    transition:all 1s ease;
+  }
+  .sc-active-text .sc-title,
+  .sc-active-text .sc-desc{
+    opacity:1;transform:translateX(0);
+  }
+
+  /* --- INDICATOR --- */
+  .sc-indicator{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:25px;
+  }
+  .sc-indicator span{
+    font-size:14px;
+    padding:6px 12px;
+    border-radius:20px;
+    background:#fff;
+    border:1px solid #ccc;
+    opacity:0.7;
+    transition:all 0.4s;
+  }
+  .sc-indicator span.sc-active{
+    background:var(--sc-accent);
+    color:#fff;
+    opacity:1;
+  }
+
+  /* --- PROGRESS BAR --- */
+  .sc-progress-bar{
+    height:3px;
+    width:100%;
+    background:#ddd;
+    margin-top:14px;
     position:relative;
     overflow:hidden;
-    background:var(--card);
-    box-shadow:0 12px 30px rgba(0,0,0,.06);
-    margin-top:28px;
+    border-radius:3px;
   }
-  .hero-img{
-    width:100%; 
-    height:75vh; 
-    object-fit:cover;
-    animation:kenburns 14s ease-in-out infinite;
-    opacity:0; transition:opacity .7s ease;
-  }
-  .hero-img.show{opacity:1;}
-  @keyframes kenburns{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.06);}
-    100%{transform:scale(1);}
+  .sc-progress-fill{
+    height:100%;
+    width:0%;
+    background:var(--sc-accent);
+    transition:width linear;
   }
 
-  /* Arrows */
-  .nav-btn{
-    width:56px; height:56px; 
-    border-radius:50%;
-    border:1px solid #cfcfcf; 
-    background:#fff; color:#222;
-    display:flex; 
-    align-items:center; 
+  /* --- ARROWS --- */
+  .sc-arrows{
+    position:absolute;
+    left:55%;
+    bottom:-80px;
+    transform:translateX(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    align-items:center;
     justify-content:center;
-    box-shadow:0 6px 18px rgba(0,0,0,.06);
-    transition:.2s;
   }
-  .nav-btn:hover{background:#111; color:#fff;}
-  .nav-group{gap:16px;}
-
-  /* Layout spacing */
-  .text-col{padding-right:2rem;}
-  .image-col{padding-left:2rem;}
+  .sc-arrow{
+    width:46px;height:46px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:.25s;
+    border:2px solid var(--sc-accent);
+    color:var(--sc-accent);
+    background:#fff;
+  }
+  .sc-arrow svg{width:20px;height:20px}
+  .sc-arrow:hover{background:var(--sc-accent);color:#fff}
 
   /* Responsive */
-  @media (max-width: 991.98px){
-    .image-wrap{border-radius:20px; margin-top:18px;}
-    .hero-img{height:42vh;}
-    .text-col{padding-right:1rem;}
-    .image-col{padding-left:1rem;}
-    .nav-group{justify-content:flex-start;}
+  @media(max-width:992px){
+    .sc-slide{grid-template-columns:1fr;gap:20px;}
+    .sc-media{height:220px}
+    .sc-title{font-size:22px}
+    .sc-desc{font-size:15px}
+    .sc-indicator{flex-wrap:wrap}
+    .sc-arrows{flex-direction:row;bottom:-70px;}
   }
 </style>
 </head>
 <body>
 
-<div class="container-fluid section-wrap">
-  <div class="container">
-    <div class="row align-items-start">
-      <!-- LEFT: text -->
-      <div class="col-lg-5 text-col">
-        <h1 class="eyebrow">
-          <span class="accent">R&D Highlights</span>
-        </h1>
-        <div class="tagline">Pioneering designs from our research &amp; development team</div>
+<section class="smartcity-slider">
+  <div class="sc-slide">
+    <!-- Image -->
+    <figure class="sc-media">
+      <img src="img/bannerabout.webp" alt="Smart Pole" class="sc-active" id="sc-img">
+    </figure>
 
-        <div class="kicker">Brand Overview</div>
+    <!-- Text -->
+    <div class="sc-copy sc-active-text" id="sc-text">
+      <h3 class="sc-title">Smart Pole</h3>
+      <p class="sc-desc">
+        Multi-functional poles with EV charging, CCTV, Wi-Fi, SOS, LED displays, and sensors — delivering smarter, connected, safer cities.
+      </p>
+      <!-- Smart City Indicators -->
+      <div class="sc-indicator" id="sc-indicator"></div>
+      <!-- Progress Bar -->
+      <div class="sc-progress-bar"><div class="sc-progress-fill" id="sc-progress"></div></div>
+    </div>
 
-        <h2 id="slideTitle" class="slide-title">
-          Smart Pole
-        </h2>
-        <p id="slideDesc" class="slide-desc">
-          A next-generation multifunctional pole that integrates EV charging, security cameras, public Wi-Fi, SOS alerts, LED displays, and environmental sensors — delivering safer, smarter, and more connected urban spaces.
-        </p>
-
-        <div class="d-flex flex-column align-items-end">
-          <a id="moreLink" class="more-link" href="brands.html">
-            <span>+ more</span><i class="bi bi-arrow-right"></i>
-          </a>
-
-          <div class="d-flex nav-group mt-3">
-            <button id="prevBtn" class="nav-btn" aria-label="Previous">
-              <i class="bi bi-arrow-left"></i>
-            </button>
-            <button id="nextBtn" class="nav-btn" aria-label="Next">
-              <i class="bi bi-arrow-right"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT: image -->
-      <div class="col-lg-7 image-col hover-area">
-        <div class="image-wrap">
-          <img id="heroImg" class="hero-img show" src="img/brand-1.webp" alt="Featured brand image">
-        </div>
-      </div>
+    <!-- Arrows -->
+    <div class="sc-arrows">
+      <button class="sc-arrow sc-prev" onclick="scPrev()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
+      </button>
+      <button class="sc-arrow sc-next" onclick="scNext()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </button>
     </div>
   </div>
-
-  <!-- Mobile icons -->
-  <div class="mobile-icons"></div>
-
-  <!-- Right background image -->
-  <div class="right-bg">
-    <svg viewBox="0 0 1920 700" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <clipPath id="arcClip" clipPathUnits="userSpaceOnUse">
-          <path d="M500 50 A450 450 0 0 1 500 650 L1920 650 L1920 50 Z" />
-        </clipPath>
-      </defs>
-      <image id="bgImage" href="https://picsum.photos/id/1015/1920/1080" clip-path="url(#arcClip)" />
-    </svg>
-  </div>
+</section>
 
 <script>
-  const slides = [
-    {
-      img: "img/bannerabout.webp",
-      title: "Smart Pole",
-      desc: "A next-generation multifunctional pole that integrates EV charging, security cameras, public Wi-Fi, SOS alerts, LED displays, and environmental sensors — delivering safer, smarter, and more connected urban spaces.",
-      moreHref: "brands/art-lighting.html"
-    },
-    {
-      img: "img/carousel-1.webp",
-      title: "Smart Conference Table",
-      desc: "A technology-enabled conference table designed for modern workplaces, featuring built-in wireless charging, interactive touchscreens, advanced AV controls, and seamless device connectivity — empowering productive meetings and effortless collaboration.",
-      moreHref: "brands/minimal-series.html"
-    },
-    {
-      img: "img/bannerabout.webp",
-      title: "Smart Bollard",
-      desc: "Intelligent retractable or fixed bollards equipped with integrated lighting, traffic management, and surveillance capabilities — enhancing urban safety, streamlining vehicle access control, and supporting efficient crowd management.",
-      moreHref: "brands/performance.html"
-    },
-    {
-      img: "img/bannerabout.webp",
-      title: "Smart Bar Counter",
-      desc: "Digitally controlled counters featuring embedded displays, dynamic LED lighting, integrated cooling units, and IoT connectivity — delivering modern, interactive experiences for hospitality, entertainment, and premium lifestyle venues.",
-      moreHref: "brands/performance.html"
-    },
-     {
-      img: "img/bannerabout.webp",
-      title: "Smart Window Leaf AC",
-      desc: "Compact, energy-efficient air conditioners designed for seamless window integration, equipped with smart controls, air-quality monitoring, and ultra-quiet performance — delivering comfort and sustainability for modern urban living.",
-      moreHref: "brands/performance.html"
-    }
-  ];
-
-  const imgEl   = document.getElementById('heroImg');
-  const titleEl = document.getElementById('slideTitle');
-  const descEl  = document.getElementById('slideDesc');
-  const moreEl  = document.getElementById('moreLink');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-
-  let index = 0;
-  let timer = null;
-  const INTERVAL = 6000;
-
-  function render(i){
-    const s = slides[i];
-    imgEl.classList.remove('show');
-    setTimeout(()=>{
-      imgEl.src = s.img;
-      imgEl.alt = s.title;
-      titleEl.textContent = s.title;
-      descEl.textContent  = s.desc;
-      moreEl.href = s.moreHref;
-      requestAnimationFrame(()=>imgEl.classList.add('show'));
-    }, 220);
+const scSlides = [
+  {
+    img: "img/bannerabout.webp",
+    title: "Smart Pole",
+    desc: "Multi-functional poles with EV charging, CCTV, Wi-Fi, SOS, LED displays, and sensors — delivering smarter, connected, safer cities.",
+    icon: "Smart Pole"
+  },
+  {
+    img: "img/carousel-1.webp",
+    title: "Smart Bollard",
+    desc: "Retractable or fixed bollards with lighting, traffic control, and surveillance for secure urban environments.",
+    icon: "Bollard"
   }
+];
 
-  function next(){
-    index = (index + 1) % slides.length;
-    render(index);
-  }
-  function prev(){
-    index = (index - 1 + slides.length) % slides.length;
-    render(index);
-  }
+let scIndex=0;
+const scImg=document.getElementById("sc-img");
+const scText=document.getElementById("sc-text");
+const scProgress=document.getElementById("sc-progress");
+const scIndicator=document.getElementById("sc-indicator");
 
-  function startAuto(){
-    stopAuto();
-    timer = setInterval(next, INTERVAL);
-  }
-  function stopAuto(){
-    if(timer) clearInterval(timer);
-    timer = null;
-  }
+// create indicators
+scSlides.forEach((s,i)=>{
+  const span=document.createElement("span");
+  span.textContent=s.icon;
+  if(i===0) span.classList.add("sc-active");
+  scIndicator.appendChild(span);
+});
 
-  nextBtn.addEventListener('click', ()=>{ next(); startAuto(); });
-  prevBtn.addEventListener('click', ()=>{ prev(); startAuto(); });
+function scUpdateIndicators(){
+  [...scIndicator.children].forEach((el,i)=>{
+    el.classList.toggle("sc-active", i===scIndex);
+  });
+}
 
-  document.querySelector('.hover-area').addEventListener('mouseenter', stopAuto);
-  document.querySelector('.hover-area').addEventListener('mouseleave', startAuto);
-  document.querySelector('.text-col').addEventListener('mouseenter', stopAuto);
-  document.querySelector('.text-col').addEventListener('mouseleave', startAuto);
+function scAnimateProgress(){
+  scProgress.style.transition="none";
+  scProgress.style.width="0%";
+  setTimeout(()=>{
+    scProgress.style.transition="width 5s linear";
+    scProgress.style.width="100%";
+  },50);
+}
 
-  render(index);
-  startAuto();
+function scShow(i){
+  scIndex=(i+scSlides.length)%scSlides.length;
+
+  scImg.classList.remove("sc-active");
+  scText.classList.remove("sc-active-text");
+
+  setTimeout(()=>{
+    scImg.src=scSlides[scIndex].img;
+    scText.querySelector(".sc-title").textContent=scSlides[scIndex].title;
+    scText.querySelector(".sc-desc").textContent=scSlides[scIndex].desc;
+    scImg.classList.add("sc-active");
+    scText.classList.add("sc-active-text");
+    scUpdateIndicators();
+    scAnimateProgress();
+  },150); 
+}
+
+function scNext(){ scShow(scIndex+1); }
+function scPrev(){ scShow(scIndex-1); }
+
+// auto play
+setInterval(()=> scNext(), 5000);
+scAnimateProgress();
 </script>
+
 </body>
 </html>
