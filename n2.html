@@ -3,255 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Applications Design</title>
+  <title>Lighting Cards</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f8f8f8;
-      color: #333;
+      background-color: #c2c2b5; /* screenshot lo unna bg */
     }
-    .container {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 2fr 3fr;
-      gap: 20px;
-      padding: 20px;
-    }
-    .left-images {
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      gap: 20px;
-    }
-    .left-images img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-    .right-overlay {
+    .card-custom {
       position: relative;
-      border-radius: 12px;
       overflow: hidden;
+      border: none;
+      height: 400px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
-    .right-overlay img {
+    .card-custom img {
+      position: absolute;
+      top: 0; left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(70%);
+      transition: transform 0.6s ease;
     }
-    .overlay-content {
+    .card-custom:hover img {
+      transform: scale(1.1); /* zoom effect */
+    }
+    .overlay {
       position: absolute;
-      inset: 0;
-      background: rgba(30, 30, 30, 0.55);
-      backdrop-filter: blur(8px);
-      color: white;
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .tabs {
-      display: flex;
-      gap: 30px;
-      margin-top: 30px;
-    }
-    .tab {
-      font-weight: bold;
-      cursor: pointer;
-      position: relative;
-      color: #aaa;
-    }
-    .tab.active {
-      color: orange;
-    }
-    .tab.active::after {
-      content: "";
-      position: absolute;
-      bottom: -5px;
-      left: 0;
+      top: 0; left: 0;
       width: 100%;
-      height: 2px;
-      background: orange;
+      height: 100%;
+      background: rgba(0,0,0,0.35); /* dark overlay */
     }
-    .arrows {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      gap: 10px;
-    }
-    .arrows button {
-      background: rgba(255,255,255,0.8);
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      font-size: 18px;
-      cursor: pointer;
-    }
-
-    /* Second row */
-    .row2 {
-      display: grid;
-      grid-template-columns: 2fr 2fr 1fr;
-      gap: 20px;
+    .card-content {
+      position: relative;
+      z-index: 2;
       padding: 20px;
     }
-    .row2 img {
-      width: 100%;
-      height: 100%;
-      border-radius: 12px;
-      object-fit: cover;
+    .card-content h3 {
+      font-weight: bold;
+      font-size: 1.6rem;
     }
-    .text-card {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(10px);
-      padding: 30px;
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      color: #333;
+    .card-content p {
+      margin: 5px 0 20px;
+      font-size: 1rem;
     }
-    .text-card h2 {
-      font-size: 32px;
-      margin: 0;
-      color: #333;
+    .btn-custom {
+      background: #fff;
+      color: #000;
+      font-weight: bold;
+      padding: 8px 18px;
+      border: none;
+      border-radius: 2px;
+      text-transform: uppercase;
     }
-    .text-card h2 span {
-      color: orange;
-    }
-    .text-card p {
-      margin-top: 10px;
-      font-size: 16px;
-      line-height: 1.5;
+    .btn-custom:hover {
+      background: #000;
+      color: #fff;
+      transition: 0.3s ease;
     }
   </style>
 </head>
 <body>
-  <!-- First Row -->
-  <div class="container">
-    <!-- Left small images -->
-    <div class="left-images">
-      <img src="https://picsum.photos/id/1015/600/400" alt="img1">
-      <img src="https://picsum.photos/id/1016/600/400" alt="img2">
-    </div>
+  <div class="container py-5">
+    <div class="row g-4">
 
-    <!-- Right big overlay -->
-    <div class="right-overlay">
-      <img id="mainImage" src="https://picsum.photos/id/1020/900/600" alt="main">
-      <div class="overlay-content">
-        <h3 id="mainTitle">Installation</h3>
-        <p id="mainText">Outdoor electrical installations entail execution issues that have different challenges and requirements...</p>
-        
-        <!-- Tabs -->
-        <div class="tabs">
-          <div class="tab active" onclick="changeContent(0)">Installation</div>
-          <div class="tab" onclick="changeContent(1)">Energy</div>
-          <div class="tab" onclick="changeContent(2)">Building</div>
-          <div class="tab" onclick="changeContent(3)">Lighting</div>
-          <div class="tab" onclick="changeContent(4)">Mobility</div>
-        </div>
-
-        <!-- Arrows -->
-        <div class="arrows">
-          <button onclick="prevSlide()">‹</button>
-          <button onclick="nextSlide()">›</button>
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card-custom">
+          <img src="downlight1.jpg" alt="Downlight 1">
+          <div class="overlay"></div>
+          <div class="card-content">
+            <h3>Larger downlight for eaves</h3>
+            <p>- A welcoming impression</p>
+            <button class="btn-custom">SOLO MINI G2</button>
+          </div>
         </div>
       </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card-custom">
+          <img src="downlight2.jpg" alt="Downlight 2">
+          <div class="overlay"></div>
+          <div class="card-content">
+            <h3>Perfect downlights</h3>
+            <p>- Choose a light source based on your own preference and taste</p>
+            <button class="btn-custom">COMFORT QUICK OUTDOOR GU10</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card-custom">
+          <img src="facade.jpg" alt="Facade Lighting">
+          <div class="overlay"></div>
+          <div class="card-content">
+            <h3>Choose the right facade lighting</h3>
+            <p>A clean conical design</p>
+            <button class="btn-custom">CONE</button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-
-  <!-- Second Row -->
-  <div class="row2">
-    <img id="row2left" src="https://picsum.photos/id/1011/600/400" alt="">
-    <div class="text-card">
-      <h2 id="row2title">Energy <span>always</span> protected</h2>
-      <p id="row2text">A proposal for the distribution and withdrawal of energy that guarantees safety in all environments and conditions.</p>
-    </div>
-    <img id="row2right" src="https://picsum.photos/id/1025/400/400" alt="">
-  </div>
-
-  <script>
-    const data = [
-      {
-        title: "Installation",
-        text: "Solutions for electrical installations with reliability and adaptability.",
-        img: "https://picsum.photos/id/1020/900/600",
-        row2left: "https://picsum.photos/id/1011/600/400",
-        row2title: "Energy <span>always</span> protected",
-        row2text: "A proposal for distribution that guarantees safety in all environments.",
-        row2right: "https://picsum.photos/id/1025/400/400",
-      },
-      {
-        title: "Energy",
-        text: "Smart solutions for energy management and safety.",
-        img: "https://picsum.photos/id/1032/900/600",
-        row2left: "https://picsum.photos/id/1040/600/400",
-        row2title: "Energy <span>efficient</span> future",
-        row2text: "Energy systems designed for efficiency and sustainability.",
-        row2right: "https://picsum.photos/id/1050/400/400",
-      },
-      {
-        title: "Building",
-        text: "Building automation and smart infrastructure for modern living.",
-        img: "https://picsum.photos/id/1062/900/600",
-        row2left: "https://picsum.photos/id/1069/600/400",
-        row2title: "Smart <span>living</span> spaces",
-        row2text: "Automation solutions for homes and buildings.",
-        row2right: "https://picsum.photos/id/1070/400/400",
-      },
-      {
-        title: "Lighting",
-        text: "High quality lighting solutions for all applications.",
-        img: "https://picsum.photos/id/1082/900/600",
-        row2left: "https://picsum.photos/id/1084/600/400",
-        row2title: "Lighting <span>redefined</span>",
-        row2text: "Lighting systems that enhance comfort and safety.",
-        row2right: "https://picsum.photos/id/1085/400/400",
-      },
-      {
-        title: "Mobility",
-        text: "Infrastructure for mobility and transportation efficiency.",
-        img: "https://picsum.photos/id/1092/900/600",
-        row2left: "https://picsum.photos/id/1094/600/400",
-        row2title: "Mobility <span>connected</span>",
-        row2text: "Solutions that keep mobility safe and connected.",
-        row2right: "https://picsum.photos/id/1095/400/400",
-      },
-    ];
-
-    let currentIndex = 0;
-
-    function updateContent(index) {
-      document.getElementById("mainImage").src = data[index].img;
-      document.getElementById("mainTitle").innerText = data[index].title;
-      document.getElementById("mainText").innerText = data[index].text;
-      document.getElementById("row2left").src = data[index].row2left;
-      document.getElementById("row2title").innerHTML = data[index].row2title;
-      document.getElementById("row2text").innerText = data[index].row2text;
-      document.getElementById("row2right").src = data[index].row2right;
-
-      document.querySelectorAll(".tab").forEach((t, i) => {
-        t.classList.toggle("active", i === index);
-      });
-    }
-
-    function changeContent(index) {
-      currentIndex = index;
-      updateContent(index);
-    }
-
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + data.length) % data.length;
-      updateContent(currentIndex);
-    }
-
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % data.length;
-      updateContent(currentIndex);
-    }
-  </script>
 </body>
 </html>
