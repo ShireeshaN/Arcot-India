@@ -281,6 +281,322 @@
 </html>
 
 
+mobile view corrected
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Renewable Energy Sources</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+    }
+
+    /* Left Section */
+    .left-section {
+      width: 35%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      padding: 20px;
+    }
+    .left-text {
+      max-width: 80%;
+    }
+    .left-text h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .left-text p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Glassy button */
+    .glass-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .glass-btn:hover {
+      background: rgba(133, 136, 135, 0.25);
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #fff;
+    }
+
+    /* Arc container */
+    .arc-container {
+      position: absolute;
+      left: 35%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 600px;
+      height: 700px;
+      z-index: 3;
+      pointer-events: none;
+    }
+    svg.arcs {
+      position: absolute;
+      top: 0;
+      left: -550px;
+      width: 600px;
+      height: 700px;
+      overflow: visible;
+    }
+    path {
+      fill: none;
+      stroke: #666;
+    }
+
+    /* Icons */
+    .icon {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(34,34,34,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      z-index: 4;
+    }
+    /* Hover effect - glowing pulse */
+    .icon:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 15px #787978, 0 0 25px rgba(72, 73, 73, 0.6);
+    }
+    /* Active effect - energy wave */
+    .icon.active {
+      background: rgba(101, 103, 102, 0.7);
+      border-color: #6f7271;
+      animation: pulse 1.5s infinite, spin 0.6s ease;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 5px #727372; }
+      50% { box-shadow: 0 0 20px #727372, 0 0 40px rgba(127, 128, 127, 0.7); }
+      100% { box-shadow: 0 0 5px #727372; }
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg) scale(1.15); }
+      to { transform: rotate(360deg) scale(1.15); }
+    }
+
+    /* Right Image - clipped to arc */
+    .right-bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80%;
+      height: 100%;
+      z-index: 1;
+    }
+    .right-bg svg {
+      width: 100%;
+      height: 100%;
+    }
+    .right-bg image {
+      width: 100%;
+      height: 100%;
+      preserveAspectRatio: xMidYMid slice;
+    }
+
+    /* ✅ Mobile Layout Fix - text top, image+arc below */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    height: auto;
+    overflow: auto;
+  }
+
+  /* Text section top */
+  .left-section {
+    width: 100%;
+    order: 1;
+    text-align: center;
+    background: rgba(0,0,0,0.6); /* readability */
+    padding: 20px;
+    z-index: 5;
+  }
+  .left-text h2 { font-size: 24px; }
+  .left-text p { font-size: 14px; }
+
+  /* Arc container below text */
+  .arc-container {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    order: 2;
+  }
+  .arc-container svg {
+    position: relative;
+    width: 100%;
+    height: auto;
+    left: 0;
+  }
+
+  /* Icons resize for mobile */
+  .icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  /* Background image arc below text */
+  .right-bg {
+    position: relative;
+    width: 100%;
+    height: auto;
+    order: 2;
+  }
+  .right-bg svg {
+    width: 100%;
+    height: auto;
+  }
+  .right-bg image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Left Section -->
+  <div class="left-section">
+    <div class="left-text" id="leftText">
+      <h2>Renewable Energy</h2>
+      <p>
+        Harnessing clean and sustainable sources of energy to power our future.
+      </p>
+      <a href="#" class="glass-btn">Read More</a>
+    </div>
+  </div>
+
+  <!-- Middle arcs -->
+  <div class="arc-container">
+    <svg class="arcs" viewBox="0 0 600 700">
+      <path id="outerArc" d="M500 50 A450 450 0 0 1 500 650" stroke="#666" stroke-width="2"/>
+      <path d="M460 80 A410 410 0 0 1 460 620" stroke="#555" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <!-- Right background image clipped with SAME arc shape -->
+  <div class="right-bg">
+    <svg viewBox="0 0 1920 700" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <clipPath id="arcClip" clipPathUnits="userSpaceOnUse">
+          <path d="M500 50 A450 450 0 0 1 500 650 L1920 650 L1920 50 Z" />
+        </clipPath>
+      </defs>
+      <image id="bgImage" href="https://picsum.photos/id/1015/1920/1080"
+             clip-path="url(#arcClip)" />
+    </svg>
+  </div>
+
+  <script>
+    const data = [
+      { 
+        title: "Solar Energy", 
+        desc: "Solar panels capture sunlight and convert it into clean electricity.", 
+        icon: "☀️", 
+        bg: "https://picsum.photos/id/1011/1920/1080" 
+      },
+      { 
+        title: "Wind Power", 
+        desc: "Wind turbines harness the power of moving air to generate electricity.", 
+        icon: "🌬️", 
+        bg: "https://picsum.photos/id/1018/1920/1080" 
+      },
+      { 
+        title: "Biomass Energy", 
+        desc: "Organic matter such as plants and waste is used to produce energy sustainably.", 
+        icon: "🌱", 
+        bg: "https://picsum.photos/id/1025/1920/1080" 
+      },
+      { 
+        title: "Hydel Power", 
+        desc: "Hydropower plants generate electricity by using flowing water.", 
+        icon: "💧", 
+        bg: "https://picsum.photos/id/1031/1920/1080" 
+      }
+    ];
+
+    const arcPath = document.getElementById("outerArc");
+    const arcLength = arcPath.getTotalLength();
+    const container = document.querySelector(".arc-container");
+
+    // Place icons on arc
+    data.forEach((d, i) => {
+      const point = arcPath.getPointAtLength((arcLength / (data.length - 1)) * i);
+      const icon = document.createElement("div");
+      icon.className = "icon";
+      icon.dataset.index = i;
+      icon.textContent = d.icon;
+      const shiftX = -550;
+      icon.style.left = `${point.x + shiftX - 30}px`;
+      icon.style.top = `${point.y - 30}px`;
+      container.appendChild(icon);
+    });
+
+    const icons = document.querySelectorAll(".icon");
+    const leftText = document.getElementById("leftText");
+    const bgImage = document.getElementById("bgImage");
+    let current = 0;
+
+    function setActive(index) {
+      icons.forEach(i => i.classList.remove("active"));
+      icons[index].classList.add("active");
+      leftText.innerHTML = `<h2>${data[index].title}</h2><p>${data[index].desc}</p><a href='#' class='glass-btn'>Read More</a>`;
+      bgImage.setAttribute("href", data[index].bg);
+      current = index;
+    }
+
+    icons.forEach((icon, i) => {
+      icon.addEventListener("click", () => setActive(i));
+    });
+
+    setInterval(() => {
+      let next = (current + 1) % data.length;
+      setActive(next);
+    }, 5000);
+
+    setActive(0);
+  </script>
+</body>
+</html>
+
+
  /* Energy generation segment */
 
 
@@ -1095,6 +1411,289 @@ animateProgress();
 
 
 /*smart city segment */
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Applications Slider</title>
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #fff;
+      font-family: Arial, sans-serif;
+    }
+    .app-heading {
+      font-size: 48px;
+      font-weight: 700;
+      margin: 30px 50px;
+    }
+    .slider-container {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0; left: 0;
+    }
+    .slide.active {
+      display: block;
+    }
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* gradient overlay */
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to right, transparent 30%, rgba(38, 38, 38, 0.95) 70%);
+    }
+    .content {
+      position: absolute;
+      top: 30%;
+      right: 5%;
+      max-width: 500px;
+      color: #d4d1d1;
+    }
+    .content h2 {
+      font-size: 36px;
+      font-weight: 700;
+    }
+    .content p {
+      margin: 15px 0;
+      color: #bcb8b8;
+    }
+    .content button {
+      background: #ebe7e6;
+      color: rgb(20, 19, 19);
+      border: none;
+      padding: 12px 28px;
+      border-radius: 25px;
+      font-weight: 600;
+    }
+    .arrows {
+      position: absolute;
+      bottom: 20px;
+      right: 40px;
+      display: flex;
+      gap: 15px;
+    }
+    .arrow-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    /* bottom nav tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+      border-top: 1px solid #eee;
+      flex-wrap: wrap;
+    }
+    .tabs button {
+      background: none;
+      border: none;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      color: #666;
+      padding-bottom: 5px;
+      white-space: nowrap;
+    }
+    .tabs button.active {
+      color: #181818;
+      border-bottom: 2px solid #868281;
+    }
+
+    /* --------------------- */
+    /* 📱 Mobile Responsive */
+    /* --------------------- */
+    @media (max-width: 768px) {
+      .app-heading {
+        font-size: 28px;
+        margin: 20px;
+      }
+      .slider-container {
+        height: 300px;
+      }
+      .content {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        left: 5%;
+        max-width: 90%;
+        text-align: center;
+      }
+      .content h2 {
+        font-size: 22px;
+      }
+      .content p {
+        font-size: 14px;
+      }
+      .content button {
+        padding: 8px 18px;
+        font-size: 14px;
+      }
+      .arrows {
+        bottom: 10px;
+        right: 50%;
+        transform: translateX(50%);
+      }
+      .arrow-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+      }
+      .tabs {
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 20px;
+        padding: 10px;
+        white-space: nowrap;
+      }
+      .tabs::-webkit-scrollbar {
+        display: none; /* hide scrollbar for cleaner UI */
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="app-heading">Applications</h1>
+
+  <!-- Slider -->
+  <div class="slider-container">
+    <!-- Slides -->
+    <div class="slide active">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1400" alt="City Landscape">
+      <div class="overlay"></div>
+      <div class="content">
+        <h2>Power Systems</h2>
+        <p>We provide reliable power infrastructure covering generation, transmission, and distribution, along with advanced LT and HT panel boards for efficient and safe operations.</p>
+        <button>Show more →</button>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?q=80&w=1400" alt="Transportation">
+      <div class="overlay"></div>
+      <div class="content">
+        <h2>Energy Solutions</h2>
+        <p>Our energy portfolio includes solar, wind, biomass, and hydel power projects, delivering sustainable and future-ready solutions for diverse energy needs.</p>
+        <button>Show more →</button>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1400" alt="Sports">
+      <div class="overlay"></div>
+      <div class="content">
+        <h2>Lighting Technology</h2>
+        <p>From homes to stadiums, we design advanced lighting systems that enhance safety, efficiency, and aesthetics across residential, commercial, industrial, and public spaces.</p>
+        <button>Show more →</button>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1400" alt="City Landscape">
+      <div class="overlay"></div>
+      <div class="content">
+        <h2>Automation Systems</h2>
+        <p>We deliver intelligent automation for homes, industries, hospitals, hotels, and commercial spaces, powered by IoT for smarter and more efficient environments.</p>
+        <button>Show more →</button>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?q=80&w=1400" alt="Transportation">
+      <div class="overlay"></div>
+      <div class="content">
+        <h2>Smart City Solutions</h2>
+        <p>Our smart city innovations such as smart poles integrate lighting, connectivity, and safety features, creating sustainable and connected urban spaces.</p>
+        <button>Show more →</button>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1400" alt="Sports">
+      <div class="overlay"></div>
+      <div class="content">
+        <h2>Innovation & R&D</h2>
+        <p>Driven by innovation, our R&D division develops next-generation products including smart poles, bollards, conference tables, bar counters, and smart window leaf AC systems.</p>
+        <button>Show more →</button>
+      </div>
+    </div>
+
+    <!-- Arrows -->
+    <div class="arrows">
+      <div class="arrow-btn" id="prev">&#10094;</div>
+      <div class="arrow-btn" id="next">&#10095;</div>
+    </div>
+  </div>
+
+  <!-- Bottom Tabs -->
+  <div class="tabs">
+    <button class="active" data-index="0">Power Systems</button>
+    <button data-index="1">Energy Solutions</button>
+    <button data-index="2">Lighting Technology</button>
+    <button data-index="3">Automation Systems</button>
+    <button data-index="4">Smartcity Solutions</button>
+    <button data-index="5">Innovation & R&D</button>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    const tabs = document.querySelectorAll(".tabs button");
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((s, i) => s.classList.toggle("active", i === index));
+      tabs.forEach((t, i) => t.classList.toggle("active", i === index));
+      current = index;
+    }
+
+    document.getElementById("next").addEventListener("click", () => {
+      showSlide((current + 1) % slides.length);
+    });
+
+    document.getElementById("prev").addEventListener("click", () => {
+      showSlide((current - 1 + slides.length) % slides.length);
+    });
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        showSlide(parseInt(tab.dataset.index));
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+/*Applications*/
 
 
 
