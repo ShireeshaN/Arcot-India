@@ -867,7 +867,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 60px;
+      padding: 20px 40px;
     }
 
     .logo {
@@ -885,7 +885,7 @@
       padding: 0;
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 17px;
     }
 
     .navmenu ul li {
@@ -897,12 +897,12 @@
       color: #fffcfc;
       font-weight: 300;
      font-family: 'Six Caps', sans-serif;
- 
-  font-size: 11px;
+
+  font-size: 10px;
   letter-spacing: 4px;
   color: #fff;
 
-  padding: 3px 5px;
+  /* padding: 2px 2px; */
   display: inline-block;
   text-transform: uppercase;
     }
@@ -911,7 +911,7 @@
       position: absolute;
       top: 100%;
       left: 0;
-      width: 100vw;
+      width: 100%;
       background: #070707;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
       display: none;

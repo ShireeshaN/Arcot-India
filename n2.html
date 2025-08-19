@@ -1,271 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ARCOT Industries - Vertical Image Carousel</title>
-
-  <!-- Fonts: Jost -->
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap" rel="stylesheet" />
-
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
+  <meta charset="UTF-8">
+  <title>Energy Scene Animation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
     body {
-      font-family: 'Jost', sans-serif;
-      background: #dddcdc;
-      color: #eee;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 40px;
-      overflow-x: hidden;
-    }
-
-    .aboutforarcot-wrapper {
-      max-width: 1100px;
-      width: 100%;
-      display: flex;
-      gap: 60px;
-      flex-wrap: wrap;
-    }
-
-    .aboutforarcot-textarea {
-      flex: 1.3;
-      min-width: 320px;
-    }
-
-    .aboutforarcot-textarea h1 {
-      font-weight: 600;
-      font-size: 3.2rem;
-      margin-bottom: 16px;
-      color: #000000;
-      position: relative;
-    }
-
-    .aboutforarcot-textarea h1::after {
-      content: "";
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 70px;
-      height: 4px;
-      border-radius: 3px;
-      background: linear-gradient(90deg, #aaa, #fff);
-      animation: aboutforarcot-underline 3s infinite alternate ease-in-out;
-    }
-
-    @keyframes aboutforarcot-underline {
-      0% { left: 0; width: 70px; opacity: 1; }
-      50% { left: 50%; width: 110px; opacity: 0.8; }
-      100% { left: 0; width: 70px; opacity: 1; }
-    }
-
-    .aboutforarcot-textarea p {
-      color: #1a1919;
-      font-size: 1rem;
-      line-height: 1.5;
-      max-width: 480px;
-      font-weight: 400;
-    }
-
-    .aboutforarcot-carousel {
-      flex: 1;
-      min-width: 320px;
-      position: relative;
-      height: 320px;
-      overflow: hidden;
-      border-radius: 16px;
-      background: #111;
-      user-select: none;
-    }
-
-    .aboutforarcot-blurwrap {
-      position: absolute;
-      inset: 0;
-      filter: blur(18px);
-      opacity: 0.06;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 10px 0;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .aboutforarcot-blurwrap img {
-      width: 100%;
-      height: 48px;
-      object-fit: cover;
-      border-radius: 8px;
-      opacity: 0.3;
-      filter: grayscale(100%) brightness(1.1);
-      transition: opacity 0.5s ease;
-    }
-
-    .aboutforarcot-blurwrap img.active {
-      opacity: 0.55;
-      filter: grayscale(50%) brightness(1);
-    }
-
-    .aboutforarcot-imagestack {
-      position: relative;
-      height: 320px;
-      overflow: hidden;
-      z-index: 2;
-    }
-
-    .aboutforarcot-card {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 160px;
-      border-radius: 16px;
-      overflow: hidden;
-      background-size: cover;
-      background-position: center;
+      margin: 0;
+      background: black;
       color: white;
+      font-family: 'Inter', sans-serif;
       display: flex;
-      align-items: flex-end;
-      padding: 20px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      line-height: 1.2;
-      text-shadow: 0 0 4px rgba(0,0,0,0.6);
-      cursor: default;
-      user-select: text;
-      top: 0;
-      transform: translateY(0);
-      opacity: 1;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
 
-    @media (max-width: 900px) {
-      .aboutforarcot-wrapper {
-        flex-direction: column;
-      }
-      .aboutforarcot-carousel {
-        height: 360px;
-      }
-      .aboutforarcot-card {
-        height: 180px;
-        font-size: 1rem;
-        padding: 16px;
-      }
-      .aboutforarcot-textarea h1 {
-        font-size: 2.4rem;
-      }
-      .aboutforarcot-textarea p {
-        font-size: 0.9rem;
+    svg * {
+      stroke: white;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-dasharray: 800;
+      stroke-dashoffset: 800;
+      animation: draw 2s ease forwards;
+    }
+
+    #solar_panel *        { animation-delay: 0.2s; }
+    #wind_turbine *       { animation-delay: 1.2s; }
+    #hydro_plant *        { animation-delay: 2.2s; }
+    #smart_city *         { animation-delay: 3.2s; }
+    #lighting *           { animation-delay: 4.2s; }
+    #battery_station *    { animation-delay: 5.2s; }
+
+    @keyframes draw {
+      to {
+        stroke-dashoffset: 0;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="aboutforarcot-wrapper" role="main" aria-label="About ARCOT Industries">
+  <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" width="90%" height="auto">
 
-    <div class="aboutforarcot-textarea">
-      <h1>About</h1>
-      <p>
-        Pioneers in <strong>Power</strong>, <strong>Energy</strong>, <strong>Automation</strong>,<br />
-        <strong>Lighting</strong>, and <strong>Smart City</strong> solutions.<br />
-        Building scalable, future-ready infrastructure with innovation and precision.
-      </p>
-    </div>
+    <!-- Solar Panel -->
+    <g id="solar_panel">
+      <circle cx="100" cy="100" r="30"/>
+      <line x1="100" y1="50" x2="100" y2="30"/>
+      <line x1="100" y1="150" x2="100" y2="170"/>
+      <line x1="70" y1="70" x2="50" y2="50"/>
+      <line x1="130" y1="70" x2="150" y2="50"/>
+      <line x1="70" y1="130" x2="50" y2="150"/>
+      <line x1="130" y1="130" x2="150" y2="150"/>
+      <rect x="180" y="250" width="20" height="80"/>
+      <polygon points="50,150 350,150 310,230 10,230"/>
+      <line x1="40" y1="165" x2="330" y2="165"/>
+      <line x1="30" y1="180" x2="320" y2="180"/>
+      <line x1="20" y1="195" x2="310" y2="195"/>
+      <line x1="10" y1="210" x2="300" y2="210"/>
+      <!-- Grid vertical -->
+      <line x1="80" y1="150" x2="50" y2="230"/>
+      <line x1="110" y1="150" x2="80" y2="230"/>
+      <line x1="140" y1="150" x2="110" y2="230"/>
+      <line x1="170" y1="150" x2="140" y2="230"/>
+      <line x1="200" y1="150" x2="170" y2="230"/>
+      <line x1="230" y1="150" x2="200" y2="230"/>
+      <line x1="260" y1="150" x2="230" y2="230"/>
+      <line x1="290" y1="150" x2="260" y2="230"/>
+      <line x1="320" y1="150" x2="290" y2="230"/>
+    </g>
 
-    <div class="aboutforarcot-carousel" aria-label="Services Image Carousel">
-      <div class="aboutforarcot-blurwrap" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="" />
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="" />
-        <img src="https://images.unsplash.com/photo-1521790366325-c7b6ff3b2526?auto=format&fit=crop&w=600&q=80" alt="" />
-        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=80" alt="" />
-        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=600&q=80" alt="" />
-        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=600&q=80" alt="" />
-      </div>
+    <!-- Wind Turbine -->
+    <g id="wind_turbine">
+      <line x1="150" y1="300" x2="150" y2="500"/>
+      <line x1="150" y1="300" x2="150" y2="250"/>
+      <line x1="150" y1="300" x2="193.3" y2="325"/>
+      <line x1="150" y1="300" x2="106.7" y2="325"/>
+      <circle cx="150" cy="300" r="5"/>
+    </g>
 
-      <div class="aboutforarcot-imagestack" aria-live="polite" aria-atomic="true">
-        <!-- JS will inject cards -->
-      </div>
-    </div>
-  </div>
+    <!-- Hydroelectric Plant -->
+    <g id="hydro_plant">
+      <rect x="50" y="460" width="120" height="80"/>
+      <line x1="70" y1="460" x2="70" y2="520"/>
+      <line x1="100" y1="460" x2="100" y2="520"/>
+      <line x1="130" y1="460" x2="130" y2="520"/>
+      <path d="M50 540 q12 10 25 0"/>
+      <path d="M75 540 q12 10 25 0"/>
+      <path d="M100 540 q12 10 25 0"/>
+      <path d="M125 540 q12 10 25 0"/>
+      <path d="M150 540 q12 10 25 0"/>
+      <path d="M70 520 q10 10 20 0"/>
+      <path d="M100 520 q10 10 20 0"/>
+      <path d="M130 520 q10 10 20 0"/>
+    </g>
 
-  <script>
-    const aboutServices = [
-      { title: "Power Transmission & Distribution", img: "img/bannerabout.webp" },
-      { title: "Renewable Energy Solutions", img: "img/carousel-1.webp" },
-      { title: "Industrial & Home Automation", img: "img/bannerabout.webp" },
-      { title: "Smart & Commercial Lighting", img: "img/carousel-1.webp" },
-      { title: "Integrated Smart City Infrastructure", img: "img/bannerabout.webp" },
-      { title: "Research & Development Innovations", img: "img/carousel-1.webp" }
-    ];
+    <!-- Smart City -->
+    <g id="smart_city">
+      <rect x="800" y="80" width="40" height="120"/>
+      <rect x="860" y="70" width="40" height="130"/>
+      <rect x="920" y="60" width="40" height="140"/>
+      <circle cx="820" cy="60" r="3"/>
+      <path d="M820 60 q10 -10 20 0"/>
+      <path d="M820 60 q10 10 20 0"/>
+    </g>
 
-    const aboutStack = document.querySelector('.aboutforarcot-imagestack');
-    const blurImages = document.querySelectorAll('.aboutforarcot-blurwrap img');
+    <!-- Lighting Products -->
+    <g id="lighting">
+      <line x1="850" y1="260" x2="850" y2="400"/>
+      <rect x="840" y="260" width="20" height="10"/>
+      <line x1="850" y1="270" x2="850" y2="280"/>
+      <path d="M835 280 q15 20 30 0"/>
+    </g>
 
-    let currentIdx = 0;
+    <!-- Battery / EV Station -->
+    <g id="battery_station">
+      <rect x="820" y="470" width="60" height="50"/>
+      <line x1="830" y1="460" x2="830" y2="470"/>
+      <line x1="860" y1="460" x2="860" y2="470"/>
+      <line x1="857" y1="465" x2="863" y2="465"/>
+      <line x1="827" y1="465" x2="833" y2="465"/>
+      <line x1="830" y1="462" x2="830" y2="468"/>
+    </g>
 
-    function createCard(item, top) {
-      const div = document.createElement('div');
-      div.className = 'aboutforarcot-card';
-      div.style.top = `${top}px`;
-      div.style.backgroundImage = `url(${item.img})`;
-      div.textContent = item.title;
-      return div;
-    }
+  </svg>
 
-    let currentCards = [];
-    for (let i = 0; i < 2; i++) {
-      const card = createCard(aboutServices[(currentIdx + i) % aboutServices.length], i * 160);
-      aboutStack.appendChild(card);
-      currentCards.push(card);
-    }
-
-    function animateCarousel() {
-      const topCard = currentCards.shift();
-
-      gsap.to(topCard, {
-        duration: 1,
-        y: -160,
-        opacity: 0,
-        ease: "power2.inOut",
-        onComplete: () => topCard.remove()
-      });
-
-      if (currentCards.length > 0) {
-        gsap.to(currentCards[0], {
-          duration: 1,
-          top: 0,
-          ease: "power2.inOut",
-          y: 0,
-        });
-      }
-
-      currentIdx = (currentIdx + 1) % aboutServices.length;
-      const newCard = createCard(aboutServices[(currentIdx + 1) % aboutServices.length], 160);
-      newCard.style.opacity = 0;
-      aboutStack.appendChild(newCard);
-      currentCards.push(newCard);
-
-      gsap.fromTo(newCard, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, ease: "power2.inOut" });
-
-      blurImages.forEach((img, i) => {
-        img.classList.toggle('active', i === currentIdx);
-      });
-    }
-
-    setInterval(animateCarousel, 3000);
-
-    // Initial highlight
-    blurImages.forEach((img, i) => {
-      img.classList.toggle('active', i === currentIdx);
-    });
-  </script>
-
-  
 </body>
 </html>

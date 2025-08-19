@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <title>Arcot Lighting</title>
+  <style>
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Slider Wrapper */
+.arcot-slider {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.arcot-slide {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%; width: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  animation: zoomEffect 15s ease-in-out infinite alternate;
+}
+.arcot-slide.active { opacity: 1; }
+
+/* 🔥 Zoom-in Zoom-out Animation */
+@keyframes zoomEffect {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+/* Text Center */
+.arcot-content {
+  position: absolute;
+  top: 40%; left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+}
+.arcot-content h1 {
+  font-size: 48px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.arcot-content h3 {
+  font-size: 22px;
+  font-weight: 200;
+  margin-bottom: 40px;
+}
+
+/* More + Dots wrapper */
+.arcot-more-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.arcot-more {
+  display: inline-block;
+  font-size: 18px;
+  position: relative;
+  color: #fff;
+  cursor: pointer;
+}
+.arcot-more::after {
+  content: '';
+  position: absolute;
+  bottom: -6px; left: 0;
+  height: 2px; width: 0;
+  background: #ff6600;
+  transition: width 0.5s ease-in-out;
+}
+.arcot-more:hover::after { width: 100%; }
+.arcot-dots { display: flex; gap: 8px; }
+.arcot-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.arcot-dot.active {
+  background: #ff6600;
+  transform: scale(1.2);
+}
+
+/* ✅ Icons Row - Default (Desktop / Laptop) */
+.arcot-icons {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: nowrap;   /* ✅ one row only */
+  z-index: 3;
+  max-width: 95%;
+}
+.arcot-icon {
+  width: 65px; height: 65px;   /* ✅ smaller size desktop */
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  color: #fff; font-size: 11px;
+  cursor: pointer; transition: all 0.4s ease;
+}
+.arcot-icon svg {
+  width: 24px; height: 24px; margin-bottom: 6px;
+}
+.arcot-icon.active { background: #ff6600; }
+.arcot-icon:hover { transform: scale(1.1); }
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .arcot-icon {
+    width: 60px; height: 60px;
+    font-size: 10px;
+  }
+}
+
+/* ✅ Mobiles */
+@media (max-width: 768px) {
+  .arcot-slider { height: 50vh; } /* banner half screen */
+  .arcot-content {
+    top: 25%;
+    padding: 0 15px;
+    text-align: center;
+  }
+  .arcot-content h1 { font-size: 28px; }
+  .arcot-content h3 { font-size: 16px; margin-bottom: 20px; }
+
+  /* Icons move below image */
+  .arcot-icons {
+    position: static;
+    transform: none;
+    width: 95%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* ✅ 4 + 4 = 2 rows */
+    gap: 15px;
+    justify-content: center;
+  }
+  .arcot-icon {
+    width: 65px; height: 65px;
+    font-size: 10px;
+    margin: auto;
+  }
+}
+
+/* ✅ Small Mobiles */
+@media (max-width: 480px) {
+  .arcot-icons {
+    grid-template-columns: repeat(2, 1fr); /* 2 icons per row */
+    gap: 15px;
+  }
+  .arcot-icon {
+    width: 60px; height: 60px;
+    font-size: 10px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="arcot-slider">
+    <!-- Slides -->
+    <div class="arcot-slide active" style="background-image:url('img/bannerabout.webp')"></div>
+    <div class="arcot-slide" style="background-image:url('img/carousel-1.webp')"></div>
+    <div class="arcot-slide" style="background-image:url('img/bannerabout.webp')"></div>
+    <div class="arcot-slide" style="background-image:url('img/carousel-1.webp')"></div>
+
+    <!-- Content -->
+    <div class="arcot-content">
+      <h1 id="arcot-title">Residential Lighting</h1>
+      <h3 id="arcot-subtitle">Premium · Elegant · Efficient</h3>
+      <div class="arcot-more-dots">
+        <span class="arcot-more">more</span>
+        <div class="arcot-dots">
+          <div class="arcot-dot active" data-index="0"></div>
+          <div class="arcot-dot" data-index="1"></div>
+          <div class="arcot-dot" data-index="2"></div>
+          <div class="arcot-dot" data-index="3"></div>
+          <div class="arcot-dot" data-index="4"></div>
+          <div class="arcot-dot" data-index="5"></div>
+          <div class="arcot-dot" data-index="6"></div>
+          <div class="arcot-dot" data-index="7"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 👇 8 Icons -->
+ <div class="arcot-icons">
+  <!-- Residential -->
+  <div class="arcot-icon active" data-index="0">
+    <svg viewBox="0 0 28 28">
+      <path d="M4 14L14 4l10 10v10H4z" stroke="white" fill="none"/>
+      <rect x="10" y="16" width="8" height="8" stroke="white" fill="none"/>
+    </svg>
+    Residential
+  </div>
+
+  <!-- Facade -->
+  <div class="arcot-icon" data-index="1">
+    <svg viewBox="0 0 28 28">
+      <rect x="5" y="5" width="18" height="18" stroke="white" fill="none"/>
+      <line x1="14" y1="5" x2="14" y2="23" stroke="white"/>
+      <line x1="5" y1="14" x2="23" y2="14" stroke="white"/>
+    </svg>
+    Facade
+  </div>
+
+  <!-- Commercial -->
+  <div class="arcot-icon" data-index="2">
+    <svg viewBox="0 0 28 28">
+      <rect x="6" y="10" width="16" height="12" stroke="white" fill="none"/>
+      <rect x="10" y="6" width="8" height="4" stroke="white" fill="none"/>
+    </svg>
+    Commercial
+  </div>
+
+  <!-- Industrial -->
+  <div class="arcot-icon" data-index="3">
+    <svg viewBox="0 0 28 28">
+      <polygon points="4,20 24,20 18,8 10,8" stroke="white" fill="none"/>
+      <rect x="12" y="14" width="4" height="6" stroke="white" fill="none"/>
+    </svg>
+    Industrial
+  </div>
+
+  <!-- Street -->
+  <div class="arcot-icon" data-index="4">
+    <svg viewBox="0 0 28 28">
+      <line x1="14" y1="4" x2="14" y2="24" stroke="white"/>
+      <circle cx="14" cy="6" r="3" stroke="white" fill="none"/>
+    </svg>
+    Street
+  </div>
+
+  <!-- Park -->
+  <div class="arcot-icon" data-index="5">
+    <svg viewBox="0 0 28 28">
+      <circle cx="14" cy="12" r="6" stroke="white" fill="none"/>
+      <rect x="12" y="18" width="4" height="6" stroke="white" fill="none"/>
+    </svg>
+    Park
+  </div>
+
+  <!-- Stadium -->
+  <div class="arcot-icon" data-index="6">
+    <svg viewBox="0 0 28 28">
+      <ellipse cx="14" cy="14" rx="10" ry="6" stroke="white" fill="none"/>
+      <line x1="4" y1="14" x2="24" y2="14" stroke="white"/>
+    </svg>
+    Stadium
+  </div>
+
+  <!-- Hospital -->
+  <div class="arcot-icon" data-index="7">
+    <svg viewBox="0 0 28 28">
+      <rect x="6" y="6" width="16" height="16" stroke="white" fill="none"/>
+      <line x1="14" y1="8" x2="14" y2="20" stroke="white"/>
+      <line x1="8" y1="14" x2="20" y2="14" stroke="white"/>
+    </svg>
+    Hospital
+  </div>
+</div>
+
+
+  <script>
+    const arcotSlides=document.querySelectorAll('.arcot-slide');
+    const arcotIcons=document.querySelectorAll('.arcot-icon');
+    const arcotDots=document.querySelectorAll('.arcot-dot');
+    const arcotTitle=document.getElementById('arcot-title');
+    const arcotSubtitle=document.getElementById('arcot-subtitle');
+
+    const titles=["Residential Lighting","Facade Lighting","Commercial Lighting","Industrial Lighting","Hospitality Lighting","Retail Lighting","Office Lighting","Outdoor Lighting"];
+    const subtitles=[
+      "Premium · Elegant · Efficient",
+      "Modern · Architectural · Stylish",
+      "Smart · Professional · Reliable",
+      "Heavy Duty · Robust · Safe",
+      "Warm · Welcoming · Aesthetic",
+      "Trendy · Attractive · Efficient",
+      "Productive · Comfortable · Bright",
+      "Durable · Weatherproof · Safe"
+    ];
+    let currentIndex=0,timer;
+
+    function showSlide(index){
+      arcotSlides.forEach((s,i)=>s.classList.toggle('active',i===index%arcotSlides.length));
+      arcotIcons.forEach((ic,i)=>ic.classList.toggle('active',i===index));
+      arcotDots.forEach((dot,i)=>dot.classList.toggle('active',i===index%arcotDots.length));
+      arcotTitle.textContent=titles[index];
+      arcotSubtitle.textContent=subtitles[index];
+      currentIndex=index;
+    }
+    function nextSlide(){showSlide((currentIndex+1)%titles.length);}
+    function startAuto(){timer=setInterval(nextSlide,5000);}
+    arcotIcons.forEach(icon=>{
+      icon.addEventListener('click',()=>{
+        clearInterval(timer);
+        showSlide(parseInt(icon.dataset.index));
+        startAuto();
+      });
+    });
+    arcotDots.forEach(dot=>{
+      dot.addEventListener('click',()=>{
+        clearInterval(timer);
+        showSlide(parseInt(dot.dataset.index));
+        startAuto();
+      });
+    });
+    startAuto();
+  </script>
+</body>
+</html>

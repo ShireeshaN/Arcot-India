@@ -324,3 +324,13 @@ AOS.init({
     once: true,         // animate only once
     offset: 100         // trigger animation a bit before entering viewport
   });
+
+
+
+
+
+
+
+
+
+  

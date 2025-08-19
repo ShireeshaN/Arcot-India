@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Light Solutions — DGA Style Overlay</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0c1114;          /* deep bluish like reference */
+    --txt:#ffffff;
+    --muted:#8fa1ad;       /* dim headings */
+    --muted2:#6a7a86;
+    --accent:#ffffff;      /* keep it clean white */
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--txt);
+    overflow-x:hidden;
+  }
+
+  /* ====== HERO ====== */
+  .hero{
+    position:relative;
+    height:100vh;
+    width:100%;
+    isolation:isolate;
+    background:radial-gradient(1200px 1200px at 85% 10%, #1c2a33 0%, #0c1114 55%);
+  }
+
+  /* background images stack */
+  .hero__bg{
+    position:absolute; inset:0;
+    overflow:hidden;
+    z-index:0;
+  }
+  .hero__bg img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    opacity:0;
+    transform:scale(1.08) translateY(0); /* slight zoom */
+    transition:opacity 700ms ease, transform 6000ms ease;
+    will-change:transform, opacity;
+    filter:saturate(1.02) contrast(1.03);
+  }
+  .hero__bg img.active{
+    opacity:1;
+    transform:scale(1.02) translateY(-2%); /* slow pan up */
+  }
+
+  /* overlay text block */
+  .hero__overlay{
+    position:absolute;
+    left:min(6vw, 80px);
+    top:50%;
+    transform:translateY(-50%);
+    z-index:2;
+    pointer-events:none; /* headings will re-enable pointer */
+  }
+
+  .eyebrow{
+    font-size:clamp(.7rem,.7rem + .2vw, .9rem);
+    letter-spacing:.18em;
+    color:#b9c6cf;
+    margin-bottom:clamp(8px, 1.5vh, 16px);
+    opacity:.9;
+  }
+
+  .menu{
+    list-style:none;
+  }
+
+  .menu li{
+    pointer-events:auto;
+    cursor:pointer;
+    line-height:1.05;
+    margin: clamp(12px, 2.2vh, 20px) 0;
+    color:var(--muted);
+    font-weight:700;
+    transition:color .35s ease, transform .35s ease, opacity .35s ease;
+    position:relative;
+    opacity:.9;
+    /* font size scales big like reference */
+    font-size:clamp(2.2rem, 3rem + 3.5vw, 7.2rem);
+  }
+
+  .menu li:hover{ color:#cbd6dd }
+
+  .menu li.active{
+    color:var(--accent);
+    opacity:1;
+    transform:translateX(0px);
+  }
+
+  /* the small "• SCOPRI" badge under the active one */
+  .menu li .cta{
+    position:absolute;
+    left:0.1em;
+    top:100%;
+    transform:translateY(.45em);
+    font-weight:600;
+    font-size:clamp(.72rem, .65rem + .3vw, .95rem);
+    letter-spacing:.12em;
+    display:flex; align-items:center; gap:.5em;
+    color:#e7edf1;
+    opacity:0; filter:blur(2px);
+    transition:opacity .35s ease, filter .35s ease, transform .35s ease;
+    white-space:nowrap;
+    pointer-events:none;
+  }
+  .menu li.active .cta{
+    opacity:1; filter:blur(0); transform:translateY(.35em);
+  }
+  .dot{
+    width:.55em; height:.55em; border-radius:50%;
+    background:#e7edf1;
+    display:inline-block;
+  }
+
+  /* subtle left gradient to ensure text contrast over bright images */
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(90deg, rgba(12,17,20,.75) 0%, rgba(12,17,20,.5) 20%, rgba(12,17,20,0) 55%);
+    z-index:1; pointer-events:none;
+  }
+
+  /* accessibility: reduce-motion support */
+  @media (prefers-reduced-motion: reduce){
+    .hero__bg img{ transition:none }
+    .hero__bg img.active{ transform:none }
+    .menu li, .menu li .cta{ transition:none }
+  }
+
+  /* responsive tweaks */
+  @media (max-width: 900px){
+    .hero{ height:92vh }
+    .menu li{ line-height:1.02 }
+  }
+  @media (max-width: 520px){
+    .hero{ height:88vh }
+    .hero__overlay{ left:6vw }
+    .menu li{ margin: 8px 0 }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero" aria-label="Light Solutions">
+  <!-- Image stack -->
+  <div class="hero__bg" aria-hidden="true">
+    <!-- replace these with your product hero shots -->
+    <img src="img/application/appli (1).webp" alt="" class="bg-img active" data-key="indoor">
+    <img src="img/application/68.webp" alt="" class="bg-img" data-key="outdoor">
+    <img src="img/application/appli (3).webp" alt="" class="bg-img" data-key="immersion">
+    <img src="img/application/69.webp" alt="" class="bg-img" data-key="linear">
+  </div>
+
+  <!-- Overlay text (on top of images) -->
+  <div class="hero__overlay">
+    <p class="eyebrow">LIGHT SOLUTIONS</p>
+    <ul class="menu" role="tablist" aria-label="Light Solution Categories">
+      <li role="tab" aria-selected="true" tabindex="0" class="active" data-key="indoor">
+        Transmission
+        <span class="cta"><span class="dot"></span> POWER</span>
+      </li>
+      <li role="tab" aria-selected="false" tabindex="0" data-key="outdoor">
+        Distribution
+        <span class="cta"><span class="dot"></span> POWER</span>
+      </li>
+      <li role="tab" aria-selected="false" tabindex="0" data-key="immersion">
+        Low & High Tention
+        <span class="cta"><span class="dot"></span> POWER</span>
+      </li>
+      <li role="tab" aria-selected="false" tabindex="0" data-key="linear">
+       Panel Board
+        <span class="cta"><span class="dot"></span> POWER</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<script>
+  // utility: set active heading + image
+  function setActive(key){
+    const items = document.querySelectorAll('.menu li');
+    const imgs  = document.querySelectorAll('.hero__bg img');
+
+    items.forEach(li=>{
+      const isActive = li.dataset.key === key;
+      li.classList.toggle('active', isActive);
+      li.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+
+    imgs.forEach(img=>{
+      const isActive = img.dataset.key === key;
+      img.classList.toggle('active', isActive);
+      // restart the slow pan by forcing reflow when activating again
+      if(isActive){
+        img.style.transform = 'scale(1.08) translateY(0)';
+        requestAnimationFrame(()=> {
+          img.style.transform = 'scale(1.02) translateY(-2%)';
+        });
+      }
+    });
+  }
+
+  // desktop: hover, mobile: click/tap & keyboard support
+  const isTouch = matchMedia('(hover: none)').matches;
+
+  document.querySelectorAll('.menu li').forEach(li=>{
+    const k = li.dataset.key;
+
+    if(isTouch){
+      li.addEventListener('click', ()=> setActive(k));
+    }else{
+      li.addEventListener('mouseenter', ()=> setActive(k));
+      li.addEventListener('focus', ()=> setActive(k));
+    }
+
+    // keyboard nav (Enter/Space)
+    li.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        setActive(k);
+      }
+    });
+  });
+
+  // optional: auto-cycle every few seconds (comment out if not needed)
+  // const keys = ['indoor','outdoor','immersion','linear'];
+  // let idx = 0;
+  // setInterval(()=>{ idx = (idx+1)%keys.length; setActive(keys[idx]); }, 6000);
+</script>
+
+</body>
+</html>

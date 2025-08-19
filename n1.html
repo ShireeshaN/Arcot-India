@@ -1,147 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Renewable Energy Sources</title>
- <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #000;
-    color: #fff;
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-    overflow: hidden;
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Our Exclusive R&D Creations</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<style>
+  :root{
+    --bg:#f7f7f7;
+    --text:#111;
+    --muted:#666;
+    --line:#bbb;
+    --card:#ffffff;
   }
 
-  /* Left Section */
-  .left-section {
-    width: 35%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    z-index: 2;
+  body{background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+  .randd-section-wrap{padding:64px 0 48px;}
+
+  /* Left text column */
+  .randd-eyebrow{
+    font-size:clamp(2.4rem, 6vw, 5.2rem);
+    font-weight:700;
+    line-height:1.05;
+    letter-spacing:-.02em;
+    margin-bottom:.25em;
+    margin-top:-20px;
   }
-  .left-text h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-  }
-  .left-text p {
-    font-size: 16px;
-    line-height: 1.6;
-  }
-  .glass-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border-radius: 30px;
-    border: 1px solid rgba(255,255,255,0.3);
-    background: rgba(255,255,255,0.15);
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 14px;
-    backdrop-filter: blur(6px);
-    transition: all 0.3s ease;
-    text-decoration: none;
-  }
-  .glass-btn:hover {
-    background: rgba(133, 136, 135, 0.25);
-    transform: scale(1.05);
-    box-shadow: 0 0 10px #fff;
+  .randd-eyebrow .randd-accent{color:var(--text);}
+  .randd-tagline{
+    font-size:clamp(1.2rem, 2.5vw, 2rem);
+    color:#222;
+    margin-bottom:1.2rem;
   }
 
-  /* Arc container */
-  .arc-container {
-    position: absolute;
-    left: 35%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 600px;
-    height: 700px;
-    z-index: 3;
-    pointer-events: none;
+  .randd-kicker{
+    margin:0;
+    font-weight:600;
+    color:#333;
+    position:relative;
+    display:inline-block;
+    padding-right:0;
   }
-  svg.arcs {
-    position: absolute;
-    top: 0;
-    left: -550px;
-    width: 600px;
-    height: 700px;
+  .randd-kicker::after{
+    content:"";
+    position:absolute;
+    left:calc(100% + 16px);
+    top:50%;
+    transform:translateY(-50%);
+    height:2px;
+    width:120px;
+    background:linear-gradient(90deg,var(--line),#dedede);
+    animation:randd-loadingLine 2.2s linear infinite;
+    transform-origin:left center;
+  }
+  @keyframes randd-loadingLine{
+    0%{transform:translateY(-50%) scaleX(0);}
+    50%{transform:translateY(-50%) scaleX(1);}
+    100%{transform:translateY(-50%) scaleX(0);}
   }
 
-  /* Icons */
-  .icon {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: rgba(34,34,34,0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 26px;
-    color: #fff;
-    border: 2px solid rgba(255,255,255,0.3);
-    cursor: pointer;
-    z-index: 4;
-    transition: all 0.3s ease;
+  .randd-slide-title{
+    font-size:clamp(1.4rem, 2.2vw, 2.2rem);
+    font-weight:700;
+    letter-spacing:.01em;
+    margin:0 0 .4rem;
   }
-  .icon:hover { transform: scale(1.2); }
-  .icon.active { 
-    background: rgba(101,103,102,0.7);
-    border-color: #6f7271;
-    animation: pulse 1.5s infinite, spin 0.6s ease;
+  .randd-slide-desc{
+    color:var(--muted);
+    max-width:56ch;
   }
-  @keyframes pulse {
-    0% { box-shadow: 0 0 5px #727372; }
-    50% { box-shadow: 0 0 20px #727372, 0 0 40px rgba(127,128,127,0.7); }
-    100% { box-shadow: 0 0 5px #727372; }
-  }
-  @keyframes spin { from { transform: rotate(0deg) scale(1.15); } to { transform: rotate(360deg) scale(1.15); } }
 
-  /* Right Image */
-  .right-bg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 80%;
-    height: 100%;
-    z-index: 1;
+  .randd-more-link{
+    display:inline-flex; align-items:center; gap:.5rem;
+    margin-top:14px; font-weight:600; color:#222; text-decoration:none;
+    position:relative;
   }
-  .right-bg svg, .right-bg image { width: 100%; height: 100%; }
+  .randd-more-link i{font-size:1rem;}
+  .randd-more-link:hover{opacity:.8; text-decoration:underline;}
 
-  /* Mobile view */
-  @media (max-width: 1023px) {
-    body { flex-direction: column; height: auto; overflow-y: auto; }
-    .left-section { width: 100%; order: 2; text-align: center; }
-    .left-text h2 { font-size: 24px; }
-    .left-text p { font-size: 14px; }
-    .arc-container { display: none; }
-    .right-bg { order: 1; position: relative; width: 100%; height: 260px; }
-    .right-bg svg, .right-bg image { width: 100%; height: 100%; object-fit: cover; }
-    .mobile-icons { display: flex; justify-content: center; gap: 15px; margin: 15px 0; overflow-x: auto; padding: 10px; }
-    .mobile-icons .icon { position: relative; left: unset !important; top: unset !important; transform: none !important; }
+  /* Right image card */
+  .randd-image-wrap{
+    position:relative;
+    overflow:hidden;
+    background:var(--card);
+    box-shadow:0 12px 30px rgba(0,0,0,.06);
+    margin-top:28px;
   }
- </style>
+  .randd-hero-img{
+    width:100%; 
+    height:75vh; 
+    object-fit:cover;
+    animation:randd-kenburns 14s ease-in-out infinite;
+    opacity:0; transition:opacity .7s ease;
+  }
+  .randd-hero-img.show{opacity:1;}
+  @keyframes randd-kenburns{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.06);}
+    100%{transform:scale(1);}
+  }
+
+  /* Arrows */
+  .randd-nav-btn{
+    width:56px; height:56px; 
+    border-radius:50%;
+    border:1px solid #cfcfcf; 
+    background:#fff; color:#222;
+    display:flex; 
+    align-items:center; 
+    justify-content:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.06);
+    transition:.2s;
+  }
+  .randd-nav-btn:hover{background:#111; color:#fff;}
+  .randd-nav-group{gap:16px;}
+
+  /* Layout spacing */
+  .randd-text-col{padding-right:2rem;}
+  .randd-image-col{padding-left:2rem;}
+
+  /* Responsive */
+  @media (max-width: 991.98px){
+    .randd-image-wrap{border-radius:20px; margin-top:18px;}
+    .randd-hero-img{height:42vh;}
+    .randd-text-col{padding-right:1rem;}
+    .randd-image-col{padding-left:1rem;}
+    .randd-nav-group{justify-content:flex-start;}
+  }
+</style>
 </head>
 <body>
 
-  <!-- Left Section -->
-  <div class="left-section">
-    <div class="left-text" id="leftText">
-      <h2>Renewable Energy</h2>
-      <p>Harnessing clean and sustainable sources of energy to power our future.</p>
-      <a href="#" class="glass-btn">Read More</a>
-    </div>
-  </div>
+<div class="container-fluid randd-section-wrap">
+  <div class="container">
+    <div class="row align-items-start">
+      <!-- LEFT: text -->
+      <div class="col-lg-5 randd-text-col">
+        <h1 class="randd-eyebrow">
+          <span class="randd-accent">R&D Highlights</span>
+        </h1>
+        <div class="randd-tagline">Pioneering designs from our research &amp; development team</div>
 
-  <!-- Middle arcs -->
-  <div class="arc-container">
-    <svg class="arcs" viewBox="0 0 600 700">
-      <path id="outerArc" d="M500 50 A450 450 0 0 1 500 650" stroke="#666" stroke-width="2"/>
-    </svg>
+        <div class="randd-kicker">Brand Overview</div>
+
+        <h2 id="randd-slideTitle" class="randd-slide-title">
+          Smart Pole
+        </h2>
+        <p id="randd-slideDesc" class="randd-slide-desc">
+          A next-generation multifunctional pole that integrates EV charging, security cameras, public Wi-Fi, SOS alerts, LED displays, and environmental sensors — delivering safer, smarter, and more connected urban spaces.
+        </p>
+
+        <div class="d-flex flex-column align-items-end">
+          <a id="randd-moreLink" class="randd-more-link" href="brands.html">
+            <span>+ more</span><i class="bi bi-arrow-right"></i>
+          </a>
+
+          <div class="d-flex randd-nav-group mt-3">
+            <button id="randd-prevBtn" class="randd-nav-btn" aria-label="Previous">
+              <i class="bi bi-arrow-left"></i>
+            </button>
+            <button id="randd-nextBtn" class="randd-nav-btn" aria-label="Next">
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: image -->
+      <div class="col-lg-7 randd-image-col randd-hover-area">
+        <div class="randd-image-wrap">
+          <img id="randd-heroImg" class="randd-hero-img show" src="img/brand-1.webp" alt="Featured brand image">
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Mobile icons -->
@@ -159,58 +192,92 @@
     </svg>
   </div>
 
-  <script>
-    const data = [
-      { title: "Solar Energy", desc: "Solar panels capture sunlight and convert it into clean electricity.", icon: "☀️", bg: "https://picsum.photos/id/1011/1920/1080" },
-      { title: "Wind Power", desc: "Wind turbines harness the power of moving air to generate electricity.", icon: "🌬️", bg: "https://picsum.photos/id/1018/1920/1080" },
-      { title: "Biomass Energy", desc: "Organic matter such as plants and waste is used to produce energy sustainably.", icon: "🌱", bg: "https://picsum.photos/id/1025/1920/1080" },
-      { title: "Hydel Power", desc: "Hydropower plants generate electricity by using flowing water.", icon: "💧", bg: "https://picsum.photos/id/1031/1920/1080" }
-    ];
-
-    // Desktop icons on arc
-    const arcPath = document.getElementById("outerArc");
-    const arcLength = arcPath.getTotalLength();
-    const container = document.querySelector(".arc-container");
-    data.forEach((d, i) => {
-      const point = arcPath.getPointAtLength((arcLength / (data.length - 1)) * i);
-      const icon = document.createElement("div");
-      icon.className = "icon";
-      icon.dataset.index = i;
-      icon.textContent = d.icon;
-      const shiftX = -550;
-      icon.style.left = `${point.x + shiftX - 30}px`;
-      icon.style.top = `${point.y - 30}px`;
-      container.appendChild(icon);
-    });
-
-    const icons = document.querySelectorAll(".icon");
-    const leftText = document.getElementById("leftText");
-    const bgImage = document.getElementById("bgImage");
-    let current = 0;
-
-    function setActive(index) {
-      document.querySelectorAll(".icon").forEach(i => i.classList.remove("active"));
-      document.querySelectorAll(".icon")[index].classList.add("active");
-      leftText.innerHTML = `<h2>${data[index].title}</h2><p>${data[index].desc}</p><a href='#' class='glass-btn'>Read More</a>`;
-      bgImage.setAttribute("href", data[index].bg);
-      current = index;
+<script>
+  const randdSlides = [
+    {
+      img: "img/bannerabout.webp",
+      title: "Smart Pole",
+      desc: "A next-generation multifunctional pole that integrates EV charging, security cameras, public Wi-Fi, SOS alerts, LED displays, and environmental sensors — delivering safer, smarter, and more connected urban spaces.",
+      moreHref: "brands/art-lighting.html"
+    },
+    {
+      img: "img/carousel-1.webp",
+      title: "Smart Conference Table",
+      desc: "A technology-enabled conference table designed for modern workplaces, featuring built-in wireless charging, interactive touchscreens, advanced AV controls, and seamless device connectivity — empowering productive meetings and effortless collaboration.",
+      moreHref: "brands/minimal-series.html"
+    },
+    {
+      img: "img/bannerabout.webp",
+      title: "Smart Bollard",
+      desc: "Intelligent retractable or fixed bollards equipped with integrated lighting, traffic management, and surveillance capabilities — enhancing urban safety, streamlining vehicle access control, and supporting efficient crowd management.",
+      moreHref: "brands/performance.html"
+    },
+    {
+      img: "img/bannerabout.webp",
+      title: "Smart Bar Counter",
+      desc: "Digitally controlled counters featuring embedded displays, dynamic LED lighting, integrated cooling units, and IoT connectivity — delivering modern, interactive experiences for hospitality, entertainment, and premium lifestyle venues.",
+      moreHref: "brands/performance.html"
+    },
+     {
+      img: "img/bannerabout.webp",
+      title: "Smart Window Leaf AC",
+      desc: "Compact, energy-efficient air conditioners designed for seamless window integration, equipped with smart controls, air-quality monitoring, and ultra-quiet performance — delivering comfort and sustainability for modern urban living.",
+      moreHref: "brands/performance.html"
     }
+  ];
 
-    icons.forEach((icon, i) => { icon.addEventListener("click", () => setActive(i)); });
+  const imgEl   = document.getElementById('randd-heroImg');
+  const titleEl = document.getElementById('randd-slideTitle');
+  const descEl  = document.getElementById('randd-slideDesc');
+  const moreEl  = document.getElementById('randd-moreLink');
+  const prevBtn = document.getElementById('randd-prevBtn');
+  const nextBtn = document.getElementById('randd-nextBtn');
 
-    // Mobile icons bar
-    const mobileBar = document.querySelector(".mobile-icons");
-    data.forEach((d, i) => {
-      const icon = document.createElement("div");
-      icon.className = "icon";
-      icon.textContent = d.icon;
-      icon.dataset.index = i;
-      icon.addEventListener("click", () => setActive(i));
-      mobileBar.appendChild(icon);
-    });
+  let index = 0;
+  let timer = null;
+  const INTERVAL = 6000;
 
-    setInterval(() => { let next = (current + 1) % data.length; setActive(next); }, 5000);
-    setActive(0);
-  </script>
+  function render(i){
+    const s = randdSlides[i];
+    imgEl.classList.remove('show');
+    setTimeout(()=>{
+      imgEl.src = s.img;
+      imgEl.alt = s.title;
+      titleEl.textContent = s.title;
+      descEl.textContent  = s.desc;
+      moreEl.href = s.moreHref;
+      requestAnimationFrame(()=>imgEl.classList.add('show'));
+    }, 220);
+  }
+
+  function next(){
+    index = (index + 1) % randdSlides.length;
+    render(index);
+  }
+  function prev(){
+    index = (index - 1 + randdSlides.length) % randdSlides.length;
+    render(index);
+  }
+
+  function startAuto(){
+    stopAuto();
+    timer = setInterval(next, INTERVAL);
+  }
+  function stopAuto(){
+    if(timer) clearInterval(timer);
+    timer = null;
+  }
+
+  nextBtn.addEventListener('click', ()=>{ next(); startAuto(); });
+  prevBtn.addEventListener('click', ()=>{ prev(); startAuto(); });
+
+  document.querySelector('.randd-hover-area').addEventListener('mouseenter', stopAuto);
+  document.querySelector('.randd-hover-area').addEventListener('mouseleave', startAuto);
+  document.querySelector('.randd-text-col').addEventListener('mouseenter', stopAuto);
+  document.querySelector('.randd-text-col').addEventListener('mouseleave', startAuto);
+
+  render(index);
+  startAuto();
+</script>
 </body>
 </html>
