@@ -592,6 +592,10 @@
 
 <!-- POWER START -->
 <!-- ✅ Light Solutions Section Snippet (Mobile Top Text & Shorter Image) -->
+
+
+
+<!-- POWER START -->
 <section class="heros" aria-label="Light Solutions">
   <div class="hero__bg" aria-hidden="true">
     <img src="img/application/appli (1).webp" alt="" class="bg-img active" data-key="indoor">
@@ -601,16 +605,14 @@
   </div>
 
   <div class="hero__overlay">
-    <p class="eyebrow">LIGHT SOLUTIONS</p>
     <ul class="menu" role="tablist" aria-label="Light Solution Categories">
-      <li class="active" data-key="indoor">Transmission <span class="cta"><span class="dot"></span> POWER</span></li>
-      <li data-key="outdoor">Distribution <span class="cta"><span class="dot"></span> POWER</span></li>
-      <li data-key="immersion">Low & High Tention <span class="cta"><span class="dot"></span> POWER</span></li>
-      <li data-key="linear">Panel Board <span class="cta"><span class="dot"></span> POWER</span></li>
+      <li class="active" data-key="indoor">Transmission <span class="cta"></li>
+      <li data-key="outdoor">Distribution <span class="cta"></li>
+      <li data-key="immersion">Low & High Tention <span class="cta"></li>
+      <li data-key="linear">Panel Board <span class="cta"></li>
     </ul>
   </div>
 </section>
-
 <style>
   .heros{
     position:relative;
@@ -620,25 +622,24 @@
     background:radial-gradient(1200px 1200px at 85% 10%, #1c2a33 0%, #0c1114 55%);
     font-family:"Poppins",sans-serif;
   }
-  .hero__bg{position:absolute; inset:0; overflow:hidden; z-index:0;}
-  .hero__bg img{
+  .heros .hero__bg{position:absolute; inset:0; overflow:hidden; z-index:0;}
+  .heros .hero__bg img{
     position:absolute; inset:0;
     width:100%; height:100%; object-fit:cover;
     opacity:0; transform:scale(1.08) translateY(0);
     transition:opacity 700ms ease, transform 6000ms ease;
   }
-  .hero__bg img.active{opacity:1; transform:scale(1.02) translateY(-2%);}
-  .hero__overlay{position:absolute; left:min(6vw, 80px); top:50%; transform:translateY(-50%); z-index:2;}
-  .eyebrow{font-size:.85rem; letter-spacing:.18em; color:#b9c6cf; margin-bottom:12px;}
-  .menu{list-style:none;}
-  .menu li{
+  .heros .hero__bg img.active{opacity:1; transform:scale(1.02) translateY(-2%);}
+  .heros .hero__overlay{position:absolute; left:min(6vw, 80px); top:50%; transform:translateY(-50%); z-index:2;}
+  .heros .menu{list-style:none;}
+  .heros .menu li{
     cursor:pointer; margin:14px 0;
     color:#8fa1ad; font-weight:700;
     font-size:clamp(2rem, 2.5rem + 2vw, 5rem);
     transition:.3s;
   }
-  .menu li.active{color:#fff;}
-  .menu li .cta{font-size:.8rem; font-weight:600; opacity:.8;}
+  .heros .menu li.active{color:#fff;}
+  .heros .menu li .cta{font-size:.8rem; font-weight:600; opacity:.8;}
   .dot{width:.5em; height:.5em; border-radius:50%; background:#e7edf1; display:inline-block; margin-right:.4em;}
   .heros::before{
     content:""; position:absolute; inset:0;
@@ -649,41 +650,40 @@
   /* 📱 Mobile view adjustments */
   @media (max-width: 768px){
     .heros{height:auto; min-height:70vh;}
-    .hero__bg img{height:60vh;}   /* background image shorter */
-    .hero__overlay{
+    .heros .hero__bg img{height:60vh;}   /* background image shorter */
+    .heros .hero__overlay{
       position:relative;
       top:0; left:0;
       transform:none;
       padding:20px;
       text-align:left;
     }
-    .menu li{font-size:1.6rem; margin:10px 0;}
-    .eyebrow{font-size:.75rem;}
+    .heros .menu li{font-size:1.6rem; margin:10px 0;}
   }
 
   /* 📱 Tablet + Mobile view adjustments (iPad too) */
-@media (max-width: 1024px){
-  .heros{height:auto; min-height:70vh;}
-  .hero__bg img{height:60vh;}   /* background image shorter */
-  .hero__overlay{
-    position:relative;
-    top:0; left:0;
-    transform:none;
-    padding:20px;
-    text-align:left;
+  @media (max-width: 1024px){
+    .heros{height:auto; min-height:70vh;}
+    .heros .hero__bg img{height:60vh;}
+    .heros .hero__overlay{
+      position:relative;
+      top:0; left:0;
+      transform:none;
+      padding:20px;
+      text-align:left;
+    }
+    .heros .menu li{font-size:1.6rem; margin:10px 0;}
   }
-  .menu li{font-size:1.6rem; margin:10px 0;}
-  .eyebrow{font-size:.75rem;}
-}
-
 </style>
-
 <script>
-  function setActive(key){
-    document.querySelectorAll('.menu li').forEach(li=>{
+  function setActivePower(key){
+    const hero = document.querySelector('.heros');
+
+    hero.querySelectorAll('.menu li').forEach(li=>{
       li.classList.toggle('active', li.dataset.key === key);
     });
-    document.querySelectorAll('.hero__bg img').forEach(img=>{
+
+    hero.querySelectorAll('.hero__bg img').forEach(img=>{
       const isActive = img.dataset.key === key;
       img.classList.toggle('active', isActive);
       if(isActive){
@@ -696,29 +696,181 @@
   }
 
   // 👉 Support both hover (desktop) + click (mobile)
-  const isTouch = matchMedia('(hover: none)').matches;
-
-// 👉 Support both hover (desktop) + click/tap (mobile & iPad)
-document.querySelectorAll('.menu li').forEach(li=>{
-  const key = li.dataset.key;
-
-  li.addEventListener('click', ()=> setActive(key));      // Always support click/tap
-  li.addEventListener('mouseenter', ()=> setActive(key)); // Desktop hover
-  li.addEventListener('focus', ()=> setActive(key));      // Keyboard/tab focus
-});
-
+  document.querySelectorAll('.heros .menu li').forEach(li=>{
+    const key = li.dataset.key;
+    li.addEventListener('click', ()=> setActivePower(key));      
+    li.addEventListener('mouseenter', ()=> setActivePower(key)); 
+    li.addEventListener('focus', ()=> setActivePower(key));      
+  });
 </script>
-
 <!-- POWER END -->
 
 
 
+
+
 <!-- ENERGY GENERATION STAR -->
+  <div class="energygenss">
+    <div class="energygenss-item" style="background-image: url('img/application/appli (2).webp');">
+      <span>Mountain View</span>
+    </div>
+    <div class="energygenss-item" style="background-image: url('img/application/appli (3).webp');">
+      <span>Forest</span>
+    </div>
+    <div class="energygenss-item" style="background-image: url('img/application/appli (4).webp');">
+      <span>Lake</span>
+    </div>
+    <div class="energygenss-item" style="background-image: url('img/segmentimgs/commercial-auto.webp');">
+      <span>Desert</span>
+    </div>
+    <div class="energygenss-item" style="background-image: url('img/segmentimgs/iot-auto.webp');">
+      <span>Beach</span>
+    </div>
+    <div class="energygenss-item" style="background-image: url('img/segmentimgs/lights1 (9).webp');">
+      <span>Snow</span>
+    </div>
+    <div class="energygenss-item" style="background-image: url('img/bannerabout.webp');">
+      <span>Valley</span>
+    </div>
+    <div class="energygenss-item" style="background-image: url('https://picsum.photos/id/1056/600/400');">
+      <span>River</span>
+    </div>
+  </div>
+  <script>
+    const items = document.querySelectorAll('.energygenss-item');
+    let currentIndex = 0;
+    const intervalTime = 4000;
 
+    function activateItem(index) {
+      items.forEach((item, i) => {
+        item.classList.remove('active');
+        if (i === index) item.classList.add('active');
+      });
+    }
+
+    // Desktop auto-slide
+    function startAutoSlide() {
+      return setInterval(() => {
+        currentIndex = (currentIndex + 1) % items.length;
+        activateItem(currentIndex);
+      }, intervalTime);
+    }
+
+    let autoSlide = startAutoSlide();
+
+    // Click control
+    items.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        currentIndex = index;
+        activateItem(currentIndex);
+
+        if (window.innerWidth > 768) {
+          clearInterval(autoSlide);
+          autoSlide = startAutoSlide();
+        }
+      });
+    });
+
+    // Mobile → disable auto-slide
+    function checkMobile() {
+      if (window.innerWidth <= 768) {
+        clearInterval(autoSlide);
+      }
+    }
+
+    window.addEventListener('resize', checkMobile);
+    checkMobile();
+
+    // Start with first active
+    activateItem(currentIndex);
+  </script>
+  <style>
+
+
+    .energygenss {
+      display: flex;
+      width: 95%;
+      max-width: 1200px;
+      height: 420px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(0,0,0,0.7);
+      
+
+    }
+
+    .energygenss-item {
+      flex: 1; /* smaller default */
+      min-width: 40px;
+      background-size: cover;
+      background-position: center;
+      transition: flex 0.6s ease, filter 0.6s ease, transform 0.6s ease, height 0.6s ease;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      filter: grayscale(100%) brightness(0.7);
+    }
+
+    .energygenss-item::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.25);
+      transition: background 0.4s ease;
+    }
+
+    .energygenss-item span {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      z-index: 2;
+    }
+
+    .energygenss-item.active {
+      flex: 7; /* big main image */
+      filter: grayscale(0%) brightness(1);
+      transform: scale(1.02);
+    }
+
+    .energygenss-item.active::after {
+      background: rgba(0,0,0,0.05);
+    }
+
+    .energygenss-item.active span {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile accordion style */
+    @media (max-width: 768px) {
+      .energygenss {
+        flex-direction: column;
+        height: auto;
+      }
+      .energygenss-item {
+        flex: none;
+        width: 100%;
+        height: 70px; /* collapsed smaller */
+        overflow: hidden;
+      }
+      .energygenss-item.active {
+        height: 280px; /* expanded bigger */
+        flex: none;
+        transform: none;
+      }
+      .energygenss-item span {
+        font-size: 18px;
+      }
+    }
+  </style>
 <!-- ENERGY GENERATION END -->
-
-
-
 
 
 <!-- LIGHTING START -->
@@ -1060,7 +1212,6 @@ startAuto();
       </div>
     </div>
   </div>
-
   <script>
     const autoiotItems = [
       {
@@ -1256,6 +1407,8 @@ startAuto();
     }
   </style>
 <!-- AUTOMATION END -->
+
+
 
 
 <!-- R&D -->
@@ -1531,6 +1684,7 @@ startAuto();
 <!-- R&D -->
 
 
+
 <!-- SMART CITY START -->
 <section class="smartcity-slider">
   <div class="sc-slide">
@@ -1562,7 +1716,6 @@ startAuto();
     </div>
   </div>
 </section>
-
 <script>
 const scSlides = [
   {
@@ -1632,7 +1785,6 @@ function scPrev(){ scShow(scIndex-1); }
 setInterval(()=> scNext(), 5000);
 scAnimateProgress();
 </script>
-
 <style>
   /* Custom Theme Colors */
   :root{
