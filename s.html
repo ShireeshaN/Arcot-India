@@ -3,221 +3,221 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Featured Own Brands</title>
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
+  <title>Outdoor lighting</title>
   <style>
-    body {
-      background: #f5f5f5;
-      color: #111;
+     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-    }
-
-    /* Content box */
-    .content-box {
-      padding-left: 50px; /* pushes text further left compared to image */
-    }
-
-    .hero-heading {
-      font-size: 2.8rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .hero-tagline {
-      font-size: 1.2rem;
-      color: #555;
-      margin-bottom: 15px;
-    }
-
-    .divider {
-      width: 60px;
-      height: 3px;
-      background: #333;
-      margin-bottom: 20px;
-    }
-
-    .hero-subheading {
-      font-size: 1.6rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .hero-desc {
-      font-size: 1rem;
-      color: #444;
-      margin-bottom: 20px;
-      max-width: 90%;
-    }
-
-    .hero-more {
-      text-decoration: none;
-      font-weight: bold;
-      color: #111;
-      border-bottom: 2px solid #333;
-      padding-bottom: 3px;
-      transition: 0.3s;
-    }
-
-    .hero-more:hover {
-      color: #555;
-      border-color: #555;
-    }
-
-    .nav-btn {
       background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
-      transition: 0.3s;
+      color: #111;
     }
-
-    .nav-btn:hover {
-      background: #eee;
+    .section {
+      max-width: 1000px; /* page middle lo compact */
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
     }
-
-    /* Image */
-    .image-wrapper {
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
+    .section h1 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 25px;
+      text-align: left; 
     }
-
-    .hero-img {
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px; /* tight gap */
+      align-items: start;
+    }
+    .col img {
       width: 100%;
-      height: 80vh; /* bigger image */
+      display: block;
       object-fit: cover;
-      animation: kenburns 14s ease-in-out infinite;
-      opacity: 0;
-      transition: opacity .7s ease;
+      transition: transform 0.5s ease;
+      
     }
-
-    .hero-img.active {
-      opacity: 1;
+    .col img:hover {
+  transform: scale(1.05); /* zoom in effect */
+}
+    .col1 img {
+      height: 420px; /* tall but reduced */
     }
-
-    @keyframes kenburns {
-      0%   {transform: scale(1.05);}
-      50%  {transform: scale(1.1);}
-      100% {transform: scale(1.05);}
+    .col2 img,
+    .col3 img {
+      height: 280px; /* smaller images */
     }
+    .content {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .title {
+      font-size: 30px;
+      font-weight: 800;
+      margin: 0 0 15px;
+      line-height: 1.2;
+    }
+    .desc {
+      font-size: 18px;
+      color: #333;
+      margin: 0;
+      line-height: 1.4;
+    }
+    .readmore {
+      display: inline-block;
+      margin-top: 25px;
+      font-weight: 600;
+      font-size: 15px;
+      color: #111;
+      text-decoration: none;
+      /* border-bottom: 1px solid ; */
+      padding-bottom: 2px;
+    }
+    .readmore:hover {
+      background-color: #94908f;
+      padding: 10px;
+      
+    }
+ 
 
-    /* Mobile */
-    @media (max-width: 991.98px){
-      .content-box {padding-left: 20px; text-align: center;}
-      .hero-img {height: 60vh;}
-      .hero-heading {font-size: 2rem;}
+    /* responsive */
+    @media(max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .col1 img {
+        height: 300px;
+      }
+      .col2 img,
+      .col3 img {
+        height: 200px;
+      }
     }
   </style>
 </head>
 <body>
 
-<div class="container-fluid py-5">
-  <div class="row align-items-center">
-    
-    <!-- Text -->
-    <div class="col-lg-5 col-md-12 content-box" id="slideText">
-      <h1 class="hero-heading">Featured Own Brands</h1>
-      <p class="hero-tagline">Showcasing our research & developed products</p>
-      <div class="divider"></div>
-      <h3 class="hero-subheading" id="subHeading">Home Automation</h3>
-      <p class="hero-desc" id="desc">
-        Control lighting, temperature, and security systems for residential intelligence.
-      </p>
-      <a href="#" class="hero-more">+ more</a>
-      <div class="mt-4 d-flex gap-3">
-        <button class="nav-btn prev"><i class="fas fa-arrow-left"></i></button>
-        <button class="nav-btn next"><i class="fas fa-arrow-right"></i></button>
+  <section class="section">
+    <h1>Outdoor lighting – Tips and inspiration</h1>
+    <div class="grid">
+      
+      <!-- Column 1 -->
+      <div class="col col1">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800" alt="">
       </div>
-    </div>
-
-    <!-- Image -->
-    <div class="col-lg-7 col-md-12">
-      <div class="image-wrapper">
-        <img src="img/carousel-1.webp" alt="Slide" class="hero-img active" id="slideImage">
+      
+      <!-- Column 2 -->
+      <div class="col col2">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800" alt="">
+        <div class="content">
+          <h2 class="title">Extend the<br> garden season</h2>
+          <p class="desc">Outdoor lighting provides a<br> welcoming impression and a <br>greater sense of security!</p>
+        </div>
       </div>
+      
+      <!-- Column 3 -->
+      <div class="col col3">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800" alt="">
+        <div class="content">
+          <h2 class="title">Choose facade lighting</h2>
+          <p class="desc">This is what you should<br> consider!...</p>
+          <a href="#" class="readmore">READ MORE</a>
+        </div>
+      </div>
+
     </div>
-
-  </div>
-</div>
-
-<!-- JS -->
-<script>
-  const slides = [
-    {
-      img: "img/carousel-1.webp",
-      heading: "Home Automation",
-      desc: "Control lighting, temperature, and security systems for residential intelligence."
-    },
-    {
-      img: "img/bannerabout.webp",
-      heading: "Commercial Automation",
-      desc: "High-performance office environments for intelligent control and energy efficiency."
-    },
-    {
-      img: "img/carousel-1.webp",
-      heading: "Industrial Automation",
-      desc: "Boost productivity and safety with next-gen Industry 4.0 automation."
-    },
-    {
-      img: "img/bannerabout.webp",
-      heading: "Hospital Automation",
-      desc: "Smart hospital facility management for safety and operational efficiency."
-    },
-    {
-      img: "img/carousel-1.webp",
-      heading: "IoT Automation",
-      desc: "Connect devices and data to create a complete intelligent ecosystem."
-    },
-    {
-      img: "img/bannerabout.webp",
-      heading: "Hotel Automation",
-      desc: "Deliver seamless and personalized experiences for guests."
-    }
-  ];
-
-  let currentIndex = 0;
-  const imageEl = document.getElementById("slideImage");
-  const subHeading = document.getElementById("subHeading");
-  const desc = document.getElementById("desc");
-  const textBox = document.getElementById("slideText");
-
-  function showSlide(index){
-    const slide = slides[index];
-    imageEl.classList.remove("active");
-
-    setTimeout(()=>{
-      imageEl.src = slide.img;
-      subHeading.textContent = slide.heading;
-      desc.textContent = slide.desc;
-      imageEl.classList.add("active");
-    },400);
-  }
-
-  document.querySelector(".prev").addEventListener("click", ()=>{
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    showSlide(currentIndex);
-  });
-
-  document.querySelector(".next").addEventListener("click", ()=>{
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
-  });
-
-  // Auto change
-  setInterval(()=>{
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
-  }, 6000);
-</script>
+  </section>
 
 </body>
 </html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotlight Section</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #aaa9a9; /* screenshot lo unna grey bg */
+      font-family: Arial, sans-serif;
+    }
+    .product-img {
+      width: 100%;
+      height: 300px;
+      transition: transform 0.4s ease-in-out;
+      overflow: hidden;
+    }
+    .product-img:hover {
+ transform: scale(1.1);       /* hand icon vastundi */
+}
+    .caption-btn {
+      background-color: #1a1b1a; /* darker grey button */
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      margin-top: 10px;
+      display: block;
+      text-transform: uppercase;
+    }
+    .text-block h2 {
+      font-weight: bold;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+    .text-block p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid py-5">
+    <div class="row align-items-start">
+      
+      <!-- Left Image + Caption -->
+      <div class="col-md-3 text-center">
+        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
+        <div class="caption-btn">SPOTLIGHT GARDEN</div>
+      </div>
+
+      <!-- Text Block -->
+      <div class="col-md-3 text-block">
+        <h2>Create effectual garden lighting with spotlights</h2>
+        <p>
+          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
+          and trees, for example. You also use lighting to create different spaces in the garden or 
+          to illuminate the facade.
+        </p>
+        <p>
+          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
+          Available in different sizes and design with different light distribution. LED floodlights are 
+          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
+          install and require minimal maintenance, making them a practical choice for enhancing the 
+          aesthetics of your outdoor lighting.
+        </p>
+      </div>
+
+      <!-- Right Images + Captions -->
+      <div class="col-md-3">
+        <div class="mb-4 text-start">
+          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
+          <div class="caption-btn">SPOT IT MULTI 1</div>
+        </div>
+        </div>
+        <div class="col-md-3">
+        <div class="text-start">
+          <img src="img/application/73.webp" alt="Spot It Multi 3" class="product-img">
+          <div class="caption-btn">SPOT IT MULTI 3</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
+
