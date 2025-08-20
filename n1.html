@@ -3,183 +3,224 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Classic Black & White Accordion</title>
+  <title>Navigation</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background: #111;
+      margin: 0;
       font-family: Arial, sans-serif;
+      background: #fff;
     }
 
-    .energygenss {
+    /* Main nav */
+    .main-nav {
+      background: #f2f2f2; /* ash grey */
       display: flex;
-      width: 95%;
-      max-width: 1200px;
-      height: 420px;
-      overflow: hidden;
-      box-shadow: 0 0 30px rgba(0,0,0,0.7);
-
+      gap: 25px;
+      padding: 12px 20px;
+      flex-wrap: wrap;
     }
 
-    .energygenss-item {
-      flex: 1; /* smaller default */
-      min-width: 40px;
-      background-size: cover;
-      background-position: center;
-      transition: flex 0.6s ease, filter 0.6s ease, transform 0.6s ease, height 0.6s ease;
+    .main-nav a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 600;
+      font-size: 15px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
       cursor: pointer;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    }
+
+    .main-nav a:hover {
+      color: #555;
+      text-decoration: underline;
+    }
+
+    .main-nav a.active {
+      color: #555;
+      text-decoration: underline;
+    }
+
+    /* Submenu container (black bar) */
+    .submenu-container {
+      background: #222;
+      padding: 12px 20px;
+      display: none;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .submenu-container a {
       color: #fff;
-      filter: grayscale(100%) brightness(0.7);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
     }
 
-    .energygenss-item::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.25);
-      transition: background 0.4s ease;
+    .submenu-container a:hover {
+      color: #bbb;
     }
 
-    .energygenss-item span {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      font-size: 22px;
+    /* Mobile */
+    .menu-toggle {
+      display: none;
+      background: #f2f2f2;
+      padding: 12px 20px;
+      border: none;
       font-weight: bold;
-      opacity: 0;
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      z-index: 2;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
     }
 
-    .energygenss-item.active {
-      flex: 7; /* big main image */
-      filter: grayscale(0%) brightness(1);
-      transform: scale(1.02);
-    }
-
-    .energygenss-item.active::after {
-      background: rgba(0,0,0,0.05);
-    }
-
-    .energygenss-item.active span {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Mobile accordion style */
     @media (max-width: 768px) {
-      .energygenss {
+      .main-nav {
+        display: none;
         flex-direction: column;
-        height: auto;
+        gap: 15px;
       }
-      .energygenss-item {
-        flex: none;
-        width: 100%;
-        height: 70px; /* collapsed smaller */
-        overflow: hidden;
+
+      .submenu-container {
+        flex-direction: column;
       }
-      .energygenss-item.active {
-        height: 280px; /* expanded bigger */
-        flex: none;
-        transform: none;
+
+      .menu-toggle {
+        display: block;
       }
-      .energygenss-item span {
-        font-size: 18px;
+
+      .main-nav.show {
+        display: flex;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="energygenss">
-    <div class="energygenss-item" style="background-image: url('img/application/appli (2).webp');">
-      <span>Mountain View</span>
-    </div>
-    <div class="energygenss-item" style="background-image: url('img/application/appli (3).webp');">
-      <span>Forest</span>
-    </div>
-    <div class="energygenss-item" style="background-image: url('img/application/appli (4).webp');">
-      <span>Lake</span>
-    </div>
-    <div class="energygenss-item" style="background-image: url('img/segmentimgs/commercial-auto.webp');">
-      <span>Desert</span>
-    </div>
-    <div class="energygenss-item" style="background-image: url('img/segmentimgs/iot-auto.webp');">
-      <span>Beach</span>
-    </div>
-    <div class="energygenss-item" style="background-image: url('img/segmentimgs/lights1 (9).webp');">
-      <span>Snow</span>
-    </div>
-    <div class="energygenss-item" style="background-image: url('img/bannerabout.webp');">
-      <span>Valley</span>
-    </div>
-    <div class="energygenss-item" style="background-image: url('https://picsum.photos/id/1056/600/400');">
-      <span>River</span>
-    </div>
-  </div>
+  <!-- Mobile toggle -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+
+  <!-- Main Navigation -->
+  <nav class="main-nav" id="mainNav">
+    <a href="#" data-submenu="cases">Cases</a>
+    <a href="#" class="active" data-submenu="home">Lighting for Home</a>
+    <a href="#" data-submenu="industrial">Industrial Lighting</a>
+    <a href="#" data-submenu="commercial">Commercial Lighting</a>
+    <a href="#" data-submenu="outdoor">Outdoor Lighting</a>
+    <a href="#" data-submenu="catalogues">Catalogues</a>
+  </nav>
+
+  <!-- Submenu Bar -->
+  <div class="submenu-container" id="submenu"></div>
 
   <script>
-    const items = document.querySelectorAll('.energygenss-item');
-    let currentIndex = 0;
-    const intervalTime = 4000;
+    // Submenu data
+    const submenus = {
+      home: [
+        { text: "Living Room Lighting", link: "#" },
+        { text: "Kitchen Lighting", link: "#" },
+        { text: "Bedroom Lighting", link: "#" },
+        { text: "Bathroom Lighting", link: "#" },
+        { text: "Entrance Lighting", link: "#" }
+      ],
+      industrial: [
+        { text: "Factory Lighting", link: "#" },
+        { text: "Warehouse Lighting", link: "#" },
+        { text: "Workshop Lighting", link: "#" },
+        { text: "Cold Storage Lighting", link: "#" },
+        { text: "Hazardous Area Lighting", link: "#" },
+        { text: "Parking & Utility Lighting", link: "#" },
+        { text: "Energy-Efficient LED", link: "#" }
+      ],
+      commercial: [
+        { text: "Office", link: "#" },
+        { text: "Retail & Showroom Lighting", link: "#" },
+        { text: "Healthcare Lighting", link: "#" },
+        { text: "Educational Lighting", link: "#" },
+        { text: "Entertainment & Theatres", link: "#" },
+        { text: "Airport & Transport Hubs", link: "#" },
+        { text: "Hotel Lighting", link: "#" }
+      ],
+      outdoor: [
+        { text: "Garden & Landscape", link: "#" },
+        { text: "Facade & Architectural", link: "#" },
+        { text: "Outdoor Home Lighting", link: "#" },
+        { text: "Parking Lot Lighting", link: "#" },
+        { text: "Campus & Institutional", link: "#" },
+        { text: "Resort & Hospitality", link: "#" },
+        { text: "Security & Flood Lighting", link: "#" },
+        { text: "Sports Ground Lighting", link: "#" }
+      ]
+    };
 
-    function activateItem(index) {
-      items.forEach((item, i) => {
-        item.classList.remove('active');
-        if (i === index) item.classList.add('active');
+    const mainLinks = document.querySelectorAll(".main-nav a");
+    const submenuContainer = document.getElementById("submenu");
+
+    let activeKey = "home"; // default active
+    let hoverKey = null;    // temporary hover key
+
+    // Function to render submenu
+    function renderSubmenu(items) {
+      submenuContainer.innerHTML = "";
+      if (!items) {
+        submenuContainer.style.display = "none";
+        return;
+      }
+      items.forEach(item => {
+        const a = document.createElement("a");
+        a.href = item.link;
+        a.textContent = item.text;
+        submenuContainer.appendChild(a);
       });
+      submenuContainer.style.display = "flex";
     }
 
-    // Desktop auto-slide
-    function startAutoSlide() {
-      return setInterval(() => {
-        currentIndex = (currentIndex + 1) % items.length;
-        activateItem(currentIndex);
-      }, intervalTime);
-    }
+    // Show default (active) submenu
+    renderSubmenu(submenus[activeKey]);
 
-    let autoSlide = startAutoSlide();
+    // Hover effect
+    mainLinks.forEach(link => {
+      const key = link.dataset.submenu;
 
-    // Click control
-    items.forEach((item, index) => {
-      item.addEventListener('click', () => {
-        currentIndex = index;
-        activateItem(currentIndex);
-
-        if (window.innerWidth > 768) {
-          clearInterval(autoSlide);
-          autoSlide = startAutoSlide();
+      link.addEventListener("mouseenter", () => {
+        if (submenus[key]) {
+          hoverKey = key;
+          renderSubmenu(submenus[key]);
         }
+      });
+
+      link.addEventListener("mouseleave", () => {
+        // If submenu itself is not hovered, restore active
+        setTimeout(() => {
+          if (!submenuContainer.matches(":hover")) {
+            hoverKey = null;
+            renderSubmenu(submenus[activeKey]);
+          }
+        }, 100);
+      });
+
+      // Click → set permanent active
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        mainLinks.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+        activeKey = key;
+        hoverKey = null;
+        renderSubmenu(submenus[activeKey]);
       });
     });
 
-    // Mobile → disable auto-slide
-    function checkMobile() {
-      if (window.innerWidth <= 768) {
-        clearInterval(autoSlide);
-      }
+    // When leaving submenu → restore active
+    submenuContainer.addEventListener("mouseleave", () => {
+      hoverKey = null;
+      renderSubmenu(submenus[activeKey]);
+    });
+
+    // Mobile menu toggle
+    function toggleMenu() {
+      document.getElementById("mainNav").classList.toggle("show");
     }
-
-    window.addEventListener('resize', checkMobile);
-    checkMobile();
-
-    // Start with first active
-    activateItem(currentIndex);
   </script>
-
 </body>
 </html>

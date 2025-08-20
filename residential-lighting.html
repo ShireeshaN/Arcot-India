@@ -143,7 +143,7 @@
         <!-- Header Start -->
         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
-                <h1 class="text-white display-6 mb-4 wow fadeInDown" data-wow-delay="0.1s">Residential Lighting</h1>
+                <h1 class="text-white display-6 mb-4 wow fadeInDown" data-wow-delay="0.1s">Residential/Home Lighting</h1>
                 <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                     <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> -->
                   
@@ -153,686 +153,128 @@
         <!-- Header End -->
 
 
-         <style>
-     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #111;
-    }
-    .section {
-      max-width: 1000px; /* page middle lo compact */
-      margin: 40px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-    .section h1 {
-      font-size: 28px;
-      font-weight: 800;
-      margin-bottom: 25px;
-      text-align: left; 
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px; /* tight gap */
-      align-items: start;
-    }
-    .col img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-      
-    }
-    .col img:hover {
-  transform: scale(1.05); /* zoom in effect */
-}
-    .col1 img {
-      height: 420px; /* tall but reduced */
-    }
-    .col2 img,
-    .col3 img {
-      height: 280px; /* smaller images */
-    }
-    .content {
-      text-align: center;
-      margin-top: 40px;
-    }
-    .title {
-      font-size: 30px;
-      font-weight: 800;
-      margin: 0 0 15px;
-      line-height: 1.2;
-    }
-    .desc {
-      font-size: 18px;
-      color: #333;
-      margin: 0;
-      line-height: 1.4;
-    }
-    .readmore {
-      display: inline-block;
-      margin-top: 25px;
-      font-weight: 600;
-      font-size: 15px;
-      color: #111;
-      text-decoration: none;
-      /* border-bottom: 1px solid ; */
-      padding: 10px;
-    }
-    .readmore:hover {
-      background-color: #b3b0b0;
-      padding: 10px;
-      
-    }
- 
 
-    /* responsive */
-    @media(max-width: 900px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-      .col1 img {
-        height: 300px;
-      }
-      .col2 img,
-      .col3 img {
-        height: 200px;
-      }
+  <style>
+    * { margin: 0; 
+        padding: 0; 
+        box-sizing: border-box; 
     }
+ body { font-family: 'Jost', sans-serif; 
+ background: #fff; 
+ color: #333; }
 
-
-
-
-
-
-
-        .product-img {
-      width: 100%;
-      height: 300px;
-      transition: transform 0.4s ease-in-out;
-      overflow: hidden;
-    }
-    .product-img:hover {
- transform: scale(1.1);       /* hand icon vastundi */
-}
-    .caption-btn {
-      background-color: #1a1b1a; /* darker grey button */
-      color: #fff;
+     /* Left side heading */
+    .section-title {
+      font-size: 36px;
       font-weight: bold;
-      text-align: center;
-      padding: 10px;
-      margin-top: 10px;
-      display: block;
-      text-transform: uppercase;
-    }
-    .text-block h2 {
-      font-weight: bold;
-      font-size: 1.6rem;
-      margin-bottom: 20px;
-    }
-    .text-block p {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-
-
-
-
-        .card-custom {
-      position: relative;
-      overflow: hidden;
-      
-      height: 400px;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .card-custom img {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-    .card-custom:hover img {
-      transform: scale(1.1); /* zoom effect */
-    }
-    .overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.35); /* dark overlay */
-    }
-    .card-content {
-      position: relative;
-      z-index: 2;
-      padding: 20px;
-    }
-    .card-content h3 {
-      font-weight: bold;
-      font-size: 1.6rem;
-    }
-    .card-content p {
-      margin: 5px 0 20px;
-      font-size: 1rem;
-    }
-    .btn-custom {
-      background: #fff;
+      line-height: 1.1;
+      margin-bottom: 30px;
       color: #000;
-      font-weight: bold;
-      padding: 8px 18px;
-      border: none;
-      
-      text-transform: uppercase;
-    }
-    .btn-custom:hover {
-      background: #000;
-      color: #fff;
-      transition: 0.3s ease;
     }
 
+    /* Each block */
+    .lighting-block {
+      text-align: center; 
+    }
 
-
-
-
-     .image-box img {
+    .lighting-block img {
       width: 100%;
-      max-width: 400px;
-      
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: transform 0.5s ease;
+      height: auto;
+      display: block;
+      margin-bottom: 8px; /* Image & text madhya gap takkuva */
+      transition: transform 0.4s ease;
     }
 
-    .image-box img:hover {
+    .lighting-block:hover img {
       transform: scale(1.03);
     }
-    
 
-
- 
-
-        .products-section {
-      padding: 50px 20px;
-    }
-
-    .products-section h2 {
-      font-weight: 700;
-      font-size: 1.5rem;
-      margin-bottom: 30px;
-    }
-
-    .product-card {
-      background: #f9f9f9;
-      border: none;
-      text-align: left;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-       border-radius: 0px;
-    }
-
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .product-card img {
-      width: 100%;
-     
-      
-    }
-
-    .product-title {
-      font-weight: bold;
-      font-size: 0.95rem;
-      padding: 10px;
+    /* Small top label (NEWS AUTUMN / TIPS & IDEAS) */
+    .lighting-block h6 {
+      font-size: 12px;
       text-transform: uppercase;
+      margin-bottom: 2px;
+      font-weight: bold;
+      color: #444;
+      letter-spacing: 1px;
+      margin-top: 60px;
     }
 
- 
+    /* Title (Optic Track / Outdoor lighting / Hall lighting) */
+    .lighting-block h4 {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
 
+    /* Subtitle / description */
+    .lighting-block p {
+      font-size: 14px;
+      color: #555;
+      margin: 0;
+    }
+
+  
 
 
   </style>
 
- <section class="section">
-    <h1>Residential lighting – Ideas and inspiration</h1>
-    <div class="grid">
-      
-      <!-- Column 1 -->
-      <div class="col col1">
-        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800" alt="">
-      </div>
-      
-      <!-- Column 2 -->
-      <div class="col col2">
-        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800" alt="">
-        <div class="content">
-          <h2 class="title">Enhance <br>Everyday living</h2>
-          <p class="desc">Residential lighting creates a warm, functional, and inviting atmosphere throughout your home!</p>
-        </div>
-      </div>
-      
-      <!-- Column 3 -->
-      <div class="col col3">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800" alt="">
-        <div class="content">
-          <h2 class="title">Choose Residential lighting</h2>
-          <p class="desc">Here’s what makes a house <br>feel like home!...</p>
-          <a href="#" class="readmore">READ MORE</a>
-        </div>
-      </div>
 
+
+<div class="container py-5">
+  <div class="row">
+
+    <!-- Left side title -->
+    <div class="col-lg-2">
+      <h6 class="section-title ">Choose the<br>right lighting<br>for your home</h6>
     </div>
-  </section>
 
+    <!-- Right side blocks -->
+    <div class="col-lg-10">
+      <div class="row g-4">
 
- 
-   <div class="container-fluid py-5 " style="background-color: darkgrey;" >
-    <div class="row align-items-start">
-      
-      <!-- Left Image + Caption -->
-      <div class="col-md-3 text-center">
-        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
-        <div class="caption-btn">SPOTLIGHT GARDEN</div>
-      </div>
-
-      <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
-          install and require minimal maintenance, making them a practical choice for enhancing the 
-          aesthetics of your outdoor lighting.
-        </p>
-      </div>
-
-      <!-- Right Images + Captions -->
-      <div class="col-md-3">
-        <div class="mb-4 text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 1</div>
-        </div>
-        </div>
-        <div class="col-md-3">
-        <div class="text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 3" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 3</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-     <div class="container-fluid py-5 " style="background-color: rgb(247, 245, 245);" >
-    <div class="row align-items-start">
-
-              <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. 
-        </p>
-      </div>
-      
-      <!-- Left Image + Caption -->
-      <div class="col-md-3 text-center">
-        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
-        <div class="caption-btn">SPOTLIGHT GARDEN</div>
-      </div>
-
-
-
-      <!-- Right Images + Captions -->
-      <div class="col-md-3">
-        <div class="mb-4 text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 1</div>
-        </div>
-        </div>
-        <div class="col-md-3">
-        <div class="text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 3" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 3</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-
-
-   <div class="container py-5">
-    <div class="row g-4">
-
-      <!-- Card 1 -->
-      <div class="col-md-4">
-        <div class="card-custom">
-          <img src="img/abouimg/aboutimg1 (2).webp" alt="Downlight 1">
-          <div class="overlay"></div>
-          <div class="card-content">
-            <h3>Larger downlight for eaves</h3>
-            <p>- A welcoming impression</p>
-            <button class="btn-custom">SOLO MINI G2</button>
+        <!-- Block 1 -->
+        <div class="col-md-4">
+          <div class="lighting-block">
+            <img src="img/abouimg/aboutimg1 (5).webp" alt="Optic Track">
+            <h6>NEWS AUTUMN 2024</h6>
+            <h4>Optic Track <br>1-phase</h4>
+            <p>Minimalistic, dimmable track lights</p>
           </div>
         </div>
-      </div>
 
-      <!-- Card 2 -->
-      <div class="col-md-4">
-        <div class="card-custom">
-          <img src="img/abouimg/aboutimg1 (2).webp" alt="Downlight 2">
-          <div class="overlay"></div>
-          <div class="card-content">
-            <h3>Perfect downlights</h3>
-            <p>- Choose a light source based on your own preference and taste</p>
-            <button class="btn-custom">COMFORT QUICK OUTDOOR GU10</button>
+        <!-- Block 2 -->
+        <div class="col-md-4">
+          <div class="lighting-block">
+            <img src="img/abouimg/aboutimg1 (5).webp" alt="Outdoor Lighting">
+            <h6>TIPS & IDEAS</h6>
+            <h4>Outdoor <br>lighting</h4>
+            <p>Illuminate your garden and facade</p>
           </div>
         </div>
-      </div>
 
-      <!-- Card 3 -->
-      <div class="col-md-4">
-        <div class="card-custom">
-          <img src="img/abouimg/aboutimg1 (2).webp" alt="Facade Lighting">
-          <div class="overlay"></div>
-          <div class="card-content">
-            <h3>Choose the right facade lighting</h3>
-            <p>A clean conical design</p>
-            <button class="btn-custom">CONE</button>
+        <!-- Block 3 -->
+        <div class="col-md-4">
+          <div class="lighting-block">
+            <img src="img/abouimg/aboutimg1 (5).webp" alt="Hall Lighting">
+            <h6>TIPS & IDEAS</h6>
+            <h4>Hall <br>lighting</h4>
+            <p>A welcoming light</p>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
   </div>
+</div>
 
 
 
 
-     <div class="container-fluid py-5 " style="background-color: #f2f2f2;" >
-    <div class="row align-items-start">
-      
-      <!-- Left Image + Caption -->
-      <div class="col-md-3 text-center">
-        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
-        <div class="caption-btn">SPOTLIGHT GARDEN</div>
-      </div>
-
-      <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
-          install and require minimal maintenance, making them a practical choice for enhancing the 
-          aesthetics of your outdoor lighting.
-        </p>
-      </div>
-
-      <!-- Right Images + Captions -->
-      <div class="col-md-3">
-        <div class="mb-4 text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 1</div>
-        </div>
-        </div>
-            <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
-          install and require minimal maintenance, making them a practical choice for enhancing the 
-          aesthetics of your outdoor lighting.
-        </p>
-      </div>
-
-    </div>
-  </div>
-
-
-       <div class="container-fluid py-5 " style="background-color: #f2f2f2;" >
-    <div class="row align-items-start">
-      
-   
-
-      <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
-          install and require minimal maintenance, making them a practical choice for enhancing the 
-          aesthetics of your outdoor lighting.
-        </p>
-      </div>
-
-         <!-- Left Image + Caption -->
-      <div class="col-md-3 text-center">
-        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
-        <div class="caption-btn">SPOTLIGHT GARDEN</div>
-      </div>
-
-      <!-- Right Images + Captions -->
-
-            <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
-          install and require minimal maintenance, making them a practical choice for enhancing the 
-          aesthetics of your outdoor lighting.
-        </p>
-      </div>
-
-            <div class="col-md-3">
-        <div class="mb-4 text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 1</div>
-        </div>
-        </div>
-
-    </div>
-  </div>
-  
-
-
-  <section class="container">
-    <div class="row align-items-center g-5">
-      <!-- Left text -->
-      <div class="col-md-6 fade-in-left">
-        <h2>Guiding light</h2>
-        <p>
-          Good decorative effects can be achieved by using accent lighting on staircases and decking or to mark out pathways. 
-          Light falling on different types of materials provides an interesting and varied visual experience.
-        </p>
-        <p>
-          Lights in the ground or decking for example can be used to highlight a plank or emphasise the shape of a patio. 
-          We sell recessed ground lighting kits, complete with luminaires and transformers for easy installation.
-        </p>
-        <!-- <button class="btn-custom">MILO PILLAR</button> -->
-      </div>
-
-      <!-- Right image -->
-      <div class="col-md-6 text-center fade-in-right">
-        <div class="image-box">
-          <img src="img/abouimg/aboutimg1 (3).webp" alt="Guiding light"> <!-- replace with your image -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <section class="container">
-    <div class="row align-items-center g-5">
-        <!-- Right image -->
-      <div class="col-md-6 text-center fade-in-right">
-        <div class="image-box">
-          <img src="img/abouimg/aboutimg1 (3).webp" alt="Guiding light"> <!-- replace with your image -->
-        </div>
-      </div>
-      <!-- Left text -->
-      <div class="col-md-6 fade-in-left">
-        <h2>Guiding light</h2>
-        <p>
-          Good decorative effects can be achieved by using accent lighting on staircases and decking or to mark out pathways. 
-          Light falling on different types of materials provides an interesting and varied visual experience.
-        </p>
-        <p>
-          Lights in the ground or decking for example can be used to highlight a plank or emphasise the shape of a patio. 
-          We sell recessed ground lighting kits, complete with luminaires and transformers for easy installation.
-        </p>
-        <!-- <button class="btn-custom">MILO PILLAR</button> -->
-      </div>
-
-    
-    </div>
-  </section>
 
 
 
-    <section class="products-section container">
-    <h2>Did you know that many of our downlights can also be installed outdoors!</h2>
 
-    <div class="row g-4">
-      <!-- Product 1 -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Optic G2 Quick ISO 6 Pack">
-          <div class="product-title">OPTIC G2 QUICK ISO 6 PACK</div>
-          <!-- <div class="color-dots">
-            <div class="dot"></div>
-          </div> -->
-        </div>
-      </div>
-
-      <!-- Product 2 -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Optic G2 Quick ISO DALI">
-          <div class="product-title">OPTIC G2 QUICK ISO DALI</div>
-          <!-- <div class="color-dots">
-            <div class="dot"></div>
-          </div> -->
-        </div>
-      </div>
-
-      <!-- Product 3 -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Optic G2 Quick ISO">
-          <div class="product-title">OPTIC G2 QUICK ISO</div>
-          <!-- <div class="color-dots">
-            <div class="dot"></div>
-            <div class="dot active"></div>
-          </div> -->
-        </div>
-      </div>
-
-      <!-- Product 4 -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort G4 Quick ISO Tilt 6 Pack">
-          <div class="product-title">COMFORT G4 QUICK ISO TILT 6 PACK</div>
-          <!-- <div class="color-dots">
-            <div class="dot"></div>
-          </div> -->
-        </div>
-      </div>
-
-      <!-- Product 5 -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort G4 Quick ISO Tilt DALI">
-          <div class="product-title">COMFORT G4 QUICK ISO TILT DALI</div>
-          <!-- <div class="color-dots">
-            <div class="dot"></div>
-          </div> -->
-        </div>
-      </div>
-
-      <!-- Product 6 -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort G4 Quick ISO">
-          <div class="product-title">COMFORT G4 QUICK ISO</div>
-          <!-- <div class="color-dots">
-            <div class="dot"></div>
-          </div> -->
-        </div>
-      </div>
-
-      <!-- Product 7 -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort G4 Quick ISO Tilt">
-          <div class="product-title">COMFORT G4 QUICK ISO TILT</div>
-          <!-- <div class="color-dots">
-            <div class="dot"></div>
-          </div> -->
-        </div>
-      </div>
-
-      <!-- Product 8 -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort Twist Quick ISO">
-          <div class="product-title">COMFORT TWIST QUICK ISO</div>
-          <!-- <div class="color-dots">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div> -->
-        </div>
-      </div>
-    </div>
-  </section>
 
 
 
@@ -994,20 +436,6 @@
     });
   });
 </script>
-
-  <script>
-    // Scroll animation
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    });
-
-    document.querySelectorAll('.fade-in-left, .fade-in-right')
-      .forEach(el => observer.observe(el));
-  </script>
 
     </body>
 

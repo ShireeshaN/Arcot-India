@@ -3,123 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hover Navigation</title>
+  <title>Lighting Layout</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      margin: 0;
+      background: #fff;
       font-family: Arial, sans-serif;
     }
 
-    /* Main top menu */
-    .main-nav {
-      background: #f2f2f2; /* ash background */
-      display: flex;
-      gap: 25px;
-      padding: 12px 30px;
+    /* Left side heading */
+    .section-title {
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 1.1;
+      margin-bottom: 30px;
+      
     }
 
-    .main-nav a {
-      text-decoration: none;
-      color: black;
-      font-weight: 600;
-      font-size: 15px;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
+    /* Each block */
+    .lighting-block {
+      text-align: center; 
     }
 
-    .main-nav a:hover,
-    .main-nav a.active {
-      color: red;
-    }
-
-    /* Submenu bar (hidden by default) */
-    .submenu-bar {
-      background: #333;
-      padding: 12px 30px;
-      display: none;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-
-    .submenu-bar a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-    }
-
-    .submenu-bar a:hover {
-      color: #ddd;
-    }
-
-    /* Container to control hover */
-    .menu-item {
-      position: relative;
-    }
-
-    /* Show submenu of hovered item */
-    .menu-item:hover .submenu-bar {
-      display: flex;
-      position: absolute;
-      left: 0;
+    .lighting-block img {
       width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 8px; /* Image & text madhya gap takkuva */
+      transition: transform 0.4s ease;
+    }
+
+    .lighting-block:hover img {
+      transform: scale(1.03);
+    }
+
+    /* Small top label (NEWS AUTUMN / TIPS & IDEAS) */
+    .lighting-block h6 {
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+      font-weight: bold;
+      color: #444;
+      letter-spacing: 1px;
+      margin-top: 60px;
+    }
+
+    /* Title (Optic Track / Outdoor lighting / Hall lighting) */
+    .lighting-block h4 {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    /* Subtitle / description */
+    .lighting-block p {
+      font-size: 14px;
+      color: #555;
+      margin: 0;
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Main Menu -->
-  <nav class="main-nav">
-    <div class="menu-item">
-      <a href="#">Cases</a>
-      <div class="submenu-bar">
-        <a href="#">Case Study 1</a>
-        <a href="#">Case Study 2</a>
-        <a href="#">Case Study 3</a>
-      </div>
+<div class="container py-5">
+  <div class="row">
+
+    <!-- Left side title -->
+    <div class="col-lg-2">
+      <h2 class="section-title">Choose the<br>right lighting<br>for your home</h2>
     </div>
 
-    <div class="menu-item">
-      <a href="#">Lighting Home Environment</a>
-      <div class="submenu-bar">
-        <a href="#">Industrial Lighting</a>
-        <a href="#">Sports Lighting</a>
-        <a href="#">Lighting in Office</a>
-        <a href="#">Hotel & Restaurant</a>
-        <a href="#">Lighting for Homes</a>
-        <a href="#">Shop Lighting</a>
-        <a href="#">Outdoor Lighting</a>
-      </div>
-    </div>
+    <!-- Right side blocks -->
+    <div class="col-lg-10">
+      <div class="row g-4">
 
-    <div class="menu-item">
-      <a href="#" class="active">Lighting Public Environment</a>
-      <div class="submenu-bar">
-        <a href="#">Street Lighting</a>
-        <a href="#">Parks Lighting</a>
-        <a href="#">Public Buildings</a>
-      </div>
-    </div>
+        <!-- Block 1 -->
+        <div class="col-md-4">
+          <div class="lighting-block">
+            <img src="img/abouimg/aboutimg1 (5).webp" alt="Optic Track">
+            <h6>NEWS AUTUMN 2024</h6>
+            <h4>Optic Track <br>1-phase</h4>
+            <p>Minimalistic, dimmable track lights</p>
+          </div>
+        </div>
 
-    <div class="menu-item">
-      <a href="#">Lighting</a>
-      <div class="submenu-bar">
-        <a href="#">Indoor</a>
-        <a href="#">Outdoor</a>
-        <a href="#">Decorative</a>
-      </div>
-    </div>
+        <!-- Block 2 -->
+        <div class="col-md-4">
+          <div class="lighting-block">
+            <img src="img/abouimg/aboutimg1 (5).webp" alt="Outdoor Lighting">
+            <h6>TIPS & IDEAS</h6>
+            <h4>Outdoor <br>lighting</h4>
+            <p>Illuminate your garden and facade</p>
+          </div>
+        </div>
 
-    <div class="menu-item">
-      <a href="#">Catalogues</a>
-      <div class="submenu-bar">
-        <a href="#">PDF Catalogues</a>
-        <a href="#">Digital Catalogues</a>
+        <!-- Block 3 -->
+        <div class="col-md-4">
+          <div class="lighting-block">
+            <img src="img/abouimg/aboutimg1 (5).webp" alt="Hall Lighting">
+            <h6>TIPS & IDEAS</h6>
+            <h4>Hall <br>lighting</h4>
+            <p>A welcoming light</p>
+          </div>
+        </div>
+
       </div>
     </div>
-  </nav>
+  </div>
+</div>
 
 </body>
 </html>
