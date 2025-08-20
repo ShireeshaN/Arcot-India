@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Applications Slider</title>
@@ -9,8 +10,18 @@
   <style>
     body {
       background: #fff;
+=======
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation</title>
+  <style>
+    body {
+      margin: 0;
+>>>>>>> 26f8c3353930b5b07d4b66662c4e81c02eea73bb
       font-family: Arial, sans-serif;
+      background: #fff;
     }
+<<<<<<< HEAD
     .applica-heading {
       font-size: 48px;
       font-weight: 700;
@@ -157,6 +168,90 @@
       }
       .applica-tabs::-webkit-scrollbar {
         display: none; /* hide scrollbar for cleaner UI */
+=======
+
+    /* Main nav */
+    .main-nav {
+      background: #f2f2f2; /* ash grey */
+      display: flex;
+      gap: 25px;
+      padding: 12px 20px;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 600;
+      font-size: 15px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .main-nav a:hover {
+      color: #555;
+      text-decoration: underline;
+    }
+
+    .main-nav a.active {
+      color: #555;
+      text-decoration: underline;
+    }
+
+    /* Submenu container (black bar) */
+    .submenu-container {
+      background: #222;
+      padding: 12px 20px;
+      display: none;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .submenu-container a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .submenu-container a:hover {
+      color: #bbb;
+    }
+
+    /* Mobile */
+    .menu-toggle {
+      display: none;
+      background: #f2f2f2;
+      padding: 12px 20px;
+      border: none;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+    }
+
+    @media (max-width: 768px) {
+      .main-nav {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .submenu-container {
+        flex-direction: column;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .main-nav.show {
+        display: flex;
+>>>>>>> 26f8c3353930b5b07d4b66662c4e81c02eea73bb
       }
     }
   </style>
@@ -164,6 +259,7 @@
 <body>
   <h1 class="applica-heading">Applications</h1>
 
+<<<<<<< HEAD
   <!-- Slider -->
   <div class="applica-slider-container">
     <!-- Slides -->
@@ -267,12 +363,139 @@ document.addEventListener("DOMContentLoaded", function() {
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       showSlide(parseInt(tab.dataset.index));
+=======
+  <!-- Mobile toggle -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+
+  <!-- Main Navigation -->
+  <nav class="main-nav" id="mainNav">
+    <a href="#" data-submenu="cases">Cases</a>
+    <a href="#" class="active" data-submenu="home">Lighting for Home</a>
+    <a href="#" data-submenu="industrial">Industrial Lighting</a>
+    <a href="#" data-submenu="commercial">Commercial Lighting</a>
+    <a href="#" data-submenu="outdoor">Outdoor Lighting</a>
+    <a href="#" data-submenu="catalogues">Catalogues</a>
+  </nav>
+
+  <!-- Submenu Bar -->
+  <div class="submenu-container" id="submenu"></div>
+
+  <script>
+    // Submenu data
+    const submenus = {
+      home: [
+        { text: "Living Room Lighting", link: "#" },
+        { text: "Kitchen Lighting", link: "#" },
+        { text: "Bedroom Lighting", link: "#" },
+        { text: "Bathroom Lighting", link: "#" },
+        { text: "Entrance Lighting", link: "#" }
+      ],
+      industrial: [
+        { text: "Factory Lighting", link: "#" },
+        { text: "Warehouse Lighting", link: "#" },
+        { text: "Workshop Lighting", link: "#" },
+        { text: "Cold Storage Lighting", link: "#" },
+        { text: "Hazardous Area Lighting", link: "#" },
+        { text: "Parking & Utility Lighting", link: "#" },
+        { text: "Energy-Efficient LED", link: "#" }
+      ],
+      commercial: [
+        { text: "Office", link: "#" },
+        { text: "Retail & Showroom Lighting", link: "#" },
+        { text: "Healthcare Lighting", link: "#" },
+        { text: "Educational Lighting", link: "#" },
+        { text: "Entertainment & Theatres", link: "#" },
+        { text: "Airport & Transport Hubs", link: "#" },
+        { text: "Hotel Lighting", link: "#" }
+      ],
+      outdoor: [
+        { text: "Garden & Landscape", link: "#" },
+        { text: "Facade & Architectural", link: "#" },
+        { text: "Outdoor Home Lighting", link: "#" },
+        { text: "Parking Lot Lighting", link: "#" },
+        { text: "Campus & Institutional", link: "#" },
+        { text: "Resort & Hospitality", link: "#" },
+        { text: "Security & Flood Lighting", link: "#" },
+        { text: "Sports Ground Lighting", link: "#" }
+      ]
+    };
+
+    const mainLinks = document.querySelectorAll(".main-nav a");
+    const submenuContainer = document.getElementById("submenu");
+
+    let activeKey = "home"; // default active
+    let hoverKey = null;    // temporary hover key
+
+    // Function to render submenu
+    function renderSubmenu(items) {
+      submenuContainer.innerHTML = "";
+      if (!items) {
+        submenuContainer.style.display = "none";
+        return;
+      }
+      items.forEach(item => {
+        const a = document.createElement("a");
+        a.href = item.link;
+        a.textContent = item.text;
+        submenuContainer.appendChild(a);
+      });
+      submenuContainer.style.display = "flex";
+    }
+
+    // Show default (active) submenu
+    renderSubmenu(submenus[activeKey]);
+
+    // Hover effect
+    mainLinks.forEach(link => {
+      const key = link.dataset.submenu;
+
+      link.addEventListener("mouseenter", () => {
+        if (submenus[key]) {
+          hoverKey = key;
+          renderSubmenu(submenus[key]);
+        }
+      });
+
+      link.addEventListener("mouseleave", () => {
+        // If submenu itself is not hovered, restore active
+        setTimeout(() => {
+          if (!submenuContainer.matches(":hover")) {
+            hoverKey = null;
+            renderSubmenu(submenus[activeKey]);
+          }
+        }, 100);
+      });
+
+      // Click → set permanent active
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        mainLinks.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+        activeKey = key;
+        hoverKey = null;
+        renderSubmenu(submenus[activeKey]);
+      });
+>>>>>>> 26f8c3353930b5b07d4b66662c4e81c02eea73bb
     });
   });
 });
 </script>
 
+<<<<<<< HEAD
 
 
+=======
+    // When leaving submenu → restore active
+    submenuContainer.addEventListener("mouseleave", () => {
+      hoverKey = null;
+      renderSubmenu(submenus[activeKey]);
+    });
+
+    // Mobile menu toggle
+    function toggleMenu() {
+      document.getElementById("mainNav").classList.toggle("show");
+    }
+  </script>
+>>>>>>> 26f8c3353930b5b07d4b66662c4e81c02eea73bb
 </body>
 </html>
