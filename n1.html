@@ -1,501 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Applications Slider</title>
-  <!-- Bootstrap CDN -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solutions - Gewiss Style</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background: #fff;
-=======
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navigation</title>
-  <style>
-    body {
-      margin: 0;
->>>>>>> 26f8c3353930b5b07d4b66662c4e81c02eea73bb
       font-family: Arial, sans-serif;
       background: #fff;
+      color: #333;
     }
-<<<<<<< HEAD
-    .applica-heading {
-      font-size: 48px;
+
+    .solutions-section {
+      padding: 60px 0;
+    }
+    .solutions-title {
+      font-size: 42px;
       font-weight: 700;
-      margin: 30px 50px;
+      margin-bottom: 30px;
     }
-    .applica-slider-container {
-      position: relative;
-      width: 100%;
-      height: 500px;
+
+    /* --- TOP GRID --- */
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 200px 200px;
+      gap: 10px;
       overflow: hidden;
     }
-    .applica-slide {
-      display: none;
-      width: 100%;
+    .solutions-grid .grid-piece {
+      background-size: 200% 200%;
+      background-repeat: no-repeat;
+      transition: background-image 0.5s ease-in-out;
+    }
+    .grid-piece:nth-child(1) { background-position: left top; }
+    .grid-piece:nth-child(2) { background-position: right top; }
+    .grid-piece:nth-child(3) { background-position: left bottom; }
+    .grid-piece:nth-child(4) { background-position: right bottom; }
+
+    /* --- RIGHT PANEL --- */
+    .solutions-panel {
+      background: rgba(0,0,0,0.8);
+      color: #fff;
+      padding: 30px;
       height: 100%;
-      position: absolute;
-      top: 0; left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .applica-slide.active {
-      display: block;
+    .solutions-panel h4 {
+      font-weight: 700;
+      margin-bottom: 15px;
     }
-    .applica-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .solutions-panel ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
-    /* gradient overlay */
-    .applica-overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to right, transparent 30%, rgba(38, 38, 38, 0.95) 70%);
+    .solutions-panel ul li {
+      margin-bottom: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: color 0.3s ease;
     }
-    .applica-content {
-      position: absolute;
-      top: 30%;
-      right: 5%;
-      max-width: 500px;
-      color: #d4d1d1;
+    .solutions-panel ul li:hover {
+      color: #ff4d00;
     }
-    .applica-content h2 {
-      font-size: 36px;
+    .solutions-tabs {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .solutions-tabs .tab {
+      margin-right: 15px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .solutions-tabs .tab.active {
+      color: #ff4d00;
       font-weight: 700;
     }
-    .applica-content p {
-      margin: 15px 0;
-      color: #bcb8b8;
+    .solutions-tabs .arrows {
+      margin-left: auto;
     }
-    .applica-content button {
-      background: #ebe7e6;
-      color: rgb(20, 19, 19);
-      border: none;
-      padding: 12px 28px;
-      border-radius: 25px;
-      font-weight: 600;
+    .solutions-tabs .arrows i {
+      margin-left: 10px;
+      cursor: pointer;
     }
-    .applica-arrows {
-      position: absolute;
-      bottom: 20px;
-      right: 40px;
-      display: flex;
-      gap: 15px;
+
+    /* --- BOTTOM GRID --- */
+    .solutions-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
     }
-    .applica-arrow-btn {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      border: 1px solid #ccc;
+    .solutions-bottom .image {
+      background-size: cover;
+      background-position: center;
+      height: 250px;
+      transition: background-image 0.5s ease-in-out;
+    }
+    .solutions-bottom .text {
+      padding: 30px;
       background: #fff;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      font-size: 20px;
-      cursor: pointer;
     }
-    /* bottom nav tabs */
-    .applica-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 20px;
-      border-top: 1px solid #eee;
-      flex-wrap: wrap;
+    .solutions-bottom h3 {
+      font-size: 26px;
+      font-weight: 700;
     }
-    .applica-tabs button {
-      background: none;
-      border: none;
-      font-size: 18px;
-      font-weight: 500;
-      cursor: pointer;
-      color: #666;
-      padding-bottom: 5px;
-      white-space: nowrap;
+    .solutions-bottom span {
+      color: #ff4d00;
     }
-    .applica-tabs button.active {
-      color: #181818;
-      border-bottom: 2px solid #868281;
-    }
-
-    /* --------------------- */
-    /* 📱 Mobile Responsive */
-    /* --------------------- */
-    @media (max-width: 768px) {
-      .applica-heading {
-        font-size: 28px;
-        margin: 20px;
-      }
-      .applica-slider-container {
-        height: 300px;
-      }
-      .applica-content {
-        position: absolute;
-        top: 20%;
-        right: 5%;
-        left: 5%;
-        max-width: 90%;
-        text-align: center;
-      }
-      .applica-content h2 {
-        font-size: 22px;
-      }
-      .applica-content p {
-        font-size: 14px;
-      }
-      .applica-content button {
-        padding: 8px 18px;
-        font-size: 14px;
-      }
-      .applica-arrows {
-        bottom: 10px;
-        right: 50%;
-        transform: translateX(50%);
-      }
-      .applica-arrow-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 16px;
-      }
-      .applica-tabs {
-        overflow-x: auto;
-        justify-content: flex-start;
-        gap: 20px;
-        padding: 10px;
-        white-space: nowrap;
-      }
-      .applica-tabs::-webkit-scrollbar {
-        display: none; /* hide scrollbar for cleaner UI */
-=======
-
-    /* Main nav */
-    .main-nav {
-      background: #f2f2f2; /* ash grey */
-      display: flex;
-      gap: 25px;
-      padding: 12px 20px;
-      flex-wrap: wrap;
-    }
-
-    .main-nav a {
-      text-decoration: none;
-      color: #111;
-      font-weight: 600;
+    .solutions-bottom p {
       font-size: 15px;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-      cursor: pointer;
-    }
-
-    .main-nav a:hover {
+      margin-top: 10px;
       color: #555;
-      text-decoration: underline;
     }
 
-    .main-nav a.active {
-      color: #555;
-      text-decoration: underline;
-    }
-
-    /* Submenu container (black bar) */
-    .submenu-container {
-      background: #222;
-      padding: 12px 20px;
-      display: none;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-
-    .submenu-container a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-    }
-
-    .submenu-container a:hover {
-      color: #bbb;
-    }
-
-    /* Mobile */
-    .menu-toggle {
-      display: none;
-      background: #f2f2f2;
-      padding: 12px 20px;
-      border: none;
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-      width: 100%;
-      text-align: left;
-    }
-
-    @media (max-width: 768px) {
-      .main-nav {
-        display: none;
-        flex-direction: column;
-        gap: 15px;
+    /* Responsive */
+    @media(max-width: 992px) {
+      .solutions-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 150px 150px;
       }
-
-      .submenu-container {
-        flex-direction: column;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .main-nav.show {
-        display: flex;
->>>>>>> 26f8c3353930b5b07d4b66662c4e81c02eea73bb
+      .solutions-bottom {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
-  <h1 class="applica-heading">Applications</h1>
 
-<<<<<<< HEAD
-  <!-- Slider -->
-  <div class="applica-slider-container">
-    <!-- Slides -->
-    <div class="applica-slide active">
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1400" alt="City Landscape">
-      <div class="applica-overlay"></div>
-      <div class="applica-content">
-        <h2>Power Systems</h2>
-        <p>We provide reliable power infrastructure covering generation, transmission, and distribution, along with advanced LT and HT panel boards for efficient and safe operations.</p>
-        <button>Show more →</button>
+<section class="solutions-section container">
+  <h2 class="solutions-title">Solutions</h2>
+  <div class="row g-3">
+    <!-- Left Grid -->
+    <div class="col-lg-8">
+      <div class="solutions-grid">
+        <div class="grid-piece" id="grid1"></div>
+        <div class="grid-piece" id="grid2"></div>
+        <div class="grid-piece" id="grid3"></div>
+        <div class="grid-piece" id="grid4"></div>
       </div>
     </div>
 
-    <div class="applica-slide">
-      <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?q=80&w=1400" alt="Transportation">
-      <div class="applica-overlay"></div>
-      <div class="applica-content">
-        <h2>Energy Solutions</h2>
-        <p>Our energy portfolio includes solar, wind, biomass, and hydel power projects, delivering sustainable and future-ready solutions for diverse energy needs.</p>
-        <button>Show more →</button>
+    <!-- Right Panel -->
+    <div class="col-lg-4">
+      <div class="solutions-panel">
+        <div>
+          <h4 id="categoryTitle">Installation</h4>
+          <ul id="categoryList"></ul>
+        </div>
+        <div class="solutions-tabs">
+          <span class="tab active" data-cat="installation">Power</span>
+          <span class="tab" data-cat="energy">Energy</span>
+          <span class="tab" data-cat="building">Lighting</span>
+          <span class="tab" data-cat="lighting">Automation</span>
+          <span class="tab" data-cat="mobility">City</span>
+          <div class="arrows">
+            <i class="fa fa-chevron-left" id="prevCat"></i>
+            <i class="fa fa-chevron-right" id="nextCat"></i>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="applica-slide">
-      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1400" alt="Sports">
-      <div class="applica-overlay"></div>
-      <div class="applica-content">
-        <h2>Lighting Technology</h2>
-        <p>From homes to stadiums, we design advanced lighting systems that enhance safety, efficiency, and aesthetics across residential, commercial, industrial, and public spaces.</p>
-        <button>Show more →</button>
-      </div>
-    </div>
-
-    <div class="applica-slide">
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1400" alt="City Landscape">
-      <div class="applica-overlay"></div>
-      <div class="applica-content">
-        <h2>Automation Systems</h2>
-        <p>We deliver intelligent automation for homes, industries, hospitals, hotels, and commercial spaces, powered by IoT for smarter and more efficient environments.</p>
-        <button>Show more →</button>
-      </div>
-    </div>
-
-    <div class="applica-slide">
-      <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?q=80&w=1400" alt="Transportation">
-      <div class="applica-overlay"></div>
-      <div class="applica-content">
-        <h2>Smart City Solutions</h2>
-        <p>Our smart city innovations such as smart poles integrate lighting, connectivity, and safety features, creating sustainable and connected urban spaces.</p>
-        <button>Show more →</button>
-      </div>
-    </div>
-
-    <div class="applica-slide">
-      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1400" alt="Sports">
-      <div class="applica-overlay"></div>
-      <div class="applica-content">
-        <h2>Innovation & R&D</h2>
-        <p>Driven by innovation, our R&D division develops next-generation products including smart poles, bollards, conference tables, bar counters, and smart window leaf AC systems.</p>
-        <button>Show more →</button>
-      </div>
-    </div>
-
-    <!-- Arrows -->
-    <div class="applica-arrows">
-      <div class="applica-arrow-btn" id="applica-prev">&#10094;</div>
-      <div class="applica-arrow-btn" id="applica-next">&#10095;</div>
     </div>
   </div>
 
-  <!-- Bottom Tabs -->
-  <div class="applica-tabs">
-    <button class="active" data-index="0">Power Systems</button>
-    <button data-index="1">Energy Solutions</button>
-    <button data-index="2">Lighting Technology</button>
-    <button data-index="3">Automation Systems</button>
-    <button data-index="4">Smartcity Solutions</button>
-    <button data-index="5">Innovation & R&D</button>
+  <!-- Bottom Grid -->
+  <div class="solutions-bottom">
+    <div class="image" id="bottomImg1"></div>
+    <div class="text">
+      <h3 id="bottomHeading"></h3>
+      <p id="bottomPara"></p>
+    </div>
+    <div class="image" id="bottomImg2"></div>
   </div>
+</section>
 
- <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const slides = document.querySelectorAll(".applica-slide");
-  const tabs = document.querySelectorAll(".applica-tabs button");
-  let current = 0;
+<script>
+  const categories = {
+    installation: {
+      title: "Power",
+      items: [
+        "Power",
+        "Power",
+        "Power9",
+        "Power",
+        "Power",
+        "Power"
+      ],
+      topImage: "img/application/68.webp",
+      bottom: {
+        heading: "Safe <span>Installations</span>",
+        para: "Solutions for reliable and safe installations, ensuring maximum efficiency.",
+        img1: "img/application/68.webp",
+        img2: "img/application/68.webp"
+      }
+    },
+    energy: {
+      title: "Energy",
+      items: ["Solar Systems","Wind Power","Battery Storage","Energy Monitoring"],
+      topImage: "img/application/69.webp",
+      bottom: {
+        heading: "Energy <span>always</span> protected",
+        para: "Distribution and withdrawal of energy that guarantees safety in all environments.",
+        img1: "img/application/69.webp",
+        img2: "img/application/69.webp"
+      }
+    },
+    building: {
+      title: "Lighting",
+      items: ["Home Automation","Security Systems","Fire Safety","HVAC Control"],
+      topImage: "img/application/73.webp",
+      bottom: {
+        heading: "Smart <span>Buildings</span>",
+        para: "Automation and comfort integrated into modern building infrastructures.",
+        img1: "img/application/73.webp",
+        img2: "img/application/73.webp"
+      }
+    },
+    lighting: {
+      title: "Lighting",
+      items: ["LED Fixtures","Street Lighting","Architectural Lighting","Smart Lighting"],
+      topImage: "img/application/72.webp",
+      bottom: {
+        heading: "Brilliant <span>Lighting</span>",
+        para: "Lighting solutions that enhance efficiency, design, and sustainability.",
+        img1: "img/application/appli (4).webp",
+        img2: "img/application/appli (4).webp"
+      }
+    },
+    mobility: {
+      title: "Mobility",
+      items: ["EV Charging","Smart Parking","Traffic Management","Public Transport Systems"],
+      topImage: "img/application/72.webp",
+      bottom: {
+        heading: "Future <span>Mobility</span>",
+        para: "Innovative mobility solutions for smarter, cleaner, and safer transportation.",
+        img1: "img/application/appli (2).webp",
+        img2: "img/application/appli (2).webp"
+      }
+    }
+  };
 
-  function showSlide(index) {
-    slides.forEach((s, i) => s.classList.toggle("active", i === index));
-    tabs.forEach((t, i) => t.classList.toggle("active", i === index));
-    current = index;
+  let currentIndex = 0;
+  const tabs = document.querySelectorAll(".solutions-tabs .tab");
+  const categoryTitle = document.getElementById("categoryTitle");
+  const categoryList = document.getElementById("categoryList");
+  const bottomHeading = document.getElementById("bottomHeading");
+  const bottomPara = document.getElementById("bottomPara");
+  const bottomImg1 = document.getElementById("bottomImg1");
+  const bottomImg2 = document.getElementById("bottomImg2");
+  const keys = Object.keys(categories);
+
+  const grid1 = document.getElementById("grid1");
+  const grid2 = document.getElementById("grid2");
+  const grid3 = document.getElementById("grid3");
+  const grid4 = document.getElementById("grid4");
+
+  function loadCategory(cat) {
+    const data = categories[cat];
+
+    // update right panel
+    categoryTitle.textContent = data.title;
+    categoryList.innerHTML = data.items.map(i => `<li>${i}</li>`).join("");
+    tabs.forEach(t => t.classList.remove("active"));
+    document.querySelector(`.tab[data-cat="${cat}"]`).classList.add("active");
+    currentIndex = keys.indexOf(cat);
+
+    // update top 4 grid slices
+    grid1.style.backgroundImage = `url(${data.topImage})`;
+    grid2.style.backgroundImage = `url(${data.topImage})`;
+    grid3.style.backgroundImage = `url(${data.topImage})`;
+    grid4.style.backgroundImage = `url(${data.topImage})`;
+
+    // update bottom section
+    bottomHeading.innerHTML = data.bottom.heading;
+    bottomPara.textContent = data.bottom.para;
+    bottomImg1.style.backgroundImage = `url('${data.bottom.img1}')`;
+    bottomImg2.style.backgroundImage = `url('${data.bottom.img2}')`;
   }
 
-  document.getElementById("applica-next").addEventListener("click", () => {
-    showSlide((current + 1) % slides.length);
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => loadCategory(tab.dataset.cat));
   });
 
-  document.getElementById("applica-prev").addEventListener("click", () => {
-    showSlide((current - 1 + slides.length) % slides.length);
+  document.getElementById("prevCat").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + keys.length) % keys.length;
+    loadCategory(keys[currentIndex]);
   });
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      showSlide(parseInt(tab.dataset.index));
-=======
-  <!-- Mobile toggle -->
-  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
-
-  <!-- Main Navigation -->
-  <nav class="main-nav" id="mainNav">
-    <a href="#" data-submenu="cases">Cases</a>
-    <a href="#" class="active" data-submenu="home">Lighting for Home</a>
-    <a href="#" data-submenu="industrial">Industrial Lighting</a>
-    <a href="#" data-submenu="commercial">Commercial Lighting</a>
-    <a href="#" data-submenu="outdoor">Outdoor Lighting</a>
-    <a href="#" data-submenu="catalogues">Catalogues</a>
-  </nav>
-
-  <!-- Submenu Bar -->
-  <div class="submenu-container" id="submenu"></div>
-
-  <script>
-    // Submenu data
-    const submenus = {
-      home: [
-        { text: "Living Room Lighting", link: "#" },
-        { text: "Kitchen Lighting", link: "#" },
-        { text: "Bedroom Lighting", link: "#" },
-        { text: "Bathroom Lighting", link: "#" },
-        { text: "Entrance Lighting", link: "#" }
-      ],
-      industrial: [
-        { text: "Factory Lighting", link: "#" },
-        { text: "Warehouse Lighting", link: "#" },
-        { text: "Workshop Lighting", link: "#" },
-        { text: "Cold Storage Lighting", link: "#" },
-        { text: "Hazardous Area Lighting", link: "#" },
-        { text: "Parking & Utility Lighting", link: "#" },
-        { text: "Energy-Efficient LED", link: "#" }
-      ],
-      commercial: [
-        { text: "Office", link: "#" },
-        { text: "Retail & Showroom Lighting", link: "#" },
-        { text: "Healthcare Lighting", link: "#" },
-        { text: "Educational Lighting", link: "#" },
-        { text: "Entertainment & Theatres", link: "#" },
-        { text: "Airport & Transport Hubs", link: "#" },
-        { text: "Hotel Lighting", link: "#" }
-      ],
-      outdoor: [
-        { text: "Garden & Landscape", link: "#" },
-        { text: "Facade & Architectural", link: "#" },
-        { text: "Outdoor Home Lighting", link: "#" },
-        { text: "Parking Lot Lighting", link: "#" },
-        { text: "Campus & Institutional", link: "#" },
-        { text: "Resort & Hospitality", link: "#" },
-        { text: "Security & Flood Lighting", link: "#" },
-        { text: "Sports Ground Lighting", link: "#" }
-      ]
-    };
-
-    const mainLinks = document.querySelectorAll(".main-nav a");
-    const submenuContainer = document.getElementById("submenu");
-
-    let activeKey = "home"; // default active
-    let hoverKey = null;    // temporary hover key
-
-    // Function to render submenu
-    function renderSubmenu(items) {
-      submenuContainer.innerHTML = "";
-      if (!items) {
-        submenuContainer.style.display = "none";
-        return;
-      }
-      items.forEach(item => {
-        const a = document.createElement("a");
-        a.href = item.link;
-        a.textContent = item.text;
-        submenuContainer.appendChild(a);
-      });
-      submenuContainer.style.display = "flex";
-    }
-
-    // Show default (active) submenu
-    renderSubmenu(submenus[activeKey]);
-
-    // Hover effect
-    mainLinks.forEach(link => {
-      const key = link.dataset.submenu;
-
-      link.addEventListener("mouseenter", () => {
-        if (submenus[key]) {
-          hoverKey = key;
-          renderSubmenu(submenus[key]);
-        }
-      });
-
-      link.addEventListener("mouseleave", () => {
-        // If submenu itself is not hovered, restore active
-        setTimeout(() => {
-          if (!submenuContainer.matches(":hover")) {
-            hoverKey = null;
-            renderSubmenu(submenus[activeKey]);
-          }
-        }, 100);
-      });
-
-      // Click → set permanent active
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        mainLinks.forEach(l => l.classList.remove("active"));
-        link.classList.add("active");
-        activeKey = key;
-        hoverKey = null;
-        renderSubmenu(submenus[activeKey]);
-      });
->>>>>>> 26f8c3353930b5b07d4b66662c4e81c02eea73bb
-    });
+  document.getElementById("nextCat").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % keys.length;
+    loadCategory(keys[currentIndex]);
   });
-});
+
+  // default load
+  loadCategory("installation");
 </script>
 
-<<<<<<< HEAD
-
-
-=======
-    // When leaving submenu → restore active
-    submenuContainer.addEventListener("mouseleave", () => {
-      hoverKey = null;
-      renderSubmenu(submenus[activeKey]);
-    });
-
-    // Mobile menu toggle
-    function toggleMenu() {
-      document.getElementById("mainNav").classList.toggle("show");
-    }
-  </script>
->>>>>>> 26f8c3353930b5b07d4b66662c4e81c02eea73bb
 </body>
 </html>

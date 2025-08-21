@@ -747,6 +747,28 @@
   animation: fadeSlideUp 0.9s ease forwards;
 }
 
+
+
+.section-wraps1 {
+  background: #dddcdc;  /* clean, minimal grey tone */
+  padding: 40px 10px 30px; /* less space, balanced */
+  margin: 0;
+  text-align: left; /* align content left */
+  min-height: 30px !important;
+
+}
+
+/* Main heading */
+.section-heading1 {
+  font-family: 'Inter', sans-serif; /* professional modern font */
+  font-size: 36px;
+  font-weight: 500;   /* elegant, not bold */
+  color: #343232;        /* deep grey-black */
+  margin: 0 0 10px 0;
+  position: relative;
+  animation: fadeSlideUp 0.9s ease forwards;
+}
+
 /* Sub-heading */
 .section-sub {
   font-family: 'Inter', sans-serif;
@@ -2056,7 +2078,7 @@ scAnimateProgress();
 
 <section class="section-wraps" >
   <h2 class="section-heading">Applications</h2>
-  <p class="section-sub">Applications</p>
+ 
 </section>
 <div class="">
   <!-- Slider -->
@@ -2320,6 +2342,274 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   </style>
 <!-- Applications End -->
+
+
+<!-- Services start -->
+
+<section class="section-wraps" >
+  <h2 class="section-heading">We are At</h2>
+
+</section>
+
+<style>
+  .section-wraps {
+  background: #ffffff;  /* clean, minimal grey tone */
+  padding: 40px 10px 30px; /* less space, balanced */
+  margin: 0;
+  text-align: left; /* align content left */
+  min-height: 30px !important;
+
+}
+
+/* Main heading */
+.section-heading {
+  font-family: 'Inter', sans-serif; /* professional modern font */
+  font-size: 36px;
+  font-weight: 500;   /* elegant, not bold */
+  color: #7e7c7c;        /* deep grey-black */
+  margin: 0 0 10px 0;
+  position: relative;
+  animation: fadeSlideUp 0.9s ease forwards;
+}
+</style>
+<section class="services-section">
+
+  <div class="row g-3">
+    <!-- Left Grid -->
+    <div class="col-lg-8">
+      <div class="services-grid">
+        <div class="services-piece" id="srvGrid1"></div>
+        <div class="services-piece" id="srvGrid2"></div>
+        <div class="services-piece" id="srvGrid3"></div>
+        <div class="services-piece" id="srvGrid4"></div>
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="col-lg-4">
+      <div class="services-panel">
+        <div>
+          <h4 id="srvCategoryTitle">Installation</h4>
+          <ul id="srvCategoryList"></ul>
+        </div>
+        <div class="services-tabs">
+          <span class="srv-tab active" data-cat="installation">Power</span>
+          <span class="srv-tab" data-cat="energy">Energy</span>
+          <span class="srv-tab" data-cat="building">Lighting</span>
+          <span class="srv-tab" data-cat="lighting">Automation</span>
+          <span class="srv-tab" data-cat="mobility">City</span>
+          <div class="arrows">
+            <i class="fa fa-chevron-left" id="srvPrev"></i>
+            <i class="fa fa-chevron-right" id="srvNext"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Grid -->
+  <div class="services-bottom">
+    <div class="image" id="srvBottomImg1"></div>
+    <div class="text">
+      <h3 id="srvBottomHeading"></h3>
+      <p id="srvBottomPara"></p>
+    </div>
+    <div class="image" id="srvBottomImg2"></div>
+  </div>
+</section>
+
+<style>
+  .services-section { padding: 60px 0; 
+  background-color: #ffffff;
+padding-top: 0px;}
+  
+  .services-title { font-size: 42px; font-weight: 700; margin-bottom: 30px; }
+
+  /* --- TOP GRID --- */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px;
+    gap: 10px;
+    overflow: hidden;
+  }
+  .services-piece {
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease-in-out;
+  }
+  .services-piece:nth-child(1) { background-position: left top; }
+  .services-piece:nth-child(2) { background-position: right top; }
+  .services-piece:nth-child(3) { background-position: left bottom; }
+  .services-piece:nth-child(4) { background-position: right bottom; }
+
+  /* --- RIGHT PANEL --- */
+  .services-panel {
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .services-panel h4 { font-weight: 700; margin-bottom: 15px; }
+  .services-panel ul { list-style: none; padding: 0; margin: 0; }
+  .services-panel ul li {
+    margin-bottom: 8px; font-size: 15px;
+    cursor: pointer; transition: color 0.3s ease;
+  }
+  .services-panel ul li:hover { color: #ff4d00; }
+  .services-tabs { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
+  .services-tabs .srv-tab { margin-right: 15px; cursor: pointer; font-size: 14px; }
+  .services-tabs .srv-tab.active { color: #ff4d00; font-weight: 700; }
+  .services-tabs .arrows { margin-left: auto; }
+  .services-tabs .arrows i { margin-left: 10px; cursor: pointer; }
+
+  /* --- BOTTOM GRID --- */
+  .services-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .services-bottom .image {
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    transition: background-image 0.5s ease-in-out;
+  }
+  .services-bottom .text {
+    padding: 30px; background: #fff;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .services-bottom h3 { font-size: 26px; font-weight: 700; }
+  .services-bottom span { color: #ff4d00; }
+  .services-bottom p { font-size: 15px; margin-top: 10px; color: #555; }
+
+  /* Responsive */
+  @media(max-width: 992px) {
+    .services-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 150px 150px; }
+    .services-bottom { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  const srvCategories = {
+    installation: {
+      title: "Power",
+      items: ["Power","Power","Power9","Power","Power","Power"],
+      topImage: "img/application/68.webp",
+      bottom: {
+        heading: "Safe <span>Installations</span>",
+        para: "Solutions for reliable and safe installations, ensuring maximum efficiency.",
+        img1: "img/application/68.webp",
+        img2: "img/application/68.webp"
+      }
+    },
+    energy: {
+      title: "Energy",
+      items: ["Solar Systems","Wind Power","Battery Storage","Energy Monitoring"],
+      topImage: "img/application/69.webp",
+      bottom: {
+        heading: "Energy <span>always</span> protected",
+        para: "Distribution and withdrawal of energy that guarantees safety in all environments.",
+        img1: "img/application/69.webp",
+        img2: "img/application/69.webp"
+      }
+    },
+    building: {
+      title: "Lighting",
+      items: ["Home Automation","Security Systems","Fire Safety","HVAC Control"],
+      topImage: "img/application/73.webp",
+      bottom: {
+        heading: "Smart <span>Buildings</span>",
+        para: "Automation and comfort integrated into modern building infrastructures.",
+        img1: "img/application/73.webp",
+        img2: "img/application/73.webp"
+      }
+    },
+    lighting: {
+      title: "Lighting",
+      items: ["LED Fixtures","Street Lighting","Architectural Lighting","Smart Lighting"],
+      topImage: "img/application/72.webp",
+      bottom: {
+        heading: "Brilliant <span>Lighting</span>",
+        para: "Lighting solutions that enhance efficiency, design, and sustainability.",
+        img1: "img/application/appli (4).webp",
+        img2: "img/application/appli (4).webp"
+      }
+    },
+    mobility: {
+      title: "Mobility",
+      items: ["EV Charging","Smart Parking","Traffic Management","Public Transport Systems"],
+      topImage: "img/application/72.webp",
+      bottom: {
+        heading: "Future <span>Mobility</span>",
+        para: "Innovative mobility solutions for smarter, cleaner, and safer transportation.",
+        img1: "img/application/appli (2).webp",
+        img2: "img/application/appli (2).webp"
+      }
+    }
+  };
+
+  let srvIndex = 0;
+  const srvTabs = document.querySelectorAll(".services-tabs .srv-tab");
+  const srvCategoryTitle = document.getElementById("srvCategoryTitle");
+  const srvCategoryList = document.getElementById("srvCategoryList");
+  const srvBottomHeading = document.getElementById("srvBottomHeading");
+  const srvBottomPara = document.getElementById("srvBottomPara");
+  const srvBottomImg1 = document.getElementById("srvBottomImg1");
+  const srvBottomImg2 = document.getElementById("srvBottomImg2");
+  const srvKeys = Object.keys(srvCategories);
+
+  const srvGrid1 = document.getElementById("srvGrid1");
+  const srvGrid2 = document.getElementById("srvGrid2");
+  const srvGrid3 = document.getElementById("srvGrid3");
+  const srvGrid4 = document.getElementById("srvGrid4");
+
+  function loadSrvCategory(cat) {
+    const data = srvCategories[cat];
+
+    // update right panel
+    srvCategoryTitle.textContent = data.title;
+    srvCategoryList.innerHTML = data.items.map(i => `<li>${i}</li>`).join("");
+    srvTabs.forEach(t => t.classList.remove("active"));
+    document.querySelector(`.srv-tab[data-cat="${cat}"]`).classList.add("active");
+    srvIndex = srvKeys.indexOf(cat);
+
+    // update top 4 grid slices
+    srvGrid1.style.backgroundImage = `url(${data.topImage})`;
+    srvGrid2.style.backgroundImage = `url(${data.topImage})`;
+    srvGrid3.style.backgroundImage = `url(${data.topImage})`;
+    srvGrid4.style.backgroundImage = `url(${data.topImage})`;
+
+    // update bottom section
+    srvBottomHeading.innerHTML = data.bottom.heading;
+    srvBottomPara.textContent = data.bottom.para;
+    srvBottomImg1.style.backgroundImage = `url('${data.bottom.img1}')`;
+    srvBottomImg2.style.backgroundImage = `url('${data.bottom.img2}')`;
+  }
+
+  srvTabs.forEach(tab => {
+    tab.addEventListener("click", () => loadSrvCategory(tab.dataset.cat));
+  });
+
+  document.getElementById("srvPrev").addEventListener("click", () => {
+    srvIndex = (srvIndex - 1 + srvKeys.length) % srvKeys.length;
+    loadSrvCategory(srvKeys[srvIndex]);
+  });
+
+  document.getElementById("srvNext").addEventListener("click", () => {
+    srvIndex = (srvIndex + 1) % srvKeys.length;
+    loadSrvCategory(srvKeys[srvIndex]);
+  });
+
+  // default load
+  loadSrvCategory("installation");
+</script>
+
+<!-- Services end -->
 
         <!-- FAQ Start -->
          <div class="container-fluid faq-section bg-dark py-5">
