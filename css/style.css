@@ -885,7 +885,7 @@
       padding: 0;
       display: flex;
       align-items: center;
-      gap: 17px;
+      gap: 9px;
     }
 
     .navmenu ul li {
@@ -1020,6 +1020,68 @@
         margin: 5px 0;
       }
     }
+
+
+    /* iPad Mini & iPad Air (portrait 768px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header-wrap {
+    padding: 18px 30px;
+  }
+
+  .navmenu ul {
+    gap: 15px;
+  }
+
+  .navmenu ul li a {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  .mega-menu {
+    padding: 25px 40px;
+  }
+
+  .service-submenus {
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+}
+
+/* iPad Pro (landscape 1025px–1366px) */
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .header-wrap {
+    padding: 20px 40px;
+  }
+
+  .navmenu ul {
+    gap: 20px;
+  }
+
+  .navmenu ul li a {
+    font-size: 12px;
+    letter-spacing: 3.5px;
+  }
+
+  .mega-menu {
+    padding: 30px 50px;
+  }
+
+  .service-submenus {
+    gap: 35px;
+  }
+}
+
+/* Nest Hub (1280px wide, 800px tall) */
+@media (min-width: 1200px) and (max-width: 1366px) {
+  .header-wrap {
+    padding: 22px 50px;
+  }
+
+  .navmenu ul li a {
+    font-size: 9px;
+    letter-spacing: 4px;
+  }
+}
 
     /* header */
 
