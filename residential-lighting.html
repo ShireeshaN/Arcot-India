@@ -217,6 +217,66 @@
   
 
 
+
+
+        .card-custom {
+      position: relative;
+      overflow: hidden;
+      
+      height: 400px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .card-custom img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .card-custom:hover img {
+      transform: scale(1.1); /* zoom effect */
+    }
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.35); /* dark overlay */
+    }
+    .card-content {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+    .card-content h3 {
+      font-weight: bold;
+      font-size: 1.6rem;
+    }
+    .card-content p {
+      margin: 5px 0 20px;
+      font-size: 1rem;
+    }
+    .btn-custom {
+      background: #fff;
+      color: #000;
+      font-weight: bold;
+      padding: 8px 18px;
+      border: none;
+      
+      text-transform: uppercase;
+    }
+    .btn-custom:hover {
+      background: #000;
+      color: #fff;
+      transition: 0.3s ease;
+    }
+
+
   </style>
 
 
@@ -270,18 +330,38 @@
 
 
 
+   <div class="container py-5">
+    <div class="row g-4">
 
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card-custom">
+          <img src="img/abouimg/aboutimg1 (2).webp" alt="Downlight 1">
+          <div class="overlay"></div>
+          <div class="card-content">
+          
+           
+          </div>
+        </div>
+      </div>
 
+      <!-- Card 2 -->
+      <div class="col-md-8">
+        <div class="card-custom">
+          <img src="img/abouimg/aboutimg1 (2).webp" alt="Downlight 2">
+          <div class="overlay"></div>
+          <div class="card-content">
+            <h3>Perfect downlights</h3>
+            <p>- Choose a light source based on your own preference and taste</p>
+            <button class="btn-custom">COMFORT QUICK OUTDOOR GU10</button>
+          </div>
+        </div>
+      </div>
 
+    
 
-
-
-
-
-
-
-
-
+    </div>
+  </div>
 
         <!-- Footer Start -->
         <div class="container-fluid footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
