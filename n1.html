@@ -3,307 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solutions - Gewiss Style</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Nature Layout</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #333;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .solutions-section {
-      padding: 60px 0;
+    body {
+      font-family: Arial, sans-serif;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('../img/powerimg/poweraboutimg.png') no-repeat center center/cover;
+      position: relative;
     }
-    .solutions-title {
-      font-size: 42px;
+
+    .container {
+      text-align: center;
+      width: 80%;
+      max-width: 900px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 50px 30px;
+      border-radius: 8px;
+    }
+
+    h1 {
+      font-size: 3rem;
       font-weight: 700;
       margin-bottom: 30px;
     }
 
-    /* --- TOP GRID --- */
-    .solutions-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 200px 200px;
-      gap: 10px;
-      overflow: hidden;
-    }
-    .solutions-grid .grid-piece {
-      background-size: 200% 200%;
-      background-repeat: no-repeat;
-      transition: background-image 0.5s ease-in-out;
-    }
-    .grid-piece:nth-child(1) { background-position: left top; }
-    .grid-piece:nth-child(2) { background-position: right top; }
-    .grid-piece:nth-child(3) { background-position: left bottom; }
-    .grid-piece:nth-child(4) { background-position: right bottom; }
-
-    /* --- RIGHT PANEL --- */
-    .solutions-panel {
-      background: rgba(0,0,0,0.8);
-      color: #fff;
-      padding: 30px;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .solutions-panel h4 {
-      font-weight: 700;
-      margin-bottom: 15px;
-    }
-    .solutions-panel ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .solutions-panel ul li {
-      margin-bottom: 8px;
-      font-size: 15px;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-    .solutions-panel ul li:hover {
-      color: #ff4d00;
-    }
-    .solutions-tabs {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 20px;
-    }
-    .solutions-tabs .tab {
-      margin-right: 15px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    .solutions-tabs .tab.active {
-      color: #ff4d00;
-      font-weight: 700;
-    }
-    .solutions-tabs .arrows {
-      margin-left: auto;
-    }
-    .solutions-tabs .arrows i {
-      margin-left: 10px;
-      cursor: pointer;
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #bfbfba; /* yellow text */
     }
 
-    /* --- BOTTOM GRID --- */
-    .solutions-bottom {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
-      margin-top: 12px;
+    /* Navigation dots */
+    .dots {
+      position: absolute;
+      top: 20px;
+      font-size: 2rem;
+      font-weight: bold;
     }
-    .solutions-bottom .image {
-      background-size: cover;
-      background-position: center;
-      height: 250px;
-      transition: background-image 0.5s ease-in-out;
+
+    .dots.left {
+      left: 30px;
     }
-    .solutions-bottom .text {
-      padding: 30px;
+
+    .dots.right {
+      right: 30px;
+    }
+
+    /* Circle button */
+    .circle-btn {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       background: #fff;
+      color: #000;
+      font-size: 1.5rem;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
       display: flex;
-      flex-direction: column;
+      align-items: center;
       justify-content: center;
-    }
-    .solutions-bottom h3 {
-      font-size: 26px;
-      font-weight: 700;
-    }
-    .solutions-bottom span {
-      color: #ff4d00;
-    }
-    .solutions-bottom p {
-      font-size: 15px;
-      margin-top: 10px;
-      color: #555;
+      cursor: pointer;
+      border: none;
     }
 
-    /* Responsive */
-    @media(max-width: 992px) {
-      .solutions-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 150px 150px;
-      }
-      .solutions-bottom {
-        grid-template-columns: 1fr;
-      }
+    .circle-btn:hover {
+      background: #f8c32a;
+      color: #fff;
+      transition: 0.3s;
     }
   </style>
 </head>
 <body>
-
-<section class="solutions-section container">
-  <h2 class="solutions-title">Solutions</h2>
-  <div class="row g-3">
-    <!-- Left Grid -->
-    <div class="col-lg-8">
-      <div class="solutions-grid">
-        <div class="grid-piece" id="grid1"></div>
-        <div class="grid-piece" id="grid2"></div>
-        <div class="grid-piece" id="grid3"></div>
-        <div class="grid-piece" id="grid4"></div>
-      </div>
-    </div>
-
-    <!-- Right Panel -->
-    <div class="col-lg-4">
-      <div class="solutions-panel">
-        <div>
-          <h4 id="categoryTitle">Installation</h4>
-          <ul id="categoryList"></ul>
-        </div>
-        <div class="solutions-tabs">
-          <span class="tab active" data-cat="installation">Power</span>
-          <span class="tab" data-cat="energy">Energy</span>
-          <span class="tab" data-cat="building">Lighting</span>
-          <span class="tab" data-cat="lighting">Automation</span>
-          <span class="tab" data-cat="mobility">City</span>
-          <div class="arrows">
-            <i class="fa fa-chevron-left" id="prevCat"></i>
-            <i class="fa fa-chevron-right" id="nextCat"></i>
-          </div>
-        </div>
-      </div>
-    </div>
+  
+  <!-- Dots Left -->
+  <div class="dots left">...</div>
+  
+  <!-- Content Box -->
+  <div class="container">
+    <h1>Power ?</h1>
+    <p>
+     At ARCOT Industries, we provide complete solutions for power Transmission & Distribution — from LT to HT panels. Our expertise covers products, installations, and end-to-end services. With reliable technology and trusted support, we power industries and communities with efficiency.   
+    </p>
   </div>
-
-  <!-- Bottom Grid -->
-  <div class="solutions-bottom">
-    <div class="image" id="bottomImg1"></div>
-    <div class="text">
-      <h3 id="bottomHeading"></h3>
-      <p id="bottomPara"></p>
-    </div>
-    <div class="image" id="bottomImg2"></div>
-  </div>
-</section>
-
-<script>
-  const categories = {
-    installation: {
-      title: "Power",
-      items: [
-        "Power",
-        "Power",
-        "Power9",
-        "Power",
-        "Power",
-        "Power"
-      ],
-      topImage: "img/application/68.webp",
-      bottom: {
-        heading: "Safe <span>Installations</span>",
-        para: "Solutions for reliable and safe installations, ensuring maximum efficiency.",
-        img1: "img/application/68.webp",
-        img2: "img/application/68.webp"
-      }
-    },
-    energy: {
-      title: "Energy",
-      items: ["Solar Systems","Wind Power","Battery Storage","Energy Monitoring"],
-      topImage: "img/application/69.webp",
-      bottom: {
-        heading: "Energy <span>always</span> protected",
-        para: "Distribution and withdrawal of energy that guarantees safety in all environments.",
-        img1: "img/application/69.webp",
-        img2: "img/application/69.webp"
-      }
-    },
-    building: {
-      title: "Lighting",
-      items: ["Home Automation","Security Systems","Fire Safety","HVAC Control"],
-      topImage: "img/application/73.webp",
-      bottom: {
-        heading: "Smart <span>Buildings</span>",
-        para: "Automation and comfort integrated into modern building infrastructures.",
-        img1: "img/application/73.webp",
-        img2: "img/application/73.webp"
-      }
-    },
-    lighting: {
-      title: "Lighting",
-      items: ["LED Fixtures","Street Lighting","Architectural Lighting","Smart Lighting"],
-      topImage: "img/application/72.webp",
-      bottom: {
-        heading: "Brilliant <span>Lighting</span>",
-        para: "Lighting solutions that enhance efficiency, design, and sustainability.",
-        img1: "img/application/appli (4).webp",
-        img2: "img/application/appli (4).webp"
-      }
-    },
-    mobility: {
-      title: "Mobility",
-      items: ["EV Charging","Smart Parking","Traffic Management","Public Transport Systems"],
-      topImage: "img/application/72.webp",
-      bottom: {
-        heading: "Future <span>Mobility</span>",
-        para: "Innovative mobility solutions for smarter, cleaner, and safer transportation.",
-        img1: "img/application/appli (2).webp",
-        img2: "img/application/appli (2).webp"
-      }
-    }
-  };
-
-  let currentIndex = 0;
-  const tabs = document.querySelectorAll(".solutions-tabs .tab");
-  const categoryTitle = document.getElementById("categoryTitle");
-  const categoryList = document.getElementById("categoryList");
-  const bottomHeading = document.getElementById("bottomHeading");
-  const bottomPara = document.getElementById("bottomPara");
-  const bottomImg1 = document.getElementById("bottomImg1");
-  const bottomImg2 = document.getElementById("bottomImg2");
-  const keys = Object.keys(categories);
-
-  const grid1 = document.getElementById("grid1");
-  const grid2 = document.getElementById("grid2");
-  const grid3 = document.getElementById("grid3");
-  const grid4 = document.getElementById("grid4");
-
-  function loadCategory(cat) {
-    const data = categories[cat];
-
-    // update right panel
-    categoryTitle.textContent = data.title;
-    categoryList.innerHTML = data.items.map(i => `<li>${i}</li>`).join("");
-    tabs.forEach(t => t.classList.remove("active"));
-    document.querySelector(`.tab[data-cat="${cat}"]`).classList.add("active");
-    currentIndex = keys.indexOf(cat);
-
-    // update top 4 grid slices
-    grid1.style.backgroundImage = `url(${data.topImage})`;
-    grid2.style.backgroundImage = `url(${data.topImage})`;
-    grid3.style.backgroundImage = `url(${data.topImage})`;
-    grid4.style.backgroundImage = `url(${data.topImage})`;
-
-    // update bottom section
-    bottomHeading.innerHTML = data.bottom.heading;
-    bottomPara.textContent = data.bottom.para;
-    bottomImg1.style.backgroundImage = `url('${data.bottom.img1}')`;
-    bottomImg2.style.backgroundImage = `url('${data.bottom.img2}')`;
-  }
-
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => loadCategory(tab.dataset.cat));
-  });
-
-  document.getElementById("prevCat").addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + keys.length) % keys.length;
-    loadCategory(keys[currentIndex]);
-  });
-
-  document.getElementById("nextCat").addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % keys.length;
-    loadCategory(keys[currentIndex]);
-  });
-
-  // default load
-  loadCategory("installation");
-</script>
+  
+  <!-- Dots Right -->
+  <div class="dots right">...</div>
+  
+  <!-- Bottom Button -->
+  <!-- <button class="circle-btn">→</button> -->
 
 </body>
 </html>
