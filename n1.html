@@ -1,309 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solutions - Gewiss Style</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Energy Desktop — Zoom & Mobile Scroll</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #333;
+    :root{
+      --viewer-w: 720px;
+      --viewer-h: 420px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      height:100vh; width:100vw; overflow:hidden;
+      background:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1920&auto=format&fit=crop") center/cover no-repeat fixed;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color:#fff;
+      animation: zoomBg 18s ease-in-out infinite alternate;
     }
 
-    .solutions-section {
-      padding: 60px 0;
-    }
-    .solutions-title {
-      font-size: 42px;
-      font-weight: 700;
-      margin-bottom: 30px;
+    /* 🔍 Smooth zoom effect for desktop */
+    @keyframes zoomBg {
+      0% { background-size: 100%; }
+      100% { background-size: 110%; }
     }
 
-    /* --- TOP GRID --- */
-    .solutions-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 200px 200px;
-      gap: 10px;
-      overflow: hidden;
+    .top-bar{
+      position:fixed; inset:0 0 auto 0;
+      display:flex; justify-content:center; gap:22px;
+      padding:16px 20px;
+      background:linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.15) 70%, transparent);
+      backdrop-filter:saturate(1.2) blur(6px);
+      border-bottom:1px solid rgba(255,255,255,.12);
+      z-index:50;
+      overflow-x:auto;   /* ✅ makes it scrollable on mobile */
+      scrollbar-width:none; /* hide scrollbar Firefox */
     }
-    .solutions-grid .grid-piece {
-      background-size: 200% 200%;
-      background-repeat: no-repeat;
-      transition: background-image 0.5s ease-in-out;
-    }
-    .grid-piece:nth-child(1) { background-position: left top; }
-    .grid-piece:nth-child(2) { background-position: right top; }
-    .grid-piece:nth-child(3) { background-position: left bottom; }
-    .grid-piece:nth-child(4) { background-position: right bottom; }
+    .top-bar::-webkit-scrollbar{ display:none; } /* hide scrollbar Chrome */
 
-    /* --- RIGHT PANEL --- */
-    .solutions-panel {
-      background: rgba(0,0,0,0.8);
-      color: #fff;
-      padding: 30px;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .icon{
+      position:relative; width:78px; flex-shrink:0; /* ✅ prevents icons from shrinking */
+      text-align:center; cursor:pointer; user-select:none;
+      transition:transform .18s ease;
     }
-    .solutions-panel h4 {
-      font-weight: 700;
-      margin-bottom: 15px;
+    .icon:hover{ transform:scale(1.08) }
+    .thumb{
+      width:78px; height:78px; border-radius:18px; overflow:hidden;
+      box-shadow:0 8px 24px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.08);
     }
-    .solutions-panel ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block }
+    .label{ display:block; margin-top:6px; font-size:12px; opacity:.9 }
+
+    .viewer{
+      position:fixed; left:50%; top:52%;
+      width:var(--viewer-w); height:var(--viewer-h);
+      transform:translate(-50%,-50%);
+      background:#000; border-radius:18px; overflow:hidden;
+      box-shadow:0 30px 90px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.08) inset;
+      display:flex; align-items:center; justify-content:center;
+      opacity:0; pointer-events:none; transition:opacity .35s ease;
+      z-index:40;
+      margin-top:70px;
     }
-    .solutions-panel ul li {
-      margin-bottom: 8px;
-      font-size: 15px;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-    .solutions-panel ul li:hover {
-      color: #ff4d00;
-    }
-    .solutions-tabs {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 20px;
-    }
-    .solutions-tabs .tab {
-      margin-right: 15px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    .solutions-tabs .tab.active {
-      color: #ff4d00;
-      font-weight: 700;
-    }
-    .solutions-tabs .arrows {
-      margin-left: auto;
-    }
-    .solutions-tabs .arrows i {
-      margin-left: 10px;
-      cursor: pointer;
+    .viewer.active{ opacity:1; pointer-events:auto }
+    .viewer img{ width:100%; height:100%; object-fit:cover; }
+    .viewer .x{
+      position:absolute; top:10px; right:10px;
+      width:30px; height:30px; border-radius:50%;
+      background:#ff3b30; border:none; color:#fff; font-size:18px; cursor:pointer;
+      box-shadow:0 8px 24px rgba(0,0,0,.5);
     }
 
-    /* --- BOTTOM GRID --- */
-    .solutions-bottom {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .solutions-bottom .image {
-      background-size: cover;
-      background-position: center;
-      height: 250px;
-      transition: background-image 0.5s ease-in-out;
-    }
-    .solutions-bottom .text {
-      padding: 30px;
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .solutions-bottom h3 {
-      font-size: 26px;
-      font-weight: 700;
-    }
-    .solutions-bottom span {
-      color: #ff4d00;
-    }
-    .solutions-bottom p {
-      font-size: 15px;
-      margin-top: 10px;
-      color: #555;
-    }
-
-    /* Responsive */
-    @media(max-width: 992px) {
-      .solutions-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 150px 150px;
+    /* 📱 Mobile adjustments */
+    @media (max-width: 768px) {
+      :root{
+        --viewer-w: 90vw;
+        --viewer-h: 55vh;
       }
-      .solutions-bottom {
-        grid-template-columns: 1fr;
+      body{
+        background-attachment:scroll; /* prevent weird fixed bg on mobile */
+      }
+      .viewer img{
+        object-fit:contain; /* ✅ make image fit inside viewer */
+        background:#000;
       }
     }
   </style>
 </head>
 <body>
 
-<section class="solutions-section container">
-  <h2 class="solutions-title">Solutions</h2>
-  <div class="row g-3">
-    <!-- Left Grid -->
-    <div class="col-lg-8">
-      <div class="solutions-grid">
-        <div class="grid-piece" id="grid1"></div>
-        <div class="grid-piece" id="grid2"></div>
-        <div class="grid-piece" id="grid3"></div>
-        <div class="grid-piece" id="grid4"></div>
-      </div>
+  <div class="top-bar" id="topBar">
+    <div class="icon" data-img="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1600">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=240" alt=""></div>
+      <span class="label">Solar</span>
     </div>
 
-    <!-- Right Panel -->
-    <div class="col-lg-4">
-      <div class="solutions-panel">
-        <div>
-          <h4 id="categoryTitle">Installation</h4>
-          <ul id="categoryList"></ul>
-        </div>
-        <div class="solutions-tabs">
-          <span class="tab active" data-cat="installation">Power</span>
-          <span class="tab" data-cat="energy">Energy</span>
-          <span class="tab" data-cat="building">Lighting</span>
-          <span class="tab" data-cat="lighting">Automation</span>
-          <span class="tab" data-cat="mobility">City</span>
-          <div class="arrows">
-            <i class="fa fa-chevron-left" id="prevCat"></i>
-            <i class="fa fa-chevron-right" id="nextCat"></i>
-          </div>
-        </div>
-      </div>
+    <div class="icon" data-img="https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?q=80&w=1600">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?q=80&w=240" alt=""></div>
+      <span class="label">Wind</span>
+    </div>
+
+    <div class="icon" data-img="https://images.unsplash.com/photo-1603933225640-1b4b76ac49d0?q=80&w=1600">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1603933225640-1b4b76ac49d0?q=80&w=240" alt=""></div>
+      <span class="label">Biomass</span>
+    </div>
+
+    <div class="icon" data-img="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=240" alt=""></div>
+      <span class="label">Hydel</span>
+    </div>
+
+    <div class="icon" data-img="https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?q=80&w=1600">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?q=80&w=240" alt=""></div>
+      <span class="label">Geothermal</span>
+    </div>
+
+    <div class="icon" data-img="https://images.unsplash.com/photo-1505236731920-7738c4eaf2b0?q=80&w=1600">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1505236731920-7738c4eaf2b0?q=80&w=240" alt=""></div>
+      <span class="label">Tidal</span>
+    </div>
+
+    <div class="icon" data-img="https://images.unsplash.com/photo-1535979861598-8a5f53bfe2df?q=80&w=1600">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1535979861598-8a5f53bfe2df?q=80&w=240" alt=""></div>
+      <span class="label">Hydrogen</span>
+    </div>
+
+    <div class="icon" data-img="https://images.unsplash.com/photo-1498598453630-dcbf7a3a06d1?q=80&w=1600">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1498598453630-dcbf7a3a06d1?q=80&w=240" alt=""></div>
+      <span class="label">Microgrid</span>
     </div>
   </div>
 
-  <!-- Bottom Grid -->
-  <div class="solutions-bottom">
-    <div class="image" id="bottomImg1"></div>
-    <div class="text">
-      <h3 id="bottomHeading"></h3>
-      <p id="bottomPara"></p>
-    </div>
-    <div class="image" id="bottomImg2"></div>
+  <div class="viewer" id="viewer">
+    <button class="x" id="viewerClose">&times;</button>
+    <img id="viewerImg" src="" alt="">
   </div>
-</section>
 
-<script>
-  const categories = {
-    installation: {
-      title: "Power",
-      items: [
-        "Power",
-        "Power",
-        "Power9",
-        "Power",
-        "Power",
-        "Power"
-      ],
-      topImage: "img/application/68.webp",
-      bottom: {
-        heading: "Safe <span>Installations</span>",
-        para: "Solutions for reliable and safe installations, ensuring maximum efficiency.",
-        img1: "img/application/68.webp",
-        img2: "img/application/68.webp"
-      }
-    },
-    energy: {
-      title: "Energy",
-      items: ["Solar Systems","Wind Power","Battery Storage","Energy Monitoring"],
-      topImage: "img/application/69.webp",
-      bottom: {
-        heading: "Energy <span>always</span> protected",
-        para: "Distribution and withdrawal of energy that guarantees safety in all environments.",
-        img1: "img/application/69.webp",
-        img2: "img/application/69.webp"
-      }
-    },
-    building: {
-      title: "Lighting",
-      items: ["Home Automation","Security Systems","Fire Safety","HVAC Control"],
-      topImage: "img/application/73.webp",
-      bottom: {
-        heading: "Smart <span>Buildings</span>",
-        para: "Automation and comfort integrated into modern building infrastructures.",
-        img1: "img/application/73.webp",
-        img2: "img/application/73.webp"
-      }
-    },
-    lighting: {
-      title: "Lighting",
-      items: ["LED Fixtures","Street Lighting","Architectural Lighting","Smart Lighting"],
-      topImage: "img/application/72.webp",
-      bottom: {
-        heading: "Brilliant <span>Lighting</span>",
-        para: "Lighting solutions that enhance efficiency, design, and sustainability.",
-        img1: "img/application/appli (4).webp",
-        img2: "img/application/appli (4).webp"
-      }
-    },
-    mobility: {
-      title: "Mobility",
-      items: ["EV Charging","Smart Parking","Traffic Management","Public Transport Systems"],
-      topImage: "img/application/72.webp",
-      bottom: {
-        heading: "Future <span>Mobility</span>",
-        para: "Innovative mobility solutions for smarter, cleaner, and safer transportation.",
-        img1: "img/application/appli (2).webp",
-        img2: "img/application/appli (2).webp"
-      }
+  <script>
+    const topBar = document.getElementById('topBar');
+    const viewer = document.getElementById('viewer');
+    const viewerImg = document.getElementById('viewerImg');
+    const viewerClose = document.getElementById('viewerClose');
+
+    let icons = Array.from(document.querySelectorAll('.icon'));
+    let current = 0;
+    let timer = null;
+
+    function showFromIcon(iconEl){
+      if(!iconEl) return;
+      const src = iconEl.getAttribute('data-img');
+      viewerImg.src = src;
+      viewer.classList.add('active');
     }
-  };
 
-  let currentIndex = 0;
-  const tabs = document.querySelectorAll(".solutions-tabs .tab");
-  const categoryTitle = document.getElementById("categoryTitle");
-  const categoryList = document.getElementById("categoryList");
-  const bottomHeading = document.getElementById("bottomHeading");
-  const bottomPara = document.getElementById("bottomPara");
-  const bottomImg1 = document.getElementById("bottomImg1");
-  const bottomImg2 = document.getElementById("bottomImg2");
-  const keys = Object.keys(categories);
+    function nextAuto(){
+      if(icons.length === 0){ viewer.classList.remove('active'); clearInterval(timer); return; }
+      current = current % icons.length;
+      showFromIcon(icons[current]);
+      current = (current + 1) % icons.length;
+    }
 
-  const grid1 = document.getElementById("grid1");
-  const grid2 = document.getElementById("grid2");
-  const grid3 = document.getElementById("grid3");
-  const grid4 = document.getElementById("grid4");
+    function startAuto(){
+      if(timer) clearInterval(timer);
+      nextAuto();
+      timer = setInterval(nextAuto, 4000);
+    }
 
-  function loadCategory(cat) {
-    const data = categories[cat];
+    topBar.addEventListener('click', (e)=>{
+      const icon = e.target.closest('.icon');
+      if(!icon) return;
+      clearInterval(timer);
+      showFromIcon(icon);
+      current = icons.indexOf(icon) + 1;
+      startAuto();
+    });
 
-    // update right panel
-    categoryTitle.textContent = data.title;
-    categoryList.innerHTML = data.items.map(i => `<li>${i}</li>`).join("");
-    tabs.forEach(t => t.classList.remove("active"));
-    document.querySelector(`.tab[data-cat="${cat}"]`).classList.add("active");
-    currentIndex = keys.indexOf(cat);
+    viewerClose.addEventListener('click', ()=>{
+      viewer.classList.remove('active'); // simple fade out
+    });
 
-    // update top 4 grid slices
-    grid1.style.backgroundImage = `url(${data.topImage})`;
-    grid2.style.backgroundImage = `url(${data.topImage})`;
-    grid3.style.backgroundImage = `url(${data.topImage})`;
-    grid4.style.backgroundImage = `url(${data.topImage})`;
-
-    // update bottom section
-    bottomHeading.innerHTML = data.bottom.heading;
-    bottomPara.textContent = data.bottom.para;
-    bottomImg1.style.backgroundImage = `url('${data.bottom.img1}')`;
-    bottomImg2.style.backgroundImage = `url('${data.bottom.img2}')`;
-  }
-
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => loadCategory(tab.dataset.cat));
-  });
-
-  document.getElementById("prevCat").addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + keys.length) % keys.length;
-    loadCategory(keys[currentIndex]);
-  });
-
-  document.getElementById("nextCat").addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % keys.length;
-    loadCategory(keys[currentIndex]);
-  });
-
-  // default load
-  loadCategory("installation");
-</script>
-
+    startAuto();
+  </script>
 </body>
 </html>

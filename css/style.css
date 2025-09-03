@@ -319,7 +319,24 @@
 /*** Single Page Hero Header End ***/
 
 
+.bg-breadcrumbpower {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/powerimg/powerbanners.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 60px 0 60px 0;
+    transition: 0.5s;
+}
 
+.bg-breadcrumbpower .breadcrumb1 {
+    position: relative;
+}
+
+.bg-breadcrumbpower .breadcrumb1 .breadcrumb-item a {
+    color: var(--bs-white);
+}
 
 /*** Service Start ***/
 .service .nav .nav-item {
