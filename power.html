@@ -219,6 +219,125 @@
         <!-- Header End -->
 
 
+<div class="powerabouts-wrapper">
+
+  <!-- Dots Left -->
+
+  
+  <!-- Content Box -->
+  <div class="powerabouts-container">
+    <h1>Power ?</h1>
+    <p>
+      At ARCOT Industries, we provide complete solutions for power Transmission & Distribution — from LT to HT panels. Our expertise covers products, installations, and end-to-end services. With reliable technology and trusted support, we power industries and communities with efficiency.   
+    </p>
+  </div>
+
+
+</div>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.powerabouts-wrapper {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../img/powerimg/poweraboutimg.png') no-repeat center center/cover;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay shade */
+.powerabouts-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35); /* adjust darkness here (0.2–0.5) */
+  z-index: 1;
+}
+
+/* Make content stay above overlay */
+.powerabouts-container,
+.powerabouts-dots,
+.powerabouts-circle-btn {
+  position: relative;
+  z-index: 2;
+}
+
+
+  .powerabouts-container {
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 50px 30px;
+ 
+  }
+
+  .powerabouts-container h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color:white;
+  }
+
+  .powerabouts-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #bfbfba;
+  }
+
+  /* Navigation dots */
+  .powerabouts-dots {
+    position: absolute;
+    top: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .powerabouts-left {
+    left: 30px;
+  }
+
+  .powerabouts-right {
+    right: 30px;
+  }
+
+  /* Circle button */
+  .powerabouts-circle-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    color: #000;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+  }
+
+  .powerabouts-circle-btn:hover {
+    background: #f8c32a;
+    color: #fff;
+    transition: 0.3s;
+  }
+</style>
 
 
 </body>
