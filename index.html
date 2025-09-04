@@ -32,6 +32,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
 
+  
+
   <!-- Other custom CSS -->
   <link href="css/segments.css" rel="stylesheet">
 
@@ -340,10 +342,13 @@
 
 
   <style>
-  
+    /* :root {
+      --card-height: 240px;
+    } */
+
     .hello {
       font-family: 'Jost', sans-serif;
-      background:#eee;
+      background:#8c8a8a;
       color: #eee;
       min-height: 100vh;
       display: flex;
@@ -361,54 +366,67 @@
       flex-wrap: wrap;
     }
 
-    .aboutforarcot-textarea {
-      flex: 1.3;
-      min-width: 320px;
-    }
+    .aboutforarcot-textarea { flex: 1.3; min-width: 320px; }
 
     .aboutforarcot-textarea h1 {
-      font-weight: 600;
-      font-size: 3.2rem;
-      margin-bottom: 16px;
-      color: #000000;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 3.4rem;
+      margin-bottom: 12px;
+      color: #111;
       position: relative;
+    }
+
+    .aboutforarcot-textarea h2.tagline {
+      font-size: 1.4rem;
+      /* font-weight: 600; */
+      color: #242122;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: linear-gradient(90deg, #1a1818, #1f1f1e);
+      -webkit-background-clip : text;
+      -webkit-text-fill-color: transparent;
+      margin-top: 25px;
     }
 
     .aboutforarcot-textarea h1::after {
       content: "";
       position: absolute;
-      bottom: -6px;
+      bottom: -8px;
       left: 0;
-      width: 70px;
-      height: 4px;
-      border-radius: 3px;
-      background: linear-gradient(90deg, #aaa, #fff);
+      width: 90px;
+      height: 5px;
+      border-radius: 4px;
+      background: linear-gradient(90deg, #3b3939, #302f2d);
       animation: aboutforarcot-underline 3s infinite alternate ease-in-out;
     }
 
     @keyframes aboutforarcot-underline {
-      0% { left: 0; width: 70px; opacity: 1; }
-      50% { left: 50%; width: 110px; opacity: 0.8; }
-      100% { left: 0; width: 70px; opacity: 1; }
+      0% { left: 0; width: 90px; opacity: 1; }
+      50% { left: 40%; width: 140px; opacity: 0.8; }
+      100% { left: 0; width: 90px; opacity: 1; }
     }
 
     .aboutforarcot-textarea p {
       color: #1a1919;
       font-size: 1rem;
-      line-height: 1.5;
-      max-width: 480px;
+      line-height: 1.6;
+      max-width: 500px;
       font-weight: 400;
     }
 
     .aboutforarcot-carousel {
       flex: 1;
-      min-width: 320px;
+      min-width: 500px;
       position: relative;
-      height: 320px;
+      height: calc(var(--card-height) * 2);
       overflow: hidden;
-      border-radius: 16px;
       background: #111;
       user-select: none;
+      /* border-radius: 16px; */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+       --card-height: 240px;
     }
 
     .aboutforarcot-blurwrap {
@@ -428,7 +446,6 @@
       width: 100%;
       height: 48px;
       object-fit: cover;
-      border-radius: 8px;
       opacity: 0.3;
       filter: grayscale(100%) brightness(1.1);
       transition: opacity 0.5s ease;
@@ -441,7 +458,7 @@
 
     .aboutforarcot-imagestack {
       position: relative;
-      height: 320px;
+      height: calc(var(--card-height) * 2);
       overflow: hidden;
       z-index: 2;
     }
@@ -450,19 +467,19 @@
       position: absolute;
       left: 0;
       width: 100%;
-      height: 160px;
-      
+      height: var(--card-height);
       overflow: hidden;
       background-size: cover;
       background-position: center;
       color: white;
       display: flex;
-      align-items: flex-end;
+      flex-direction: column;
+      justify-content: flex-end;
       padding: 20px;
       font-weight: 600;
       font-size: 1.1rem;
-      line-height: 1.2;
-      text-shadow: 0 0 4px rgba(0,0,0,0.6);
+      line-height: 1.3;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
       cursor: default;
       user-select: text;
       top: 0;
@@ -470,125 +487,149 @@
       opacity: 1;
     }
 
+    .aboutforarcot-card span.subtitle {
+      font-size: 0.95rem;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* ✅ Mobile fixes only */
     @media (max-width: 900px) {
       .aboutforarcot-wrapper {
         flex-direction: column;
+        gap: 20px; /* smaller gap for mobile */
+        margin-right: 40px;
       }
       .aboutforarcot-carousel {
-        height: 360px;
+        min-width: 100%;
+        height: calc(var(--card-height) * 2);
       }
       .aboutforarcot-card {
-        height: 180px;
+        height: var(--card-height);
         font-size: 1rem;
-        padding: 30px;
+        padding: 16px;
       }
-      .aboutforarcot-textarea h1 {
-        font-size: 2.4rem;
-      }
-      .aboutforarcot-textarea p {
-        font-size: 0.9rem;
-      }
+      .aboutforarcot-textarea h1 { font-size: 2.4rem; }
+      .aboutforarcot-textarea h2.tagline { font-size: 1.1rem; }
+      .aboutforarcot-textarea p { font-size: 0.9rem; }
     }
   </style>
 <div class="hello">
-  <div class="aboutforarcot-wrapper" role="main" aria-label="About ARCOT Industries">
+    <div class="aboutforarcot-wrapper" role="main" aria-label="About ARCOT Industries">
 
-    <div class="aboutforarcot-textarea">
-      <h1>About</h1>
-      <p>
-        Pioneers in <strong>Power</strong>, <strong>Energy</strong>, <strong>Automation</strong>,<br />
-        <strong>Lighting</strong>, and <strong>Smart City</strong> solutions.<br />
-        Building scalable, future-ready infrastructure with innovation and precision.
-      </p>
-    </div>
-
-    <div class="aboutforarcot-carousel" aria-label="Services Image Carousel">
-      <div class="aboutforarcot-blurwrap" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="" />
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="" />
-        <img src="https://images.unsplash.com/photo-1521790366325-c7b6ff3b2526?auto=format&fit=crop&w=600&q=80" alt="" />
-        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=80" alt="" />
-        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=600&q=80" alt="" />
-        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=600&q=80" alt="" />
+      <div class="aboutforarcot-textarea">
+        <h1>Arcot – Powering the Future with Innovation</h1>
+        <h2 class="tagline"> Every great journey begins with a spark. </h2>
+        <p>
+          At Arcot, our journey is driven by the vision to create a brighter, smarter, and more sustainable future. What started as a passion for energy has grown into a trusted name delivering cutting-edge power solutions, smart automation, and next-generation products that empower industries and communities alike.
+        </p>
+        <!-- <p >Engineering Tomorrow’s Infrastructure</p> -->
       </div>
 
-      <div class="aboutforarcot-imagestack" aria-live="polite" aria-atomic="true">
-        <!-- JS will inject cards -->
+      <div class="aboutforarcot-carousel" aria-label="Services Image Carousel">
+        <div class="aboutforarcot-blurwrap" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1521790366325-c7b6ff3b2526?auto=format&fit=crop&w=600&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=600&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=600&q=80" alt="" />
+        </div>
+
+        <div class="aboutforarcot-imagestack" aria-live="polite" aria-atomic="true">
+          <!-- JS will inject cards -->
+        </div>
       </div>
     </div>
   </div>
-</div>
-  <script>
-    const aboutServices = [
-      { title: "Power Transmission & Distribution", img: "img/bannerabout.webp" },
-      { title: "Renewable Energy Solutions", img: "img/carousel-1.webp" },
-      { title: "Industrial & Home Automation", img: "img/bannerabout.webp" },
-      { title: "Smart & Commercial Lighting", img: "img/carousel-1.webp" },
-      { title: "Integrated Smart City Infrastructure", img: "img/bannerabout.webp" },
-      { title: "Research & Development Innovations", img: "img/carousel-1.webp" }
-    ];
 
-    const aboutStack = document.querySelector('.aboutforarcot-imagestack');
-    const blurImages = document.querySelectorAll('.aboutforarcot-blurwrap img');
+<script>
+  const aboutServices = [
+    { title: "Power Transmission & Distribution", subtitle: "Reliable grids for a brighter future", img: "img/bannerabout.webp" },
+    { title: "Renewable Energy Solutions", subtitle: "Harnessing solar, wind, and clean energy", img: "img/carousel-1.webp" },
+    { title: "Industrial & Home Automation", subtitle: "Smart tech for seamless living", img: "img/bannerabout.webp" },
+    { title: "Smart & Commercial Lighting", subtitle: "Illuminating cities and industries", img: "img/carousel-1.webp" },
+    { title: "Integrated Smart City Infrastructure", subtitle: "Future-ready urban innovation", img: "img/bannerabout.webp" },
+    { title: "Research & Development Innovations", subtitle: "Driving progress through innovation", img: "img/carousel-1.webp" }
+  ];
 
-    let currentIdx = 0;
+  const aboutStack = document.querySelector('.aboutforarcot-imagestack');
+  const blurImages = document.querySelectorAll('.aboutforarcot-blurwrap img');
 
-    function createCard(item, top) {
-      const div = document.createElement('div');
-      div.className = 'aboutforarcot-card';
-      div.style.top = `${top}px`;
-      div.style.backgroundImage = `url(${item.img})`;
-      div.textContent = item.title;
-      return div;
-    }
+  const CARD_HEIGHT = parseInt(
+    getComputedStyle(document.documentElement).getPropertyValue('--card-height')
+  ) || 240;
 
-    let currentCards = [];
-    for (let i = 0; i < 2; i++) {
-      const card = createCard(aboutServices[(currentIdx + i) % aboutServices.length], i * 160);
-      aboutStack.appendChild(card);
-      currentCards.push(card);
-    }
+  let currentIdx = 0;
 
-    function animateCarousel() {
-      const topCard = currentCards.shift();
+  function createCard(item, top) {
+    const div = document.createElement('div');
+    div.className = 'aboutforarcot-card';
+    div.style.top = `${top}px`;
+    div.style.backgroundImage = `url(${item.img})`;
+    // ✅ Title removed – only subtitle shown
+    div.innerHTML = `<span class="subtitle">${item.subtitle}</span>`;
+    return div;
+  }
 
-      gsap.to(topCard, {
+  let currentCards = [];
+  for (let i = 0; i < 2; i++) {
+    const card = createCard(
+      aboutServices[(currentIdx + i) % aboutServices.length],
+      i * CARD_HEIGHT
+    );
+    aboutStack.appendChild(card);
+    currentCards.push(card);
+  }
+
+  function animateCarousel() {
+    const topCard = currentCards.shift();
+
+    gsap.to(topCard, {
+      duration: 1,
+      y: -CARD_HEIGHT,
+      opacity: 0,
+      ease: "power2.inOut",
+      onComplete: () => topCard.remove()
+    });
+
+    if (currentCards.length > 0) {
+      gsap.to(currentCards[0], {
         duration: 1,
-        y: -160,
-        opacity: 0,
+        top: 0,
         ease: "power2.inOut",
-        onComplete: () => topCard.remove()
-      });
-
-      if (currentCards.length > 0) {
-        gsap.to(currentCards[0], {
-          duration: 1,
-          top: 0,
-          ease: "power2.inOut",
-          y: 0,
-        });
-      }
-
-      currentIdx = (currentIdx + 1) % aboutServices.length;
-      const newCard = createCard(aboutServices[(currentIdx + 1) % aboutServices.length], 160);
-      newCard.style.opacity = 0;
-      aboutStack.appendChild(newCard);
-      currentCards.push(newCard);
-
-      gsap.fromTo(newCard, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, ease: "power2.inOut" });
-
-      blurImages.forEach((img, i) => {
-        img.classList.toggle('active', i === currentIdx);
+        y: 0,
       });
     }
 
-    setInterval(animateCarousel, 3000);
+    currentIdx = (currentIdx + 1) % aboutServices.length;
+    const newCard = createCard(
+      aboutServices[(currentIdx + 1) % aboutServices.length],
+      CARD_HEIGHT
+    );
+    newCard.style.opacity = 0;
+    aboutStack.appendChild(newCard);
+    currentCards.push(newCard);
 
-    // Initial highlight
+    gsap.fromTo(
+      newCard,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 1, ease: "power2.inOut" }
+    );
+
     blurImages.forEach((img, i) => {
       img.classList.toggle('active', i === currentIdx);
     });
-  </script>
+  }
+
+  setInterval(animateCarousel, 3000);
+
+  blurImages.forEach((img, i) => {
+    img.classList.toggle('active', i === currentIdx);
+  });
+</script>
 
 <!-- POWER START -->
 <!-- ✅ Light Solutions Section Snippet (Mobile Top Text & Shorter Image) -->
@@ -612,8 +653,8 @@
     <ul class="menu" role="tablist" aria-label="Light Solution Categories">
       <li class="active" data-key="indoor">Transmission <span class="cta"></li>
       <li data-key="outdoor">Distribution <span class="cta"></li>
-      <li data-key="immersion">Low & High Tention <span class="cta"></li>
-      <li data-key="linear">Panel Board <span class="cta"></li>
+      <li data-key="immersion">LT & HT Panel Boards <span class="cta"></li>
+      <li data-key="linear">Generation <span class="cta"></li>
     </ul>
   </div>
 </section>
@@ -721,7 +762,7 @@
 
 <div class="">
 <section class="section-wraps ">
-  <h2 class="section-heading">Energy Generation</h2>
+  <h2 class="section-heading text-black">Energy Generation</h2>
   <p class="section-sub">Harnessing clean and timeless power for a sustainable future</p>
 </section>
 </div>
@@ -741,8 +782,8 @@
   font-family: 'Inter', sans-serif; /* professional modern font */
   font-size: 36px;
   font-weight: 500;   /* elegant, not bold */
-  color: #343232;        /* deep grey-black */
-  margin: 0 0 10px 0;
+  /* color: #000;       */
+  margin: 0 0 10px 50;
   position: relative;
   animation: fadeSlideUp 0.9s ease forwards;
 }
@@ -834,16 +875,16 @@
  <div class="">
   <div class="energygenss ">
     <div class="energygenss-item" style="background-image: url('img/application/appli (2).webp');">
-      <span>Mountain View</span>
+      <span>Solar</span>
     </div>
     <div class="energygenss-item" style="background-image: url('img/application/appli (3).webp');">
-      <span>Forest</span>
+      <span>Wind</span>
     </div>
     <div class="energygenss-item" style="background-image: url('img/application/appli (4).webp');">
-      <span>Lake</span>
+      <span>Biomass</span>
     </div>
     <div class="energygenss-item" style="background-image: url('img/segmentimgs/commercial-auto.webp');">
-      <span>Desert</span>
+      <span>Hydel Power</span>
     </div>
     <div class="energygenss-item" style="background-image: url('img/segmentimgs/iot-auto.webp');">
       <span>Beach</span>
@@ -924,7 +965,7 @@
 }
 
 .energygenss-item {
-  flex: 1; 
+  flex: 0.4; 
   min-width: 0;        /* fix flexbox overflow issues */
   background-size: cover;
   background-position: center;
@@ -960,7 +1001,7 @@
     }
 
     .energygenss-item.active {
-      flex: 7; /* big main image */
+      flex: 9; /* big main image */
       filter: grayscale(0%) brightness(1);
       transform: scale(1.02);
     }
@@ -1038,16 +1079,31 @@
   </div>
 </div>
 
-<!-- 👇 8 Icons -->
 <div class="LightItco-icons">
-  <div class="LightItco-icon active" data-index="0">🏠<span>Residential</span></div>
-  <div class="LightItco-icon" data-index="1">🏛<span>Facade</span></div>
-  <div class="LightItco-icon" data-index="2">🏢<span>Commercial</span></div>
-  <div class="LightItco-icon" data-index="3">🏭<span>Industrial</span></div>
-  <div class="LightItco-icon" data-index="4">🏨<span>Hospitality</span></div>
-  <div class="LightItco-icon" data-index="5">🛍<span>Retail</span></div>
-  <div class="LightItco-icon" data-index="6">💼<span>Office</span></div>
-  <div class="LightItco-icon" data-index="7">🌆<span>Outdoor</span></div>
+  <div class="LightItco-icon active" data-index="0">
+    <i data-lucide="home"></i><span>Residential</span>
+  </div>
+  <div class="LightItco-icon" data-index="1">
+    <i data-lucide="landmark"></i><span>Facade</span>
+  </div>
+  <div class="LightItco-icon" data-index="2">
+    <i data-lucide="building-2"></i><span>Commercial</span>
+  </div>
+  <div class="LightItco-icon" data-index="3">
+    <i data-lucide="factory"></i><span>Industrial</span>
+  </div>
+  <div class="LightItco-icon" data-index="4">
+    <i data-lucide="hotel"></i><span>Hospitality</span>
+  </div>
+  <div class="LightItco-icon" data-index="5">
+    <i data-lucide="shopping-bag"></i><span>Retail</span>
+  </div>
+  <div class="LightItco-icon" data-index="6">
+    <i data-lucide="briefcase"></i><span>Office</span>
+  </div>
+   <div class="LightItco-icon" data-index="7">
+    <i data-lucide="trees"></i><span>Outdoor</span> 
+  </div>
 </div>
 
 <script>
@@ -1291,6 +1347,7 @@ LightItcoStart();
       font-size: 10px;
     }
   }
+  
 </style>
 </section1>
 <!-- LIGHTIG END -->
@@ -3010,6 +3067,12 @@ Smart City & R&D: Innovative smart city tech & research.
   window.addEventListener('DOMContentLoaded', () => {
     AOS.init();
   });
+</script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
 </script>
 
 
