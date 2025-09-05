@@ -546,7 +546,7 @@
     { title: "Power Transmission & Distribution", subtitle: "Empowering progress with trusted power solutions.", img: "img/abouimg/power.png" },
     { title: "Renewable Energy Solutions", subtitle: "Harnessing nature, powering tomorrow", img: "img/abouimg/energy.png" },
     { title: "Industrial & Home Automation", subtitle: "Transforming industries with intelligent automation", img: "img/abouimg/automation.png" },
-    { title: "Smart & Commercial Lighting", subtitle: "Illuminating cities and industries", img: "" },
+    { title: "Smart & Commercial Lighting", subtitle: "Illuminating cities and industries", img: "img/abouimg/lighting.png" },
     { title: "Research & Development Innovations", subtitle: "Innovation at the core of every solution.", img: "img/abouimg/RandD.png" }
   ];
 
@@ -2590,7 +2590,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- Services start -->
 
 <section class="section-wraps" >
-  <h2 class="section-heading">We are At</h2>
+  <h2 class="section-heading text-black">How We Do</h2>
 
 </section>
 
@@ -2632,15 +2632,15 @@ document.addEventListener("DOMContentLoaded", function() {
     <div class="col-lg-4">
       <div class="services-panel">
         <div>
-          <h4 id="srvCategoryTitle">Installation</h4>
+          <h4 id="srvCategoryTitle">Design</h4>
           <ul id="srvCategoryList"></ul>
         </div>
         <div class="services-tabs">
-          <span class="srv-tab active" data-cat="installation">Power</span>
-          <span class="srv-tab" data-cat="energy">Energy</span>
-          <span class="srv-tab" data-cat="building">Lighting</span>
-          <span class="srv-tab" data-cat="lighting">Automation</span>
-          <span class="srv-tab" data-cat="mobility">City</span>
+          <span class="srv-tab active" data-cat="design">Design</span>
+          <span class="srv-tab" data-cat="manufacturing">Manufacturing</span>
+          <span class="srv-tab" data-cat="installation">Installation</span>
+          <span class="srv-tab" data-cat="testing">Testing</span>
+          <span class="srv-tab" data-cat="commisioning">Commisioning</span>
           <div class="arrows">
             <i class="fa fa-chevron-left" id="srvPrev"></i>
             <i class="fa fa-chevron-right" id="srvNext"></i>
@@ -2704,7 +2704,7 @@ padding-top: 0px;}
   }
   .services-panel ul li:hover { color: #ff4d00; }
   .services-tabs { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
-  .services-tabs .srv-tab { margin-right: 15px; cursor: pointer; font-size: 14px; }
+  .services-tabs .srv-tab { margin-right: 10px; cursor: pointer; font-size: 13.5px; }
   .services-tabs .srv-tab.active { color: #ff4d00; font-weight: 700; }
   .services-tabs .arrows { margin-left: auto; }
   .services-tabs .arrows i { margin-left: 10px; cursor: pointer; }
@@ -2721,6 +2721,7 @@ padding-top: 0px;}
     background-position: center;
     height: 250px;
     transition: background-image 0.5s ease-in-out;
+   
   }
   .services-bottom .text {
     padding: 30px; background: #fff;
@@ -2739,59 +2740,59 @@ padding-top: 0px;}
 
 <script>
   const srvCategories = {
+    design: {
+      title: "Design",
+      items: ["Requirement analysis & site survey","Concept design & feasibility study","Electrical & mechanical schematics","CAD drawings & 3D visualization","Standards & compliance check (IEC, IS, BIS)"],
+      topImage: "img/solutions/design.png",
+      bottom: {
+        heading: "Concept <span>& Innovation</span>",
+        para: "From concept to blueprint, shaping ideas into realityTransforming ideas into practical solutions with precision and creativity",
+        img1: "img/solutions/Lighting-design.png",
+        img2: "img/solutions/power-design.png"
+      }
+    },
+    manufacturing: {
+      title: "Manufacturing",
+      items: ["Component sourcing & material selection","Assembly & fabrication", "Integration of electronics & hardware","Quality inspection during production","Pre-shipment testing"],
+      topImage: "img/solutions/manufacturing.png",
+      bottom: {
+        heading: "Build <span>& Create </span>",
+        para: "High-quality manufacturing with advanced technology and strict quality control.",
+        img1: "img/solutions/power-manufacturing.png",
+        img2: "img/solutions/automation-manufacturing.png"
+      }
+    },
     installation: {
-      title: "Power",
-      items: ["Power","Power","Power9","Power","Power","Power"],
-      topImage: "img/application/68.webp",
+      title: "Installation",
+      items: ["Site preparation & civil works (if needed)", "Electrical cabling & wiring","Mounting & fixing of equipment / lights / panels","System integration (automation, power, lighting, IoT)","Safety checks during installation"],
+      topImage: "img/solutions/installations.png",
       bottom: {
-        heading: "Safe <span>Installations</span>",
-        para: "Solutions for reliable and safe installations, ensuring maximum efficiency.",
-        img1: "img/application/68.webp",
-        img2: "img/application/68.webp"
+        heading: "Implement  <span>& Integrate</span>",
+        para: "Seamless installation services ensuring safety, efficiency, and reliability.",
+        img1: "img/solutions/lighting-install.png",
+        img2: "img/solutions/power-install.png"
       }
     },
-    energy: {
-      title: "Energy",
-      items: ["Solar Systems","Wind Power","Battery Storage","Energy Monitoring"],
-      topImage: "img/application/69.webp",
+    testing: {
+      title: "Testing",
+      items: ["Functional testing (does it work as designed?)","Load & stress testing","Safety & protection testing (short circuit, overload)","Performance optimization","Client demonstration"],
+      topImage: "img/solutions/testing.png",
       bottom: {
-        heading: "Energy <span>always</span> protected",
-        para: "Distribution and withdrawal of energy that guarantees safety in all environments.",
-        img1: "img/application/69.webp",
-        img2: "img/application/69.webp"
+        heading: "Verify <span>& Assure</span>",
+        para: "Comprehensive testing for performance, safety, and long-term dependability.",
+        img1: "img/solutions/automation-testing.png",
+        img2: "img/solutions/power-testing.png"
       }
     },
-    building: {
-      title: "Lighting",
-      items: ["Home Automation","Security Systems","Fire Safety","HVAC Control"],
-      topImage: "img/application/73.webp",
+    commisioning: {
+      title: "Commisioning",
+      items: ["Final calibration & adjustments","System documentation & reports","Training end-users / client staff","Handover of system with manuals","After-sales support & AMC (maintenance plan)"],
+      topImage: "img/solutions/commisioning.png",
       bottom: {
-        heading: "Smart <span>Buildings</span>",
-        para: "Automation and comfort integrated into modern building infrastructures.",
-        img1: "img/application/73.webp",
-        img2: "img/application/73.webp"
-      }
-    },
-    lighting: {
-      title: "Lighting",
-      items: ["LED Fixtures","Street Lighting","Architectural Lighting","Smart Lighting"],
-      topImage: "img/application/72.webp",
-      bottom: {
-        heading: "Brilliant <span>Lighting</span>",
-        para: "Lighting solutions that enhance efficiency, design, and sustainability.",
-        img1: "img/application/appli (4).webp",
-        img2: "img/application/appli (4).webp"
-      }
-    },
-    mobility: {
-      title: "Mobility",
-      items: ["EV Charging","Smart Parking","Traffic Management","Public Transport Systems"],
-      topImage: "img/application/72.webp",
-      bottom: {
-        heading: "Future <span>Mobility</span>",
-        para: "Innovative mobility solutions for smarter, cleaner, and safer transportation.",
-        img1: "img/application/appli (2).webp",
-        img2: "img/application/appli (2).webp"
+        heading: "Launch  <span>& Deliver</span>",
+        para: "Final validation and handover with full client support and documentation.",
+        img1: "img/solutions/lighting-commision.png",
+        img2: "img/solutions/energy-commision.png"
       }
     }
   };
