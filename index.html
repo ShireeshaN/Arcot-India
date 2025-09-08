@@ -427,7 +427,7 @@
 
 <style>
   .bgs{background:#000;padding-top:10px;}
-  .heros{position:relative;height:100vh;width:100%;isolation:isolate;background:radial-gradient(1200px 1200px at 85% 10%, #1c2a33 0%, #0c1114 55%);font-family:"Poppins",sans-serif;}
+  .heros{position:relative;height:100vh;width:100%;isolation:isolate;background:radial-gradient(1200px 1200px at 85% 10%, #1c2a33 0%, #0c1114 55%);font-family:"Roboto",sans-serif;}
   .heros .hero__bg{position:absolute;inset:0;overflow:hidden;z-index:0;}
 
   /* 🎥 Video styling like images */
@@ -518,9 +518,9 @@
 
 /* Main heading */
 .section-heading {
-  font-family: 'Inter', sans-serif; /* professional modern font */
+  font-family: 'Roboto', sans-serif; /* professional modern font */
   font-size: 36px;
-  font-weight: 500;   /* elegant, not bold */
+  /* font-weight: 500;    */
   /* color: #000;       */
   margin: 0 0 10px 50;
   position: relative;
@@ -540,7 +540,7 @@
 
 /* Main heading */
 .section-heading1 {
-  font-family: 'Inter', sans-serif; /* professional modern font */
+  font-family: 'Roboto', sans-serif; /* professional modern font */
   font-size: 36px;
   font-weight: 500;   /* elegant, not bold */
   color: #343232;        /* deep grey-black */
@@ -734,7 +734,7 @@
 .energygenss {
   display: flex;
   width: 100%;
-  height: 420px;
+  height: 500px;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -1150,10 +1150,10 @@ LightItcoStart();
   <div class="container-fluid p-0">
     <div class="row g-0">
       
-      <!-- Left side image -->
+      <!-- Left side image/video -->
       <div class="col-md-11 p-0">
-        <div class="autoiot-image-wrapper">
-          <img id="autoiotImage" src="img/automation/homeautomation.png" class="autoiot-image show fade" alt="">
+        <div class="autoiot-image-wrapper" id="autoiotMediaWrapper">
+          <img id="autoiotImage" src="img/automation/homeautomation.png" class="autoiot-media show fade" alt="">
         </div>
       </div>
 
@@ -1195,16 +1195,17 @@ LightItcoStart();
 
 <script>
   const autoiotItems = [
-    { img: "img/automation/homeautomation.png" },
-    { img: "img/automation/commercialautomation.png" },
-    { img: "img/automation/industriesautomation.png" },
-    { img: "img/automation/hospitalautomation.png" },
-    { img: "img/automation/iot.png" },
-    { img: "img/automation/hotelautomation.png" }
+    { type: "video", src: "media/Home_Automation.mp4" },
+    { type: "image", src: "img/automation/commercialautomation.png" },
+    { type: "image", src: "img/automation/industriesautomation.png" },
+    { type: "image", src: "img/automation/hospitalautomation.png" },
+    { type: "video", src: "media/automation/iotdemo.mp4" },
+    { type: "image", src: "img/automation/hotelautomation.png" }
   ];
 
   let autoiotActiveIndex = 0;
-  let autoiotInterval = setInterval(nextAutoiotSlide, 5000);
+  let autoiotTimer = null;
+  const IMAGE_INTERVAL = 5000; // 5s for images
 
   function setActiveAutoiot(index) {
     autoiotActiveIndex = index;
@@ -1218,14 +1219,43 @@ LightItcoStart();
   }
 
   function updateAutoiotUI() {
-    const image = document.getElementById("autoiotImage");
+    const wrapper = document.getElementById("autoiotMediaWrapper");
+    wrapper.innerHTML = "";
 
-    image.classList.remove("show");
-    setTimeout(() => {
-      image.src = autoiotItems[autoiotActiveIndex].img;
-      image.classList.add("show");
-    }, 200);
+    const currentItem = autoiotItems[autoiotActiveIndex];
+    let element;
 
+    if (currentItem.type === "video") {
+      element = document.createElement("video");
+      element.src = currentItem.src;
+      element.autoplay = true;
+      element.muted = true;
+      element.loop = false; // ✅ no loop, wait till end
+      element.playsInline = true;
+      element.className = "autoiot-media show";
+
+      // ✅ when video ends → go to next slide
+      element.addEventListener("ended", () => {
+        nextAutoiotSlide();
+      });
+
+      // Stop auto timer while video playing
+      clearInterval(autoiotTimer);
+      autoiotTimer = null;
+
+    } else {
+      element = document.createElement("img");
+      element.src = currentItem.src;
+      element.alt = "";
+      element.className = "autoiot-media show";
+
+      // ✅ restart timer for images
+      resetAutoiotTimer();
+    }
+
+    wrapper.appendChild(element);
+
+    // update icon active state
     for (let i = 0; i < autoiotItems.length; i++) {
       document.getElementById("autoiotIcon" + i).classList.remove("active");
     }
@@ -1233,10 +1263,15 @@ LightItcoStart();
   }
 
   function resetAutoiotTimer() {
-    clearInterval(autoiotInterval);
-    autoiotInterval = setInterval(nextAutoiotSlide, 5000);
+    clearInterval(autoiotTimer);
+    autoiotTimer = setInterval(nextAutoiotSlide, IMAGE_INTERVAL);
   }
+
+  // init
+  updateAutoiotUI();
 </script>
+
+
 
 <style>
 /* Banner common height */
@@ -1246,30 +1281,20 @@ LightItcoStart();
   background-size: cover;
 }
 
-/* IMAGE STYLING */
-.autoiot-image-wrapper {
-  width: 100%;   /* 👉 full width occupy cheyali */
-  overflow: hidden; 
-}
-
-.autoiot-image {
+/* IMAGE & VIDEO STYLING */
+.autoiot-media {
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* 👉 full cover, cut avvakunda fit */
-  animation: LightItcoZoom 15s ease-in-out infinite alternate;
+  object-fit: cover;
 }
-
 
 /* ICONS SECTION */
 .autoiot-icons-section {
-  width: 100px;   /* 👉 fixed width only, right side gap undadu */
+  width: 100px;
   background: #fff;
-  /* border-left: 1px solid #eee; */
   padding: 10px 5px;
-  float: left;
 }
 
-/* ICONS ITEMS */
 .autoiot-icon-item {
   display: flex;
   flex-direction: column;
@@ -1307,23 +1332,23 @@ LightItcoStart();
 
 /* SECTION bottom spacing */
 .vgs {
-  margin-bottom: 40px; /* 👉 image + icons section kinda space */
+  margin-bottom: 40px;
 }
 
 /* Responsive - Mobile View */
 @media (max-width: 768px) {
   .col-md-1.autoiot-icons-section {
-    flex-direction: row !important;   /* override vertical */
-    flex-wrap: wrap !important;       /* allow wrapping */
-    width: 100% !important;           /* take full width below image */
-    height: auto !important;          /* adjust height */
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    height: auto !important;
     padding: 15px 0 !important;
     justify-content: center !important;
     align-items: center !important;
   }
 
   .autoiot-icon-item {
-    flex: 0 0 33.33%;  /* exactly 3 per row */
+    flex: 0 0 33.33%;
     max-width: 33.33%;
     margin-bottom: 15px;
     text-align: center;
@@ -1339,12 +1364,9 @@ LightItcoStart();
     margin-top: 4px;
   }
 }
-
-
-
-
 </style>
 <!-- AUTOMATION END -->
+
 
 
 
@@ -1435,7 +1457,9 @@ LightItcoStart();
   /* border-radius: 12px; */
   overflow: hidden;
   background: #111;
+  background-size: cover;
   /* box-shadow: 0 8px 20px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.03); */
+  
 }
 .thumb-img img { width:100%; height:100%; object-fit:cover; display:block; }
 
@@ -1443,7 +1467,7 @@ LightItcoStart();
 .thumb-label { font-size: 12px; color: #fff; margin-top:8px; opacity:0.95; }
 
 /* active thumb styling */
-.thumb.active .thumb-img { transform: scale(1.03); box-shadow: 0 18px 40px rgba(0,0,0,.45);  }
+.thumb.active .thumb-img { transform: scale(1.03); box-shadow: 0 18px 40px rgba(0,0,0,.45);  border: 2px solid #ea8f08; }
 .thumb.active .thumb-label { font-weight:600; color:#fff; }
 
 /* RIGHT - preview */
@@ -1883,7 +1907,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* Main heading */
 .section-heading {
-  font-family: 'Inter', sans-serif; /* professional modern font */
+  font-family: 'Roboto', sans-serif; /* professional modern font */
   font-size: 36px;
   font-weight: 500;   /* elegant, not bold */
   color: #7e7c7c;        /* deep grey-black */
