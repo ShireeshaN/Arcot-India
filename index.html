@@ -353,7 +353,7 @@
     max-width: 800px;
   }
 
-.aboutforarcot-textarea h2.tagline {
+  .aboutforarcot-textarea h2.tagline {
     font-size: 1.5rem;
     color: #000000;
     text-transform: uppercase;
@@ -362,31 +362,18 @@
     white-space: nowrap;
     border-right: 3px solid #000000;
     width: 0;
-    animation: typing 6s steps(40) infinite, blinkCaret 0.75s step-end infinite;
+    animation: typing 14s steps(60, end) forwards, blinkCaret 1s step-end infinite;
     margin: 20px auto;
-}
-
-
+  }
 
   @keyframes typing {
-    0% {
-      width: 0;
-    }
-    50% {
-      width: 100%;
-    }
-    100% {
-      width: 0;
-    }
+    from { width: 0 }
+    to { width: 100% }
   }
 
   @keyframes blinkCaret {
-    from, to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: #000000;
-    }
+    from, to { border-color: transparent }
+    50% { border-color: #000000 }
   }
 
   .aboutforarcot-textarea p {
@@ -401,13 +388,13 @@
 
 <div class="hello">
   <div class="aboutforarcot-textarea">
-
     <h2 class="tagline">Arcot – Powering the Future with Innovation</h2>
     <p>
       At Arcot, we are driven by a vision to build a brighter, smarter, and sustainable future with innovative power solutions, smart automation, and next-generation products that empower industries and communities.
     </p>
   </div>
 </div>
+
 
 <!-- about end -->
 
