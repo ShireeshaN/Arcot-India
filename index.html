@@ -411,105 +411,71 @@
 
 <!-- about end -->
 
-<!-- POWER START -->
-<!-- ✅ Light Solutions Section Snippet (Mobile Top Text & Shorter Image) -->
-
+<!-- POWER START with Videos -->
 <section class="section-wraps" style="background-color: #000;">
   <h2 class="section-heading text-white">Power</h2>
   <p class="section-sub">Reliable transmission & distribution with advanced LT and HT solutions</p>
 </section>
 
 <div class="bgs">
-<!-- POWER START -->
-<section class="heros " aria-label="Light Solutions">
+<section class="heros" aria-label="Light Solutions">
   <div class="hero__bg" aria-hidden="true">
-    <img src="img/powerimg/trnas.png" alt="" class="bg-img active" data-key="indoor">
-    <img src="img/powerimg/distri.png" alt="" class="bg-img" data-key="outdoor">
-    <img src="img/powerimg/panel.png" alt="" class="bg-img" data-key="immersion">
-    <img src="img/powerimg/genera.png" alt="" class="bg-img" data-key="linear">
+    <!-- 🔁 Replace images with videos -->
+    <video src="media/trans.mp4" muted loop playsinline class="bg-video active" data-key="indoor"></video>
+    <video src="videos/distribution.mp4" muted loop playsinline class="bg-video" data-key="outdoor"></video>
+    <video src="videos/panel.mp4" muted loop playsinline class="bg-video" data-key="immersion"></video>
+    <video src="videos/generation.mp4" muted loop playsinline class="bg-video" data-key="linear"></video>
   </div>
 
   <div class="hero__overlay">
     <ul class="menu" role="tablist" aria-label="Light Solution Categories">
-      <li class="active" data-key="indoor">Transmission <span class="cta"></li>
-      <li data-key="outdoor">Distribution <span class="cta"></li>
-      <li data-key="immersion">LT & HT Panel Boards <span class="cta"></li>
-      <li data-key="linear">Generation <span class="cta"></li>
+      <li class="active" data-key="indoor">Transmission <span class="cta"></span></li>
+      <li data-key="outdoor">Distribution <span class="cta"></span></li>
+      <li data-key="immersion">LT & HT Panel Boards <span class="cta"></span></li>
+      <li data-key="linear">Generation <span class="cta"></span></li>
     </ul>
   </div>
 </section>
 </div>
+
 <style>
-  .bgs{
-    background-color: #000000;
-    padding-top: 10px;
- 
-  }
-  .vgs{
-       background: #dddcdc;
-  }
-  .heros{
-    position:relative;
-    height:100vh;
-    width:100%;
-    isolation:isolate;
-    background:radial-gradient(1200px 1200px at 85% 10%, #1c2a33 0%, #0c1114 55%);
-    font-family:"Poppins",sans-serif;
- 
-  }
-  .heros .hero__bg{position:absolute; inset:0; overflow:hidden; z-index:0;}
-  .heros .hero__bg img{
-    position:absolute; inset:0;
-    width:100%; height:100%; object-fit:cover;  object-position: center ;
-    opacity:0; transform:scale(1.08) translateY(0);
+  .bgs{background:#000;padding-top:10px;}
+  .heros{position:relative;height:100vh;width:100%;isolation:isolate;background:radial-gradient(1200px 1200px at 85% 10%, #1c2a33 0%, #0c1114 55%);font-family:"Poppins",sans-serif;}
+  .heros .hero__bg{position:absolute;inset:0;overflow:hidden;z-index:0;}
+
+  /* 🎥 Video styling like images */
+  .heros .hero__bg video{
+    position:absolute;inset:0;
+    width:100%;height:100%;object-fit:cover;object-position:center;
+    opacity:0;transform:scale(1.08) translateY(0);
     transition:opacity 700ms ease, transform 6000ms ease;
   }
-  .heros .hero__bg img.active{opacity:1; transform:scale(1.02) translateY(-2%);}
-  .heros .hero__overlay{position:absolute; left:min(6vw, 80px); top:50%; transform:translateY(-50%); z-index:2;}
+  .heros .hero__bg video.active{opacity:1;transform:scale(1.02) translateY(-2%);}
+  
+  .heros .hero__overlay{position:absolute;left:min(6vw,80px);top:50%;transform:translateY(-50%);z-index:2;}
   .heros .menu{list-style:none;}
-  .heros .menu li{
-    cursor:pointer; margin:14px 0;
-    color:#8fa1ad; font-weight:700;
-    font-size:clamp(2rem, 2.5rem + 2vw, 5rem);
-    transition:.3s;
-  }
+  .heros .menu li{cursor:pointer;margin:14px 0;color:#8fa1ad;font-weight:700;font-size:clamp(2rem, 2.5rem + 2vw, 5rem);transition:.3s;}
   .heros .menu li.active{color:#fff;}
-  .heros .menu li .cta{font-size:.8rem; font-weight:600; opacity:.8;}
-  .dot{width:.5em; height:.5em; border-radius:50%; background:#e7edf1; display:inline-block; margin-right:.4em;}
-  .heros::before{
-    content:""; position:absolute; inset:0;
-    background:linear-gradient(90deg, rgba(12,17,20,.75) 0%, rgba(12,17,20,.5) 20%, rgba(12,17,20,0) 55%);
-    z-index:1;
+  .heros .menu li .cta{font-size:.8rem;font-weight:600;opacity:.8;}
+  .heros::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,17,20,.75) 0%,rgba(12,17,20,.5) 20%,rgba(12,17,20,0) 55%);z-index:1;}
+
+  /* 📱 Mobile */
+  @media (max-width:768px){
+    .heros{height:auto;min-height:70vh;}
+    .heros .hero__bg video{height:60vh;}
+    .heros .hero__overlay{position:relative;top:0;left:0;transform:none;padding:20px;text-align:left;}
+    .heros .menu li{font-size:1.6rem;margin:10px 0;}
   }
 
-  /* 📱 Mobile view adjustments */
-  @media (max-width: 768px){
-    .heros{height:auto; min-height:70vh;}
-    .heros .hero__bg img{height:60vh;}   /* background image shorter */
-    .heros .hero__overlay{
-      position:relative;
-      top:0; left:0;
-      transform:none;
-      padding:20px;
-      text-align:left;
-    }
-    .heros .menu li{font-size:1.6rem; margin:10px 0;}
-  }
-
-  /* 📱 Tablet + Mobile view adjustments (iPad too) */
-  @media (max-width: 1024px){
-    .heros{height:auto; min-height:70vh;}
-    .heros .hero__bg img{height:60vh;}
-    .heros .hero__overlay{
-      position:relative;
-      top:0; left:0;
-      transform:none;
-      padding:20px;
-      text-align:left;
-    }
-    .heros .menu li{font-size:1.6rem; margin:10px 0;}
+  /* 📱 Tablet */
+  @media (max-width:1024px){
+    .heros{height:auto;min-height:70vh;}
+    .heros .hero__bg video{height:60vh;}
+    .heros .hero__overlay{position:relative;top:0;left:0;transform:none;padding:20px;text-align:left;}
+    .heros .menu li{font-size:1.6rem;margin:10px 0;}
   }
 </style>
+
 <script>
   function setActivePower(key){
     const hero = document.querySelector('.heros');
@@ -518,27 +484,33 @@
       li.classList.toggle('active', li.dataset.key === key);
     });
 
-    hero.querySelectorAll('.hero__bg img').forEach(img=>{
-      const isActive = img.dataset.key === key;
-      img.classList.toggle('active', isActive);
+    hero.querySelectorAll('.hero__bg video').forEach(video=>{
+      const isActive = video.dataset.key === key;
+      video.classList.toggle('active', isActive);
+      
       if(isActive){
-        img.style.transform = 'scale(1.08) translateY(0)';
+        video.currentTime = 0;  // restart video
+        video.play();
+        video.style.transform = 'scale(1.08) translateY(0)';
         requestAnimationFrame(()=> {
-          img.style.transform = 'scale(1.02) translateY(-2%)';
+          video.style.transform = 'scale(1.02) translateY(-2%)';
         });
+      } else {
+        video.pause();
       }
     });
   }
 
-  // 👉 Support both hover (desktop) + click (mobile)
+  // 👉 hover + click
   document.querySelectorAll('.heros .menu li').forEach(li=>{
     const key = li.dataset.key;
-    li.addEventListener('click', ()=> setActivePower(key));      
-    li.addEventListener('mouseenter', ()=> setActivePower(key)); 
-    li.addEventListener('focus', ()=> setActivePower(key));      
+    li.addEventListener('click', ()=> setActivePower(key));
+    li.addEventListener('mouseenter', ()=> setActivePower(key));
+    li.addEventListener('focus', ()=> setActivePower(key));
   });
 </script>
-<!-- POWER END -->
+<!-- POWER END with Videos -->
+
 
 <div class="">
 <section class="section-wraps ">
@@ -1876,7 +1848,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </section>
 
-<style>
+ <style>
   .section-wraps {
   background: #ffffff;  /* clean, minimal grey tone */
   padding: 40px 10px 30px; /* less space, balanced */
@@ -1896,7 +1868,7 @@ document.addEventListener("DOMContentLoaded", function() {
   position: relative;
   animation: fadeSlideUp 0.9s ease forwards;
 }
-</style>
+</style> 
 <section class="services-section">
 
   <div class="row g-3">
@@ -2136,6 +2108,90 @@ padding-top: 0px;}
 </script>
 
 <!-- Services end -->
+
+<section class="banner">
+  <video autoplay muted loop playsinline class="banner-video">
+    <source src="media/vvboy.mp4" type="video/mp4" />
+    <source src="media/trans.mp4" type="video/webm" />
+    <!-- fallback -->
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="banner-content">
+    <h1>Investing in Innovation <br>Leading the<br> Change </h1>
+    <!-- <p>Arcot continues to push boundaries in IoT, automation, and sustainable energy.</p> -->
+  </div>
+</section>
+
+<style>
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* full screen height */
+    overflow: hidden;
+  }
+
+  .banner-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* crop nicely, like background-size: cover */
+    z-index: 0;
+  }
+
+  /* overlay content on top of video */
+  .banner-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: start;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 20px;
+  }
+
+  .banner-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 4rem;
+    font-family: 'Six Caps', sans-serif;
+    letter-spacing: 4px;
+    font-weight: 100 !important ;
+  }
+
+  .banner-content p {
+    font-size: 1.25rem;
+  }
+
+  /* accessibility: if user prefers reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .banner-video {
+      display: none;
+    }
+     .banner-content h1 {
+    font-size: 0.5rem;
+   
+  }
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+   
 
         <!-- FAQ Start -->
          <div class="container-fluid faq-section bg-dark py-5">
