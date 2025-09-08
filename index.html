@@ -409,9 +409,9 @@
   <div class="hero__bg" aria-hidden="true">
     <!-- 🔁 Replace images with videos -->
     <video src="media/Power_Transmission.mp4" muted loop playsinline class="bg-video active" data-key="indoor"></video>
-    <video src="media/Distribution_power.mp4" muted loop playsinline class="bg-video" data-key="outdoor"></video>
-    <video src="media/panel_boards.mp4" muted loop playsinline class="bg-video" data-key="immersion"></video>
-    <video src="media/Power_Generation.mp4" muted loop playsinline class="bg-video" data-key="linear"></video>
+    <video src="media/distribution.mp4" muted loop playsinline class="bg-video" data-key="outdoor"></video>
+    <video src="media/panelboards.mp4" muted loop playsinline class="bg-video" data-key="immersion"></video>
+    <video src="media/generation.mp4" muted loop playsinline class="bg-video" data-key="linear"></video>
   </div>
 
   <div class="hero__overlay">
@@ -1432,7 +1432,7 @@ LightItcoStart();
 .thumb-img {
   width: 100%;
   height: 82px;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   overflow: hidden;
   background: #111;
   /* box-shadow: 0 8px 20px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.03); */
@@ -1443,7 +1443,7 @@ LightItcoStart();
 .thumb-label { font-size: 12px; color: #fff; margin-top:8px; opacity:0.95; }
 
 /* active thumb styling */
-.thumb.active .thumb-img { transform: scale(1.03); box-shadow: 0 18px 40px rgba(0,0,0,.45); border-radius: 14px; }
+.thumb.active .thumb-img { transform: scale(1.03); box-shadow: 0 18px 40px rgba(0,0,0,.45);  }
 .thumb.active .thumb-label { font-weight:600; color:#fff; }
 
 /* RIGHT - preview */
@@ -1463,7 +1463,7 @@ LightItcoStart();
   width: 100%;
   max-width: 1100px;
   height: 520px;            /* desktop preview height */
-  border-radius: 16px;
+  /* border-radius: 16px; */
   overflow: hidden;
   background: #000;
   /* box-shadow: 0 30px 90px rgba(0,0,0,.6); */
@@ -1524,21 +1524,20 @@ LightItcoStart();
 
     // fade-out -> change -> fade-in
     previewImg.style.opacity = 0;
-    // small delay so fade looks smooth
     setTimeout(()=> {
       const src = thumbs[index].dataset.img;
       const label = thumbs[index].querySelector('.thumb-label').textContent || '';
       previewImg.src = src;
       previewCaption.textContent = label;
-      // ensure image fully loaded before fade-in
       previewImg.onload = () => { previewImg.style.opacity = 1; };
     }, 150);
 
-    // ensure clicked thumb is visible in left column
-    const t = thumbs[index];
-    if(t && typeof t.scrollIntoView === 'function') {
-      // desktop: center vertically
-      t.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+    // ✅ scrollIntoView only if user triggered
+    if(userTriggered) {
+      const t = thumbs[index];
+      if(t && typeof t.scrollIntoView === 'function') {
+        t.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+      }
     }
 
     current = index;
@@ -1553,7 +1552,10 @@ LightItcoStart();
   thumbs.forEach((t, i) => {
     t.addEventListener('click', ()=> setActive(i, true));
     t.addEventListener('keydown', (e) => {
-      if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActive(i, true); }
+      if(e.key === 'Enter' || e.key === ' ') { 
+        e.preventDefault(); 
+        setActive(i, true); 
+      }
     });
   });
 
@@ -1578,6 +1580,7 @@ LightItcoStart();
 
 })();
 </script>
+
 
 
  
