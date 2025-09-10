@@ -1,76 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Commercial Lighting</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #000;
-    }
+<!-- TRANSMISSION MAIN PAGE START -->
+<section id="transmission" class="relative bg-gray-900 text-white">
 
-    /* Section container */
-    .lighting-section {
-      padding: 40px 60px;
-    }
-
-    /* Title */
-    .lighting-section h2 {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    /* Image row */
-    .lighting-images {
-      display: flex;
-      gap: 20px;
-    }
-
-    .lighting-images img {
-      width: 100%;
-      max-width: 450px;
-      height: auto;
-      border-radius: 4px;
-      object-fit: cover;
-    }
-
-    /* Bottom grey strip */
-    .divider {
-      margin-top: 40px;
-      height: 60px;
-      background: #ece6e2; /* light grey shade */
-      width: 100%;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .lighting-section {
-        padding: 20px;
-      }
-      .lighting-images {
-        flex-direction: column;
-        align-items: center;
-      }
-      .lighting-section h2 {
-        font-size: 28px;
-        text-align: center;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <section class="lighting-section">
-    <h2>Office lighting</h2>
-    <div class="lighting-images">
-      <img src="img/application/72.webp" alt="Office lighting sample 1">
-      <img src="img/application/72.webp" alt="Office lighting sample 2">
+  <!-- Hero Section -->
+  <div class="relative h-[70vh] flex items-center justify-center bg-cover bg-center" 
+       style="background-image:url('img/transmission/hero.jpg')">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="relative z-10 text-center px-6">
+      <h1 class="text-4xl md:text-5xl font-light mb-4">Reliable High Voltage Transmission Solutions</h1>
+      <p class="text-lg md:text-xl mb-6">From Infrastructure to Advanced Studies – End-to-End Expertise</p>
+      <div class="flex gap-4 justify-center">
+        <a href="transmission-infrastructure.html" class="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-xl transition">Explore Infrastructure</a>
+        <a href="transmission-studies.html" class="bg-white text-gray-900 hover:bg-gray-200 px-6 py-3 rounded-xl transition">Explore Studies</a>
+      </div>
     </div>
-    <div class="divider"></div>
-  </section>
+  </div>
 
-</body>
-</html>
+  <!-- What We Do -->
+  <div class="max-w-5xl mx-auto py-16 px-6 text-center">
+    <h2 class="text-3xl font-light mb-6">What We Do</h2>
+    <p class="text-lg text-gray-300 leading-relaxed">
+      Arcot delivers reliable, efficient, and future-ready transmission solutions. 
+      Our expertise spans both infrastructure development and advanced system studies, 
+      ensuring power reaches safely from generation to consumption.
+    </p>
+  </div>
+
+  <!-- Capabilities Section -->
+  <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto px-6 pb-16">
+    <!-- Infrastructure -->
+    <div class="bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
+      <h3 class="text-2xl font-semibold mb-4 text-orange-400">Infrastructure</h3>
+      <ul class="space-y-3 text-gray-300">
+        <li>⚡ High Voltage Transmission Lines (132kV–765kV)</li>
+        <li>⚡ Substations (AIS & GIS)</li>
+        <li>⚡ Transformers, Breakers, Insulators</li>
+        <li>⚡ SCADA & Automation</li>
+      </ul>
+      <a href="transmission-infrastructure.html" class="mt-6 inline-block text-orange-400 hover:underline">Learn More →</a>
+    </div>
+
+    <!-- Studies -->
+    <div class="bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
+      <h3 class="text-2xl font-semibold mb-4 text-orange-400">Studies & Planning</h3>
+      <ul class="space-y-3 text-gray-300">
+        <li>📊 Transmission Modeling</li>
+        <li>📊 Planning & Expansion Studies</li>
+        <li>📊 System Operations Studies</li>
+        <li>📊 Regulatory Compliance Studies</li>
+        <li>📊 Electromagnetic Transient (EMT) Studies</li>
+      </ul>
+      <a href="transmission-studies.html" class="mt-6 inline-block text-orange-400 hover:underline">Learn More →</a>
+    </div>
+  </div>
+
+  <!-- Benefits Section -->
+  <div class="bg-gray-800 py-16 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-light mb-8">Why Choose Arcot?</h2>
+      <div class="grid md:grid-cols-4 gap-8 text-gray-200">
+        <div>
+          <div class="text-4xl mb-4">✅</div>
+          <p>End-to-End Solutions</p>
+        </div>
+        <div>
+          <div class="text-4xl mb-4">✅</div>
+          <p>Grid Code Compliance</p>
+        </div>
+        <div>
+          <div class="text-4xl mb-4">✅</div>
+          <p>Trusted by Utilities</p>
+        </div>
+        <div>
+          <div class="text-4xl mb-4">✅</div>
+          <p>Future-Ready Smart Grid</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="py-16 text-center px-6">
+    <h2 class="text-3xl font-light mb-4">Looking for Reliable Transmission Expertise?</h2>
+    <p class="text-gray-300 mb-6">Get in touch with our team today and power your projects with confidence.</p>
+    <a href="contact.html" class="bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-xl transition">Contact Us</a>
+  </div>
+
+</section>
+<!-- TRANSMISSION MAIN PAGE END -->

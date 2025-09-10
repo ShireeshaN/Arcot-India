@@ -928,6 +928,26 @@ LightItcoIcons.forEach(ic=>ic.addEventListener('click',()=>{clearInterval(LightI
 LightItcoDots.forEach(d=>d.addEventListener('click',()=>{clearInterval(LightItcoTimer);LightItcoShow(+d.dataset.index);LightItcoStart();}));
 
 LightItcoStart();
+
+
+function LightItcoShow(index) {
+  LightItcoSlides.forEach((s, i) => {
+    s.classList.toggle('active', i === index);
+
+    if (i === index) {
+      // Restart animation when slide becomes active
+      s.style.animation = "none";
+      void s.offsetWidth; // force reflow
+      s.style.animation = "LightItcoZoom 10s ease-in-out forwards";
+    }
+  });
+
+  LightItcoIcons.forEach((ic, i) => ic.classList.toggle('active', i === index));
+  LightItcoDots.forEach((d, i) => d.classList.toggle('active', i === index));
+  LightItcoTitle.textContent = LightItcoTitles[index];
+  LightItcoSubtitle.textContent = LightItcoSubtitles[index];
+  LightItcoCurrent = index;
+}
 </script>
 
 <style>
@@ -945,31 +965,31 @@ LightItcoStart();
     overflow: hidden;
   }
 
-  .LightItco-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    animation: LightItcoZoom 15s ease-in-out infinite alternate;
-  }
+.LightItco-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
 
   .LightItco-slide.active {
-    opacity: 1;
-  }
+  opacity: 1;
+  animation: LightItcoZoom 15s ease-in-out backwards; /* ✅ Animate only active */
+}
 
-  @keyframes LightItcoZoom {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.1);
-    }
+@keyframes LightItcoZoom {
+  0% {
+    transform: scale(1) translate(0, 0);
   }
+  100% {
+    transform: scale(1.1) translate(10px, 10px); /* zoom + pan */
+  }
+}
 
   /* Content */
   .LightItco-content {
