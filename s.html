@@ -1,223 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Outdoor lighting</title>
-  <style>
-     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #111;
-    }
-    .section {
-      max-width: 1000px; /* page middle lo compact */
-      margin: 40px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-    .section h1 {
-      font-size: 28px;
-      font-weight: 800;
-      margin-bottom: 25px;
-      text-align: left; 
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px; /* tight gap */
-      align-items: start;
-    }
-    .col img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-      
-    }
-    .col img:hover {
-  transform: scale(1.05); /* zoom in effect */
-}
-    .col1 img {
-      height: 420px; /* tall but reduced */
-    }
-    .col2 img,
-    .col3 img {
-      height: 280px; /* smaller images */
-    }
-    .content {
-      text-align: center;
-      margin-top: 40px;
-    }
-    .title {
-      font-size: 30px;
-      font-weight: 800;
-      margin: 0 0 15px;
-      line-height: 1.2;
-    }
-    .desc {
-      font-size: 18px;
-      color: #333;
-      margin: 0;
-      line-height: 1.4;
-    }
-    .readmore {
-      display: inline-block;
-      margin-top: 25px;
-      font-weight: 600;
-      font-size: 15px;
-      color: #111;
-      text-decoration: none;
-      /* border-bottom: 1px solid ; */
-      padding-bottom: 2px;
-    }
-    .readmore:hover {
-      background-color: #94908f;
-      padding: 10px;
-      
-    }
- 
-
-    /* responsive */
-    @media(max-width: 900px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-      .col1 img {
-        height: 300px;
-      }
-      .col2 img,
-      .col3 img {
-        height: 200px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <section class="section">
-    <h1>Outdoor lighting – Tips and inspiration</h1>
-    <div class="grid">
-      
-      <!-- Column 1 -->
-      <div class="col col1">
-        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800" alt="">
-      </div>
-      
-      <!-- Column 2 -->
-      <div class="col col2">
-        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800" alt="">
-        <div class="content">
-          <h2 class="title">Extend the<br> garden season</h2>
-          <p class="desc">Outdoor lighting provides a<br> welcoming impression and a <br>greater sense of security!</p>
-        </div>
-      </div>
-      
-      <!-- Column 3 -->
-      <div class="col col3">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800" alt="">
-        <div class="content">
-          <h2 class="title">Choose facade lighting</h2>
-          <p class="desc">This is what you should<br> consider!...</p>
-          <a href="#" class="readmore">READ MORE</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-</body>
-</html>
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spotlight Section</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #aaa9a9; /* screenshot lo unna grey bg */
-      font-family: Arial, sans-serif;
-    }
-    .product-img {
-      width: 100%;
-      height: 300px;
-      transition: transform 0.4s ease-in-out;
-      overflow: hidden;
-    }
-    .product-img:hover {
- transform: scale(1.1);       /* hand icon vastundi */
-}
-    .caption-btn {
-      background-color: #1a1b1a; /* darker grey button */
-      color: #fff;
-      font-weight: bold;
-      text-align: center;
-      padding: 10px;
-      margin-top: 10px;
-      display: block;
-      text-transform: uppercase;
-    }
-    .text-block h2 {
-      font-weight: bold;
-      font-size: 1.6rem;
-      margin-bottom: 20px;
-    }
-    .text-block p {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-  </style>
-</head>
-<body>
-  <div class="container-fluid py-5">
-    <div class="row align-items-start">
-      
-      <!-- Left Image + Caption -->
-      <div class="col-md-3 text-center">
-        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
-        <div class="caption-btn">SPOTLIGHT GARDEN</div>
-      </div>
-
-      <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
-          install and require minimal maintenance, making them a practical choice for enhancing the 
-          aesthetics of your outdoor lighting.
-        </p>
-      </div>
-
-      <!-- Right Images + Captions -->
-      <div class="col-md-3">
-        <div class="mb-4 text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 1</div>
-        </div>
-        </div>
-        <div class="col-md-3">
-        <div class="text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 3" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 3</div>
-        </div>
-      </div>
-
+<!-- START WHO WE SERVE -->
+<section class="who-we-serve">
+  <div class="container">
+    <h2 class="fade-in">Who We Serve</h2>
+    <div class="serve-grid">
+      <ul>
+        <li class="fade-item"><span class="arrow">→</span> <strong>Cooperatives</strong></li>
+        <li class="fade-item"><span class="arrow">→</span> <strong>Generation and Transmission</strong></li>
+        <li class="fade-item"><span class="arrow">→</span> <strong>Investor-Owned Utilities</strong></li>
+        <li class="fade-item"><span class="arrow">→</span> <strong>Public Utility Commissions</strong></li>
+      </ul>
+      <ul>
+        <li class="fade-item"><span class="arrow">→</span> <strong>Federal Electric Utilities</strong></li>
+        <li class="fade-item"><span class="arrow">→</span> <strong>Independent System Operator</strong></li>
+        <li class="fade-item"><span class="arrow">→</span> <strong>Municipal-Owned Utilities</strong></li>
+        <li class="fade-item"><span class="arrow">→</span> <strong>Regional Transmission Organization</strong></li>
+      </ul>
     </div>
   </div>
-</body>
-</html>
+</section>
 
+<style>
+/* Section */
+.who-we-serve {
+  padding: 60px 20px;
+  background: #fff;
+  font-family: 'Georgia', serif;
+  overflow: hidden;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Heading */
+.who-we-serve h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a2b44;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
+}
+
+/* Grid Layout */
+.serve-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 60px;
+}
+
+/* List Styling */
+.serve-grid ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.serve-grid li {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #1a2b44;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideIn 0.8s ease forwards;
+}
+
+.serve-grid .arrow {
+  margin-right: 12px;
+  color: #1a2b44;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.serve-grid li:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Bold Text Blue */
+.serve-grid strong {
+  color: #2874c9; /* blue like screenshot */
+  font-weight: 700;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Add delay for staggered effect */
+.fade-item:nth-child(1) { animation-delay: 0.2s; }
+.fade-item:nth-child(2) { animation-delay: 0.4s; }
+.fade-item:nth-child(3) { animation-delay: 0.6s; }
+.fade-item:nth-child(4) { animation-delay: 0.8s; }
+
+.serve-grid ul:nth-child(2) li:nth-child(1) { animation-delay: 1s; }
+.serve-grid ul:nth-child(2) li:nth-child(2) { animation-delay: 1.2s; }
+.serve-grid ul:nth-child(2) li:nth-child(3) { animation-delay: 1.4s; }
+.serve-grid ul:nth-child(2) li:nth-child(4) { animation-delay: 1.6s; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .serve-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+<!-- END WHO WE SERVE -->
