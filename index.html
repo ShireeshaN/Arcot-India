@@ -349,41 +349,47 @@
     text-align: center;
   }
 
-  .aboutforarcot-textarea {
-    max-width: 800px;
-  }
-
   .aboutforarcot-textarea h2.tagline {
-    font-size: 1.5rem;
-    color: #000000;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid #000000;
-    width: 0;
-    animation: typing 14s steps(60, end) forwards, blinkCaret 1s step-end infinite;
-    margin: 20px auto;
-  }
+  font-size: 1.5rem;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #000000;
+  width: 0;
+  animation: typing 14s steps(60, end) forwards, blinkCaret 1s step-end infinite;
+  margin: 20px auto;
+}
 
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
+/* Typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
 
-  @keyframes blinkCaret {
-    from, to { border-color: transparent }
-    50% { border-color: #000000 }
+@keyframes blinkCaret {
+  from, to { border-color: transparent }
+  50% { border-color: #000000 }
+}
+
+/* ✅ Mobile fix */
+@media (max-width: 768px) {
+  .aboutforarcot-textarea h2.tagline {
+    font-size: 1.1rem;        /* smaller font */
+    white-space: normal;      /* allow wrapping */
+    border-right: none;       /* remove blinking caret */
+    width: auto;              /* fit content */
+    animation: none;          /* remove typing effect (optional) */
   }
 
   .aboutforarcot-textarea p {
-    color: #1a1919;
-    font-size: 1rem;
-    line-height: 1.6;
-    font-weight: 400;
-    margin: 0 auto;
-    max-width: 800px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    padding: 0 10px;
   }
+}
+
 </style>
 
 <div class="hello">
@@ -1170,11 +1176,9 @@ function LightItcoShow(index) {
   <div class="container-fluid p-0">
     <div class="row g-0">
       
-      <!-- Left side image/video -->
+      <!-- Left side video -->
       <div class="col-md-11 p-0">
-        <div class="autoiot-image-wrapper" id="autoiotMediaWrapper">
-          <img id="autoiotImage" src="img/automation/homeautomation.png" class="autoiot-media show fade" alt="">
-        </div>
+        <div class="autoiot-image-wrapper" id="autoiotMediaWrapper"></div>
       </div>
 
       <!-- Right side only icons -->
@@ -1199,10 +1203,10 @@ function LightItcoShow(index) {
           <p class="autoiot-icon-sub">Hospital</p>
         </div>
 
-        <div class="autoiot-icon-item" onmouseenter="setActiveAutoiot(4)">
+        <!-- <div class="autoiot-icon-item" onmouseenter="setActiveAutoiot(4)">
           <div class="autoiot-icon-box" id="autoiotIcon4"><i class="bi bi-wifi fs-5"></i></div>
           <p class="autoiot-icon-sub">IoT</p>
-        </div>
+        </div> -->
 
         <div class="autoiot-icon-item" onmouseenter="setActiveAutoiot(5)">
           <div class="autoiot-icon-box" id="autoiotIcon5"><i class="bi bi-buildings fs-5"></i></div>
@@ -1215,22 +1219,18 @@ function LightItcoShow(index) {
 
 <script>
   const autoiotItems = [
-    { type: "video", src: "media/Home_Automation.mp4" },
-    { type: "image", src: "img/automation/commercialautomation.png" },
-    { type: "image", src: "img/automation/industriesautomation.png" },
-    { type: "image", src: "img/automation/hospitalautomation.png" },
-    { type: "video", src: "media/automation/iotdemo.mp4" },
-    { type: "image", src: "img/automation/hotelautomation.png" }
+    { src: "media/Automation/Home_Automation.mp4" },
+    { src: "media/Automation/Commercial_Automation.mp4" },
+    { src: "media/Automation/Industrial_Automation.mp4" },
+    { src: "media/Automation/Hospital_Automation.mp4" },
+    { src: "media/Automation/Hotel_Automation.mp4" }
   ];
 
   let autoiotActiveIndex = 0;
-  let autoiotTimer = null;
-  const IMAGE_INTERVAL = 5000; // 5s for images
 
   function setActiveAutoiot(index) {
     autoiotActiveIndex = index;
     updateAutoiotUI();
-    resetAutoiotTimer();
   }
 
   function nextAutoiotSlide() {
@@ -1243,37 +1243,21 @@ function LightItcoShow(index) {
     wrapper.innerHTML = "";
 
     const currentItem = autoiotItems[autoiotActiveIndex];
-    let element;
+    const video = document.createElement("video");
 
-    if (currentItem.type === "video") {
-      element = document.createElement("video");
-      element.src = currentItem.src;
-      element.autoplay = true;
-      element.muted = true;
-      element.loop = false; // ✅ no loop, wait till end
-      element.playsInline = true;
-      element.className = "autoiot-media show";
+    video.src = currentItem.src;
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = false; // play only once
+    video.playsInline = true;
+    video.className = "autoiot-media show";
 
-      // ✅ when video ends → go to next slide
-      element.addEventListener("ended", () => {
-        nextAutoiotSlide();
-      });
+    // when video ends → go to next
+    video.addEventListener("ended", () => {
+      nextAutoiotSlide();
+    });
 
-      // Stop auto timer while video playing
-      clearInterval(autoiotTimer);
-      autoiotTimer = null;
-
-    } else {
-      element = document.createElement("img");
-      element.src = currentItem.src;
-      element.alt = "";
-      element.className = "autoiot-media show";
-
-      // ✅ restart timer for images
-      resetAutoiotTimer();
-    }
-
-    wrapper.appendChild(element);
+    wrapper.appendChild(video);
 
     // update icon active state
     for (let i = 0; i < autoiotItems.length; i++) {
@@ -1282,16 +1266,9 @@ function LightItcoShow(index) {
     document.getElementById("autoiotIcon" + autoiotActiveIndex).classList.add("active");
   }
 
-  function resetAutoiotTimer() {
-    clearInterval(autoiotTimer);
-    autoiotTimer = setInterval(nextAutoiotSlide, IMAGE_INTERVAL);
-  }
-
   // init
   updateAutoiotUI();
 </script>
-
-
 
 <style>
 /* Banner common height */
@@ -1301,7 +1278,7 @@ function LightItcoShow(index) {
   background-size: cover;
 }
 
-/* IMAGE & VIDEO STYLING */
+/* VIDEO STYLING */
 .autoiot-media {
   width: 100%;
   height: 100%;
@@ -1386,6 +1363,7 @@ function LightItcoShow(index) {
 }
 </style>
 <!-- AUTOMATION END -->
+
 
 
 

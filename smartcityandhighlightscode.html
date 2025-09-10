@@ -507,3 +507,231 @@ scAnimateProgress();
   }
 </style>
 <!-- animi1 end -->
+
+
+
+
+
+
+
+<!-- AUTOMATION START for images -->
+<div class="vgs">
+  <div class="container-fluid p-0">
+    <div class="row g-0">
+      
+      <!-- Left side image/video -->
+      <div class="col-md-11 p-0">
+        <div class="autoiot-image-wrapper" id="autoiotMediaWrapper">
+          <img id="autoiotImage" src="img/automation/homeautomation.png" class="autoiot-media show fade" alt="">
+        </div>
+      </div>
+
+      <!-- Right side only icons -->
+      <div class="col-md-1 d-flex flex-column justify-content-center align-items-center autoiot-icons-section">
+        <div class="autoiot-icon-item" onmouseenter="setActiveAutoiot(0)">
+          <div class="autoiot-icon-box active" id="autoiotIcon0"><i class="bi bi-house-door fs-5"></i></div>
+          <p class="autoiot-icon-sub">Home</p>
+        </div>
+
+        <div class="autoiot-icon-item" onmouseenter="setActiveAutoiot(1)">
+          <div class="autoiot-icon-box" id="autoiotIcon1"><i class="bi bi-building fs-5"></i></div>
+          <p class="autoiot-icon-sub">Commercial</p>
+        </div>
+
+        <div class="autoiot-icon-item" onmouseenter="setActiveAutoiot(2)">
+          <div class="autoiot-icon-box" id="autoiotIcon2"><i class="bi bi-gear fs-5"></i></div>
+          <p class="autoiot-icon-sub">Industrial</p>
+        </div>
+
+        <div class="autoiot-icon-item" onmouseenter="setActiveAutoiot(3)">
+          <div class="autoiot-icon-box" id="autoiotIcon3"><i class="bi bi-hospital fs-5"></i></div>
+          <p class="autoiot-icon-sub">Hospital</p>
+        </div>
+
+        <div class="autoiot-icon-item" onmouseenter="setActiveAutoiot(4)">
+          <div class="autoiot-icon-box" id="autoiotIcon4"><i class="bi bi-wifi fs-5"></i></div>
+          <p class="autoiot-icon-sub">IoT</p>
+        </div>
+
+        <div class="autoiot-icon-item" onmouseenter="setActiveAutoiot(5)">
+          <div class="autoiot-icon-box" id="autoiotIcon5"><i class="bi bi-buildings fs-5"></i></div>
+          <p class="autoiot-icon-sub">Hotel</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const autoiotItems = [
+    { type: "video", src: "media/Home_Automation.mp4" },
+    { type: "image", src: "img/automation/commercialautomation.png" },
+    { type: "image", src: "img/automation/industriesautomation.png" },
+    { type: "image", src: "img/automation/hospitalautomation.png" },
+    { type: "video", src: "media/automation/iotdemo.mp4" },
+    { type: "image", src: "img/automation/hotelautomation.png" }
+  ];
+
+  let autoiotActiveIndex = 0;
+  let autoiotTimer = null;
+  const IMAGE_INTERVAL = 5000; // 5s for images
+
+  function setActiveAutoiot(index) {
+    autoiotActiveIndex = index;
+    updateAutoiotUI();
+    resetAutoiotTimer();
+  }
+
+  function nextAutoiotSlide() {
+    autoiotActiveIndex = (autoiotActiveIndex + 1) % autoiotItems.length;
+    updateAutoiotUI();
+  }
+
+  function updateAutoiotUI() {
+    const wrapper = document.getElementById("autoiotMediaWrapper");
+    wrapper.innerHTML = "";
+
+    const currentItem = autoiotItems[autoiotActiveIndex];
+    let element;
+
+    if (currentItem.type === "video") {
+      element = document.createElement("video");
+      element.src = currentItem.src;
+      element.autoplay = true;
+      element.muted = true;
+      element.loop = false; // ✅ no loop, wait till end
+      element.playsInline = true;
+      element.className = "autoiot-media show";
+
+      // ✅ when video ends → go to next slide
+      element.addEventListener("ended", () => {
+        nextAutoiotSlide();
+      });
+
+      // Stop auto timer while video playing
+      clearInterval(autoiotTimer);
+      autoiotTimer = null;
+
+    } else {
+      element = document.createElement("img");
+      element.src = currentItem.src;
+      element.alt = "";
+      element.className = "autoiot-media show";
+
+      // ✅ restart timer for images
+      resetAutoiotTimer();
+    }
+
+    wrapper.appendChild(element);
+
+    // update icon active state
+    for (let i = 0; i < autoiotItems.length; i++) {
+      document.getElementById("autoiotIcon" + i).classList.remove("active");
+    }
+    document.getElementById("autoiotIcon" + autoiotActiveIndex).classList.add("active");
+  }
+
+  function resetAutoiotTimer() {
+    clearInterval(autoiotTimer);
+    autoiotTimer = setInterval(nextAutoiotSlide, IMAGE_INTERVAL);
+  }
+
+  // init
+  updateAutoiotUI();
+</script>
+
+
+
+<style>
+/* Banner common height */
+.autoiot-image-wrapper,
+.autoiot-icons-section {
+  height: 550px; /* Banner height */
+  background-size: cover;
+}
+
+/* IMAGE & VIDEO STYLING */
+.autoiot-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ICONS SECTION */
+.autoiot-icons-section {
+  width: 100px;
+  background: #fff;
+  padding: 10px 5px;
+}
+
+.autoiot-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1px 0;
+  cursor: pointer;
+  text-align: center;
+}
+
+.autoiot-icon-box {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.autoiot-icon-box.active,
+.autoiot-icon-box:hover {
+  background: #000;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.autoiot-icon-sub {
+  font-size: 0.75rem;
+  color: #333;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* SECTION bottom spacing */
+.vgs {
+  margin-bottom: 40px;
+}
+
+/* Responsive - Mobile View */
+@media (max-width: 768px) {
+  .col-md-1.autoiot-icons-section {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 15px 0 !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .autoiot-icon-item {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .autoiot-icon-box {
+    width: 40px;
+    height: 40px;
+  }
+
+  .autoiot-icon-sub {
+    font-size: 0.7rem;
+    margin-top: 4px;
+  }
+}
+</style>
+<!-- AUTOMATION END -->
