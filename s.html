@@ -1,223 +1,248 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Outdoor lighting</title>
-  <style>
-     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #111;
-    }
-    .section {
-      max-width: 1000px; /* page middle lo compact */
-      margin: 40px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-    .section h1 {
-      font-size: 28px;
-      font-weight: 800;
-      margin-bottom: 25px;
-      text-align: left; 
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px; /* tight gap */
-      align-items: start;
-    }
-    .col img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-      
-    }
-    .col img:hover {
-  transform: scale(1.05); /* zoom in effect */
-}
-    .col1 img {
-      height: 420px; /* tall but reduced */
-    }
-    .col2 img,
-    .col3 img {
-      height: 280px; /* smaller images */
-    }
-    .content {
-      text-align: center;
-      margin-top: 40px;
-    }
-    .title {
-      font-size: 30px;
-      font-weight: 800;
-      margin: 0 0 15px;
-      line-height: 1.2;
-    }
-    .desc {
-      font-size: 18px;
-      color: #333;
-      margin: 0;
-      line-height: 1.4;
-    }
-    .readmore {
-      display: inline-block;
-      margin-top: 25px;
-      font-weight: 600;
-      font-size: 15px;
-      color: #111;
-      text-decoration: none;
-      /* border-bottom: 1px solid ; */
-      padding-bottom: 2px;
-    }
-    .readmore:hover {
-      background-color: #94908f;
-      padding: 10px;
-      
-    }
- 
+<!-- Distribution Planning Section -->
+<section class="distribution-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Distribution Planning & Engineering in Action</h2>
 
-    /* responsive */
-    @media(max-width: 900px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-      .col1 img {
-        height: 300px;
-      }
-      .col2 img,
-      .col3 img {
-        height: 200px;
-      }
-    }
-  </style>
-</head>
-<body>
+    <!-- Custom Slider -->
+    <div class="slider-container">
+      <div class="slider-track">
 
-  <section class="section">
-    <h1>Outdoor lighting – Tips and inspiration</h1>
-    <div class="grid">
-      
-      <!-- Column 1 -->
-      <div class="col col1">
-        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800" alt="">
-      </div>
-      
-      <!-- Column 2 -->
-      <div class="col col2">
-        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800" alt="">
-        <div class="content">
-          <h2 class="title">Extend the<br> garden season</h2>
-          <p class="desc">Outdoor lighting provides a<br> welcoming impression and a <br>greater sense of security!</p>
+        <!-- Card 1 -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h5 class="card-title">Rockett Substation Sectionalizing Study</h5>
+            <p class="card-text">EPE delivered a detailed sectionalizing study for Rockett Substation...</p>
+          </div>
+          <img src="img/automation/commercialautomation.png" alt="Rockett Substation">
+          <div class="learn-more-bar">
+            <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
         </div>
-      </div>
-      
-      <!-- Column 3 -->
-      <div class="col col3">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800" alt="">
-        <div class="content">
-          <h2 class="title">Choose facade lighting</h2>
-          <p class="desc">This is what you should<br> consider!...</p>
-          <a href="#" class="readmore">READ MORE</a>
-        </div>
-      </div>
 
+        <!-- Card 2 -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h5 class="card-title">Power System Planning</h5>
+            <p class="card-text">EPE developed a comprehensive 5-Year Work Plan for Navarro County...</p>
+          </div>
+          <img src="img/automation/homeautomation.png" alt="Power System Planning">
+          <div class="learn-more-bar">
+            <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h5 class="card-title">Maine Utilities Distribution Investigation</h5>
+            <p class="card-text">EPE collaborated with the Maine Public Utilities Commission...</p>
+          </div>
+          <img src="img/automation/hospitalautomation.png" alt="Maine Utilities">
+          <div class="learn-more-bar">
+            <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h5 class="card-title">Smart Grid Modernization</h5>
+            <p class="card-text">Implementation of smart meters, advanced monitoring...</p>
+          </div>
+          <img src="https://via.placeholder.com/600x400" alt="Smart Grid Modernization">
+          <div class="learn-more-bar">
+            <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </section>
 
-</body>
-</html>
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spotlight Section</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #aaa9a9; /* screenshot lo unna grey bg */
-      font-family: Arial, sans-serif;
-    }
-    .product-img {
-      width: 100%;
-      height: 300px;
-      transition: transform 0.4s ease-in-out;
-      overflow: hidden;
-    }
-    .product-img:hover {
- transform: scale(1.1);       /* hand icon vastundi */
-}
-    .caption-btn {
-      background-color: #1a1b1a; /* darker grey button */
-      color: #fff;
-      font-weight: bold;
-      text-align: center;
-      padding: 10px;
-      margin-top: 10px;
-      display: block;
-      text-transform: uppercase;
-    }
-    .text-block h2 {
-      font-weight: bold;
-      font-size: 1.6rem;
-      margin-bottom: 20px;
-    }
-    .text-block p {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-  </style>
-</head>
-<body>
-  <div class="container-fluid py-5">
-    <div class="row align-items-start">
-      
-      <!-- Left Image + Caption -->
-      <div class="col-md-3 text-center">
-        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
-        <div class="caption-btn">SPOTLIGHT GARDEN</div>
-      </div>
-
-      <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
-          install and require minimal maintenance, making them a practical choice for enhancing the 
-          aesthetics of your outdoor lighting.
-        </p>
-      </div>
-
-      <!-- Right Images + Captions -->
-      <div class="col-md-3">
-        <div class="mb-4 text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 1</div>
-        </div>
-        </div>
-        <div class="col-md-3">
-        <div class="text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 3" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 3</div>
-        </div>
-      </div>
-
+    <!-- Controls -->
+    <div class="see-more-container">
+      <button class="arrow-btn" id="prevBtn"><i class="bi bi-arrow-left"></i></button>
+      <a href="#" class="see-more">See More</a>
+      <button class="arrow-btn" id="nextBtn"><i class="bi bi-arrow-right"></i></button>
     </div>
   </div>
-</body>
-</html>
+</section>
 
+<!-- Section Styles -->
+<style>
+  .distribution-section {
+    background: linear-gradient(to right, #5b5c5c, #3c3c3e);
+    font-family: Arial, sans-serif;
+  }
+
+  .distribution-section h2 {
+    color: #dbeafe;
+    font-weight: 300;
+  }
+
+  /* Card Styling */
+  .card-custom {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s ease;
+    flex: 0 0 calc((100% - 40px) / 3); /* Desktop: 3 cards */
+    background: #fff;
+  }
+
+  /* Responsive widths */
+  @media (max-width: 992px) {
+    .card-custom {
+      flex: 0 0 calc((100% - 20px) / 2); /* Tablet: 2 cards */
+    }
+  }
+
+  @media (max-width: 576px) {
+    .card-custom {
+      flex: 0 0 100%; /* Mobile: 1 card */
+    }
+  }
+
+  .card-body {
+    padding: 1.2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+    color: #475569;
+    flex-grow: 1;
+  }
+
+  .card-custom img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    width: 100%;
+  }
+
+  .card-custom img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Learn More bar */
+  .learn-more-bar {
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .learn-more {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2563eb;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .learn-more:hover {
+    color: #1d4ed8;
+    transform: translateX(4px);
+  }
+
+  /* Slider container */
+  .slider-container {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slider-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.6s ease;
+  }
+
+  /* Controls */
+  .see-more-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 25px;
+    gap: 12px;
+  }
+
+  .arrow-btn {
+    background: transparent;
+    border: none;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    color: #fff;
+  }
+
+  .arrow-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+    color: #dbeafe;
+  }
+
+  .see-more {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .see-more:hover {
+    color: #dbeafe;
+    transform: translateX(4px);
+  }
+</style>
+
+<!-- Section Script -->
+<script>
+  const track = document.querySelector('.slider-track');
+  const cards = document.querySelectorAll('.card-custom');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  let index = 0;
+
+  function updateSlider() {
+    const cardWidth = cards[0].offsetWidth + 20;
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (index < cards.length - 3) {
+      index++;
+      updateSlider();
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (index > 0) {
+      index--;
+      updateSlider();
+    }
+  });
+
+  window.addEventListener('resize', updateSlider);
+  window.addEventListener('load', updateSlider);
+</script>
