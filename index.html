@@ -338,9 +338,9 @@
 <!-- about start -->
 <style>
   .hello {
-    font-family: 'Jost', sans-serif;
-    background: #e3dfdf;
-    color: #111;
+    font-family: 'Six Caps', sans-serif;
+    background: #000000;
+    color: #a4a1a1;
     min-height: 60vh;
     display: flex;
     justify-content: center;
@@ -350,46 +350,55 @@
   }
 
   .aboutforarcot-textarea h2.tagline {
-  font-size: 1.5rem;
-  color: #000000;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 3px solid #000000;
-  width: 0;
-  animation: typing 14s steps(60, end) forwards, blinkCaret 1s step-end infinite;
-  margin: 20px auto;
-}
-
-/* Typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blinkCaret {
-  from, to { border-color: transparent }
-  50% { border-color: #000000 }
-}
-
-/* ✅ Mobile fix */
-@media (max-width: 768px) {
-  .aboutforarcot-textarea h2.tagline {
-    font-size: 1.1rem;        /* smaller font */
-    white-space: normal;      /* allow wrapping */
-    border-right: none;       /* remove blinking caret */
-    width: auto;              /* fit content */
-    animation: none;          /* remove typing effect (optional) */
+    font-size: 1.5rem;
+    color: #fdf9f9;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #000000;
+    width: 0;
+    animation: typing 14s steps(60, end) forwards, blinkCaret 1s step-end infinite;
+    margin: 20px auto;
   }
 
   .aboutforarcot-textarea p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    padding: 0 10px;
+    max-width: 800px;   /* ✅ Paragraph width ni limit cheyy */
+    margin: 0 auto;     /* ✅ Center lo petta */
+    font-weight: 300;   /* ✅ Light font weight */
+    font-size: 13px;
+    line-height: 1.6;
+    letter-spacing: 1px;
   }
-}
 
+  /* Typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blinkCaret {
+    from, to { border-color: transparent }
+    50% { border-color: #000000 }
+  }
+
+  /* ✅ Mobile fix */
+  @media (max-width: 768px) {
+    .aboutforarcot-textarea h2.tagline {
+      font-size: 1.1rem;        /* smaller font */
+      white-space: normal;      /* allow wrapping */
+      border-right: none;       /* remove blinking caret */
+      width: auto;              /* fit content */
+      animation: none;          /* remove typing effect (optional) */
+    }
+
+    .aboutforarcot-textarea p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      padding: 0 10px;
+      max-width: 90%;          /* ✅ Smaller width mobile lo */
+    }
+  }
 </style>
 
 <div class="hello">
@@ -400,7 +409,6 @@
     </p>
   </div>
 </div>
-
 
 <!-- about end -->
 
@@ -414,8 +422,8 @@
 <section class="heros" aria-label="Light Solutions">
   <div class="hero__bg" aria-hidden="true">
     <!-- 🔁 Replace images with videos -->
-    <video src="media/Power_Transmission.mp4" muted loop playsinline class="bg-video active" data-key="indoor"></video>
-    <video src="media/distribution.mp4" muted loop playsinline class="bg-video" data-key="outdoor"></video>
+    <video src="media/trnasmisstionseg.mp4" muted loop playsinline class="bg-video active" data-key="indoor"></video>
+    <video src="media/distributions.mp4" muted loop playsinline class="bg-video" data-key="outdoor"></video>
     <video src="media/panelboards.mp4" muted loop playsinline class="bg-video" data-key="immersion"></video>
     <video src="media/generation.mp4" muted loop playsinline class="bg-video" data-key="linear"></video>
   </div>
@@ -507,14 +515,14 @@
 
 <div class="">
 <section class="section-wraps ">
-  <h2 class="section-heading text-dark">Energy Generation</h2>
+  <h2 class="section-heading text-white">Energy Generation</h2>
   <p class="section-sub">Harnessing clean and timeless power for a sustainable future</p>
 </section>
 </div>
 <style>
   /* Section background - subtle Italian aesthetic */
 .section-wraps {
-  background: #dddcdc;  /* clean, minimal grey tone */
+  background: #000000;  /* clean, minimal grey tone */
   padding: 40px 10px 30px; /* less space, balanced */
   margin: 0;
   text-align: left; /* align content left */
@@ -536,7 +544,7 @@
 
 
 .section-wraps1 {
-  background: #dddcdc;  /* clean, minimal grey tone */
+  background: #000000;  /* clean, minimal grey tone */
   padding: 40px 10px 30px; /* less space, balanced */
   margin: 0;
   text-align: left; /* align content left */
@@ -1167,7 +1175,7 @@ function LightItcoShow(index) {
 
 
 <section class="section-wraps">
-  <h2 class="section-heading text-dark">Automation</h2>
+  <h2 class="section-heading text-white">Automation</h2>
   <p class="section-sub">Seamless industrial, home, and IoT automation solutions for smarter, connected living.</p>
 </section>
 
@@ -1618,16 +1626,19 @@ function LightItcoShow(index) {
 
 <!-- Applications Start -->
 
-<section class="section-wraps" >
-  <h2 class="section-heading text-dark">Applications</h2>
- 
+<section class="section-wraps">
+  <h2 class="section-heading text-white">Applications</h2>
 </section>
+
 <div class="">
   <!-- Slider -->
   <div class="applica-slider-container">
     <!-- Slides -->
     <div class="applica-slide active">
-      <img src="img/application/appli (2).webp" alt="City Landscape">
+      <video autoplay loop muted playsinline>
+        <source src="media/powersapplication.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       <div class="applica-overlay"></div>
       <div class="applica-content">
         <h2>Power Systems</h2>
@@ -1637,7 +1648,10 @@ function LightItcoShow(index) {
     </div>
 
     <div class="applica-slide">
-      <img src="img/application/68.webp" alt="Transportation">
+      <video autoplay loop muted playsinline>
+        <source src="media/energyapplications.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       <div class="applica-overlay"></div>
       <div class="applica-content">
         <h2>Energy Solutions</h2>
@@ -1647,7 +1661,10 @@ function LightItcoShow(index) {
     </div>
 
     <div class="applica-slide">
-      <img src="img/application/73.webp" alt="Sports">
+      <video autoplay loop muted playsinline>
+        <source src="media/lightingapplication.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       <div class="applica-overlay"></div>
       <div class="applica-content">
         <h2>Lighting Technology</h2>
@@ -1657,7 +1674,10 @@ function LightItcoShow(index) {
     </div>
 
     <div class="applica-slide">
-      <img src="img/application/71.webp" alt="City Landscape">
+      <video autoplay loop muted playsinline>
+        <source src="media/automationapplication.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       <div class="applica-overlay"></div>
       <div class="applica-content">
         <h2>Automation Systems</h2>
@@ -1667,17 +1687,10 @@ function LightItcoShow(index) {
     </div>
 
     <div class="applica-slide">
-      <img src="img/application/72.webp" alt="Transportation">
-      <div class="applica-overlay"></div>
-      <div class="applica-content">
-        <h2>Smart City Solutions</h2>
-        <p>Our smart city innovations such as smart poles integrate lighting, connectivity, and safety features, creating sustainable and connected urban spaces.</p>
-        <button>Show more →</button>
-      </div>
-    </div>
-
-    <div class="applica-slide">
-      <img src="img/application/70.webp" alt="Sports">
+      <video autoplay loop muted playsinline>
+        <source src="media/randdapplication.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       <div class="applica-overlay"></div>
       <div class="applica-content">
         <h2>Innovation & R&D</h2>
@@ -1699,11 +1712,11 @@ function LightItcoShow(index) {
     <button data-index="1">Energy Solutions</button>
     <button data-index="2">Lighting Technology</button>
     <button data-index="3">Automation Systems</button>
-    <button data-index="4">Smartcity Solutions</button>
-    <button data-index="5">Innovation & R&D</button>
+    <button data-index="4">Innovation & R&D</button>
   </div>
 </div>
- <script>
+
+<script>
 document.addEventListener("DOMContentLoaded", function() {
   const slides = document.querySelectorAll(".applica-slide");
   const tabs = document.querySelectorAll(".applica-tabs button");
@@ -1731,171 +1744,168 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-  <style>
- 
-    .applica-heading {
-      font-size: 48px;
-      font-weight: 700;
-      margin: 30px 50px;
-    }
-    .applica-slider-container {
-      position: relative;
-      width: 100%;
-      height: 500px;
-      overflow: hidden;
-    
-    }
-    .applica-slide {
-      display: none;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0; left: 0;
-    }
-    .applica-slide.active {
-      display: block;
-    }
-    .applica-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    /* gradient overlay */
-    .applica-overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to right, transparent 30%, rgba(38, 38, 38, 0.95) 70%);
-    }
-    .applica-content {
-      position: absolute;
-      top: 30%;
-      right: 5%;
-      max-width: 500px;
-      color: #f0ecec;
-    }
-    .applica-content h2 {
-      font-size: 36px;
-      font-weight: 700;
-    }
-    .applica-content p {
-      margin: 15px 0;
-      color: #e7e5e5;
-    }
-    .applica-content button {
-      background: #ebe7e6;
-      color: rgb(20, 19, 19);
-      border: none;
-      padding: 12px 28px;
-      border-radius: 25px;
-      font-weight: 600;
-    }
-    .applica-arrows {
-      position: absolute;
-      bottom: 20px;
-      right: 40px;
-      display: flex;
-      gap: 15px;
-    }
-    .applica-arrow-btn {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      border: 1px solid #ccc;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      cursor: pointer;
-    }
-    /* bottom nav tabs */
-    .applica-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 20px;
-      border-top: 1px solid #eee;
-      flex-wrap: wrap;
-    }
-    .applica-tabs button {
-      background: none;
-      border: none;
-      font-size: 18px;
-      font-weight: 500;
-      cursor: pointer;
-      color: #666;
-      padding-bottom: 5px;
-      white-space: nowrap;
-    }
-    .applica-tabs button.active {
-      color: #cac5c5;
-      border-bottom: 2px solid #868281;
-    }
+<style>
+.applica-heading {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 30px 50px;
+}
+.applica-slider-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+.applica-slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+}
+.applica-slide.active {
+  display: block;
+}
+.applica-slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* gradient overlay */
+.applica-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to right, transparent 30%, rgba(38, 38, 38, 0.95) 70%);
+}
+.applica-content {
+  position: absolute;
+  top: 30%;
+  right: 5%;
+  max-width: 500px;
+  color: #f0ecec;
+}
+.applica-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+}
+.applica-content p {
+  margin: 15px 0;
+  color: #e7e5e5;
+}
+.applica-content button {
+  background: #ebe7e6;
+  color: rgb(20, 19, 19);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-weight: 600;
+}
+.applica-arrows {
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  display: flex;
+  gap: 15px;
+}
+.applica-arrow-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+/* bottom nav tabs */
+.applica-tabs {
+  display: flex;
+  justify-content: start;
+  gap: 30px;
+  padding: 20px;
+  border-top: 1px solid #eee;
+  flex-wrap: wrap;
+}
+.applica-tabs button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #666;
+  padding-bottom: 5px;
+  white-space: nowrap;
+}
+.applica-tabs button.active {
+  color: #cac5c5;
+  border-bottom: 2px solid #868281;
+}
 
-    /* --------------------- */
-    /* 📱 Mobile Responsive */
-    /* --------------------- */
-    @media (max-width: 768px) {
-      .applica-heading {
-        font-size: 28px;
-        margin: 20px;
-      }
-      .applica-slider-container {
-        height: 300px;
-      }
-      .applica-content {
-        position: absolute;
-        top: 20%;
-        right: 5%;
-        left: 5%;
-        max-width: 90%;
-        text-align: center;
-      }
-      .applica-content h2 {
-        font-size: 22px;
-      }
-      .applica-content p {
-        font-size: 14px;
-      }
-      .applica-content button {
-        padding: 8px 18px;
-        font-size: 14px;
-      }
-      .applica-arrows {
-        bottom: 10px;
-        right: 50%;
-        transform: translateX(50%);
-      }
-      .applica-arrow-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 16px;
-      }
-      .applica-tabs {
-        overflow-x: auto;
-        justify-content: flex-start;
-        gap: 20px;
-        padding: 10px;
-        white-space: nowrap;
-      }
-      .applica-tabs::-webkit-scrollbar {
-        display: none; /* hide scrollbar for cleaner UI */
-      }
-    }
-  </style>
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .applica-heading {
+    font-size: 28px;
+    margin: 20px;
+  }
+  .applica-slider-container {
+    height: 300px;
+  }
+  .applica-content {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    left: 5%;
+    max-width: 90%;
+    text-align: center;
+  }
+  .applica-content h2 {
+    font-size: 22px;
+  }
+  .applica-content p {
+    font-size: 14px;
+  }
+  .applica-content button {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+  .applica-arrows {
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  .applica-arrow-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+  .applica-tabs {
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 10px;
+    white-space: nowrap;
+  }
+  .applica-tabs::-webkit-scrollbar {
+    display: none;
+  }
+}
+</style>
+
 <!-- Applications End -->
 
 
 <!-- Services start -->
 
 <section class="section-wraps" >
-  <h2 class="section-heading text-black">How We Do</h2>
+  <h2 class="section-heading text-white">How We Do</h2>
 
 </section>
 
  <style>
   .section-wraps {
-  background: #ffffff;  /* clean, minimal grey tone */
+  background: #000000;  /* clean, minimal grey tone */
   padding: 40px 10px 30px; /* less space, balanced */
   margin: 0;
   text-align: left; /* align content left */
