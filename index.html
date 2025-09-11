@@ -360,6 +360,7 @@
     width: 0;
     animation: typing 14s steps(60, end) forwards, blinkCaret 1s step-end infinite;
     margin: 20px auto;
+    font-style: 200;
   }
 
   .aboutforarcot-textarea p {
@@ -422,7 +423,7 @@
 <section class="heros" aria-label="Light Solutions">
   <div class="hero__bg" aria-hidden="true">
     <!-- 🔁 Replace images with videos -->
-    <video src="media/trnasmisstionseg.mp4" muted loop playsinline class="bg-video active" data-key="indoor"></video>
+    <video src="media/transmisstionlinefortrans.mp4" muted loop playsinline class="bg-video active" data-key="indoor"></video>
     <video src="media/distributions.mp4" muted loop playsinline class="bg-video" data-key="outdoor"></video>
     <video src="media/panelboards.mp4" muted loop playsinline class="bg-video" data-key="immersion"></video>
     <video src="media/generation.mp4" muted loop playsinline class="bg-video" data-key="linear"></video>
@@ -440,40 +441,134 @@
 </div>
 
 <style>
-  .bgs{background:#000;padding-top:10px;}
-  .heros{position:relative;height:100vh;width:100%;isolation:isolate;background:radial-gradient(1200px 1200px at 85% 10%, #1c2a33 0%, #0c1114 55%);font-family:"Roboto",sans-serif;}
-  .heros .hero__bg{position:absolute;inset:0;overflow:hidden;z-index:0;}
+  .bgs {
+    background: #000;
+    padding-top: 10px;
+  }
+
+  .heros {
+    position: relative;
+    height: 85vh;
+    width: 100%;
+    isolation: isolate;
+    background: radial-gradient(1200px 1200px at 85% 10%, #1c2a33 0%, #0c1114 55%);
+    font-family: "Roboto", sans-serif;
+  }
+
+  .heros .hero__bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+  }
 
   /* 🎥 Video styling like images */
-  .heros .hero__bg video{
-    position:absolute;inset:0;
-    width:100%;height:100%;object-fit:cover;object-position:center;
-    opacity:0;transform:scale(1.08) translateY(0);
-    transition:opacity 700ms ease, transform 6000ms ease;
+  .heros .hero__bg video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transform: scale(1.08) translateY(0);
+    transition: opacity 700ms ease, transform 6000ms ease;
   }
-  .heros .hero__bg video.active{opacity:1;transform:scale(1.02) translateY(-2%);}
-  
-  .heros .hero__overlay{position:absolute;left:min(6vw,80px);top:50%;transform:translateY(-50%);z-index:2;}
-  .heros .menu{list-style:none;}
-  .heros .menu li{cursor:pointer;margin:14px 0;color:#8fa1ad;font-weight:700;font-size:clamp(2rem, 2.5rem + 2vw, 5rem);transition:.3s;}
-  .heros .menu li.active{color:#fff;}
-  .heros .menu li .cta{font-size:.8rem;font-weight:600;opacity:.8;}
-  .heros::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,17,20,.75) 0%,rgba(12,17,20,.5) 20%,rgba(12,17,20,0) 55%);z-index:1;}
+
+  .heros .hero__bg video.active {
+    opacity: 1;
+    transform: scale(1.02) translateY(-2%);
+  }
+
+  .heros .hero__overlay {
+    position: absolute;
+    left: min(6vw, 80px);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  .heros .menu {
+    list-style: none;
+  }
+
+  .heros .menu li {
+    cursor: pointer;
+    margin: 14px 0;
+    color: #8fa1ad;
+    font-weight: 700;
+    font-size: clamp(2rem, 2.5rem + 2vw, 5rem);
+    transition: .3s;
+  }
+
+  .heros .menu li.active {
+    color: #fff;
+  }
+
+  .heros .menu li .cta {
+    font-size: .8rem;
+    font-weight: 600;
+    opacity: .8;
+  }
+
+  .heros::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(12, 17, 20, .75) 0%, rgba(12, 17, 20, .5) 20%, rgba(12, 17, 20, 0) 55%);
+    z-index: 1;
+  }
 
   /* 📱 Mobile */
-  @media (max-width:768px){
-    .heros{height:auto;min-height:70vh;}
-    .heros .hero__bg video{height:60vh;}
-    .heros .hero__overlay{position:relative;top:0;left:0;transform:none;padding:20px;text-align:left;}
-    .heros .menu li{font-size:1.6rem;margin:10px 0;}
+  @media (max-width:768px) {
+    .heros {
+      height: auto;
+      min-height: 70vh;
+    }
+
+    .heros .hero__bg video {
+      height: 60vh;
+    }
+
+    .heros .hero__overlay {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+      padding: 20px;
+      text-align: left;
+    }
+
+    .heros .menu li {
+      font-size: 1.6rem;
+      margin: 10px 0;
+    }
   }
 
   /* 📱 Tablet */
-  @media (max-width:1024px){
-    .heros{height:auto;min-height:70vh;}
-    .heros .hero__bg video{height:60vh;}
-    .heros .hero__overlay{position:relative;top:0;left:0;transform:none;padding:20px;text-align:left;}
-    .heros .menu li{font-size:1.6rem;margin:10px 0;}
+  @media (max-width:1024px) {
+    .heros {
+      height: auto;
+      min-height: 70vh;
+    }
+
+    .heros .hero__bg video {
+      height: 60vh;
+    }
+
+    .heros .hero__overlay {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+      padding: 20px;
+      text-align: left;
+    }
+
+    .heros .menu li {
+      font-size: 1.6rem;
+      margin: 10px 0;
+    }
   }
 </style>
 
@@ -1898,7 +1993,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <!-- Services start -->
 
-<section class="section-wraps" >
+<section class="section-wraps">
   <h2 class="section-heading text-white">How We Do</h2>
 
 </section>
@@ -1997,7 +2092,7 @@ padding-top: 0px;}
 
   /* --- RIGHT PANEL --- */
   .services-panel {
-    background: rgba(0,0,0,0.8);
+    background: black;
     color: #fff;
     padding: 30px;
     height: 100%;
@@ -2052,12 +2147,12 @@ padding-top: 0px;}
     design: {
       title: "Design",
       items: ["Requirement analysis & site survey","Concept design & feasibility study","Electrical & mechanical schematics","CAD drawings & 3D visualization","Standards & compliance check (IEC, IS, BIS)"],
-      topImage: "img/solutions/spa.png",
+      topImage: "img/face3",
       bottom: {
         heading: "Concept <span>& Innovation</span>",
         para: "From concept to blueprint, shaping ideas into realityTransforming ideas into practical solutions with precision and creativity",
-        img1: "img/solutions/Lighting-design.png",
-        img2: "img/solutions/power-design.png"
+        img1: "img/solutions/concept.png",
+        img2: "img/face1"
       }
     },
     manufacturing: {
