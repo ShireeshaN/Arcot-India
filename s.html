@@ -1,123 +1,248 @@
-<!-- START WHO WE SERVE -->
-<section class="who-we-serve">
+<!-- Distribution Planning Section -->
+<section class="distribution-section py-5">
   <div class="container">
-    <h2 class="fade-in">Who We Serve</h2>
-    <div class="serve-grid">
-      <ul>
-        <li class="fade-item"><span class="arrow">→</span> <strong>Cooperatives</strong></li>
-        <li class="fade-item"><span class="arrow">→</span> <strong>Generation and Transmission</strong></li>
-        <li class="fade-item"><span class="arrow">→</span> <strong>Investor-Owned Utilities</strong></li>
-        <li class="fade-item"><span class="arrow">→</span> <strong>Public Utility Commissions</strong></li>
-      </ul>
-      <ul>
-        <li class="fade-item"><span class="arrow">→</span> <strong>Federal Electric Utilities</strong></li>
-        <li class="fade-item"><span class="arrow">→</span> <strong>Independent System Operator</strong></li>
-        <li class="fade-item"><span class="arrow">→</span> <strong>Municipal-Owned Utilities</strong></li>
-        <li class="fade-item"><span class="arrow">→</span> <strong>Regional Transmission Organization</strong></li>
-      </ul>
+    <h2 class="text-center mb-5">Distribution Planning & Engineering in Action</h2>
+
+    <!-- Custom Slider -->
+    <div class="slider-container">
+      <div class="slider-track">
+
+        <!-- Card 1 -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h5 class="card-title">Rockett Substation Sectionalizing Study</h5>
+            <p class="card-text">EPE delivered a detailed sectionalizing study for Rockett Substation...</p>
+          </div>
+          <img src="img/automation/commercialautomation.png" alt="Rockett Substation">
+          <div class="learn-more-bar">
+            <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h5 class="card-title">Power System Planning</h5>
+            <p class="card-text">EPE developed a comprehensive 5-Year Work Plan for Navarro County...</p>
+          </div>
+          <img src="img/automation/homeautomation.png" alt="Power System Planning">
+          <div class="learn-more-bar">
+            <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h5 class="card-title">Maine Utilities Distribution Investigation</h5>
+            <p class="card-text">EPE collaborated with the Maine Public Utilities Commission...</p>
+          </div>
+          <img src="img/automation/hospitalautomation.png" alt="Maine Utilities">
+          <div class="learn-more-bar">
+            <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h5 class="card-title">Smart Grid Modernization</h5>
+            <p class="card-text">Implementation of smart meters, advanced monitoring...</p>
+          </div>
+          <img src="https://via.placeholder.com/600x400" alt="Smart Grid Modernization">
+          <div class="learn-more-bar">
+            <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="see-more-container">
+      <button class="arrow-btn" id="prevBtn"><i class="bi bi-arrow-left"></i></button>
+      <a href="#" class="see-more">See More</a>
+      <button class="arrow-btn" id="nextBtn"><i class="bi bi-arrow-right"></i></button>
     </div>
   </div>
 </section>
 
+<!-- Section Styles -->
 <style>
-/* Section */
-.who-we-serve {
-  padding: 60px 20px;
-  background: #fff;
-  font-family: 'Georgia', serif;
-  overflow: hidden;
-}
-
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Heading */
-.who-we-serve h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #1a2b44;
-  margin-bottom: 40px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 1s ease forwards;
-}
-
-/* Grid Layout */
-.serve-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px 60px;
-}
-
-/* List Styling */
-.serve-grid ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.serve-grid li {
-  font-size: 1.1rem;
-  margin-bottom: 25px;
-  color: #1a2b44;
-  display: flex;
-  align-items: center;
-  opacity: 0;
-  transform: translateX(-30px);
-  animation: slideIn 0.8s ease forwards;
-}
-
-.serve-grid .arrow {
-  margin-right: 12px;
-  color: #1a2b44;
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
-}
-
-.serve-grid li:hover .arrow {
-  transform: translateX(5px);
-}
-
-/* Bold Text Blue */
-.serve-grid strong {
-  color: #2874c9; /* blue like screenshot */
-  font-weight: 700;
-}
-
-/* Animations */
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .distribution-section {
+    background: linear-gradient(to right, #5b5c5c, #3c3c3e);
+    font-family: Arial, sans-serif;
   }
-}
 
-@keyframes slideIn {
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  .distribution-section h2 {
+    color: #dbeafe;
+    font-weight: 300;
   }
-}
 
-/* Add delay for staggered effect */
-.fade-item:nth-child(1) { animation-delay: 0.2s; }
-.fade-item:nth-child(2) { animation-delay: 0.4s; }
-.fade-item:nth-child(3) { animation-delay: 0.6s; }
-.fade-item:nth-child(4) { animation-delay: 0.8s; }
-
-.serve-grid ul:nth-child(2) li:nth-child(1) { animation-delay: 1s; }
-.serve-grid ul:nth-child(2) li:nth-child(2) { animation-delay: 1.2s; }
-.serve-grid ul:nth-child(2) li:nth-child(3) { animation-delay: 1.4s; }
-.serve-grid ul:nth-child(2) li:nth-child(4) { animation-delay: 1.6s; }
-
-/* Responsive */
-@media (max-width: 900px) {
-  .serve-grid {
-    grid-template-columns: 1fr;
+  /* Card Styling */
+  .card-custom {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s ease;
+    flex: 0 0 calc((100% - 40px) / 3); /* Desktop: 3 cards */
+    background: #fff;
   }
-}
+
+  /* Responsive widths */
+  @media (max-width: 992px) {
+    .card-custom {
+      flex: 0 0 calc((100% - 20px) / 2); /* Tablet: 2 cards */
+    }
+  }
+
+  @media (max-width: 576px) {
+    .card-custom {
+      flex: 0 0 100%; /* Mobile: 1 card */
+    }
+  }
+
+  .card-body {
+    padding: 1.2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+    color: #475569;
+    flex-grow: 1;
+  }
+
+  .card-custom img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    width: 100%;
+  }
+
+  .card-custom img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Learn More bar */
+  .learn-more-bar {
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .learn-more {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2563eb;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .learn-more:hover {
+    color: #1d4ed8;
+    transform: translateX(4px);
+  }
+
+  /* Slider container */
+  .slider-container {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slider-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.6s ease;
+  }
+
+  /* Controls */
+  .see-more-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 25px;
+    gap: 12px;
+  }
+
+  .arrow-btn {
+    background: transparent;
+    border: none;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    color: #fff;
+  }
+
+  .arrow-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+    color: #dbeafe;
+  }
+
+  .see-more {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .see-more:hover {
+    color: #dbeafe;
+    transform: translateX(4px);
+  }
 </style>
-<!-- END WHO WE SERVE -->
+
+<!-- Section Script -->
+<script>
+  const track = document.querySelector('.slider-track');
+  const cards = document.querySelectorAll('.card-custom');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  let index = 0;
+
+  function updateSlider() {
+    const cardWidth = cards[0].offsetWidth + 20;
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (index < cards.length - 3) {
+      index++;
+      updateSlider();
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (index > 0) {
+      index--;
+      updateSlider();
+    }
+  });
+
+  window.addEventListener('resize', updateSlider);
+  window.addEventListener('load', updateSlider);
+</script>

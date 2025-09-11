@@ -142,7 +142,7 @@
 <section class="solution-section">
   <div class="solution-container">
     <h2 class="solution-heading">
-      <span class="highlight">End-to-end transmission</span> for a stronger grid 
+      <span class="highlight">End-to-End Transmission</span> for a Stronger Grid 
       
     </h2>
     <p class="solution-text">
@@ -297,6 +297,8 @@
 }
 </style>
 <!-- END SOLUTION SECTION -->
+
+
 
 <!-- START INTERCONNECTION SECTION -->
 <section class="interconnection">
@@ -548,6 +550,237 @@
 <!-- END WHO WE SERVE -->
 
 
+<!-- Distribution Planning Section -->
+<section class="distribution-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Distribution Planning & Engineering in Action</h2>
+
+    <!-- Custom Slider -->
+    <div class="slider-container">
+      <div class="slider-track">
+
+        <!-- Card 1 -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h5 class="card-title">High-Voltage Transmission Lines</h5>
+            <p class="card-text">Engineered to transport electricity over vast distances, 
+              HV transmission lines handle voltages from 69 kV up to 765 kV and beyond. 
+              Their design varies by type—overhead, underground, and submarine—ensuring efficient, 
+              reliable, and safe power delivery to industries, cities, and communities</p>
+          </div>
+          <img src="img/automation/commercialautomation.png" alt="Rockett Substation">
+          <div class="learn-more-bar">
+            <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h5 class="card-title">Transformers, Insulators & Breakers</h5>
+            <p class="card-text">From shaping voltage levels to safeguarding against faults, 
+              transformers, insulators, and breakers form the backbone of modern power systems. 
+              Together, they ensure safe, efficient, and reliable electricity across the grid.</p>
+          </div>
+          <img src="img/automation/homeautomation.png" alt="Power System Planning">
+          <div class="learn-more-bar">
+            <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h5 class="card-title">Substations: The Nerve Centers of Power</h5>
+            <p class="card-text">From Air-Insulated (AIS) to Gas-Insulated (GIS), and step-up 
+              to step-down, substations transform voltage levels and route electricity seamlessly. 
+              They stand as the critical hubs that balance, protect, and control the grid.</p>
+          </div>
+          <img src="img/automation/hospitalautomation.png" alt="Maine Utilities">
+          <div class="learn-more-bar">
+            <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h5 class="card-title">Smart Grid Automation: Intelligence in Action</h5>
+            <p class="card-text">With SCADA systems providing real-time monitoring and relays enabling 
+              lightning-fast protection, smart grid automation brings efficiency, reliability, 
+              and intelligence to modern power networks.</p>
+          </div>
+          <img src="img/automation/hospitalautomation.png" alt="Smart Grid Modernization">
+          <div class="learn-more-bar">
+            <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="see-more-container">
+      <button class="arrow-btn prevBtn"><i class="bi bi-arrow-left"></i></button>
+      <a href="#" class="see-more">See More</a>
+      <button class="arrow-btn nextBtn"><i class="bi bi-arrow-right"></i></button>
+    </div>
+  </div>
+</section>
+
+
+<!-- Section Styles -->
+<style>
+  .distribution-section {
+    background: linear-gradient(to right, #5b5c5c, #3c3c3e);
+    font-family: Arial, sans-serif;
+  }
+
+  .distribution-section h2 {
+    color: #e9ebec;
+    font-weight: 300;
+  }
+
+  /* Card Styling */
+  .card-custom {
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s ease;
+    flex: 0 0 calc((100% - 40px) / 3); /* Desktop: 3 cards */
+    background: #fff;
+  }
+
+  /* Responsive widths */
+  @media (max-width: 992px) {
+    .card-custom {
+      flex: 0 0 calc((100% - 20px) / 2); /* Tablet: 2 cards */
+    }
+  }
+
+  @media (max-width: 576px) {
+    .card-custom {
+      flex: 0 0 100%; /* Mobile: 1 card */
+    }
+  }
+
+  .card-body {
+    padding: 1.2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .card-title {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+    color: #475569;
+    flex-grow: 1;
+  }
+
+  .card-custom img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    width: 100%;
+  }
+
+  .card-custom img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Learn More bar */
+  .learn-more-bar {
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .learn-more {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #757678;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .learn-more:hover {
+    color: #858689;
+    transform: translateX(4px);
+  }
+
+  /* Slider container */
+  .slider-container {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slider-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.6s ease;
+  }
+
+  /* Controls */
+  .see-more-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 25px;
+    gap: 12px;
+  }
+
+  .arrow-btn {
+    background: transparent;
+    border: none;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    color: #fff;
+  }
+
+  .arrow-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+    color: #dbeafe;
+  }
+
+  .see-more {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .see-more:hover {
+    color: #dbeafe;
+    transform: translateX(4px);
+  }
+</style>
+
+
+
+
 <!-- START INTERCONNECTION SECTION -->
 <section class="interconnection">
   <div class="container">
@@ -688,6 +921,106 @@
 </section>
 
 
+
+
+
+<!-- Distribution Planning Section -->
+<section class="distribution-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Distribution Planning & Engineering in Action</h2>
+
+    <!-- Custom Slider -->
+    <div class="slider-container">
+      <div class="slider-track">
+
+        <!-- Card 1 -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h5 class="card-title">Revolutionizing Power Flow with Smart Simulation</h5>
+            <p class="card-text">Harnessing AI-driven modeling and advanced simulation, intelligent transmission 
+              systems optimize grid performance, integrate renewable energy seamlessly, and predict potential failures—paving the 
+              way for a smarter, more reliable, and efficient power network.</p>
+          </div>
+          <img src="img/automation/commercialautomation.png" alt="Rockett Substation">
+          <div class="learn-more-bar">
+            <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h5 class="card-title">Optimized Transmission System Operations: Efficiency Meets Reliability</h5>
+            <p class="card-text">By leveraging advanced modeling, real-time data, and smart simulation, 
+              optimized transmission operations enhance grid efficiency, reduce energy losses, and ensure 
+              reliable power delivery, empowering modern power systems to meet growing demands seamlessly.</p>
+          </div>
+          <img src="img/automation/homeautomation.png" alt="Power System Planning">
+          <div class="learn-more-bar">
+            <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h5 class="card-title">Building the Grid of Tomorrow</h5>
+            <p class="card-text">With advanced simulation, predictive analytics, and intelligent modeling, 
+              future-ready transmission planning ensures power grids are resilient, adaptable, and capable of 
+              seamlessly integrating renewable energy, meeting tomorrow’s energy demands today.</p>
+          </div>
+          <img src="img/automation/hospitalautomation.png" alt="Maine Utilities">
+          <div class="learn-more-bar">
+            <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h5 class="card-title">Powering a Safe and Trusted Grid</h5>
+            <p class="card-text">Ensuring strict adherence to standards and regulations, transmission 
+              compliance drives operational safety, reliability, and accountability, empowering energy networks 
+              to operate efficiently while meeting evolving industry and governmental requirements.</p>
+          </div>
+          <img src="img/automation/hospitalautomation.png" alt="Smart Grid Modernization">
+          <div class="learn-more-bar">
+            <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+             <!-- Card 5 -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h5 class="card-title">Precision in Every Cycle</h5>
+            <p class="card-text">Leveraging Electro-Magnetic Transient (EMT) simulation, advanced transmission analysis 
+              delivers precise insights into power system dynamics, enabling engineers to predict faults, optimize performance, 
+              and ensure stable, reliable operation under even the most complex conditions.</p>
+          </div>
+          <img src="img/automation/hospitalautomation.png" alt="Smart Grid Modernization">
+          <div class="learn-more-bar">
+            <a href="#" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="see-more-container">
+      <button class="arrow-btn prevBtn"><i class="bi bi-arrow-left"></i></button>
+      <a href="#" class="see-more">See More</a>
+      <button class="arrow-btn nextBtn"><i class="bi bi-arrow-right"></i></button>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
 <!-- START CTA SECTION -->
 <section class="cta-section">
   <div class="cta-content">
@@ -710,6 +1043,7 @@
   position: relative;
   overflow: hidden;
   margin-bottom: 70px;
+  margin-top: 50px;
 }
 
 /* Content Wrapper */
@@ -791,6 +1125,12 @@
 }
 </style>
 <!-- END CTA SECTION -->
+
+
+
+
+
+
 
 
 
@@ -954,6 +1294,73 @@
     });
   });
 </script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const sections = document.querySelectorAll(".distribution-section");
+
+  sections.forEach(section => {
+    const track = section.querySelector('.slider-track');
+    const cards = section.querySelectorAll('.card-custom');
+    const prevBtn = section.querySelector('.prevBtn');
+    const nextBtn = section.querySelector('.nextBtn');
+
+    let index = 0;
+    const visibleCardsDesktop = 3; // adjust based on desktop layout
+    let autoScrollInterval;
+
+    function updateSlider() {
+      const cardWidth = cards[0].offsetWidth + 20; // include gap
+      track.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+
+    function startAutoScroll() {
+      autoScrollInterval = setInterval(() => {
+        if (index < cards.length - visibleCardsDesktop) {
+          index++;
+        } else {
+          index = 0; // loop back to start
+        }
+        updateSlider();
+      }, 4000); // auto-scroll every 4 seconds
+    }
+
+    function stopAutoScroll() {
+      clearInterval(autoScrollInterval);
+    }
+
+    nextBtn.addEventListener('click', () => {
+      stopAutoScroll(); // stop auto-scroll on manual interaction
+      if (index < cards.length - visibleCardsDesktop) {
+        index++;
+      } else {
+        index = 0; // loop back
+      }
+      updateSlider();
+      startAutoScroll(); // restart auto-scroll
+    });
+
+    prevBtn.addEventListener('click', () => {
+      stopAutoScroll();
+      if (index > 0) {
+        index--;
+      } else {
+        index = cards.length - visibleCardsDesktop; // loop to end
+      }
+      updateSlider();
+      startAutoScroll();
+    });
+
+    window.addEventListener('resize', updateSlider);
+
+    updateSlider();
+    startAutoScroll(); // start auto-scroll initially
+  });
+});
+</script>
+
 
     </body>
 
