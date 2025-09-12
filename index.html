@@ -423,9 +423,9 @@
 <section class="heros" aria-label="Light Solutions">
   <div class="hero__bg" aria-hidden="true">
     <!-- 🔁 Replace images with videos -->
-    <video src="media/transmisstionlinefortrans.mp4" muted loop playsinline class="bg-video active" data-key="indoor"></video>
-    <video src="media/distributions.mp4" muted loop playsinline class="bg-video" data-key="outdoor"></video>
-    <video src="media/panelboards.mp4" muted loop playsinline class="bg-video" data-key="immersion"></video>
+    <video src="media/trans.mp4" muted loop playsinline class="bg-video active" data-key="indoor"></video>
+    <video src="media/distri1.mp4" muted loop playsinline class="bg-video" data-key="outdoor"></video>
+    <video src="media/panelboard.mp4" muted loop playsinline class="bg-video" data-key="immersion"></video>
     <video src="media/generation.mp4" muted loop playsinline class="bg-video" data-key="linear"></video>
   </div>
 
@@ -448,7 +448,7 @@
 
   .heros {
     position: relative;
-    height: 85vh;
+    height: 100vh;
     width: 100%;
     isolation: isolate;
     background: radial-gradient(1200px 1200px at 85% 10%, #1c2a33 0%, #0c1114 55%);
@@ -1275,17 +1275,17 @@ function LightItcoShow(index) {
 </section>
 
 <!-- AUTOMATION START -->
-<div class="vgs">
+<div class="vgs" style="background-color: #000;">
   <div class="container-fluid p-0">
-    <div class="row g-0">
-      
-      <!-- Left side video -->
-      <div class="col-md-11 p-0">
+    <div class="row g-0 flex-row align-items-center">
+
+      <!-- Video Section -->
+      <div class="col-md-9 p-0">
         <div class="autoiot-image-wrapper" id="autoiotMediaWrapper"></div>
       </div>
 
-      <!-- Right side only icons -->
-      <div class="col-md-1 d-flex flex-column justify-content-center align-items-center autoiot-icons-section">
+      <!-- Icons Column (Right Side) -->
+      <div class="col-md-3 d-flex flex-column justify-content-center align-items-center autoiot-icons-section">
         <div class="autoiot-icon-item" onmouseenter="setActiveAutoiot(0)">
           <div class="autoiot-icon-box active" id="autoiotIcon0"><i class="bi bi-house-door fs-5"></i></div>
           <p class="autoiot-icon-sub">Home</p>
@@ -1306,27 +1306,25 @@ function LightItcoShow(index) {
           <p class="autoiot-icon-sub">Hospital</p>
         </div>
 
-        <!-- <div class="autoiot-icon-item" onmouseenter="setActiveAutoiot(4)">
-          <div class="autoiot-icon-box" id="autoiotIcon4"><i class="bi bi-wifi fs-5"></i></div>
-          <p class="autoiot-icon-sub">IoT</p>
-        </div> -->
-
-        <div class="autoiot-icon-item" onmouseenter="setActiveAutoiot(5)">
-          <div class="autoiot-icon-box" id="autoiotIcon5"><i class="bi bi-buildings fs-5"></i></div>
+        <div class="autoiot-icon-item" onmouseenter="setActiveAutoiot(4)">
+          <div class="autoiot-icon-box" id="autoiotIcon4"><i class="bi bi-buildings fs-5"></i></div>
           <p class="autoiot-icon-sub">Hotel</p>
         </div>
       </div>
+
     </div>
   </div>
 </div>
 
+
+
 <script>
   const autoiotItems = [
-    { src: "media/Automation/Home_Automation.mp4" },
-    { src: "media/Automation/Commercial_Automation.mp4" },
-    { src: "media/Automation/Industrial_Automation.mp4" },
-    { src: "media/Automation/Hospital_Automation.mp4" },
-    { src: "media/Automation/Hotel_Automation.mp4" }
+    { src: "media/Automation/homeautomation.mp4" },
+    { src: "media/Automation/commercialauto.mp4" },
+    { src: "media/Automation/homeautomation.mp4" },
+    { src: "media/Automation/homeautomation.mp4" },
+    { src: "media/Automation/homeautomation.mp4" }
   ];
 
   let autoiotActiveIndex = 0;
@@ -1374,39 +1372,45 @@ function LightItcoShow(index) {
 </script>
 
 <style>
-/* Banner common height */
-.autoiot-image-wrapper,
-.autoiot-icons-section {
-  height: 550px; /* Banner height */
-  background-size: cover;
-}
-
-/* VIDEO STYLING */
-.autoiot-media {
-  width: 100%;
-  height: 100%;
+  .autoiot-image-wrapper {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
   object-fit: cover;
 }
 
-/* ICONS SECTION */
+.autoiot-media {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
 .autoiot-icons-section {
-  width: 100px;
-  background: #fff;
-  padding: 10px 5px;
+  background: #000000;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
 }
 
 .autoiot-icon-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1px 0;
   cursor: pointer;
   text-align: center;
 }
 
 .autoiot-icon-box {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: #f6f6f6;
   display: flex;
@@ -1424,34 +1428,25 @@ function LightItcoShow(index) {
 }
 
 .autoiot-icon-sub {
-  font-size: 0.75rem;
-  color: #333;
-  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #bbb8b8;
+  margin-top: 8px;
   font-weight: 500;
 }
 
-/* SECTION bottom spacing */
 .vgs {
   margin-bottom: 40px;
 }
 
-/* Responsive - Mobile View */
 @media (max-width: 768px) {
-  .col-md-1.autoiot-icons-section {
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    width: 100% !important;
-    height: auto !important;
-    padding: 15px 0 !important;
-    justify-content: center !important;
-    align-items: center !important;
+  .row {
+    flex-direction: column;
   }
 
-  .autoiot-icon-item {
-    flex: 0 0 33.33%;
-    max-width: 33.33%;
-    margin-bottom: 15px;
-    text-align: center;
+  .autoiot-icons-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
   }
 
   .autoiot-icon-box {
@@ -1464,6 +1459,7 @@ function LightItcoShow(index) {
     margin-top: 4px;
   }
 }
+
 </style>
 <!-- AUTOMATION END -->
 
@@ -1475,7 +1471,7 @@ function LightItcoShow(index) {
 
 
 
-<section class="section-wraps" style="background-color: #434040;">
+<section class="section-wraps" >
   <h2 class="section-heading text-white">R&amp;D</h2>
   <p class="section-sub">Pioneering innovation through advanced research, design, and future-ready technologies.</p>
 </section>
@@ -1523,114 +1519,184 @@ function LightItcoShow(index) {
 </div>
 
 <style>
-/* Container */
-.gallery-layout { padding: 18px; background:url("img/R&Dimage.png") }
-/* layout */
-.gallery-wrap { display: flex; gap: 12px; align-items: stretch; max-width: 1400px; margin: 0 auto; }
-
-/* LEFT - thumbnails column */
-.thumb-column {
-  width: 120px;                    /* narrow fixed column */
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding: 6px;
-  overflow-y: auto;
-  align-items: flex-start;
-}
-
-/* each thumbnail */
-.thumb {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  cursor: pointer;
-  width: 100%;
-  outline: none;
-  transition: transform .18s ease;
-}
-.thumb:focus { box-shadow: 0 0 0 3px rgba(0,123,255,.12); border-radius: 10px; }
-
-/* image box */
-.thumb-img {
-  width: 100%;
-  height: 82px;
-  /* border-radius: 12px; */
-  overflow: hidden;
-  background: #111;
-  background-size: cover;
-  /* box-shadow: 0 8px 20px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.03); */
-  
-}
-.thumb-img img { width:100%; height:100%; object-fit:cover; display:block; }
-
-/* label below thumb */
-.thumb-label { font-size: 12px; color: #fff; margin-top:8px; opacity:0.95; }
-
-/* active thumb styling */
-.thumb.active .thumb-img { transform: scale(1.03); box-shadow: 0 18px 40px rgba(0,0,0,.45);  border: 2px solid #ea8f08; }
-.thumb.active .thumb-label { font-weight:600; color:#fff; }
-
-/* RIGHT - preview */
-.preview-column {
-  flex: 1 1 auto;
-  display:flex;
-  flex-direction:column;
-  gap: 10px;
-  justify-content:center;
-  align-items:center;
-  padding: 8px;
-  box-sizing: border-box;
-}
-
-/* preview frame */
-.preview-frame {
-  width: 100%;
-  max-width: 1100px;
-  height: 520px;            /* desktop preview height */
-  /* border-radius: 16px; */
-  overflow: hidden;
-  background: #000;
-  /* box-shadow: 0 30px 90px rgba(0,0,0,.6); */
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.preview-frame img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition: opacity .36s ease, transform .6s ease;
-  opacity: 1;
-  display:block;
-}
-
-/* caption */
-.preview-caption { color:#fff; font-size:24px; opacity:.9; }
-
-/* scrollbar hidden (optional) */
-.thumb-column::-webkit-scrollbar { width: 8px; }
-.thumb-column::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.06); border-radius: 6px; }
-
-/* small screens: stack and create 3-per-row thumbs */
-@media (max-width: 768px) {
-  .gallery-wrap { flex-direction: column; }
-  .thumb-column {
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px 8px;
+  /* Container */
+  .gallery-layout {
+    padding: 18px;
+    background: url("#");
+    background-color: #000;
   }
-  .thumb { width: 30%; text-align:center; align-items:center; }
-  .thumb-img { height: 68px; width: 78%; margin: 0 auto; }
-  .preview-frame { height: 42vh; max-width: 100%; border-radius:12px; }
-  .preview-caption { text-align:center; }
-}
 
-/* optional small touch UX */
-.thumb:active { transform: translateY(1px); }
+  /* layout */
+  .gallery-wrap {
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* LEFT - thumbnails column */
+  .thumb-column {
+    width: 120px;
+    /* narrow fixed column */
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 6px;
+    overflow-y: auto;
+    align-items: flex-start;
+  }
+
+  /* each thumbnail */
+  .thumb {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    width: 100%;
+    outline: none;
+    transition: transform .18s ease;
+  }
+
+  .thumb:focus {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, .12);
+    border-radius: 10px;
+  }
+
+  /* image box */
+  .thumb-img {
+    width: 100%;
+    height: 82px;
+    /* border-radius: 12px; */
+    overflow: hidden;
+    background: #111;
+    background-size: cover;
+    /* box-shadow: 0 8px 20px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.03); */
+
+  }
+
+  .thumb-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* label below thumb */
+  .thumb-label {
+    font-size: 12px;
+    color: #fff;
+    margin-top: 8px;
+    opacity: 0.95;
+  }
+
+  /* active thumb styling */
+  .thumb.active .thumb-img {
+    transform: scale(1.03);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .45);
+    border: 2px solid #ea8f08;
+  }
+
+  .thumb.active .thumb-label {
+    font-weight: 600;
+    color: #fff;
+  }
+
+  /* RIGHT - preview */
+  .preview-column {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  /* preview frame */
+  .preview-frame {
+    width: 100%;
+    max-width: 1100px;
+    height: 520px;
+    /* desktop preview height */
+    /* border-radius: 16px; */
+    overflow: hidden;
+    background: #000;
+    /* box-shadow: 0 30px 90px rgba(0,0,0,.6); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .preview-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity .36s ease, transform .6s ease;
+    opacity: 1;
+    display: block;
+  }
+
+  /* caption */
+  .preview-caption {
+    color: #fff;
+    font-size: 24px;
+    opacity: .9;
+  }
+
+  /* scrollbar hidden (optional) */
+  .thumb-column::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .thumb-column::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+  }
+
+  /* small screens: stack and create 3-per-row thumbs */
+  @media (max-width: 768px) {
+    .gallery-wrap {
+      flex-direction: column;
+    }
+
+    .thumb-column {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 8px;
+    }
+
+    .thumb {
+      width: 30%;
+      text-align: center;
+      align-items: center;
+    }
+
+    .thumb-img {
+      height: 68px;
+      width: 78%;
+      margin: 0 auto;
+    }
+
+    .preview-frame {
+      height: 42vh;
+      max-width: 100%;
+      border-radius: 12px;
+    }
+
+    .preview-caption {
+      text-align: center;
+    }
+  }
+
+  /* optional small touch UX */
+  .thumb:active {
+    transform: translateY(1px);
+  }
 </style>
 
 <script>
@@ -2147,56 +2213,56 @@ padding-top: 0px;}
     design: {
       title: "Design",
       items: ["Requirement analysis & site survey","Concept design & feasibility study","Electrical & mechanical schematics","CAD drawings & 3D visualization","Standards & compliance check (IEC, IS, BIS)"],
-      topImage: "img/face3",
+      topImage: "img/solutions/face3",
       bottom: {
         heading: "Concept <span>& Innovation</span>",
         para: "From concept to blueprint, shaping ideas into realityTransforming ideas into practical solutions with precision and creativity",
         img1: "img/solutions/concept.png",
-        img2: "img/face1"
+        img2: "img/solutions/design3.png"
       }
     },
     manufacturing: {
       title: "Manufacturing",
       items: ["Component sourcing & material selection","Assembly & fabrication", "Integration of electronics & hardware","Quality inspection during production","Pre-shipment testing"],
-      topImage: "img/solutions/manufacturing.png",
+      topImage: "img/solutions/6.png",
       bottom: {
         heading: "Build <span>& Create </span>",
         para: "High-quality manufacturing with advanced technology and strict quality control.",
-        img1: "img/solutions/power-manufacturing.png",
-        img2: "img/solutions/automation-manufacturing.png"
+        img1: "img/sample/8.png",
+        img2: "img/sample/9.png"
       }
     },
     installation: {
       title: "Installation",
       items: ["Site preparation & civil works (if needed)", "Electrical cabling & wiring","Mounting & fixing of equipment / lights / panels","System integration (automation, power, lighting, IoT)","Safety checks during installation"],
-      topImage: "img/solutions/installations.png",
+      topImage: "img/solutions/14.png",
       bottom: {
         heading: "Implement  <span>& Integrate</span>",
         para: "Seamless installation services ensuring safety, efficiency, and reliability.",
-        img1: "img/solutions/lighting-install.png",
-        img2: "img/solutions/power-install.png"
+        img1: "img/solutions/16.png",
+        img2: "img/solutions/17.png"
       }
     },
     testing: {
       title: "Testing",
       items: ["Functional testing (does it work as designed?)","Load & stress testing","Safety & protection testing (short circuit, overload)","Performance optimization","Client demonstration"],
-      topImage: "img/solutions/testing.png",
+      topImage: "img/solutions/19.png",
       bottom: {
         heading: "Verify <span>& Assure</span>",
         para: "Comprehensive testing for performance, safety, and long-term dependability.",
-        img1: "img/solutions/automation-testing.png",
-        img2: "img/solutions/power-testing.png"
+        img1: "img/solutions/20.png",
+        img2: "img/solutions/18.png"
       }
     },
     commisioning: {
       title: "Commisioning",
       items: ["Final calibration & adjustments","System documentation & reports","Training end-users / client staff","Handover of system with manuals","After-sales support & AMC (maintenance plan)"],
-      topImage: "img/solutions/commisioning.png",
+      topImage: "img/solutions/23.png",
       bottom: {
         heading: "Launch  <span>& Deliver</span>",
         para: "Final validation and handover with full client support and documentation.",
-        img1: "img/solutions/lighting-commision.png",
-        img2: "img/solutions/energy-commision.png"
+        img1: "img/solutions/22.png",
+        img2: "img/solutions/21.png"
       }
     }
   };
