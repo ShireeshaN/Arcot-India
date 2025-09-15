@@ -1,0 +1,168 @@
+<!-- 🔹 Testimonial Section -->
+<section class="testimonial-section py-5">
+  <div class="container d-flex flex-wrap justify-content-between align-items-center gap-4">
+    
+    <!-- Text Content -->
+    <div class="testimonial-text flex-fill" id="testimonial-text">
+      <h2 class="fw-bold mb-3">Our Customer First Approach <br> Wins Hearts, Always.</h2>
+      <div class="stars text-warning fs-5 mb-2">★★★★★</div>
+      <p class="review mb-2">Very well designed office and experience center. Easy to install products with technically experienced professionals. Kudos to the team!</p>
+      <p class="author fw-semibold">– Victor, Hyderabad</p>
+      <div class="dots d-flex gap-2 mt-3" id="dots"></div>
+    </div>
+
+    <!-- Images -->
+    <div class="testimonial-images flex-fill" id="testimonial-images">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" class="big-image" alt="">
+      <div class="small-images">
+        <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353" alt="">
+        <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed" alt="">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 🔹 Styles -->
+<style>
+  .testimonial-section {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  }
+
+  /* Text */
+  .testimonial-text h2 {
+    font-size: 1.9rem;
+  }
+  .testimonial-text .review {
+    color: #444;
+  }
+
+  .dots button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: #ccc;
+    transition: 0.3s;
+  }
+  .dots button.active {
+    background: #e63946;
+  }
+
+  /* Images Layout */
+  .testimonial-images {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    height: 350px;
+  }
+  .testimonial-images .big-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px; /* 👈 big image radius */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  }
+  .testimonial-images .small-images {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .testimonial-images .small-images img {
+    width: 100%;
+    height: calc(50% - 7.5px);
+    object-fit: cover;
+    border-radius: 12px; /* 👈 small image radius */
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  }
+
+  @media (max-width: 768px) {
+    .testimonial-images {
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+    .testimonial-images .small-images {
+      flex-direction: row;
+    }
+    .testimonial-images .small-images img {
+      height: 140px;
+    }
+  }
+</style>
+
+<!-- 🔹 Script -->
+<script>
+  const testimonials = [
+    {
+      review: "Very well designed office and experience center. Easy to install products with technically experienced professionals. Kudos to the team!",
+      author: "– Victor, Hyderabad",
+      images: [
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+        "https://images.unsplash.com/photo-1505691723518-36a5ac3be353",
+        "https://images.unsplash.com/photo-1615874959474-d609969a20ed"
+      ]
+    },
+    {
+      review: "The automation system works seamlessly. Great team support and modern technology integration.",
+      author: "– Srinivas, Bangalore",
+      images: [
+        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+        "https://images.unsplash.com/photo-1586105251261-72a756497a11",
+        "https://images.unsplash.com/photo-1600047509807-ba8f99d2cd31"
+      ]
+    },
+    {
+      review: "Fantastic service and solutions. Our hotel automation is now world-class.",
+      author: "– Meera, Mumbai",
+      images: [
+        "https://images.unsplash.com/photo-1618220179428-22790b3a6d78",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+        "https://images.unsplash.com/photo-1505691723518-36a5ac3be353"
+      ]
+    }
+  ];
+
+  const reviewEl = document.querySelector(".review");
+  const authorEl = document.querySelector(".author");
+  const imagesContainer = document.getElementById("testimonial-images");
+  const dotsContainer = document.getElementById("dots");
+
+  let current = 0;
+
+  // Dots
+  testimonials.forEach((_, i) => {
+    const btn = document.createElement("button");
+    if (i === 0) btn.classList.add("active");
+    btn.addEventListener("click", () => {
+      current = i;
+      showTestimonial();
+    });
+    dotsContainer.appendChild(btn);
+  });
+
+  function showTestimonial() {
+    const t = testimonials[current];
+    reviewEl.textContent = t.review;
+    authorEl.textContent = t.author;
+
+    imagesContainer.innerHTML = `
+      <img src="${t.images[0]}" class="big-image" alt="">
+      <div class="small-images">
+        <img src="${t.images[1]}" alt="">
+        <img src="${t.images[2]}" alt="">
+      </div>
+    `;
+
+    document.querySelectorAll("#dots button").forEach((dot, i) => {
+      dot.classList.toggle("active", i === current);
+    });
+  }
+
+  // Auto change every 5s
+  setInterval(() => {
+    current = (current + 1) % testimonials.length;
+    showTestimonial();
+  }, 5000);
+</script>
