@@ -735,3 +735,357 @@ scAnimateProgress();
 }
 </style>
 <!-- AUTOMATION END -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ✅ Home Automation Section -->
+<section class="automation-section">
+  <!-- Left side -->
+  <div class="automation-text">
+    <h2>Why Home Automation?</h2>
+    <div class="features">
+      <div class="feature" data-index="0"><i>🏡</i><span>Enhanced comfort and convenience</span></div>
+      <div class="feature" data-index="1"><i>📱</i><span>Real-time control via smartphone or voice</span></div>
+      <div class="feature" data-index="2"><i>💡</i><span>Energy-efficient lighting and climate control</span></div>
+      <div class="feature" data-index="3"><i>🔒</i><span>Advanced security systems for peace of mind</span></div>
+      <div class="feature" data-index="4"><i>🎙️</i><span>Integration with Alexa & Google Assistant  </span></div>
+    </div>
+  </div>
+
+  <!-- Right side -->
+  <div class="automation-image">
+    <img class="active" src="img/Untitled design.png" alt="Home Automation">
+    <img src="img/sool1.jpg" alt="Home Automation">
+    <img src="img/solutionbanners.webp" alt="Home Automation">
+    <img src="img/contactimg.webp" alt="Home Automation">
+    <img src="img/carousel-1.webp" alt="Home Automation">
+  </div>
+</section>
+
+<!-- ✅ Section Specific Styles -->
+<style>
+  .automation-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+    gap: 60px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .automation-text {
+    flex: 1;
+  }
+  .automation-text h2 {
+    font-size: 42px;
+    margin-bottom: 30px;
+    color: #acaeb4;
+  }
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .feature {
+    background: #2d2d2e;
+    color: #fff;
+    border-radius: 50px;
+    padding: 10px 10px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    font-size: 22px;
+  }
+
+  .feature span {
+    opacity: 0;
+    margin-left: 12px;
+    transition: opacity 0.4s ease 0.2s;
+    font-size: 16px;
+    display: none;
+  }
+
+  .feature.active {
+    width: 380px;
+    justify-content: flex-start;
+    font-size: 18px;
+    background: linear-gradient(135deg, #2a2a2c, #5b5c61);
+  }
+
+  .feature.active i {
+    display: none;
+  }
+
+  .feature.active span {
+    display: inline;
+    opacity: 1;
+  }
+
+  .automation-image {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+  }
+
+  .automation-image img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    /* border-radius: 150px 0px 0px 150px; */
+    /* box-shadow: 0 15px 40px rgba(0,0,0,0.25); */
+    position: absolute;
+    top: 0;
+    left: 100%;
+    opacity: 0;
+    transition: all 1s ease;
+  }
+
+  .automation-image img.active {
+    left: 0;
+    opacity: 1;
+  }
+
+  @media(max-width: 768px) {
+    .automation-section {
+      flex-direction: column;
+    }
+    .automation-text h2 {
+      font-size: 28px;
+      text-align: center;
+    }
+    .features {
+      align-items: center;
+    }
+    .feature.active {
+      width: 90%;
+    }
+  }
+</style>
+
+<!-- ✅ Section features Script -->
+<script>
+  (function() {
+    const features = document.querySelectorAll(".automation-section .feature");
+    const images = document.querySelectorAll(".automation-section .automation-image img");
+
+    let currentIndex = -1;
+    let interval;
+
+    function showFeature(index) {
+      features.forEach(f => f.classList.remove("active"));
+      images.forEach(img => img.classList.remove("active"));
+
+      features[index].classList.add("active");
+      images[index].classList.add("active");
+
+      currentIndex = index;
+    }
+
+    function showAllFeatures() {
+      features.forEach(f => f.classList.add("active"));
+    }
+
+    function resetAllFeatures() {
+      features.forEach(f => f.classList.remove("active"));
+    }
+
+    function autoSlide() {
+      if (currentIndex === -1) {
+        showAllFeatures();
+        currentIndex = -2;
+        setTimeout(() => {
+          resetAllFeatures();
+          showFeature(0);
+        }, 5000);
+      } else if (currentIndex === features.length - 1) {
+        currentIndex = -1;
+        autoSlide();
+      } else {
+        currentIndex++;
+        showFeature(currentIndex);
+      }
+    }
+
+    features.forEach((feature, index) => {
+      feature.addEventListener("mouseenter", () => {
+        resetAllFeatures();
+        showFeature(index);
+        resetInterval();
+      });
+    });
+
+    function resetInterval() {
+      clearInterval(interval);
+      interval = setInterval(autoSlide, 5000);
+    }
+
+    autoSlide();
+    interval = setInterval(autoSlide, 5000);
+  })();
+</script>
+
+
+<!-- ✅ Home Automation Section -->
+<section class="automation-section">
+  <!-- Left side -->
+  <div class="automation-text">
+    <h2>Why Home Automation?</h2>
+    <div class="features">
+      <div class="feature" data-index="0"><i>🏡</i><span>Enhanced comfort and convenience</span></div>
+      <div class="feature" data-index="1"><i>📱</i><span>Real-time control via smartphone or voice</span></div>
+      <div class="feature" data-index="2"><i>💡</i><span>Energy-efficient lighting and climate control</span></div>
+      <div class="feature" data-index="3"><i>🔒</i><span>Advanced security systems for peace of mind</span></div>
+      <div class="feature" data-index="4"><i>🎙️</i><span>Integration with Alexa & Google Assistant</span></div>
+    </div>
+  </div>
+
+  <!-- Right side -->
+  <div class="automation-image">
+    <img class="active" src="img/Untitled design.png" alt="Home Automation">
+    <img src="img/sool1.jpg" alt="Home Automation">
+    <img src="img/solutionbanners.webp" alt="Home Automation">
+    <img src="img/contactimg.webp" alt="Home Automation">
+    <img src="img/carousel-1.webp" alt="Home Automation">
+  </div>
+</section>
+
+<!-- ✅ Section Specific Styles -->
+<style>
+  .automation-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+    gap: 60px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .automation-text {
+    flex: 1;
+  }
+  .automation-text h2 {
+    font-size: 42px;
+    margin-bottom: 30px;
+    color: #acaeb4;
+  }
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .feature {
+    background: #2d2d2e;
+    color: #fff;
+    border-radius: 50px;
+    padding: 10px 10px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    font-size: 22px;
+  }
+
+  .feature span {
+    opacity: 0;
+    margin-left: 12px;
+    transition: opacity 0.4s ease 0.2s;
+    font-size: 16px;
+    display: none;
+  }
+
+  .feature.active {
+    width: 380px;
+    justify-content: flex-start;
+    font-size: 18px;
+    background: linear-gradient(135deg, #2a2a2c, #5b5c61);
+  }
+
+  .feature.active i {
+    display: none;
+  }
+
+  .feature.active span {
+    display: inline;
+    opacity: 1;
+  }
+
+  .automation-image {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+  }
+
+  .automation-image img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    /* border-radius: 150px 0px 0px 150px; */
+    /* box-shadow: 0 15px 40px rgba(0,0,0,0.25); */
+    position: absolute;
+    top: 0;
+    left: 100%;
+    opacity: 0;
+    transition: all 1s ease;
+  }
+
+  .automation-image img.active {
+    left: 0;
+    opacity: 1;
+  }
+
+  @media(max-width: 768px) {
+    .automation-section {
+      flex-direction: column;
+    }
+    .automation-text h2 {
+      font-size: 28px;
+      text-align: center;
+    }
+    .features {
+      align-items: center;
+    }
+    .feature.active {
+      width: 90%;
+    }
+  }
+</style>
+

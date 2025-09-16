@@ -1,181 +1,231 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Customer Testimonials</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 40px;
-      background-color: #fff;
-      color: #333;
-    }
-    .testimonial-container {
-      display: flex;
-      max-width: 1200px;
-      margin: auto;
-      gap: 40px;
-      align-items: start;
-    }
-    .text-area {
-      flex: 1;
-    }
-    .text-area h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-    .text-area p {
-      font-size: 18px;
-      margin-bottom: 15px;
-      line-height: 1.8;
-    }
-    .text-area .author {
-      font-weight: bold;
-    }
-    .dots {
-      margin-top: 20px;
-    }
-    .dot {
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      background: #bbb;
-      border-radius: 50%;
-      margin: 0 5px;
-      cursor: pointer;
-    }
-    .dot.active {
-      background: red;
-    }
-    .image-area {
-      flex: 1;
-      display: grid;
-      grid-template-areas: 
-        "img1 img2"
-        "img1 img3";
-      gap: 20px;
-    }
-    .image-area img {
-      
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    .img1 {
-      grid-area: img1;
-      border-radius: 90px 0 90px 0px;
-      width: 100%;
-      height: 100%;
+<!-- ✅ Home Automation Section -->
+<section class="automation-section">
+  <h2 class="automation-heading">Why Home Automation?</h2>
 
-    }
-    .img2 {
-        width: 100%;
-      height: auto;
-      grid-area: img2;
-      border-radius: 90px 0 0 0;
-    }
-    .img3 {
-        width: 100%;
-      height: auto;
-      grid-area: img3;
-      border-radius: 0 0 90px 0;
-    }
-    .image-area img:hover {
-      transform: scale(1.05);
-    }
-  </style>
-</head>
-<body>
+  <div class="automation-banner">
+    <div class="automation-image">
+      <img class="active" src="img/Untitled design.png" alt="Home Automation">
+      <img src="img/sool1.jpg" alt="Home Automation">
+      <img src="img/solutionbanners.webp" alt="Home Automation">
+      <img src="img/contactimg.webp" alt="Home Automation">
+      <img src="img/carousel-1.webp" alt="Home Automation">
+    </div>
 
-<div class="testimonial-container">
-  <div class="text-area">
-    <h2 id="testimonial-title">Our Customer First Approach Wins Hearts, Always.</h2>
-    <p id="testimonial-desc">That’s what the complete home automation solution should be. Got everything at one place. Very much satisfied about how things came about. Thanks to the team.</p>
-    <div class="author" id="testimonial-author">– Sreedhar Ganduri</div>
-    <div class="dots">
-      <span class="dot active" data-index="0"></span>
-      <span class="dot" data-index="1"></span>
-      <span class="dot" data-index="2"></span>
+    <!-- Dark overlay behind features -->
+    <div class="features-overlay">
+      <div class="features">
+        <div class="feature" data-index="0"><i>🏡</i><span>Enhanced comfort and convenience</span></div>
+        <div class="feature" data-index="1"><i>📱</i><span>Real-time control via smartphone or voice</span></div>
+        <div class="feature" data-index="2"><i>💡</i><span>Energy-efficient lighting and climate control</span></div>
+        <div class="feature" data-index="3"><i>🔒</i><span>Advanced security systems for peace of mind</span></div>
+        <div class="feature" data-index="4"><i>🎙️</i><span>Integration with Alexa & Google Assistant</span></div>
+      </div>
     </div>
   </div>
-  <div class="image-area">
-    <img src="img/abouimg/feature-1 (1).png" class="img1" alt="Image 1">
-    <img src="img/abouimg/feature-1 (1).png" class="img2" alt="Image 2">
-    <img src="img/abouimg/feature-1 (1).png" class="img3" alt="Image 3">
-  </div>
-</div>
+</section>
 
-<script>
-  const testimonials = [
-    {
-      title: "Our Customer First Approach Wins Hearts, Always.",
-      desc: "That’s what the complete home automation solution should be. Got everything at one place. Very much satisfied about how things came about. Thanks to the team.",
-      author: "– Sreedhar Ganduri",
-      images: [
-        "img/abouimg/feature-1 (1).png",
-        "img/abouimg/feature-1 (1).png",
-        "img/abouimg/feature-1 (1).png"
-      ]
-    },
-    {
-      title: "Quality and Service You Can Trust.",
-      desc: "The team provided expert solutions tailored to our business needs. Their efficiency and professionalism were unmatched.",
-      author: "– Priya, Mumbai",
-      images: [
-        "img/abouimg/feature-1 (1).png",
-        "img/abouimg/feature-1 (1).png",
-        "img/abouimg/feature-1 (1).png"
-      ]
-    },
-    {
-      title: "Innovative Solutions That Work.",
-      desc: "Thanks to this team for transforming our space into something beyond imagination. Their support and solutions were outstanding.",
-      author: "– Rohit, Delhi",
-      images: [
-        "img/abouimg/feature-1 (1).png",
-        "img/abouimg/feature-1 (1).png",
-        "img/abouimg/feature-1 (1).png"
-      ]
-    }
-  ];
-
-  const title = document.getElementById("testimonial-title");
-  const desc = document.getElementById("testimonial-desc");
-  const author = document.getElementById("testimonial-author");
-  const img1 = document.querySelector(".img1");
-  const img2 = document.querySelector(".img2");
-  const img3 = document.querySelector(".img3");
-  const dots = document.querySelectorAll(".dot");
-
-  let currentIndex = 0;
-
-  function showTestimonial(index) {
-    const data = testimonials[index];
-    title.textContent = data.title;
-    desc.textContent = data.desc;
-    author.textContent = data.author;
-    img1.src = data.images[0];
-    img2.src = data.images[1];
-    img3.src = data.images[2];
-    dots.forEach(dot => dot.classList.remove("active"));
-    dots[index].classList.add("active");
+<!-- ✅ Styles -->
+<style>
+  .automation-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
   }
 
-  dots.forEach(dot => {
-    dot.addEventListener("click", () => {
-      currentIndex = parseInt(dot.getAttribute("data-index"));
-      showTestimonial(currentIndex);
+  .automation-heading {
+    font-size: 42px;
+    margin-bottom: 30px;
+    color: #100e0e;
+  }
+
+  .automation-banner {
+    position: relative;
+    width: 100%;
+    min-height: 450px;
+    /* border-radius: 20px; */
+    overflow: hidden;
+  }
+
+  .automation-image {
+    position: relative;
+    width: 100%;
+    height: 450px;
+  }
+
+  .automation-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .automation-image img.active {
+    left: 0;
+    opacity: 1;
+  }
+
+  /* Overlay behind features */
+  .features-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 280px; /* overlay width */
+    /* background: rgba(0, 0, 0, 0.55);  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+  }
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+
+  .feature {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border-radius: 50px;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    font-size: 22px;
+  }
+
+  .feature span {
+    opacity: 0;
+    margin-left: 12px;
+    transition: opacity 0.4s ease 0.2s;
+    font-size: 16px;
+    display: none;
+  }
+
+  .feature.active {
+    width: 340px;
+    justify-content: flex-start;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.25);
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+  }
+
+  .feature.active i {
+    display: none;
+  }
+
+  .feature.active span {
+    display: inline;
+    opacity: 1;
+  }
+
+  @media(max-width: 768px) {
+    .automation-heading {
+      font-size: 28px;
+    }
+    .automation-image {
+      height: 300px;
+    }
+    .features-overlay {
+      width: 100%;
+      height: auto;
+      bottom: 0;
+      top: auto;
+      flex-direction: row;
+      justify-content: center;
+      padding: 10px;
+    }
+    .features {
+      flex-direction: row;
+      padding: 0;
+      gap: 12px;
+      align-items: center;
+    }
+    .feature.active {
+      width: auto;
+      max-width: 90%;
+    }
+  }
+</style>
+
+<!-- ✅ Script -->
+<script>
+  (function() {
+    const features = document.querySelectorAll(".automation-section .feature");
+    const images = document.querySelectorAll(".automation-section .automation-image img");
+
+    let currentIndex = -1;
+    let interval;
+
+    function showFeature(index) {
+      features.forEach(f => f.classList.remove("active"));
+      images.forEach(img => img.classList.remove("active"));
+
+      features[index].classList.add("active");
+      images[index].classList.add("active");
+
+      currentIndex = index;
+    }
+
+    function showAllFeatures() {
+      features.forEach(f => f.classList.add("active"));
+    }
+
+    function resetAllFeatures() {
+      features.forEach(f => f.classList.remove("active"));
+    }
+
+    function autoSlide() {
+      if (currentIndex === -1) {
+        showAllFeatures();
+        currentIndex = -2;
+        setTimeout(() => {
+          resetAllFeatures();
+          showFeature(0);
+        }, 5000);
+      } else if (currentIndex === features.length - 1) {
+        currentIndex = -1;
+        autoSlide();
+      } else {
+        currentIndex++;
+        showFeature(currentIndex);
+      }
+    }
+
+    features.forEach((feature, index) => {
+      feature.addEventListener("mouseenter", () => {
+        resetAllFeatures();
+        showFeature(index);
+        resetInterval();
+      });
     });
-  });
 
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % testimonials.length;
-    showTestimonial(currentIndex);
-  }, 5000);
+    function resetInterval() {
+      clearInterval(interval);
+      interval = setInterval(autoSlide, 5000);
+    }
 
-  showTestimonial(0);
+    autoSlide();
+    interval = setInterval(autoSlide, 5000);
+  })();
 </script>
-
-</body>
-</html>
