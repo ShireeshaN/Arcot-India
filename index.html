@@ -1322,9 +1322,9 @@ function LightItcoShow(index) {
   const autoiotItems = [
     { src: "media/Automation/homeautomation.mp4" },
     { src: "media/Automation/commercialauto.mp4" },
-    { src: "media/Automation/homeautomation.mp4" },
-    { src: "media/Automation/homeautomation.mp4" },
-    { src: "media/Automation/homeautomation.mp4" }
+    { src: "media/Automation/industrialauto.mp4" },
+    { src: "media/Automation/hospitalauto.mp4" },
+    { src: "media/Automation/hotelauto.mp4" }
   ];
 
   let autoiotActiveIndex = 0;
@@ -1437,28 +1437,42 @@ function LightItcoShow(index) {
 .vgs {
   margin-bottom: 40px;
 }
-
 @media (max-width: 768px) {
   .row {
     flex-direction: column;
   }
 
   .autoiot-icons-section {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 15px;
+    flex-direction: row !important;      /* All icons in one horizontal row */
+    justify-content: space-between;     /* Even spacing across width */
+    align-items: center;
+    flex-wrap: nowrap;                  /* Prevent wrapping to next line */
+    padding: 15px;
+    gap: 10px;
+    width: 100%;
+    overflow-x: auto;                  /* Allow horizontal scroll if needed */
+  }
+
+  .autoiot-icon-item {
+    display: flex;
+    flex-direction: column;            /* Keep icon above label */
+    align-items: center;
+    min-width: 70px;                  /* Ensure each icon block has enough width */
   }
 
   .autoiot-icon-box {
     width: 40px;
     height: 40px;
+    margin-bottom: 5px;
   }
 
   .autoiot-icon-sub {
-    font-size: 0.7rem;
-    margin-top: 4px;
+    font-size: 0.75rem;
+    text-align: center;
   }
 }
+
+
 
 </style>
 <!-- AUTOMATION END -->
