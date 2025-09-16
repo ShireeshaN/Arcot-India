@@ -404,8 +404,8 @@
 
 <div class="hello">
   <div class="aboutforarcot-textarea">
-    <h2 class="tagline">Arcot – Powering the Future with Innovation</h2>
-    <p>
+    <h2 class="tagline" data-aos="fade-up" data-aos-duration="200">Arcot – Powering the Future with Innovation</h2>
+    <p data-aos="fade-up" data-aos-duration="1000">
       At Arcot, we are driven by a vision to build a brighter, smarter, and sustainable future with innovative power solutions, smart automation, and next-generation products that empower industries and communities.
     </p>
   </div>
@@ -415,8 +415,8 @@
 
 <!-- POWER START with Videos -->
 <section class="section-wraps" style="background-color: #000;">
-  <h2 class="section-heading text-white">Power</h2>
-  <p class="section-sub">Reliable transmission & distribution with advanced LT and HT solutions</p>
+  <h2 class="section-heading text-white" data-aos="fade-up" data-aos-duration="1000">Power</h2>
+  <p class="section-sub" data-aos="fade-up" data-aos-duration="1000">Reliable transmission & distribution with advanced LT and HT solutions</p>
 </section>
 
 <div class="bgs">
@@ -431,10 +431,10 @@
 
   <div class="hero__overlay">
     <ul class="menu" role="tablist" aria-label="Light Solution Categories">
-      <li class="active" data-key="indoor">Transmission <span class="cta"></span></li>
-      <li data-key="outdoor">Distribution <span class="cta"></span></li>
-      <li data-key="immersion">LT & HT Panel Boards <span class="cta"></span></li>
-      <li data-key="linear">Generation <span class="cta"></span></li>
+      <li class="active" data-key="indoor" >Transmission <span class="cta"></span></li>
+      <li data-key="outdoor" >Distribution <span class="cta"></span></li>
+      <li data-key="immersion" >LT & HT Panel Boards <span class="cta"></span></li>
+      <li data-key="linear" >Generation <span class="cta"></span></li>
     </ul>
   </div>
 </section>
@@ -610,8 +610,8 @@
 
 <div class="">
 <section class="section-wraps ">
-  <h2 class="section-heading text-white">Energy Generation</h2>
-  <p class="section-sub">Harnessing clean and timeless power for a sustainable future</p>
+  <h2 class="section-heading text-white" data-aos="fade-up" data-aos-duration="1000">Energy Generation</h2>
+  <p class="section-sub" data-aos="fade-up" data-aos-duration="1000">Harnessing clean and timeless power for a sustainable future</p>
 </section>
 </div>
 <style>
@@ -718,7 +718,7 @@
 }
 </style>
 
-<!-- ENERGY GENERATION START -->
+<!-- ENERGY GENERATION START -->  
 <div class="">
   <div class="">
     <div class="energygenss">
@@ -2617,11 +2617,12 @@ Smart City & R&D: Innovative smart city tech & research.
 
 <!-- AOS with defer-safe init -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
-<script defer>
-  window.addEventListener('DOMContentLoaded', () => {
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
     AOS.init();
   });
 </script>
+
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://unpkg.com/lucide@latest"></script>
