@@ -1,231 +1,152 @@
-<!-- ✅ Home Automation Section -->
-<section class="automation-section">
-  <h2 class="automation-heading">Why Home Automation?</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Process Flow Animation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      padding: 50px;
+      text-align: center;
+    }
 
-  <div class="automation-banner">
-    <div class="automation-image">
-      <img class="active" src="img/Untitled design.png" alt="Home Automation">
-      <img src="img/sool1.jpg" alt="Home Automation">
-      <img src="img/solutionbanners.webp" alt="Home Automation">
-      <img src="img/contactimg.webp" alt="Home Automation">
-      <img src="img/carousel-1.webp" alt="Home Automation">
-    </div>
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-    <!-- Dark overlay behind features -->
-    <div class="features-overlay">
-      <div class="features">
-        <div class="feature" data-index="0"><i>🏡</i><span>Enhanced comfort and convenience</span></div>
-        <div class="feature" data-index="1"><i>📱</i><span>Real-time control via smartphone or voice</span></div>
-        <div class="feature" data-index="2"><i>💡</i><span>Energy-efficient lighting and climate control</span></div>
-        <div class="feature" data-index="3"><i>🔒</i><span>Advanced security systems for peace of mind</span></div>
-        <div class="feature" data-index="4"><i>🎙️</i><span>Integration with Alexa & Google Assistant</span></div>
+    /* Background gray bar */
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 20px;
+      width: 100%;
+      background: #e0e0e0;
+      transform: translateY(-50%);
+      border-radius: 10px;
+    }
+
+    /* Animated overlay bar */
+    .progress-bar {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 20px;
+      background: linear-gradient(90deg, #999, #ccc);
+      border-radius: 10px;
+      transform: translateY(-50%);
+      width: 0;
+      animation: progress 12s linear infinite;
+    }
+
+    @keyframes progress {
+      0% { width: 0; }
+      100% { width: 100%; }
+    }
+
+    /* Steps */
+    .steps {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step {
+      text-align: center;
+      opacity: 0.2;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .step.active {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    .step img {
+      width: 40px;
+      margin-bottom: 10px;
+    }
+
+    .step .box {
+      display: inline-block;
+      padding: 8px 16px;
+      background: #888;
+      color: #fff;
+      border-radius: 6px;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+
+    /* Caption under */
+    .caption {
+      margin-top: 40px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="timeline">
+    <div class="progress-bar" id="progress"></div>
+    <div class="steps">
+      <div class="step" data-step="0">
+        <img src="https://img.icons8.com/ios/50/000000/user.png" alt="">
+        <div>Submitter</div>
+        <div class="box">Invoice Submitted</div>
+      </div>
+      <div class="step" data-step="1">
+        <img src="https://img.icons8.com/ios/50/000000/user.png" alt="">
+        <div>Analyst Verification</div>
+        <div class="box">Invoice Processing</div>
+      </div>
+      <div class="step" data-step="2">
+        <img src="https://img.icons8.com/ios/50/000000/user.png" alt="">
+        <div>Discrepancy Handling</div>
+        <div class="box">Routing</div>
+      </div>
+      <div class="step" data-step="3">
+        <img src="https://img.icons8.com/ios/50/000000/user.png" alt="">
+        <div>Approval</div>
+        <div class="box">API Vendor Response</div>
+      </div>
+      <div class="step" data-step="4">
+        <img src="https://img.icons8.com/ios/50/000000/user.png" alt="">
+        <div>Payment Processing</div>
+        <div class="box">Final Payment</div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ✅ Styles -->
-<style>
-  .automation-section {
-    max-width: 1200px;
-    margin: auto;
-    padding: 60px 20px;
-    font-family: 'Segoe UI', sans-serif;
-    text-align: center;
-  }
+  <div class="caption">Time & Cost → 2 Weeks</div>
 
-  .automation-heading {
-    font-size: 42px;
-    margin-bottom: 30px;
-    color: #100e0e;
-  }
+  <script>
+    const steps = document.querySelectorAll(".step");
+    let currentStep = 0;
 
-  .automation-banner {
-    position: relative;
-    width: 100%;
-    min-height: 450px;
-    /* border-radius: 20px; */
-    overflow: hidden;
-  }
+    function highlightSteps() {
+      steps.forEach((step, index) => {
+        step.classList.remove("active");
+        if (index === currentStep) {
+          step.classList.add("active");
+        }
+      });
 
-  .automation-image {
-    position: relative;
-    width: 100%;
-    height: 450px;
-  }
-
-  .automation-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    opacity: 0;
-    transition: opacity 1s ease;
-  }
-
-  .automation-image img.active {
-    left: 0;
-    opacity: 1;
-  }
-
-  /* Overlay behind features */
-  .features-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 280px; /* overlay width */
-    /* background: rgba(0, 0, 0, 0.55);  */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 0;
-  }
-
-  .features {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    width: 100%;
-    align-items: flex-start;
-    padding-left: 20px;
-  }
-
-  .feature {
-    background: rgba(255, 255, 255, 0.15);
-    color: #fff;
-    border-radius: 50px;
-    padding: 10px;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    font-size: 22px;
-  }
-
-  .feature span {
-    opacity: 0;
-    margin-left: 12px;
-    transition: opacity 0.4s ease 0.2s;
-    font-size: 16px;
-    display: none;
-  }
-
-  .feature.active {
-    width: 340px;
-    justify-content: flex-start;
-    font-size: 18px;
-    background: rgba(255, 255, 255, 0.25);
-    border-bottom-left-radius: 0px;
-    border-top-left-radius: 0px;
-    border-bottom-right-radius: 50px;
-    border-top-right-radius: 50px;
-  }
-
-  .feature.active i {
-    display: none;
-  }
-
-  .feature.active span {
-    display: inline;
-    opacity: 1;
-  }
-
-  @media(max-width: 768px) {
-    .automation-heading {
-      font-size: 28px;
-    }
-    .automation-image {
-      height: 300px;
-    }
-    .features-overlay {
-      width: 100%;
-      height: auto;
-      bottom: 0;
-      top: auto;
-      flex-direction: row;
-      justify-content: center;
-      padding: 10px;
-    }
-    .features {
-      flex-direction: row;
-      padding: 0;
-      gap: 12px;
-      align-items: center;
-    }
-    .feature.active {
-      width: auto;
-      max-width: 90%;
-    }
-  }
-</style>
-
-<!-- ✅ Script -->
-<script>
-  (function() {
-    const features = document.querySelectorAll(".automation-section .feature");
-    const images = document.querySelectorAll(".automation-section .automation-image img");
-
-    let currentIndex = -1;
-    let interval;
-
-    function showFeature(index) {
-      features.forEach(f => f.classList.remove("active"));
-      images.forEach(img => img.classList.remove("active"));
-
-      features[index].classList.add("active");
-      images[index].classList.add("active");
-
-      currentIndex = index;
-    }
-
-    function showAllFeatures() {
-      features.forEach(f => f.classList.add("active"));
-    }
-
-    function resetAllFeatures() {
-      features.forEach(f => f.classList.remove("active"));
-    }
-
-    function autoSlide() {
-      if (currentIndex === -1) {
-        showAllFeatures();
-        currentIndex = -2;
-        setTimeout(() => {
-          resetAllFeatures();
-          showFeature(0);
-        }, 5000);
-      } else if (currentIndex === features.length - 1) {
-        currentIndex = -1;
-        autoSlide();
-      } else {
-        currentIndex++;
-        showFeature(currentIndex);
+      currentStep++;
+      if (currentStep >= steps.length) {
+        currentStep = 0;
       }
     }
 
-    features.forEach((feature, index) => {
-      feature.addEventListener("mouseenter", () => {
-        resetAllFeatures();
-        showFeature(index);
-        resetInterval();
-      });
-    });
+    // Animate each step one by one in sync with progress bar
+    setInterval(highlightSteps, 2400); // 12s / 5 steps = 2.4s each
+  </script>
 
-    function resetInterval() {
-      clearInterval(interval);
-      interval = setInterval(autoSlide, 5000);
-    }
-
-    autoSlide();
-    interval = setInterval(autoSlide, 5000);
-  })();
-</script>
+</body>
+</html>
