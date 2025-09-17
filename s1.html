@@ -1,198 +1,251 @@
+<!-- ✅ Reusable Slider Section -->
+<section class="energy-slider">
+  <style>
+    .energy-slider {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #222;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-<!-- ✅ Home Automation Section -->
-<section class="automation-section">
-  <!-- Left side -->
-  <div class="automation-text">
-    <h2>Why Home Automation?</h2>
-    <div class="features">
-      <div class="feature" data-index="0"><i>🏡</i><span>Enhanced comfort and convenience</span></div>
-      <div class="feature" data-index="1"><i>📱</i><span>Real-time control via smartphone or voice</span></div>
-      <div class="feature" data-index="2"><i>💡</i><span>Energy-efficient lighting and climate control</span></div>
-      <div class="feature" data-index="3"><i>🔒</i><span>Advanced security systems for peace of mind</span></div>
-      <div class="feature" data-index="4"><i>🎙️</i><span>Integration with Alexa & Google Assistant</span></div>
+    .energy-slider .slider {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    /* LEFT (Static) */
+    .energy-slider .slide-left {
+      flex: 1;
+    }
+    .energy-slider .slide-left h2 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .energy-slider .slide-left p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    /* Arrows */
+    .energy-slider .arrows {
+      margin-top: 20px;
+    }
+    .energy-slider .arrow {
+      background: #66bb6a;
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-right: 12px;
+    }
+    .energy-slider .arrow:hover {
+      background: #4caf50;
+    }
+
+    /* SLIDER RIGHT SIDE */
+    .energy-slider .slide-wrapper {
+      flex: 2;
+      overflow: hidden;
+    }
+
+    .energy-slider .slide-container {
+      display: flex;
+      transition: transform 0.6s ease;
+      width: 100%;
+    }
+
+    .energy-slider .slide {
+      flex: 0 0 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      box-sizing: border-box;
+      padding: 20px;
+    }
+
+    /* Center image */
+    .energy-slider .slide-center {
+      flex: 1;
+      text-align: center;
+    }
+    .energy-slider .slide-center img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    /* Right text */
+    .energy-slider .slide-right {
+      flex: 1;
+    }
+    .energy-slider .slide-right h3 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    .energy-slider .slide-right ul {
+      list-style: none;
+      padding: 0;
+    }
+    .energy-slider .slide-right ul li {
+      font-size: 18px;
+      margin-bottom: 15px;
+      position: relative;
+      padding-left: 28px;
+    }
+    .energy-slider .slide-right ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #2ecc71;
+      font-weight: bold;
+    }
+
+    /* ✅ Mobile Responsive */
+    @media (max-width: 900px) {
+      .energy-slider .slider {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .energy-slider .slide-left h2 {
+        font-size: 28px;
+      }
+      .energy-slider .slide-left p {
+        font-size: 16px;
+      }
+
+      .energy-slider .arrows {
+        text-align: center;
+      }
+
+      .energy-slider .slide {
+        flex-direction: column; /* stack image + text */
+        gap: 20px;
+      }
+
+      .energy-slider .slide-center img {
+        max-width: 220px;
+      }
+
+      .energy-slider .slide-right h3 {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+      .energy-slider .slide-right ul li {
+        font-size: 15px;
+      }
+    }
+  </style>
+
+  <div class="slider">
+    
+    <!-- STATIC LEFT PART -->
+    <div class="slide-left">
+      <h2>Leading The Energy Transition</h2>
+      <p>Leveraging the connected strength of our strategy, implementation, innovation and technology to create a fossil-free world.</p>
+      <div class="arrows">
+        <button class="arrow" id="energyPrev">&#8592;</button>
+        <button class="arrow" id="energyNext">&#8594;</button>
+      </div>
+    </div>
+
+    <!-- SLIDING RIGHT PART -->
+    <div class="slide-wrapper">
+      <div class="slide-container" id="energySlideContainer">
+
+        <!-- Slide 1 -->
+        <div class="slide">
+          <div class="slide-center">
+            <img src="img/energy1.png" alt="Energy Transition">
+          </div>
+          <div class="slide-right">
+            <h3>Tech First</h3>
+            <ul>
+              <li>Tech leadership across the Indian renewables value chain</li>
+              <li>First to launch an IIT Centre of Excellence for technological advancement</li>
+              <li>First in India to leverage digital technologies for driving energy efficiencies</li>
+              <li>First in India to achieve 100% compliance in RE sector</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+          <div class="slide-center">
+            <img src="img/energy2.png" alt="Smart Energy">
+          </div>
+          <div class="slide-right">
+            <h3>Innovation</h3>
+            <ul>
+              <li>AI-based energy optimization tools</li>
+              <li>Next-gen solar and wind integration</li>
+              <li>Smart grid implementation</li>
+              <li>Global partnerships for sustainability</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+          <div class="slide-center">
+            <img src="img/energy3.png" alt="Green Future">
+          </div>
+          <div class="slide-right">
+            <h3>Impact</h3>
+            <ul>
+              <li>50% reduction in carbon emissions by 2030</li>
+              <li>Expansion of renewable infrastructure</li>
+              <li>Community-driven green initiatives</li>
+              <li>Global recognition in clean energy leadership</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 
-  <!-- Right side -->
-  <div class="automation-image">
-    <img class="active" src="img/Untitled design.png" alt="Home Automation">
-    <img src="img/sool1.jpg" alt="Home Automation">
-    <img src="img/solutionbanners.webp" alt="Home Automation">
-    <img src="img/contactimg.webp" alt="Home Automation">
-    <img src="img/carousel-1.webp" alt="Home Automation">
-  </div>
-</section>
+  <script>
+    (function() {
+      const slideContainer = document.getElementById("energySlideContainer");
+      const slides = slideContainer.querySelectorAll(".slide");
+      const totalSlides = slides.length;
 
-<!-- ✅ Section Specific Styles -->
-<style>
-  .automation-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: auto;
-    padding: 60px 20px;
-    gap: 60px;
-    font-family: 'Segoe UI', sans-serif;
-  }
+      let currentIndex = 0;
 
-  .automation-text {
-    flex: 1;
-  }
-  .automation-text h2 {
-    font-size: 42px;
-    margin-bottom: 30px;
-    color: #acaeb4;
-  }
-
-  .features {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  .feature {
-    background: #2d2d2e;
-    color: #fff;
-    border-radius: 50px;
-    padding: 10px 10px;
-    width: 55px;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    font-size: 22px;
-  }
-
-  .feature span {
-    opacity: 0;
-    margin-left: 12px;
-    transition: opacity 0.4s ease 0.2s;
-    font-size: 16px;
-    display: none;
-  }
-
-  .feature.active {
-    width: 380px;
-    justify-content: flex-start;
-    font-size: 18px;
-    background: linear-gradient(135deg, #2a2a2c, #5b5c61);
-  }
-
-  .feature.active i {
-    display: none;
-  }
-
-  .feature.active span {
-    display: inline;
-    opacity: 1;
-  }
-
-  .automation-image {
-    flex: 1;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    min-height: 400px;
-  }
-
-  .automation-image img {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    /* border-radius: 150px 0px 0px 150px; */
-    /* box-shadow: 0 15px 40px rgba(0,0,0,0.25); */
-    position: absolute;
-    top: 0;
-    left: 100%;
-    opacity: 0;
-    transition: all 1s ease;
-  }
-
-  .automation-image img.active {
-    left: 0;
-    opacity: 1;
-  }
-
-  @media(max-width: 768px) {
-    .automation-section {
-      flex-direction: column;
-    }
-    .automation-text h2 {
-      font-size: 28px;
-      text-align: center;
-    }
-    .features {
-      align-items: center;
-    }
-    .feature.active {
-      width: 90%;
-    }
-  }
-</style>
-<!-- ✅ Section features Script -->
-<script>
-  (function() {
-    const features = document.querySelectorAll(".automation-section .feature");
-    const images = document.querySelectorAll(".automation-section .automation-image img");
-
-    let currentIndex = -1;
-    let interval;
-
-    function showFeature(index) {
-      features.forEach(f => f.classList.remove("active"));
-      images.forEach(img => img.classList.remove("active"));
-
-      features[index].classList.add("active");
-      images[index].classList.add("active");
-
-      currentIndex = index;
-    }
-
-    function showAllFeatures() {
-      features.forEach(f => f.classList.add("active"));
-    }
-
-    function resetAllFeatures() {
-      features.forEach(f => f.classList.remove("active"));
-    }
-
-    function autoSlide() {
-      if (currentIndex === -1) {
-        showAllFeatures();
-        currentIndex = -2;
-        setTimeout(() => {
-          resetAllFeatures();
-          showFeature(0);
-        }, 5000);
-      } else if (currentIndex === features.length - 1) {
-        currentIndex = -1;
-        autoSlide();
-      } else {
-        currentIndex++;
-        showFeature(currentIndex);
+      function showSlide(index) {
+        slideContainer.style.transform = `translateX(-${index * 100}%)`;
       }
-    }
 
-    features.forEach((feature, index) => {
-      feature.addEventListener("mouseenter", () => {
-        resetAllFeatures();
-        showFeature(index);
-        resetInterval();
-      });
-    });
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+      }
 
-    function resetInterval() {
-      clearInterval(interval);
-      interval = setInterval(autoSlide, 5000);
-    }
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        showSlide(currentIndex);
+      }
 
-    autoSlide();
-    interval = setInterval(autoSlide, 5000);
-  })();
-</script>
+      document.getElementById("energyNext").addEventListener("click", nextSlide);
+      document.getElementById("energyPrev").addEventListener("click", prevSlide);
+
+      // Auto slide
+      setInterval(nextSlide, 6000);
+
+      showSlide(0);
+    })();
+  </script>
+</section>

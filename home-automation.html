@@ -382,15 +382,15 @@
     }
     .testimonials .img1 {
       grid-area: img1;
-      border-radius: 90px 0 90px 0px;
+      /* border-radius: 90px 0 90px 0px; */
     }
     .testimonials .img2 {
       grid-area: img2;
-      border-radius: 90px 0 0 0;
+      /* border-radius: 90px 0 0 0; */
     }
     .testimonials .img3 {
       grid-area: img3;
-      border-radius: 0 0 90px 0;
+      /* border-radius: 0 0 90px 0; */
     }
     .testimonials .image-area img:hover {
       transform: scale(1.05);
@@ -423,15 +423,15 @@
       }
        .testimonials .img1 {
       grid-area: img1;
-      border-radius: 90px 0 90px 0px;
+      /* border-radius: 90px 0 90px 0px; */
     }
     .testimonials .img2 {
       grid-area: img2;
-      border-radius: 90px 0 0 0;
+      /* border-radius: 90px 0 0 0; */
     }
     .testimonials .img3 {
       grid-area: img3;
-      border-radius: 0 0 90px 0;
+      /* border-radius: 0 0 90px 0; */
     }
     }
 </style>
@@ -528,6 +528,496 @@
     showTestimonial(0);
   </script>
 </section>
+
+
+
+<style>
+  .test {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    background-color: #fff;
+    color: #333;
+  }
+
+  .test .test-container {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    gap: 80px;
+    align-items: center;
+  }
+
+  /* ✅ Image */
+  .test .image-area {
+    flex: 1;
+  }
+  .test .image-area img {
+    width: 100%;
+    height: auto;
+    /* border-top-left-radius: 70px;
+    border-bottom-right-radius: 70px; */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  .test .image-area img:hover {
+    transform: scale(1.05);
+  }
+
+  /* ✅ Text */
+  .test .text-area {
+    flex: 1;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .test .text-area.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .test .text-area h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+  .test .text-area p {
+    font-size: 18px;
+    margin-bottom: 12px;
+    line-height: 1.8;
+  }
+  .test .text-area .author {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  /* ✅ Mobile view fix */
+  @media (max-width: 768px) {
+    .test {
+      padding: 20px;
+    }
+    .test .test-container {
+      flex-direction: column;  /* 🔥 Stack instead of side-by-side */
+      gap: 20px;
+      text-align: center;
+    }
+    .test .image-area {
+      width: 100%;
+    }
+    .test .image-area img {
+      max-height: 250px;
+      border-radius: 15px;
+    }
+    .test .text-area {
+      transform: translateY(0); /* remove side animation */
+    }
+    .test .text-area h2 {
+      font-size: 22px;
+    }
+    .test .text-area p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .test .text-area .author {
+      margin-top: 8px;
+      font-size: 14px;
+    }
+  }
+</style>
+
+<section class="test">
+  <div class="test-container">
+    <!-- ✅ Image -->
+    <div class="image-area">
+      <img src="img/abouimg/feature-1 (1).png" class="img1" alt="Image 1">
+    </div>
+
+    <!-- ✅ Text -->
+    <div class="text-area active">
+      <h2 id="test-title">Why Home Automation</h2>
+      <p id="test-desc">✔ Real-time control via smartphone or voice</p>
+      <p>✔ Enhanced comfort and convenience</p>
+      <p>✔ Energy-efficient lighting and climate control</p>
+      <p>✔ Advanced security systems for peace of mind</p>
+      <p>✔ Integration with popular smart assistants (Alexa, Google Assistant)</p>
+      <div class="author" id="test-author">– Sreedhar Ganduri</div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+    const test = [
+      {
+        title: "Our Customer First Approach Wins Hearts, Always.",
+        desc: "That’s what the complete home automation solution should be. Got everything at one place. Very much satisfied about how things came about. Thanks to the team.",
+        author: "– Sreedhar Ganduri",
+        images: ["img/R&Dimage.png"]
+      },
+      {
+        title: "Quality and Service You Can Trust.",
+        desc: "The team provided expert solutions tailored to our business needs. Their efficiency and professionalism were unmatched.",
+        author: "– Priya, Mumbai",
+        images: ["img/solutionbanners.webp"]
+      },
+      {
+        title: "Innovative Solutions That Work.",
+        desc: "Thanks to this team for transforming our space into something beyond imagination. Their support and solutions were outstanding.",
+        author: "– Rohit, Delhi",
+        images: ["img/Untitled design.png"]
+      }
+    ];
+
+    const title = document.getElementById("test-title");
+    const desc = document.getElementById("test-desc");
+    const author = document.getElementById("test-author");
+    const img1 = document.querySelector(".img1");
+    const textArea = document.querySelector(".text-area");
+
+    let currentIndex = 0;
+
+    function showtest(index) {
+      const data = tests[index];
+      textArea.classList.remove("active");
+      setTimeout(() => {
+        title.textContent = data.title;
+        desc.textContent = data.desc;
+        author.textContent = data.author;
+        img1.src = data.images[0];
+        textArea.classList.add("active");
+      }, 300);
+    }
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % test
+      .length;
+      showtest(currentIndex);
+    }, 5000);
+
+    showtest(0);
+  </script>
+
+
+<!-- ✅ Reusable Slider Section -->
+<section class="energy-slider">
+  <style>
+    .energy-slider {
+      font-family: "Roboto" sans-serif;
+      background: #fff;
+      color: #222;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .energy-slider .slider {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    /* LEFT (Static) */
+    .energy-slider .slide-left {
+      flex: 1;
+    }
+    .energy-slider .slide-left h2 {
+      font-size: 42px;
+      font-weight: 300;
+      margin-bottom: 15px;
+    }
+    .energy-slider .slide-left p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+      font-weight: 200;
+    }
+
+    /* Arrows */
+    .energy-slider .arrows {
+      margin-top: 20px;
+    }
+    .energy-slider .arrow {
+      background: #0c0c0c;
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-right: 12px;
+    }
+    .energy-slider .arrow:hover {
+      background: #0a0a0a;
+    }
+
+    /* SLIDER RIGHT SIDE */
+    .energy-slider .slide-wrapper {
+      flex: 2;
+      overflow: hidden;
+    }
+
+    .energy-slider .slide-container {
+      display: flex;
+      transition: transform 0.6s ease;
+      width: 100%;
+    }
+
+    .energy-slider .slide {
+      flex: 0 0 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      box-sizing: border-box;
+      padding: 20px;
+    }
+
+    /* Center image */
+    .energy-slider .slide-center {
+      flex: 1;
+      text-align: center;
+    }
+    .energy-slider .slide-center img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    /* Right text */
+    .energy-slider .slide-right {
+      flex: 1;
+    }
+    .energy-slider .slide-right h3 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+    energy-slider .slide-right p {
+      font-weight: 200;
+      font-size: 16px;
+
+    }
+    .energy-slider .slide-right ul {
+      list-style: none;
+      padding: 0;
+    }
+    .energy-slider .slide-right ul li {
+      font-size: 16px;
+      margin-bottom: 15px;
+      position: relative;
+      padding-left: 28px;
+      font-weight: 300;
+    }
+    .energy-slider .slide-right ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #0a0b0a;
+      font-weight: bold;
+    }
+
+    /* ✅ Mobile Responsive */
+    @media (max-width: 900px) {
+      .energy-slider .slider {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .energy-slider .slide-left h2 {
+        font-size: 28px;
+      }
+      .energy-slider .slide-left p {
+        font-size: 16px;
+      }
+
+      .energy-slider .arrows {
+        text-align: center;
+      }
+
+      .energy-slider .slide {
+        flex-direction: column; /* stack image + text */
+        gap: 20px;
+      }
+
+      .energy-slider .slide-center img {
+        max-width: 220px;
+      }
+
+      .energy-slider .slide-right h3 {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+      .energy-slider .slide-right ul li {
+        font-size: 15px;
+      }
+    }
+  </style>
+
+  <div class="slider">
+    
+    <!-- STATIC LEFT PART -->
+    <div class="slide-left">
+      <h2>Our Home Automation Solutions</h2>
+      <p>Transforming Houses into Smart, Secure, and Energy-Efficient Living Spaces.</p>
+      <div class="arrows">
+        <button class="arrow" id="energyPrev">&#8592;</button>
+        <button class="arrow" id="energyNext">&#8594;</button>
+      </div>
+    </div>
+
+    <!-- SLIDING RIGHT PART -->
+    <div class="slide-wrapper">
+      <div class="slide-container" id="energySlideContainer">
+
+        <!-- Slide 1 -->
+        <div class="slide">
+          <div class="slide-center">
+            <img src="img/sol.webp" alt="Energy Transition">
+          </div>
+          <div class="slide-right">
+            <h3>Lighting Automation</h3>
+            <p><strong>Set the Mood, Save Energy.</strong></p>
+            <p>Customize your home’s lighting to suit every moment, whether it’s a cozy evening or an energetic workout session.</p>
+            <ul>
+
+              <li> Smart motion-sensing lights for effortless control</li>
+              <li>Personalized lighting scenes for reading, dining, or entertainment</li>
+              <li>Automatic schedules to save energy and enhance convenience</li>
+
+             
+              
+            </ul>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+          <div class="slide-center">
+            <img src="img/sol.webp" alt="Smart Energy">
+          </div>
+             <div class="slide-right">
+            <h3>Security Systems</h3>
+            <p><strong>24/7 Protection at Your Fingertips.</strong></p>
+            <p>Keep your home safe with intelligent security tools that alert you instantly and let you monitor remotely.</p>
+            <ul>
+
+              <li> Smart locks, alarms, and cameras for total home protection</li>
+              <li>Real-time alerts and remote access via your smartphone</li>
+              <li>Advanced monitoring options for peace of mind, anytime</li>
+                
+            </ul>
+          </div>
+        </div>
+       
+
+
+        <!-- Slide 3 -->
+        <div class="slide">
+          <div class="slide-center">
+            <img src="img/sol.webp" alt="Green Future">
+          </div>
+            <div class="slide-right">
+            <h3> Climate Control</h3>
+            <p><strong>Comfort Meets Efficiency.</strong></p>
+            <p>Maintain the perfect temperature while reducing energy consumption with smart climate solutions.</p>
+            <ul>
+
+              <li> Intelligent thermostats that learn your preferences</li>
+              <li>Automated schedules to optimize heating and cooling</li>
+              <li>Integration with eco-friendly energy systems</li>
+                
+            </ul>
+          </div>
+        </div>
+
+
+         <!-- Slide 4 -->
+        <div class="slide">
+          <div class="slide-center">
+            <img src="img/sol.webp" alt="Green Future">
+          </div>
+            <div class="slide-right">
+            <h3> Entertainment Systems</h3>
+            <p><strong>A New Level of Home Entertainment.</strong></p>
+            <p>Experience seamless audio and video setups tailored for every mood and occasion.</p>
+            <ul>
+
+              <li> Voice-controlled systems for effortless operation</li>
+              <li>Integrated streaming across all devices</li>
+              <li>Custom entertainment zones for every room</li>
+                
+            </ul>
+          </div>
+        </div>
+
+       
+
+
+         <!-- Slide 5 -->
+        <div class="slide">
+          <div class="slide-center">
+            <img src="img/sol.webp" alt="Green Future">
+          </div>
+            <div class="slide-right">
+            <h3>  Energy Monitoring</h3>
+            <p><strong>Track, Save, and Go Green.</strong></p>
+            <p>Take control of your energy consumption and make smarter choices for your home and the environment.</p>
+            <ul>
+
+              <li> Real-time tracking of energy usage</li>
+              <li>Insights and reports to help you reduce costs</li>
+              <li>Integration with solar panels and renewable energy sources</li>
+                
+            </ul>
+          </div>
+        </div>
+
+
+        
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const slideContainer = document.getElementById("energySlideContainer");
+      const slides = slideContainer.querySelectorAll(".slide");
+      const totalSlides = slides.length;
+
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        slideContainer.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        showSlide(currentIndex);
+      }
+
+      document.getElementById("energyNext").addEventListener("click", nextSlide);
+      document.getElementById("energyPrev").addEventListener("click", prevSlide);
+
+      // Auto slide
+      setInterval(nextSlide, 6000);
+
+      showSlide(0);
+    })();
+  </script>
+</section>
+
+
+  
+
+
+
 
 
 
