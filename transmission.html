@@ -269,6 +269,9 @@
       margin: 0 0 6px 0;
 
       color:white;
+      font-family: 'Roboto', sans-serif !important;
+      font-weight: 100;
+      
     }
     #tr-title{
       color:white;
@@ -340,7 +343,7 @@
       display: flex;
       gap: 8px;
       align-items: center
-    }
+    } 
 
     #transmission-embed .btn {
       background: transparent;
@@ -897,18 +900,29 @@
 <!-- END INTERCONNECTION SECTION -->
 
 <!-- START WHO WE SERVE -->
+
+
+
 <section class="who-we-serve">
   <div class="container">
+    <!-- Heading always on white -->
     <h2 class="fade-in">Transmission Infrastructure - Who We Serve</h2>
-    <div class="serve-grid">
-      <ul>
-        <li class="fade-item"><span class="arrow">→</span> <strong>HV Transmission Lines (Types , Voltages Handled) </strong></li>
-        <li class="fade-item"><span class="arrow">→</span> <strong>Substations (AIS , GIS , Step-up , Step-down)</strong></li>
-      </ul>
-      <ul>
-        <li class="fade-item"><span class="arrow">→</span> <strong>Transformers , Insulators , Breakers</strong></li>
-        <li class="fade-item"><span class="arrow">→</span> <strong>Smart Grid Automation  (SCADA , Relays)</strong></li>
-      </ul>
+  </div>
+
+  <!-- Background Section -->
+  <div class="serve-bg">
+    <div class="overlay"></div>
+    <div class="serve-content">
+      <div class="serve-grid">
+        <ul>
+          <li class="fade-item active" data-bg="bg1"><span class="arrow">→</span> <strong>HV Transmission Lines (Types , Voltages Handled)</strong></li>
+          <li class="fade-item" data-bg="bg2"><span class="arrow">→</span> <strong>Substations (AIS , GIS , Step-up , Step-down)</strong></li>
+        </ul>
+        <ul>
+          <li class="fade-item" data-bg="bg3"><span class="arrow">→</span> <strong>Transformers , Insulators , Breakers</strong></li>
+          <li class="fade-item" data-bg="bg4"><span class="arrow">→</span> <strong>Smart Grid Automation (SCADA , Relays)</strong></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -916,34 +930,60 @@
 <style>
 /* Section */
 .who-we-serve {
-  padding: 60px 20px;
-  background: #fff;
   font-family: 'Roboto', sans-serif;
+  background: #fff;
   overflow: hidden;
-}
-
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 /* Heading */
 .who-we-serve h2 {
   font-size: 2rem;
-  font-weight: 200;
+  font-weight: 300;
   color: #1a2b44;
-  margin-bottom: 40px;
+  margin: 40px auto;
+  text-align: start;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeUp 1s ease forwards;
+}
+
+/* Background Hero */
+.serve-bg {
+  position: relative;
+  width: 100%;
+  height: 500px; /* hero height */
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* content starts from left */
+}
+
+.serve-bg .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(3px);
+  z-index: 0;
+}
+
+/* Content inside hero */
+.serve-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  padding: 40px 60px;
+  color: #fff;
+  text-align: left; /* text starts from left */
 }
 
 /* Grid Layout */
 .serve-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px 60px;
+  gap: 25px 60px;
 }
 
 /* List Styling */
@@ -954,35 +994,31 @@
 }
 
 .serve-grid li {
-  font-size: 1.1rem;
-  margin-bottom: 25px;
-  color: #1a2b44;
+  font-size: 1rem; /* font size decreased */
   display: flex;
   align-items: center;
   opacity: 0;
   transform: translateX(-30px);
   animation: slideIn 0.8s ease forwards;
   transition: all 0.3s ease;
-  padding: 6px 8px;
+  padding: 8px 10px;
   border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
 }
 
-/* Hover Effect */
 .serve-grid li:hover {
   transform: translateX(8px) scale(1.02);
-  background: #f9f9f9;
-  color: #000;
+  background: rgba(255,255,255,0.1);
 }
 
-/* Arrow Styling */
+/* Arrow */
 .serve-grid .arrow {
-  margin-right: 12px;
-  color: #1a2b44;
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
+  margin-right: 10px;
+  color: #fff;
+  font-size: 1rem;
 }
 
-/* Arrow Bounce on Hover */
 .serve-grid li:hover .arrow {
   animation: arrowBounce 0.5s ease;
 }
@@ -993,27 +1029,25 @@
   100% { transform: translateX(0); }
 }
 
-/* Bold Text */
+/* Strong Text */
 .serve-grid strong {
-  color: #434445;
-  font-weight: 700;
-  transition: color 0.3s ease;
+  color: #fff;
+  font-weight: 600;
 }
 
 .serve-grid li:hover strong {
-  color: #1a2b44;
+  color: #000000;
 }
 
-/* Animations on Load */
+/* Animations */
 @keyframes fadeUp {
   to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes slideIn {
   to { opacity: 1; transform: translateX(0); }
 }
 
-/* Stagger Effect */
+/* Stagger */
 .fade-item:nth-child(1) { animation-delay: 0.2s; }
 .fade-item:nth-child(2) { animation-delay: 0.4s; }
 .fade-item:nth-child(3) { animation-delay: 0.6s; }
@@ -1026,6 +1060,31 @@
   }
 }
 </style>
+
+<script>
+const bgBox = document.querySelector('.serve-bg');
+
+// Images
+const images = {
+  bg1: "img/application/69.webp", // Glass nature (default active)
+  bg2: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80", // Substation
+  bg3: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&w=1200&q=80", // Transformers
+  bg4: "https://images.unsplash.com/photo-1618005198919-d3d4b85f9f2a?auto=format&fit=crop&w=1200&q=80"  // Smart grid
+};
+
+// Default image (first active)
+bgBox.style.backgroundImage = `url(${images.bg1})`;
+
+// Hover effect
+document.querySelectorAll('.serve-grid li').forEach(item => {
+  item.addEventListener("mouseenter", () => {
+    const bgKey = item.getAttribute("data-bg");
+    bgBox.style.backgroundImage = `url(${images[bgKey]})`;
+  });
+});
+</script>
+
+
 <!-- END WHO WE SERVE -->
 
 
