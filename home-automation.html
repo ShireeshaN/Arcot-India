@@ -1014,6 +1014,268 @@
 </section>
 
 
+
+
+<!-- === Workflow Section Start === -->
+<section class="workflow-section py-5">
+  <div class="container text-center">
+
+    <!-- Section Heading -->
+    <div class="mb-5">
+      <h2 class="fw-bold">How It Works – Simple, Transparent, and Tailored to You</h2>
+      <p class="text-muted">Empowering homeowners to live smarter, safer, and more comfortably</p>
+    </div>
+
+    <!-- Flow Container -->
+    <div class="flow-container">
+      <!-- Steps -->
+      <div class="step" id="step1">
+        <div class="icon">📍</div>
+        <p class="fw-bold">Site Survey</p>
+      </div>
+      <div class="step" id="step2">
+        <div class="icon">🛠️</div>
+        <p class="fw-bold">Solution Architecture</p>
+      </div>
+      <div class="step" id="step3">
+        <div class="icon">⚙️</div>
+        <p class="fw-bold">Installation</p>
+      </div>
+      <div class="step" id="step4">
+        <div class="icon">✅</div>
+        <p class="fw-bold">Commissioning</p>
+      </div>
+      <div class="step" id="step5">
+        <div class="icon">📊</div>
+        <p class="fw-bold">Performance Monitoring</p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline">
+        <div class="progress-bar"></div>
+      </div>
+    </div>
+
+    <!-- Info Section -->
+    <div class="info-box mt-5">
+      <div id="info-heading" class="info-heading"></div>
+      <div id="info-tagline" class="info-tagline"></div>
+    </div>
+
+  </div>
+</section>
+<!-- === Workflow Section End === -->
+
+<style>
+/* === Workflow Section Styles === */
+.workflow-section {
+  background: #fff;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+/* Desktop Flow */
+.workflow-section .flow-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 40px;
+  position: relative;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.workflow-section .step {
+  flex: 1;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+  position: relative;
+}
+.workflow-section .step.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.workflow-section .icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin: 0 auto;
+}
+
+/* Timeline - Desktop */
+.workflow-section .timeline {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  height: 6px;
+  background: #e5e5e5;
+  width: 100%;
+  border-radius: 4px;
+}
+.workflow-section .progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  background: #343333;
+  width: 0%;
+  border-radius: 4px;
+  transition: width 1s linear;
+}
+
+/* Info Section */
+.workflow-section .info-heading,
+.workflow-section .info-tagline {
+  opacity: 0;
+  transition: all 0.8s ease;
+  position: relative;
+}
+.workflow-section .slide-left {
+  transform: translateX(-80px);
+}
+.workflow-section .slide-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+.workflow-section .slide-right {
+  transform: translateX(80px);
+}
+.workflow-section .slide-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+.workflow-section .info-heading {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.workflow-section .info-tagline {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 6px;
+}
+
+/* === Mobile Styles === */
+@media (max-width: 768px) {
+  .workflow-section .flow-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    margin-top: 20px;
+  }
+  .workflow-section .timeline {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 6px;
+    height: 100%;
+    transform: translateX(-50%);
+  }
+  .workflow-section .progress-bar {
+    width: 6px;
+    height: 0%;
+    transition: height 1s linear;
+  }
+  .workflow-section .step {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+  }
+  .workflow-section .step p {
+    margin: 0;
+  }
+  .workflow-section .step:nth-child(odd) {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+  .workflow-section .step .icon {
+    margin: 0 15px;
+  }
+}
+</style>
+
+<script>
+/* === Workflow Section Script === */
+(function() {
+  const steps = document.querySelectorAll('.workflow-section .step');
+  const progressBar = document.querySelector('.workflow-section .progress-bar');
+  const infoHeading = document.getElementById('info-heading');
+  const infoTagline = document.getElementById('info-tagline');
+
+  const infoData = [
+    { heading: "Free Consultation – We Understand Your Lifestyle", tagline: "Every home is unique, and so are your needs" },
+    { heading: "Tailored Automation Plan for Your Home", tagline: "Smart solutions designed for you, not off-the-shelf fixes." },
+    { heading: "Support, Maintenance, and Upgrades Anytime", tagline: "We’re with you every step of the way" },
+    { heading: "Seamless Commissioning – Fine-Tuning for Peak Performance", tagline: "Ensuring everything works flawlessly from the start" },
+    { heading: "Performance Monitoring – We Keep You Covered", tagline: "Continuous support and optimization for effortless living" }
+  ];
+
+  let currentStep = 0;
+
+  function resetFlow() {
+    steps.forEach(step => step.classList.remove('active'));
+    if (window.innerWidth > 768) {
+      progressBar.style.width = "0%";
+    } else {
+      progressBar.style.height = "0%";
+    }
+    infoHeading.className = "info-heading";
+    infoTagline.className = "info-tagline";
+    infoHeading.textContent = "";
+    infoTagline.textContent = "";
+    currentStep = 0;
+  }
+
+  function showNextStep() {
+    if (currentStep < steps.length) {
+      steps[currentStep].classList.add('active');
+      if (window.innerWidth > 768) {
+        progressBar.style.width = `${((currentStep + 1) / steps.length) * 100}%`;
+      } else {
+        progressBar.style.height = `${((currentStep + 1) / steps.length) * 100}%`;
+      }
+      const headingClass = currentStep % 2 === 0 ? "slide-left" : "slide-right";
+      const taglineClass = currentStep % 2 === 0 ? "slide-right" : "slide-left";
+      infoHeading.className = `info-heading ${headingClass}`;
+      infoTagline.className = `info-tagline ${taglineClass}`;
+      infoHeading.textContent = infoData[currentStep].heading;
+      infoTagline.textContent = infoData[currentStep].tagline;
+      setTimeout(() => {
+        infoHeading.classList.add('active');
+        infoTagline.classList.add('active');
+      }, 100);
+      currentStep++;
+    } else {
+      setTimeout(() => { resetFlow(); }, 1000);
+    }
+  }
+
+  function startFlow() {
+    resetFlow();
+    let i = 0;
+    const interval = setInterval(() => {
+      showNextStep();
+      i++;
+      if (i > steps.length) {
+        clearInterval(interval);
+        setTimeout(startFlow, 1500);
+      }
+    }, 3000);
+  }
+
+  startFlow();
+})();
+</script>
+
+
   
 
 
