@@ -1,116 +1,491 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lighting Cards</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Journey of Power — Transmission Lines</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body {
-      background-color: #c2c2b5; /* screenshot lo unna bg */
+    :root {
+      --bg: #000;
+      --line: #fff;
+      --muted: #9ca3af
     }
-    .card-custom {
-      position: relative;
-      overflow: hidden;
-      border: none;
-      height: 400px;
-      color: #fff;
+
+    html,
+    body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--line);
+      font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial
+    }
+
+    .stage-wrap {
+      max-width: 1100px;
+      margin: 32px auto;
+      padding: 28px;
+      border-radius: 16px;
+      background: transparent
+    }
+    .text-mutedd{
+      color: gray;
+    }
+
+    .panel {
+      display: flex;
+      gap: 24px;
+      align-items: center
+    }
+
+    .visual {
+      flex: 1;
+      min-height: 420px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
+      justify-content: center
     }
-    .card-custom img {
-      position: absolute;
-      top: 0; left: 0;
+
+    .copy {
+      flex: 1
+    }
+
+    /* Card look */
+    .card-slate {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      padding: 18px
+    }
+
+    /* White-on-black SVG style */
+    svg {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
+      max-height: 420px;
+      display: block
     }
-    .card-custom:hover img {
-      transform: scale(1.1); /* zoom effect */
+
+    .stroke {
+      stroke: var(--line);
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round
     }
-    .overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.35); /* dark overlay */
+
+    .accent {
+      stroke: rgba(255, 255, 255, 0.9)
     }
-    .card-content {
-      position: relative;
-      z-index: 2;
-      padding: 20px;
+
+    .muted {
+      stroke: var(--muted)
     }
-    .card-content h3 {
-      font-weight: bold;
-      font-size: 1.6rem;
+
+    /* stroke draw animation */
+    .path-draw {
+      stroke-dasharray: 1200;
+      stroke-dashoffset: 1200;
+      animation: draw 2.0s ease forwards
     }
-    .card-content p {
-      margin: 5px 0 20px;
-      font-size: 1rem;
+
+    .path-draw-slow {
+      stroke-dasharray: 1600;
+      stroke-dashoffset: 1600;
+      animation: draw 3.2s ease forwards
     }
-    .btn-custom {
+
+    @keyframes draw {
+      to {
+        stroke-dashoffset: 0
+      }
+    }
+
+    /* Glow pulse for "power" */
+    .power {
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.25))
+    }
+
+    .pulse {
+      animation: pulse 1.6s infinite alternate
+    }
+
+    @keyframes pulse {
+      from {
+        opacity: 0.4;
+        transform: scale(0.96)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1.04)
+      }
+    }
+
+    /* Controls */
+    .controls {
+      display: flex;
+      gap: 8px;
+      align-items: center
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
       background: #fff;
-      color: #000;
-      font-weight: bold;
-      padding: 8px 18px;
-      border: none;
-      border-radius: 2px;
-      text-transform: uppercase;
+      opacity: 0.36
     }
-    .btn-custom:hover {
-      background: #000;
-      color: #fff;
-      transition: 0.3s ease;
+
+    .dot.active {
+      opacity: 1;
+      transform: scale(1.2)
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .panel {
+        flex-direction: column
+      }
+
+      .visual {
+        order: 2
+      }
+
+      .copy {
+        order: 1
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="container py-5">
-    <div class="row g-4">
-
-      <!-- Card 1 -->
-      <div class="col-md-4">
-        <div class="card-custom">
-          <img src="downlight1.jpg" alt="Downlight 1">
-          <div class="overlay"></div>
-          <div class="card-content">
-            <h3>Larger downlight for eaves</h3>
-            <p>- A welcoming impression</p>
-            <button class="btn-custom">SOLO MINI G2</button>
-          </div>
-        </div>
+  <main class="stage-wrap">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3 class="m-0">Journey of Power</h3>
+      <div class="controls">
+        <button id="prevBtn" class="btn btn-sm btn-outline-light me-1">Prev</button>
+        <button id="playBtn" class="btn btn-sm btn-outline-light me-1">Pause</button>
+        <button id="nextBtn" class="btn btn-sm btn-outline-light">Next</button>
       </div>
-
-      <!-- Card 2 -->
-      <div class="col-md-4">
-        <div class="card-custom">
-          <img src="downlight2.jpg" alt="Downlight 2">
-          <div class="overlay"></div>
-          <div class="card-content">
-            <h3>Perfect downlights</h3>
-            <p>- Choose a light source based on your own preference and taste</p>
-            <button class="btn-custom">COMFORT QUICK OUTDOOR GU10</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="col-md-4">
-        <div class="card-custom">
-          <img src="facade.jpg" alt="Facade Lighting">
-          <div class="overlay"></div>
-          <div class="card-content">
-            <h3>Choose the right facade lighting</h3>
-            <p>A clean conical design</p>
-            <button class="btn-custom">CONE</button>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </div>
+
+    <div class="card-slate panel p-3">
+      <div class="visual" id="visual">
+        <svg id="sceneSVG" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+
+      <div class="copy">
+        <h4 id="sceneTitle" class="mb-2">Design & Engineering</h4>
+        <p id="sceneSub" class="text-mutedd">Blueprint to optimized grid — dynamic system studies & detailed design.</p>
+
+        <div id="bullets" class="mt-3 text-mutedd small"></div>
+
+        <div class="mt-4 d-flex gap-2 align-items-center">
+          <div id="dots" class="d-flex"></div>
+          <div class="ms-auto text-muted small">Autoplay: <span id="autostate">On</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Transmission-line specific SVG scenes
+ const scenes = [
+  {
+    id: 'design',
+    title: 'Design & Engineering',
+    sub: 'From blueprint to optimized grid — system studies and 3D designs.',
+    bullets: [
+      'Load flow, short-circuit & protection coordination',
+      'Tower & foundation structural design',
+      'Digital twin and automation-ready layouts'
+    ],
+    svg: () => `
+      <g transform="translate(60,20)">
+        <!-- Animated CAD Grid -->
+        <defs>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M40 0 H0 V40" fill="none" stroke="gray" stroke-width="0.5" opacity="0.2"/>
+          </pattern>
+        </defs>
+        <rect x="0" y="0" width="600" height="320" fill="url(#grid)" />
+
+        <!-- Tower Profile -->
+        <path class="stroke path-draw-slow" d="M300 40 L200 280 L400 280 Z" />
+        <path class="stroke path-draw" d="M300 40 L160 150 L440 150 Z" />
+        <line x1="240" y1="210" x2="360" y2="210" class="stroke" />
+
+        <!-- Dimension lines -->
+        <line x1="420" y1="40" x2="420" y2="280" stroke="gray" stroke-dasharray="4 4"/>
+        <text x="430" y="160" fill="white" font-size="12">Height</text>
+
+        <!-- Compass tool -->
+        <circle cx="120" cy="220" r="30" class="stroke path-draw" />
+        <line x1="120" y1="220" x2="150" y2="260" class="stroke path-draw" />
+        <line x1="120" y1="220" x2="90" y2="260" class="stroke path-draw" />
+
+        <!-- Ruler -->
+        <rect x="40" y="40" width="120" height="20" class="stroke path-draw"/>
+        <line x1="60" y1="40" x2="60" y2="60" class="stroke"/>
+        <line x1="80" y1="40" x2="80" y2="60" class="stroke"/>
+        <line x1="100" y1="40" x2="100" y2="60" class="stroke"/>
+      </g>
+    `
+  },
+{
+  id: 'supply',
+  title: 'Supply & Materials',
+  sub: 'Procurement of certified equipment, logistics and QA.',
+  bullets: [
+    'Conductor reels & insulator strings',
+    'Transformers & switchyard equipment',
+    'Global logistics and safe delivery'
+  ],
+  svg: () => `
+    <g transform="translate(40,40)">
+      <!-- Conductor reel (big drum) -->
+      <circle cx="120" cy="220" r="80" class="stroke path-draw" />
+      <circle cx="120" cy="220" r="50" class="stroke path-draw" />
+      <line x1="120" y1="140" x2="120" y2="300" class="stroke" />
+      <line x1="40" y1="220" x2="200" y2="220" class="stroke" />
+      <!-- Reel spokes -->
+      <line x1="120" y1="220" x2="170" y2="170" class="stroke" />
+      <line x1="120" y1="220" x2="70" y2="170" class="stroke" />
+      <line x1="120" y1="220" x2="170" y2="270" class="stroke" />
+      <line x1="120" y1="220" x2="70" y2="270" class="stroke" />
+
+      <!-- Insulator string stack -->
+      <g transform="translate(320,120)">
+        <ellipse cx="0" cy="0" rx="45" ry="14" class="stroke path-draw" />
+        <ellipse cx="0" cy="30" rx="40" ry="12" class="stroke path-draw" />
+        <ellipse cx="0" cy="60" rx="35" ry="10" class="stroke path-draw" />
+        <ellipse cx="0" cy="90" rx="30" ry="8" class="stroke path-draw" />
+        <line x1="0" y1="-20" x2="0" y2="110" class="stroke" />
+      </g>
+
+      <!-- Transformer crate -->
+      <rect x="480" y="100" width="180" height="140" rx="10" class="stroke path-draw" />
+      <path class="stroke" d="M480 140 H660" />
+      <line x1="480" y1="100" x2="660" y2="240" class="muted" />
+      <text x="530" y="180" fill="white" font-size="14">Transformer</text>
+
+      <!-- Truck outline -->
+      <rect x="420" y="260" width="260" height="70" rx="6" class="stroke path-draw" />
+      <circle cx="460" cy="330" r="20" class="stroke path-draw" />
+      <circle cx="640" cy="330" r="20" class="stroke path-draw" />
+      <rect x="420" y="220" width="80" height="40" class="stroke path-draw" />
+      <text x="430" y="245" fill="white" font-size="12">QA</text>
+
+      <!-- Fragile mark on crate -->
+      <path class="stroke path-draw" d="M620 220 l12 -24 l12 24 z" />
+      <line x1="632" y1="220" x2="632" y2="235" class="stroke"/>
+    </g>
+  `
+},
+
+  {
+    id: 'construction',
+    title: 'Construction & Installation',
+    sub: 'Erection of towers, civil works & conductor stringing across terrains.',
+    bullets: [
+      'Tower erection and conductor stringing',
+      'Heavy-lift installation of equipment',
+      'Safety-first construction procedures'
+    ],
+    svg: () => `
+      <g transform="translate(60,20)">
+        <!-- Tower lattice -->
+        <path class="stroke path-draw-slow" d="M300 40 L200 420 L400 420 Z" />
+        <path class="stroke" d="M300 40 L160 200 L440 200 Z" />
+        <path class="stroke" d="M230 310 H370" />
+
+        <!-- Crane with pulley -->
+        <line x1="100" y1="420" x2="100" y2="120" class="stroke path-draw" />
+        <circle cx="100" cy="120" r="10" class="stroke path-draw"/>
+        <line x1="100" y1="120" x2="240" y2="80" class="stroke path-draw" />
+        <rect x="220" y="70" width="60" height="20" class="stroke path-draw" />
+
+        <!-- Conductors -->
+        <path class="stroke path-draw" d="M160 200 Q300 160 440 200" />
+        <path class="stroke path-draw" d="M200 310 Q300 280 400 310" />
+
+        <!-- Worker silhouette -->
+        <circle cx="150" cy="380" r="10" fill="white" />
+        <rect x="145" y="390" width="10" height="20" fill="white" />
+      </g>
+    `
+  },
+{
+  id: 'om',
+  title: 'Operation & Maintenance',
+  sub: 'Digital twin, CBM and quick restoration services.',
+  bullets: [
+    'Real-time condition-based monitoring',
+    'Drone inspection and sensors',
+    'Emergency Restoration Systems (ERS)'
+  ],
+  svg: () => `
+    <g transform="translate(40,20)">
+      <!-- Tower with cross arms -->
+      <path class="stroke path-draw-slow" d="M320 40 L240 420 L400 420 Z" />
+      <line x1="280" y1="180" x2="360" y2="180" class="stroke" /> <!-- upper cross arm -->
+      <line x1="260" y1="280" x2="380" y2="280" class="stroke" /> <!-- lower cross arm -->
+
+      <!-- Insulator strings on cross arms -->
+      <line x1="280" y1="180" x2="260" y2="220" class="stroke" />
+      <line x1="360" y1="180" x2="380" y2="220" class="stroke" />
+      <line x1="260" y1="280" x2="250" y2="320" class="stroke" />
+      <line x1="380" y1="280" x2="390" y2="320" class="stroke" />
+
+      <!-- Live power lines glowing -->
+      <path class="stroke power pulse" d="M60 160 Q300 100 540 160" />
+      <path class="stroke power pulse" d="M80 220 Q300 180 520 220" />
+      <path class="stroke power pulse" d="M100 280 Q300 250 500 280" />
+
+      <!-- Sensor nodes on tower -->
+      <circle cx="320" cy="140" r="6" class="stroke power pulse" />
+      <circle cx="320" cy="240" r="6" class="stroke power pulse" />
+      <circle cx="320" cy="340" r="6" class="stroke power pulse" />
+
+      <!-- Drone with propellers -->
+      <rect x="140" y="80" width="60" height="24" rx="5" class="stroke path-draw" />
+      <line x1="140" y1="92" x2="110" y2="92" class="stroke" />
+      <line x1="200" y1="92" x2="230" y2="92" class="stroke" />
+      <circle cx="125" cy="92" r="12" class="stroke power pulse" />
+      <circle cx="215" cy="92" r="12" class="stroke power pulse" />
+
+      <!-- Engineer with tablet -->
+      <rect x="500" y="300" width="40" height="80" rx="6" class="stroke path-draw" /> <!-- body -->
+      <circle cx="520" cy="280" r="20" class="stroke path-draw" /> <!-- head -->
+      <rect x="550" y="310" width="40" height="30" class="stroke path-draw" /> <!-- tablet -->
+      <line x1="550" y1="310" x2="590" y2="340" class="stroke" />
+
+      <!-- Control screen (SCADA) -->
+      <rect x="600" y="100" width="120" height="80" rx="6" class="stroke path-draw" />
+      <path class="stroke" d="M610 130 H710 M610 150 H710 M610 170 H710" />
+    </g>
+  `
+},
+
+{
+  id: 'testing',
+  title: 'Testing & Commissioning',
+  sub: 'High-voltage tests, protection validation and final handover.',
+  bullets: [
+    'Relay & protection end-to-end tests',
+    'Dielectric and impulse testing',
+    'Final energization and performance validation'
+  ],
+  svg: () => `
+    <g transform="translate(40,40)">
+      <!-- Breaker switch -->
+      <rect x="60" y="160" width="100" height="60" rx="6" class="stroke path-draw" />
+      <line x1="160" y1="190" x2="240" y2="190" class="stroke path-draw" />
+      <circle cx="240" cy="190" r="12" class="stroke power pulse" /> <!-- energization node -->
+
+      <!-- Surge waveform -->
+      <path class="stroke power path-draw-slow" 
+        d="M240 190 Q280 100 320 190 T400 190 T480 190 T560 190" />
+
+      <!-- Control panel with meters -->
+      <rect x="600" y="120" width="140" height="100" rx="6" class="stroke path-draw" />
+      <circle cx="630" cy="150" r="10" class="stroke path-draw" />
+      <circle cx="670" cy="150" r="10" class="stroke path-draw" />
+      <rect x="620" y="180" width="80" height="20" class="stroke path-draw" /> <!-- display -->
+
+      <!-- Technician with helmet -->
+      <rect x="500" y="220" width="40" height="90" rx="6" class="stroke path-draw" /> <!-- body -->
+      <circle cx="520" cy="200" r="20" class="stroke path-draw" /> <!-- head -->
+      <path class="stroke" d="M500 200 Q520 180 540 200" /> <!-- helmet visor -->
+      <line x1="540" y1="240" x2="600" y2="180" class="stroke" /> <!-- hand pointing to panel -->
+
+      <!-- City grid silhouette (lights on) -->
+      <rect x="300" y="260" width="30" height="100" class="stroke path-draw" />
+      <rect x="340" y="220" width="40" height="140" class="stroke path-draw" />
+      <rect x="390" y="280" width="50" height="80" class="stroke path-draw" />
+      <rect x="450" y="200" width="60" height="160" class="stroke path-draw" />
+      <!-- glowing windows -->
+      <circle cx="320" cy="280" r="3" class="stroke power pulse" />
+      <circle cx="355" cy="240" r="3" class="stroke power pulse" />
+      <circle cx="405" cy="300" r="3" class="stroke power pulse" />
+      <circle cx="470" cy="220" r="3" class="stroke power pulse" />
+    </g>
+  `
+}
+
+
+];
+
+    // DOM refs
+    const svgEl = document.getElementById('sceneSVG');
+    const titleEl = document.getElementById('sceneTitle');
+    const subEl = document.getElementById('sceneSub');
+    const bulletsEl = document.getElementById('bullets');
+    const dotsEl = document.getElementById('dots');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const playBtn = document.getElementById('playBtn');
+    const autoState = document.getElementById('autostate');
+
+    let idx = 0; let auto = true; let timer = null;
+
+    function renderScene(i) {
+      const s = scenes[i];
+      // update text
+      titleEl.textContent = s.title;
+      subEl.textContent = s.sub;
+      bulletsEl.innerHTML = s.bullets.map(b => `
+        <div class="d-flex align-items-start gap-2 mb-2">
+          <div style="width:8px;height:8px;background:#fff;border-radius:50%;margin-top:6px;opacity:0.9"></div>
+          <div>${b}</div>
+        </div>`).join('');
+
+      // render SVG
+      svgEl.innerHTML = s.svg();
+
+      // restart animations
+      requestAnimationFrame(() => {
+        const paths = svgEl.querySelectorAll('path, rect, circle');
+        paths.forEach(p => {
+          p.classList.remove('path-draw', 'path-draw-slow');
+          void p.getBBox();
+          if (p.tagName === "path" && p.getTotalLength) {
+            const len = Math.round(p.getTotalLength());
+            if (len > 400) p.classList.add('path-draw-slow'); else p.classList.add('path-draw');
+          } else {
+            p.classList.add('path-draw');
+          }
+        });
+      });
+
+      // dots
+      dotsEl.innerHTML = scenes.map((sc, j) => `<div class="dot ${j === i ? 'active' : ''}" data-i="${j}"></div>`).join('');
+      dotsEl.querySelectorAll('.dot').forEach(d => d.addEventListener('click', () => goTo(parseInt(d.dataset.i))));
+    }
+
+    function goTo(i) { idx = (i + scenes.length) % scenes.length; renderScene(idx); resetTimer(); }
+    function next() { goTo(idx + 1) }
+    function prev() { goTo(idx - 1) }
+
+    prevBtn.addEventListener('click', prev);
+    nextBtn.addEventListener('click', next);
+    playBtn.addEventListener('click', () => {
+      auto = !auto;
+      playBtn.textContent = auto ? 'Pause' : 'Play';
+      autoState.textContent = auto ? 'On' : 'Off';
+      if (auto) resetTimer(); else clearInterval(timer);
+    });
+
+    function resetTimer() {
+      clearInterval(timer);
+      if (auto) { timer = setInterval(next, 5000); autoState.textContent = 'On'; playBtn.textContent = 'Pause'; }
+      else { autoState.textContent = 'Off'; playBtn.textContent = 'Play'; }
+    }
+
+    // init
+    renderScene(0); resetTimer();
+  </script>
 </body>
+
 </html>

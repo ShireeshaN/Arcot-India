@@ -223,6 +223,488 @@
 </style>
 <!-- END SECTION -->
 
+<!-- transmisstion journey start -->
+<div id="transmission-embed" style="background-color: #000;">
+  <style>
+    /* Scoped styles */
+    #transmission-embed {
+      --bg: #000 !important;
+      --fg: #fff;
+      --muted: #9ca3af;
+      font-family: Inter, system-ui, Arial;
+      
+      color: var(--fg)
+    }
+
+    #transmission-embed .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 12px;
+      background: transparent
+    }
+
+    #transmission-embed .panel {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      padding: 18px
+    }
+
+    #transmission-embed .visual {
+      flex: 1;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    #transmission-embed .copy {
+      flex: 1
+    }
+
+    #transmission-embed h3 {
+      margin: 0 0 6px 0;
+
+      color:white;
+      font-family: 'Roboto', sans-serif !important;
+      font-weight: 100;
+      
+    }
+    #tr-title{
+      color:white;
+    }
+
+    #transmission-embed p.muted {
+      color: #9aa0a6;
+      margin: 6px 0 12px 0
+    }
+
+    #transmission-embed svg {
+      width: 100%;
+      height: 100%;
+      max-height: 420px;
+      display: block
+    }
+
+    #transmission-embed .stroke {
+      stroke: var(--fg);
+      stroke-width: 1.6;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round
+    }
+
+    #transmission-embed .muted {
+      stroke: var(--muted)
+    }
+
+    #transmission-embed .path-draw {
+      stroke-dasharray: 1200;
+      stroke-dashoffset: 1200;
+      animation: tr-draw 2s ease forwards
+    }
+
+    #transmission-embed .path-draw-slow {
+      stroke-dasharray: 1600;
+      stroke-dashoffset: 1600;
+      animation: tr-draw 3.2s ease forwards
+    }
+
+    @keyframes tr-draw {
+      to {
+        stroke-dashoffset: 0
+      }
+    }
+
+    #transmission-embed .power {
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.25))
+    }
+
+    #transmission-embed .pulse {
+      animation: tr-pulse 1.6s infinite alternate
+    }
+
+    @keyframes tr-pulse {
+      from {
+        opacity: 0.4;
+        transform: scale(0.96)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1.04)
+      }
+    }
+
+    #transmission-embed .controls {
+      display: flex;
+      gap: 8px;
+      align-items: center
+    } 
+
+    #transmission-embed .btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: var(--fg);
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer
+    }
+
+    #transmission-embed .dots {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px
+    }
+
+    #transmission-embed .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0.28;
+      cursor: pointer
+    }
+
+    #transmission-embed .dot.active {
+      opacity: 1;
+      transform: scale(1.15)
+    }
+
+   /* Add / update media query at the end of your styles */
+@media(max-width:900px) {
+  #transmission-embed .panel {
+    flex-direction: column;
+  }
+
+  #transmission-embed > .wrap > div:first-child {
+    /* header + controls wrapper */
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px;
+  }
+
+  #transmission-embed h3 {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  #transmission-embed .controls {
+    justify-content: center !important;
+    flex-wrap: wrap;
+  }
+
+  #transmission-embed .controls .btn {
+    flex: none;
+    min-width: 80px;
+    margin-bottom: 6px;
+  }
+}
+
+  </style>
+
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+      <h3>Journey of Power — Transmission Lines</h3>
+      <div class="controls">
+        <button id="tr-prev" class="btn">Prev</button>
+        <button id="tr-play" class="btn">Pause</button>
+        <button id="tr-next" class="btn">Next</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="visual"><svg id="tr-svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet"></svg></div>
+
+      <div class="copy">
+        <h4 id="tr-title">Design & Engineering</h4>
+        <p id="tr-sub" class="muted">Blueprint to optimized grid — system studies & detailed design.</p>
+        <div id="tr-bullets" style="font-size:14px;color:#8b8c8d"></div>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:14px">
+          <div id="tr-dots" class="dots"></div>
+          <!-- <div style="margin-left:auto;color:#9aa0a6">Autoplay: <span id="tr-autostate">On</span></div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // Full five professional SVG scenes (strings)
+      const scenes = [
+        { // Design & Engineering (detailed CAD-style)
+          id: 'design',
+          title: 'Design & Engineering',
+          sub: 'Blueprint to optimized grid — system studies & 3D designs.',
+          bullets: [
+            'Load flow, short-circuit & protection coordination',
+            'Tower & foundation structural design',
+            'Digital twin and automation-ready layouts'
+          ],
+          svg: () => `
+          <g transform="translate(60,20)">
+            <defs>
+              <pattern id="tr-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M40 0 H0 V40" fill="none" stroke="#42515a" stroke-width="0.5" opacity="0.18"/>
+              </pattern>
+            </defs>
+            <rect x="0" y="0" width="600" height="320" fill="url(#tr-grid)"/>
+            <!-- tower profile -->
+            <path class="stroke path-draw-slow" d="M300 40 L200 280 L400 280 Z"/>
+            <path class="stroke path-draw" d="M300 40 L150 150 L450 150 Z"/>
+            <line x1="240" y1="210" x2="360" y2="210" class="stroke"/>
+            <!-- foundation -->
+            <rect x="175" y="280" width="250" height="22" class="stroke path-draw"/>
+            <!-- compass/ruler -->
+            <circle cx="520" cy="220" r="28" class="stroke path-draw"/>
+            <line x1="520" y1="192" x2="548" y2="236" class="stroke path-draw"/>
+            <rect x="30" y="32" width="100" height="18" class="stroke path-draw"/>
+            <text x="110" y="60" fill="#bfc8cf" font-size="11">Scale 1:200</text>
+          </g>`
+        },
+
+        { // Supply & Materials (detailed reel, insulators, transformer, truck)
+          id: 'supply',
+          title: 'Supply & Materials',
+          sub: 'Procurement of certified equipment, logistics and QA.',
+          bullets: [
+            'Conductor reels & insulator strings',
+            'Transformers & switchyard equipment',
+            'Global logistics and safe delivery'
+          ],
+          svg: () => `
+          <g transform="translate(40,40)">
+            <!-- conductor reel -->
+            <g transform="translate(120,220)">
+              <circle class="stroke path-draw" cx="0" cy="0" r="80" />
+              <circle class="stroke path-draw" cx="0" cy="0" r="48" />
+              <line class="stroke" x1="0" y1="-80" x2="0" y2="80" />
+              <line class="stroke" x1="-80" y1="0" x2="80" y2="0" />
+              <line class="stroke" x1="56" y1="-56" x2="-56" y2="56" />
+              <line class="stroke" x1="-56" y1="-56" x2="56" y2="56" />
+            </g>
+
+            <!-- insulator string -->
+            <g transform="translate(320,120)">
+              <ellipse class="stroke path-draw" cx="0" cy="0" rx="45" ry="14"/>
+              <ellipse class="stroke path-draw" cx="0" cy="30" rx="40" ry="12"/>
+              <ellipse class="stroke path-draw" cx="0" cy="60" rx="35" ry="10"/>
+              <ellipse class="stroke path-draw" cx="0" cy="90" rx="30" ry="8"/>
+              <line class="stroke" x1="0" y1="-18" x2="0" y2="108"/>
+              <text x="-58" y="125" fill="#bfc8cf" font-size="12">Insulator Stack</text>
+            </g>
+
+            <!-- transformer crate -->
+            <g transform="translate(520,100)">
+              <rect class="stroke path-draw" x="0" y="0" width="180" height="140" rx="8"/>
+              <line class="stroke" x1="0" y1="40" x2="180" y2="40"/>
+              <text x="20" y="85" fill="#bfc8cf" font-size="14">Transformer</text>
+              <path class="stroke path-draw" d="M150 120 l8 -16 l8 16 z"/>
+            </g>
+
+            <!-- truck (logistics) -->
+            <g transform="translate(420,260)">
+              <rect class="stroke path-draw" x="0" y="0" width="260" height="70" rx="8"/>
+              <rect class="stroke path-draw" x="0" y="-40" width="88" height="40" rx="6"/>
+              <circle class="stroke path-draw" cx="40" cy="90" r="20"/>
+              <circle class="stroke path-draw" cx="200" cy="90" r="20"/>
+              <text x="8" y="-15" fill="#bfc8cf" font-size="12">QA</text>
+            </g>
+          </g>`
+        },
+
+        { // Construction & Installation (tower, crane, workers, conductors)
+          id: 'construction',
+          title: 'Construction & Installation',
+          sub: 'Erection of towers, civil works & conductor stringing across terrains.',
+          bullets: [
+            'Tower erection and conductor stringing',
+            'Heavy-lift installation of equipment',
+            'Safety-first construction procedures'
+          ],
+          svg: () => `
+          <g transform="translate(60,20)">
+            <!-- tower -->
+            <path class="stroke path-draw-slow" d="M300 40 L200 420 L400 420 Z"/>
+            <path class="stroke" d="M300 40 L160 200 L440 200 Z"/>
+            <line class="stroke" x1="230" y1="310" x2="370" y2="310"/>
+
+            <!-- crane -->
+            <line class="stroke path-draw" x1="100" y1="420" x2="100" y2="120"/>
+            <circle class="stroke path-draw" cx="100" cy="120" r="10"/>
+            <line class="stroke path-draw" x1="100" y1="120" x2="240" y2="80"/>
+            <rect class="stroke path-draw" x="220" y="70" width="60" height="20"/>
+
+            <!-- conductors -->
+            <path class="stroke path-draw" d="M160 200 Q300 160 440 200"/>
+            <path class="stroke path-draw" d="M200 310 Q300 280 400 310"/>
+
+            <!-- worker -->
+            <circle fill="#fff" cx="150" cy="380" r="10"/>
+            <rect fill="#fff" x="145" y="390" width="10" height="20"/>
+          </g>`
+        },
+
+        { // Operation & Maintenance (sensors, drone, engineer, SCADA)
+          id: 'om',
+          title: 'Operation & Maintenance',
+          sub: 'Digital twin, CBM and quick restoration services.',
+          bullets: [
+            'Real-time condition-based monitoring',
+            'Drone inspection and sensors',
+            'Emergency Restoration Systems (ERS)'
+          ],
+          svg: () => `
+          <g transform="translate(40,20)">
+            <!-- tower with cross arms -->
+            <path class="stroke path-draw-slow" d="M320 40 L240 420 L400 420 Z"/>
+            <line class="stroke" x1="280" y1="180" x2="360" y2="180"/>
+            <line class="stroke" x1="260" y1="280" x2="380" y2="280"/>
+
+            <!-- insulator strings -->
+            <line class="stroke" x1="280" y1="180" x2="260" y2="220"/>
+            <line class="stroke" x1="360" y1="180" x2="380" y2="220"/>
+
+            <!-- live lines -->
+            <path class="stroke power pulse" d="M60 160 Q300 100 540 160"/>
+            <path class="stroke power pulse" d="M80 220 Q300 180 520 220"/>
+
+            <!-- sensor nodes -->
+            <circle class="stroke power pulse" cx="320" cy="140" r="6"/>
+            <circle class="stroke power pulse" cx="320" cy="240" r="6"/>
+            <circle class="stroke power pulse" cx="320" cy="340" r="6"/>
+
+            <!-- drone -->
+            <rect class="stroke path-draw" x="140" y="80" width="60" height="24" rx="5"/>
+            <line class="stroke" x1="140" y1="92" x2="110" y2="92"/>
+            <line class="stroke" x1="200" y1="92" x2="230" y2="92"/>
+            <circle class="stroke power pulse" cx="125" cy="92" r="12"/>
+            <circle class="stroke power pulse" cx="215" cy="92" r="12"/>
+
+            <!-- engineer with tablet -->
+            <rect class="stroke path-draw" x="500" y="300" width="40" height="80" rx="6"/>
+            <circle class="stroke path-draw" cx="520" cy="280" r="20"/>
+            <rect class="stroke path-draw" x="550" y="310" width="40" height="30"/>
+            <line class="stroke" x1="550" y1="310" x2="590" y2="340"/>
+            <!-- SCADA screen -->
+            <rect class="stroke path-draw" x="600" y="100" width="120" height="80" rx="6"/>
+            <path class="stroke" d="M610 130 H710 M610 150 H710 M610 170 H710"/>
+          </g>`
+        },
+
+        { // Testing & Commissioning (breaker, waveform, panel, city lights)
+          id: 'testing',
+          title: 'Testing & Commissioning',
+          sub: 'High-voltage tests, protection validation and final handover.',
+          bullets: [
+            'Relay & protection end-to-end tests',
+            'Dielectric and impulse testing',
+            'Final energization and performance validation'
+          ],
+          svg: () => `
+          <g transform="translate(40,40)">
+            <!-- breaker -->
+            <rect class="stroke path-draw" x="60" y="160" width="100" height="60" rx="6"/>
+            <line class="stroke path-draw" x1="160" y1="190" x2="240" y2="190"/>
+            <circle class="stroke power pulse" cx="240" cy="190" r="12"/>
+
+            <!-- surge waveform -->
+            <path class="stroke power path-draw-slow" d="M240 190 Q280 100 320 190 T400 190 T480 190 T560 190"/>
+
+            <!-- control panel -->
+            <rect class="stroke path-draw" x="600" y="120" width="140" height="100" rx="6"/>
+            <circle class="stroke path-draw" cx="630" cy="150" r="10"/>
+            <circle class="stroke path-draw" cx="670" cy="150" r="10"/>
+            <rect class="stroke path-draw" x="620" y="180" width="80" height="20"/>
+
+            <!-- technician -->
+            <rect class="stroke path-draw" x="500" y="220" width="40" height="90" rx="6"/>
+            <circle class="stroke path-draw" cx="520" cy="200" r="20"/>
+            <path class="stroke" d="M500 200 Q520 180 540 200"/>
+            <line class="stroke" x1="540" y1="240" x2="600" y2="180"/>
+
+            <!-- city skyline lights -->
+            <rect class="stroke path-draw" x="300" y="260" width="30" height="100"/>
+            <rect class="stroke path-draw" x="340" y="220" width="40" height="140"/>
+            <rect class="stroke path-draw" x="390" y="280" width="50" height="80"/>
+            <rect class="stroke path-draw" x="450" y="200" width="60" height="160"/>
+            <circle class="stroke power pulse" cx="320" cy="280" r="3"/>
+            <circle class="stroke power pulse" cx="355" cy="240" r="3"/>
+            <circle class="stroke power pulse" cx="405" cy="300" r="3"/>
+            <circle class="stroke power pulse" cx="470" cy="220" r="3"/>
+          </g>`
+        }
+      ];
+
+      // DOM refs
+      const svgEl = document.getElementById('tr-svg');
+      const titleEl = document.getElementById('tr-title');
+      const subEl = document.getElementById('tr-sub');
+      const bulletsEl = document.getElementById('tr-bullets');
+      const dotsWrap = document.getElementById('tr-dots');
+      const prevBtn = document.getElementById('tr-prev');
+      const nextBtn = document.getElementById('tr-next');
+      const playBtn = document.getElementById('tr-play');
+      const autoState = document.getElementById('tr-autostate');
+
+      let idx = 0, auto = true, timer = null;
+
+      function render(i) {
+        const s = scenes[i];
+        titleEl.textContent = s.title;
+        subEl.textContent = s.sub;
+        bulletsEl.innerHTML = s.bullets.map(b => `<div style="margin:8px 0"><span style="display:inline-block;width:8px;height:8px;background:#fff;border-radius:50%;margin-right:8px"></span>${b}</div>`).join('');
+        svgEl.innerHTML = s.svg();
+
+        // restart stroke animations: add classes appropriately
+        requestAnimationFrame(() => {
+          const elements = svgEl.querySelectorAll('path,rect,circle,line,ellipse');
+          elements.forEach(el => {
+            el.classList.remove('path-draw', 'path-draw-slow');
+            // force reflow
+            try { el.getBBox(); } catch (e) { }
+            if (el.tagName.toLowerCase() === 'path' && el.getTotalLength) {
+              const len = Math.round(el.getTotalLength());
+              if (len > 420) el.classList.add('path-draw-slow'); else el.classList.add('path-draw');
+            } else {
+              el.classList.add('path-draw');
+            }
+          });
+        });
+
+        // dots
+        dotsWrap.innerHTML = scenes.map((sc, j) => `<div class="dot ${j === i ? 'active' : ''}" data-i="${j}"></div>`).join('');
+        dotsWrap.querySelectorAll('.dot').forEach(d => d.addEventListener('click', () => goTo(parseInt(d.dataset.i))));
+      }
+
+      function goTo(i) { idx = (i + scenes.length) % scenes.length; render(idx); resetTimer(); }
+      function next() { goTo(idx + 1) }
+      function prev() { goTo(idx - 1) }
+
+      prevBtn.addEventListener('click', prev);
+      nextBtn.addEventListener('click', next);
+      playBtn.addEventListener('click', () => {
+        auto = !auto;
+        playBtn.textContent = auto ? 'Pause' : 'Play';
+        autoState.textContent = auto ? 'On' : 'Off';
+        if (auto) resetTimer(); else clearInterval(timer);
+      });
+
+      function resetTimer() {
+        clearInterval(timer);
+        if (auto) timer = setInterval(next, 5000);
+      }
+
+      // init
+      render(0);
+      resetTimer();
+    })();
+  </script>
+</div>
+<!-- transmisstion journey end -->
 
 
 <!-- START SOLUTION SECTION -->
@@ -418,18 +900,29 @@
 <!-- END INTERCONNECTION SECTION -->
 
 <!-- START WHO WE SERVE -->
+
+
+
 <section class="who-we-serve">
   <div class="container">
+    <!-- Heading always on white -->
     <h2 class="fade-in">Transmission Infrastructure - Who We Serve</h2>
-    <div class="serve-grid">
-      <ul>
-        <li class="fade-item"><span class="arrow">→</span> <strong>HV Transmission Lines (Types , Voltages Handled) </strong></li>
-        <li class="fade-item"><span class="arrow">→</span> <strong>Substations (AIS , GIS , Step-up , Step-down)</strong></li>
-      </ul>
-      <ul>
-        <li class="fade-item"><span class="arrow">→</span> <strong>Transformers , Insulators , Breakers</strong></li>
-        <li class="fade-item"><span class="arrow">→</span> <strong>Smart Grid Automation  (SCADA , Relays)</strong></li>
-      </ul>
+  </div>
+
+  <!-- Background Section -->
+  <div class="serve-bg">
+    <div class="overlay"></div>
+    <div class="serve-content">
+      <div class="serve-grid">
+        <ul>
+          <li class="fade-item active" data-bg="bg1"><span class="arrow">→</span> <strong>HV Transmission Lines (Types , Voltages Handled)</strong></li>
+          <li class="fade-item" data-bg="bg2"><span class="arrow">→</span> <strong>Substations (AIS , GIS , Step-up , Step-down)</strong></li>
+        </ul>
+        <ul>
+          <li class="fade-item" data-bg="bg3"><span class="arrow">→</span> <strong>Transformers , Insulators , Breakers</strong></li>
+          <li class="fade-item" data-bg="bg4"><span class="arrow">→</span> <strong>Smart Grid Automation (SCADA , Relays)</strong></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -437,34 +930,60 @@
 <style>
 /* Section */
 .who-we-serve {
-  padding: 60px 20px;
-  background: #fff;
   font-family: 'Roboto', sans-serif;
+  background: #fff;
   overflow: hidden;
-}
-
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 /* Heading */
 .who-we-serve h2 {
   font-size: 2rem;
-  font-weight: 200;
+  font-weight: 300;
   color: #1a2b44;
-  margin-bottom: 40px;
+  margin: 40px auto;
+  text-align: start;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeUp 1s ease forwards;
+}
+
+/* Background Hero */
+.serve-bg {
+  position: relative;
+  width: 100%;
+  height: 500px; /* hero height */
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* content starts from left */
+}
+
+.serve-bg .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(3px);
+  z-index: 0;
+}
+
+/* Content inside hero */
+.serve-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  padding: 40px 60px;
+  color: #fff;
+  text-align: left; /* text starts from left */
 }
 
 /* Grid Layout */
 .serve-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px 60px;
+  gap: 25px 60px;
 }
 
 /* List Styling */
@@ -475,35 +994,31 @@
 }
 
 .serve-grid li {
-  font-size: 1.1rem;
-  margin-bottom: 25px;
-  color: #1a2b44;
+  font-size: 1rem; /* font size decreased */
   display: flex;
   align-items: center;
   opacity: 0;
   transform: translateX(-30px);
   animation: slideIn 0.8s ease forwards;
   transition: all 0.3s ease;
-  padding: 6px 8px;
+  padding: 8px 10px;
   border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
 }
 
-/* Hover Effect */
 .serve-grid li:hover {
   transform: translateX(8px) scale(1.02);
-  background: #f9f9f9;
-  color: #000;
+  background: rgba(255,255,255,0.1);
 }
 
-/* Arrow Styling */
+/* Arrow */
 .serve-grid .arrow {
-  margin-right: 12px;
-  color: #1a2b44;
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
+  margin-right: 10px;
+  color: #fff;
+  font-size: 1rem;
 }
 
-/* Arrow Bounce on Hover */
 .serve-grid li:hover .arrow {
   animation: arrowBounce 0.5s ease;
 }
@@ -514,27 +1029,25 @@
   100% { transform: translateX(0); }
 }
 
-/* Bold Text */
+/* Strong Text */
 .serve-grid strong {
-  color: #434445;
-  font-weight: 700;
-  transition: color 0.3s ease;
+  color: #fff;
+  font-weight: 600;
 }
 
 .serve-grid li:hover strong {
-  color: #1a2b44;
+  color: #000000;
 }
 
-/* Animations on Load */
+/* Animations */
 @keyframes fadeUp {
   to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes slideIn {
   to { opacity: 1; transform: translateX(0); }
 }
 
-/* Stagger Effect */
+/* Stagger */
 .fade-item:nth-child(1) { animation-delay: 0.2s; }
 .fade-item:nth-child(2) { animation-delay: 0.4s; }
 .fade-item:nth-child(3) { animation-delay: 0.6s; }
@@ -547,6 +1060,31 @@
   }
 }
 </style>
+
+<script>
+const bgBox = document.querySelector('.serve-bg');
+
+// Images
+const images = {
+  bg1: "img/application/69.webp", // Glass nature (default active)
+  bg2: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80", // Substation
+  bg3: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&w=1200&q=80", // Transformers
+  bg4: "https://images.unsplash.com/photo-1618005198919-d3d4b85f9f2a?auto=format&fit=crop&w=1200&q=80"  // Smart grid
+};
+
+// Default image (first active)
+bgBox.style.backgroundImage = `url(${images.bg1})`;
+
+// Hover effect
+document.querySelectorAll('.serve-grid li').forEach(item => {
+  item.addEventListener("mouseenter", () => {
+    const bgKey = item.getAttribute("data-bg");
+    bgBox.style.backgroundImage = `url(${images[bgKey]})`;
+  });
+});
+</script>
+
+
 <!-- END WHO WE SERVE -->
 
 
