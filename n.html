@@ -1,116 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lighting Layout</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background: #fff;
-      font-family: Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurnKey Showcase</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #d1d6db;
+            font-family: 'Arial', sans-serif;
+        }
 
-    /* Left side heading */
-    .section-title {
-      font-size: 36px;
-      font-weight: bold;
-      line-height: 1.1;
-      margin-bottom: 30px;
-      
-    }
+        .showcase-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 40px;
+        }
 
-    /* Each block */
-    .lighting-block {
-      text-align: center; 
-    }
+        .turnkey-showcase {
+            display: flex;
+            background-color: #f5f6f7;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 1200px;
+        }
 
-    .lighting-block img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 8px; /* Image & text madhya gap takkuva */
-      transition: transform 0.4s ease;
-    }
+        .step-info {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-    .lighting-block:hover img {
-      transform: scale(1.03);
-    }
+        .step-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e2e5e9;
+        }
 
-    /* Small top label (NEWS AUTUMN / TIPS & IDEAS) */
-    .lighting-block h6 {
-      font-size: 12px;
-      text-transform: uppercase;
-      margin-bottom: 2px;
-      font-weight: bold;
-      color: #444;
-      letter-spacing: 1px;
-      margin-top: 60px;
-    }
+        .step-image img {
+            max-width: 100%;
+            max-height: 400px;
+        }
 
-    /* Title (Optic Track / Outdoor lighting / Hall lighting) */
-    .lighting-block h4 {
-      font-size: 30px;
-      font-weight: bold;
-      margin-bottom: 4px;
-    }
+        .step-details {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
 
-    /* Subtitle / description */
-    .lighting-block p {
-      font-size: 14px;
-      color: #555;
-      margin: 0;
-    }
-  </style>
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .navigation-buttons button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .navigation-buttons button:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
+
 <body>
+    <div class="showcase-container">
+        <h1 class="text-center mb-5">TurnKey Ways</h1>
 
-<div class="container py-5">
-  <div class="row">
+        <div class="turnkey-showcase">
+            <div class="step-info">
+                <h2 id="step-name">Design & Engineering</h2>
+                <p>Our Process</p>
 
-    <!-- Left side title -->
-    <div class="col-lg-2">
-      <h2 class="section-title">Choose the<br>right lighting<br>for your home</h2>
+                <div class="step-details">
+                    <div><strong>Detailed engineering design of EHV substations, GIS, switchyards, transmission lines, and HVDC systems.
+
+Civil, structural, mechanical, and electrical design for towers, foundations, and substation layouts.
+
+Integration of automation, condition monitoring, and SCADA systems for remote operation.
+
+Optimization of conductor type (HTLS, bundle, HSIL) and tower configuration for maximum efficiency.
+</strong></div>
+                    
+                </div>
+
+                <div class="navigation-buttons">
+                    <button onclick="prevStep()">Prev</button>
+                    <button onclick="nextStep()">Next</button>
+                </div>
+            </div>
+
+            <div class="step-image">
+                <img id="step-img" src="img/application/68.webp" alt="Step Image">
+            </div>
+        </div>
     </div>
 
-    <!-- Right side blocks -->
-    <div class="col-lg-10">
-      <div class="row g-4">
+    <script>
+        const steps = [
+            { name: 'Design & Engineering', img: 'img/application/69.webp' },
+            { name: 'Supply & Material', img: 'img/application/70.webp' },
+            { name: 'Construction & Installation', img: 'img/application/71.webp' },
+            { name: 'Testing & Commissioning', img: 'img/application/72.webp' }
+        ];
 
-        <!-- Block 1 -->
-        <div class="col-md-4">
-          <div class="lighting-block">
-            <img src="img/abouimg/aboutimg1 (5).webp" alt="Optic Track">
-            <h6>NEWS AUTUMN 2024</h6>
-            <h4>Optic Track <br>1-phase</h4>
-            <p>Minimalistic, dimmable track lights</p>
-          </div>
-        </div>
+        let currentIndex = 0;
 
-        <!-- Block 2 -->
-        <div class="col-md-4">
-          <div class="lighting-block">
-            <img src="img/abouimg/aboutimg1 (5).webp" alt="Outdoor Lighting">
-            <h6>TIPS & IDEAS</h6>
-            <h4>Outdoor <br>lighting</h4>
-            <p>Illuminate your garden and facade</p>
-          </div>
-        </div>
+        function updateStep() {
+            document.getElementById('step-name').innerText = steps[currentIndex].name;
+            document.getElementById('step-img').src = steps[currentIndex].img;
+        }
 
-        <!-- Block 3 -->
-        <div class="col-md-4">
-          <div class="lighting-block">
-            <img src="img/abouimg/aboutimg1 (5).webp" alt="Hall Lighting">
-            <h6>TIPS & IDEAS</h6>
-            <h4>Hall <br>lighting</h4>
-            <p>A welcoming light</p>
-          </div>
-        </div>
+        function prevStep() {
+            currentIndex = (currentIndex - 1 + steps.length) % steps.length;
+            updateStep();
+        }
 
-      </div>
-    </div>
-  </div>
-</div>
-
+        function nextStep() {
+            currentIndex = (currentIndex + 1) % steps.length;
+            updateStep();
+        }
+    </script>
 </body>
+
 </html>
