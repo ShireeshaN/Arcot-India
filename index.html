@@ -718,128 +718,120 @@
 }
 </style>
 
-<!-- ENERGY GENERATION START -->  
-<div class="">
-  <div class="">
-    <div class="energygenss">
-     
-    
+<!-- ENERGY GENERATION START -->
+<div class="energygenss-wrapper">
+  <div class="energygenss">
 
-        <div class="energygenss-item">
-        <video src="media/wind.mp4" muted loop playsinline></video>
-        <span>Wind</span>
-      </div>
-
-      <div class="energygenss-item" style="background-image: url('img/energy/wind2.webp');">
-        <span>Wind</span>
-      </div>
-
-        <div class="energygenss-item">
-        <video src="media/solar.mp4" muted loop playsinline></video>
-        <span>Solar</span>
-      </div>
-
-       <div class="energygenss-item" style="background-image: url('img/energy/solar2.png');">
-        <span>Solar</span>
-      </div>
-
-      <div class="energygenss-item">
-        <video src="media/biomass.mp4" muted loop playsinline></video>
-        <span>Biomass</span>
-      </div>
-
-      <div class="energygenss-item" style="background-image: url('img/energy/biomass2.png');">
-        <span>Biomass</span>
-      </div>
-
-       <div class="energygenss-item">
-        <video src="media/hydelplant.mp4" muted loop playsinline></video>
-        <span>Hydel</span>
-      </div>
-
-      <div class="energygenss-item" style="background-image: url('img/energy/hydel2.png');">
-        <span>Hydel</span>
-      </div>
-
-     
+    <!-- Wind -->
+    <div class="energygenss-item">
+      <video src="media/wind.mp4" muted playsinline></video>
+      <span class="item-name">Wind</span>
     </div>
+    <div class="energygenss-item" style="background-image: url('img/energy/wind2.webp');">
+      <span class="item-name">Wind</span>
+    </div>
+
+    <!-- Solar -->
+    <div class="energygenss-item">
+      <video src="media/solar.mp4" muted playsinline></video>
+      <span class="item-name">Solar</span>
+    </div>
+    <div class="energygenss-item" style="background-image: url('img/energy/solar2.png');">
+      <span class="item-name">Solar</span>
+    </div>
+
+    <!-- Biomass -->
+    <div class="energygenss-item">
+      <video src="media/biomass.mp4" muted playsinline></video>
+      <span class="item-name">Biomass</span>
+    </div>
+    <div class="energygenss-item" style="background-image: url('img/energy/biomass2.png');">
+      <span class="item-name">Biomass</span>
+    </div>
+
+    <!-- Hydel -->
+    <div class="energygenss-item">
+      <video src="media/hydelplant.mp4" muted playsinline></video>
+      <span class="item-name">Hydel</span>
+    </div>
+    <div class="energygenss-item" style="background-image: url('img/energy/hydel2.png');">
+      <span class="item-name">Hydel</span>
+    </div>
+
   </div>
 </div>
 
 <script>
-  const items = document.querySelectorAll('.energygenss-item');
-  let currentIndex = 0;
-  let autoSlide;
+const items = document.querySelectorAll('.energygenss-item');
+let currentIndex = 0;
+let autoSlide;
 
-  function activateItem(index) {
-    items.forEach((item, i) => {
-      const video = item.querySelector("video");
+function activateItem(index){
+  items.forEach((item,i)=>{
+    const video = item.querySelector('video');
+    const name = item.querySelector('.item-name');
 
-      item.classList.remove('active');
+    item.classList.remove('active');
 
-      if (i === index) {
-        item.classList.add('active');
-        if (video) {
-          video.currentTime = 0;
-          video.play();
-        }
-      } else {
-        if (video) {
-          video.pause();
-        }
+    if(i===index){
+      item.classList.add('active');
+      // hide name for active
+      if(name) name.style.opacity = "0";
+
+      if(video){
+        video.currentTime = 0;
+        video.play();
+        video.onended = ()=>{ goNext(); };
       }
-    });
-  }
-
-  function scheduleNext() {
-    clearTimeout(autoSlide);
-
-    const activeItem = items[currentIndex];
-    const video = activeItem.querySelector("video");
-
-    if (video) {
-      // 🎥 Wait for video to finish
-      video.onended = () => {
-        goNext();
-      };
     } else {
-      // 🖼 Normal image → after 4s
+      // show name for inactive
+      if(name) name.style.opacity = "0.9";
+      if(video) video.pause();
+    }
+  });
+}
+
+function goNext(){
+  clearTimeout(autoSlide);
+  currentIndex = (currentIndex + 1) % items.length;
+  activateItem(currentIndex);
+
+  const activeItem = items[currentIndex];
+  const video = activeItem.querySelector("video");
+
+  if(video){
+    video.onended = ()=>{ goNext(); };
+    video.play();
+  } else {
+    autoSlide = setTimeout(goNext, 4000);
+  }
+}
+
+// Manual click override
+items.forEach((item,index)=>{
+  item.addEventListener('click', ()=>{
+    clearTimeout(autoSlide);
+    currentIndex = index;
+    activateItem(currentIndex);
+    const activeItem = items[currentIndex];
+    if(!activeItem.querySelector('video')){
       autoSlide = setTimeout(goNext, 4000);
     }
-  }
-
-  function goNext() {
-    currentIndex = (currentIndex + 1) % items.length;
-    activateItem(currentIndex);
-    scheduleNext();
-  }
-
-  // 👉 Click control
-  items.forEach((item, index) => {
-    item.addEventListener('click', () => {
-      currentIndex = index;
-      activateItem(currentIndex);
-      scheduleNext();
-    });
   });
+});
 
-  // 📱 Mobile → disable auto-slide
-  function checkMobile() {
-    if (window.innerWidth <= 768) {
-      clearTimeout(autoSlide);
-    } else {
-      scheduleNext();
-    }
-  }
-  window.addEventListener('resize', checkMobile);
-
-  // Start
-  activateItem(currentIndex);
-  checkMobile();
+// Start
+activateItem(currentIndex);
+goNext();
 </script>
 
-
 <style>
+  .energygenss-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: #dddcdc;
+}
+
 .energygenss {
   display: flex;
   width: 100%;
@@ -847,26 +839,25 @@
   overflow: hidden;
   margin: 0;
   padding: 0;
-  background: #dddcdc;
 }
 
 .energygenss-item {
-  flex: 0.4;
-  min-width: 0;
+  flex: 0 0 60px;   /* 🔹 inactive items fixed small width */
+  max-width: 60px;
+  min-width: 60px;
   background-size: cover;
   background-position: center;
-  transition: flex 0.6s ease, filter 0.6s ease, transform 0.6s ease, height 0.6s ease;
+  transition: all 0.6s ease;
   cursor: pointer;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
-  filter: grayscale(100%) brightness(0.7);
+  filter: grayscale(80%) brightness(0.6);
   overflow: hidden;
 }
 
-/* 🎥 Video style inside item */
+/* 🎥 Video */
 .energygenss-item video {
   position: absolute;
   top: 0; left: 0;
@@ -875,43 +866,51 @@
   opacity: 0.9;
 }
 
+/* Overlay */
 .energygenss-item::after {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.25);
+  inset: 0;
+  background: rgba(0,0,0,0.4);
   transition: background 0.4s ease;
 }
 
-.energygenss-item span {
+/* Inactive names */
+.energygenss-item span.item-name {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  font-size: 22px;
-  font-weight: bold;
-  opacity: 0;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  font-size: 18px;
+  font-weight: 600;
+  opacity: 0.9;
+  color: #fff;
+  z-index: 5;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
+/* Active Item */
 .energygenss-item.active {
-  flex: 9;
+  flex: 1 1 auto;
+  flex-grow: 8;      /* 🔹 active item expands wide */
+  max-width: none;
+  min-width: 0;
   filter: grayscale(0%) brightness(1);
   transform: scale(1.02);
+  z-index: 2;
 }
 
 .energygenss-item.active::after {
   background: rgba(0,0,0,0.05);
 }
 
-.energygenss-item.active span {
-  opacity: 1;
-  transform: translateY(0);
+.energygenss-item.active span.item-name {
+  opacity: 0; /* hide text on active */
 }
 
-/* 📱 Mobile accordion style */
-@media (max-width: 768px) {
+/* 📱 Mobile */
+@media (max-width:768px){
   .energygenss {
     flex-direction: column;
     height: auto;
@@ -920,26 +919,33 @@
     flex: none;
     width: 100%;
     height: 70px;
-    overflow: hidden;
+    max-width: 100%;
+    min-width: 100%;
   }
   .energygenss-item.active {
     height: 280px;
-    flex: none;
     transform: none;
   }
-  .energygenss-item span {
-    font-size: 18px;
+  .energygenss-item span.item-name {
+    font-size: 16px;
+    transform: none;
+    top: auto;
+    bottom: 15px;
+    left: 20px;
   }
 }
+
 </style>
 <!-- ENERGY GENERATION END -->
 
 
 
 
+
 <section class="section-wraps" style="background-color: #000;">
   <h2 class="section-heading text-white">Lighting</h2>
-  <p class="section-sub">Innovative façade, street, and architectural lighting that transforms every space with brilliance.</p>
+  <p class="section-sub">Innovative façade, street, and architectural lighting that transforms every space with brilliance. 
+  </p>
 </section>
 
 <!-- LIGHTING START -->
@@ -1506,8 +1512,8 @@ function LightItcoShow(index) {
         <div class="thumb-label">Smart Bollard</div>
       </div>
 
-      <div class="thumb" data-img="img/randd/smartbarcounter.png" role="listitem" tabindex="0">
-        <div class="thumb-img"><img src="img/randd/smartbarcounter.png" alt="Smart Bar Counter"></div>
+      <div class="thumb" data-img="img/comingsoon.webp" role="listitem" tabindex="0">
+        <div class="thumb-img"><img src="img/comingsoon.webp" alt="Smart Bar Counter"></div>
         <div class="thumb-label">Smart Bar Counter</div>
       </div>
 
@@ -1516,8 +1522,8 @@ function LightItcoShow(index) {
         <div class="thumb-label">Smart Conference Table</div>
       </div>
 
-      <div class="thumb" data-img="img/randd/windoleaf.png" role="listitem" tabindex="0">
-        <div class="thumb-img"><img src="img/randd/windoleaf.png" alt="Windowleaf AC"></div>
+      <div class="thumb" data-img="img/comingsoon.webp" role="listitem" tabindex="0">
+        <div class="thumb-img"><img src="img/comingsoon.webp" alt="Windowleaf AC"></div>
         <div class="thumb-label">Windowleaf AC</div>
       </div>
     </div>
