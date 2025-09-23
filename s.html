@@ -1,163 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wind Power Generation</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-    }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1400&q=80') no-repeat center/cover;
-      height: 100vh;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-    .section-padding {
-      padding: 80px 0;
-    }
-    .icon-box {
-      font-size: 50px;
-      color: #0d6efd;
-      margin-bottom: 20px;
-    }
-    .stats {
-      background: #f8f9fa;
-    }
-    .cta {
-      background: linear-gradient(135deg, #0d6efd, #0a58ca);
-      color: #fff;
-      text-align: center;
-      padding: 80px 20px;
-    }
-    .cta h2 { font-size: 2.5rem; }
-  </style>
-</head>
-<body>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content" data-aos="fade-up">
-      <h1 class="display-4 fw-bold">Turn Wind into Wealth</h1>
-      <p class="lead">Reliable, renewable, and eco-friendly electricity generation with advanced wind power solutions.</p>
-      <a href="#contact" class="btn btn-primary btn-lg mt-3">Start Your Wind Project Today</a>
-    </div>
-  </section>
+<!-- Our Services - Ultra Creative Version -->
+<section class="services-section">
+  <!-- Animated Wind Background -->
+  <div class="wind-bg">
+    <div class="turbine" style="--i:0;"></div>
+    <div class="turbine" style="--i:1;"></div>
+    <div class="turbine" style="--i:2;"></div>
+    <div class="particle" style="--x:10%; --y:20%; --d:3s;"></div>
+    <div class="particle" style="--x:70%; --y:50%; --d:4s;"></div>
+    <div class="particle" style="--x:50%; --y:80%; --d:5s;"></div>
+  </div>
 
-  <!-- Why Wind Power -->
-  <section class="section-padding text-center">
-    <div class="container">
-      <h2 class="mb-5" data-aos="fade-up">Why Choose Wind Power?</h2>
-      <div class="row g-4">
-        <div class="col-md-3" data-aos="zoom-in">
-          <div class="icon-box">🌍</div>
-          <h5>100% Clean</h5>
-          <p>Protect the planet for the next generation with zero emissions.</p>
-        </div>
-        <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
-          <div class="icon-box">⚡</div>
-          <h5>Reliable Energy</h5>
-          <p>Consistent and renewable power supply, day and night.</p>
-        </div>
-        <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
-          <div class="icon-box">💰</div>
-          <h5>Cost Savings</h5>
-          <p>Lower electricity bills and strong return on investment.</p>
-        </div>
-        <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
-          <div class="icon-box">🚀</div>
-          <h5>Future-Ready</h5>
-          <p>Invest in tomorrow’s energy today with smart solutions.</p>
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Our Wind Energy Services</h2>
+    <div class="row g-4 text-center">
+
+      <div class="col-md-3" data-aos="flip-left">
+        <div class="service-card">
+          <div class="icon">📊</div>
+          <h5>Site Assessment</h5>
+          <p>Precision analysis of wind potential & project feasibility.</p>
+          <div class="more-info">We use advanced tools and simulations to ensure maximum efficiency for your location.</div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Our Services -->
-  <section class="section-padding bg-light">
-    <div class="container">
-      <h2 class="text-center mb-5" data-aos="fade-up">Our Wind Energy Services</h2>
-      <div class="row g-4 text-center">
-        <div class="col-md-3" data-aos="flip-left">
-          <div class="icon-box">📊</div>
-          <h5>Site Assessment</h5>
-          <p>We analyze wind potential and project feasibility.</p>
-        </div>
-        <div class="col-md-3" data-aos="flip-left" data-aos-delay="100">
-          <div class="icon-box">🔧</div>
+      <div class="col-md-3" data-aos="flip-left" data-aos-delay="100">
+        <div class="service-card">
+          <div class="icon">🔧</div>
           <h5>Turbine Installation</h5>
-          <p>End-to-end supply and installation of wind turbines.</p>
+          <p>End-to-end supply and installation services.</p>
+          <div class="more-info">Our team ensures fast, safe, and accurate turbine installation with minimal downtime.</div>
         </div>
-        <div class="col-md-3" data-aos="flip-left" data-aos-delay="200">
-          <div class="icon-box">🔌</div>
+      </div>
+
+      <div class="col-md-3" data-aos="flip-left" data-aos-delay="200">
+        <div class="service-card">
+          <div class="icon">🔌</div>
           <h5>Grid Integration</h5>
           <p>Seamless power connectivity including hybrid systems.</p>
+          <div class="more-info">Integrate wind power efficiently into your grid with smart energy solutions.</div>
         </div>
-        <div class="col-md-3" data-aos="flip-left" data-aos-delay="300">
-          <div class="icon-box">🛠️</div>
+      </div>
+
+      <div class="col-md-3" data-aos="flip-left" data-aos-delay="300">
+        <div class="service-card">
+          <div class="icon">🛠️</div>
           <h5>O&M Services</h5>
           <p>24/7 monitoring and maintenance for maximum uptime.</p>
+          <div class="more-info">Predictive maintenance and real-time monitoring to keep your turbines at peak performance.</div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Stats -->
-  <section class="section-padding stats text-center">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-4" data-aos="fade-up">
-          <h2 class="fw-bold">50+ MW</h2>
-          <p>Wind Projects Installed</p>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <h2 class="fw-bold">120,000+</h2>
-          <p>Tons of CO₂ Saved Each Year</p>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <h2 class="fw-bold">10,000+</h2>
-          <p>Homes Powered</p>
-        </div>
-      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <div class="container" data-aos="fade-up">
-      <h2>Let’s Build Your Wind Project Today</h2>
-      <p class="lead">Partner with us for reliable, clean, and cost-saving wind energy solutions.</p>
-      <a href="#contact" class="btn btn-light btn-lg mt-3">Request a Free Consultation</a>
-    </div>
-  </section>
+<style>
+/* Section Styling */
+.services-section {
+  position: relative;
+  padding: 100px 0;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  overflow: hidden;
+}
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+}
+.section-title::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: #00bcd4;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
 
-  <!-- Bootstrap JS + AOS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  </script>
-</body>
-</html>
+/* Card Styling */
+.service-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  transition: transform 0.5s, box-shadow 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+.service-card:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+.service-card .icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+  display: inline-block;
+  transition: transform 0.5s;
+}
+.service-card:hover .icon {
+  transform: rotate(25deg) scale(1.3);
+}
+.service-card h5 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.service-card p {
+  font-size: 15px;
+  color: #555;
+  transition: opacity 0.3s;
+}
+.service-card .more-info {
+  opacity: 0;
+  font-size: 14px;
+  color: #007b8a;
+  margin-top: 15px;
+  transition: opacity 0.4s;
+}
+.service-card:hover .more-info {
+  opacity: 1;
+}
+
+/* Animated Wind Background */
+.wind-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.turbine {
+  position: absolute;
+  width: 60px; height: 60px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/3/3f/Wind_turbine_icon.png') no-repeat center/contain;
+  animation: float 10s linear infinite;
+  left: calc(var(--i) * 30%);
+  top: 20%;
+}
+.particle {
+  position: absolute;
+  width: 8px; height: 8px;
+  background: #00bcd4;
+  border-radius: 50%;
+  top: var(--y);
+  left: var(--x);
+  animation: floatParticle var(--d) linear infinite;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
+}
+@keyframes floatParticle {
+  0% { transform: translateY(0) scale(1); opacity: 0.8; }
+  50% { transform: translateY(-50px) scale(1.3); opacity: 0.3; }
+  100% { transform: translateY(0) scale(1); opacity: 0.8; }
+}
+
+@media(max-width: 767px){
+  .section-title { font-size: 28px; }
+  .service-card .icon { font-size: 50px; }
+}
+</style>
