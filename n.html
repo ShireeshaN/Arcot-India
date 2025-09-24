@@ -1,141 +1,206 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- ENERGY GENERATION START -->
+<div class="energygenss-wrapper">
+  <div class="energygenss">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TurnKey Showcase</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #d1d6db;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .showcase-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 40px;
-        }
-
-        .turnkey-showcase {
-            display: flex;
-            background-color: #f5f6f7;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            max-width: 1200px;
-        }
-
-        .step-info {
-            flex: 1;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .step-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #e2e5e9;
-        }
-
-        .step-image img {
-            max-width: 100%;
-            max-height: 400px;
-        }
-
-        .step-details {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-
-        .navigation-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .navigation-buttons button {
-            padding: 10px 20px;
-            border: none;
-            background-color: #333;
-            color: #fff;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .navigation-buttons button:hover {
-            background-color: #555;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="showcase-container">
-        <h1 class="text-center mb-5">TurnKey Ways</h1>
-
-        <div class="turnkey-showcase">
-            <div class="step-info">
-                <h2 id="step-name">Design & Engineering</h2>
-                <p>Our Process</p>
-
-                <div class="step-details">
-                    <div><strong>Detailed engineering design of EHV substations, GIS, switchyards, transmission lines, and HVDC systems.
-
-Civil, structural, mechanical, and electrical design for towers, foundations, and substation layouts.
-
-Integration of automation, condition monitoring, and SCADA systems for remote operation.
-
-Optimization of conductor type (HTLS, bundle, HSIL) and tower configuration for maximum efficiency.
-</strong></div>
-                    
-                </div>
-
-                <div class="navigation-buttons">
-                    <button onclick="prevStep()">Prev</button>
-                    <button onclick="nextStep()">Next</button>
-                </div>
-            </div>
-
-            <div class="step-image">
-                <img id="step-img" src="img/application/68.webp" alt="Step Image">
-            </div>
-        </div>
+    <!-- Wind -->
+    <div class="energygenss-item">
+      <video src="media/wind.mp4" muted playsinline></video>
+      <span class="item-name">Wind</span>
+    </div>
+    <div class="energygenss-item" style="background-image: url('img/energy/wind2.webp');">
+      <span class="item-name">Wind</span>
     </div>
 
-    <script>
-        const steps = [
-            { name: 'Design & Engineering', img: 'img/application/69.webp' },
-            { name: 'Supply & Material', img: 'img/application/70.webp' },
-            { name: 'Construction & Installation', img: 'img/application/71.webp' },
-            { name: 'Testing & Commissioning', img: 'img/application/72.webp' }
-        ];
+    <!-- Solar -->
+    <div class="energygenss-item">
+      <video src="media/solar.mp4" muted playsinline></video>
+      <span class="item-name">Solar</span>
+    </div>
+    <div class="energygenss-item" style="background-image: url('img/energy/solar2.png');">
+      <span class="item-name">Solar</span>
+    </div>
 
-        let currentIndex = 0;
+    <!-- Biomass -->
+    <div class="energygenss-item">
+      <video src="media/biomass.mp4" muted playsinline></video>
+      <span class="item-name">Biomass</span>
+    </div>
+    <div class="energygenss-item" style="background-image: url('img/energy/biomass2.png');">
+      <span class="item-name">Biomass</span>
+    </div>
 
-        function updateStep() {
-            document.getElementById('step-name').innerText = steps[currentIndex].name;
-            document.getElementById('step-img').src = steps[currentIndex].img;
-        }
+    <!-- Hydel -->
+    <div class="energygenss-item">
+      <video src="media/hydelplant.mp4" muted playsinline></video>
+      <span class="item-name">Hydel</span>
+    </div>
+    <div class="energygenss-item" style="background-image: url('img/energy/hydel2.png');">
+      <span class="item-name">Hydel</span>
+    </div>
 
-        function prevStep() {
-            currentIndex = (currentIndex - 1 + steps.length) % steps.length;
-            updateStep();
-        }
+  </div>
+</div>
 
-        function nextStep() {
-            currentIndex = (currentIndex + 1) % steps.length;
-            updateStep();
-        }
-    </script>
-</body>
+<script>
+const items = document.querySelectorAll('.energygenss-item');
+let currentIndex = 0;
+let autoSlide;
 
-</html>
+function activateItem(index){
+  items.forEach((item,i)=>{
+    const video = item.querySelector('video');
+    const name = item.querySelector('.item-name');
+
+    item.classList.remove('active');
+
+    if(i===index){
+      item.classList.add('active');
+      // Active lo name hide avvali
+      if(name) name.style.opacity = "0";
+
+      if(video){
+        video.currentTime = 0;
+        video.play();
+        video.onended = ()=>{ goNext(); };
+      }
+    } else {
+      // Inactive lo name show avvali
+      if(name) name.style.opacity = "0.8";
+      if(video) video.pause();
+    }
+  });
+}
+
+function goNext(){
+  clearTimeout(autoSlide);
+  currentIndex = (currentIndex + 1) % items.length;
+  activateItem(currentIndex);
+
+  const activeItem = items[currentIndex];
+  const video = activeItem.querySelector("video");
+
+  if(video){
+    // Video ayyaka next ki move
+    video.onended = ()=>{ goNext(); };
+    video.play();
+  } else {
+    // Image ki kontha time wait
+    autoSlide = setTimeout(goNext, 4000);
+  }
+}
+
+// Manual click override
+items.forEach((item,index)=>{
+  item.addEventListener('click', ()=>{
+    clearTimeout(autoSlide);
+    currentIndex = index;
+    activateItem(currentIndex);
+    const activeItem = items[currentIndex];
+    if(!activeItem.querySelector('video')){
+      autoSlide = setTimeout(goNext, 4000);
+    }
+  });
+});
+
+// Start
+activateItem(currentIndex);
+goNext();
+</script>
+
+<style>
+.energygenss-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: #dddcdc;
+}
+
+.energygenss {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.energygenss-item {
+  flex: 0.4;
+  min-width: 0;
+  background-size: cover;
+  background-position: center;
+  transition: flex 0.6s ease, filter 0.6s ease, transform 0.6s ease;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: grayscale(80%) brightness(0.6);
+  overflow: hidden;
+}
+
+.energygenss-item video {
+  position: absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  object-fit: cover;
+  opacity:0.9;
+}
+
+/* Overlay */
+.energygenss-item::after {
+  content:"";
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.4);
+  transition: background 0.4s ease;
+}
+
+/* Inactive name visible */
+.energygenss-item span.item-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  font-size: 18px;
+  font-weight: 600;
+  opacity: 0.8;
+  color: #fff;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Active Item */
+.energygenss-item.active {
+  flex: 9;
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.05);
+}
+
+.energygenss-item.active::after {
+  background: rgba(0,0,0,0.05);
+}
+
+/* Mobile */
+@media (max-width:768px){
+  .energygenss {
+    flex-direction: column;
+    height: auto;
+  }
+  .energygenss-item {
+    flex: none;
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+  }
+  .energygenss-item.active {
+    height: 280px;
+    transform: none;
+  }
+  .energygenss-item span.item-name {
+    font-size: 16px;
+  }
+}
+</style>
+<!-- ENERGY GENERATION END -->
