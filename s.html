@@ -1,249 +1,262 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kinglumi Scroll Banner</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Georgia', serif;
-      background: #111;
-      color: white;
-      overflow-x: hidden;
-    }
+<!-- Services start -->
+<section class="section-wraps">
+  <h2 class="section-heading text-white">How We Do</h2>
+</section>
 
-    section {
-      height: 100vh;
-      display: flex;
-      flex-direction: ;
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* Gallery Section */
-    .about-section {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      
-    }
-
-      .about {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .about img {
-      object-fit: cover;
-      /* border-radius: 12px; */
-      transition: all 0.5s ease;
-      opacity: 1;
-    }
-
-    /* Heights + Widths (desktop) */
-    .about img.outer {
-      height: 280px;
-      width: 150px;
-    }
-
-    .about img.mid {
-      height: 380px;
-      width: 180px;
-    }
-
-    .about img.center {
-      height: 500px;
-      width: 250px;
-      z-index: 5;
-    }
-
-    /* Banner Text + Overlay */
-    .about-text {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 5%;
-      max-width: 700px;
-      font-size: 1.2rem;
-      line-height: 1.6;
-      opacity: 0;
-      pointer-events: none;
-      z-index: 10;
-    }
-
-    .about-text::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0));
-      z-index: -1;
-    }
-
-    .about-text h1 {
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    .about-text p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-    }
-
-    .about-text span {
-      font-weight: bold;
-      font-size: 1rem;
-    }
-
-    /* ---------- MOBILE STYLES ---------- */
-    @media (max-width: 768px) {
-      .about {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-      }
-
-      .about img.outer {
-        height: 120px;
-        width: 80px;
-      }
-
-      .about img.mid {
-        height: 160px;
-        width: 100px;
-      }
-
-      .about img.center {
-        height: 200px;
-        width: 130px;
-      }
-
-      /* make outer images half visible */
-      .about {
-        transform: scale(0.9);
-      }
-
-      .about-text {
-        padding: 8%;
-        font-size: 1rem;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-        
-        max-width: 100%;
-      }
-
-      .about-text h1 {
-        font-size: 1.6rem;
-      }
-
-      .about-text p {
-        font-size: 0.9rem;
-      }
-
-      .about-text span {
-        font-size: 0.8rem;
-      }
-
-      .about-text::before {
-        background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0));
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Intro Section -->
-  <section style="background:#222;">
-    <h1>Scroll Down 👇</h1>
-  </section>
-
-  <!-- about Section -->
-  <section class="about-section sec">
-    <div class="about">
-      <img src="img/energy/wind2.webp" class="outer">
-      <img src="img/energy/wind2.webp" class="mid">
-      <img src="img/energy/wind2.webp" class="center">
-      <img src="img/energy/wind2.webp" class="mid">
-      <img src="img/energy/wind2.webp" class="outer">
+<section class="services-section">
+  <div class="row g-3">
+    <!-- Left Grid -->
+    <div class="col-lg-8">
+      <div class="services-grid">
+        <div class="services-piece slide-left" id="srvGrid1"></div>
+        <div class="services-piece slide-right" id="srvGrid2"></div>
+        <div class="services-piece slide-up" id="srvGrid3"></div>
+        <div class="services-piece slide-down" id="srvGrid4"></div>
+      </div>
     </div>
-    <div class="about-text">
-      <h1>Light the world, Green the earth</h1>
-      <p>
-        Before starting Kinglumi in the year 2005, Mr. Zhu worked at Huawei as the R&D Director. 
-        He has strong experience in cutting-edge technology, over 30 years in technical development 
-        and he has joined many new product development, which is also a very important reason why 
-        Kinglumi is a technical-based innovative company.
-      </p>
-      <span>Kinglumi Founder Mr. Zhu</span>
+
+    <!-- Right Panel -->
+    <div class="col-lg-4">
+      <div class="services-panel glass">
+        <div>
+          <h4 id="srvCategoryTitle">Design</h4>
+          <ul id="srvCategoryList"></ul>
+        </div>
+        <div class="services-tabs">
+          <span class="srv-tab active" data-cat="design">Design</span>
+          <span class="srv-tab" data-cat="manufacturing">Manufacturing</span>
+          <span class="srv-tab" data-cat="installation">Installation</span>
+          <span class="srv-tab" data-cat="testing">Testing</span>
+          <span class="srv-tab" data-cat="commisioning">Commisioning</span>
+          <div class="arrows">
+            <i class="fa fa-chevron-left" id="srvPrev"></i>
+            <i class="fa fa-chevron-right" id="srvNext"></i>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Next Section -->
-  <section style="background:#333;">
-    <h1>Next Section 🚀</h1>
-  </section>
+  <!-- Bottom Grid -->
+  <div class="services-bottom">
+    <div class="image slide-left glass" id="srvBottomImg1"></div>
+    <div class="text glass">
+      <h3 id="srvBottomHeading"></h3>
+      <p id="srvBottomPara"></p>
+    </div>
+    <div class="image slide-right glass" id="srvBottomImg2"></div>
+  </div>
+</section>
 
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
+<style>
+  /* Glassy look common class */
+  .glass {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+  }
 
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".about-section",
-        start: "top top",
-        end: "+=400%",
-        scrub: true,
-        pin: true
+  .services-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #0f0f0f, #1b1b1b);
+  }
+
+  /* --- TOP GRID --- */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 220px 220px;
+    gap: 12px;
+  }
+  .services-piece {
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    overflow: hidden;
+    transform: scale(0.95);
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+  }
+  .services-piece:hover {
+    transform: scale(1.05);
+  }
+
+  /* --- RIGHT PANEL --- */
+  .services-panel {
+    padding: 30px;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .services-panel h4 { font-weight: 700; margin-bottom: 15px; }
+  .services-panel ul { list-style: none; padding: 0; margin: 0; }
+  .services-panel ul li { margin-bottom: 8px; font-size: 15px; cursor: pointer; }
+  .services-tabs { margin-top: 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .services-tabs .srv-tab { cursor: pointer; font-size: 13.5px; }
+  .services-tabs .srv-tab.active { color: #ff4d00; font-weight: 700; }
+
+  /* --- BOTTOM GRID --- */
+  .services-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    margin-top: 30px;
+  }
+  .services-bottom .image {
+    height: 250px;
+    border-radius: 16px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.6s ease-in-out;
+  }
+  .services-bottom .text {
+    padding: 30px;
+    color: #fff;
+    border-radius: 16px;
+  }
+  .services-bottom h3 { font-size: 26px; font-weight: 700; }
+  .services-bottom span { color: #ff4d00; }
+  .services-bottom p { font-size: 15px; margin-top: 10px; }
+
+  /* --- Animations --- */
+  .slide-left { transform: translateX(-80px); }
+  .slide-right { transform: translateX(80px); }
+  .slide-up { transform: translateY(-80px); }
+  .slide-down { transform: translateY(80px); }
+
+  .show {
+    opacity: 1 !important;
+    transform: translate(0,0) scale(1) !important;
+  }
+
+  @media(max-width: 992px) {
+    .services-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 150px 150px; }
+    .services-bottom { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  const srvCategories = {
+    design: {
+      title: "Design",
+      items: ["Requirement analysis & site survey","Concept design & feasibility study","Electrical & mechanical schematics","CAD drawings & 3D visualization","Standards & compliance check (IEC, IS, BIS)"],
+      topImage: "img/solutions/face3.png",
+      bottom: {
+        heading: "Concept <span>& Innovation</span>",
+        para: "From concept to blueprint, shaping ideas into reality. Transforming ideas into practical solutions with precision and creativity.",
+        img1: "img/solutions/concept.png",
+        img2: "img/solutions/design3.png"
+      }
+    },
+    manufacturing: {
+      title: "Manufacturing",
+      items: ["Component sourcing & material selection","Assembly & fabrication", "Integration of electronics & hardware","Quality inspection during production","Pre-shipment testing"],
+      topImage: "img/solutions/6.png",
+      bottom: {
+        heading: "Build <span>& Create </span>",
+        para: "High-quality manufacturing with advanced technology and strict quality control.",
+        img1: "img/sample/8.png",
+        img2: "img/sample/9.png"
+      }
+    },
+    installation: {
+      title: "Installation",
+      items: ["Site preparation & civil works (if needed)", "Electrical cabling & wiring","Mounting & fixing of equipment / lights / panels","System integration (automation, power, lighting, IoT)","Safety checks during installation"],
+      topImage: "img/solutions/14.png",
+      bottom: {
+        heading: "Implement  <span>& Integrate</span>",
+        para: "Seamless installation services ensuring safety, efficiency, and reliability.",
+        img1: "img/solutions/16.png",
+        img2: "img/solutions/17.png"
+      }
+    },
+    testing: {
+      title: "Testing",
+      items: ["Functional testing (does it work as designed?)","Load & stress testing","Safety & protection testing (short circuit, overload)","Performance optimization","Client demonstration"],
+      topImage: "img/solutions/19.png",
+      bottom: {
+        heading: "Verify <span>& Assure</span>",
+        para: "Comprehensive testing for performance, safety, and long-term dependability.",
+        img1: "img/solutions/20.png",
+        img2: "img/solutions/18.png"
+      }
+    },
+    commisioning: {
+      title: "Commisioning",
+      items: ["Final calibration & adjustments","System documentation & reports","Training end-users / client staff","Handover of system with manuals","After-sales support & AMC (maintenance plan)"],
+      topImage: "img/solutions/23.png",
+      bottom: {
+        heading: "Launch  <span>& Deliver</span>",
+        para: "Final validation and handover with full client support and documentation.",
+        img1: "img/solutions/22.png",
+        img2: "img/solutions/21.png"
+      }
+    }
+  };
+
+  let srvIndex = 0;
+  const srvTabs = document.querySelectorAll(".services-tabs .srv-tab");
+  const srvCategoryTitle = document.getElementById("srvCategoryTitle");
+  const srvCategoryList = document.getElementById("srvCategoryList");
+  const srvBottomHeading = document.getElementById("srvBottomHeading");
+  const srvBottomPara = document.getElementById("srvBottomPara");
+  const srvBottomImg1 = document.getElementById("srvBottomImg1");
+  const srvBottomImg2 = document.getElementById("srvBottomImg2");
+  const srvKeys = Object.keys(srvCategories);
+  const srvGrid1 = document.getElementById("srvGrid1");
+  const srvGrid2 = document.getElementById("srvGrid2");
+  const srvGrid3 = document.getElementById("srvGrid3");
+  const srvGrid4 = document.getElementById("srvGrid4");
+
+  function loadSrvCategory(cat) {
+    const data = srvCategories[cat];
+    srvCategoryTitle.textContent = data.title;
+    srvCategoryList.innerHTML = data.items.map(i => `<li>${i}</li>`).join("");
+    srvTabs.forEach(t => t.classList.remove("active"));
+    document.querySelector(`.srv-tab[data-cat="${cat}"]`).classList.add("active");
+    srvIndex = srvKeys.indexOf(cat);
+
+    // update top 4 grid slices
+    srvGrid1.style.backgroundImage = `url(${data.topImage})`;
+    srvGrid2.style.backgroundImage = `url(${data.topImage})`;
+    srvGrid3.style.backgroundImage = `url(${data.topImage})`;
+    srvGrid4.style.backgroundImage = `url(${data.topImage})`;
+
+    // update bottom section
+    srvBottomHeading.innerHTML = data.bottom.heading;
+    srvBottomPara.textContent = data.bottom.para;
+    srvBottomImg1.style.backgroundImage = `url('${data.bottom.img1}')`;
+    srvBottomImg2.style.backgroundImage = `url('${data.bottom.img2}')`;
+  }
+
+  srvTabs.forEach(tab => tab.addEventListener("click", () => loadSrvCategory(tab.dataset.cat)));
+  document.getElementById("srvPrev").addEventListener("click", () => {
+    srvIndex = (srvIndex - 1 + srvKeys.length) % srvKeys.length;
+    loadSrvCategory(srvKeys[srvIndex]);
+  });
+  document.getElementById("srvNext").addEventListener("click", () => {
+    srvIndex = (srvIndex + 1) % srvKeys.length;
+    loadSrvCategory(srvKeys[srvIndex]);
+  });
+
+  // default load
+  loadSrvCategory("installation");
+
+  // Animation on scroll
+  function revealOnScroll() {
+    document.querySelectorAll('.services-piece, .services-bottom .image').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add("show");
       }
     });
-
-    // Phase 1 → images move out, center expands
-    tl.to(".about img.outer", {x: -400, opacity: 0, duration: 1}, 0);
-    tl.to(".about img.mid:first-of-type", {x: -200, opacity: 0, duration: 1}, 0);
-    tl.to(".about img.mid:last-of-type", {x: 200, opacity: 0, duration: 1}, 0);
-    tl.to(".about img.outer:last-of-type", {x: 400, opacity: 0, duration: 1}, 0);
-
-    tl.to(".about img.center", {
-      width: "100vw",
-      height: "100vh",
-      borderRadius: 0,
-      duration: 1
-    }, 0);
-
-    // Text appears only after zoom finishes
-    tl.to(".about-text", {opacity: 1, y: 30, duration: 1}, 1);
-
-    // Phase 2 → while leaving, hide text first, then restore gallery
-    tl.to(".about-text", {opacity: 0, y: 0, duration: 1}, "exit-=0.5");
-    tl.to(".about img.center", {
-      width: "250px",
-      height: "500px",
-      borderRadius: "12px",
-      duration: 1
-    }, "exit");
-    tl.to(".about img.outer", {x: 0, opacity: 1, duration: 1}, "exit");
-    tl.to(".about img.mid", {x: 0, opacity: 1, duration: 1}, "exit");
-  </script>
-
-</body>
-</html>
-
-
-
-
-
+  }
+  window.addEventListener("scroll", revealOnScroll);
+  window.addEventListener("load", revealOnScroll);
+</script>
+<!-- Services end -->
