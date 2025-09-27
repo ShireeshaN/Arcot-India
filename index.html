@@ -401,6 +401,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding-top: 20%;
       padding: 5%;
       max-width: 700px;
       font-size: 1.2rem;
@@ -498,11 +499,11 @@
  <!-- About Section -->
 <section class="about-section sec">
   <div class="about">
-    <img src="img/energy/wind2.webp" class="outer">
-    <img src="img/energy/wind2.webp" class="mid">
-    <img src="img/energy/wind2.webp" class="center">
-    <img src="img/energy/wind2.webp" class="mid">
-    <img src="img/energy/wind2.webp" class="outer">
+    <img src="img/specialanimationimg/99.png" class="outer">
+    <img src="img/specialanimationimg/100.png" class="mid">
+    <img src="img/specialanimationimg/101.png" class="center">
+    <img src="img/specialanimationimg/102.png" class="mid">
+    <img src="img/specialanimationimg/103.png" class="outer">
   </div>
   <div class="about-text">
     <h1>Arcot – Powering the Future with Innovation</h1>
@@ -511,7 +512,7 @@
       and sustainable future with innovative power solutions, smart automation, 
       and next-generation products that empower industries and communities.
     </p>
-    <span>Vijay Swarna</span>
+    <!-- <span>Vijay Swarna</span> -->
   </div>
 </section>
 
@@ -2117,6 +2118,7 @@ document.addEventListener("DOMContentLoaded", function() {
   padding: 20px;
   border-top: 1px solid #eee;
   flex-wrap: wrap;
+  background-color: #fff;
 }
 .applica-tabs button {
   background: none;
@@ -2187,49 +2189,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 <!-- Services start -->
-
 <section class="section-wraps">
-  <h2 class="section-heading text-white">How We Do</h2>
-
+  <h2 class="section-heading">How We Do</h2>
 </section>
 
- <style>
-  .section-wraps {
-  background: #000000;  /* clean, minimal grey tone */
-  padding: 40px 10px 30px; /* less space, balanced */
-  margin: 0;
-  text-align: left; /* align content left */
-  min-height: 30px !important;
-
-}
-
-/* Main heading */
-.section-heading {
-  font-family: 'Roboto', sans-serif; /* professional modern font */
-  font-size: 36px;
-  font-weight: 500;   /* elegant, not bold */
-  color: #7e7c7c;        /* deep grey-black */
-  margin: 0 0 10px 0;
-  position: relative;
-  animation: fadeSlideUp 0.9s ease forwards;
-}
-</style> 
-<section class="services-section ">
-
+<section class="services-section">
   <div class="row g-3">
     <!-- Left Grid -->
     <div class="col-lg-8">
       <div class="services-grid">
-        <div class="services-piece" id="srvGrid1"></div>
-        <div class="services-piece" id="srvGrid2"></div>
-        <div class="services-piece" id="srvGrid3"></div>
-        <div class="services-piece" id="srvGrid4"></div>
+        <div class="services-piece glass" id="srvGrid1"></div>
+        <div class="services-piece glass" id="srvGrid2"></div>
+        <div class="services-piece glass" id="srvGrid3"></div>
+        <div class="services-piece glass" id="srvGrid4"></div>
       </div>
     </div>
 
     <!-- Right Panel -->
     <div class="col-lg-4">
-      <div class="services-panel">
+      <div class="services-panel glass">
         <div>
           <h4 id="srvCategoryTitle">Design</h4>
           <ul id="srvCategoryList"></ul>
@@ -2251,208 +2229,430 @@ document.addEventListener("DOMContentLoaded", function() {
 
   <!-- Bottom Grid -->
   <div class="services-bottom">
-    <div class="image" id="srvBottomImg1"></div>
-    <div class="text">
+    <div class="image glass" id="srvBottomImg1"></div>
+    <div class="text glass">
       <h3 id="srvBottomHeading"></h3>
       <p id="srvBottomPara"></p>
     </div>
-    <div class="image" id="srvBottomImg2"></div>
+    <div class="image glass" id="srvBottomImg2"></div>
   </div>
 </section>
 
 <style>
-  .services-section { padding: 60px 0; 
+/* ----------------- Section Heading ----------------- */
+.section-wraps {
+  background: #000;
+  padding: 40px 10px 30px;
+  margin: 0;
+  text-align: left;
+}
+.section-heading {
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  color: #7e7c7c;
+  margin: 0 0 10px 0;
+  position: relative;
+  animation: fadeSlideUp 1s ease forwards;
+}
+
+/* ----------------- Glass Base ----------------- */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  /* border-radius: 16px; */
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ----------------- Services Section ----------------- */
+.services-section {
+  padding: 0 0 10px 0;
   background-color: #ffffff;
-padding-top: 0px;}
-  
-  .services-title { font-size: 42px; font-weight: 700; margin-bottom: 30px; }
+}
 
-  /* --- TOP GRID --- */
-  .services-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px 200px;
-    gap: 5px;
-    overflow: hidden;
-  }
-  .services-piece {
-    background-size: 200% 200%;
-    background-repeat: no-repeat;
-    transition: background-image 0.5s ease-in-out;
-  }
-  .services-piece:nth-child(1) { background-position: left top; }
-  .services-piece:nth-child(2) { background-position: right top; }
-  .services-piece:nth-child(3) { background-position: left bottom; }
-  .services-piece:nth-child(4) { background-position: right bottom; }
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px 200px;
+  gap: 5px;
+}
+.services-piece {
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  animation: zoomIn 1s ease forwards;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+.services-piece:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+}
 
-  /* --- RIGHT PANEL --- */
-  .services-panel {
-    background: black;
-    color: #fff;
-    padding: 30px;
-    height: 100%;
-    display: flex;
-    flex-direction: column; 
-    justify-content: space-between;
-  }
-  .services-panel h4 { font-weight: 700; margin-bottom: 15px; }
-  .services-panel ul { list-style: none; padding: 0; margin: 0; }
-  .services-panel ul li {
-    margin-bottom: 8px; font-size: 15px;
-    cursor: pointer; transition: color 0.3s ease;
-  }
-  .services-panel ul li:hover { color: #ff4d00; }
-  .services-tabs {  justify-content: space-between; align-items: center; margin-top: 20px; }
-  .services-tabs .srv-tab { cursor: pointer; font-size: 13.5px; }
-  .services-tabs .srv-tab.active { color: #ff4d00; font-weight: 700; }
-  .services-tabs .arrows { margin-left: auto; }
-  .services-tabs .arrows i { margin-left: 10px; cursor: pointer; }
+/* ----------------- Right Panel ----------------- */
+/* Right panel full height */
+.services-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;   /* same as left grid */
+  padding: 25px;
+  background-color: #000;
+  margin-left: 0px;
+}
 
-  /* --- BOTTOM GRID --- */
-  .services-bottom {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-    margin-top: 12px;
-  }
-  .services-bottom .image {
-    background-size: cover;
-    background-position: center;
-    height: 250px;
-    transition: background-image 0.5s ease-in-out;
-   
-  }
-  .services-bottom .text {
-    padding: 30px; background: #fff;
-    display: flex; flex-direction: column; justify-content: center;
-  }
-  .services-bottom h3 { font-size: 26px; font-weight: 700; }
-  .services-bottom span { color: #ff4d00; }
-  .services-bottom p { font-size: 15px; margin-top: 10px; color: #555; }
 
-  /* Responsive */
-  @media(max-width: 992px) {
-    .services-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 150px 150px; }
-    .services-bottom { grid-template-columns: 1fr; }
-  }
+/* Reduce bottom section gap */
+.services-bottom {
+  margin-top: 12px;  /* reduced from 20px */
+  gap: 8px;          /* reduced spacing */
+}
+
+/* Grid pieces - auto height with parent */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, 1fr); /* equal halves */
+  gap: 5px;
+  height: 100%;   /* fill parent height same as right panel */
+}
+
+.services-piece {
+  background-size: 200% 200%;
+  background-repeat: no-repeat;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+
+#srvGrid1 { background-position: left top; }
+#srvGrid2 { background-position: right top; }
+#srvGrid3 { background-position: left bottom; }
+#srvGrid4 { background-position: right bottom; }
+
+
+
+.services-panel > div:first-child {
+  /* background: rgba(0,0,0,0.6);   */
+  padding: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.services-tabs {
+  /* background: rgba(255,255,255,0.06);   */
+  padding: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+
+.services-panel h4 { font-weight: 700; margin-bottom: 15px; }
+.services-panel ul { list-style: none; padding: 0; margin: 0; }
+.services-panel ul li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.6s ease forwards;
+  transition: color 0.3s ease;
+}
+.services-panel ul li:hover { color: #ff4d00; }
+
+/* Tabs */
+.services-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+  background: rgba(255,255,255,0.05);
+  /* transform: translateY(-2px); */
+}
+.services-tabs .srv-tab {
+  padding: 8px 14px;
+  /* border-radius: 10px; */
+  background: rgba(255,255,255,0.05);
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+/* .services-tabs .srv-tab:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+} */
+.services-tabs .srv-tab.active {
+  background: rgba(255,255,255,0.2);
+  color: #ff4d00;
+  font-weight: 700;
+  box-shadow: 0 0 15px rgba(255,77,0,0.5);
+}
+.services-tabs .arrows {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.services-tabs .arrows i {
+  font-size: 14px;
+  padding: 6px;
+  /* border-radius: 50%; */
+  background: transparent;
+  transition: all 0.3s ease;
+  margin-left: 6px;
+  color: #fff;
+}
+.services-tabs .arrows i:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.2);
+}
+
+/* ----------------- Tabs (bottom of panel) ----------------- */
+.services-tabs .srv-tab {
+  font-size: 13px;              /* smaller than main text */
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: #ddd;
+  padding: 6px 14px;
+  border-radius: 20px;          /* pill style */
+  background: rgba(255,255,255,0.06);
+  transition: all 0.35s ease;
+}
+
+.services-tabs .srv-tab.active {
+  background: rgba(255,77,0,0.15);
+  color: #ff4d00;
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(255,77,0,0.45);
+}
+
+/* ----------------- Panel Heading ----------------- */
+.services-panel h4 {
+  font-size: 22px;              /* bigger than tabs */
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #fff;                  /* bright white to stand out */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ----------------- List Items ----------------- */
+.services-panel ul li {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ddd;                  /* softer than heading */
+  margin-bottom: 8px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.6s ease forwards;
+  transition: color 0.3s ease;
+}
+.services-panel ul li:hover {
+  color: #ff4d00;
+}
+
+
+/* ----------------- Bottom Section ----------------- */
+.services-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+.services-bottom .image {
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  animation: zoomIn 1.2s ease forwards;
+}
+.services-bottom .text {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.services-bottom h3 {
+  font-size: 26px;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideUp 0.8s ease forwards 0.2s;
+}
+.services-bottom p {
+  font-size: 15px;
+  margin-top: 10px;
+  color: #555;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideUp 0.8s ease forwards 0.4s;
+}
+.services-bottom span { color: #ff4d00; }
+
+/* ----------------- Animations ----------------- */
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes zoomIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* ----------------- Responsive ----------------- */
+@media(max-width: 992px) {
+  .services-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 150px 150px; }
+  .services-bottom { grid-template-columns: 1fr; }
+}
 </style>
 
 <script>
-  const srvCategories = {
-    design: {
-      title: "Design",
-      items: ["Requirement analysis & site survey","Concept design & feasibility study","Electrical & mechanical schematics","CAD drawings & 3D visualization","Standards & compliance check (IEC, IS, BIS)"],
-      topImage: "img/solutions/face3",
-      bottom: {
-        heading: "Concept <span>& Innovation</span>",
-        para: "From concept to blueprint, shaping ideas into realityTransforming ideas into practical solutions with precision and creativity",
-        img1: "img/solutions/concept.png",
-        img2: "img/solutions/design3.png"
-      }
-    },
-    manufacturing: {
-      title: "Manufacturing",
-      items: ["Component sourcing & material selection","Assembly & fabrication", "Integration of electronics & hardware","Quality inspection during production","Pre-shipment testing"],
-      topImage: "img/solutions/6.png",
-      bottom: {
-        heading: "Build <span>& Create </span>",
-        para: "High-quality manufacturing with advanced technology and strict quality control.",
-        img1: "img/sample/8.png",
-        img2: "img/sample/9.png"
-      }
-    },
-    installation: {
-      title: "Installation",
-      items: ["Site preparation & civil works (if needed)", "Electrical cabling & wiring","Mounting & fixing of equipment / lights / panels","System integration (automation, power, lighting, IoT)","Safety checks during installation"],
-      topImage: "img/solutions/14.png",
-      bottom: {
-        heading: "Implement  <span>& Integrate</span>",
-        para: "Seamless installation services ensuring safety, efficiency, and reliability.",
-        img1: "img/solutions/16.png",
-        img2: "img/solutions/17.png"
-      }
-    },
-    testing: {
-      title: "Testing",
-      items: ["Functional testing (does it work as designed?)","Load & stress testing","Safety & protection testing (short circuit, overload)","Performance optimization","Client demonstration"],
-      topImage: "img/solutions/19.png",
-      bottom: {
-        heading: "Verify <span>& Assure</span>",
-        para: "Comprehensive testing for performance, safety, and long-term dependability.",
-        img1: "img/solutions/20.png",
-        img2: "img/solutions/18.png"
-      }
-    },
-    commisioning: {
-      title: "Commisioning",
-      items: ["Final calibration & adjustments","System documentation & reports","Training end-users / client staff","Handover of system with manuals","After-sales support & AMC (maintenance plan)"],
-      topImage: "img/solutions/23.png",
-      bottom: {
-        heading: "Launch  <span>& Deliver</span>",
-        para: "Final validation and handover with full client support and documentation.",
-        img1: "img/solutions/22.png",
-        img2: "img/solutions/21.png"
-      }
+const srvCategories = {
+  design: {
+    title: "Design",
+    items: [
+      "Requirement analysis & site survey",
+      "Concept design & feasibility study",
+      "Electrical & mechanical schematics",
+      "CAD drawings & 3D visualization",
+      "Standards & compliance check (IEC, IS, BIS)"
+    ],
+    topImage: "img/solutions/face3",
+    bottom: {
+      heading: "Concept <span>& Innovation</span>",
+      para: "From concept to blueprint, shaping ideas into reality. Transforming ideas into practical solutions with precision and creativity",
+      img1: "img/solutions/concept.png",
+      img2: "img/solutions/design3.png"
     }
-  };
-
-  let srvIndex = 0;
-  const srvTabs = document.querySelectorAll(".services-tabs .srv-tab");
-  const srvCategoryTitle = document.getElementById("srvCategoryTitle");
-  const srvCategoryList = document.getElementById("srvCategoryList");
-  const srvBottomHeading = document.getElementById("srvBottomHeading");
-  const srvBottomPara = document.getElementById("srvBottomPara");
-  const srvBottomImg1 = document.getElementById("srvBottomImg1");
-  const srvBottomImg2 = document.getElementById("srvBottomImg2");
-  const srvKeys = Object.keys(srvCategories);
-
-  const srvGrid1 = document.getElementById("srvGrid1");
-  const srvGrid2 = document.getElementById("srvGrid2");
-  const srvGrid3 = document.getElementById("srvGrid3");
-  const srvGrid4 = document.getElementById("srvGrid4");
-
-  function loadSrvCategory(cat) {
-    const data = srvCategories[cat];
-
-    // update right panel
-    srvCategoryTitle.textContent = data.title;
-    srvCategoryList.innerHTML = data.items.map(i => `<li>${i}</li>`).join("");
-    srvTabs.forEach(t => t.classList.remove("active"));
-    document.querySelector(`.srv-tab[data-cat="${cat}"]`).classList.add("active");
-    srvIndex = srvKeys.indexOf(cat);
-
-    // update top 4 grid slices
-    srvGrid1.style.backgroundImage = `url(${data.topImage})`;
-    srvGrid2.style.backgroundImage = `url(${data.topImage})`;
-    srvGrid3.style.backgroundImage = `url(${data.topImage})`;
-    srvGrid4.style.backgroundImage = `url(${data.topImage})`;
-
-    // update bottom section
-    srvBottomHeading.innerHTML = data.bottom.heading;
-    srvBottomPara.textContent = data.bottom.para;
-    srvBottomImg1.style.backgroundImage = `url('${data.bottom.img1}')`;
-    srvBottomImg2.style.backgroundImage = `url('${data.bottom.img2}')`;
+  },
+  manufacturing: {
+    title: "Manufacturing",
+    items: [
+      "Component sourcing & material selection",
+      "Assembly & fabrication",
+      "Integration of electronics & hardware",
+      "Quality inspection during production",
+      "Pre-shipment testing"
+    ],
+    topImage: "img/solutions/6.png",
+    bottom: {
+      heading: "Build <span>& Create </span>",
+      para: "High-quality manufacturing with advanced technology and strict quality control.",
+      img1: "img/sample/8.png",
+      img2: "img/sample/9.png"
+    }
+  },
+  installation: {
+    title: "Installation",
+    items: [
+      "Site preparation & civil works (if needed)",
+      "Electrical cabling & wiring",
+      "Mounting & fixing of equipment / lights / panels",
+      "System integration (automation, power, lighting, IoT)",
+      "Safety checks during installation"
+    ],
+    topImage: "img/solutions/14.png",
+    bottom: {
+      heading: "Implement <span>& Integrate</span>",
+      para: "Seamless installation services ensuring safety, efficiency, and reliability.",
+      img1: "img/solutions/16.png",
+      img2: "img/solutions/17.png"
+    }
+  },
+  testing: {
+    title: "Testing",
+    items: [
+      "Functional testing (does it work as designed?)",
+      "Load & stress testing",
+      "Safety & protection testing (short circuit, overload)",
+      "Performance optimization",
+      "Client demonstration"
+    ],
+    topImage: "img/solutions/19.png",
+    bottom: {
+      heading: "Verify <span>& Assure</span>",
+      para: "Comprehensive testing for performance, safety, and long-term dependability.",
+      img1: "img/solutions/20.png",
+      img2: "img/solutions/18.png"
+    }
+  },
+  commisioning: {
+    title: "Commisioning",
+    items: [
+      "Final calibration & adjustments",
+      "System documentation & reports",
+      "Training end-users / client staff",
+      "Handover of system with manuals",
+      "After-sales support & AMC (maintenance plan)"
+    ],
+    topImage: "img/solutions/23.png",
+    bottom: {
+      heading: "Launch  <span>& Deliver</span>",
+      para: "Final validation and handover with full client support and documentation.",
+      img1: "img/solutions/22.png",
+      img2: "img/solutions/21.png"
+    }
   }
+};
 
-  srvTabs.forEach(tab => {
-    tab.addEventListener("click", () => loadSrvCategory(tab.dataset.cat));
-  });
+let srvIndex = 0;
+const srvTabs = document.querySelectorAll(".services-tabs .srv-tab");
+const srvCategoryTitle = document.getElementById("srvCategoryTitle");
+const srvCategoryList = document.getElementById("srvCategoryList");
+const srvBottomHeading = document.getElementById("srvBottomHeading");
+const srvBottomPara = document.getElementById("srvBottomPara");
+const srvBottomImg1 = document.getElementById("srvBottomImg1");
+const srvBottomImg2 = document.getElementById("srvBottomImg2");
+const srvKeys = Object.keys(srvCategories);
 
-  document.getElementById("srvPrev").addEventListener("click", () => {
-    srvIndex = (srvIndex - 1 + srvKeys.length) % srvKeys.length;
-    loadSrvCategory(srvKeys[srvIndex]);
-  });
+const srvGrid1 = document.getElementById("srvGrid1");
+const srvGrid2 = document.getElementById("srvGrid2");
+const srvGrid3 = document.getElementById("srvGrid3");
+const srvGrid4 = document.getElementById("srvGrid4");
 
-  document.getElementById("srvNext").addEventListener("click", () => {
-    srvIndex = (srvIndex + 1) % srvKeys.length;
-    loadSrvCategory(srvKeys[srvIndex]);
-  });
+function loadSrvCategory(cat) {
+  const data = srvCategories[cat];
 
-  // default load
-  loadSrvCategory("installation");
+  // update right panel
+  srvCategoryTitle.textContent = data.title;
+  srvCategoryList.innerHTML = data.items
+    .map((i, idx) => `<li style="animation-delay:${idx * 0.15}s">${i}</li>`)
+    .join("");
+
+  srvTabs.forEach(t => t.classList.remove("active"));
+  document.querySelector(`.srv-tab[data-cat="${cat}"]`).classList.add("active");
+  srvIndex = srvKeys.indexOf(cat);
+
+  // update top 4 grid slices
+  srvGrid1.style.backgroundImage = `url(${data.topImage})`;
+  srvGrid2.style.backgroundImage = `url(${data.topImage})`;
+  srvGrid3.style.backgroundImage = `url(${data.topImage})`;
+  srvGrid4.style.backgroundImage = `url(${data.topImage})`;
+
+  // update bottom section
+  srvBottomHeading.innerHTML = data.bottom.heading;
+  srvBottomPara.textContent = data.bottom.para;
+  srvBottomImg1.style.backgroundImage = `url('${data.bottom.img1}')`;
+  srvBottomImg2.style.backgroundImage = `url('${data.bottom.img2}')`;
+}
+
+srvTabs.forEach(tab => {
+  tab.addEventListener("click", () => loadSrvCategory(tab.dataset.cat));
+});
+
+document.getElementById("srvPrev").addEventListener("click", () => {
+  srvIndex = (srvIndex - 1 + srvKeys.length) % srvKeys.length;
+  loadSrvCategory(srvKeys[srvIndex]);
+});
+
+document.getElementById("srvNext").addEventListener("click", () => {
+  srvIndex = (srvIndex + 1) % srvKeys.length;
+  loadSrvCategory(srvKeys[srvIndex]);
+});
+
+// default load
+loadSrvCategory("installation");
 </script>
-
 <!-- Services end -->
+
 
 <section class="banner">
   <video autoplay muted loop playsinline class="banner-video">
@@ -2523,19 +2723,6 @@ padding-top: 0px;}
 </style>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
- 
    
 
         <!-- FAQ Start -->
