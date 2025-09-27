@@ -1,0 +1,77 @@
+<!-- about start -->
+<style>
+  .hello {
+    font-family: 'Six Caps', sans-serif;
+    background: #000000;
+    color: #a4a1a1;
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .aboutforarcot-textarea h2.tagline {
+    font-size: 1.5rem;
+    color: #fdf9f9;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #000000;
+    width: 0;
+    animation: typing 14s steps(60, end) forwards, blinkCaret 1s step-end infinite;
+    margin: 20px auto;
+    font-style: 200;
+  }
+
+  .aboutforarcot-textarea p {
+    max-width: 800px;   /* ✅ Paragraph width ni limit cheyy */
+    margin: 0 auto;     /* ✅ Center lo petta */
+    font-weight: 300;   /* ✅ Light font weight */
+    font-size: 13px;
+    line-height: 1.6;
+    letter-spacing: 1px;
+  }
+
+  /* Typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blinkCaret {
+    from, to { border-color: transparent }
+    50% { border-color: #000000 }
+  }
+
+  /* ✅ Mobile fix */
+  @media (max-width: 768px) {
+    .aboutforarcot-textarea h2.tagline {
+      font-size: 1.1rem;        /* smaller font */
+      white-space: normal;      /* allow wrapping */
+      border-right: none;       /* remove blinking caret */
+      width: auto;              /* fit content */
+      animation: none;          /* remove typing effect (optional) */
+    }
+
+    .aboutforarcot-textarea p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      padding: 0 10px;
+      max-width: 90%;          /* ✅ Smaller width mobile lo */
+    }
+  }
+</style>
+
+<div class="hello">
+  <div class="aboutforarcot-textarea">
+    <h2 class="tagline" data-aos="fade-up" data-aos-duration="200">Arcot – Powering the Future with Innovation</h2>
+    <p data-aos="fade-up" data-aos-duration="1000">
+      At Arcot, we are driven by a vision to build a brighter, smarter, and sustainable future with innovative power solutions, smart automation, and next-generation products that empower industries and communities.
+    </p>
+  </div>
+</div>
+
+<!-- about end -->

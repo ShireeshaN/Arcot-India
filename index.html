@@ -336,80 +336,183 @@
 
 
 <!-- about start -->
+
 <style>
-  .hello {
-    font-family: 'Six Caps', sans-serif;
-    background: #000000;
-    color: #a4a1a1;
-    min-height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    text-align: center;
-  }
+ 
 
-  .aboutforarcot-textarea h2.tagline {
-    font-size: 1.5rem;
-    color: #fdf9f9;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid #000000;
-    width: 0;
-    animation: typing 14s steps(60, end) forwards, blinkCaret 1s step-end infinite;
-    margin: 20px auto;
-    font-style: 200;
-  }
-
-  .aboutforarcot-textarea p {
-    max-width: 800px;   /* ✅ Paragraph width ni limit cheyy */
-    margin: 0 auto;     /* ✅ Center lo petta */
-    font-weight: 300;   /* ✅ Light font weight */
-    font-size: 13px;
-    line-height: 1.6;
-    letter-spacing: 1px;
-  }
-
-  /* Typing effect */
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-
-  @keyframes blinkCaret {
-    from, to { border-color: transparent }
-    50% { border-color: #000000 }
-  }
-
-  /* ✅ Mobile fix */
-  @media (max-width: 768px) {
-    .aboutforarcot-textarea h2.tagline {
-      font-size: 1.1rem;        /* smaller font */
-      white-space: normal;      /* allow wrapping */
-      border-right: none;       /* remove blinking caret */
-      width: auto;              /* fit content */
-      animation: none;          /* remove typing effect (optional) */
+    .sec {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      background-color: #000;
     }
 
-    .aboutforarcot-textarea p {
-      font-size: 0.9rem;
-      line-height: 1.4;
-      padding: 0 10px;
-      max-width: 90%;          /* ✅ Smaller width mobile lo */
+    /* Gallery Section */
+    .about-section {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
     }
-  }
-</style>
 
-<div class="hello">
-  <div class="aboutforarcot-textarea">
-    <h2 class="tagline" data-aos="fade-up" data-aos-duration="200">Arcot – Powering the Future with Innovation</h2>
-    <p data-aos="fade-up" data-aos-duration="1000">
-      At Arcot, we are driven by a vision to build a brighter, smarter, and sustainable future with innovative power solutions, smart automation, and next-generation products that empower industries and communities.
-    </p>
+    .about {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .about img {
+      object-fit: cover;
+      /* border-radius: 12px; */
+      transition: all 0.5s ease;
+      opacity: 1;
+    }
+
+    /* Heights + Widths (desktop) */
+    .about img.outer {
+      height: 280px;
+      width: 170px;
+    }
+
+    .about img.mid {
+      height: 380px;
+      width: 200px;
+    }
+
+    .about img.center {
+      height: 500px;
+      width: 250px;
+      z-index: 5;
+    }
+
+    /* Banner Text + Overlay */
+    .about-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5%;
+      max-width: 700px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .about-text::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0));
+      z-index: -1;
+    }
+
+    .about-text h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .about-text span {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    /* ---------- MOBILE STYLES ---------- */
+    @media (max-width: 768px) {
+      .about {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .about img.outer {
+        height: 120px;
+        width: 80px;
+      }
+
+      .about img.mid {
+        height: 160px;
+        width: 100px;
+      }
+
+      .about img.center {
+        height: 200px;
+        width: 130px;
+      }
+
+      /* make outer images half visible */
+      .about {
+        transform: scale(0.9);
+      }
+
+      .about-text {
+        padding: 8%;
+        font-size: 1rem;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        
+        max-width: 100%;
+      }
+
+      .about-text h1 {
+        font-size: 1.6rem;
+      }
+
+      .about-text p {
+        font-size: 0.9rem;
+      }
+
+      .about-text span {
+        font-size: 0.8rem;
+      }
+
+      .about-text::before {
+        background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0));
+      }
+    }
+  </style>
+ <!-- About Section -->
+<section class="about-section sec">
+  <div class="about">
+    <img src="img/energy/wind2.webp" class="outer">
+    <img src="img/energy/wind2.webp" class="mid">
+    <img src="img/energy/wind2.webp" class="center">
+    <img src="img/energy/wind2.webp" class="mid">
+    <img src="img/energy/wind2.webp" class="outer">
   </div>
-</div>
+  <div class="about-text">
+    <h1>Arcot – Powering the Future with Innovation</h1>
+    <p>
+      At Arcot, we are driven by a vision to build a brighter, smarter, 
+      and sustainable future with innovative power solutions, smart automation, 
+      and next-generation products that empower industries and communities.
+    </p>
+    <span>Vijay Swarna</span>
+  </div>
+</section>
+
+
+
+
 
 <!-- about end -->
 
@@ -1017,7 +1120,7 @@ const LightItcoSubtitle=document.getElementById('LightItco-subtitle');
 
 const LightItcoTitles=[
   "Residential Lighting","Facade Lighting","Commercial Lighting","Industrial Lighting",
-  "Hospitality Lighting","Retail Lighting","Office Lighting","Outdoor Lighting"
+  "Hospitality Lighting","Stadium Lighting","Office Lighting","Outdoor Lighting"
 ];
 const LightItcoSubtitles=[
   "Premium · Elegant · Efficient","Modern · Architectural · Stylish",
@@ -1286,12 +1389,12 @@ function LightItcoShow(index) {
     <div class="row g-0 flex-row align-items-center">
 
       <!-- Video Section -->
-      <div class="col-md-9 p-0">
+      <div class="col-md-10 p-0">
         <div class="autoiot-image-wrapper" id="autoiotMediaWrapper"></div>
       </div>
 
       <!-- Icons Column (Right Side) -->
-      <div class="col-md-3 d-flex flex-column justify-content-center align-items-center autoiot-icons-section">
+      <div class="col-md-2 d-flex flex-column justify-content-center align-items-center autoiot-icons-section">
         <div class="autoiot-icon-item" onmouseenter="setActiveAutoiot(0)">
           <div class="autoiot-icon-box active" id="autoiotIcon0"><i class="bi bi-house-door fs-5"></i></div>
           <p class="autoiot-icon-sub">Home</p>
@@ -1418,7 +1521,8 @@ function LightItcoShow(index) {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #f6f6f6;
+  background: #000;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1427,8 +1531,8 @@ function LightItcoShow(index) {
 
 .autoiot-icon-box.active,
 .autoiot-icon-box:hover {
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #000;
   transform: scale(1.1);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
@@ -2706,12 +2810,55 @@ Smart City & R&D: Innovative smart city tech & research.
   });
 </script>
 
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
+ <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Animation Script -->
 <script>
-  lucide.createIcons();
+  gsap.registerPlugin(ScrollTrigger);
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".about-section",
+      start: "top top",
+      end: "+=300%",   // scroll length
+      scrub: true,
+      pin: true,
+    }
+  });
+
+  // Phase 1 → outer images move out, center expands
+  tl.to(".about img.outer", {x: -400, opacity: 0, duration: 1}, 0);
+  tl.to(".about img.mid:first-of-type", {x: -200, opacity: 0, duration: 1}, 0);
+  tl.to(".about img.mid:last-of-type", {x: 200, opacity: 0, duration: 1}, 0);
+  tl.to(".about img.outer:last-of-type", {x: 400, opacity: 0, duration: 1}, 0);
+
+  tl.to(".about img.center", {
+    width: "100vw",
+    height: "100vh",
+    borderRadius: 0,
+    duration: 1
+  }, 0);
+
+  // Text appears
+  tl.to(".about-text", {opacity: 1, y: 30, duration: 1}, 1);
+
+  // Phase 2 → hide text, restore gallery
+  tl.to(".about-text", {opacity: 0, y: 0, duration: 1}, "exit-=0.5");
+  tl.to(".about img.center", {
+    width: "250px",
+    height: "500px",
+    borderRadius: "12px",
+    duration: 1
+  }, "exit");
+  tl.to(".about img.outer", {x: 0, opacity: 1, duration: 1}, "exit");
+  tl.to(".about img.mid", {x: 0, opacity: 1, duration: 1}, "exit");
 </script>
+
+
+
+
+
 
 
 
