@@ -10,7 +10,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
@@ -18,6 +18,7 @@
       color: #111;
     }
 
+    /* Tabs */
     .tabs {
       display: flex;
       flex-wrap: wrap;
@@ -33,6 +34,7 @@
       position: relative;
       padding-bottom: 8px;
       color: #777;
+      transition: color 0.3s ease;
     }
 
     .tab.active {
@@ -47,16 +49,17 @@
       width: 100%;
       height: 2px;
       background: #c00;
+      transition: all 0.3s ease;
     }
 
+    /* Slider */
     .slider-left {
       position: relative;
       width: 100%;
       max-width: 1200px;
-      margin: 0 auto;
-      height: 350px;
+      margin: 0 auto 50px auto;
+      height: 500px; /* increased height */
       overflow: hidden;
-      border-radius: 6px;
     }
 
     .slider-left img {
@@ -64,67 +67,103 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: opacity 1s ease, transform 0.8s ease;
     }
 
+    .fade-in {
+      opacity: 0;
+      transform: scale(1.05);
+      animation: fadeInAnim 0.8s forwards;
+    }
+
+    @keyframes fadeInAnim {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Dots navigation */
     .dots-nav {
       position: absolute;
-      bottom: 15px;
-      left: 0;
-      width: 100%;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-between;
       align-items: center;
+      width: 80%;
+      max-width: 700px;
       color: #fff;
       font-size: 0.9rem;
-      padding: 4px 0;
+    }
+
+    .dots-nav::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-50%);
+      z-index: 0;
     }
 
     .dot {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 4px;
+      z-index: 1;
       cursor: pointer;
-      color: #fff;
+      gap: 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .dot:hover {
+      transform: scale(1.1);
+    }
+
+    .dot-indicator {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      background: #111;
+      transition: all 0.3s ease;
+    }
+
+    .dot.active .dot-indicator {
+      background: #c00;
+      border-color: #c00;
+      transform: scale(1.3);
+      box-shadow: 0 0 15px rgba(204, 0, 0, 0.8);
     }
 
     .dot span {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       white-space: nowrap;
+      margin-top: 6px;
     }
 
- .dot-indicator {
-    width:6px;
-    height:6px;
-    border-radius:50%;
-    background:#ccc;
-    transition:all 0.4s ease;  /* smooth transition */
-    transform:scale(1);        /* default scale */
-  }
-
-  /* active dot transforms smoothly */
-  .dot.active .dot-indicator {
-    background:#c00;
-    transform:scale(1.6);   /* enlarge smoothly */
-  }
-
-  /* add a subtle glow effect */
-  .dot.active .dot-indicator {
-    box-shadow:0 0 6px rgba(204,0,0,0.6);
-  }
-
-  /* optional hover effect */
-  .dot:hover .dot-indicator {
-    transform:scale(1.2);
-  }
-
-    @media(max-width:768px) {
+    @media (max-width: 768px) {
       .slider-left {
-        height: 250px;
+        height: 300px;
+      }
+
+      .dots-nav {
+        width: 90%;
+        max-width: 500px;
+      }
+
+      .dot-indicator {
+        width: 12px;
+        height: 12px;
       }
 
       .dot span {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
       }
     }
   </style>
@@ -134,14 +173,15 @@
 
   <!-- Tabs -->
   <div class="tabs">
-    <div class="tab active" data-tab="retail">Retail</div>
-    <div class="tab" data-tab="supermarket">Supermarket</div>
-    <div class="tab" data-tab="meeting">Meeting Room</div>
-    <div class="tab" data-tab="hospitality">Hospitality</div>
-    <div class="tab" data-tab="industrial">Industrial</div>
-    <div class="tab" data-tab="outdoor">Outdoor</div>
+    <div class="tab active" data-tab="retail">
+Residential </div>
+    <div class="tab" data-tab="supermarket">Facade </div>
+    <div class="tab" data-tab="meeting">Commercial </div>
+    <div class="tab" data-tab="hospitality">Industrial </div>
+    <div class="tab" data-tab="industrial">Hospitality </div>
+    <div class="tab" data-tab="outdoor">Stadium </div>
     <div class="tab" data-tab="office">Office</div>
-    <div class="tab" data-tab="residential">Residential</div>
+    <div class="tab" data-tab="residential">Outdoor</div>
   </div>
 
   <!-- Slider -->
@@ -153,9 +193,9 @@
   <script>
     const slidesData = {
       retail: [
-        { img: 'img/lighting/outdoorlighting.png' },
-        { img: 'img/lighting/commerciallighting.png' },
-        { img: 'img/lighting/facadelighting.webp' },
+        { img: 'img/ssd.png' },
+        { img: 'img/ssd1.png' },
+        { img: 'img/ssd1.png' },
         { img: 'img/lighting/hospitallighting.png' }
       ],
       supermarket: [
@@ -216,7 +256,7 @@
       slidesData[currentTab].forEach((s, i) => {
         const dot = document.createElement('div');
         dot.className = 'dot' + (i === currentIndex ? ' active' : '');
-        dot.innerHTML = `<span>Slide ${i + 1}</span><div class="dot-indicator"></div>`;
+        dot.innerHTML = `<div class="dot-indicator"></div><span>Slide ${i + 1}</span>`;
         dot.addEventListener('click', () => {
           showSlide(i);
           resetAutoPlay();
@@ -227,7 +267,10 @@
 
     function showSlide(idx) {
       currentIndex = idx;
+      slideImage.classList.remove('fade-in');
+      void slideImage.offsetWidth; // trigger reflow
       slideImage.src = slidesData[currentTab][idx].img;
+      slideImage.classList.add('fade-in');
       renderDots();
     }
 
