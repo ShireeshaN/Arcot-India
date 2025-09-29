@@ -2791,10 +2791,15 @@ loadSrvCategory("installation");
     text-transform: uppercase;
     text-shadow: 0 0 20px rgba(0,0,0,0.7);
     opacity: 0;
-    animation: applechild-textIn 2s ease-out forwards 1s;
     z-index: 4;
     max-width: 80%;
     line-height: 1.2;
+    transition: all 0.6s ease;
+  }
+
+  /* 👇 Animate only when class added */
+  .applechild-text.visible {
+    animation: applechild-textIn 1.2s ease-out forwards;
   }
 
   @keyframes applechild-fadeIn {
@@ -2810,31 +2815,39 @@ loadSrvCategory("installation");
   /* 🔹 Mobile View Fix */
   @media (max-width: 768px) {
     .applechild-container {
-      height: auto;         /* ✅ vh remove */
-      min-height: auto;     /* ✅ extra height remove */
-      padding: 0;           /* ✅ gap remove */
+      height: auto;
+      min-height: auto;
+      padding: 0;
     }
 
     .applechild-container img {
       width: 100%;
-      height: auto;         /* ✅ keep aspect ratio */
-      max-height: 100vh;    /* ✅ fit inside screen */
+      height: auto;
+      max-height: 100vh;
     }
 
     .applechild-text {
-      position: relative;   /* ✅ overlay remove */
+      position: relative;
       top: auto;
       left: auto;
       transform: none;
-      margin-top: 15px;     /* ✅ below image spacing */
+      margin-top: 15px;
       text-align: center;
       font-size: clamp(1.2rem, 6vw, 2rem);
       letter-spacing: 2px;
       line-height: 1.4;
       max-width: 90%;
-      opacity: 1;
-      animation: none;      /* ✅ no animation in mobile */
-      z-index: 1;
+      opacity: 0; /* ✅ Start hidden */
+      animation: none;
+    }
+
+    .applechild-text.visible {
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .applechild-light-rays {
@@ -2846,6 +2859,29 @@ loadSrvCategory("installation");
     }
   }
 </style>
+
+<script>
+  // 👇 Animate when visible
+  document.addEventListener("DOMContentLoaded", () => {
+    const text = document.querySelector(".applechild-text");
+    if (text) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              text.classList.add("visible");
+            } else {
+              text.classList.remove("visible"); // remove if you want re-trigger
+            }
+          });
+        },
+        { threshold: 0.5 } // 50% visible
+      );
+      observer.observe(text);
+    }
+  });
+</script>
+
 <!-- apple light end -->
    
 
