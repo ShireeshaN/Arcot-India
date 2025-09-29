@@ -3009,49 +3009,47 @@ Smart City & R&D: Innovative smart city tech & research.
 <script>
   gsap.registerPlugin(ScrollTrigger);
 
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".about-section",
-      start: "top top",
-      end: "+=300%",   // scroll length
-      scrub: true,
-      pin: true,
-    }
-  });
+let tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".about-section",
+    start: "top top",
+    end: "bottom top", // animation lasts for full section scroll
+    scrub: true,
+    pin: true,
+  }
+});
 
-  // Phase 1 → outer images move out, center expands
-  tl.to(".about img.outer", {x: -400, opacity: 0, duration: 1}, 0);
-  tl.to(".about img.mid:first-of-type", {x: -200, opacity: 0, duration: 1}, 0);
-  tl.to(".about img.mid:last-of-type", {x: 200, opacity: 0, duration: 1}, 0);
-  tl.to(".about img.outer:last-of-type", {x: 400, opacity: 0, duration: 1}, 0);
+// Phase 1: outer/mid images slide out, center expands
+tl.to(".about img.outer", {x: -400, opacity: 0}, 0);
+tl.to(".about img.mid:first-of-type", {x: -200, opacity: 0}, 0);
+tl.to(".about img.mid:last-of-type", {x: 200, opacity: 0}, 0);
+tl.to(".about img.outer:last-of-type", {x: 400, opacity: 0}, 0);
 
-  tl.to(".about img.center", {
-    width: "100vw",
-    height: "100vh",
-    borderRadius: 0,
-    duration: 1
-  }, 0);
+tl.to(".about img.center", {
+  width: "100vw",
+  height: "100vh",
+  borderRadius: 0,
+}, 0);
 
-  // Text appears
-  tl.to(".about-text", {opacity: 1, y: 30, duration: 1}, 1);
+// Text fade in after center expands
+tl.to(".about-text", {opacity: 1, y: 30}, ">");
 
-  // Phase 2 → hide text, restore gallery
-  tl.to(".about-text", {opacity: 0, y: 0, duration: 1}, "exit-=0.5");
-  tl.to(".about img.center", {
-    width: "250px",
-    height: "500px",
-    borderRadius: "12px",
-    duration: 1
-  }, "exit");
-  tl.to(".about img.outer", {x: 0, opacity: 1, duration: 1}, "exit");
-  tl.to(".about img.mid", {x: 0, opacity: 1, duration: 1}, "exit");
+
+ScrollTrigger.create({
+  trigger: ".about-section",
+  start: "bottom bottom", // when bottom of section hits bottom of screen
+  onEnterBack: () => {
+    gsap.to(".about img.center", {
+      width: "250px",
+      height: "500px",
+      borderRadius: "12px",
+    });
+    gsap.to(".about img.outer, .about img.mid", {x: 0, opacity: 1});
+    gsap.to(".about-text", {opacity: 0, y: 0});
+  }
+});
+
 </script>
-
-
-
-
-
-
 
 
       </body>
