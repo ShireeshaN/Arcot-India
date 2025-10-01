@@ -486,7 +486,7 @@
    /* Segments Navbar */
 .segments-navbar {
   position: sticky;
-  top: 100px;   /* equal to header height */
+  /* top: 100px; */
   z-index: 999;
 }
     
@@ -1238,6 +1238,18 @@
     const mainLinks = document.querySelectorAll(".main-nav a");
     const submenuContainer = document.getElementById("submenu");
 
+    const header = document.querySelector(".sticky-header"); // your main header
+const segmentsNavbar = document.querySelector(".segments-navbar");
+
+function updateStickyOffset() {
+  const headerHeight = header.offsetHeight;
+  segmentsNavbar.style.top = headerHeight + "px";
+}
+
+window.addEventListener("resize", updateStickyOffset);
+window.addEventListener("load", updateStickyOffset);
+
+
     let activeKey = "home"; // default active
     let hoverKey = null;    // temporary hover key
 
@@ -1303,7 +1315,6 @@
       document.getElementById("mainNav").classList.toggle("show");
     }
   </script>
-
     </body>
 
 </html>
