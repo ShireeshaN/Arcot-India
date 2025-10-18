@@ -495,8 +495,447 @@
 
 <!-- banners end -->
      
+<!-- lightsec start -->
+<!-- Tabs -->
+<div class="lightssec-tabs">
+  <div class="lightssec-tab active" data-tab="retail">Residential</div>
+  <div class="lightssec-tab" data-tab="supermarket">Facade</div>
+  <div class="lightssec-tab" data-tab="meeting">Commercial</div>
+  <div class="lightssec-tab" data-tab="hospitality">Industrial</div>
+  <div class="lightssec-tab" data-tab="industrial">Hospitality</div>
+  <div class="lightssec-tab" data-tab="outdoor">Stadium</div>
+  <div class="lightssec-tab" data-tab="office">Office</div>
+  <div class="lightssec-tab" data-tab="residential">Outdoor</div>
+</div>
+
+<!-- Slider -->
+<div class="lightssec-slider">
+  <img id="lightssec-slideImage" src="img/lighting/commerciallighting.png" alt="slide" />
+  <div class="lightssec-dots" id="lightssec-dotsNav"></div>
+</div>
+
+<style>
+  /* Tabs */
+  .lightssec-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 40px 0;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 2.5px;
+  }
+  .lightssec-tab {
+    position: relative;
+    padding-bottom: 8px;
+    color: #777;
+    transition: color 0.3s ease;
+  }
+  .lightssec-tab.active {
+    color: rgb(46, 44, 44);
+  }
+  .lightssec-tab.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: rgb(164, 160, 160);
+    transition: all 0.3s ease;
+  }
+
+  /* Slider */
+  .lightssec-slider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+    height: 500px;
+    overflow: hidden;
+  }
+  .lightssec-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 1s ease, transform 0.8s ease;
+  }
+  .lightssec-fade-in {
+    opacity: 0;
+    transform: scale(1.05);
+    animation: lightssecFadeInAnim 0.8s forwards;
+  }
+  @keyframes lightssecFadeInAnim {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Dots navigation */
+  .lightssec-dots {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 700px;
+    color: #fff;
+    font-size: 0.9rem;
+  }
+  .lightssec-dots::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+  .lightssec-dot {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    cursor: pointer;
+    gap: 6px;
+    transition: transform 0.3s ease;
+  }
+  .lightssec-dot:hover {
+    transform: scale(1.1);
+  }
+  .lightssec-dot-indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: #111;
+    transition: all 0.3s ease;
+  }
+  .lightssec-dot.active .lightssec-dot-indicator {
+    background: rgb(0, 0, 0);
+    border-color: rgb(255, 255, 255);
+    transform: scale(1.3);
+    box-shadow: 0 0 15px rgba(243, 226, 226, 0.8);
+  }
+  .lightssec-dot span {
+    font-size: 0.75rem;
+    white-space: nowrap;
+    margin-top: 6px;
+  }
+
+  @media (max-width: 768px) {
+    .lightssec-slider {
+      height: 300px;
+    }
+    .lightssec-dots {
+      width: 90%;
+      max-width: 500px;
+    }
+    .lightssec-dot-indicator {
+      width: 12px;
+      height: 12px;
+    }
+    .lightssec-dot span {
+      font-size: 0.65rem;
+    }
+  }
+</style>
+
+<script>
+  const lightssecSlidesData = {
+    retail: [
+      { img: 'img/ssd.png' },
+      { img: 'img/ssd1.png' },
+      { img: 'img/ssd1.png' },
+      { img: 'img/lighting/hospitallighting.png' }
+    ],
+    supermarket: [
+      { img: 'img/lighting/super1.jpg' },
+      { img: 'img/lighting/super2.jpg' },
+      { img: 'img/lighting/super3.jpg' },
+      { img: 'img/lighting/super4.jpg' }
+    ],
+    meeting: [
+      { img: 'img/lighting/meet1.jpg' },
+      { img: 'img/lighting/meet2.jpg' },
+      { img: 'img/lighting/meet3.jpg' },
+      { img: 'img/lighting/meet4.jpg' }
+    ],
+    hospitality: [
+      { img: 'img/lighting/hotel1.jpg' },
+      { img: 'img/lighting/hotel2.jpg' },
+      { img: 'img/lighting/hotel3.jpg' },
+      { img: 'img/lighting/hotel4.jpg' }
+    ],
+    industrial: [
+      { img: 'img/lighting/ind1.jpg' },
+      { img: 'img/lighting/ind2.jpg' },
+      { img: 'img/lighting/ind3.jpg' },
+      { img: 'img/lighting/ind4.jpg' }
+    ],
+    outdoor: [
+      { img: 'img/lighting/outdoor1.jpg' },
+      { img: 'img/lighting/outdoor2.jpg' },
+      { img: 'img/lighting/outdoor3.jpg' },
+      { img: 'img/lighting/outdoor4.jpg' }
+    ],
+    office: [
+      { img: 'img/lighting/office1.jpg' },
+      { img: 'img/lighting/office2.jpg' },
+      { img: 'img/lighting/office3.jpg' },
+      { img: 'img/lighting/office4.jpg' }
+    ],
+    residential: [
+      { img: 'img/lighting/res1.jpg' },
+      { img: 'img/lighting/res2.jpg' },
+      { img: 'img/lighting/res3.jpg' },
+      { img: 'img/lighting/res4.jpg' }
+    ]
+  };
+
+  const lightssecTabs = document.querySelectorAll('.lightssec-tab');
+  const lightssecSlideImage = document.getElementById('lightssec-slideImage');
+  const lightssecDotsNav = document.getElementById('lightssec-dotsNav');
+
+  let lightssecCurrentTab = 'retail';
+  let lightssecCurrentIndex = 0;
+  let lightssecAutoPlayTimer = null;
+  const lightssecDelay = 4000;
+
+  function lightssecRenderDots() {
+    lightssecDotsNav.innerHTML = '';
+    lightssecSlidesData[lightssecCurrentTab].forEach((s, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'lightssec-dot' + (i === lightssecCurrentIndex ? ' active' : '');
+      dot.innerHTML = `<div class="lightssec-dot-indicator"></div><span>Slide ${i + 1}</span>`;
+      dot.addEventListener('click', () => {
+        lightssecShowSlide(i);
+        lightssecResetAutoPlay();
+      });
+      lightssecDotsNav.appendChild(dot);
+    });
+  }
+
+  function lightssecShowSlide(idx) {
+    lightssecCurrentIndex = idx;
+    lightssecSlideImage.classList.remove('lightssec-fade-in');
+    void lightssecSlideImage.offsetWidth;
+    lightssecSlideImage.src = lightssecSlidesData[lightssecCurrentTab][idx].img;
+    lightssecSlideImage.classList.add('lightssec-fade-in');
+    lightssecRenderDots();
+  }
+
+  function lightssecNextSlide() {
+    lightssecCurrentIndex = (lightssecCurrentIndex + 1) % lightssecSlidesData[lightssecCurrentTab].length;
+    lightssecShowSlide(lightssecCurrentIndex);
+  }
+
+  function lightssecStartAutoPlay() {
+    lightssecStopAutoPlay();
+    lightssecAutoPlayTimer = setInterval(lightssecNextSlide, lightssecDelay);
+  }
+  function lightssecStopAutoPlay() {
+    if (lightssecAutoPlayTimer) clearInterval(lightssecAutoPlayTimer);
+  }
+  function lightssecResetAutoPlay() {
+    lightssecStartAutoPlay();
+  }
+
+  lightssecTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      lightssecTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      lightssecCurrentTab = tab.dataset.tab;
+      lightssecCurrentIndex = 0;
+      lightssecShowSlide(0);
+      lightssecResetAutoPlay();
+    });
+  });
+
+  // Init
+  lightssecShowSlide(0);
+  lightssecStartAutoPlay();
+</script>
+<!-- lightsec end -->
 
 
+
+<!-- animinew  start-->
+<!-- LIGHT SOLUTIONS SLIDER START -->
+<div class="lightsanimi-section">
+  <!-- Background images -->
+  <div class="lightsanimi-bg active" style="background-image: url('img/17.png');"></div>
+  <div class="lightsanimi-bg" style="background-image: url('img/10.png');"></div>
+  <div class="lightsanimi-bg" style="background-image: url('img/11.png');"></div>
+  <div class="lightsanimi-bg" style="background-image: url('img/12.png');"></div>
+  <div class="lightsanimi-bg" style="background-image: url('img/20.png');"></div>
+  <div class="lightsanimi-bg" style="background-image: url('img/19.png');"></div>
+
+  <!-- Gradient overlay -->
+  <div class="lightsanimi-overlay"></div>
+
+  <!-- Menu -->
+  <div class="lightsanimi-menu">
+    <ul>
+      <li class="active" data-index="0">Indoor</li>
+      <li data-index="1">Outdoor</li>
+      <li data-index="2">Immersion</li>
+      <li data-index="3">Linear system</li>
+      <li data-index="4">Architectural</li>
+      <li data-index="5">Decorative</li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  /* NAMESPACE: lightsanimi */
+  .lightsanimi-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .lightsanimi-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .lightsanimi-bg.active {
+    opacity: 1;
+  }
+
+  .lightsanimi-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0));
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .lightsanimi-menu {
+    position: relative;
+    z-index: 2;
+    padding-left: 80px;
+    text-align: left;
+  }
+
+  .lightsanimi-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .lightsanimi-menu ul li {
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 15px 0;
+    color: rgba(255,255,255,0.35);
+    cursor: pointer;
+    transition: color 0.8s ease, transform 0.8s ease, opacity 0.8s ease;
+  }
+
+  .lightsanimi-menu ul li.active,
+  .lightsanimi-menu ul li:hover {
+    color: #fff;
+    transform: translateX(15px);
+    opacity: 1;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .lightsanimi-menu {
+      padding-left: 40px;
+    }
+    .lightsanimi-menu ul li { font-size: 2.5rem; margin: 12px 0; }
+    .lightsanimi-overlay { width: 50%; }
+  }
+  @media (max-width: 768px) {
+    .lightsanimi-menu {
+      padding-left: 20px;
+    }
+    .lightsanimi-menu ul li { font-size: 2rem; margin: 10px 0; }
+    .lightsanimi-overlay { width: 60%; }
+  }
+  @media (max-width: 480px) {
+    .lightsanimi-menu {
+      padding-left: 15px;
+    }
+    .lightsanimi-menu ul li { font-size: 1.5rem; margin: 8px 0; }
+    .lightsanimi-overlay { width: 70%; }
+  }
+</style>
+
+<script>
+  (function(){
+    const menuItems = document.querySelectorAll(".lightsanimi-menu ul li");
+    const bgItems = document.querySelectorAll(".lightsanimi-bg");
+
+    let currentIndex = 0;
+    let autoPlay;
+
+    function showSlide(index){
+      menuItems.forEach(li => li.classList.remove("active"));
+      bgItems.forEach(bg => bg.classList.remove("active"));
+      menuItems[index].classList.add("active");
+      bgItems[index].classList.add("active");
+      currentIndex = index;
+    }
+
+    menuItems.forEach(item => {
+      item.addEventListener("mouseenter", () => {
+        let index = parseInt(item.getAttribute("data-index"));
+        showSlide(index);
+        resetAutoPlay();
+      });
+    });
+
+    function nextSlide(){
+      let nextIndex = (currentIndex + 1) % bgItems.length;
+      showSlide(nextIndex);
+    }
+
+    function startAutoPlay(){
+      autoPlay = setInterval(nextSlide, 4000);
+    }
+
+    function resetAutoPlay(){
+      clearInterval(autoPlay);
+      startAutoPlay();
+    }
+
+    // Init
+    showSlide(0);
+    startAutoPlay();
+  })();
+</script>
+<!-- LIGHT SOLUTIONS SLIDER END -->
+
+<!-- animinew end -->
 
 
     
