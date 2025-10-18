@@ -1,211 +1,187 @@
-<!-- ENERGY GENERATION START -->
-<div class="energygenss-wrapper">
-  <div class="energygenss">
-
-    <!-- Wind -->
-    <div class="energygenss-item">
-      <video src="media/wind.mp4" muted playsinline></video>
-      <span class="item-name">Wind</span>
-    </div>
-    <div class="energygenss-item" style="background-image: url('img/energy/wind2.webp');">
-      <span class="item-name">Wind</span>
-    </div>
-
-    <!-- Solar -->
-    <div class="energygenss-item">
-      <video src="media/solar.mp4" muted playsinline></video>
-      <span class="item-name">Solar</span>
-    </div>
-    <div class="energygenss-item" style="background-image: url('img/energy/solar2.png');">
-      <span class="item-name">Solar</span>
-    </div>
-
-    <!-- Biomass -->
-    <div class="energygenss-item">
-      <video src="media/biomass.mp4" muted playsinline></video>
-      <span class="item-name">Biomass</span>
-    </div>
-    <div class="energygenss-item" style="background-image: url('img/energy/biomass2.png');">
-      <span class="item-name">Biomass</span>
-    </div>
-
-    <!-- Hydel -->
-    <div class="energygenss-item">
-      <video src="media/hydelplant.mp4" muted playsinline></video>
-      <span class="item-name">Hydel</span>
-    </div>
-    <div class="energygenss-item" style="background-image: url('img/energy/hydel2.png');">
-      <span class="item-name">Hydel</span>
-    </div>
-
-  </div>
-</div>
-
-<script>
-const items = document.querySelectorAll('.energygenss-item');
-let currentIndex = 0;
-let autoSlide;
-
-function activateItem(index){
-  items.forEach((item,i)=>{
-    const video = item.querySelector('video');
-    const name = item.querySelector('.item-name');
-
-    item.classList.remove('active');
-
-    if(i===index){
-      item.classList.add('active');
-      // hide name for active
-      if(name) name.style.opacity = "0";
-
-      if(video){
-        video.currentTime = 0;
-        video.play();
-        video.onended = ()=>{ goNext(); };
-      }
-    } else {
-      // show name for inactive
-      if(name) name.style.opacity = "0.9";
-      if(video) video.pause();
-    }
-  });
-}
-
-function goNext(){
-  clearTimeout(autoSlide);
-  currentIndex = (currentIndex + 1) % items.length;
-  activateItem(currentIndex);
-
-  const activeItem = items[currentIndex];
-  const video = activeItem.querySelector("video");
-
-  if(video){
-    video.onended = ()=>{ goNext(); };
-    video.play();
-  } else {
-    autoSlide = setTimeout(goNext, 4000);
-  }
-}
-
-// Manual click override
-items.forEach((item,index)=>{
-  item.addEventListener('click', ()=>{
-    clearTimeout(autoSlide);
-    currentIndex = index;
-    activateItem(currentIndex);
-    const activeItem = items[currentIndex];
-    if(!activeItem.querySelector('video')){
-      autoSlide = setTimeout(goNext, 4000);
-    }
-  });
-});
-
-// Start
-activateItem(currentIndex);
-goNext();
-</script>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Arcot Smart Pole</title>
 <style>
-.energygenss-wrapper {
-  width: 100%;
-  overflow: hidden;
-  background: #dddcdc;
-}
-
-.energygenss {
-  display: flex;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
+body {
   margin: 0;
-  padding: 0;
+  background: #000;
+  color: #fff;
+  font-family: "SF Pro Display", Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-.energygenss-item {
-  flex: 0.4; /* inactive items uniform width */
- top: 50%;
- left:50%;
-  background-size: cover;
-  background-position: center;
-  transition: flex 0.6s ease, filter 0.6s ease, transform 0.6s ease;
+/* Layout */
+.smartpole-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 40px 80px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.features-list {
+  flex: 1;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 3;
+}
+
+.feature {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 14px 24px;
   cursor: pointer;
-  position: ab;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.feature:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.feature.active {
+  background: #fff;
+  color: #000;
+}
+
+.feature-desc {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  font-size: 0.95rem;
+  padding: 0 10px;
+  margin-top: 4px;
+  color: #ccc;
+}
+
+.feature.active .feature-desc {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* Right side image panel */
+.product-display {
+  flex: 1.2;
   display: flex;
   justify-content: center;
   align-items: center;
-  filter: grayscale(80%) brightness(0.6);
-  overflow: hidden;
+  position: relative;
+  height: 100%;
 }
 
-.energygenss-item video {
+.product-image {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  opacity: 0.9;
-}
-
-/* Overlay shading */
-.energygenss-item::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.4);
-  transition: background 0.4s ease;
-}
-
-/* Name visible only in inactive items */
-.energygenss-item span.item-name {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-90deg);
-  font-size: 18px;
-  font-weight: 600;
-  opacity: 0.9;
-  color: #fff;
-  z-index: 2;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-/* Active item bigger */
-.energygenss-item.active {
-  flex: 4; /* active expands */
-  filter: grayscale(0%) brightness(1);
-  transform: scale(1.05);
-}
-
-.energygenss-item.active::after {
-  background: rgba(0,0,0,0.05);
-}
-
-/* Hide name on active item */
-.energygenss-item.active span.item-name {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
   opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.8s ease, transform 1.2s ease;
 }
 
-/* Mobile layout */
-@media (max-width: 768px) {
-  .energygenss {
+.product-image.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (max-width: 1024px) {
+  .smartpole-section {
     flex-direction: column;
-    height: auto;
+    padding: 40px 20px;
+    text-align: center;
   }
-  .energygenss-item {
-    flex: none;
-    width: 100%;
-    height: 70px;
+  .features-list {
+    max-width: 100%;
   }
-  .energygenss-item.active {
-    height: 280px;
-    transform: none;
-  }
-  .energygenss-item span.item-name {
-    font-size: 16px;
-    transform: translate(-50%, -50%) rotate(0deg); /* mobile lo horizontal text */
+  .product-display {
+    height: 50vh;
   }
 }
-
 </style>
-<!-- ENERGY GENERATION END -->
+</head>
+<body>
+
+<section class="smartpole-section">
+  <div class="features-list" id="features">
+    <!-- Features will auto-populate below -->
+  </div>
+
+  <div class="product-display" id="imageContainer">
+    <!-- Product images -->
+    <img src="img/smartpole/ev-charger.jpg" class="product-image active" alt="EV Charger">
+    <img src="img/smartpole/emergency-sos.jpg" class="product-image" alt="Emergency SOS">
+    <img src="img/smartpole/wired-charging.jpg" class="product-image" alt="Wired Charging">
+    <img src="img/smartpole/wireless-charging.jpg" class="product-image" alt="Wireless Charging">
+    <img src="img/smartpole/air-sensor.jpg" class="product-image" alt="Air Quality Sensor">
+    <img src="img/smartpole/aq-screen.jpg" class="product-image" alt="Air Quality Screen">
+    <img src="img/smartpole/street-lighting.jpg" class="product-image" alt="Street Lighting">
+    <img src="img/smartpole/pa.jpg" class="product-image" alt="PA Loudspeaker">
+    <img src="img/smartpole/power-gen.jpg" class="product-image" alt="Power Generation System">
+    <img src="img/smartpole/rgb-led.jpg" class="product-image" alt="RGB Pixel LED Screen">
+    <img src="img/smartpole/motion.jpg" class="product-image" alt="Motion Detector">
+    <img src="img/smartpole/wifi.jpg" class="product-image" alt="Wi-Fi Hotspot">
+    <img src="img/smartpole/intercom.jpg" class="product-image" alt="Intercom">
+    <img src="img/smartpole/touch-screen.jpg" class="product-image" alt="Android Touch Screen">
+    <img src="img/smartpole/voice.jpg" class="product-image" alt="AI-Based Voice Communication">
+    <img src="img/smartpole/camera.jpg" class="product-image" alt="AI-Based Camera">
+  </div>
+</section>
+
+<script>
+// Data for features
+const features = [
+  {name:"EV Charger", desc:"Fast, efficient EV charging; solar/wind integration and QR payments."},
+  {name:"Emergency SOS Alert", desc:"Instant SOS with GPS, voice/push activation and ICCC integration."},
+  {name:"Wired Charging", desc:"Weatherproof, safe plug-and-charge with real-time power & metering."},
+  {name:"Wireless Charging", desc:"Contactless EV charging for convenient public/fleet use."},
+  {name:"Air Quality Sensor", desc:"Real-time PM/CO₂/NO₂ monitoring with IoT reporting and alerts."},
+  {name:"Air Quality Screen", desc:"Outdoor AQI display with auto-brightness and public alerts."},
+  {name:"Street Lighting", desc:"Smart dimmable LEDs with motion, schedules and solar option."},
+  {name:"PA Loudspeaker", desc:"Weatherproof public address for alerts, announcements and events."},
+  {name:"Power Generation System", desc:"Solar/wind hybrid generation with battery storage."},
+  {name:"RGB Pixel LED Screen", desc:"High-bright dynamic display for ads, alerts and info."},
+  {name:"Motion Detector", desc:"Day/night movement detection that triggers lights/cameras."},
+  {name:"Wi-Fi Hotspot", desc:"Public broadband access and IoT connectivity with secure access."},
+  {name:"Intercom", desc:"Two-way citizen ↔ control center communication (audio/video)."},
+  {name:"Android Touch Screen", desc:"Outdoor info kiosk: maps, tickets, navigation & services."},
+  {name:"AI-Based Voice Communication", desc:"Multilingual voice assistant for info and commands."},
+  {name:"AI-Based Camera", desc:"Smart video analytics (detection, ANPR, alerts) with edge/cloud support."},
+];
+
+const featuresContainer = document.getElementById('features');
+const images = document.querySelectorAll('.product-image');
+
+// Create feature elements dynamically
+features.forEach((f, i) => {
+  const div = document.createElement('div');
+  div.classList.add('feature');
+  if (i === 0) div.classList.add('active');
+  div.innerHTML = `
+    ${f.name}
+    <div class="feature-desc">${f.desc}</div>
+  `;
+  div.addEventListener('click', () => {
+    document.querySelectorAll('.feature').forEach(el => el.classList.remove('active'));
+    div.classList.add('active');
+
+    images.forEach((img, idx) => {
+      img.classList.toggle('active', idx === i);
+    });
+  });
+  featuresContainer.appendChild(div);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Arcot Industries Private Limited</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="keywords" content="About Arcot Industries, Engineering Company India, Smart City Solutions, Power Solutions, Energy Solutions, Lighting Systems, Automation Systems, R&D in Technology, Sustainable Infrastructure, Hyderabad Engineering Company">
+        <meta name="description" content="Learn about Arcot Industries — a pioneering engineering company offering sustainable and innovative solutions in Power, Energy, Lighting, Automation, Smart City Infrastructure, and R&D. Driven by innovation, powered by excellence.">
+       <link rel="icon" href="img/fevi.png" type="image/x-icon">
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome (latest) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"> -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+           <link href="css/segments.css" rel="stylesheet">
+           <!-- GSAP & ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        
+
+    
+<header>
+  <div class="header-wrap position-relative">
+    <a href="index.html"><img src="img/logos.webp" alt="Logo" class="logo" loading="lazy"></a>
+    <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
+    <nav class="navmenu" id="mainNav">
+      <ul class="mb-0">
+         <li><a href="index.html" >Home</a></li>
+             <li><a href="about.html" class="active">About</a></li>
+        <li>
+          <a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a>
+        </li>
+        <li><a href="solution.html">Solutions</a></li>
+    <li><a href="applications.html">Applications</a></li>
+   <li><a href="gallery.html" >Gallery</a></li>
+           <li><a href="contact.html">Contact</a></li>
+        <!-- <li><a href="#"><i class="bi bi-search"></i></a></li> -->
+      </ul>
+    </nav>
+  </div>
+
+  <div id="megaMenu" class="mega-menu">
+    <div class="row">
+     
+<div class="underline"></div>
+<div class="service-submenus d-flex flex-wrap">
+  <div class="service-group">
+    <h6>Energy</h6>
+    <ul>
+      <li><a href="#">Solar</a></li>
+      <li><a href="#">Wind</a></li>
+      <li><a href="#">Biomass</a></li>
+          <li><a href="#">Hydel Power</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Power</h6>
+    <ul>
+      <li><a href="transmission.html">transmission</a></li>
+      <li><a href="#">distribution</a></li>
+      <li><a href="#">Low Tention</a></li>
+        <li><a href="#">High Tention</a></li>
+         <li><a href="#">Panel Boards</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Lighting</h6>
+    <ul>
+      <li><a href="#">Residential</a></li>
+      <li><a href="#">Facade</a></li>
+      <li><a href="#">Commercial</a></li>
+       <li><a href="#">Industrial</a></li>
+      <li><a href="#">Street</a></li>
+      <li><a href="#">Park</a></li>
+      <li><a href="#">Stadium</a></li>
+      <li><a href="#">Hospital</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Automation</h6>
+    <ul>
+   
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Commercial</a></li>
+         <li><a href="#">Industrial</a></li>
+           <li><a href="#">Hospital</a></li>
+      <li><a href="#">IOT Based Automation</a></li>
+         <li><a href="#">Hotel</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Smart City</h6>
+    <ul>
+      <li><a href="smart-pole.html">Smart Pole</a></li>
+      <li><a href="#">Smart Conference Hall</a></li>
+       <li><a href="#">Smart Bollards</a></li>
+          <li><a href="#">Smart Bar Counter</a></li>
+              <li><a href="#">Smart Window Leaf AC</a></li>
+    </ul>
+  </div>
+
+   <div class="service-group">
+    <h6>R & D</h6>
+    <ul>
+      <li><a href="smart-pole.html">Smart Pole</a></li>
+    </ul>
+  </div>
+
+   
+</div>
+
+    </div>
+  </div>
+</header>
+
+
+
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h1 class="text-white display-6 mb-4 wow fadeInDown" data-wow-delay="0.1s">WHO WE ARE ?</h1>
+                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                    <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> -->
+                  
+                </ol>    
+            </div>
+        </div>
+        <!-- Header End -->
+
+<style>
+
+section {
+  min-height: 100vh;
+  padding: 40px 20px;
+  transition: background 1s ease, color 1s ease;
+}
+
+body[data-theme="dark"] {
+  background: #111;
+  color: #fff;
+}
+
+body{
+    background-color: #000;
+}
+/* body[data-theme="light"] {
+  background: #f8f9fa;
+  color: #111;
+} */
+
+.split span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.horizontal-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.panel {
+  flex: 0 0 100vw ;
+  position: relative;
+  overflow: hidden;
+}
+
+.panel img {
+  display: block;
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+  transform: scale(1.15);
+}
+
+.image-mask {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #111;
+  transform-origin: left;
+  transform: scaleX(1);
+  z-index: 2;
+}
+
+section[data-bg] {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+
+</style>
+
+
+
+        <!-- HORIZONTAL SCROLL SECTION -->
+<section class="horizontal-scroll">
+  <div class="panel image-panel">
+    <div class="image-mask"></div>
+    <img src="img/randd/smartpole.png" alt="Dummy Image">
+  </div>
+  <div class="panel image-panel">
+    <div class="image-mask"></div>
+    <img src="img/randd/smartbollad.png" alt="Dummy Image">
+  </div>
+  <div class="panel image-panel">
+    <div class="image-mask"></div>
+    <img src="img/randd/smarttable.png" alt="Dummy Image">
+  </div>
+    <div class="panel image-panel">
+    <div class="image-mask"></div>
+    <img src="img/randd/smartbarcounter.png" alt="Dummy Image">
+  </div>
+  <div class="panel image-panel">
+    <div class="image-mask"></div>
+    <img src="img/randd/windoleaf.png" alt="Dummy Image">
+  </div>
+
+</section>
+
+<div class="hero">
+  <h1>Arcot SmartPole</h1>
+  <p >Redefining urban infrastructure with intelligence, design & innovation.</p>
+
+</div>
+<!-- SMARTPOLE FEATURE SECTION -->
+<section class="smartpole-section" id="smartpole">
+  
+
+  <div class="features-container">
+    <div class="features-list" id="featuresLeft"></div>
+
+    <div class="product-display" id="imageContainer">
+      <!-- now the images are here -->
+      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image active" alt="EV Charger">
+      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Emergency SOS Alert">
+      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Wired Charging">
+      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Wireless Charging">
+      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Air Quality Sensor">
+      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Air Quality Screen">
+      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Street Lighting">
+      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="PA Loudspeaker">
+      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Power Generation System">
+      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="RGB Pixel LED Screen">
+      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Motion Detector">
+      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Wi-Fi Hotspot">
+      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Intercom">
+      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Android Touch Screen">
+      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="AI-Based Voice Communication">
+      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="AI-Based Camera">
+    </div>
+
+    <div class="features-list" id="featuresRight"></div>
+  </div>
+</section>
+
+<script>
+const features = [
+  {name:"EV Charger", desc:"Fast, efficient EV charging; solar/wind integration and QR payments."},
+  {name:"Emergency SOS Alert", desc:"Instant SOS with GPS, voice/push activation and ICCC integration."},
+  {name:"Wired Charging", desc:"Weatherproof, safe plug-and-charge with real-time power & metering."},
+  {name:"Wireless Charging", desc:"Contactless EV charging for convenient public/fleet use."},
+  {name:"Air Quality Sensor", desc:"Real-time PM/CO₂/NO₂ monitoring with IoT reporting and alerts."},
+  {name:"Air Quality Screen", desc:"Outdoor AQI display with auto-brightness and public alerts."},
+  {name:"Street Lighting", desc:"Smart dimmable LEDs with motion, schedules and solar option."},
+  {name:"PA Loudspeaker", desc:"Weatherproof public address for alerts, announcements and events."},
+  {name:"Power Generation System", desc:"Solar/wind hybrid generation with battery storage."},
+  {name:"RGB Pixel LED Screen", desc:"High-bright dynamic display for ads, alerts and info."},
+  {name:"Motion Detector", desc:"Day/night movement detection that triggers lights/cameras."},
+  {name:"Wi-Fi Hotspot", desc:"Public broadband access and IoT connectivity with secure access."},
+  {name:"Intercom", desc:"Two-way citizen ↔ control center communication (audio/video)."},
+  {name:"Android Touch Screen", desc:"Outdoor info kiosk: maps, tickets, navigation & services."},
+  {name:"AI-Based Voice Communication", desc:"Multilingual voice assistant for info and commands."},
+  {name:"AI-Based Camera", desc:"Smart video analytics (detection, ANPR, alerts) with edge/cloud support."},
+];
+
+const leftContainer = document.getElementById('featuresLeft');
+const rightContainer = document.getElementById('featuresRight');
+const images = document.querySelectorAll('.product-image');
+
+const leftFeatures = features.slice(0, 8);
+const rightFeatures = features.slice(8, 16);
+
+function createFeatureElement(f, i) {
+  const div = document.createElement('div');
+  div.classList.add('feature');
+  if (i === 0) div.classList.add('active');
+  div.innerHTML = `${f.name}<div class="feature-desc">${f.desc}</div>`;
+  div.addEventListener('click', () => setActiveFeature(i, true));
+  return div;
+}
+
+function setActiveFeature(i, manual=false) {
+  document.querySelectorAll('.feature').forEach(el => el.classList.remove('active'));
+  const allFeatures = document.querySelectorAll('.feature');
+  allFeatures[i].classList.add('active');
+  images.forEach((img, idx) => img.classList.toggle('active', idx === i));
+  animatePole();
+  if (manual) {
+    clearInterval(autoCycle);
+    autoCycle = setInterval(nextFeature, 4000);
+  }
+}
+
+leftFeatures.forEach((f, i) => leftContainer.appendChild(createFeatureElement(f, i)));
+rightFeatures.forEach((f, i) => rightContainer.appendChild(createFeatureElement(f, i + 8)));
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Hero animation
+gsap.to(".hero h1", { opacity: 1, y: 0, duration: 1.4, ease: "power3.out", delay: 0.3 });
+gsap.to(".hero p", { opacity: 1, y: 0, duration: 1.3, ease: "power3.out", delay: 0.8 });
+
+// Smartpole scroll
+gsap.to(".smartpole-section", {
+  opacity: 1, y: 0, duration: 1.2, ease: "power3.out",
+  scrollTrigger: { trigger: ".smartpole-section", start: "top 80%" }
+});
+
+// Left and right slide-in
+gsap.from(".features-list", {
+  opacity: 0,
+  x: i => (i === 0 ? -100 : 100),
+  duration: 1.3,
+  stagger: 0.2,
+  ease: "power2.out",
+  scrollTrigger: { trigger: ".features-container", start: "top 85%" }
+});
+
+function animatePole() {
+  const active = document.querySelector(".product-image.active");
+  gsap.fromTo(active, 
+    { scale: 1.05, rotateY: 10, opacity: 0.6 },
+    { scale: 1, rotateY: 0, opacity: 1, duration: 1.4, ease: "power3.out" }
+  );
+}
+
+// AUTO CYCLE
+let currentIndex = 0;
+function nextFeature() {
+  currentIndex = (currentIndex + 1) % features.length;
+  setActiveFeature(currentIndex);
+}
+let autoCycle = setInterval(nextFeature, 4000);
+</script>
+
+<style>
+
+
+/* --- HERO SECTION --- */
+.hero {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffffff, #a1a1a1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.hero p {
+  font-size: 1.3rem;
+  color: #cfcfcf;
+  margin-top: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* --- SMARTPOLE SECTION --- */
+.smartpole-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 100px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(50px);
+  position: relative;
+}
+
+.features-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1600px;
+  gap: 60px;
+}
+
+/* --- FEATURE LISTS --- */
+.features-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 3;
+}
+
+.feature {
+  background: rgba(255, 255, 255, 0.07);
+  /* border-radius: 40px; */
+  padding: 14px 22px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  backdrop-filter: blur(10px);
+  color: azure;
+}
+
+.feature:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(4px);
+}
+
+.feature.active {
+  background: #ffffff;
+  color: #000;
+  box-shadow: 0 0 25px rgba(255,255,255,0.25);
+}
+
+.feature-desc {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  color: #100f0f;
+}
+
+.feature.active .feature-desc {
+  max-height: 180px;
+  opacity: 1;
+}
+
+/* --- CENTER PRODUCT --- */
+.product-display {
+  flex: 1.4;
+  position: relative;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+}
+
+.product-image {
+  position: absolute;
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  transform: scale(1.1) rotateY(10deg);
+  transition: opacity 1.2s ease, transform 1.8s ease;
+  filter: brightness(0.9);
+}
+
+.product-image.active {
+  opacity: 1;
+  transform: scale(1) rotateY(0deg);
+  filter: brightness(1);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .features-container {
+    flex-direction: column;
+  }
+  .product-display {
+    height: 60vh;
+  }
+}
+</style>
+
+
+
+
+
+
+
+   <!-- Footer Start -->
+<div class="tricky-footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
+  <div class="container py-5">
+    <div class="row g-5">
+
+      <!-- Column 1: Quick Links -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About us</a>
+          <a href="solution.html">Solutions</a>
+          <a href="applications.html">Applications</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="smart-pole.html">R & D</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <!-- Column 2: Services -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Services</h4>
+          <a href="#">Energy</a>
+          <a href="#">Power</a>
+          <a href="#">Lighting</a>
+          <a href="#">Automation</a>
+          <a href="#">Smart City</a>
+          <a href="#">R & D</a>
+        </div>
+      </div>
+
+      <!-- Column 3: Applications -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Applications</h4>
+          <a href="#">Energy Generation</a>
+          <a href="#">Power</a>
+          <a href="#">Lighting</a>
+          <a href="#">Indoor Lighting</a>
+          <a href="#">Automation</a>
+          <a href="#">Smart City</a>
+          <a href="#">R & D</a>
+        </div>
+      </div>
+
+      <!-- Column 4: Contact Info -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Contact Info</h4>
+          <a href="#"><i class="fa fa-map-marker-alt text-secondary me-2"></i> Apurupa Towers, Road No:36, Jubilee Hills, Hyderabad, Telangana-500033</a>
+          <a href="mailto:info@arcotindia.com"><i class="fas fa-envelope text-secondary me-2"></i> info@arcotindia.com</a>
+          <a href="tel:+919848189899"><i class="fas fa-phone text-secondary me-2"></i> +91 98481 89899</a>
+        </div>
+      </div>
+
+      <!-- Social Media -->
+      <div class="col-lg-12 mt-4">
+        <div class="tricky-social-icons d-flex flex-wrap justify-content-start gap-3">
+          <a class="tricky-social-btn" href="#"><i class="fab fa-facebook-f"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-instagram"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-youtube"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-pinterest-p"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-whatsapp"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-telegram-plane"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-reddit-alien"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-threads"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+ /* Footer Wrapper */
+.tricky-footer {
+  background: #1e2226;
+  color: #ccc;
+  font-size: 15px;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 300; /* light weight */
+  letter-spacing: 1px;
+  
+}
+
+/* Footer Headings */
+.tricky-footer-item h4,
+.tricky-footer-item h5 {
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+/* Footer Links */
+.tricky-footer-item a {
+  color: #bbb;
+  margin-bottom: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  font-weight: 300;
+  font-size: 12px;
+}
+.tricky-footer-item a:hover {
+  color: #00bcd4;
+  padding-left: 5px;
+}
+
+/* Social Media Icons */
+.tricky-social-icons .tricky-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  color: #8f8c8c;
+  font-size: 13px;
+  transition: 0.3s;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 300;
+}
+.tricky-social-icons .tricky-social-btn:hover {
+  background: #434444;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Copyright Section */
+.tricky-footer-bottom {
+  border-top: 1px solid #333;
+  color: #aaa;
+  font-size: 14px;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.tricky-footer-bottom a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+}
+.tricky-footer-bottom a:hover {
+  color: #00bcd4;
+}
+</style>
+<!-- Footer End -->
+
+<!-- Copyright Start -->
+<div class="tricky-footer-bottom py-4 bg-dark">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-6 text-center text-md-start mb-md-0">
+        <span class="text-body">
+          <a href="https://arcotindia.com/" class="border-bottom text-white">
+            <i class="fas fa-copyright text-light me-2"></i>ARCOT
+          </a>, All Rights Reserved.
+        </span>
+      </div>
+      <!-- <div class="col-md-6 text-center text-md-end text-body">
+        Designed By <a class="border-bottom text-white" href="https://arcotindia.com/">ARCOT</a>
+      </div> -->
+    </div>
+  </div>
+</div>
+<!-- Copyright End -->
+
+         
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>    
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+       <script>AOS.init();</script>
+
+       <script>
+gsap.registerPlugin(ScrollTrigger);
+
+// Split-text animation
+document.querySelectorAll(".split").forEach(el => {
+  const text = el.innerText;
+  el.innerHTML = text.split("").map(char => `<span>${char}</span>`).join("");
+  gsap.fromTo(el.querySelectorAll("span"), 
+    {y:50, opacity:0}, 
+    {
+      y:0, opacity:1, 
+      stagger:0.05, duration:1, ease:"power4.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 80%",
+        toggleActions: "play none none reverse"
+      }
+    }
+  );
+});
+
+// Horizontal scroll section
+let scrollContainer = document.querySelector(".horizontal-scroll");
+let panels = gsap.utils.toArray(".panel");
+
+gsap.to(panels, {
+  xPercent: -100 * (panels.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".horizontal-scroll",
+    pin: true,
+    scrub: 1,
+    snap: 1 / (panels.length - 1),
+    end: () => "+=" + scrollContainer.offsetWidth
+  }
+});
+
+// Image reveal animation
+document.querySelectorAll(".image-panel").forEach(panel=>{
+  let img = panel.querySelector("img");
+  let mask = panel.querySelector(".image-mask");
+
+  gsap.set(img,{scale:1.2});
+  gsap.set(mask,{scaleX:1});
+
+  ScrollTrigger.create({
+    trigger:panel,
+    start:"top 80%",
+    end:"top 20%",
+    onEnter:()=>{
+      gsap.timeline()
+        .to(mask,{scaleX:0,duration:1.2,ease:"power3.inOut"})
+        .to(img,{scale:1,duration:1.2,ease:"power3.inOut"},"-=1");
+    },
+    onLeaveBack:()=>{
+      gsap.timeline()
+        .to(mask,{scaleX:1,duration:1.2,ease:"power3.inOut"})
+        .to(img,{scale:1.2,duration:1.2,ease:"power3.inOut"},"-=1");
+    }
+  });
+});
+
+// Background theme changes
+gsap.utils.toArray("section").forEach((section, index) => {
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top 50%",
+    end: "bottom 50%",
+    onEnter: () => {
+      document.body.setAttribute("data-theme", index % 2 === 0 ? "dark" : "light");
+    },
+    onEnterBack: () => {
+      document.body.setAttribute("data-theme", index % 2 === 0 ? "dark" : "light");
+    }
+  });
+});
+
+// Section background parallax
+document.querySelectorAll("section[data-bg]").forEach(section => {
+  section.style.backgroundImage = `url(${section.getAttribute("data-bg")})`;
+  gsap.from(section, {
+    backgroundPosition: "50% 0%",
+    ease: "none",
+    scrollTrigger: {
+      trigger: section,
+      scrub: true
+    }
+  });
+});
+</script>
+
+
+
+
+
+    </body>
+
+</html>

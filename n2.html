@@ -1,491 +1,339 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Journey of Power — Transmission Lines</title>
-  <!-- Bootstrap 5 CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #000;
-      --line: #fff;
-      --muted: #9ca3af
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Arcot Labs — Apple-style Showcase</title>
 
-    html,
-    body {
-      height: 100%;
-      background: var(--bg);
-      color: var(--line);
-      font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-    .stage-wrap {
-      max-width: 1100px;
-      margin: 32px auto;
-      padding: 28px;
-      border-radius: 16px;
-      background: transparent
-    }
-    .text-mutedd{
-      color: gray;
-    }
+<!-- GSAP & plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollSmoother.min.js"></script>
 
-    .panel {
-      display: flex;
-      gap: 24px;
-      align-items: center
-    }
+<style>
+  :root{
+    --accent:#00A6A6;
+    --bg:#000;
+    --muted:#aeb8ba;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;background:var(--bg); color:#fff;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+  body { overflow-x:hidden; }
 
-    .visual {
-      flex: 1;
-      min-height: 420px;
-      display: flex;
-      align-items: center;
-      justify-content: center
-    }
+  /* Slim top UI */
+  .topbar{
+    position:fixed; left:0; right:0; top:18px; z-index:1200;
+    display:flex; justify-content:space-between; align-items:center; padding:0 22px; pointer-events:none;
+    font-family:Poppins;
+  }
+  .brand { pointer-events:auto; display:flex; gap:12px; align-items:center; }
+  .logo { width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#00d4d4); display:flex; align-items:center; justify-content:center; color:#001; font-weight:700; }
+  .brand .name { color:#eafbf9; font-weight:700; letter-spacing:0.4px; font-size:0.95rem; }
 
-    .copy {
-      flex: 1
-    }
+  /* Dot nav */
+  .dots{ pointer-events:auto; display:flex; gap:10px }
+  .dot{ width:10px;height:10px;border-radius:50%; background:rgba(255,255,255,0.08); cursor:pointer; border:1px solid rgba(255,255,255,0.03) }
+  .dot.active{ background:var(--accent); box-shadow:0 8px 26px rgba(0,166,166,0.18); transform:scale(1.3) }
 
-    /* Card look */
-    .card-slate {
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 12px;
-      padding: 18px
-    }
+  /* page wrapper (smooth) */
+  .smooth-wrap{ overflow:hidden; }
+  .smooth-content{ will-change:transform; }
 
-    /* White-on-black SVG style */
-    svg {
-      width: 100%;
-      height: 100%;
-      max-height: 420px;
-      display: block
-    }
+  /* Each product section is tall — we pin it */
+  section.product {
+    position:relative; width:100%; min-height:120vh; display:flex; align-items:center; justify-content:center; overflow:hidden;
+  }
 
-    .stroke {
-      stroke: var(--line);
-      stroke-width: 1.8;
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round
-    }
+  /* Background (large hero image/video) */
+  .bg {
+    position:absolute; inset:0; z-index:0; overflow:hidden; background:#000 center/cover no-repeat;
+    will-change:transform,opacity,filter;
+  }
 
-    .accent {
-      stroke: rgba(255, 255, 255, 0.9)
-    }
+  /* Centered content column (sparse, Apple style) */
+  .center {
+    position:relative; z-index:6; width:min(1200px,92%); margin:auto; text-align:center; pointer-events:auto;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px;
+  }
+  .kicker { color:var(--accent); font-weight:700; letter-spacing:1px; opacity:0 }
+  h1.title {
+    font-family:Poppins; font-weight:800; font-size:clamp(36px,6vw,84px); line-height:1; margin:0; opacity:0; transform:translateY(18px);
+    -webkit-background-clip:text; background:linear-gradient(90deg,var(--accent),#8ef2f0); -webkit-text-fill-color:transparent;
+  }
+  p.lead { color:var(--muted); max-width:800px; font-size:1.05rem; opacity:0; transform:translateY(16px) }
 
-    .muted {
-      stroke: var(--muted)
-    }
+  /* BIG hero product artwork — centered, overlaps */
+  .hero-art {
+    position:absolute; z-index:5; left:50%; transform:translateX(-50%); bottom:8vh;
+    width:min(1100px,76%); pointer-events:none; will-change:transform,opacity;
+  }
+  .hero-art img { width:100%; height:auto; display:block; transform:translateY(0) scale(1); }
 
-    /* stroke draw animation */
-    .path-draw {
-      stroke-dasharray: 1200;
-      stroke-dashoffset: 1200;
-      animation: draw 2.0s ease forwards
-    }
+  /* small caption bottom-right */
+  .product-caption { position:absolute; right:36px; bottom:42px; z-index:7; color:var(--muted); max-width:320px; text-align:right; font-size:0.95rem; opacity:0 }
 
-    .path-draw-slow {
-      stroke-dasharray: 1600;
-      stroke-dashoffset: 1600;
-      animation: draw 3.2s ease forwards
-    }
+  /* subtle overlay for Apple dissolve */
+  .dissolve { position:fixed; inset:0; z-index:9; background:#000; opacity:0; pointer-events:none }
 
-    @keyframes draw {
-      to {
-        stroke-dashoffset: 0
-      }
-    }
-
-    /* Glow pulse for "power" */
-    .power {
-      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.25))
-    }
-
-    .pulse {
-      animation: pulse 1.6s infinite alternate
-    }
-
-    @keyframes pulse {
-      from {
-        opacity: 0.4;
-        transform: scale(0.96)
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1.04)
-      }
-    }
-
-    /* Controls */
-    .controls {
-      display: flex;
-      gap: 8px;
-      align-items: center
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #fff;
-      opacity: 0.36
-    }
-
-    .dot.active {
-      opacity: 1;
-      transform: scale(1.2)
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .panel {
-        flex-direction: column
-      }
-
-      .visual {
-        order: 2
-      }
-
-      .copy {
-        order: 1
-      }
-    }
-  </style>
+  /* responsive */
+  @media (max-width:900px){
+    .hero-art { width:94%; bottom:5vh; }
+    h1.title { font-size:clamp(24px,8vw,44px); }
+    .product-caption { display:none }
+  }
+</style>
 </head>
-
 <body>
-  <main class="stage-wrap">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <h3 class="m-0">Journey of Power</h3>
-      <div class="controls">
-        <button id="prevBtn" class="btn btn-sm btn-outline-light me-1">Prev</button>
-        <button id="playBtn" class="btn btn-sm btn-outline-light me-1">Pause</button>
-        <button id="nextBtn" class="btn btn-sm btn-outline-light">Next</button>
+
+<div class="topbar">
+  <div class="brand"><div class="logo">A</div><div class="name">Arcot Labs</div></div>
+  <div class="dots" aria-hidden="true"></div>
+</div>
+
+<div class="smooth-wrap">
+  <div class="smooth-content">
+
+    <!-- Intro (not pinned long) -->
+    <section class="product" data-index="0" id="intro">
+      <div class="bg" style="background-image:url('img/randd/bg_intro.jpg');"></div>
+      <div class="center">
+        <div class="kicker">ARCOT R&D</div>
+        <h1 class="title">Engineering Tomorrow’s Light</h1>
+        <p class="lead">Human-centric, sustainable and connected lighting prototypes—all presented with cinematic clarity.</p>
       </div>
-    </div>
+      <div class="hero-art"><img src="img/randd/intro_card.png" alt=""></div>
+    </section>
 
-    <div class="card-slate panel p-3">
-      <div class="visual" id="visual">
-        <svg id="sceneSVG" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet"></svg>
+    <!-- Product 1 (pinned) -->
+    <section class="product" data-index="1" id="p1">
+      <div class="bg" style="background-image:url('img/randd/smartpole_hero.jpg');"></div>
+
+      <div class="center">
+        <div class="kicker">INNOVATION</div>
+        <h1 class="title">Smart Pole</h1>
+        <p class="lead">Connected urban mast — adaptive lighting, sensors and edge intelligence in a timeless design.</p>
       </div>
 
-      <div class="copy">
-        <h4 id="sceneTitle" class="mb-2">Design & Engineering</h4>
-        <p id="sceneSub" class="text-mutedd">Blueprint to optimized grid — dynamic system studies & detailed design.</p>
+      <div class="hero-art"><img src="img/randd/smartpole_big.png" alt="Smart Pole"></div>
+      <div class="product-caption">Ideal for city streets, campuses and transit hubs.</div>
+    </section>
 
-        <div id="bullets" class="mt-3 text-mutedd small"></div>
-
-        <div class="mt-4 d-flex gap-2 align-items-center">
-          <div id="dots" class="d-flex"></div>
-          <div class="ms-auto text-muted small">Autoplay: <span id="autostate">On</span></div>
-        </div>
+    <!-- Product 2 -->
+    <section class="product" data-index="2" id="p2">
+      <div class="bg" style="background-image:url('img/randd/smartbollad_hero.jpg');"></div>
+      <div class="center">
+        <div class="kicker">DESIGN</div>
+        <h1 class="title">Smart Bollard</h1>
+        <p class="lead">Sculptural finish with motion adaptive, IoT-ready controls for pedestrian-first environments.</p>
       </div>
-    </div>
-  </main>
+      <div class="hero-art"><img src="img/randd/smartbollad_big.png" alt="Smart Bollard"></div>
+      <div class="product-caption">Elegant, robust, and network-aware.</div>
+    </section>
 
-  <script>
-    // Transmission-line specific SVG scenes
- const scenes = [
-  {
-    id: 'design',
-    title: 'Design & Engineering',
-    sub: 'From blueprint to optimized grid — system studies and 3D designs.',
-    bullets: [
-      'Load flow, short-circuit & protection coordination',
-      'Tower & foundation structural design',
-      'Digital twin and automation-ready layouts'
-    ],
-    svg: () => `
-      <g transform="translate(60,20)">
-        <!-- Animated CAD Grid -->
-        <defs>
-          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M40 0 H0 V40" fill="none" stroke="gray" stroke-width="0.5" opacity="0.2"/>
-          </pattern>
-        </defs>
-        <rect x="0" y="0" width="600" height="320" fill="url(#grid)" />
+    <!-- Product 3 -->
+    <section class="product" data-index="3" id="p3">
+      <div class="bg" style="background-image:url('img/randd/smarttable_hero.jpg');"></div>
+      <div class="center">
+        <div class="kicker">INTERACTION</div>
+        <h1 class="title">Smart Table</h1>
+        <p class="lead">A responsive surface for hospitality and work — color temperature, sensing zones and adaptive scenes.</p>
+      </div>
+      <div class="hero-art"><img src="img/randd/smarttable_big.png" alt="Smart Table"></div>
+      <div class="product-caption">Modular lighting tiles, refined materials.</div>
+    </section>
 
-        <!-- Tower Profile -->
-        <path class="stroke path-draw-slow" d="M300 40 L200 280 L400 280 Z" />
-        <path class="stroke path-draw" d="M300 40 L160 150 L440 150 Z" />
-        <line x1="240" y1="210" x2="360" y2="210" class="stroke" />
+    <!-- Product 4 -->
+    <section class="product" data-index="4" id="p4">
+      <div class="bg" style="background-image:url('img/randd/smartbarcounter_hero.jpg');"></div>
+      <div class="center">
+        <div class="kicker">EXPERIENCE</div>
+        <h1 class="title">Smart Bar Counter</h1>
+        <p class="lead">Rhythm-reactive lighting, scene presets and modular segments tailored for social spaces.</p>
+      </div>
+      <div class="hero-art"><img src="img/randd/smartbarcounter_big.png" alt="Smart Bar Counter"></div>
+      <div class="product-caption">For bars, restaurants and experience venues.</div>
+    </section>
 
-        <!-- Dimension lines -->
-        <line x1="420" y1="40" x2="420" y2="280" stroke="gray" stroke-dasharray="4 4"/>
-        <text x="430" y="160" fill="white" font-size="12">Height</text>
+    <!-- Product 5 -->
+    <section class="product" data-index="5" id="p5">
+      <div class="bg" style="background-image:url('img/randd/windoleaf_hero.jpg');"></div>
+      <div class="center">
+        <div class="kicker">SUSTAINABILITY</div>
+        <h1 class="title">Windo Leaf</h1>
+        <p class="lead">Smart shading that harvests daylight and lowers HVAC loads with elegant, adaptive form.</p>
+      </div>
+      <div class="hero-art"><img src="img/randd/windoleaf_big.png" alt="Windo Leaf"></div>
+      <div class="product-caption">Scalable façade and interior applications.</div>
+    </section>
 
-        <!-- Compass tool -->
-        <circle cx="120" cy="220" r="30" class="stroke path-draw" />
-        <line x1="120" y1="220" x2="150" y2="260" class="stroke path-draw" />
-        <line x1="120" y1="220" x2="90" y2="260" class="stroke path-draw" />
+    <!-- Coming -->
+    <section class="product" data-index="6" id="coming">
+      <div class="bg" style="background:linear-gradient(180deg,#001, #000);"></div>
+      <div class="center">
+        <div class="kicker">THE FUTURE</div>
+        <h1 class="title">More Innovations Coming</h1>
+        <p class="lead">Arcot Labs continues to prototype the next generation of intelligent systems — join the journey.</p>
+      </div>
+    </section>
 
-        <!-- Ruler -->
-        <rect x="40" y="40" width="120" height="20" class="stroke path-draw"/>
-        <line x1="60" y1="40" x2="60" y2="60" class="stroke"/>
-        <line x1="80" y1="40" x2="80" y2="60" class="stroke"/>
-        <line x1="100" y1="40" x2="100" y2="60" class="stroke"/>
-      </g>
-    `
-  },
-{
-  id: 'supply',
-  title: 'Supply & Materials',
-  sub: 'Procurement of certified equipment, logistics and QA.',
-  bullets: [
-    'Conductor reels & insulator strings',
-    'Transformers & switchyard equipment',
-    'Global logistics and safe delivery'
-  ],
-  svg: () => `
-    <g transform="translate(40,40)">
-      <!-- Conductor reel (big drum) -->
-      <circle cx="120" cy="220" r="80" class="stroke path-draw" />
-      <circle cx="120" cy="220" r="50" class="stroke path-draw" />
-      <line x1="120" y1="140" x2="120" y2="300" class="stroke" />
-      <line x1="40" y1="220" x2="200" y2="220" class="stroke" />
-      <!-- Reel spokes -->
-      <line x1="120" y1="220" x2="170" y2="170" class="stroke" />
-      <line x1="120" y1="220" x2="70" y2="170" class="stroke" />
-      <line x1="120" y1="220" x2="170" y2="270" class="stroke" />
-      <line x1="120" y1="220" x2="70" y2="270" class="stroke" />
+  </div>
+</div>
 
-      <!-- Insulator string stack -->
-      <g transform="translate(320,120)">
-        <ellipse cx="0" cy="0" rx="45" ry="14" class="stroke path-draw" />
-        <ellipse cx="0" cy="30" rx="40" ry="12" class="stroke path-draw" />
-        <ellipse cx="0" cy="60" rx="35" ry="10" class="stroke path-draw" />
-        <ellipse cx="0" cy="90" rx="30" ry="8" class="stroke path-draw" />
-        <line x1="0" y1="-20" x2="0" y2="110" class="stroke" />
-      </g>
+<div class="dissolve"></div>
 
-      <!-- Transformer crate -->
-      <rect x="480" y="100" width="180" height="140" rx="10" class="stroke path-draw" />
-      <path class="stroke" d="M480 140 H660" />
-      <line x1="480" y1="100" x2="660" y2="240" class="muted" />
-      <text x="530" y="180" fill="white" font-size="14">Transformer</text>
+<script>
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 
-      <!-- Truck outline -->
-      <rect x="420" y="260" width="260" height="70" rx="6" class="stroke path-draw" />
-      <circle cx="460" cy="330" r="20" class="stroke path-draw" />
-      <circle cx="640" cy="330" r="20" class="stroke path-draw" />
-      <rect x="420" y="220" width="80" height="40" class="stroke path-draw" />
-      <text x="430" y="245" fill="white" font-size="12">QA</text>
+  // SmoothSmoother (graceful fallback)
+  try {
+    ScrollSmoother.create({ wrapper: ".smooth-wrap", content: ".smooth-content", smooth: 1.3, effects: true });
+  } catch(e) { /* ignore */ }
 
-      <!-- Fragile mark on crate -->
-      <path class="stroke path-draw" d="M620 220 l12 -24 l12 24 z" />
-      <line x1="632" y1="220" x2="632" y2="235" class="stroke"/>
-    </g>
-  `
-},
+  // build nav dots
+  const sections = Array.from(document.querySelectorAll("section.product"));
+  const dots = document.querySelector(".dots");
+  sections.forEach((s,i)=>{
+    const d = document.createElement("div");
+    d.className = "dot";
+    d.dataset.i = i;
+    d.title = s.querySelector(".title") ? s.querySelector(".title").textContent : `Section ${i+1}`;
+    d.addEventListener("click", ()=> {
+      const top = s.getBoundingClientRect().top + window.pageYOffset;
+      gsap.to(window, { duration: 1.1, scrollTo: top, ease: "power2.inOut" });
+    });
+    dots.appendChild(d);
+  });
 
-  {
-    id: 'construction',
-    title: 'Construction & Installation',
-    sub: 'Erection of towers, civil works & conductor stringing across terrains.',
-    bullets: [
-      'Tower erection and conductor stringing',
-      'Heavy-lift installation of equipment',
-      'Safety-first construction procedures'
-    ],
-    svg: () => `
-      <g transform="translate(60,20)">
-        <!-- Tower lattice -->
-        <path class="stroke path-draw-slow" d="M300 40 L200 420 L400 420 Z" />
-        <path class="stroke" d="M300 40 L160 200 L440 200 Z" />
-        <path class="stroke" d="M230 310 H370" />
+  function setActiveDot(){
+    const dotEls = document.querySelectorAll(".dot");
+    sections.forEach((s,i)=> {
+      const r = s.getBoundingClientRect();
+      const mid = window.innerHeight/2;
+      if (r.top <= mid && r.bottom >= mid) {
+        dotEls.forEach(x=>x.classList.remove("active"));
+        dotEls[i].classList.add("active");
+      }
+    });
+  }
+  setActiveDot();
+  window.addEventListener("scroll", setActiveDot);
+  window.addEventListener("resize", setActiveDot);
 
-        <!-- Crane with pulley -->
-        <line x1="100" y1="420" x2="100" y2="120" class="stroke path-draw" />
-        <circle cx="100" cy="120" r="10" class="stroke path-draw"/>
-        <line x1="100" y1="120" x2="240" y2="80" class="stroke path-draw" />
-        <rect x="220" y="70" width="60" height="20" class="stroke path-draw" />
+  // preload backgrounds
+  document.querySelectorAll('.bg').forEach(bg=>{
+    const css = bg.style.backgroundImage || bg.style.background;
+    const m = css.match(/url\(['"]?(.*?)['"]?\)/);
+    if (m && m[1]) { const img = new Image(); img.src = m[1]; }
+  });
 
-        <!-- Conductors -->
-        <path class="stroke path-draw" d="M160 200 Q300 160 440 200" />
-        <path class="stroke path-draw" d="M200 310 Q300 280 400 310" />
+  // Apple-style pin + scrub per-section
+  window.addEventListener('load', () => {
+    const dissolve = document.querySelector('.dissolve');
 
-        <!-- Worker silhouette -->
-        <circle cx="150" cy="380" r="10" fill="white" />
-        <rect x="145" y="390" width="10" height="20" fill="white" />
-      </g>
-    `
-  },
-{
-  id: 'om',
-  title: 'Operation & Maintenance',
-  sub: 'Digital twin, CBM and quick restoration services.',
-  bullets: [
-    'Real-time condition-based monitoring',
-    'Drone inspection and sensors',
-    'Emergency Restoration Systems (ERS)'
-  ],
-  svg: () => `
-    <g transform="translate(40,20)">
-      <!-- Tower with cross arms -->
-      <path class="stroke path-draw-slow" d="M320 40 L240 420 L400 420 Z" />
-      <line x1="280" y1="180" x2="360" y2="180" class="stroke" /> <!-- upper cross arm -->
-      <line x1="260" y1="280" x2="380" y2="280" class="stroke" /> <!-- lower cross arm -->
+    sections.forEach((sec, i) => {
+      const bg = sec.querySelector('.bg');
+      const title = sec.querySelector('.title');
+      const kicker = sec.querySelector('.kicker');
+      const lead = sec.querySelector('.lead');
+      const hero = sec.querySelector('.hero-art');
+      const caption = sec.querySelector('.product-caption');
 
-      <!-- Insulator strings on cross arms -->
-      <line x1="280" y1="180" x2="260" y2="220" class="stroke" />
-      <line x1="360" y1="180" x2="380" y2="220" class="stroke" />
-      <line x1="260" y1="280" x2="250" y2="320" class="stroke" />
-      <line x1="380" y1="280" x2="390" y2="320" class="stroke" />
+      // fade in basic (for sections that aren't pinned long)
+      gsap.set([title,kicker,lead,hero,caption], {opacity:0, y:20});
 
-      <!-- Live power lines glowing -->
-      <path class="stroke power pulse" d="M60 160 Q300 100 540 160" />
-      <path class="stroke power pulse" d="M80 220 Q300 180 520 220" />
-      <path class="stroke power pulse" d="M100 280 Q300 250 500 280" />
-
-      <!-- Sensor nodes on tower -->
-      <circle cx="320" cy="140" r="6" class="stroke power pulse" />
-      <circle cx="320" cy="240" r="6" class="stroke power pulse" />
-      <circle cx="320" cy="340" r="6" class="stroke power pulse" />
-
-      <!-- Drone with propellers -->
-      <rect x="140" y="80" width="60" height="24" rx="5" class="stroke path-draw" />
-      <line x1="140" y1="92" x2="110" y2="92" class="stroke" />
-      <line x1="200" y1="92" x2="230" y2="92" class="stroke" />
-      <circle cx="125" cy="92" r="12" class="stroke power pulse" />
-      <circle cx="215" cy="92" r="12" class="stroke power pulse" />
-
-      <!-- Engineer with tablet -->
-      <rect x="500" y="300" width="40" height="80" rx="6" class="stroke path-draw" /> <!-- body -->
-      <circle cx="520" cy="280" r="20" class="stroke path-draw" /> <!-- head -->
-      <rect x="550" y="310" width="40" height="30" class="stroke path-draw" /> <!-- tablet -->
-      <line x1="550" y1="310" x2="590" y2="340" class="stroke" />
-
-      <!-- Control screen (SCADA) -->
-      <rect x="600" y="100" width="120" height="80" rx="6" class="stroke path-draw" />
-      <path class="stroke" d="M610 130 H710 M610 150 H710 M610 170 H710" />
-    </g>
-  `
-},
-
-{
-  id: 'testing',
-  title: 'Testing & Commissioning',
-  sub: 'High-voltage tests, protection validation and final handover.',
-  bullets: [
-    'Relay & protection end-to-end tests',
-    'Dielectric and impulse testing',
-    'Final energization and performance validation'
-  ],
-  svg: () => `
-    <g transform="translate(40,40)">
-      <!-- Breaker switch -->
-      <rect x="60" y="160" width="100" height="60" rx="6" class="stroke path-draw" />
-      <line x1="160" y1="190" x2="240" y2="190" class="stroke path-draw" />
-      <circle cx="240" cy="190" r="12" class="stroke power pulse" /> <!-- energization node -->
-
-      <!-- Surge waveform -->
-      <path class="stroke power path-draw-slow" 
-        d="M240 190 Q280 100 320 190 T400 190 T480 190 T560 190" />
-
-      <!-- Control panel with meters -->
-      <rect x="600" y="120" width="140" height="100" rx="6" class="stroke path-draw" />
-      <circle cx="630" cy="150" r="10" class="stroke path-draw" />
-      <circle cx="670" cy="150" r="10" class="stroke path-draw" />
-      <rect x="620" y="180" width="80" height="20" class="stroke path-draw" /> <!-- display -->
-
-      <!-- Technician with helmet -->
-      <rect x="500" y="220" width="40" height="90" rx="6" class="stroke path-draw" /> <!-- body -->
-      <circle cx="520" cy="200" r="20" class="stroke path-draw" /> <!-- head -->
-      <path class="stroke" d="M500 200 Q520 180 540 200" /> <!-- helmet visor -->
-      <line x1="540" y1="240" x2="600" y2="180" class="stroke" /> <!-- hand pointing to panel -->
-
-      <!-- City grid silhouette (lights on) -->
-      <rect x="300" y="260" width="30" height="100" class="stroke path-draw" />
-      <rect x="340" y="220" width="40" height="140" class="stroke path-draw" />
-      <rect x="390" y="280" width="50" height="80" class="stroke path-draw" />
-      <rect x="450" y="200" width="60" height="160" class="stroke path-draw" />
-      <!-- glowing windows -->
-      <circle cx="320" cy="280" r="3" class="stroke power pulse" />
-      <circle cx="355" cy="240" r="3" class="stroke power pulse" />
-      <circle cx="405" cy="300" r="3" class="stroke power pulse" />
-      <circle cx="470" cy="220" r="3" class="stroke power pulse" />
-    </g>
-  `
-}
-
-
-];
-
-    // DOM refs
-    const svgEl = document.getElementById('sceneSVG');
-    const titleEl = document.getElementById('sceneTitle');
-    const subEl = document.getElementById('sceneSub');
-    const bulletsEl = document.getElementById('bullets');
-    const dotsEl = document.getElementById('dots');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const playBtn = document.getElementById('playBtn');
-    const autoState = document.getElementById('autostate');
-
-    let idx = 0; let auto = true; let timer = null;
-
-    function renderScene(i) {
-      const s = scenes[i];
-      // update text
-      titleEl.textContent = s.title;
-      subEl.textContent = s.sub;
-      bulletsEl.innerHTML = s.bullets.map(b => `
-        <div class="d-flex align-items-start gap-2 mb-2">
-          <div style="width:8px;height:8px;background:#fff;border-radius:50%;margin-top:6px;opacity:0.9"></div>
-          <div>${b}</div>
-        </div>`).join('');
-
-      // render SVG
-      svgEl.innerHTML = s.svg();
-
-      // restart animations
-      requestAnimationFrame(() => {
-        const paths = svgEl.querySelectorAll('path, rect, circle');
-        paths.forEach(p => {
-          p.classList.remove('path-draw', 'path-draw-slow');
-          void p.getBBox();
-          if (p.tagName === "path" && p.getTotalLength) {
-            const len = Math.round(p.getTotalLength());
-            if (len > 400) p.classList.add('path-draw-slow'); else p.classList.add('path-draw');
-          } else {
-            p.classList.add('path-draw');
+      // Pin this section for a cinematic reveal if not the intro/coming
+      const shouldPin = i>0 && i < sections.length-1; // pin product sections
+      if (shouldPin) {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sec,
+            start: "top top",
+            end: "bottom top+=1", // pin until just about next
+            scrub: true,
+            pin: true,
+            anticipatePin: 1
           }
         });
-      });
 
-      // dots
-      dotsEl.innerHTML = scenes.map((sc, j) => `<div class="dot ${j === i ? 'active' : ''}" data-i="${j}"></div>`).join('');
-      dotsEl.querySelectorAll('.dot').forEach(d => d.addEventListener('click', () => goTo(parseInt(d.dataset.i))));
-    }
+        // timeline content -> scale/translate background like camera dolly
+        tl.to(bg, { scale: 1.02, opacity: 0.9, duration: 1 }, 0)
+          .fromTo(hero, { y: 60, scale: 1.06, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 1.2 }, 0.05)
+          .fromTo(kicker, { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, 0.12)
+          .fromTo(title, { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: "power3.out" }, 0.22)
+          .fromTo(lead, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, 0.35)
+          .fromTo(caption, { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, 0.45);
 
-    function goTo(i) { idx = (i + scenes.length) % scenes.length; renderScene(idx); resetTimer(); }
-    function next() { goTo(idx + 1) }
-    function prev() { goTo(idx - 1) }
+        // Add crossfade with next bg when scrolling into next
+        if (i < sections.length - 1) {
+          const nextBg = sections[i+1].querySelector('.bg');
+          tl.to(bg, { opacity: 0.28, scale: 1.06, duration: 0.9, ease: "power2.out" }, 0.6);
+          tl.fromTo(nextBg, { opacity: 0.28, scale: 1.06 }, { opacity: 0.6, scale: 1.02, duration: 0.9 }, 0.6);
+          // dissolve overlay brief subtle pulse
+          ScrollTrigger.create({
+            trigger: sections[i+1],
+            start: "top bottom",
+            end: "top center",
+            scrub: true,
+            onUpdate: self => gsap.to(dissolve, { opacity: self.progress * 0.5 })
+          });
+        }
+      } else {
+        // Non-pinned simpler reveal (intro and coming)
+        gsap.timeline({
+          scrollTrigger: { trigger: sec, start: "top 70%", toggleActions: "play none none reverse" }
+        })
+        .to(kicker, { opacity: 1, y: 0, duration: 0.4 }, 0)
+        .to(title, { opacity: 1, y: 0, duration: 0.8 }, 0.06)
+        .to(lead, { opacity: 1, y: 0, duration: 0.6 }, 0.18)
+        .to(hero, { opacity: 1, y: 0, duration: 0.9 }, 0.2)
+        .to(caption, { opacity: 1, y: 0, duration: 0.7 }, 0.3);
+      }
 
-    prevBtn.addEventListener('click', prev);
-    nextBtn.addEventListener('click', next);
-    playBtn.addEventListener('click', () => {
-      auto = !auto;
-      playBtn.textContent = auto ? 'Pause' : 'Play';
-      autoState.textContent = auto ? 'On' : 'Off';
-      if (auto) resetTimer(); else clearInterval(timer);
+      // subtle breathing on hero artwork
+      if (hero) gsap.to(hero, { y: "+=6", duration: 3.6, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 0.3 });
+
+      // small pointer tilt
+      const img = hero ? hero.querySelector('img') : null;
+      if (img && window.innerWidth > 900) {
+        sec.addEventListener('pointermove', (e) => {
+          const r = sec.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const rx = (px - 0.5) * 10;
+          const ry = (py - 0.5) * 6;
+          gsap.to(img, { rotationY: rx, rotationX: -ry, transformPerspective: 900, duration: 0.6, ease: "power3.out" });
+        });
+        sec.addEventListener('pointerleave', () => gsap.to(img, { rotationY: 0, rotationX: 0, duration: 0.8, ease: "power3.out" }));
+      }
+
+    }); // end sections foreach
+
+    // keyboard nav (same)
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+        e.preventDefault();
+        const pos = window.scrollY;
+        for (let i=0;i<sections.length;i++){
+          const s = sections[i];
+          const top = s.getBoundingClientRect().top + window.pageYOffset;
+          if (top > pos + 10) { gsap.to(window, {duration:0.9, scrollTo: top, ease:"power2.inOut"}); break; }
+        }
+      } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+        e.preventDefault();
+        const pos = window.scrollY;
+        for (let i=sections.length-1;i>=0;i--){
+          const s = sections[i];
+          const top = s.getBoundingClientRect().top + window.pageYOffset;
+          if (top < pos - 10) { gsap.to(window, {duration:0.9, scrollTo: top, ease:"power2.inOut"}); break; }
+        }
+      }
     });
 
-    function resetTimer() {
-      clearInterval(timer);
-      if (auto) { timer = setInterval(next, 5000); autoState.textContent = 'On'; playBtn.textContent = 'Pause'; }
-      else { autoState.textContent = 'Off'; playBtn.textContent = 'Play'; }
-    }
+  }); // end load
+</script>
 
-    // init
-    renderScene(0); resetTimer();
-  </script>
 </body>
-
 </html>

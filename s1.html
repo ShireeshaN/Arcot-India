@@ -1,148 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wind Energy - How It Works</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(#87ceeb, #e0f7fa); /* sky */
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wanaka Style Premium Clone</title>
 
-    .wind-section {
-      position: relative;
-      width: 100%;
-      max-width: 1200px;
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 40px;
-    }
+<!-- GSAP & ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    /* SVG Scene */
-    .wind-scene {
-      width: 55%;
-    }
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    /* Text Area */
-    .wind-text {
-      width: 40%;
-      color: #222;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
 
-    .wind-text h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
+section {
+  min-height: 100vh;
+  padding: 100px 20px;
+  transition: background 1s ease, color 1s ease;
+}
 
-    .wind-text p {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
+body[data-theme="dark"] {
+  background: #111;
+  color: #fff;
+}
 
-    /* SVG Styling */
-    svg {
-      width: 100%;
-      height: auto;
-    }
+body[data-theme="light"] {
+  background: #f8f9fa;
+  color: #111;
+}
 
-    .turbine-blades {
-      transform-origin: center;
-      transform-box: fill-box;
-    }
+.split span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(50px);
+}
 
-    .wind-arrow {
-      stroke: #4fc3f7;
-      stroke-width: 3;
-      stroke-dasharray: 10 10;
-      animation: dashmove 2s linear infinite;
-    }
+.horizontal-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+  overflow: hidden;
+}
 
-    @keyframes dashmove {
-      to {
-        stroke-dashoffset: -20;
+.panel {
+  flex: 0 0 100vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.panel img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.2);
+}
+
+.image-mask {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #111;
+  transform-origin: left;
+  transform: scaleX(1);
+  z-index: 2;
+}
+
+section[data-bg] {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+footer {
+  padding: 50px;
+  text-align: center;
+}
+</style>
+</head>
+<body data-theme="dark">
+
+<!-- HEADER SECTION -->
+<section id="header" data-bg="https://picsum.photos/1600/900?random=10">
+  <div class="container text-center">
+    <h1 class="split">Premium Studio Clone</h1>
+    <p>Dummy subtitle with smooth split-text animation</p>
+  </div>
+</section>
+
+<!-- HORIZONTAL SCROLL SECTION -->
+<section class="horizontal-scroll">
+  <div class="panel image-panel">
+    <div class="image-mask"></div>
+    <img src="https://picsum.photos/1600/900?random=1" alt="Dummy Image">
+  </div>
+  <div class="panel image-panel">
+    <div class="image-mask"></div>
+    <img src="https://picsum.photos/1600/900?random=2" alt="Dummy Image">
+  </div>
+  <div class="panel image-panel">
+    <div class="image-mask"></div>
+    <img src="https://picsum.photos/1600/900?random=3" alt="Dummy Image">
+  </div>
+</section>
+
+<!-- IMAGE REVEAL SECTION -->
+<section data-bg="https://picsum.photos/1600/900?random=5">
+  <div class="container text-center">
+    <h1 class="split">Image Reveal Section</h1>
+    <p>Dummy content showcasing premium animation.</p>
+  </div>
+</section>
+
+<!-- PARALLAX SECTION -->
+<section data-bg="https://picsum.photos/1600/900?random=6">
+  <div class="container text-center">
+    <h1 class="split">Parallax Background Section</h1>
+    <p>Another dummy section with background parallax.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Dummy Footer © 2025</p>
+</footer>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// Split-text animation
+document.querySelectorAll(".split").forEach(el => {
+  const text = el.innerText;
+  el.innerHTML = text.split("").map(char => `<span>${char}</span>`).join("");
+  gsap.fromTo(el.querySelectorAll("span"), 
+    {y:50, opacity:0}, 
+    {
+      y:0, opacity:1, 
+      stagger:0.05, duration:1, ease:"power4.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 80%",
+        toggleActions: "play none none reverse"
       }
     }
+  );
+});
 
-    .house-light {
-      fill: #ccc;
-      transition: fill 1s ease;
+// Horizontal scroll section
+let scrollContainer = document.querySelector(".horizontal-scroll");
+let panels = gsap.utils.toArray(".panel");
+
+gsap.to(panels, {
+  xPercent: -100 * (panels.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".horizontal-scroll",
+    pin: true,
+    scrub: 1,
+    snap: 1 / (panels.length - 1),
+    end: () => "+=" + scrollContainer.offsetWidth
+  }
+});
+
+// Image reveal animation
+document.querySelectorAll(".image-panel").forEach(panel=>{
+  let img = panel.querySelector("img");
+  let mask = panel.querySelector(".image-mask");
+
+  gsap.set(img,{scale:1.2});
+  gsap.set(mask,{scaleX:1});
+
+  ScrollTrigger.create({
+    trigger:panel,
+    start:"top 80%",
+    end:"top 20%",
+    onEnter:()=>{
+      gsap.timeline()
+        .to(mask,{scaleX:0,duration:1.2,ease:"power3.inOut"})
+        .to(img,{scale:1,duration:1.2,ease:"power3.inOut"},"-=1");
+    },
+    onLeaveBack:()=>{
+      gsap.timeline()
+        .to(mask,{scaleX:1,duration:1.2,ease:"power3.inOut"})
+        .to(img,{scale:1.2,duration:1.2,ease:"power3.inOut"},"-=1");
     }
+  });
+});
 
-    .house-light.on {
-      fill: #ffeb3b;
+// Background theme changes
+gsap.utils.toArray("section").forEach((section, index) => {
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top 50%",
+    end: "bottom 50%",
+    onEnter: () => {
+      document.body.setAttribute("data-theme", index % 2 === 0 ? "dark" : "light");
+    },
+    onEnterBack: () => {
+      document.body.setAttribute("data-theme", index % 2 === 0 ? "dark" : "light");
     }
-  </style>
-</head>
-<body>
-  <div class="wind-section">
-    <!-- Left side: SVG Scene -->
-    <div class="wind-scene">
-      <svg viewBox="0 0 600 400">
-        <!-- Ground -->
-        <rect x="0" y="350" width="600" height="50" fill="#4caf50"/>
+  });
+});
 
-        <!-- Wind Arrows -->
-        <line x1="20" y1="120" x2="200" y2="120" class="wind-arrow"/>
-        <line x1="20" y1="160" x2="200" y2="160" class="wind-arrow"/>
-        <line x1="20" y1="200" x2="200" y2="200" class="wind-arrow"/>
-
-        <!-- Wind Turbine -->
-        <g transform="translate(250,200)">
-          <rect x="-5" y="0" width="10" height="150" fill="#888"/>
-          <g class="turbine-blades">
-            <circle r="10" fill="#444"/>
-            <polygon points="0,-10 80,-20 0,-40" fill="#ddd"/>
-            <polygon points="0,10 -20,80 -40,0" fill="#ddd"/>
-            <polygon points="10,0 40,0 20,-80" fill="#ddd"/>
-          </g>
-        </g>
-
-        <!-- House -->
-        <g transform="translate(450,250)">
-          <rect x="0" y="50" width="80" height="60" fill="#795548"/>
-          <polygon points="0,50 40,10 80,50" fill="#00000"/>
-          <rect x="25" y="70" width="30" height="20" class="house-light"/>
-        </g>
-      </svg>
-    </div>
-
-    <!-- Right side: Text -->
-    <div class="wind-text">
-      <h2>How Wind Energy Works</h2>
-      <p>1. Wind flows across the blades, making them rotate.</p>
-      <p>2. The rotor spins a shaft inside the nacelle (the box on top).</p>
-      <p>3. The shaft connects to a generator, producing electricity.</p>
-      <p>4. The power is transferred to homes and industries, lighting up communities sustainably.</p>
-    </div>
-  </div>
-
-  <script>
-    // Rotate turbine blades
-    gsap.to(".turbine-blades", {
-      rotate: 360,
-      transformOrigin: "center",
-      duration: 4,
-      repeat: -1,
-      ease: "linear"
-    });
-
-    // Animate house light turning on after delay
-    setTimeout(() => {
-      document.querySelector(".house-light").classList.add("on");
-    }, 4000);
-  </script>
+// Section background parallax
+document.querySelectorAll("section[data-bg]").forEach(section => {
+  section.style.backgroundImage = `url(${section.getAttribute("data-bg")})`;
+  gsap.from(section, {
+    backgroundPosition: "50% 0%",
+    ease: "none",
+    scrollTrigger: {
+      trigger: section,
+      scrub: true
+    }
+  });
+});
+</script>
 </body>
 </html>
