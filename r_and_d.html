@@ -527,6 +527,254 @@ let autoCycle = setInterval(nextFeature, 4000);
 </style>
 
 
+<style>
+
+
+/* ---------- HERO ---------- */
+.bollard-hero {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.bollard-hero h1 {
+  font-size: 4.2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffffff, #cccccc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.bollard-hero p {
+  font-size: 1.2rem;
+  color: #bbb;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* ---------- MAIN SECTION ---------- */
+.bollard-section {
+  display: flex;
+  align-items: center; /* vertically center media and timeline */
+  justify-content: center;
+  padding: 120px 100px;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.bollard-media-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* center video vertically next to timeline */
+  position: relative;
+}
+
+
+.bollard-glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  /* background: radial-gradient(circle, rgba(0,255,255,0.25), transparent 70%); */
+  filter: blur(80px);
+  transition: background 1s ease;
+  z-index: 0;
+}
+
+.bollard-video {
+  width: 320px;
+  height: auto;
+  border-radius: 24px;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(80px) scale(0.95);
+  box-shadow: 0 0 40px rgba(255,255,255,0.08);
+}
+
+/* ---------- VERTICAL TIMELINE ---------- */
+.bollard-timeline {
+  flex: 1;
+  position: relative;
+  padding-left: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.bollard-timeline::before {
+  content: "";
+  position: absolute;
+  left: 20px; /* vertical line */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ffffff;
+  opacity: 0.2;
+}
+
+.bollard-point {
+  position: relative;
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.bollard-point::before {
+  content: "";
+  position: absolute;
+  left: -32px; /* aligns circle with line */
+  top: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.bollard-point h3 {
+  font-size: 1.6rem;
+  margin: 0 0 8px;
+  background: linear-gradient(90deg, #ffffff, #aaaaaa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bollard-point p {
+  font-size: 1rem;
+  color: #aaa;
+  max-width: 440px;
+  line-height: 1.6;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .bollard-section {
+    flex-direction: column;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  .bollard-timeline {
+    padding-left: 0;
+    margin-top: 60px;
+  }
+  .bollard-timeline::before {
+    display: none;
+  }
+  .bollard-point::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+</style>
+
+
+
+
+
+<!-- ---------- HERO ---------- -->
+<div class="bollard-hero">
+  <h1>Arcot Smart Bollard</h1>
+  <p>Hybrid elegance redefined — where connectivity meets craftsmanship.</p>
+</div>
+
+<!-- ---------- MAIN CONTENT ---------- -->
+<section class="bollard-section">
+  <div class="bollard-media-container">
+    <div class="bollard-glow"></div>
+    <video class="bollard-video" autoplay loop muted playsinline>
+      <source src="media/video 02.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
+
+  <div class="bollard-timeline">
+    <div class="bollard-point" data-color="#00ffff">
+      <h3>Bluetooth Connectivity</h3>
+      <p>Seamless pairing for instant smart control and synchronized lighting.</p>
+    </div>
+    <div class="bollard-point" data-color="#66ccff">
+      <h3>Wi-Fi Integration</h3>
+      <p>Connects to the cloud for diagnostics, updates, and automated scheduling.</p>
+    </div>
+    <div class="bollard-point" data-color="#ffaa00">
+      <h3>Wireless Charging</h3>
+      <p>Power your devices effortlessly with built-in wireless charging zones.</p>
+    </div>
+    <div class="bollard-point" data-color="#ff66cc">
+      <h3>Audio System</h3>
+      <p>Immersive ambient sound — designed for parks, walkways, and plazas.</p>
+    </div>
+    <div class="bollard-point" data-color="#ffffff">
+      <h3>Tuning & Dimming</h3>
+      <p>Precision control of brightness and tone to set any environment’s mood.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// HERO ANIMATION
+gsap.to(".bollard-hero h1", {
+  opacity: 1, y: 0, duration: 1.4, ease: "power3.out", delay: 0.2
+});
+gsap.to(".bollard-hero p", {
+  opacity: 1, y: 0, duration: 1.2, ease: "power3.out", delay: 0.5
+});
+
+// VIDEO ENTRANCE
+gsap.to(".bollard-video", {
+  opacity: 1, y: 0, scale: 1, duration: 1.6, ease: "power3.out",
+  scrollTrigger: { trigger: ".bollard-section", start: "top 85%" }
+});
+
+// FEATURE REVEALS + GLOW COLOR SYNC
+const bollardGlow = document.querySelector(".bollard-glow");
+const bollardPoints = document.querySelectorAll(".bollard-point");
+let bollardIndex = 0;
+
+bollardPoints.forEach((point) => {
+  ScrollTrigger.create({
+    trigger: point,
+    start: "top 85%",
+    onEnter: () => {
+      gsap.to(point, { opacity: 1, y: 0, duration: 1.4, ease: "power3.out" });
+      const color = point.dataset.color;
+      gsap.to(bollardGlow, {
+        background: `radial-gradient(circle, ${color}60, transparent 70%)`,
+        duration: 1.2,
+        ease: "power2.out"
+      });
+    }
+  });
+});
+
+// AUTO LOOP: changes glow + light ambiance over time
+function cycleBollardPoints() {
+  const point = bollardPoints[bollardIndex];
+  const color = point.dataset.color;
+  gsap.to(bollardGlow, {
+    background: `radial-gradient(circle, ${color}80, transparent 70%)`,
+    duration: 1.5,
+    ease: "power2.inOut"
+  });
+  bollardIndex = (bollardIndex + 1) % bollardPoints.length;
+}
+setInterval(cycleBollardPoints, 4000);
+</script>
+
+
+
+
 
 
 
