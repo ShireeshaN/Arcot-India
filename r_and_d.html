@@ -62,7 +62,7 @@
           <a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a>
         </li>
         <li><a href="solution.html">Solutions</a></li>
-        <li><a href="solution.html">R & D </a></li>
+        <li><a href="solution.html">R&D </a></li>
     <li><a href="applications.html">Applications</a></li>
    <li><a href="gallery.html" >Gallery</a></li>
            <li><a href="contact.html">Contact</a></li>
@@ -149,7 +149,7 @@
 
         <!-- Header Start -->
         <div class="container-fluid bg-breadcrumb-rd">
-            <div class="container text-center py-5" style="max-width: 900px;">
+            <div class="container text-center pt-5 " style="max-width: 900px;">
                 <h1 class="text-white display-6 mb-4 wow fadeInDown" data-wow-delay="0.1s">Future Innovations</h1>
                 <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                     <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> -->
@@ -309,6 +309,8 @@ h1 {
 </script>
 
 
+
+
 <div class="hero">
   <h1>Arcot SmartPole</h1>
   <p >Redefining urban infrastructure with intelligence, design & innovation.</p>
@@ -316,29 +318,13 @@ h1 {
 </div>
 <!-- SMARTPOLE FEATURE SECTION -->
 <section class="smartpole-section" id="smartpole">
-  
 
   <div class="features-container">
     <div class="features-list" id="featuresLeft"></div>
 
     <div class="product-display" id="imageContainer">
-      <!-- now the images are here -->
-      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image active" alt="EV Charger">
-      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Emergency SOS Alert">
-      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Wired Charging">
-      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Wireless Charging">
-      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Air Quality Sensor">
-      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Air Quality Screen">
-      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Street Lighting">
-      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="PA Loudspeaker">
-      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Power Generation System">
-      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="RGB Pixel LED Screen">
-      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Motion Detector">
-      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Wi-Fi Hotspot">
-      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Intercom">
-      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="Android Touch Screen">
-      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="AI-Based Voice Communication">
-      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image" alt="AI-Based Camera">
+      <!-- Single common image -->
+      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image active" alt="Smartpole Product">
     </div>
 
     <div class="features-list" id="featuresRight"></div>
@@ -346,28 +332,29 @@ h1 {
 </section>
 
 <script>
+// FEATURES DATA (with icon class names)
 const features = [
-  {name:"EV Charger", desc:"Fast, efficient EV charging; solar/wind integration and QR payments."},
-  {name:"Emergency SOS Alert", desc:"Instant SOS with GPS, voice/push activation and ICCC integration."},
-  {name:"Wired Charging", desc:"Weatherproof, safe plug-and-charge with real-time power & metering."},
-  {name:"Wireless Charging", desc:"Contactless EV charging for convenient public/fleet use."},
-  {name:"Air Quality Sensor", desc:"Real-time PM/CO₂/NO₂ monitoring with IoT reporting and alerts."},
-  {name:"Air Quality Screen", desc:"Outdoor AQI display with auto-brightness and public alerts."},
-  {name:"Street Lighting", desc:"Smart dimmable LEDs with motion, schedules and solar option."},
-  {name:"PA Loudspeaker", desc:"Weatherproof public address for alerts, announcements and events."},
-  {name:"Power Generation System", desc:"Solar/wind hybrid generation with battery storage."},
-  {name:"RGB Pixel LED Screen", desc:"High-bright dynamic display for ads, alerts and info."},
-  {name:"Motion Detector", desc:"Day/night movement detection that triggers lights/cameras."},
-  {name:"Wi-Fi Hotspot", desc:"Public broadband access and IoT connectivity with secure access."},
-  {name:"Intercom", desc:"Two-way citizen ↔ control center communication (audio/video)."},
-  {name:"Android Touch Screen", desc:"Outdoor info kiosk: maps, tickets, navigation & services."},
-  {name:"AI-Based Voice Communication", desc:"Multilingual voice assistant for info and commands."},
-  {name:"AI-Based Camera", desc:"Smart video analytics (detection, ANPR, alerts) with edge/cloud support."},
+  {icon:"fa-solid fa-bolt", name:"EV Charger", desc:"Fast, efficient EV charging; solar/wind integration and QR payments."},
+  {icon:"fa-solid fa-triangle-exclamation", name:"Emergency SOS Alert", desc:"Instant SOS with GPS, voice/push activation and ICCC integration."},
+  {icon:"fa-solid fa-plug", name:"Wired Charging", desc:"Weatherproof, safe plug-and-charge with real-time power & metering."},
+  {icon:"fa-solid fa-wifi", name:"Wireless Charging", desc:"Contactless EV charging for convenient public/fleet use."},
+  {icon:"fa-solid fa-wind", name:"Air Quality Sensor", desc:"Real-time PM/CO₂/NO₂ monitoring with IoT reporting and alerts."},
+  {icon:"fa-solid fa-display", name:"Air Quality Screen", desc:"Outdoor AQI display with auto-brightness and public alerts."},
+  {icon:"fa-solid fa-lightbulb", name:"Street Lighting", desc:"Smart dimmable LEDs with motion, schedules and solar option."},
+  {icon:"fa-solid fa-volume-high", name:"PA Loudspeaker", desc:"Weatherproof public address for alerts, announcements and events."},
+  {icon:"fa-solid fa-solar-panel", name:"Power Generation System", desc:"Solar/wind hybrid generation with battery storage."},
+  {icon:"fa-solid fa-tv", name:"RGB Pixel LED Screen", desc:"High-bright dynamic display for ads, alerts and info."},
+  {icon:"fa-solid fa-person-running", name:"Motion Detector", desc:"Day/night movement detection that triggers lights/cameras."},
+  {icon:"fa-solid fa-wifi", name:"Wi-Fi Hotspot", desc:"Public broadband access and IoT connectivity with secure access."},
+  {icon:"fa-solid fa-microphone", name:"Intercom", desc:"Two-way citizen ↔ control center communication (audio/video)."},
+  {icon:"fa-solid fa-tablet-screen-button", name:"Android Touch Screen", desc:"Outdoor info kiosk: maps, tickets, navigation & services."},
+  {icon:"fa-solid fa-robot", name:"AI-Based Voice Communication", desc:"Multilingual voice assistant for info and commands."},
+  {icon:"fa-solid fa-camera", name:"AI-Based Camera", desc:"Smart video analytics (detection, ANPR, alerts) with edge/cloud support."},
 ];
 
 const leftContainer = document.getElementById('featuresLeft');
 const rightContainer = document.getElementById('featuresRight');
-const images = document.querySelectorAll('.product-image');
+const image = document.querySelector('.product-image');
 
 const leftFeatures = features.slice(0, 8);
 const rightFeatures = features.slice(8, 16);
@@ -376,7 +363,13 @@ function createFeatureElement(f, i) {
   const div = document.createElement('div');
   div.classList.add('feature');
   if (i === 0) div.classList.add('active');
-  div.innerHTML = `${f.name}<div class="feature-desc">${f.desc}</div>`;
+  div.innerHTML = `
+    <div class="feature-header">
+      <i class="${f.icon} feature-icon"></i>
+      <span class="feature-title">${f.name}</span>
+    </div>
+    <div class="feature-desc">${f.desc}</div>
+  `;
   div.addEventListener('click', () => setActiveFeature(i, true));
   return div;
 }
@@ -385,12 +378,18 @@ function setActiveFeature(i, manual=false) {
   document.querySelectorAll('.feature').forEach(el => el.classList.remove('active'));
   const allFeatures = document.querySelectorAll('.feature');
   allFeatures[i].classList.add('active');
-  images.forEach((img, idx) => img.classList.toggle('active', idx === i));
-  animatePole();
+  animateImage();
   if (manual) {
     clearInterval(autoCycle);
     autoCycle = setInterval(nextFeature, 4000);
   }
+}
+
+function animateImage() {
+  gsap.fromTo(image, 
+    { scale: 1.05, rotateY: 10, opacity: 0.6 },
+    { scale: 1, rotateY: 0, opacity: 1, duration: 1.4, ease: "power3.out" }
+  );
 }
 
 leftFeatures.forEach((f, i) => leftContainer.appendChild(createFeatureElement(f, i)));
@@ -398,17 +397,13 @@ rightFeatures.forEach((f, i) => rightContainer.appendChild(createFeatureElement(
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Hero animation
-gsap.to(".hero h1", { opacity: 1, y: 0, duration: 1.4, ease: "power3.out", delay: 0.3 });
-gsap.to(".hero p", { opacity: 1, y: 0, duration: 1.3, ease: "power3.out", delay: 0.8 });
-
-// Smartpole scroll
+// Section animation
 gsap.to(".smartpole-section", {
   opacity: 1, y: 0, duration: 1.2, ease: "power3.out",
   scrollTrigger: { trigger: ".smartpole-section", start: "top 80%" }
 });
 
-// Left and right slide-in
+// Left-right entry
 gsap.from(".features-list", {
   opacity: 0,
   x: i => (i === 0 ? -100 : 100),
@@ -417,14 +412,6 @@ gsap.from(".features-list", {
   ease: "power2.out",
   scrollTrigger: { trigger: ".features-container", start: "top 85%" }
 });
-
-function animatePole() {
-  const active = document.querySelector(".product-image.active");
-  gsap.fromTo(active, 
-    { scale: 1.05, rotateY: 10, opacity: 0.6 },
-    { scale: 1, rotateY: 0, opacity: 1, duration: 1.4, ease: "power3.out" }
-  );
-}
 
 // AUTO CYCLE
 let currentIndex = 0;
@@ -435,10 +422,10 @@ function nextFeature() {
 let autoCycle = setInterval(nextFeature, 4000);
 </script>
 
+
 <style>
 
-
-/* --- HERO SECTION --- */
+    /* --- HERO SECTION --- */
 .hero {
   height: 40vh;
   display: flex;
@@ -448,7 +435,7 @@ let autoCycle = setInterval(nextFeature, 4000);
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-color: #222222;
+  background-color: #222;
 }
 
 .hero h1 {
@@ -460,8 +447,8 @@ let autoCycle = setInterval(nextFeature, 4000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0;
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: none;
 }
 
 .hero p {
@@ -470,10 +457,9 @@ let autoCycle = setInterval(nextFeature, 4000);
   letter-spacing: 2px;
   color: #cfcfcf;
   margin-top: 8px;
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
+  transform: none;
 }
-
 /* --- SMARTPOLE SECTION --- */
 .smartpole-section {
   display: flex;
@@ -481,11 +467,9 @@ let autoCycle = setInterval(nextFeature, 4000);
   justify-content: center;
   min-height: 100vh;
   padding: 40px 100px;
-  box-sizing: border-box;
+  background-color: #222;
   opacity: 0;
   transform: translateY(50px);
-  position: relative;
-  background-color: #222222;
 }
 
 .features-container {
@@ -508,16 +492,15 @@ let autoCycle = setInterval(nextFeature, 4000);
 
 .feature {
   background: rgba(255, 255, 255, 0.07);
-  /* border-radius: 40px; */
   padding: 14px 22px;
   cursor: pointer;
   transition: all 0.4s ease;
-  font-family: "Roboto" sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  letter-spacing: 0.3px;
-  backdrop-filter: blur(10px);
   color: azure;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
 }
 
 .feature:hover {
@@ -526,9 +509,19 @@ let autoCycle = setInterval(nextFeature, 4000);
 }
 
 .feature.active {
-  background: #ffffff;
+  background: #fff;
   color: #000;
   box-shadow: 0 0 25px rgba(255,255,255,0.25);
+}
+
+.feature-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feature-icon {
+  font-size: 1.2rem;
 }
 
 .feature-desc {
@@ -538,52 +531,65 @@ let autoCycle = setInterval(nextFeature, 4000);
   transition: max-height 0.6s ease, opacity 0.6s ease;
   font-size: 0.9rem;
   margin-top: 6px;
-  color: #100f0f;
+  color: #111;
+  line-height: 1.4;
 }
 
 .feature.active .feature-desc {
-  max-height: 180px;
+  max-height: 160px;
   opacity: 1;
 }
 
-/* --- CENTER PRODUCT --- */
+/* --- PRODUCT DISPLAY --- */
 .product-display {
   flex: 1.4;
-  position: relative;
-  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 80vh;
   perspective: 1200px;
 }
 
 .product-image {
-  position: absolute;
   width: 90%;
   height: auto;
   object-fit: contain;
-  opacity: 0;
-  transform: scale(1.1) rotateY(10deg);
-  transition: opacity 1.2s ease, transform 1.8s ease;
-  filter: brightness(0.9);
-}
-
-.product-image.active {
-  opacity: 1;
-  transform: scale(1) rotateY(0deg);
   filter: brightness(1);
+  transition: opacity 1.2s ease, transform 1.8s ease;
 }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
   .features-container {
     flex-direction: column;
+    align-items: center;
+    gap: 40px;
   }
+
   .product-display {
-    height: 60vh;
+    order: -1;
+    height: 50vh;
+  }
+
+  .product-image {
+    width: 70%;
+  }
+
+  .features-list {
+    width: 100%;
+    align-items: center;
+  }
+
+  .feature {
+    width: 85%;
+  }
+
+  .feature-header {
+    justify-content: flex-start;
   }
 }
 </style>
+
 
 
 <style>
@@ -1412,6 +1418,9 @@ setInterval(cycleBollardPoints, 4000);
         <script src="lib/easing/easing.min.js"></script>
         <script src="lib/waypoints/waypoints.min.js"></script>
         <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+        <!-- FONT AWESOME -->
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
         
 
         <!-- Template Javascript -->
