@@ -62,6 +62,7 @@
           <a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a>
         </li>
         <li><a href="solution.html">Solutions</a></li>
+        <li><a href="solution.html">R & D </a></li>
     <li><a href="applications.html">Applications</a></li>
    <li><a href="gallery.html" >Gallery</a></li>
            <li><a href="contact.html">Contact</a></li>
@@ -147,9 +148,9 @@
 
 
         <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
+        <div class="container-fluid bg-breadcrumb-rd">
             <div class="container text-center py-5" style="max-width: 900px;">
-                <h1 class="text-white display-6 mb-4 wow fadeInDown" data-wow-delay="0.1s">WHO WE ARE ?</h1>
+                <h1 class="text-white display-6 mb-4 wow fadeInDown" data-wow-delay="0.1s">Future Innovations</h1>
                 <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                     <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> -->
                   
@@ -162,7 +163,7 @@
 
 section {
   min-height: 100vh;
-  padding: 40px 20px;
+  padding: 0px 0px;
   transition: background 1s ease, color 1s ease;
 }
 
@@ -232,30 +233,81 @@ h1 {
 
 
 
-        <!-- HORIZONTAL SCROLL SECTION -->
+<!-- HORIZONTAL SCROLL SECTION -->
 <section class="horizontal-scroll">
   <div class="panel image-panel">
     <div class="image-mask"></div>
-    <img src="img/randd/smartpole.png" alt="Dummy Image">
+    <img src="img/randd/smartpole.png" alt="Smart Pole">
   </div>
   <div class="panel image-panel">
     <div class="image-mask"></div>
-    <img src="img/randd/smartbollad.png" alt="Dummy Image">
+    <img src="img/randd/smartbollad.png" alt="Smart Bollard">
   </div>
   <div class="panel image-panel">
     <div class="image-mask"></div>
-    <img src="img/randd/smarttable.png" alt="Dummy Image">
-  </div>
-    <div class="panel image-panel">
-    <div class="image-mask"></div>
-    <img src="img/randd/smartbarcounter.png" alt="Dummy Image">
+    <img src="img/randd/smarttable.png" alt="Smart Table">
   </div>
   <div class="panel image-panel">
     <div class="image-mask"></div>
-    <img src="img/randd/windoleaf.png" alt="Dummy Image">
+    <img src="img/randd/smartbarcounter.png" alt="Smart Bar Counter">
   </div>
-
+  <div class="panel image-panel">
+    <div class="image-mask"></div>
+    <img src="img/randd/windoleaf.png" alt="Smart Window Leaf AC">
+  </div>
 </section>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  const scrollContainer = document.querySelector(".horizontal-scroll");
+  const panels = gsap.utils.toArray(".panel");
+
+  // ✅ Corrected horizontal scroll logic
+  gsap.to(panels, {
+    xPercent: -100 * (panels.length - 1),
+    ease: "none",
+    scrollTrigger: {
+      trigger: scrollContainer,
+      pin: true,
+      scrub: 1,
+      snap: 1 / (panels.length - 1),
+      end: () => "+=" + scrollContainer.offsetWidth, // dynamic end point
+      anticipatePin: 1, // smoother transition
+      invalidateOnRefresh: true // handles responsive resizing
+    }
+  });
+
+  // ✅ Image reveal animation (unchanged)
+  document.querySelectorAll(".image-panel").forEach(panel => {
+    const img = panel.querySelector("img");
+    const mask = panel.querySelector(".image-mask");
+
+    gsap.set(img, { scale: 1.2 });
+    gsap.set(mask, { scaleX: 1 });
+
+    ScrollTrigger.create({
+      trigger: panel,
+      start: "left center",
+      end: "right center",
+      containerAnimation: ScrollTrigger.getById("horizontalScroll"),
+      onEnter: () => {
+        gsap.timeline()
+          .to(mask, { scaleX: 0, duration: 1.2, ease: "power3.inOut" })
+          .to(img, { scale: 1, duration: 1.2, ease: "power3.inOut" }, "-=1");
+      },
+      onLeaveBack: () => {
+        gsap.timeline()
+          .to(mask, { scaleX: 1, duration: 1.2, ease: "power3.inOut" })
+          .to(img, { scale: 1.2, duration: 1.2, ease: "power3.inOut" }, "-=1");
+      }
+    });
+  });
+
+  // ✅ Make sure body theme doesn’t flicker
+  ScrollTrigger.refresh(true);
+</script>
+
 
 <div class="hero">
   <h1>Arcot SmartPole</h1>
@@ -396,11 +448,14 @@ let autoCycle = setInterval(nextFeature, 4000);
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-color: #222222;
 }
 
 .hero h1 {
-  font-size: 5rem;
-  font-weight: 700;
+  font-family: "Roboto" sans-serif;
+  font-size: 3rem;
+  letter-spacing: 4px;
+  font-weight: 400;
   background: linear-gradient(90deg, #ffffff, #a1a1a1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -410,7 +465,9 @@ let autoCycle = setInterval(nextFeature, 4000);
 }
 
 .hero p {
-  font-size: 1.3rem;
+ font-family: "Roboto" sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
   color: #cfcfcf;
   margin-top: 8px;
   opacity: 0;
@@ -428,6 +485,7 @@ let autoCycle = setInterval(nextFeature, 4000);
   opacity: 0;
   transform: translateY(50px);
   position: relative;
+  background-color: #222222;
 }
 
 .features-container {
@@ -454,6 +512,7 @@ let autoCycle = setInterval(nextFeature, 4000);
   padding: 14px 22px;
   cursor: pointer;
   transition: all 0.4s ease;
+  font-family: "Roboto" sans-serif;
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.3px;
@@ -539,11 +598,14 @@ let autoCycle = setInterval(nextFeature, 4000);
   align-items: center;
   text-align: center;
   overflow: hidden;
+  
 }
 
 .bollard-hero h1 {
-  font-size: 4.2rem;
-  font-weight: 700;
+  font-family: "Roboto" sans-serif;
+  font-size: 3rem;
+  letter-spacing: 4px;
+  font-weight: 400;
   background: linear-gradient(90deg, #ffffff, #cccccc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -553,7 +615,9 @@ let autoCycle = setInterval(nextFeature, 4000);
 }
 
 .bollard-hero p {
-  font-size: 1.2rem;
+   font-family: "Roboto" sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
   color: #bbb;
   margin-top: 10px;
   opacity: 0;
@@ -569,6 +633,7 @@ let autoCycle = setInterval(nextFeature, 4000);
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+ 
 }
 
 .bollard-media-container {
@@ -641,7 +706,9 @@ let autoCycle = setInterval(nextFeature, 4000);
 }
 
 .bollard-point h3 {
-  font-size: 1.6rem;
+  font-family: "Roboto" sans-serif;
+  font-size: 1.7rem;
+  letter-spacing: 2px;
   margin: 0 0 8px;
   background: linear-gradient(90deg, #ffffff, #aaaaaa);
   -webkit-background-clip: text;
@@ -649,7 +716,7 @@ let autoCycle = setInterval(nextFeature, 4000);
 }
 
 .bollard-point p {
-  font-size: 1rem;
+  font-size: 1.07rem;
   color: #aaa;
   max-width: 440px;
   line-height: 1.6;
@@ -719,6 +786,385 @@ let autoCycle = setInterval(nextFeature, 4000);
     </div>
   </div>
 </section>
+
+<!-- ==== SMART PRODUCT CAROUSEL (BLACK & WHITE THEME) ==== -->
+<div class="smart-products" style="background-color: #2C2C2C;">
+  <section class="smart-slider">
+    <div class="slide">
+      <!-- Image -->
+      <figure class="slide-media">
+        <img src="img/randd/smarttable.png" alt="Smart Conference Table" id="slide-img" class="active">
+        <div class="slide-overlay"></div>
+      </figure>
+
+      <!-- Text -->
+      <div class="slide-content active" id="slide-text">
+        <h3 class="slide-title">Smart Conference Table</h3>
+        <p class="slide-desc">
+          Smart Conference Table designed to elevate modern meeting spaces. Built with advanced 
+          technology, it features built-in wireless charging, seamless connectivity, and controls 
+          for lighting and audio systems. Customizable in shapes and sizes to fit every boardroom — 
+          showcasing ARCOT’s vision of smart innovation and quality.
+        </p>
+
+        <!-- Progress + dots -->
+        <div class="slide-progress"><div id="slide-progress-fill"></div></div>
+        <div class="slide-dots" id="slide-dots"></div>
+      </div>
+
+      <!-- Arrows -->
+      <!-- <div class="slide-arrows">
+        <button class="arrow prev" onclick="prevSlide()">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="arrow next" onclick="nextSlide()">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div> -->
+    </div>
+  </section>
+</div>
+
+
+
+<style>
+/* ==== DARK MONOCHROME STYLE ==== */
+
+
+.smart-slider {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 20px;
+  position: relative;
+  
+}
+
+.slide {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+}
+
+/* ---- IMAGE ---- */
+.slide-media {
+  height: 380px;
+  /* border-radius: 20px; */
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.05);
+}
+.slide-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* filter: grayscale(100%) contrast(1.05); */
+  transform: scale(1.08);
+  opacity: 0;
+  transition: all 1s ease;
+}
+.slide-media img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+}
+
+/* ---- TEXT ---- */
+.slide-content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+.slide-content.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.slide-title {
+  font-size: 3rem;
+  font-family: "Roboto" , sans-serif;
+
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 15px;
+}
+.slide-desc {
+  color: #b5b5b5;
+  font-size: 16px;
+  line-height: 1.7;
+  font-family: "Roboto" , sans-serif;
+}
+
+/* ---- PROGRESS BAR ---- */
+.slide-progress {
+  height: 4px;
+  background: #2b2b2b;
+  margin: 25px 0 15px;
+  /* border-radius: 4px; */
+  overflow: hidden;
+}
+#slide-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #fff, #888);
+}
+
+/* ---- DOTS ---- */
+.slide-dots {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.dot.active {
+  background: #fff;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+  transform: scale(1.2);
+}
+
+/* ---- ARROWS ---- */
+.slide-arrows {
+  position: absolute;
+  left: 55%;
+  bottom: -80px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+}
+.arrow {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid #999;
+  background: transparent;
+  color: #eaeaea;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.arrow:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+@media (max-width: 992px) {
+  .slide {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .slide-media {
+    height: 240px;
+  }
+  .slide-title {
+    font-size: 24px;
+  }
+  .slide-desc {
+    font-size: 15px;
+  }
+  .slide-arrows {
+    position: static;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+</style>
+<!-- ==== END ==== -->
+
+
+<section class="innovation-future">
+  <!-- Background effects -->
+  <div class="glow-ring"></div>
+  <div class="light-beam"></div>
+  <div class="data-flow"></div>
+
+  <!-- Content -->
+  <div class="innovation-container">
+    <h2 class="innovation-title">More Innovations Are On The Way</h2>
+    <p class="innovation-sub">
+      ARCOT continues to redefine smart automation and intelligent Innovations.<br>
+      Our upcoming solutions are engineered to transform how the world connects, works, and lives.
+    </p>
+
+    <div class="future-line">
+      <div class="future-progress"></div>
+    </div>
+
+    <span class="innovation-tag">R&D EVOLUTION — <strong>2026 SERIES</strong></span>
+  </div>
+</section>
+
+<style>
+/* ---------- Base Section ---------- */
+.innovation-future {
+  position: relative;
+  background: radial-gradient(circle at center, #0c0c0c 0%, #000 100%);
+  padding: 160px 20px;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* ---------- Glowing Ring ---------- */
+.glow-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+  filter: blur(70px);
+  transform: translate(-50%, -50%);
+  animation: pulseRing 8s ease-in-out infinite;
+}
+@keyframes pulseRing {
+  0%,100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
+}
+
+/* ---------- Light Beam ---------- */
+.light-beam {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.06), transparent);
+  animation: moveBeam 12s linear infinite;
+}
+@keyframes moveBeam {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ---------- Data Flow Background ---------- */
+.data-flow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.05) 0px,
+      rgba(255,255,255,0.05) 1px,
+      transparent 2px,
+      transparent 6px
+    );
+  animation: dataMove 6s linear infinite;
+  opacity: 0.2;
+}
+@keyframes dataMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 0; }
+}
+
+/* ---------- Text Styling ---------- */
+.innovation-title {
+  font-family: "Roboto" , sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  background: linear-gradient(90deg, #fff, #bbb, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shineText 5s linear infinite;
+  letter-spacing: 1px;
+}
+@keyframes shineText {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
+}
+
+/* ---------- Subtitle ---------- */
+.innovation-sub {
+  color: #bdbdbd;
+  font-family: "Roboto" , sans-serif;
+  font-size: 1.1rem;
+  margin: 20px auto 60px;
+  max-width: 700px;
+  line-height: 1.7;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1.2s ease forwards 0.4s;
+}
+
+/* ---------- Animated Progress Line ---------- */
+.future-line {
+  width: 200px;
+  height: 2px;
+  background: rgba(255,255,255,0.1);
+  margin: 0 auto 40px;
+  overflow: hidden;
+  border-radius: 2px;
+  position: relative;
+}
+.future-progress {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #888, #fff, #888);
+  animation: loadLine 6s ease-in-out infinite;
+}
+@keyframes loadLine {
+  0% { width: 0%; opacity: 0.3; }
+  50% { width: 100%; opacity: 1; }
+  100% { width: 0%; opacity: 0.3; }
+}
+
+/* ---------- Tag ---------- */
+.innovation-tag {
+  display: inline-block;
+  font-size: 0.95rem;
+  letter-spacing: 1.2px;
+  color: #ccc;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 10px 26px;
+  border-radius: 40px;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.5s ease forwards 1.2s;
+}
+.innovation-tag:hover {
+  border-color: #fff;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(255,255,255,0.15);
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Responsive ---------- */
+@media(max-width:768px){
+  .innovation-title{font-size:2rem;}
+  .innovation-sub{font-size:1rem;}
+  .glow-ring{width:350px;height:350px;}
+}
+</style>
+
+
+
+
+
+
+
 
 <script>
 gsap.registerPlugin(ScrollTrigger);
@@ -974,96 +1420,97 @@ setInterval(cycleBollardPoints, 4000);
        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
        <script>AOS.init();</script>
 
-       <script>
-gsap.registerPlugin(ScrollTrigger);
 
-// Split-text animation
-document.querySelectorAll(".split").forEach(el => {
-  const text = el.innerText;
-  el.innerHTML = text.split("").map(char => `<span>${char}</span>`).join("");
-  gsap.fromTo(el.querySelectorAll("span"), 
-    {y:50, opacity:0}, 
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // --- SLIDE DATA ---
+  const slides = [
     {
-      y:0, opacity:1, 
-      stagger:0.05, duration:1, ease:"power4.out",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 80%",
-        toggleActions: "play none none reverse"
-      }
+      img: "img/randd/smarttable.png",
+      title: "Smart Conference Table",
+      desc: "Smart Conference Table designed to elevate modern meeting spaces. Built with advanced technology, it features built-in wireless charging, seamless connectivity, and controls for lighting and audio systems. Customizable in shapes and sizes to fit every boardroom — showcasing ARCOT’s vision of smart innovation and quality."
+    },
+    {
+      img: "img/randd/smartbarcounter.png",
+      title: "Smart Bar Counter",
+      desc: "Our Smart Bar Counter redefines luxury with integrated chill zones, LED ambiance control, and touch-enabled beverage management — blending sophistication with cutting-edge tech for modern hospitality spaces."
+    },
+    {
+      img: "img/randd/windoleaf.png",
+      title: "Smart Window Leaf AC",
+      desc: "Compact yet powerful — the Smart Window Leaf AC uses intelligent temperature sensing and IoT connectivity, optimizing energy and comfort for every environment."
     }
-  );
-});
+  ];
 
-// Horizontal scroll section
-let scrollContainer = document.querySelector(".horizontal-scroll");
-let panels = gsap.utils.toArray(".panel");
+  // --- ELEMENT REFERENCES ---
+  const imgEl = document.getElementById("slide-img");
+  const textEl = document.getElementById("slide-text");
+  const progressEl = document.getElementById("slide-progress-fill");
+  const dotsEl = document.getElementById("slide-dots");
 
-gsap.to(panels, {
-  xPercent: -100 * (panels.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".horizontal-scroll",
-    pin: true,
-    scrub: 1,
-    snap: 1 / (panels.length - 1),
-    end: () => "+=" + scrollContainer.offsetWidth
+  // Safety check — make sure these elements exist
+  if (!imgEl || !textEl || !progressEl || !dotsEl) {
+    console.warn("Carousel elements not found. Check your HTML IDs.");
+    return;
   }
-});
 
-// Image reveal animation
-document.querySelectorAll(".image-panel").forEach(panel=>{
-  let img = panel.querySelector("img");
-  let mask = panel.querySelector(".image-mask");
+  let currentIndex = 0;
 
-  gsap.set(img,{scale:1.2});
-  gsap.set(mask,{scaleX:1});
-
-  ScrollTrigger.create({
-    trigger:panel,
-    start:"top 80%",
-    end:"top 20%",
-    onEnter:()=>{
-      gsap.timeline()
-        .to(mask,{scaleX:0,duration:1.2,ease:"power3.inOut"})
-        .to(img,{scale:1,duration:1.2,ease:"power3.inOut"},"-=1");
-    },
-    onLeaveBack:()=>{
-      gsap.timeline()
-        .to(mask,{scaleX:1,duration:1.2,ease:"power3.inOut"})
-        .to(img,{scale:1.2,duration:1.2,ease:"power3.inOut"},"-=1");
-    }
+  // --- CREATE DOTS ---
+  slides.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.className = "dot" + (i === 0 ? " active" : "");
+    dot.addEventListener("click", () => showSlide(i));
+    dotsEl.appendChild(dot);
   });
-});
 
-// Background theme changes
-gsap.utils.toArray("section").forEach((section, index) => {
-  ScrollTrigger.create({
-    trigger: section,
-    start: "top 50%",
-    end: "bottom 50%",
-    onEnter: () => {
-      document.body.setAttribute("data-theme", index % 2 === 0 ? "dark" : "light");
-    },
-    onEnterBack: () => {
-      document.body.setAttribute("data-theme", index % 2 === 0 ? "dark" : "light");
-    }
-  });
-});
+  // --- FUNCTIONS ---
+  function updateDots() {
+    [...dotsEl.children].forEach((dot, i) => {
+      dot.classList.toggle("active", i === currentIndex);
+    });
+  }
 
-// Section background parallax
-document.querySelectorAll("section[data-bg]").forEach(section => {
-  section.style.backgroundImage = `url(${section.getAttribute("data-bg")})`;
-  gsap.from(section, {
-    backgroundPosition: "50% 0%",
-    ease: "none",
-    scrollTrigger: {
-      trigger: section,
-      scrub: true
-    }
-  });
+  function animateProgress() {
+    progressEl.style.transition = "none";
+    progressEl.style.width = "0%";
+    setTimeout(() => {
+      progressEl.style.transition = "width 5s linear";
+      progressEl.style.width = "100%";
+    }, 50);
+  }
+
+  function showSlide(i) {
+    currentIndex = (i + slides.length) % slides.length;
+    imgEl.classList.remove("active");
+    textEl.classList.remove("active");
+
+    setTimeout(() => {
+      imgEl.src = slides[currentIndex].img;
+      textEl.querySelector(".slide-title").textContent = slides[currentIndex].title;
+      textEl.querySelector(".slide-desc").textContent = slides[currentIndex].desc;
+      imgEl.classList.add("active");
+      textEl.classList.add("active");
+      updateDots();
+      animateProgress();
+    }, 200);
+  }
+
+  function nextSlide() {
+    showSlide(currentIndex + 1);
+  }
+  function prevSlide() {
+    showSlide(currentIndex - 1);
+  }
+
+  // --- AUTO SLIDE ---
+  setInterval(nextSlide, 5000);
+  animateProgress();
 });
 </script>
+
 
 
 

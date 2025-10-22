@@ -1,260 +1,170 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arcot Smart Bollard</title>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<section class="innovation-future">
+  <!-- Background effects -->
+  <div class="glow-ring"></div>
+  <div class="light-beam"></div>
+  <div class="data-flow"></div>
+
+  <!-- Content -->
+  <div class="innovation-container">
+    <h2 class="innovation-title">More Innovations Are On The Way</h2>
+    <p class="innovation-sub">
+      ARCOT continues to redefine smart automation and intelligent design.<br>
+      Our upcoming solutions are engineered to transform how the world connects, works, and lives.
+    </p>
+
+    <div class="future-line">
+      <div class="future-progress"></div>
+    </div>
+
+    <span class="innovation-tag">R&D EVOLUTION — <strong>2026 SERIES</strong></span>
+  </div>
+</section>
 
 <style>
-body {
-  margin: 0;
-  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+/* ---------- Base Section ---------- */
+.innovation-future {
+  position: relative;
+  background: radial-gradient(circle at center, #0c0c0c 0%, #000 100%);
+  padding: 160px 20px;
   color: #fff;
-  font-family: "SF Pro Display", Helvetica, Arial, sans-serif;
-  overflow-x: hidden;
-}
-
-/* ---------- HERO ---------- */
-.bollard-hero {
-  height: 40vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
   overflow: hidden;
 }
 
-.bollard-hero h1 {
-  font-size: 4.2rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #ffffff, #cccccc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1px;
-  opacity: 0;
-  transform: translateY(50px);
-}
-
-.bollard-hero p {
-  font-size: 1.2rem;
-  color: #bbb;
-  margin-top: 10px;
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-/* ---------- MAIN SECTION ---------- */
-.bollard-section {
-  display: flex;
-  align-items: center; /* vertically center media and timeline */
-  justify-content: center;
-  padding: 120px 100px;
-  min-height: 100vh;
-  position: relative;
-  overflow: hidden;
-}
-
-.bollard-media-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center; /* center video vertically next to timeline */
-  position: relative;
-}
-
-
-.bollard-glow {
+/* ---------- Glowing Ring ---------- */
+.glow-ring {
   position: absolute;
-  width: 400px;
-  height: 400px;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
-  /* background: radial-gradient(circle, rgba(0,255,255,0.25), transparent 70%); */
-  filter: blur(80px);
-  transition: background 1s ease;
-  z-index: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+  filter: blur(70px);
+  transform: translate(-50%, -50%);
+  animation: pulseRing 8s ease-in-out infinite;
+}
+@keyframes pulseRing {
+  0%,100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
 }
 
-.bollard-video {
-  width: 320px;
-  height: auto;
-  border-radius: 24px;
-  z-index: 2;
-  opacity: 0;
-  transform: translateY(80px) scale(0.95);
-  box-shadow: 0 0 40px rgba(255,255,255,0.08);
-}
-
-/* ---------- VERTICAL TIMELINE ---------- */
-.bollard-timeline {
-  flex: 1;
-  position: relative;
-  padding-left: 60px;
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-}
-
-.bollard-timeline::before {
-  content: "";
+/* ---------- Light Beam ---------- */
+.light-beam {
   position: absolute;
-  left: 20px; /* vertical line */
   top: 0;
-  bottom: 0;
-  width: 2px;
-  background: #ffffff;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.06), transparent);
+  animation: moveBeam 12s linear infinite;
+}
+@keyframes moveBeam {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ---------- Data Flow Background ---------- */
+.data-flow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.05) 0px,
+      rgba(255,255,255,0.05) 1px,
+      transparent 2px,
+      transparent 6px
+    );
+  animation: dataMove 6s linear infinite;
   opacity: 0.2;
 }
-
-.bollard-point {
-  position: relative;
-  opacity: 0;
-  transform: translateY(60px);
+@keyframes dataMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 0; }
 }
 
-.bollard-point::before {
-  content: "";
-  position: absolute;
-  left: -32px; /* aligns circle with line */
-  top: 10px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(255,255,255,0.5);
-}
-
-.bollard-point h3 {
-  font-size: 1.6rem;
-  margin: 0 0 8px;
-  background: linear-gradient(90deg, #ffffff, #aaaaaa);
+/* ---------- Text Styling ---------- */
+.innovation-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #fff, #bbb, #fff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: shineText 5s linear infinite;
+  letter-spacing: 1px;
+}
+@keyframes shineText {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
 }
 
-.bollard-point p {
-  font-size: 1rem;
-  color: #aaa;
-  max-width: 440px;
-  line-height: 1.6;
+/* ---------- Subtitle ---------- */
+.innovation-sub {
+  color: #bdbdbd;
+  font-size: 1.1rem;
+  margin: 20px auto 60px;
+  max-width: 700px;
+  line-height: 1.7;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1.2s ease forwards 0.4s;
 }
 
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 900px) {
-  .bollard-section {
-    flex-direction: column;
-    padding: 80px 20px;
-    text-align: center;
-  }
-  .bollard-timeline {
-    padding-left: 0;
-    margin-top: 60px;
-  }
-  .bollard-timeline::before {
-    display: none;
-  }
-  .bollard-point::before {
-    left: 50%;
-    transform: translateX(-50%);
-  }
+/* ---------- Animated Progress Line ---------- */
+.future-line {
+  width: 200px;
+  height: 2px;
+  background: rgba(255,255,255,0.1);
+  margin: 0 auto 40px;
+  overflow: hidden;
+  border-radius: 2px;
+  position: relative;
+}
+.future-progress {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #888, #fff, #888);
+  animation: loadLine 6s ease-in-out infinite;
+}
+@keyframes loadLine {
+  0% { width: 0%; opacity: 0.3; }
+  50% { width: 100%; opacity: 1; }
+  100% { width: 0%; opacity: 0.3; }
+}
+
+/* ---------- Tag ---------- */
+.innovation-tag {
+  display: inline-block;
+  font-size: 0.95rem;
+  letter-spacing: 1.2px;
+  color: #ccc;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 10px 26px;
+  border-radius: 40px;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.5s ease forwards 1.2s;
+}
+.innovation-tag:hover {
+  border-color: #fff;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(255,255,255,0.15);
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Responsive ---------- */
+@media(max-width:768px){
+  .innovation-title{font-size:2rem;}
+  .innovation-sub{font-size:1rem;}
+  .glow-ring{width:350px;height:350px;}
 }
 </style>
-</head>
-<body>
-
-<!-- ---------- HERO ---------- -->
-<div class="bollard-hero">
-  <h1>Arcot Smart Bollard</h1>
-  <p>Hybrid elegance redefined — where connectivity meets craftsmanship.</p>
-</div>
-
-<!-- ---------- MAIN CONTENT ---------- -->
-<section class="bollard-section">
-  <div class="bollard-media-container">
-    <div class="bollard-glow"></div>
-    <video class="bollard-video" autoplay loop muted playsinline>
-      <source src="media/video 02.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video>
-  </div>
-
-  <div class="bollard-timeline">
-    <div class="bollard-point" data-color="#00ffff">
-      <h3>Bluetooth Connectivity</h3>
-      <p>Seamless pairing for instant smart control and synchronized lighting.</p>
-    </div>
-    <div class="bollard-point" data-color="#66ccff">
-      <h3>Wi-Fi Integration</h3>
-      <p>Connects to the cloud for diagnostics, updates, and automated scheduling.</p>
-    </div>
-    <div class="bollard-point" data-color="#ffaa00">
-      <h3>Wireless Charging</h3>
-      <p>Power your devices effortlessly with built-in wireless charging zones.</p>
-    </div>
-    <div class="bollard-point" data-color="#ff66cc">
-      <h3>Audio System</h3>
-      <p>Immersive ambient sound — designed for parks, walkways, and plazas.</p>
-    </div>
-    <div class="bollard-point" data-color="#ffffff">
-      <h3>Tuning & Dimming</h3>
-      <p>Precision control of brightness and tone to set any environment’s mood.</p>
-    </div>
-  </div>
-</section>
-
-<script>
-gsap.registerPlugin(ScrollTrigger);
-
-// HERO ANIMATION
-gsap.to(".bollard-hero h1", {
-  opacity: 1, y: 0, duration: 1.4, ease: "power3.out", delay: 0.2
-});
-gsap.to(".bollard-hero p", {
-  opacity: 1, y: 0, duration: 1.2, ease: "power3.out", delay: 0.5
-});
-
-// VIDEO ENTRANCE
-gsap.to(".bollard-video", {
-  opacity: 1, y: 0, scale: 1, duration: 1.6, ease: "power3.out",
-  scrollTrigger: { trigger: ".bollard-section", start: "top 85%" }
-});
-
-// FEATURE REVEALS + GLOW COLOR SYNC
-const bollardGlow = document.querySelector(".bollard-glow");
-const bollardPoints = document.querySelectorAll(".bollard-point");
-let bollardIndex = 0;
-
-bollardPoints.forEach((point) => {
-  ScrollTrigger.create({
-    trigger: point,
-    start: "top 85%",
-    onEnter: () => {
-      gsap.to(point, { opacity: 1, y: 0, duration: 1.4, ease: "power3.out" });
-      const color = point.dataset.color;
-      gsap.to(bollardGlow, {
-        background: `radial-gradient(circle, ${color}60, transparent 70%)`,
-        duration: 1.2,
-        ease: "power2.out"
-      });
-    }
-  });
-});
-
-// AUTO LOOP: changes glow + light ambiance over time
-function cycleBollardPoints() {
-  const point = bollardPoints[bollardIndex];
-  const color = point.dataset.color;
-  gsap.to(bollardGlow, {
-    background: `radial-gradient(circle, ${color}80, transparent 70%)`,
-    duration: 1.5,
-    ease: "power2.inOut"
-  });
-  bollardIndex = (bollardIndex + 1) % bollardPoints.length;
-}
-setInterval(cycleBollardPoints, 4000);
-</script>
-
-</body>
-</html>
