@@ -1,256 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SmartPole Features Slider</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Apartments - Alternate </title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background: #fff;
-  color: #111;
-  overflow-x: hidden;
-}
+    body {
+      font-family: "Georgia", serif;
+      display: flex;
+      flex-direction: row; /* image left, text right */
+      height: 100vh;
+      overflow: hidden;
+      background-color: #e7e2dc;
+    }
 
-/* Container */
-.feature-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100vh;
-  padding: 0 60px;
-  box-sizing: border-box;
-  position: relative;
-}
+    /* LEFT: IMAGE SECTION */
+    .left-section-2 {
+      flex: 1;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
 
-/* Left text box */
-.text-content {
-  width: 45%;
-  position: relative;
-}
+    /* HEADING overlay */
+    .heading-2 {
+      position: absolute;
+      top: 35%;
+      right: -8%; /* slightly overlaps onto text */
+      transform: translateY(-50%);
+      background-color: white;
+      padding: 1.2rem 2rem;
+      /* border-radius: 8px; */
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
 
-.text-content h5 {
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: 400;
-  margin-bottom: 10px;
-  letter-spacing: 0.05em;
-  position: relative;
-}
+    /* RIGHT: TEXT SECTION */
+    .right-section-2 {
+      flex: 0.3;
+      background-color: #e7e2dc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 5rem 4rem 8rem; /* shifted right a bit */
+      position: relative;
+      z-index: 1;
+    }
 
-.text-content h5::after {
-  content: "";
-  display: block;
-  width: 350px;
-  height: 1px;
-  background: #000;
-  margin-top: 8px;
-}
+    .logo-2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
 
-.text-content h2 {
-  font-size: 26px;
-  text-transform: uppercase;
-  margin: 20px 0;
-  font-weight: 700;
-}
+    .subtitle-2 {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
 
-.text-content p {
-  font-size: 14px;
-  line-height: 1.7;
-  color: #333;
-  margin-bottom: 60px;
-}
+    .description-2 {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
 
-/* bottom line */
-.text-content::after {
-  content: "";
-  display: block;
-  width: 80%;
-  height: 1px;
-  background: #000;
-  margin-top: 50px;
-}
+    .features-2 {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
 
-/* Image container */
-.image-container {
-  width: 50%;
-  overflow: hidden;
-  position: relative;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    .features-2 li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
 
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 6px;
-  transition: transform 0.8s ease-in-out;
-}
+    .features-2 li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
 
-.image-container:hover img {
-  transform: scale(1.03);
-}
+    .btn-2 {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: white;
+      border: none;
+      /* border-radius: 8px; */
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
 
-/* Navigation buttons */
-.nav-btn {
-  position: absolute;
-  top: 90%;
-  transform: translateY(-50%);
-  background: #111;
-  color: #fff;
-  border: none;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 20px;
-  z-index: 5;
-  transition: 0.3s ease;
-}
+    .btn-2:hover {
+      transform: translateY(-2px);
+    }
 
-.nav-btn:hover {
-  background: #333;
-}
+    /* Responsive */
+    @media (max-width: 900px) {
+      body {
+        flex-direction: column;
+      }
 
-#prevBtn {
-  left: 380px;
-}
+      .left-section-2 {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
 
-#nextBtn {
-  right: 800px;
-}
+      .right-section-2 {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
 
-/* Dots navigation */
-.dots {
-  position: absolute;
-  bottom: 60px;
-  left: 35%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-}
+      .heading-2 {
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 2.2rem;
+      }
 
-.dots span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #111;
-  opacity: 0.4;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.dots span.active {
-  opacity: 1;
-  background: #ffcc00;
-}
-</style>
+      .features-2 {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
 </head>
-
 <body>
-<section class="feature-section">
-  <div class="text-content" id="text-content">
-    <h5>Feature</h5>
-    <h2>Smart Lighting</h2>
-    <p>
-      AI-powered adaptive street lighting that adjusts brightness automatically 
-      based on movement and environmental conditions for energy efficiency.
-    </p>
+  <!-- LEFT IMAGE SECTION -->
+  <div class="left-section-2">
+    <div class="heading-2">Modern<br>apartments</div>
   </div>
 
-  <div class="image-container">
-    <img id="featureImage" src="https://images.unsplash.com/photo-1581091870633-7ccfa0f3c3b3?auto=format&fit=crop&w=1000&q=80" alt="Feature Image">
+  <!-- RIGHT TEXT SECTION -->
+  <div class="right-section-2">
+    <div class="logo-2">me.</div>
+    <div class="subtitle-2">New home furniture collections and decoration accessories</div>
+    <div class="description-2">
+      Discover a new approach to modern living spaces — where comfort meets contemporary design. Our curated selections transform every corner into a statement of elegance and simplicity.
+    </div>
+
+    <ul class="features-2">
+      <li>Elegant minimalist interiors</li>
+      <li>High-quality wooden finishes</li>
+      <li>Eco-friendly materials</li>
+      <li>Smart home integration</li>
+      <li>Customizable design options</li>
+      <li>Luxury fittings and textures</li>
+    </ul>
+
+    <button class="btn-2">See more →</button>
   </div>
-
-  <button class="nav-btn" id="prevBtn">&#8592;</button>
-  <button class="nav-btn" id="nextBtn">&#8594;</button>
-
-  <div class="dots" id="dots"></div>
-</section>
-
-<script>
-const features = [
-  {
-    title: "Smart Lighting",
-    desc: "AI-powered adaptive street lighting that adjusts brightness automatically based on movement and environmental conditions for energy efficiency.",
-    img: "https://images.unsplash.com/photo-1581091870633-7ccfa0f3c3b3?auto=format&fit=crop&w=1000&q=80"
-  },
-  {
-    title: "Environmental Monitoring",
-    desc: "Tracks air quality, temperature, humidity, and noise levels in real time for smart city applications.",
-    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=80"
-  },
-  {
-    title: "Traffic Analytics",
-    desc: "Uses AI-based video analytics to monitor vehicle flow, detect congestion, and improve traffic management.",
-    img: "https://images.unsplash.com/photo-1517949908112-7201cc1261c7?auto=format&fit=crop&w=1000&q=80"
-  },
-  {
-    title: "Public Wi-Fi Hotspot",
-    desc: "Integrated Wi-Fi access points provide connectivity for citizens and IoT devices in smart cities.",
-    img: "https://images.unsplash.com/photo-1504386106331-3e4e71712b38?auto=format&fit=crop&w=1000&q=80"
-  }
-];
-
-let index = 0;
-const imgEl = document.getElementById("featureImage");
-const textEl = document.getElementById("text-content");
-const dotsEl = document.getElementById("dots");
-
-function updateFeature() {
-  const f = features[index];
-  imgEl.src = f.img;
-  textEl.innerHTML = `
-    <h5>Feature</h5>
-    <h2>${f.title}</h2>
-    <p>${f.desc}</p>
-  `;
-  document.querySelectorAll(".dots span").forEach((dot, i) => {
-    dot.classList.toggle("active", i === index);
-  });
-}
-
-features.forEach((_, i) => {
-  const dot = document.createElement("span");
-  dot.addEventListener("click", () => {
-    index = i;
-    updateFeature();
-  });
-  dotsEl.appendChild(dot);
-});
-
-document.getElementById("nextBtn").onclick = () => {
-  index = (index + 1) % features.length;
-  updateFeature();
-};
-
-document.getElementById("prevBtn").onclick = () => {
-  index = (index - 1 + features.length) % features.length;
-  updateFeature();
-};
-
-let autoScroll = setInterval(() => {
-  index = (index + 1) % features.length;
-  updateFeature();
-}, 3500);
-
-document.querySelector(".feature-section").addEventListener("mouseenter", () => {
-  clearInterval(autoScroll);
-});
-
-document.querySelector(".feature-section").addEventListener("mouseleave", () => {
-  autoScroll = setInterval(() => {
-    index = (index + 1) % features.length;
-    updateFeature();
-  }, 3500);
-});
-
-updateFeature();
-</script>
 </body>
 </html>
+
+
+
+

@@ -1,341 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SmartPole Main Slider</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Apartments</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background: #fff;
-  color: #111;
-  overflow-x: hidden;
-}
+    body {
+      font-family: "Georgia", serif;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #e7e2dc;
+    }
 
-/* Container */
-.smartpole-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100vh;
-  padding: 0 60px;
-  box-sizing: border-box;
-  position: relative;
-}
+    /* Left Section */
+    .left-section {
+      flex: 0.3; /* narrower */
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
 
-/* Text box */
-.smartpole-text {
-  width: 45%;
-  position: relative;
-}
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
 
-.smartpole-text h5 {
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: 400;
-  margin-bottom: 10px;
-  letter-spacing: 0.05em;
-  position: relative;
-}
+    .subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+    .hiper-link{
+      text-decoration: none;
+      color:#000;
+    }
 
-.smartpole-text h5::after {
-  content: "";
-  display: block;
-  width: 350px;
-  height: 1px;
-  background: #000;
-  margin-top: 8px;
-}
+    .description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
 
-.smartpole-text h2 {
-  font-size: 26px;
-  text-transform: uppercase;
-  margin: 20px 0;
-  font-weight: 700;
-}
+    .features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
 
-.smartpole-text p {
-  font-size: 14px;
-  line-height: 1.7;
-  color: #333;
-  margin-bottom: 15px;
-}
+    .features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
 
-/* Bullet points */
-.smartpole-text ul {
-  margin: 0;
-  padding-left: 20px;
-  list-style-type: disc;
-}
+    .features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
 
-.smartpole-text ul li {
-  font-size: 14px;
-  margin-bottom: 8px;
-  color: #333;
-}
+    .btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: white;
+      border: none;
+      /* border-radius: 8px; */
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
 
-/* bottom line */
-.smartpole-text::after {
-  content: "";
-  display: block;
-  width: 80%;
-  height: 1px;
-  background: #000;
-  margin-top: 50px;
-}
+    .btn:hover {
+      transform: translateY(-2px);
+    }
 
-/* Image container */
-.smartpole-image {
-  width: 50%;
-  overflow: hidden;
-  position: relative;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    /* Right Section */
+    .right-section {
+      flex: 0.7; /* wider */
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
 
-.smartpole-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 6px;
-  transition: transform 0.8s ease-in-out;
-}
+    /* Heading overlay on image */
+    .heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: white;
+      padding: 1.2rem 2rem;
+      /* border-radius: 8px; */
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
 
-.smartpole-image:hover img {
-  transform: scale(1.03);
-}
+    /* Optional: responsive for smaller screens */
+    @media (max-width: 900px) {
+      body {
+        flex-direction: column;
+      }
 
-/* Navigation buttons */
-.nav-btn {
-  background: transparent;
-  color: #000;
-  border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 32px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-  transition: transform 0.3s ease;
-}
+      .left-section {
+        flex: none;
+        width: 100%;
+        height: auto;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
 
-.nav-btn:hover {
-  transform: scale(1.2);
-  color: #ffcc00;
-}
+      .right-section {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
 
-/* Desktop positions */
-#prevBtn { left: 380px; top: 90%; position: absolute; transform: translateY(-50%); }
-#nextBtn { right: 800px; top: 90%; position: absolute; transform: translateY(-50%); }
+      .heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
 
-/* Dots navigation */
-.dots {
-  position: absolute;
-  bottom: 60px;
-  left: 35%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-}
-
-.dots span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #111;
-  opacity: 0.4;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.dots span.active {
-  opacity: 1;
-  background: #000;
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .smartpole-section {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    height: auto;
-  }
-
-  .smartpole-image {
-    width: 100%;
-    height: 300px;
-    margin-bottom: 20px;
-  }
-
-  .smartpole-text {
-    width: 100%;
-    margin-top: 0;
-    text-align: left;
-  }
-
-  .smartpole-text h5::after,
-  .smartpole-text::after {
-    width: 100%;
-    margin-top: 15px;
-  }
-
-  .nav-buttons-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    margin: 15px 0;
-    width: 100%;
-  }
-
-  #prevBtn, #nextBtn {
-    position: static;
-    transform: none;
-    width: 50px;
-    height: 50px;
-    font-size: 28px;
-  }
-
-  .dots {
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 10px;
-  }
-}
-</style>
+      .features {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
 </head>
-
 <body>
-<section class="smartpole-section">
+  <div class="left-section">
+    <!-- <div class="logo">me.</div> -->
+    <div class="subtitle">New home furniture collections and decoration accessories</div>
+    <div class="description">
+      Discover a new approach to modern living spaces — where comfort meets contemporary design. Our curated selections transform every corner into a statement of elegance and simplicity.
+    </div>
 
-  <div class="smartpole-text" id="smartpoleText">
-    <h5>Main Feature</h5>
-    <h2>Smart Lighting</h2>
-    <p>
-      AI-powered adaptive street lighting that adjusts brightness automatically 
-      based on movement and environmental conditions for energy efficiency.
-    </p>
-    <ul>
-      <li>Energy efficient</li>
-      <li>AI-powered</li>
-      <li>Real-time monitoring</li>
+    <ul class="features">
+      <li>Elegant minimalist interiors</li>
+      <li>High-quality wooden finishes</li>
+      <li>Eco-friendly materials</li>
+      <li>Smart home integration</li>
+      <li>Customizable design options</li>
+      <li>Luxury fittings and textures</li>
     </ul>
+
+    <button class="btn"><a class="hiper-link" href="contact.html">Know more →</a></button>
   </div>
 
-  <div class="smartpole-image">
-    <img id="smartpoleImage" src="https://images.unsplash.com/photo-1581091870633-7ccfa0f3c3b3?auto=format&fit=crop&w=1000&q=80" alt="SmartPole Image">
+  <div class="right-section">
+    <div class="heading">Modern<br>Apartments</div>
   </div>
-
-  <!-- Mobile buttons wrapper -->
-  <div class="nav-buttons-wrapper">
-    <button class="nav-btn" id="prevBtn">&#8592;</button>
-    <button class="nav-btn" id="nextBtn">&#8594;</button>
-  </div>
-
-  <div class="dots" id="smartpoleDots"></div>
-</section>
-
-<script>
-const smartpoleMain = [
-  {
-    title: "Smart Lighting",
-    desc: "AI-powered adaptive street lighting that adjusts brightness automatically based on movement and environmental conditions for energy efficiency.",
-    points: ["Energy efficient", "AI-powered", "Real-time monitoring"],
-    img: "https://images.unsplash.com/photo-1581091870633-7ccfa0f3c3b3?auto=format&fit=crop&w=1000&q=80"
-  },
-  {
-    title: "Environmental Monitoring",
-    desc: "Tracks air quality, temperature, humidity, and noise levels in real time for smart city applications.",
-    points: ["Air quality tracking", "Temperature & humidity sensors", "Noise monitoring"],
-    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=80"
-  },
-  {
-    title: "Traffic Analytics",
-    desc: "Uses AI-based video analytics to monitor vehicle flow, detect congestion, and improve traffic management.",
-    points: ["Vehicle flow monitoring", "Congestion detection", "Traffic optimization"],
-    img: "https://images.unsplash.com/photo-1517949908112-7201cc1261c7?auto=format&fit=crop&w=1000&q=80"
-  },
-  {
-    title: "Public Wi-Fi Hotspot",
-    desc: "Integrated Wi-Fi access points provide connectivity for citizens and IoT devices in smart cities.",
-    points: ["Citizen connectivity", "IoT integration", "High-speed access"],
-    img: "https://images.unsplash.com/photo-1504386106331-3e4e71712b38?auto=format&fit=crop&w=1000&q=80"
-  }
-];
-
-let spIndex = 0;
-const spImgEl = document.getElementById("smartpoleImage");
-const spTextEl = document.getElementById("smartpoleText");
-const spDotsEl = document.getElementById("smartpoleDots");
-
-function updateSmartPole() {
-  const item = smartpoleMain[spIndex];
-  spImgEl.src = item.img;
-
-  let pointsHTML = "<ul>";
-  item.points.forEach(pt => pointsHTML += `<li>${pt}</li>`);
-  pointsHTML += "</ul>";
-
-  spTextEl.innerHTML = `
-    <h5>Main Feature</h5>
-    <h2>${item.title}</h2>
-    <p>${item.desc}</p>
-    ${pointsHTML}
-  `;
-
-  document.querySelectorAll("#smartpoleDots span").forEach((dot, i) => {
-    dot.classList.toggle("active", i === spIndex);
-  });
-}
-
-// Initialize dots
-smartpoleMain.forEach((_, i) => {
-  const dot = document.createElement("span");
-  dot.addEventListener("click", () => {
-    spIndex = i;
-    updateSmartPole();
-  });
-  spDotsEl.appendChild(dot);
-});
-
-// Navigation
-document.getElementById("nextBtn").onclick = () => {
-  spIndex = (spIndex + 1) % smartpoleMain.length;
-  updateSmartPole();
-};
-
-document.getElementById("prevBtn").onclick = () => {
-  spIndex = (spIndex - 1 + smartpoleMain.length) % smartpoleMain.length;
-  updateSmartPole();
-};
-
-// Auto-scroll
-let autoScroll = setInterval(() => {
-  spIndex = (spIndex + 1) % smartpoleMain.length;
-  updateSmartPole();
-}, 3500);
-
-document.querySelector(".smartpole-section").addEventListener("mouseenter", () => {
-  clearInterval(autoScroll);
-});
-
-document.querySelector(".smartpole-section").addEventListener("mouseleave", () => {
-  autoScroll = setInterval(() => {
-    spIndex = (spIndex + 1) % smartpoleMain.length;
-    updateSmartPole();
-  }, 3500);
-});
-
-updateSmartPole();
-</script>
 </body>
 </html>
+
+
+
+

@@ -1,176 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SmartPole ITMS – Cinematic Scroll Reveal</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-<style>
-body {
-  margin: 0;
-  background-color: #000;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  overflow-x: hidden;
-}
-
-.itms-section {
-  width: 100%;
-  padding: 100px 0;
-  background: #000;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 100px;
-}
-
-.section-header h2 {
-  font-size: 2.8rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-}
-
-.section-header p {
-  color: #ccc;
-  letter-spacing: 1px;
-}
-
-.feature-block {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 80px;
-  padding: 100px 8%;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-.feature-block:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-.feature-image {
-  width: 45%;
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 0 40px rgba(255,255,255,0.1);
-}
-
-.feature-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(100%) brightness(0.8);
-  transition: all 0.8s ease;
-}
-
-.feature-block:hover img {
-  filter: grayscale(0%) brightness(1);
-  transform: scale(1.05);
-}
-
-.feature-text {
-  width: 45%;
-}
-
-.feature-text h3 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 15px;
-}
-
-.feature-text p {
-  color: #ccc;
-  font-size: 1rem;
-  line-height: 1.8;
-  letter-spacing: 0.3px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
-}
-
-.feature-block:hover p {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (max-width: 992px) {
-  .feature-block {
-    flex-direction: column !important;
-    text-align: center;
-  }
-  .feature-image, .feature-text {
-    width: 90%;
-  }
-}
-</style>
-</head>
-
-<body>
-<section class="itms-section">
-  <div class="section-header">
-    <h2>SmartPole ITMS — Intelligent Traffic Management System</h2>
-    <p>AI-driven solutions for safe, efficient, and adaptive urban mobility</p>
-  </div>
-
-  <!-- Feature 1 -->
-  <div class="feature-block">
-    <div class="feature-image">
-      <img src="img/itms/accident-detection.jpg" alt="Accident Detection">
-    </div>
-    <div class="feature-text">
-      <h3>Accident Detection & Emergency Response</h3>
-      <p>Real-time AI detection of accidents and stopped vehicles with automated ICCC alerts, geotagged data, and integrated SOS response to drastically reduce emergency times.</p>
-    </div>
-  </div>
-
-  <!-- Feature 2 -->
-  <div class="feature-block">
-    <div class="feature-image">
-      <img src="img/itms/speed-violation.jpg" alt="Speed Violation Detection">
-    </div>
-    <div class="feature-text">
-      <h3>Speed Violation Detection</h3>
-      <p>Lane-wise radar monitoring with AI-driven violation proof capture, ANPR integration, and automatic e-Challan generation for accurate, transparent enforcement.</p>
-    </div>
-  </div>
-
-  <!-- Feature 3 -->
-  <div class="feature-block">
-    <div class="feature-image">
-      <img src="img/itms/speed-measure.jpg" alt="Radar Speed Measurement">
-    </div>
-    <div class="feature-text">
-      <h3>Radar-Based Speed Measurement</h3>
-      <p>High-precision Doppler radar system with ±2 % accuracy, dual validation, live ICCC analytics, and signboard alerts to improve compliance and road safety.</p>
-    </div>
-  </div>
-
-</section>
-
-<script>
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.utils.toArray(".feature-block").forEach((section, i) => {
-  const img = section.querySelector(".feature-image");
-  const txt = section.querySelector(".feature-text");
-  gsap.from([img, txt], {
-    opacity: 0,
-    y: 100,
-    duration: 1.2,
-    ease: "power3.out",
-    stagger: 0.2,
-    scrollTrigger: {
-      trigger: section,
-      start: "top 85%",
+<section class="mainfeatures-section">
+  <style>
+    * {
+      box-sizing: border-box;
     }
-  });
-});
-</script>
-</body>
-</html>
+
+    .mainfeatures-section {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #e7e2dc;
+      font-family: "Georgia", serif;
+      margin-bottom: 60px; /* bottom gap added */
+    }
+
+    /* LEFT CONTENT AREA */
+    .mainfeatures-left-block {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
+
+    .mainfeatures-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .mainfeatures-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .mainfeatures-link {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .mainfeatures-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .mainfeatures-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mainfeatures-features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .mainfeatures-features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .mainfeatures-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mainfeatures-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RIGHT IMAGE AREA */
+    .mainfeatures-right-block {
+      flex: 0.7;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mainfeatures-heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .mainfeatures-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .mainfeatures-left-block {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .mainfeatures-right-block {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .mainfeatures-heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .mainfeatures-features {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+  <!-- LEFT SIDE -->
+  <div class="mainfeatures-left-block">
+    <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div>
+
+    <div class="mainfeatures-description">
+      Discover a new approach to modern living spaces — where comfort meets contemporary design. Our curated selections transform every corner into a statement of elegance and simplicity.
+    </div>
+
+    <ul class="mainfeatures-features">
+      <li>Elegant minimalist interiors</li>
+      <li>High-quality wooden finishes</li>
+      <li>Eco-friendly materials</li>
+      <li>Smart home integration</li>
+      <li>Customizable design options</li>
+      <li>Luxury fittings and textures</li>
+    </ul>
+
+    <button class="mainfeatures-btn">
+      <a class="mainfeatures-link" href="contact.html">Know more →</a>
+    </button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="mainfeatures-right-block">
+    <div class="mainfeatures-heading">Modern<br>Apartments</div>
+  </div>
+</section>

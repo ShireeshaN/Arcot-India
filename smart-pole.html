@@ -40,7 +40,7 @@
     </head>
 
 
-    <body style="background-color:#060505">
+    <body >
 
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -557,6 +557,2903 @@ let autoCycle = setInterval(nextFeature, 4000);
   }
 }
 </style>
+
+
+<!-- section-1 -->
+
+ <style>
+   
+    .mainfeatures-section {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+      /* margin-bottom: 60px;  */
+      /* bottom gap added */
+    }
+
+    /* LEFT CONTENT AREA */
+    .mainfeatures-left-block {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
+
+    .mainfeatures-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .mainfeatures-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .mainfeatures-link {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .mainfeatures-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .mainfeatures-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mainfeatures-features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .mainfeatures-features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .mainfeatures-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mainfeatures-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RIGHT IMAGE AREA */
+    .mainfeatures-right-block {
+      flex: 0.7;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mainfeatures-heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .mainfeatures-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .mainfeatures-left-block {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .mainfeatures-right-block {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .mainfeatures-heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .mainfeatures-features {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="mainfeatures-section">
+ 
+
+  <!-- LEFT SIDE -->
+  <div class="mainfeatures-left-block">
+    <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+    <div class="mainfeatures-description">
+      A smart and sustainable charging solution that efficiently powers electric vehicles while supporting cleaner and greener urban mobility.
+    </div>
+
+    <ul class="mainfeatures-features">
+      <li>Charges electric vehicles efficiently</li> 
+      <li>Reduces dependence on fossil fuels</li> 
+      <li>Supports fast charging</li> 
+      <li>Integrates with solar/wind energy systems</li> 
+      <li>Enables smart payment via QR</li> 
+      <li>Promotes eco-friendly urban transport</li> 
+      <li>Supports public and private charging setups</li> 
+      <li>Reduces air & noise pollution</li> 
+      <li>Compatible with multiple EV models</li> 
+      <li>Boosts sustainability image of the city</li> 
+    </ul>
+
+
+
+
+    <button class="mainfeatures-btn">
+      <a class="mainfeatures-link" href="contact.html">Know more →</a>
+    </button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="mainfeatures-right-block">
+    <div class="mainfeatures-heading">EV<br>Charger</div>
+  </div>
+</section>
+
+
+<!-- section-2 -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .modern-apartments-wrap {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+    }
+
+    /* LEFT IMAGE SECTION */
+    .apartments-image-side {
+      flex: 1;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .apartments-main-heading {
+      position: absolute;
+      top: 35%;
+      right: -8%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+
+    /* RIGHT TEXT SECTION */
+    .apartments-content-side {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 5rem 4rem 8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .apartments-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .apartments-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .apartments-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .apartments-feature-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .apartments-feature-list li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .apartments-feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .apartments-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .apartments-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .modern-apartments-wrap {
+        flex-direction: column;
+      }
+
+      .apartments-image-side {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .apartments-content-side {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .apartments-main-heading {
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .apartments-feature-list {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="modern-apartments-wrap">
+
+
+  <!-- LEFT IMAGE SECTION -->
+  <div class="apartments-image-side">
+    <div class="apartments-main-heading">Emergency<br>SOS Alerts</div>
+  </div>
+
+  <!-- RIGHT CONTENT SECTION -->
+  <div class="apartments-content-side">
+    <!-- <div class="apartments-logo">me.</div> -->
+    <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+    <div class="apartments-description">
+     A reliable safety system that provides immediate assistance during emergencies, connecting citizens to the nearest response centers and enhancing urban security.
+    </div>
+
+    <ul class="apartments-feature-list">
+      <li>Provides immediate emergency assistance</li> 
+      <li>Sends real-time alerts to control nearby centres</li> 
+      <li>Supports voice-based and push-button activation</li> 
+      <li>GPS-enabled location tracking</li> 
+      <li>Integrates with police, fire, and ambulance systems</li> 
+      <li>Operates during power outages</li> 
+      <li>Includes visual and audio signaling</li> 
+      <!-- <li>AI detects abnormal activities automatically</li> 
+      <li>Supports remote monitoring via ICCC</li> 
+      <li>Enhances citizen safety and security</li> -->
+    </ul>
+
+    <button class="apartments-btn">See more →</button>
+  </div>
+</section>
+
+<!-- section-1 -->
+
+ <style>
+   
+    .mainfeatures-section {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+      /* margin-bottom: 60px;  */
+      /* bottom gap added */
+    }
+
+    /* LEFT CONTENT AREA */
+    .mainfeatures-left-block {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
+
+    .mainfeatures-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .mainfeatures-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .mainfeatures-link {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .mainfeatures-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .mainfeatures-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mainfeatures-features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .mainfeatures-features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .mainfeatures-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mainfeatures-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RIGHT IMAGE AREA */
+    .mainfeatures-right-block {
+      flex: 0.7;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mainfeatures-heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .mainfeatures-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .mainfeatures-left-block {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .mainfeatures-right-block {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .mainfeatures-heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .mainfeatures-features {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="mainfeatures-section">
+ 
+
+  <!-- LEFT SIDE -->
+  <div class="mainfeatures-left-block">
+    <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+    <div class="mainfeatures-description">
+      A robust and safe wired charging solution that delivers fast, reliable power for various electric vehicles while optimizing energy use and minimizing downtime.
+    </div>
+
+    <ul class="mainfeatures-features">
+<li>Fast, stable wired EV charging interface</li> 
+<li>Safe plug-and-charge system</li> 
+<li>Weatherproof & vandal-proof sockets</li> 
+<li>Real-time power monitoring</li> 
+<li>Smart energy management through IoT</li> 
+<li>Suitable for cars, scooters, and e-bikes</li> 
+<li>Load-balanced multiple charging points</li> 
+<li>Integrated payment metering</li> 
+<li>Supports auto-shutdown after full charge</li>
+<li>Reduces charging downtime</li>
+    </ul>
+
+    <button class="mainfeatures-btn">
+      <a class="mainfeatures-link" href="contact.html">Know more →</a>
+    </button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="mainfeatures-right-block">
+    <div class="mainfeatures-heading">Wired<br>Charging</div>
+  </div>
+</section>
+
+
+<!-- section-2 -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .modern-apartments-wrap {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+    }
+
+    /* LEFT IMAGE SECTION */
+    .apartments-image-side {
+      flex: 1;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .apartments-main-heading {
+      position: absolute;
+      top: 35%;
+      right: -8%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+
+    /* RIGHT TEXT SECTION */
+    .apartments-content-side {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 5rem 4rem 8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .apartments-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .apartments-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .apartments-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .apartments-feature-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .apartments-feature-list li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .apartments-feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .apartments-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .apartments-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .modern-apartments-wrap {
+        flex-direction: column;
+      }
+
+      .apartments-image-side {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .apartments-content-side {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .apartments-main-heading {
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .apartments-feature-list {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="modern-apartments-wrap">
+
+
+  <!-- LEFT IMAGE SECTION -->
+  <div class="apartments-image-side">
+    <div class="apartments-main-heading">Wireless<br>Charging</div>
+  </div>
+
+  <!-- RIGHT CONTENT SECTION -->
+  <div class="apartments-content-side">
+    <!-- <div class="apartments-logo">me.</div> -->
+    <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+    <div class="apartments-description">
+      A contactless EV charging solution that offers convenience, safety, and futuristic infrastructure, ideal for public spaces and fleet charging hubs.
+    </div>
+
+    <ul class="apartments-feature-list">
+   <li>Contactless EV charging technology</li> 
+   <li>Convenient for users in public spaces</li> 
+   <li>Reduces wear and tear of connectors</li> 
+   <li>Safe and user-friendly operation</li> 
+   <li>Works with compatible EV models</li> 
+   <li>IoT-enabled monitoring and billing</li> 
+    <!--<li>Promotes futuristic infrastructure design</li> 
+   <li>Enables automatic alignment charging</li>
+    <li>Reduces human intervention</li> 
+    <li>Ideal for fleet and taxi charging hubs</li> -->
+    </ul>
+
+    <button class="apartments-btn">See more →</button>
+  </div>
+</section>
+
+<!-- section-1 -->
+
+ <style>
+   
+    .mainfeatures-section {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+      /* margin-bottom: 60px;  */
+      /* bottom gap added */
+    }
+
+    /* LEFT CONTENT AREA */
+    .mainfeatures-left-block {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
+
+    .mainfeatures-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .mainfeatures-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .mainfeatures-link {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .mainfeatures-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .mainfeatures-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mainfeatures-features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .mainfeatures-features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .mainfeatures-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mainfeatures-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RIGHT IMAGE AREA */
+    .mainfeatures-right-block {
+      flex: 0.7;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mainfeatures-heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .mainfeatures-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .mainfeatures-left-block {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .mainfeatures-right-block {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .mainfeatures-heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .mainfeatures-features {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="mainfeatures-section">
+ 
+
+  <!-- LEFT SIDE -->
+  <div class="mainfeatures-left-block">
+    <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+    <div class="mainfeatures-description">
+      An intelligent sensor system that monitors air pollutants in real-time, supports data-driven environmental policies, and helps cities maintain cleaner and healthier air.
+    </div>
+
+    <ul class="mainfeatures-features">
+      <li>Monitors PM2.5, PM10, CO₂, NO₂ levels</li> 
+      <li>Real-time air quality index display</li> 
+      <li>Helps in pollution control and city planning</li> 
+      <li>Data transmitted to ICCC via IoT</li> 
+      <li>AI predicts pollution trends</li>
+       <li>Alerts when air quality exceeds threshold</li>
+        <li>Supports citizen awareness programs</li>
+         <li>Integrates with smart pole display systems</li> 
+         <li>Enables data-driven environmental policies</li> 
+         <li>Low maintenance and long service life</li>
+    </ul>
+
+    <button class="mainfeatures-btn">
+      <a class="mainfeatures-link" href="contact.html">Know more →</a>
+    </button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="mainfeatures-right-block">
+    <div class="mainfeatures-heading">Air Quality<br>Sensor</div>
+  </div>
+</section>
+
+
+<!-- section-2 -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .modern-apartments-wrap {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+    }
+
+    /* LEFT IMAGE SECTION */
+    .apartments-image-side {
+      flex: 1;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .apartments-main-heading {
+      position: absolute;
+      top: 35%;
+      right: -8%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+
+    /* RIGHT TEXT SECTION */
+    .apartments-content-side {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 5rem 4rem 8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .apartments-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .apartments-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .apartments-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .apartments-feature-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .apartments-feature-list li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .apartments-feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .apartments-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .apartments-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .modern-apartments-wrap {
+        flex-direction: column;
+      }
+
+      .apartments-image-side {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .apartments-content-side {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .apartments-main-heading {
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .apartments-feature-list {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="modern-apartments-wrap">
+
+
+  <!-- LEFT IMAGE SECTION -->
+  <div class="apartments-image-side">
+    <div class="apartments-main-heading">Air Quality<br>Screen</div>
+  </div>
+
+  <!-- RIGHT CONTENT SECTION -->
+  <div class="apartments-content-side">
+    <!-- <div class="apartments-logo">me.</div> -->
+    <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+    <div class="apartments-description">
+      A public display system that shows live air quality data, promotes transparency, and engages citizens with real-time environmental information.
+    </div>
+
+    <ul class="apartments-feature-list">
+   <li>Displays live AQI data to citizens</li> 
+   <li>Integrates with environmental databases</li>
+    <li>Customizable LED visualization</li> 
+    <li>Energy-efficient, bright outdoor display</li> 
+    <li>Weatherproof & vandal-proof design</li> 
+    <li>Auto-brightness adjustment</li> 
+    <!-- <li>Supports public messages and alerts</li> 
+    <li>Enhances city transparency and engagement</li> 
+    <li>Connects to multiple sensor inputs</li> 
+    <li>Promotes public environmental awareness</li> -->
+    </ul>
+
+    <button class="apartments-btn">See more →</button>
+  </div>
+</section>
+
+<!-- section-1 -->
+
+ <style>
+   
+    .mainfeatures-section {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+      /* margin-bottom: 60px;  */
+      /* bottom gap added */
+    }
+
+    /* LEFT CONTENT AREA */
+    .mainfeatures-left-block {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
+
+    .mainfeatures-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .mainfeatures-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .mainfeatures-link {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .mainfeatures-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .mainfeatures-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mainfeatures-features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .mainfeatures-features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .mainfeatures-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mainfeatures-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RIGHT IMAGE AREA */
+    .mainfeatures-right-block {
+      flex: 0.7;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mainfeatures-heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .mainfeatures-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .mainfeatures-left-block {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .mainfeatures-right-block {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .mainfeatures-heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .mainfeatures-features {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="mainfeatures-section">
+ 
+
+  <!-- LEFT SIDE -->
+  <div class="mainfeatures-left-block">
+    <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+    <div class="mainfeatures-description">
+      Smart LED street lighting that saves energy, improves safety, and offers adaptive, IoT-controlled illumination for modern urban environments.
+    </div>
+
+    <ul class="mainfeatures-features">
+   <li>Smart LED lighting with dimming control</li> 
+   <li>Auto on/off via daylight sensors</li> 
+   <li>Reduces energy consumption up to 60%</li> 
+   <li>Integrated solar panel option</li> 
+   <li>Centralized remote management</li> 
+   <li>Motion-based adaptive brightness</li> 
+   <li>RGB options for events and alerts</li>
+  <li>Extended lifespan with low maintenance</li> 
+  <li>IoT-controlled group scheduling</li> 
+  <li>Enhances night visibility and safety</li>
+    </ul>
+
+    <button class="mainfeatures-btn">
+      <a class="mainfeatures-link" href="contact.html">Know more →</a>
+    </button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="mainfeatures-right-block">
+    <div class="mainfeatures-heading">Street<br>Lighting</div>
+  </div>
+</section>
+
+
+<!-- section-2 -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .modern-apartments-wrap {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+    }
+
+    /* LEFT IMAGE SECTION */
+    .apartments-image-side {
+      flex: 1;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .apartments-main-heading {
+      position: absolute;
+      top: 35%;
+      right: -8%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+
+    /* RIGHT TEXT SECTION */
+    .apartments-content-side {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 5rem 4rem 8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .apartments-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .apartments-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .apartments-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .apartments-feature-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .apartments-feature-list li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .apartments-feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .apartments-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .apartments-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .modern-apartments-wrap {
+        flex-direction: column;
+      }
+
+      .apartments-image-side {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .apartments-content-side {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .apartments-main-heading {
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .apartments-feature-list {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="modern-apartments-wrap">
+
+
+  <!-- LEFT IMAGE SECTION -->
+  <div class="apartments-image-side">
+    <div class="apartments-main-heading">PA<br>Loudspeaker</div>
+  </div>
+
+  <!-- RIGHT CONTENT SECTION -->
+  <div class="apartments-content-side">
+    <!-- <div class="apartments-logo">me.</div> -->
+    <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+    <div class="apartments-description">
+     A high-quality public announcement system that delivers clear audio for emergencies, community alerts, and event communications with smart integration.
+    </div>
+
+    <ul class="apartments-feature-list">
+      <li>Broadcasts emergency or public messages</li> 
+      <li>High-quality audio clarity and range</li> 
+      <li>Supports voice announcements and alerts</li> 
+      <li>Connects to ICCC or mobile command unit</li> 
+      <li>Weatherproof and tamper-resistant design</li>
+      <!-- <li>Enables community or event communication</li> 
+       <li>Multi-language announcement capability</li> 
+        <li>Scheduled or manual broadcasting</li> 
+       <li>Useful during disaster or evacuation events</li> 
+       <li>Integrates with AI voice automation</li> -->
+    </ul>
+
+    <button class="apartments-btn">See more →</button>
+  </div>
+</section>
+
+
+<!-- section-1 -->
+
+ <style>
+   
+    .mainfeatures-section {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+      /* margin-bottom: 60px;  */
+      /* bottom gap added */
+    }
+
+    /* LEFT CONTENT AREA */
+    .mainfeatures-left-block {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
+
+    .mainfeatures-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .mainfeatures-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .mainfeatures-link {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .mainfeatures-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .mainfeatures-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mainfeatures-features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .mainfeatures-features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .mainfeatures-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mainfeatures-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RIGHT IMAGE AREA */
+    .mainfeatures-right-block {
+      flex: 0.7;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mainfeatures-heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .mainfeatures-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .mainfeatures-left-block {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .mainfeatures-right-block {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .mainfeatures-heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .mainfeatures-features {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="mainfeatures-section">
+ 
+
+  <!-- LEFT SIDE -->
+  <div class="mainfeatures-left-block">
+    <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+    <div class="mainfeatures-description">
+      A smart and sustainable energy solution that integrates solar and wind hybrid systems to power urban infrastructure efficiently while reducing grid dependency.
+    </div>
+
+    <ul class="mainfeatures-features">
+    <li>Integrates solar or wind hybrid systems</li> 
+    <li>Ensures pole self-sustainability</li> 
+    <li>Reduces grid power dependency</li> 
+    <li>Energy stored in smart batteries</li> 
+    <li>Powers lights, sensors, and displays</li> 
+    <li>Monitors generation and consumption</li> 
+    <li>Low operational cost and green energy</li> 
+    <!-- <li>Resilient during outages or grid failures</li> 
+    <li>Supports remote energy management</li> 
+    <li>Contributes to city energy resilience</li> -->
+    </ul>
+
+    <button class="mainfeatures-btn">
+      <a class="mainfeatures-link" href="contact.html">Know more →</a>
+    </button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="mainfeatures-right-block">
+    <div class="mainfeatures-heading">Power Generation<br>System</div>
+  </div>
+</section>
+
+
+<!-- section-2 -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .modern-apartments-wrap {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+    }
+
+    /* LEFT IMAGE SECTION */
+    .apartments-image-side {
+      flex: 1;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .apartments-main-heading {
+      position: absolute;
+      top: 35%;
+      right: -8%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+
+    /* RIGHT TEXT SECTION */
+    .apartments-content-side {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 5rem 4rem 8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .apartments-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .apartments-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .apartments-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .apartments-feature-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .apartments-feature-list li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .apartments-feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .apartments-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .apartments-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .modern-apartments-wrap {
+        flex-direction: column;
+      }
+
+      .apartments-image-side {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .apartments-content-side {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .apartments-main-heading {
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .apartments-feature-list {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="modern-apartments-wrap">
+
+
+  <!-- LEFT IMAGE SECTION -->
+  <div class="apartments-image-side">
+    <div class="apartments-main-heading">RGB Pixel<br>LED Screen</div>
+  </div>
+
+  <!-- RIGHT CONTENT SECTION -->
+  <div class="apartments-content-side">
+    <!-- <div class="apartments-logo">me.</div> -->
+    <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+    <div class="apartments-description">
+      A full-color digital display that delivers dynamic content for advertising, alerts, and urban information while enhancing smart city engagement and branding.
+    </div>
+
+    <ul class="apartments-feature-list">
+   <li>Full-color dynamic digital display</li> 
+   <li>Displays ads, alerts, and traffic updates</li> 
+   <li>Supports image, video, and text content</li> 
+   <li>High-brightness and daylight visibility</li> 
+   <li>Controlled via centralized CMS</li> 
+   <li>Generates revenue via advertisements</li> 
+   <!-- <li>Integrated air quality and weather display</li> 
+   <li>IoT-enabled content scheduling</li> 
+   <li>Smart energy-saving operation</li> 
+   <li>Promotes smart city branding</li> -->
+    </ul>
+
+    <button class="apartments-btn">See more →</button>
+  </div>
+</section>
+
+<!-- section-1 -->
+
+ <style>
+   
+    .mainfeatures-section {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+      /* margin-bottom: 60px;  */
+      /* bottom gap added */
+    }
+
+    /* LEFT CONTENT AREA */
+    .mainfeatures-left-block {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
+
+    .mainfeatures-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .mainfeatures-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .mainfeatures-link {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .mainfeatures-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .mainfeatures-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mainfeatures-features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .mainfeatures-features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .mainfeatures-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mainfeatures-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RIGHT IMAGE AREA */
+    .mainfeatures-right-block {
+      flex: 0.7;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mainfeatures-heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .mainfeatures-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .mainfeatures-left-block {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .mainfeatures-right-block {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .mainfeatures-heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .mainfeatures-features {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="mainfeatures-section">
+ 
+
+  <!-- LEFT SIDE -->
+  <div class="mainfeatures-left-block">
+    <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+    <div class="mainfeatures-description">
+      An intelligent motion sensing system that detects movement, triggers automated responses, and enhances safety while optimizing energy usage.
+    </div>
+
+    <ul class="mainfeatures-features">
+    <li>Detects human and vehicle movement</li> 
+    <li>Triggers lights and cameras automatically</li> 
+    <li>Reduces unnecessary power consumption</li> 
+    <li>Integrates with AI surveillance systems</li> 
+    <li>Alerts ICCC in case of unusual activity</li>
+     <li>Supports perimeter security applications</li> 
+      <li>Adjustable sensitivity range</li> 
+     <!--<li>Enables predictive analytics for safety</li>
+      <li>Works seamlessly day and night</li> 
+      <li>Supports energy optimization</li> -->
+    </ul>
+
+    <button class="mainfeatures-btn">
+      <a class="mainfeatures-link" href="contact.html">Know more →</a>
+    </button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="mainfeatures-right-block">
+    <div class="mainfeatures-heading">Motion<br>Detectors</div>
+  </div>
+</section>
+
+
+<!-- section-2 -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .modern-apartments-wrap {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+    }
+
+    /* LEFT IMAGE SECTION */
+    .apartments-image-side {
+      flex: 1;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .apartments-main-heading {
+      position: absolute;
+      top: 35%;
+      right: -8%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+
+    /* RIGHT TEXT SECTION */
+    .apartments-content-side {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 5rem 4rem 8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .apartments-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .apartments-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .apartments-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .apartments-feature-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .apartments-feature-list li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .apartments-feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .apartments-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .apartments-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .modern-apartments-wrap {
+        flex-direction: column;
+      }
+
+      .apartments-image-side {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .apartments-content-side {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .apartments-main-heading {
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .apartments-feature-list {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="modern-apartments-wrap">
+
+
+  <!-- LEFT IMAGE SECTION -->
+  <div class="apartments-image-side">
+    <div class="apartments-main-heading">Wi-Fi<br>Hotspot</div>
+  </div>
+
+  <!-- RIGHT CONTENT SECTION -->
+  <div class="apartments-content-side">
+    <!-- <div class="apartments-logo">me.</div> -->
+    <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+    <div class="apartments-description">
+      A reliable public wireless network that provides high-speed connectivity, supports IoT devices, and promotes digital inclusion in smart cities.
+    </div>
+
+    <ul class="apartments-feature-list">
+ <li>Provides free/public wireless connectivity</li> 
+ <li>Supports high-speed broadband</li> 
+ <li>Enhances smart city connectivity</li> 
+ <li>Integrates with telecom network providers</li> 
+ <li>Promotes digital inclusion for citizens</li> 
+ <li>Supports IoT device communication</li> 
+ <!-- <li>Enables remote device management</li> 
+ <li>Secure and encrypted access points</li> 
+ <li>Helps emergency responders stay connected</li> 
+ <li>Can be monetized via service plans</li> -->
+    </ul>
+
+    <button class="apartments-btn">See more →</button>
+  </div>
+</section>
+
+<!-- section-1 -->
+
+ <style>
+   
+    .mainfeatures-section {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+      /* margin-bottom: 60px;  */
+      /* bottom gap added */
+    }
+
+    /* LEFT CONTENT AREA */
+    .mainfeatures-left-block {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
+
+    .mainfeatures-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .mainfeatures-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .mainfeatures-link {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .mainfeatures-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .mainfeatures-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mainfeatures-features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .mainfeatures-features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .mainfeatures-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mainfeatures-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RIGHT IMAGE AREA */
+    .mainfeatures-right-block {
+      flex: 0.7;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mainfeatures-heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .mainfeatures-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .mainfeatures-left-block {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .mainfeatures-right-block {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .mainfeatures-heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .mainfeatures-features {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="mainfeatures-section">
+ 
+
+  <!-- LEFT SIDE -->
+  <div class="mainfeatures-left-block">
+    <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+    <div class="mainfeatures-description">
+      A robust two-way communication system that connects citizens to control centers, ensuring safety, rapid response, and seamless public interaction.
+    </div>
+
+    <ul class="mainfeatures-features">
+      <li>Two-way communication with control center</li> 
+      <li>Provides direct citizen-police link</li> 
+      <li>Useful in emergencies and maintenance</li> 
+      <li>Supports audio/video calling</li> 
+      <li>Operates via VoIP or GSM module</li> 
+      <li>Rugged and weather-resistant design</li>
+        <li>AI-enabled noise reduction</li> 
+       <li>Automatic connection during SOS alerts</li> 
+       <li>Remote diagnostics and maintenance</li> 
+       <li>Enhances public interaction capabilities</li>
+    </ul>
+
+    <button class="mainfeatures-btn">
+      <a class="mainfeatures-link" href="contact.html">Know more →</a>
+    </button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="mainfeatures-right-block">
+    <div class="mainfeatures-heading">Intercom</div>
+  </div>
+</section>
+
+
+<!-- section-2 -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .modern-apartments-wrap {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+    }
+
+    /* LEFT IMAGE SECTION */
+    .apartments-image-side {
+      flex: 1;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .apartments-main-heading {
+      position: absolute;
+      top: 35%;
+      right: -8%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+
+    /* RIGHT TEXT SECTION */
+    .apartments-content-side {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 5rem 4rem 8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .apartments-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .apartments-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .apartments-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .apartments-feature-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .apartments-feature-list li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .apartments-feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .apartments-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .apartments-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .modern-apartments-wrap {
+        flex-direction: column;
+      }
+
+      .apartments-image-side {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .apartments-content-side {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .apartments-main-heading {
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .apartments-feature-list {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="modern-apartments-wrap">
+
+
+  <!-- LEFT IMAGE SECTION -->
+  <div class="apartments-image-side">
+    <div class="apartments-main-heading">Android<br>Touch Screen</div>
+  </div>
+
+  <!-- RIGHT CONTENT SECTION -->
+  <div class="apartments-content-side">
+    <!-- <div class="apartments-logo">me.</div> -->
+    <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+    <div class="apartments-description">
+      A user-friendly smart pole interface that provides real-time information, navigation, and interactive services while supporting city branding and public convenience.
+    </div>
+
+    <ul class="apartments-feature-list">
+    <li>User-friendly smart pole interface</li> 
+    <li>Displays maps, emergency info, weather</li> 
+    <li>Supports ticketing or info kiosk use</li> 
+    <li>Interactive for tourists and commuters</li> 
+    <li>Connects to city service APIs</li> 
+    <li>Real-time updates and navigation</li> 
+    <!--<li>Multilingual interface support</li> 
+     <li>Tamper-proof and sunlight readable</li> 
+    <li>Touchless gesture mode for hygiene</li> 
+    <li>Customizable UI for city branding</li> -->
+    </ul>
+
+    <button class="apartments-btn">See more →</button>
+  </div>
+</section>
+
+
+<!-- section-1 -->
+
+ <style>
+   
+    .mainfeatures-section {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+      /* margin-bottom: 60px;  */
+      /* bottom gap added */
+    }
+
+    /* LEFT CONTENT AREA */
+    .mainfeatures-left-block {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
+
+    .mainfeatures-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .mainfeatures-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .mainfeatures-link {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .mainfeatures-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .mainfeatures-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mainfeatures-features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .mainfeatures-features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .mainfeatures-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mainfeatures-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RIGHT IMAGE AREA */
+    .mainfeatures-right-block {
+      flex: 0.7;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mainfeatures-heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .mainfeatures-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .mainfeatures-left-block {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .mainfeatures-right-block {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .mainfeatures-heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .mainfeatures-features {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="mainfeatures-section">
+ 
+
+  <!-- LEFT SIDE -->
+  <div class="mainfeatures-left-block">
+    <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+    <div class="mainfeatures-description">
+     An intelligent voice interface that allows real-time interaction with the smart pole system, providing assistance, accessibility, and automated responses.
+    </div>
+
+    <ul class="mainfeatures-features">
+     <li>Enables voice interaction with pole system</li> 
+     <li>Provides real-time AI assistant responses</li> 
+     <li>Converts speech to actionable commands</li> 
+     <li>Supports multilingual voice recognition</li> 
+     <li>Integrated with ICCC and databases</li> 
+     <li>Useful for public information and support</li> 
+     <li>Detects distress or panic voices</li> 
+     <li>Integrates with CCTV for context awareness</li> 
+     <li>Enables remote voice announcements</li> 
+     <li>Enhances accessibility for disabled users</li>
+    </ul>
+
+    <button class="mainfeatures-btn">
+      <a class="mainfeatures-link" href="contact.html">Know more →</a>
+    </button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="mainfeatures-right-block">
+    <div class="mainfeatures-heading">AI Based Voice<br>Communication</div>
+  </div>
+</section>
+
+
+<!-- section-2 -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .modern-apartments-wrap {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+    }
+
+    /* LEFT IMAGE SECTION */
+    .apartments-image-side {
+      flex: 1;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .apartments-main-heading {
+      position: absolute;
+      top: 35%;
+      right: -8%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+
+    /* RIGHT TEXT SECTION */
+    .apartments-content-side {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 5rem 4rem 8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .apartments-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .apartments-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .apartments-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .apartments-feature-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .apartments-feature-list li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .apartments-feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .apartments-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .apartments-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .modern-apartments-wrap {
+        flex-direction: column;
+      }
+
+      .apartments-image-side {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .apartments-content-side {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .apartments-main-heading {
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .apartments-feature-list {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="modern-apartments-wrap">
+
+
+  <!-- LEFT IMAGE SECTION -->
+  <div class="apartments-image-side">
+    <div class="apartments-main-heading">AI Based<br>Camera</div>
+  </div>
+
+  <!-- RIGHT CONTENT SECTION -->
+  <div class="apartments-content-side">
+    <!-- <div class="apartments-logo">me.</div> -->
+    <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+    <div class="apartments-description">
+     A smart surveillance camera that delivers high-definition monitoring, AI-driven analytics, and real-time alerts for enhanced urban security.
+    </div>
+
+    <ul class="apartments-feature-list">
+   <li>Provides high-definition video surveillance</li>
+    <li>Detects motion, face, and objects automatically</li> 
+    <li>Integrates with ANPR & RLVD modules</li> 
+    <li>Real-time analytics and alerts to ICCC</li> 
+    <li>Night vision and thermal options</li> 
+    <li>AI filters false positives and noise</li> 
+    <!-- <li>Cloud and edge data storage supported</li> 
+    <li>Tracks suspicious or unattended objects</li> 
+    <li>Ensures 24×7 area surveillance</li> 
+    <li>Scalable for multiple lane monitoring</li> -->
+    </ul>
+
+    <button class="apartments-btn">See more →</button>
+  </div>
+</section>
+
+
+
 
 <section class="smart-section">
 
@@ -1889,13 +4786,6 @@ updateSmartPole();
 
 
 
-
-
-
-
-
-
-
    <!-- Footer Start -->
 <div class="tricky-footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
   <div class="container py-5">
@@ -2095,7 +4985,6 @@ updateSmartPole();
        
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-
 
     </body>
 
