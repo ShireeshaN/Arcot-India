@@ -1,429 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Concept | Arcot Industries</title>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
- body { font-family: 'Jost', sans-serif; background: #fff; color: #333; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SmartPole ITMS – Cinematic Scroll Reveal</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-  /* Main section structure */
-.concept-section {
-  position: relative;
-  background: #f2f2f2;
-  text-align: center;
-  overflow: hidden;
-}
-
-.concept-heading {
-  font-size: 2rem;
-  font-weight: 500;
-  padding: 60px 0 10px;
-  letter-spacing: 2px;
-  color: #222;
-  position: relative;
-}
-.concept-heading::after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 40px;
-  background-color: #555;
-  margin: 10px auto 0;
-}
-
-.concept-image-container {
-  position: relative;
-  background: url('img/bannerabout.webp') center/cover no-repeat;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: zoomIn 1.2s ease-out forwards;
-  transition: transform 0.6s ease;
-  will-change: transform;
-}
-
-/* 👇 Hover effect to zoom the background image */
-.concept-image-container:hover {
-  transform: scale(1.03);
-}
-/* Text box */
-.concept-text-box {
+<style>
+body {
+  margin: 0;
+  background-color: #000;
   color: #fff;
-  max-width: 700px;
-  text-align: center;
-  padding: 20px 40px;
-  border-radius: 8px;
-  animation: fadeUp 1.4s ease-out forwards;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
-/* Optional hover glow effect */
-.concept-text-box:hover {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  transition: text-shadow 0.3s ease-in-out;
-}
-
-/* Headings */
-.concept-text-box h3 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  font-weight: 500;
-}
-.concept-text-box p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-  @media (max-width: 768px) {
-      .concept-heading {
-        font-size: 1.6rem;
-      }
-      .concept-image-container {
-        height: 420px;
-        padding: 0 20px;
-      }
-      .concept-text-box h3 {
-        font-size: 1.5rem;
-      }
-      .concept-text-box p {
-        font-size: 0.95rem;
-      }
-    }
-
-/* Animations */
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes zoomIn {
-  0% {
-    transform: scale(1.05);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* Reuse class if needed */
-.animate-fade-up {
-  animation: fadeUp 1.2s ease-out forwards;
-}
-.animate-zoom-in {
-  animation: zoomIn 1s ease-out forwards;
-}
-
-      .section {
-      padding: 60px 20px;
-      background: #e6e6e6;
-      text-align: center;
-    }
-
-    .section h2 {
-      font-size: 2rem;
-      font-weight: 500;
-      letter-spacing: 2px;
-      color: #222;
-      position: relative;
-      margin-bottom: 30px;
-    }
-
-    .section h2::after {
-      content: "";
-      display: block;
-      width: 1px;
-      height: 40px;
-      background-color: #555;
-      margin: 10px auto 0;
-    }
-
-.brand-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
-  padding: 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.08);
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-.brand-logo {
-  flex: 1 1 48%;
-  min-width: 300px;
-  text-align: center;
-}
-
-.brand-logo img {
+.itms-section {
   width: 100%;
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.5s ease;
+  padding: 100px 0;
+  background: #000;
 }
 
-.brand-logo:hover img {
-  transform: scale(1.05);
-}
-
-.brand-text {
-  flex: 1 1 48%;
-  min-width: 300px;
-  text-align: left;
-  opacity: 0;
-  animation: fadeRight 1.2s ease forwards;
-  animation-delay: 0.3s;
-}
-
-.brand-text p {
-  line-height: 1.8;
-  margin-bottom: 20px;
-  font-size: 16px;
-  color: #333;
-}
-
-.animate-left {
-  opacity: 0;
-  animation: fadeLeft 1.2s ease forwards;
-}
-
-.animate-right {
-  opacity: 0;
-  animation: fadeRight 1.2s ease forwards;
-}
-
-@keyframes fadeLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeRight {
-  0% {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-   @media (max-width: 768px) {
-      .brand-container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .brand-text {
-        text-align: center;
-      }
-    }
-    .feature-section {
-  background: #e7e8e8;
-  padding: 80px 20px;
+.section-header {
   text-align: center;
+  margin-bottom: 100px;
 }
-.section-heading h2 {
-  font-size: 40px;
+
+.section-header h2 {
+  font-size: 2.8rem;
+  font-weight: 600;
   letter-spacing: 2px;
-  color: #333;
 }
-.heading-line {
-  width: 2px;
-  height: 40px;
-  background: #333;
-  margin: 15px auto 50px;
+
+.section-header p {
+  color: #ccc;
+  letter-spacing: 1px;
 }
 
 .feature-block {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 1400px;
-  margin: 0 auto;
-  background: #e7e8e8;
-  padding: 30px;
-  gap: 30px;
+  justify-content: center;
+  gap: 80px;
+  padding: 100px 8%;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-.feature-text {
-  flex: 1 1 40%;
-  text-align: left;
+
+.feature-block:nth-child(even) {
+  flex-direction: row-reverse;
 }
-.feature-sub {
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 2px;
-  color: #888;
-  margin-bottom: 5px;
-}
-.feature-number {
-  font-size: 48px;
-  margin: 0;
-  border-bottom: 2px solid #999;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-.feature-title {
-  font-size: 28px;
-  line-height: 1.5;
-  margin: 20px 0;
-  color: #222;
-}
-.feature-desc {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #444;
-}
+
 .feature-image {
-  flex: 1 1 55%;
-  text-align: center;
+  width: 45%;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 40px rgba(255,255,255,0.1);
 }
+
 .feature-image img {
-  max-width: 100%;
-  border-radius: 4px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(0.8);
+  transition: all 0.8s ease;
 }
 
-/* Mobile View */
-@media (max-width: 768px) {
+.feature-block:hover img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.05);
+}
+
+.feature-text {
+  width: 45%;
+}
+
+.feature-text h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.feature-text p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.feature-block:hover p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 992px) {
   .feature-block {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
-  .feature-text {
-    order: 2;
+    flex-direction: column !important;
     text-align: center;
   }
-  .feature-image {
-    order: 1;
+  .feature-image, .feature-text {
+    width: 90%;
   }
 }
-
- 
-
-  
-  </style>
+</style>
 </head>
+
 <body>
- <!-- Concept Section -->
-<section class="concept-section">
-  <h2 class="concept-heading">CONCEPT</h2>
-  <div class="concept-image-container animate-zoom-in">
-    <div class="concept-text-box animate-fade-up">
-      <h3>A new way to think;</h3>
-      <p>
-        with Arcot Smart Lighting,<br>
-        you control the orientation of the beautiful light<br>
-        output to where it is needed.<br><br>
-        Through innovative lighting,<br>
-        Arcot continues to evolve in response to the world’s lighting needs.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-<!-- BRAND SECTION -->
-<section class="section brand-section">
-  <h2>BRAND</h2>
-  <div class="brand-container">
-    <div class="brand-logo animate-left">
-      <img src="img/pr7.webp" alt="Arcot Lighting Logo">
-    </div>
-    <div class="brand-text animate-right">
-      <p>
-        A manufacturer of precision components that deals in a product group boasting the highest share in the world.<br>
-        The technology of Arcot Industries has been brought together to add new value to lighting.
-      </p>
-      <p>
-        Lighting equipment can be easily controlled with the development of our proprietary software that uses wireless technology and fresnel lenses just 1 mm thick created from resin molds developed for LED backlights. Using motor technology, we have enabled smooth, quiet movements.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-
-
-  <!-- FEATURES SECTION -->
-<section class="feature-section">
-  <div class="section-heading">
-    <h2>FEATURE</h2>
-    <div class="heading-line"></div>
+<section class="itms-section">
+  <div class="section-header">
+    <h2>SmartPole ITMS — Intelligent Traffic Management System</h2>
+    <p>AI-driven solutions for safe, efficient, and adaptive urban mobility</p>
   </div>
 
+  <!-- Feature 1 -->
   <div class="feature-block">
-    <div class="feature-text">
-      <p class="feature-sub">FEATURE</p>
-      <h3 class="feature-number">01</h3>
-      <h4 class="feature-title">Creating spaces<br>by freely<br>controlling light</h4>
-      <p class="feature-desc">
-        The brightness, color, lit area,<br>
-        and angle can all be controlled.<br>
-        Using a timer relay,<br>
-        lighting can be automatically<br>
-        changed to preset scenarios.<br>
-        We provide support for<br>
-        creating attractive spaces<br>
-        which expand the possibilities of presentation.
-      </p>
-    </div>
     <div class="feature-image">
-      <img src="img/carousel-1.webp" alt="Creating spaces by freely controlling light">
-    </div>
-  </div>
-
-
-  <div class="feature-block">
-     <div class="feature-image">
-      <img src="img/carousel-1.webp" alt="Creating spaces by freely controlling light">
+      <img src="img/itms/accident-detection.jpg" alt="Accident Detection">
     </div>
     <div class="feature-text">
-      <p class="feature-sub">FEATURE</p>
-      <h3 class="feature-number">01</h3>
-      <h4 class="feature-title">Creating spaces<br>by freely<br>controlling light</h4>
-      <p class="feature-desc">
-        The brightness, color, lit area,<br>
-        and angle can all be controlled.<br>
-        Using a timer relay,<br>
-        lighting can be automatically<br>
-        changed to preset scenarios.<br>
-        We provide support for<br>
-        creating attractive spaces<br>
-        which expand the possibilities of presentation.
-      </p>
+      <h3>Accident Detection & Emergency Response</h3>
+      <p>Real-time AI detection of accidents and stopped vehicles with automated ICCC alerts, geotagged data, and integrated SOS response to drastically reduce emergency times.</p>
     </div>
-   
   </div>
+
+  <!-- Feature 2 -->
+  <div class="feature-block">
+    <div class="feature-image">
+      <img src="img/itms/speed-violation.jpg" alt="Speed Violation Detection">
+    </div>
+    <div class="feature-text">
+      <h3>Speed Violation Detection</h3>
+      <p>Lane-wise radar monitoring with AI-driven violation proof capture, ANPR integration, and automatic e-Challan generation for accurate, transparent enforcement.</p>
+    </div>
+  </div>
+
+  <!-- Feature 3 -->
+  <div class="feature-block">
+    <div class="feature-image">
+      <img src="img/itms/speed-measure.jpg" alt="Radar Speed Measurement">
+    </div>
+    <div class="feature-text">
+      <h3>Radar-Based Speed Measurement</h3>
+      <p>High-precision Doppler radar system with ±2 % accuracy, dual validation, live ICCC analytics, and signboard alerts to improve compliance and road safety.</p>
+    </div>
+  </div>
+
 </section>
 
+<script>
+gsap.registerPlugin(ScrollTrigger);
 
-
-
-
-
-
-
- 
-
+gsap.utils.toArray(".feature-block").forEach((section, i) => {
+  const img = section.querySelector(".feature-image");
+  const txt = section.querySelector(".feature-text");
+  gsap.from([img, txt], {
+    opacity: 0,
+    y: 100,
+    duration: 1.2,
+    ease: "power3.out",
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: section,
+      start: "top 85%",
+    }
+  });
+});
+</script>
 </body>
 </html>

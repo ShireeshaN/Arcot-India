@@ -1,840 +1,341 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Arcot Labs — Innovation Series</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-<!-- GSAP + plugins -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollSmoother.min.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SmartPole Main Slider</title>
 
 <style>
-  :root{
-    --accent: #00A6A6;
-    --bg-deep: #020406;
-    --card: rgba(255,255,255,0.04);
-    --muted: #bfc9cc;
-    --glass: rgba(255,255,255,0.03);
-  }
-  /* Base reset */
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
-  body{
-    font-family: "Inter", sans-serif;
-    background: var(--bg-deep);
-    color: #fff;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #fff;
+  color: #111;
+  overflow-x: hidden;
+}
+
+/* Container */
+.smartpole-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0 60px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Text box */
+.smartpole-text {
+  width: 45%;
+  position: relative;
+}
+
+.smartpole-text h5 {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+.smartpole-text h5::after {
+  content: "";
+  display: block;
+  width: 350px;
+  height: 1px;
+  background: #000;
+  margin-top: 8px;
+}
+
+.smartpole-text h2 {
+  font-size: 26px;
+  text-transform: uppercase;
+  margin: 20px 0;
+  font-weight: 700;
+}
+
+.smartpole-text p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Bullet points */
+.smartpole-text ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.smartpole-text ul li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* bottom line */
+.smartpole-text::after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 1px;
+  background: #000;
+  margin-top: 50px;
+}
+
+/* Image container */
+.smartpole-image {
+  width: 50%;
+  overflow: hidden;
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.smartpole-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.8s ease-in-out;
+}
+
+.smartpole-image:hover img {
+  transform: scale(1.03);
+}
+
+/* Navigation buttons */
+.nav-btn {
+  background: transparent;
+  color: #000;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.nav-btn:hover {
+  transform: scale(1.2);
+  color: #ffcc00;
+}
+
+/* Desktop positions */
+#prevBtn { left: 380px; top: 90%; position: absolute; transform: translateY(-50%); }
+#nextBtn { right: 800px; top: 90%; position: absolute; transform: translateY(-50%); }
+
+/* Dots navigation */
+.dots {
+  position: absolute;
+  bottom: 60px;
+  left: 35%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #111;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dots span.active {
+  opacity: 1;
+  background: #000;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .smartpole-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: auto;
   }
 
-  /* Top fixed UI: logo + dots nav */
-  .topbar{
-    position:fixed; left:0; right:0; top:20px; z-index:1200;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:0 28px; pointer-events:none;
-  }
-  .brand{
-    pointer-events:auto;
-    display:flex; gap:12px; align-items:center;
-    background:transparent;
-  }
-  .brand .logo{
-    width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#00d4d4);
-    box-shadow:0 6px 30px rgba(0,166,166,0.12); display:flex;align-items:center;justify-content:center;
-    font-weight:700;color:#001;
-  }
-  .brand .name{font-family:"Poppins"; font-weight:700; color:#eafbf9; letter-spacing:0.4px; pointer-events:none}
-
-  /* Dots nav */
-  .dots{
-    pointer-events:auto;
-    display:flex; gap:12px; align-items:center;
-  }
-  .dot{
-    width:12px;height:12px;border-radius:50%; background:rgba(255,255,255,0.12);
-    border:1px solid rgba(255,255,255,0.04); cursor:pointer; transition:all .25s;
-  }
-  .dot.active{ transform:scale(1.35); background:var(--accent); box-shadow:0 6px 20px rgba(0,166,166,0.22) }
-
-  /* Sections wrapper for ScrollSmoother */
-  .smooth-wrap{ overflow:hidden; }
-
-  section.product {
-    position:relative;
-    width:100%;
-    min-height:100vh;
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    scroll-snap-align:start;
-    overflow:hidden;
+  .smartpole-image {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
   }
 
-  /* background image layer (parallax) */
-  .bg-layer{
-    position:absolute; inset:0; z-index:0;
-    background-position:center; background-size:cover; background-repeat:no-repeat;
-    transform-origin:center;
-    will-change:transform,filter;
-    filter: brightness(.55) contrast(.95);
+  .smartpole-text {
+    width: 100%;
+    margin-top: 0;
+    text-align: left;
   }
 
-  /* dark gradient overlay to keep text readable */
-  .black-overlay{
-    position:absolute; inset:0; z-index:1;
-    background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.6) 65%);
+  .smartpole-text h5::after,
+  .smartpole-text::after {
+    width: 100%;
+    margin-top: 15px;
   }
 
-  /* Content card */
-  .content {
-    position:relative;
-    z-index:5;
-    width:min(1100px,92%);
-    display:grid;
-    grid-template-columns: 1fr 420px;
-    gap:40px;
-    align-items:center;
-    padding:56px;
+  .nav-buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin: 15px 0;
+    width: 100%;
   }
 
-  /* Left column: headline + features */
-  .hero-copy{
-    color:#e9fbfa;
-  }
-  .kicker{
-    display:inline-block; font-size:0.85rem; padding:8px 14px;
-    background:linear-gradient(90deg, rgba(0,166,166,0.12), rgba(0,166,166,0.06));
-    color:var(--accent); border-radius:999px; font-weight:600; letter-spacing:0.6px;
-    margin-bottom:18px;
-  }
-  h1.title{
-    font-family:"Poppins"; font-weight:800; font-size:clamp(28px,5vw,56px);
-    line-height:1.02; margin-bottom:18px;
-    background: linear-gradient(90deg,var(--accent), #8ef2f0);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  }
-  p.lead{ color:var(--muted); font-size:1.05rem; margin-bottom:24px; max-width:70% }
-
-  .features { display:flex; gap:18px; flex-wrap:wrap; }
-  .feature {
-    background:var(--glass); border:1px solid rgba(255,255,255,0.04);
-    padding:12px 16px; border-radius:12px; color:#d8eeed; font-weight:600;
-    backdrop-filter: blur(6px);
-    display:flex; gap:10px; align-items:center;
-    min-width:160px;
-  }
-  .feature .dot-mini{ width:10px;height:10px;border-radius:50%; background:var(--accent) }
-
-  /* Right column: product card with subtle glass */
-  .product-card {
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border:1px solid rgba(0,166,166,0.08);
-    border-radius:18px; padding:22px; position:relative;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-    display:flex; flex-direction:column; align-items:center; gap:16px;
-    transform: translateY(0);
-  }
-  .product-card img{
-    width:100%; height:320px; object-fit:contain; transform:scale(1.03);
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
-  }
-  .meta { width:100%; display:flex; justify-content:space-between; align-items:center; gap:12px; }
-  .meta .price-like { color:var(--muted); font-weight:600; font-size:0.95rem; }
-  .meta .cta{
-    background:var(--accent); color:#001; padding:10px 14px; border-radius:999px; font-weight:700; cursor:pointer;
-    box-shadow:0 10px 30px rgba(0,166,166,0.14);
-    border:none;
+  #prevBtn, #nextBtn {
+    position: static;
+    transform: none;
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
   }
 
-  /* subtle accent line on left */
-  .accent-rail{ position:absolute; left:24px; top:10vh; bottom:10vh; width:3px; background:linear-gradient(#003,#00A6A6); opacity:.08; border-radius:3px; z-index:2 }
-
-  /* Section numbering at bottom-left */
-  .section-index{
-    position:absolute; bottom:28px; left:36px; z-index:10; font-family:"Poppins"; font-weight:700;
-    color:rgba(255,255,255,0.08); font-size:120px; pointer-events:none; user-select:none;
+  .dots {
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 10px;
   }
-
-  /* small caption bottom-right */
-  .product-caption{
-    position:absolute; right:36px; bottom:36px; z-index:10; text-align:right; color:var(--muted);
-    max-width:360px; font-size:0.95rem;
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    padding:12px 16px; border-radius:10px; border:1px solid rgba(255,255,255,0.02);
-  }
-
-  /* Footer CTA */
-  footer{
-    padding:80px 28px; text-align:center; background:linear-gradient(180deg,#000, #020812); color:#dfe;
-  }
-  footer .big-cta{ background:var(--accent); color:#001; padding:14px 28px; border-radius:999px; border:none; font-weight:800; cursor:pointer; box-shadow:0 18px 50px rgba(0,166,166,0.16) }
-
-  /* Responsive */
-  @media (max-width:1000px){
-    .content{ grid-template-columns: 1fr; padding:28px; gap:18px; }
-    p.lead{ max-width:100% }
-    .product-card img{ height:260px }
-    .section-index{ font-size:72px; left:18px }
-    .product-caption{ right:18px; left:18px; text-align:left }
-  }
-  @media (max-width:640px){
-    .brand .name{ display:none }
-    .content{ padding:20px }
-    .product-card img{ height:200px }
-    .kicker{ font-size:0.78rem }
-    .features{ gap:10px }
-    .feature{ min-width:120px; padding:8px 10px; font-size:0.92rem }
-  }
+}
 </style>
 </head>
+
 <body>
+<section class="smartpole-section">
 
-<div class="topbar">
-  <div class="brand">
-    <div class="logo">A</div>
-    <div class="name">Arcot Labs</div>
+  <div class="smartpole-text" id="smartpoleText">
+    <h5>Main Feature</h5>
+    <h2>Smart Lighting</h2>
+    <p>
+      AI-powered adaptive street lighting that adjusts brightness automatically 
+      based on movement and environmental conditions for energy efficiency.
+    </p>
+    <ul>
+      <li>Energy efficient</li>
+      <li>AI-powered</li>
+      <li>Real-time monitoring</li>
+    </ul>
   </div>
 
-  <div class="dots" aria-hidden="true">
-    <!-- js will populate dots -->
+  <div class="smartpole-image">
+    <img id="smartpoleImage" src="https://images.unsplash.com/photo-1581091870633-7ccfa0f3c3b3?auto=format&fit=crop&w=1000&q=80" alt="SmartPole Image">
   </div>
-</div>
 
-<div class="smooth-wrap">
-  <!-- Product sections: each is a full-screen product experience -->
-  <!-- Replace background-image URLs with your hi-res product hero images (landscape) -->
-  <section class="product" data-index="1" id="p1">
-    <div class="bg-layer" style="background-image:url('img/randd/smartpole.png'); transform: translateZ(0) scale(1.12);"></div>
-    <div class="black-overlay"></div>
+  <!-- Mobile buttons wrapper -->
+  <div class="nav-buttons-wrapper">
+    <button class="nav-btn" id="prevBtn">&#8592;</button>
+    <button class="nav-btn" id="nextBtn">&#8594;</button>
+  </div>
 
-    <div class="accent-rail"></div>
-    <div class="section-index">01</div>
-
-    <div class="content">
-      <div class="hero-copy">
-        <div class="kicker">INNOVATION</div>
-        <h1 class="title">Smart Pole</h1>
-        <p class="lead">A connected urban mast that blends advanced lighting, environmental sensing and data telemetry — designed to power smart cities while looking timeless.</p>
-
-        <div class="features">
-          <div class="feature"><span class="dot-mini"></span> Human-Centric Lighting</div>
-          <div class="feature"><span class="dot-mini"></span> Environmental Sensors</div>
-          <div class="feature"><span class="dot-mini"></span> Edge AI Control</div>
-        </div>
-      </div>
-
-      <aside class="product-card" aria-hidden="true">
-        <img src="img/randd/smartpole.png" alt="Smart Pole — product image">
-        <div class="meta">
-          <div class="price-like">Prototype • Arcot Labs</div>
-          <button class="cta">Explore ↗</button>
-        </div>
-      </aside>
-    </div>
-
-    <div class="product-caption">Ideal for city streets, campuses and transit hubs — the Smart Pole lowers energy use while enabling real-time services.</div>
-  </section>
-
-  <section class="product" data-index="2" id="p2">
-    <div class="bg-layer" style="background-image:url('img/randd/smartbollad.png'); transform: translateZ(0) scale(1.12);"></div>
-    <div class="black-overlay"></div>
-    <div class="accent-rail"></div>
-    <div class="section-index">02</div>
-
-    <div class="content">
-      <div class="hero-copy">
-        <div class="kicker">DESIGN</div>
-        <h1 class="title">Smart Bollard</h1>
-        <p class="lead">Minimal footprint, maximum functionality — security lighting, adaptive brightness and sensor fusion for pedestrian-friendly spaces.</p>
-
-        <div class="features">
-          <div class="feature"><span class="dot-mini"></span> Sculptural Finish</div>
-          <div class="feature"><span class="dot-mini"></span> Motion Adaptive</div>
-          <div class="feature"><span class="dot-mini"></span> IoT Ready</div>
-        </div>
-      </div>
-
-      <aside class="product-card" aria-hidden="true">
-        <img src="img/randd/smartbollad.png" alt="Smart Bollard — product image">
-        <div class="meta">
-          <div class="price-like">Pilot • Arcot Labs</div>
-          <button class="cta">Datasheet ↗</button>
-        </div>
-      </aside>
-    </div>
-
-    <div class="product-caption">Elegant, vandal-resistant, and engineered to integrate with Arcot's lighting platform.</div>
-  </section>
-
-  <section class="product" data-index="3" id="p3">
-    <div class="bg-layer" style="background-image:url('img/randd/smarttable.png'); transform: translateZ(0) scale(1.12);"></div>
-    <div class="black-overlay"></div>
-    <div class="accent-rail"></div>
-    <div class="section-index">03</div>
-
-    <div class="content">
-      <div class="hero-copy">
-        <div class="kicker">INTERACTION</div>
-        <h1 class="title">Smart Table</h1>
-        <p class="lead">A responsive surface for hospitality and workspace — tune color temperature, sensing zones and adaptive scenes for human comfort.</p>
-
-        <div class="features">
-          <div class="feature"><span class="dot-mini"></span> Adaptive Scenes</div>
-          <div class="feature"><span class="dot-mini"></span> Proximity Sensor</div>
-          <div class="feature"><span class="dot-mini"></span> Wireless Charging</div>
-        </div>
-      </div>
-
-      <aside class="product-card" aria-hidden="true">
-        <img src="img/randd/smarttable.png" alt="Smart Table — product image">
-        <div class="meta">
-          <div class="price-like">Demo • Arcot Labs</div>
-          <button class="cta">Request Demo</button>
-        </div>
-      </aside>
-    </div>
-
-    <div class="product-caption">Designed for hospitality, workplaces and public lounges — bespoke materials and modular lighting tiles.</div>
-  </section>
-
-  <section class="product" data-index="4" id="p4">
-    <div class="bg-layer" style="background-image:url('img/randd/smartbarcounter.png'); transform: translateZ(0) scale(1.12);"></div>
-    <div class="black-overlay"></div>
-    <div class="accent-rail"></div>
-    <div class="section-index">04</div>
-
-    <div class="content">
-      <div class="hero-copy">
-        <div class="kicker">EXPERIENCE</div>
-        <h1 class="title">Smart Bar Counter</h1>
-        <p class="lead">Bring atmosphere to social spaces with adaptive warmth, rhythm-reactive lighting and modular segments for any layout.</p>
-
-        <div class="features">
-          <div class="feature"><span class="dot-mini"></span> Scene Presets</div>
-          <div class="feature"><span class="dot-mini"></span> Rhythm Sync</div>
-          <div class="feature"><span class="dot-mini"></span> Modular Scale</div>
-        </div>
-      </div>
-
-      <aside class="product-card" aria-hidden="true">
-        <img src="img/randd/smartbarcounter.png" alt="Smart Bar Counter — product image">
-        <div class="meta">
-          <div class="price-like">Concept • Arcot Labs</div>
-          <button class="cta">Explore Use Cases</button>
-        </div>
-      </aside>
-    </div>
-
-    <div class="product-caption">Tailored for bars, restaurants and experiential venues — dynamic lighting that responds to people and music.</div>
-  </section>
-
-  <section class="product" data-index="5" id="p5">
-    <div class="bg-layer" style="background-image:url('img/randd/windoleaf.png'); transform: translateZ(0) scale(1.12);"></div>
-    <div class="black-overlay"></div>
-    <div class="accent-rail"></div>
-    <div class="section-index">05</div>
-
-    <div class="content">
-      <div class="hero-copy">
-        <div class="kicker">SUSTAINABILITY</div>
-        <h1 class="title">Windo Leaf</h1>
-        <p class="lead">Smart shading system that reduces cooling loads through responsive orientation and daylight harvesting — elegant, adaptive, efficient.</p>
-
-        <div class="features">
-          <div class="feature"><span class="dot-mini"></span> Daylight Harvesting</div>
-          <div class="feature"><span class="dot-mini"></span> Adaptive Orientation</div>
-          <div class="feature"><span class="dot-mini"></span> Low Power Actuation</div>
-        </div>
-      </div>
-
-      <aside class="product-card" aria-hidden="true">
-        <img src="img/randd/windoleaf.png" alt="Windo Leaf — product image">
-        <div class="meta">
-          <div class="price-like">R&D • Arcot Labs</div>
-          <button class="cta">Learn More</button>
-        </div>
-      </aside>
-    </div>
-
-    <div class="product-caption">Scalable across façades and interior partitions — reduces HVAC strain and improves occupant comfort.</div>
-  </section>
-
-  <!-- Optional Coming Soon section -->
-  <section class="product" data-index="6" id="coming">
-    <div class="bg-layer" style="background-image:linear-gradient(180deg, rgba(0,10,10,0.6), rgba(0,0,0,0.85));"></div>
-    <div class="black-overlay"></div>
-    <div class="accent-rail"></div>
-    <div class="section-index">…</div>
-
-    <div class="content" style="align-items:center; grid-template-columns:1fr;">
-      <div style="text-align:center; max-width:900px; margin:auto">
-        <div class="kicker">THE FUTURE</div>
-        <h1 class="title">More Innovations Coming</h1>
-        <p class="lead">Arcot Labs is continuously prototyping the next generation of intelligent systems. Sign up to get early previews and collaboration opportunities.</p>
-        <div style="margin-top:18px;">
-          <button class="big-cta" onclick="alert('Contact Arcot Labs')">Partner With Us</button>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- Footer CTA -->
-  <footer>
-    <div style="max-width:1100px;margin:auto">
-      <h3 style="font-family:Poppins;margin-bottom:12px">Interested in collaborating?</h3>
-      <p style="color:var(--muted); margin-bottom:18px">Work with Arcot Labs to prototype, pilot and deploy future-forward lighting systems.</p>
-      <button class="big-cta" onclick="alert('Contact Arcot — placeholder')">Contact R&D Team</button>
-    </div>
-  </footer>
-</div>
+  <div class="dots" id="smartpoleDots"></div>
+</section>
 
 <script>
-  // init smoother
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
-
-  // Some browsers may not support ScrollSmoother - fallback gracefully
-  let smoother;
-  try {
-    smoother = ScrollSmoother.create({
-      wrapper: ".smooth-wrap",
-      content: "body",
-      smooth: 1.1,
-      effects: true,
-    });
-  } catch(e){
-    // no-op, ScrollSmoother not available — page still functional
-    console.warn("ScrollSmoother not available:", e);
+const smartpoleMain = [
+  {
+    title: "Smart Lighting",
+    desc: "AI-powered adaptive street lighting that adjusts brightness automatically based on movement and environmental conditions for energy efficiency.",
+    points: ["Energy efficient", "AI-powered", "Real-time monitoring"],
+    img: "https://images.unsplash.com/photo-1581091870633-7ccfa0f3c3b3?auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    title: "Environmental Monitoring",
+    desc: "Tracks air quality, temperature, humidity, and noise levels in real time for smart city applications.",
+    points: ["Air quality tracking", "Temperature & humidity sensors", "Noise monitoring"],
+    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    title: "Traffic Analytics",
+    desc: "Uses AI-based video analytics to monitor vehicle flow, detect congestion, and improve traffic management.",
+    points: ["Vehicle flow monitoring", "Congestion detection", "Traffic optimization"],
+    img: "https://images.unsplash.com/photo-1517949908112-7201cc1261c7?auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    title: "Public Wi-Fi Hotspot",
+    desc: "Integrated Wi-Fi access points provide connectivity for citizens and IoT devices in smart cities.",
+    points: ["Citizen connectivity", "IoT integration", "High-speed access"],
+    img: "https://images.unsplash.com/photo-1504386106331-3e4e71712b38?auto=format&fit=crop&w=1000&q=80"
   }
+];
 
-  // Create nav dots for each product section
-  const sections = Array.from(document.querySelectorAll('section.product'));
-  const dotsContainer = document.querySelector('.dots');
+let spIndex = 0;
+const spImgEl = document.getElementById("smartpoleImage");
+const spTextEl = document.getElementById("smartpoleText");
+const spDotsEl = document.getElementById("smartpoleDots");
 
-  sections.forEach((sec, i) => {
-    const d = document.createElement('div');
-    d.className = 'dot';
-    d.setAttribute('data-i', i);
-    d.title = sec.querySelector('.title') ? sec.querySelector('.title').textContent : `Section ${i+1}`;
-    d.addEventListener('click', () => {
-      // scroll to section smoothly
-      const top = sec.getBoundingClientRect().top + window.pageYOffset;
-      gsap.to(window, {duration:1, scrollTo:top, ease:"power2.inOut"});
-    });
-    dotsContainer.appendChild(d);
+function updateSmartPole() {
+  const item = smartpoleMain[spIndex];
+  spImgEl.src = item.img;
+
+  let pointsHTML = "<ul>";
+  item.points.forEach(pt => pointsHTML += `<li>${pt}</li>`);
+  pointsHTML += "</ul>";
+
+  spTextEl.innerHTML = `
+    <h5>Main Feature</h5>
+    <h2>${item.title}</h2>
+    <p>${item.desc}</p>
+    ${pointsHTML}
+  `;
+
+  document.querySelectorAll("#smartpoleDots span").forEach((dot, i) => {
+    dot.classList.toggle("active", i === spIndex);
   });
+}
 
-  // update active dot on scroll
-  function updateActiveDot() {
-    const dots = document.querySelectorAll('.dot');
-    sections.forEach((s,idx) => {
-      const rect = s.getBoundingClientRect();
-      const mid = window.innerHeight/2;
-      if (rect.top <= mid && rect.bottom >= mid) {
-        dots.forEach(x=>x.classList.remove('active'));
-        dots[idx].classList.add('active');
-      }
-    });
-  }
-  updateActiveDot();
-  window.addEventListener('scroll', updateActiveDot);
-  window.addEventListener('resize', updateActiveDot);
-
-  // Section animations (parallax + reveal)
-  sections.forEach((sec, index) => {
-    const bg = sec.querySelector('.bg-layer');
-    const title = sec.querySelector('.title');
-    const kicker = sec.querySelector('.kicker');
-    const lead = sec.querySelector('.lead');
-    const features = sec.querySelectorAll('.feature');
-    const card = sec.querySelector('.product-card');
-    const caption = sec.querySelector('.product-caption');
-    const indexBig = sec.querySelector('.section-index');
-
-    // Parallax background movement
-    if (bg) {
-      gsap.fromTo(bg, {y: -80, scale:1.08}, {
-        y: 80, scale:1.02,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sec,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 0.9
-        }
-      });
-    }
-
-    // Reveal content
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sec,
-        start: "top 65%",
-        end: "top 30%",
-        toggleActions: "play none none reverse"
-      }
-    });
-
-    if (kicker) tl.fromTo(kicker, {y:20,opacity:0},{y:0,opacity:1, duration:0.5}, 0);
-    if (title)   tl.fromTo(title, {y:30,opacity:0},{y:0,opacity:1, duration:0.7}, 0.08);
-    if (lead)    tl.fromTo(lead, {y:30,opacity:0},{y:0,opacity:1, duration:0.7}, 0.18);
-    if (features && features.length) {
-      tl.fromTo(features, {y:20,opacity:0},{y:0,opacity:1,duration:0.6, stagger:0.09}, 0.3);
-    }
-    if (card) {
-      tl.fromTo(card, {y:30,opacity:0,scale:0.98},{y:0,opacity:1, scale:1, duration:0.8}, 0.25);
-    }
-    if (caption) {
-      tl.fromTo(caption, {y:20,opacity:0},{y:0,opacity:1, duration:0.6}, 0.35);
-    }
-    if (indexBig) {
-      gsap.fromTo(indexBig, {y:40, opacity:0.02}, { y:0, opacity:0.08, duration:0.9, ease:"power3.out",
-        scrollTrigger:{ trigger: sec, start:"top 90%", end:"top 30%", scrub:0.8 } });
-    }
-=======
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lighting Solutions</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #000;
-      color: #fff;
-    }
-
-    .solutions-section {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      overflow: hidden;
-    }
-
-    /* Background images */
-    .solution-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-
-    .solution-bg.active {
-      opacity: 1;
-    }
-
-    /* Left black gradient overlay */
-    .solutions-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 45%;
-      height: 100%;
-      background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0));
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    /* Text menu */
-    .solutions-menu {
-      position: relative;
-      z-index: 2;
-      padding-left: 80px;
-      text-align: left;
-    }
-
-    .solutions-menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .solutions-menu ul li {
-      font-size: 3rem;
-      font-weight: 600;
-      margin: 15px 0;
-      color: rgba(255, 255, 255, 0.35);
-      cursor: pointer;
-      position: relative;
-      transition: 
-        color 0.8s ease,
-        transform 0.8s ease,
-        opacity 0.8s ease;
-    }
-
-    .solutions-menu ul li.active,
-    .solutions-menu ul li:hover {
-      color: #ffffff;
-      transform: translateX(15px);
-      opacity: 1;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1024px) {
-      .solutions-menu {
-        padding-left: 40px;
-      }
-      .solutions-menu ul li {
-        font-size: 2.5rem;
-        margin: 12px 0;
-      }
-      .solutions-overlay {
-        width: 50%;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .solutions-menu {
-        padding-left: 20px;
-      }
-      .solutions-menu ul li {
-        font-size: 2rem;
-        margin: 10px 0;
-      }
-      .solutions-overlay {
-        width: 60%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .solutions-menu {
-        padding-left: 15px;
-      }
-      .solutions-menu ul li {
-        font-size: 1.5rem;
-        margin: 8px 0;
-      }
-      .solutions-overlay {
-        width: 70%;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <section class="solutions-section">
-    <!-- Background images -->
-    <div class="solution-bg active" style="background-image: url('img/17.png');"></div>
-    <div class="solution-bg" style="background-image: url('img/10.png');"></div>
-    <div class="solution-bg" style="background-image: url('img/11.png');"></div>
-    <div class="solution-bg" style="background-image: url('img/12.png');"></div>
-    <div class="solution-bg" style="background-image: url('img/20.png');"></div>
-    <div class="solution-bg" style="background-image: url('img/19.png');"></div>
-
-    <!-- Black gradient overlay -->
-    <div class="solutions-overlay"></div>
-
-    <!-- Menu -->
-    <div class="solutions-menu">
-      <ul>
-        <li class="active" data-index="0">Indoor</li>
-        <li data-index="1">Outdoor</li>
-        <li data-index="2">Immersion</li>
-        <li data-index="3">Linear system</li>
-        <li data-index="4">Architectural</li>
-        <li data-index="5">Decorative</li>
-      </ul>
-    </div>
-  </section>
-
-  <script>
-    const menuItems = document.querySelectorAll(".solutions-menu ul li");
-    const bgItems = document.querySelectorAll(".solution-bg");
-
-    let currentIndex = 0;
-    let autoPlay;
-
-    function showSlide(index) {
-      menuItems.forEach(li => li.classList.remove("active"));
-      bgItems.forEach(bg => bg.classList.remove("active"));
-
-      menuItems[index].classList.add("active");
-      bgItems[index].classList.add("active");
-
-      currentIndex = index;
-    }
-
-    menuItems.forEach(item => {
-      item.addEventListener("mouseenter", () => {
-        let index = parseInt(item.getAttribute("data-index"));
-        showSlide(index);
-        resetAutoPlay();
-      });
-    });
-
-    function nextSlide() {
-      let nextIndex = (currentIndex + 1) % bgItems.length;
-      showSlide(nextIndex);
-    }
-
-    function startAutoPlay() {
-      autoPlay = setInterval(nextSlide, 4000);
-    }
-
-    function resetAutoPlay() {
-      clearInterval(autoPlay);
-      startAutoPlay();
-    }
-
-    // Init
-    showSlide(0);
-    startAutoPlay();
-  </script>
->>>>>>> 8ae4b98eb9b0d403025f6cf269510048f9975ed5
-
-    // subtle tilt effect on product image on pointermove (desktop only)
-    const img = card ? card.querySelector('img') : null;
-    if (img && window.innerWidth > 800) {
-      sec.addEventListener('pointermove', (e) => {
-        const r = sec.getBoundingClientRect();
-        const px = (e.clientX - r.left) / r.width;
-        const py = (e.clientY - r.top) / r.height;
-        const tx = (px - 0.5) * 8;
-        const ty = (py - 0.5) * 6;
-        gsap.to(img, {rotationY: tx, rotationX: -ty, transformPerspective:800, scale:1.035, duration:0.6, ease:"power3.out"});
-      });
-      sec.addEventListener('pointerleave', () => {
-        gsap.to(img, {rotationY:0, rotationX:0, scale:1.03, duration:0.8, ease:"power3.out"});
-      });
-    }
+// Initialize dots
+smartpoleMain.forEach((_, i) => {
+  const dot = document.createElement("span");
+  dot.addEventListener("click", () => {
+    spIndex = i;
+    updateSmartPole();
   });
-
-  // Keyboard navigation: up/down arrow
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowDown' || e.key === 'PageDown') {
-      e.preventDefault();
-      // go to next section center
-      const pos = window.scrollY;
-      for (let i=0;i<sections.length;i++){
-        const s = sections[i];
-        const rect = s.getBoundingClientRect();
-        const top = rect.top + window.pageYOffset;
-        if (top > pos + 10) {
-          gsap.to(window, {duration:0.9, scrollTo: top, ease:"power2.inOut"});
-          break;
-        }
-      }
-    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-      e.preventDefault();
-      const pos = window.scrollY;
-      for (let i=sections.length-1;i>=0;i--){
-        const s = sections[i];
-        const rect = s.getBoundingClientRect();
-        const top = rect.top + window.pageYOffset;
-        if (top < pos - 10) {
-          gsap.to(window, {duration:0.9, scrollTo: top, ease:"power2.inOut"});
-          break;
-        }
-      }
-    }
-  });
-
-  // initial set active dot
-  updateActiveDot();
-
-  // Recommend: preloading images for the hero backgrounds for smooth animation
-  const imgs = Array.from(document.querySelectorAll('.bg-layer')).map(n => {
-    const style = n.style.backgroundImage;
-    const m = style.match(/url\(['"]?(.*?)['"]?\)/);
-    return m ? m[1] : null;
-  }).filter(Boolean);
-
-  imgs.forEach(src => {
-    const i = new Image();
-    i.src = src;
-  });
-
-
-  // ---------- CINEMATIC CROSSFADE + GLOW PRODUCT ANIMATIONS ----------
-window.addEventListener("load", () => {
-
-  // Select each full product section
-  const panels = gsap.utils.toArray("section.product");
-
-  panels.forEach((panel, i) => {
-    const bg = panel.querySelector(".bg-layer");
-    const card = panel.querySelector(".product-card img");
-
-    // Fade + zoom section background
-    if (bg) {
-      gsap.fromTo(
-        bg,
-        { opacity: 0, scale: 1.1, filter: "brightness(0.7)" },
-        {
-          opacity: 1,
-          scale: 1.02,
-          filter: "brightness(1)",
-          duration: 1.5,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: panel,
-            start: "top center+=150",
-            end: "bottom center-=150",
-            toggleActions: "play reverse play reverse",
-          },
-        }
-      );
-    }
-
-    // Glow + fade on product image
-    if (card) {
-      gsap.fromTo(
-        card,
-        { opacity: 0, scale: 1.05, filter: "brightness(0.8) blur(3px)" },
-        {
-          opacity: 1,
-          scale: 1,
-          filter: "brightness(1.1) blur(0px)",
-          duration: 1.2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: panel,
-            start: "top 70%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    }
-  });
-
-  // Crossfade transition between consecutive sections
-  for (let i = 0; i < panels.length - 1; i++) {
-    const current = panels[i];
-    const next = panels[i + 1];
-
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: next,
-        start: "top bottom",
-        end: "top center",
-        scrub: true,
-      },
-    })
-      .to(current, { opacity: 0, duration: 1.2, ease: "power2.out" })
-      .fromTo(
-        next,
-        { opacity: 0 },
-        { opacity: 1, duration: 1.2, ease: "power2.out" },
-        "<"
-      );
-  }
+  spDotsEl.appendChild(dot);
 });
 
+// Navigation
+document.getElementById("nextBtn").onclick = () => {
+  spIndex = (spIndex + 1) % smartpoleMain.length;
+  updateSmartPole();
+};
 
+document.getElementById("prevBtn").onclick = () => {
+  spIndex = (spIndex - 1 + smartpoleMain.length) % smartpoleMain.length;
+  updateSmartPole();
+};
+
+// Auto-scroll
+let autoScroll = setInterval(() => {
+  spIndex = (spIndex + 1) % smartpoleMain.length;
+  updateSmartPole();
+}, 3500);
+
+document.querySelector(".smartpole-section").addEventListener("mouseenter", () => {
+  clearInterval(autoScroll);
+});
+
+document.querySelector(".smartpole-section").addEventListener("mouseleave", () => {
+  autoScroll = setInterval(() => {
+    spIndex = (spIndex + 1) % smartpoleMain.length;
+    updateSmartPole();
+  }, 3500);
+});
+
+updateSmartPole();
 </script>
 </body>
 </html>

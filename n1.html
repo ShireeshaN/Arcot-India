@@ -1,201 +1,256 @@
-<!-- SMARTPOLE FEATURE SECTION -->
-<section class="smartpole-section" id="smartpole">
-
-  <div class="features-container">
-    <div class="features-list" id="featuresLeft"></div>
-
-    <div class="product-display" id="imageContainer">
-      <!-- Single common image for all features -->
-      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image active" alt="Smartpole Product">
-    </div>
-
-    <div class="features-list" id="featuresRight"></div>
-  </div>
-</section>
-
-<script>
-// FEATURES WITH ICONS
-const features = [
-  {icon:"⚡", name:"EV Charger", desc:"Fast, efficient EV charging; solar/wind integration and QR payments."},
-  {icon:"🚨", name:"Emergency SOS Alert", desc:"Instant SOS with GPS, voice/push activation and ICCC integration."},
-  {icon:"🔌", name:"Wired Charging", desc:"Weatherproof, safe plug-and-charge with real-time power & metering."},
-  {icon:"📡", name:"Wireless Charging", desc:"Contactless EV charging for convenient public/fleet use."},
-  {icon:"🌫️", name:"Air Quality Sensor", desc:"Real-time PM/CO₂/NO₂ monitoring with IoT reporting and alerts."},
-  {icon:"📊", name:"Air Quality Screen", desc:"Outdoor AQI display with auto-brightness and public alerts."},
-  {icon:"💡", name:"Street Lighting", desc:"Smart dimmable LEDs with motion, schedules and solar option."},
-  {icon:"🔊", name:"PA Loudspeaker", desc:"Weatherproof public address for alerts, announcements and events."},
-  {icon:"⚙️", name:"Power Generation System", desc:"Solar/wind hybrid generation with battery storage."},
-  {icon:"🖥️", name:"RGB Pixel LED Screen", desc:"High-bright dynamic display for ads, alerts and info."},
-  {icon:"👁️", name:"Motion Detector", desc:"Day/night movement detection that triggers lights/cameras."},
-  {icon:"📶", name:"Wi-Fi Hotspot", desc:"Public broadband access and IoT connectivity with secure access."},
-  {icon:"🎙️", name:"Intercom", desc:"Two-way citizen ↔ control center communication (audio/video)."},
-  {icon:"📱", name:"Android Touch Screen", desc:"Outdoor info kiosk: maps, tickets, navigation & services."},
-  {icon:"🗣️", name:"AI-Based Voice Communication", desc:"Multilingual voice assistant for info and commands."},
-  {icon:"🎥", name:"AI-Based Camera", desc:"Smart video analytics (detection, ANPR, alerts) with edge/cloud support."},
-];
-
-const leftContainer = document.getElementById('featuresLeft');
-const rightContainer = document.getElementById('featuresRight');
-const leftFeatures = features.slice(0, 8);
-const rightFeatures = features.slice(8, 16);
-
-function createFeatureElement(f, i) {
-  const div = document.createElement('div');
-  div.classList.add('feature');
-  div.innerHTML = `
-    <div class="feature-header">
-      <span class="feature-icon">${f.icon}</span>
-      <span class="feature-title">${f.name}</span>
-    </div>
-    <div class="feature-desc">${f.desc}</div>
-  `;
-  return div;
-}
-
-leftFeatures.forEach(f => leftContainer.appendChild(createFeatureElement(f)));
-rightFeatures.forEach(f => rightContainer.appendChild(createFeatureElement(f)));
-
-gsap.registerPlugin(ScrollTrigger);
-
-// Scroll animations
-gsap.to(".smartpole-section", {
-  opacity: 1, y: 0, duration: 1.2, ease: "power3.out",
-  scrollTrigger: { trigger: ".smartpole-section", start: "top 80%" }
-});
-
-gsap.from(".features-list", {
-  opacity: 0,
-  x: i => (i === 0 ? -100 : 100),
-  duration: 1.3,
-  stagger: 0.2,
-  ease: "power2.out",
-  scrollTrigger: { trigger: ".features-container", start: "top 85%" }
-});
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SmartPole Features Slider</title>
 
 <style>
-/* --- SMARTPOLE SECTION --- */
-.smartpole-section {
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #fff;
+  color: #111;
+  overflow-x: hidden;
+}
+
+/* Container */
+.feature-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0 60px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Left text box */
+.text-content {
+  width: 45%;
+  position: relative;
+}
+
+.text-content h5 {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+.text-content h5::after {
+  content: "";
+  display: block;
+  width: 350px;
+  height: 1px;
+  background: #000;
+  margin-top: 8px;
+}
+
+.text-content h2 {
+  font-size: 26px;
+  text-transform: uppercase;
+  margin: 20px 0;
+  font-weight: 700;
+}
+
+.text-content p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 60px;
+}
+
+/* bottom line */
+.text-content::after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 1px;
+  background: #000;
+  margin-top: 50px;
+}
+
+/* Image container */
+.image-container {
+  width: 50%;
+  overflow: hidden;
+  position: relative;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding: 40px 100px;
-  box-sizing: border-box;
-  opacity: 0;
-  transform: translateY(50px);
-  background-color: #222222;
 }
 
-.features-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.image-container img {
   width: 100%;
-  max-width: 1600px;
-  gap: 60px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.8s ease-in-out;
 }
 
-/* --- FEATURE LISTS --- */
-.features-list {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  z-index: 3;
+.image-container:hover img {
+  transform: scale(1.03);
 }
 
-.feature {
-  background: rgba(255, 255, 255, 0.07);
-  padding: 16px 22px;
+/* Navigation buttons */
+.nav-btn {
+  position: absolute;
+  top: 90%;
+  transform: translateY(-50%);
+  background: #111;
+  color: #fff;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   cursor: pointer;
-  transition: all 0.4s ease;
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  backdrop-filter: blur(10px);
-  color: azure;
-  border-radius: 10px;
+  font-size: 20px;
+  z-index: 5;
+  transition: 0.3s ease;
 }
 
-.feature:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateX(4px);
+.nav-btn:hover {
+  background: #333;
 }
 
-.feature-header {
+#prevBtn {
+  left: 380px;
+}
+
+#nextBtn {
+  right: 800px;
+}
+
+/* Dots navigation */
+.dots {
+  position: absolute;
+  bottom: 60px;
+  left: 35%;
+  transform: translateX(-50%);
   display: flex;
-  align-items: center;
   gap: 10px;
 }
 
-.feature-icon {
-  font-size: 1.3rem;
+.dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #111;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.feature-title {
-  font-weight: 600;
-}
-
-.feature-desc {
-  font-size: 0.85rem;
-  opacity: 0.8;
-  margin-top: 6px;
-  line-height: 1.4;
-}
-
-/* --- PRODUCT DISPLAY --- */
-.product-display {
-  flex: 1.3;
-  position: relative;
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.product-image {
-  position: relative;
-  width: 90%;
-  height: auto;
-  object-fit: contain;
-  transition: all 1.2s ease;
-  filter: brightness(1);
-}
-
-/* --- RESPONSIVE --- */
-@media (max-width: 1024px) {
-  .features-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .product-display {
-    order: -1;
-    height: 50vh;
-    margin-bottom: 30px;
-  }
-
-  .product-image {
-    width: 70%;
-    opacity: 1;
-    transform: none;
-  }
-
-  .features-list {
-    width: 100%;
-    align-items: center;
-  }
-
-  .feature {
-    width: 85%;
-    text-align: left;
-  }
-
-  .feature-header {
-    justify-content: flex-start;
-  }
+.dots span.active {
+  opacity: 1;
+  background: #ffcc00;
 }
 </style>
+</head>
+
+<body>
+<section class="feature-section">
+  <div class="text-content" id="text-content">
+    <h5>Feature</h5>
+    <h2>Smart Lighting</h2>
+    <p>
+      AI-powered adaptive street lighting that adjusts brightness automatically 
+      based on movement and environmental conditions for energy efficiency.
+    </p>
+  </div>
+
+  <div class="image-container">
+    <img id="featureImage" src="https://images.unsplash.com/photo-1581091870633-7ccfa0f3c3b3?auto=format&fit=crop&w=1000&q=80" alt="Feature Image">
+  </div>
+
+  <button class="nav-btn" id="prevBtn">&#8592;</button>
+  <button class="nav-btn" id="nextBtn">&#8594;</button>
+
+  <div class="dots" id="dots"></div>
+</section>
+
+<script>
+const features = [
+  {
+    title: "Smart Lighting",
+    desc: "AI-powered adaptive street lighting that adjusts brightness automatically based on movement and environmental conditions for energy efficiency.",
+    img: "https://images.unsplash.com/photo-1581091870633-7ccfa0f3c3b3?auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    title: "Environmental Monitoring",
+    desc: "Tracks air quality, temperature, humidity, and noise levels in real time for smart city applications.",
+    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    title: "Traffic Analytics",
+    desc: "Uses AI-based video analytics to monitor vehicle flow, detect congestion, and improve traffic management.",
+    img: "https://images.unsplash.com/photo-1517949908112-7201cc1261c7?auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    title: "Public Wi-Fi Hotspot",
+    desc: "Integrated Wi-Fi access points provide connectivity for citizens and IoT devices in smart cities.",
+    img: "https://images.unsplash.com/photo-1504386106331-3e4e71712b38?auto=format&fit=crop&w=1000&q=80"
+  }
+];
+
+let index = 0;
+const imgEl = document.getElementById("featureImage");
+const textEl = document.getElementById("text-content");
+const dotsEl = document.getElementById("dots");
+
+function updateFeature() {
+  const f = features[index];
+  imgEl.src = f.img;
+  textEl.innerHTML = `
+    <h5>Feature</h5>
+    <h2>${f.title}</h2>
+    <p>${f.desc}</p>
+  `;
+  document.querySelectorAll(".dots span").forEach((dot, i) => {
+    dot.classList.toggle("active", i === index);
+  });
+}
+
+features.forEach((_, i) => {
+  const dot = document.createElement("span");
+  dot.addEventListener("click", () => {
+    index = i;
+    updateFeature();
+  });
+  dotsEl.appendChild(dot);
+});
+
+document.getElementById("nextBtn").onclick = () => {
+  index = (index + 1) % features.length;
+  updateFeature();
+};
+
+document.getElementById("prevBtn").onclick = () => {
+  index = (index - 1 + features.length) % features.length;
+  updateFeature();
+};
+
+let autoScroll = setInterval(() => {
+  index = (index + 1) % features.length;
+  updateFeature();
+}, 3500);
+
+document.querySelector(".feature-section").addEventListener("mouseenter", () => {
+  clearInterval(autoScroll);
+});
+
+document.querySelector(".feature-section").addEventListener("mouseleave", () => {
+  autoScroll = setInterval(() => {
+    index = (index + 1) % features.length;
+    updateFeature();
+  }, 3500);
+});
+
+updateFeature();
+</script>
+</body>
+</html>
