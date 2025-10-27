@@ -1,211 +1,150 @@
-<!-- ENERGY GENERATION START -->
-<div class="energygenss-wrapper">
-  <div class="energygenss">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Website Prototype</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Basic Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <!-- Wind -->
-    <div class="energygenss-item">
-      <video src="media/wind.mp4" muted playsinline></video>
-      <span class="item-name">Wind</span>
-    </div>
-    <div class="energygenss-item" style="background-image: url('img/energy/wind2.webp');">
-      <span class="item-name">Wind</span>
-    </div>
-
-    <!-- Solar -->
-    <div class="energygenss-item">
-      <video src="media/solar.mp4" muted playsinline></video>
-      <span class="item-name">Solar</span>
-    </div>
-    <div class="energygenss-item" style="background-image: url('img/energy/solar2.png');">
-      <span class="item-name">Solar</span>
-    </div>
-
-    <!-- Biomass -->
-    <div class="energygenss-item">
-      <video src="media/biomass.mp4" muted playsinline></video>
-      <span class="item-name">Biomass</span>
-    </div>
-    <div class="energygenss-item" style="background-image: url('img/energy/biomass2.png');">
-      <span class="item-name">Biomass</span>
-    </div>
-
-    <!-- Hydel -->
-    <div class="energygenss-item">
-      <video src="media/hydelplant.mp4" muted playsinline></video>
-      <span class="item-name">Hydel</span>
-    </div>
-    <div class="energygenss-item" style="background-image: url('img/energy/hydel2.png');">
-      <span class="item-name">Hydel</span>
-    </div>
-
-  </div>
-</div>
-
-<script>
-const items = document.querySelectorAll('.energygenss-item');
-let currentIndex = 0;
-let autoSlide;
-
-function activateItem(index){
-  items.forEach((item,i)=>{
-    const video = item.querySelector('video');
-    const name = item.querySelector('.item-name');
-
-    item.classList.remove('active');
-
-    if(i===index){
-      item.classList.add('active');
-      // hide name for active
-      if(name) name.style.opacity = "0";
-
-      if(video){
-        video.currentTime = 0;
-        video.play();
-        video.onended = ()=>{ goNext(); };
-      }
-    } else {
-      // show name for inactive
-      if(name) name.style.opacity = "0.9";
-      if(video) video.pause();
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      overflow-x: hidden;
     }
-  });
-}
 
-function goNext(){
-  clearTimeout(autoSlide);
-  currentIndex = (currentIndex + 1) % items.length;
-  activateItem(currentIndex);
-
-  const activeItem = items[currentIndex];
-  const video = activeItem.querySelector("video");
-
-  if(video){
-    video.onended = ()=>{ goNext(); };
-    video.play();
-  } else {
-    autoSlide = setTimeout(goNext, 4000);
-  }
-}
-
-// Manual click override
-items.forEach((item,index)=>{
-  item.addEventListener('click', ()=>{
-    clearTimeout(autoSlide);
-    currentIndex = index;
-    activateItem(currentIndex);
-    const activeItem = items[currentIndex];
-    if(!activeItem.querySelector('video')){
-      autoSlide = setTimeout(goNext, 4000);
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      position: fixed;
+      width: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
     }
-  });
-});
 
-// Start
-activateItem(currentIndex);
-goNext();
-</script>
+    header a { color: #fff; text-decoration: none; margin: 0 15px; }
 
-<style>
-.energygenss-wrapper {
-  width: 100%;
-  overflow: hidden;
-  background: #dddcdc;
-}
+    main {
+      padding-top: 100px;
+    }
 
-.energygenss {
-  display: flex;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1000px;
+      text-align: center;
+    }
 
-.energygenss-item {
-  flex: 0.4; /* inactive items uniform width */
- top: 50%;
- left:50%;
-  background-size: cover;
-  background-position: center;
-  transition: flex 0.6s ease, filter 0.6s ease, transform 0.6s ease;
-  cursor: pointer;
-  position: ab;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  filter: grayscale(80%) brightness(0.6);
-  overflow: hidden;
-}
+    .hero h1 {
+      font-size: 4rem;
+      transform: rotateY(0deg);
+      transition: transform 1s ease;
+    }
 
-.energygenss-item video {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  opacity: 0.9;
-}
+    .hero:hover h1 {
+      transform: rotateY(20deg);
+    }
 
-/* Overlay shading */
-.energygenss-item::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.4);
-  transition: background 0.4s ease;
-}
+    /* 3D Cards Section */
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 50px 20px;
+    }
 
-/* Name visible only in inactive items */
-.energygenss-item span.item-name {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-90deg);
-  font-size: 18px;
-  font-weight: 600;
-  opacity: 0.9;
-  color: #fff;
-  z-index: 2;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
+    .card {
+      background: #111;
+      padding: 30px;
+      border-radius: 20px;
+      width: 250px;
+      text-align: center;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+      cursor: pointer;
+    }
 
-/* Active item bigger */
-.energygenss-item.active {
-  flex: 4; /* active expands */
-  filter: grayscale(0%) brightness(1);
-  transform: scale(1.05);
-}
+    .card:hover {
+      transform: rotateY(15deg) rotateX(10deg) scale(1.05);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
 
-.energygenss-item.active::after {
-  background: rgba(0,0,0,0.05);
-}
+    .card img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
 
-/* Hide name on active item */
-.energygenss-item.active span.item-name {
-  opacity: 0;
-}
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      background: #111;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
 
-/* Mobile layout */
-@media (max-width: 768px) {
-  .energygenss {
-    flex-direction: column;
-    height: auto;
-  }
-  .energygenss-item {
-    flex: none;
-    width: 100%;
-    height: 70px;
-  }
-  .energygenss-item.active {
-    height: 280px;
-    transform: none;
-  }
-  .energygenss-item span.item-name {
-    font-size: 16px;
-    transform: translate(-50%, -50%) rotate(0deg); /* mobile lo horizontal text */
-  }
-}
+  <header>
+    <div class="logo">3DBrand</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-</style>
-<!-- ENERGY GENERATION END -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <h1>3D Interactive Website</h1>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="cards" id="services">
+      <div class="card">
+        <img src="https://via.placeholder.com/250x150" alt="Service 1">
+        <h3>Service 1</h3>
+        <p>Awesome 3D effect for your website.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/250x150" alt="Service 2">
+        <h3>Service 2</h3>
+        <p>Modern interactive design for users.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/250x150" alt="Service 3">
+        <h3>Service 3</h3>
+        <p>Highly responsive and flexible layout.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 3DBrand. All Rights Reserved.
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Optional: small JS animation
+    const heroText = document.querySelector('.hero h1');
+    let angle = 0;
+    setInterval(() => {
+      angle += 0.5;
+      heroText.style.transform = `rotateY(${angle}deg)`;
+    }, 50);
+  </script>
+
+</body>
+</html>
