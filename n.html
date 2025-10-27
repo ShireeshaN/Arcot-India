@@ -1,183 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Modern Apartments</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<div class="smart-bollard-layout">
 
-    body {
-      font-family: "Georgia", serif;
-      display: flex;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #e7e2dc;
-    }
-
-    /* Left Section */
-    .left-section {
-      flex: 0.3; /* narrower */
-      background-color: #cdcccb;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 4rem;
-      position: relative;
-    }
-
-    .logo {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 3rem;
-    }
-
-    .subtitle {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 1.2rem;
-      max-width: 260px;
-      line-height: 1.4;
-    }
-    .hiper-link{
-      text-decoration: none;
-      color:#000;
-    }
-
-    .description {
-      font-size: 0.9rem;
-      color: #444;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .features {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .features li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
-      position: relative;
-      font-size: 0.9rem;
-      color: #333;
-    }
-
-    .features li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #101010;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    .btn {
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background-color: white;
-      border: none;
-      /* border-radius: 8px; */
-      font-size: 0.9rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    /* Right Section */
-    .right-section {
-      flex: 0.7; /* wider */
-      position: relative;
-      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-    }
-
-    /* Heading overlay on image */
-    .heading {
-      position: absolute;
-      top: 30%;
-      left: -10%;
-      transform: translateY(-50%);
-      background-color: white;
-      padding: 1.2rem 2rem;
-      /* border-radius: 8px; */
-      font-size: 3.5rem;
-      line-height: 1.1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-
-    /* Optional: responsive for smaller screens */
-    @media (max-width: 900px) {
-      body {
-        flex-direction: column;
-      }
-
-      .left-section {
-        flex: none;
-        width: 100%;
-        height: auto;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      .right-section {
-        flex: none;
-        width: 100%;
-        height: 60vh;
-      }
-
-      .heading {
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2.2rem;
-      }
-
-      .features {
-        text-align: left;
-        margin: 0 auto;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="left-section">
-    <!-- <div class="logo">me.</div> -->
-    <div class="subtitle">New home furniture collections and decoration accessories</div>
-    <div class="description">
-      Discover a new approach to modern living spaces — where comfort meets contemporary design. Our curated selections transform every corner into a statement of elegance and simplicity.
-    </div>
-
-    <ul class="features">
-      <li>Elegant minimalist interiors</li>
-      <li>High-quality wooden finishes</li>
-      <li>Eco-friendly materials</li>
-      <li>Smart home integration</li>
-      <li>Customizable design options</li>
-      <li>Luxury fittings and textures</li>
+    <!-- ✅ Left Vertical Nav -->
+    <ul class="sb-side-nav">
+        <li><a href="#feature1">Bluetooth Connectivity</a></li>
+        <li><a href="#feature2">Wi-Fi Integration</a></li>
+        <li><a href="#feature3">Wireless Charging</a></li>
+        <li><a href="#feature4">Audio System</a></li>
+        <li><a href="#feature5">Tuning & Dimming</a></li>
     </ul>
 
-    <button class="btn"><a class="hiper-link" href="contact.html">Know more →</a></button>
-  </div>
+    <!-- ✅ Feature Sections -->
+    <div class="sb-content">
+        
+        <!-- 1 -->
+        <section class="sb-section" id="feature1">
+            <div class="sb-text">
+                <h2>Bluetooth Connectivity</h2>
+                <p>Remote control, monitoring, and smart configuration via Bluetooth devices.</p>
+            </div>
+            <div class="sb-img">
+                <img src="https://via.placeholder.com/500x350?text=Bluetooth+Connectivity" alt="">
+            </div>
+        </section>
 
-  <div class="right-section">
-    <div class="heading">Modern<br>Apartments</div>
-  </div>
-</body>
-</html>
+        <!-- 2 -->
+        <section class="sb-section" id="feature2">
+            <div class="sb-text">
+                <h2>Wi-Fi Integration</h2>
+                <p>Secure wireless communication with cloud systems for smart city analytics.</p>
+            </div>
+            <div class="sb-img">
+                <img src="https://via.placeholder.com/500x350?text=WiFi+Integration" alt="">
+            </div>
+        </section>
+
+        <!-- 3 -->
+        <section class="sb-section" id="feature3">
+            <div class="sb-text">
+                <h2>Wireless Charging</h2>
+                <p>Charge e-bikes, scooters, and portable devices without the hassle of cables.</p>
+            </div>
+            <div class="sb-img">
+                <img src="https://via.placeholder.com/500x350?text=Wireless+Charging" alt="">
+            </div>
+        </section>
+
+        <!-- 4 -->
+        <section class="sb-section" id="feature4">
+            <div class="sb-text">
+                <h2>Audio System</h2>
+                <p>Built-in speakers for alerts, guidance, and public announcements.</p>
+            </div>
+            <div class="sb-img">
+                <img src="https://via.placeholder.com/500x350?text=Audio+System" alt="">
+            </div>
+        </section>
+
+        <!-- 5 -->
+        <section class="sb-section" id="feature5">
+            <div class="sb-text">
+                <h2>Tuning & Dimming</h2>
+                <p>Smart lighting control with adaptive brightness and energy efficiency.</p>
+            </div>
+            <div class="sb-img">
+                <img src="https://via.placeholder.com/500x350?text=Tuning+%26+Dimming" alt="">
+            </div>
+        </section>
+
+    </div>
+</div>
 
 
+<style>
+  .smart-bollard-layout {
+    display: flex;
+    gap: 50px;
+    padding: 50px;
+}
 
+.sb-side-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: sticky;
+    top: 120px;
+}
 
+.sb-side-nav li {
+    margin: 20px 0;
+}
+
+.sb-side-nav a {
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #333;
+    transition: 0.3s ease;
+}
+
+.sb-side-nav a:hover,
+.sb-side-nav a.active {
+    color: #00a8ff;
+    letter-spacing: 1px;
+}
+
+.sb-content {
+    width: 100%;
+}
+
+.sb-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+    gap: 50px;
+}
+
+.sb-section:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.sb-text h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.sb-text p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.sb-img img {
+    width: 500px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* ✅ Mobile responsive */
+@media(max-width: 900px){
+    .smart-bollard-layout {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .sb-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .sb-img img {
+        width: 100%;
+    }
+}
+
+</style>
+
+<!-- ✅ ScrollReveal -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+ScrollReveal().reveal('.sb-section', { 
+    delay: 150,
+    duration: 1000,
+    distance: '50px',
+    origin: 'bottom',
+    reset: false
+});
+</script>

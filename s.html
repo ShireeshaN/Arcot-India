@@ -1,426 +1,532 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interior Design Layout</title>
 
-    <head>
-        <meta charset="utf-8">
-        <title>Arcot Industries Private Limited</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta name="keywords" content="About Arcot Industries, Engineering Company India, Smart City Solutions, Power Solutions, Energy Solutions, Lighting Systems, Automation Systems, R&D in Technology, Sustainable Infrastructure, Hyderabad Engineering Company">
-        <meta name="description" content="Learn about Arcot Industries — a pioneering engineering company offering sustainable and innovative solutions in Power, Energy, Lighting, Automation, Smart City Infrastructure, and R&D. Driven by innovation, powered by excellence.">
-       <link rel="icon" href="img/fevi.png" type="image/x-icon">
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-        <!-- Font Awesome (latest) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"> -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        <!-- Libraries Stylesheet -->
-        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #3c3c3c;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Outer wrapper */
+    .layout-container {
+      position: relative;
+      width: 90%;
+      max-width: 1300px;
+      height: 85vh;
+      background-color: #1f1f1f;
+      display: flex;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+    }
+
+    /* Marble background */
+    .marble-bg {
+      position: absolute;
+      top: -40px;
+      left: -40px;
+      width: 50%;
+      height: 100%;
+      background: url("https://images.unsplash.com/photo-1584969266449-499cca5557f1?auto=format&fit=crop&w=800&q=80")
+        no-repeat center/cover;
+      z-index: 1;
+      opacity: 0.9;
+      transform: rotate(-1deg);
+    }
+
+    .left-panel {
+      position: relative;
+      z-index: 2;
+      width: 45%;
+      background-color: #2b2b2b;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-left: 60px;
+    }
+
+    .left-panel img {
+  width: calc(100% - 50px);
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.95;
+  transform: scale(1);
+  transition: transform 2s ease-in-out, opacity 0.6s ease;
+}
+.left-panel img:hover {
+  transform: scale(1.05);
+}
 
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    /* Vertical Menu */
+    .vertical-nav {
+      position: absolute;
+      left: 30px;
+      bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-           <link href="css/segments.css" rel="stylesheet">
-    </head>
+    .vertical-nav a {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      color: #bbb;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
 
-    <body>
+    .vertical-nav a:hover {
+      color: #fff;
+    }
 
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
+    /* Right panel */
+    .right-panel {
+      width: 55%;
+      background-color: #1c1c1c;
+      padding: 80px 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
 
-        
+    .right-panel h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
 
-    
-<header>
-  <div class="header-wrap position-relative">
-    <a href="index.html"><img src="img/logos.webp" alt="Logo" class="logo" loading="lazy"></a>
-    <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
-    <nav class="navmenu" id="mainNav">
-      <ul class="mb-0">
-         <li><a href="index.html" >Home</a></li>
-             <li><a href="about.html" class="active">About</a></li>
-        <li>
-          <a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a>
-        </li>
-        <li><a href="solution.html">Solutions</a></li>
-        <li><a href="r_and_d.html">R&D</a></li>
-    <li><a href="applications.html">Applications</a></li>
-   <li><a href="gallery.html" >Gallery</a></li>
-           <li><a href="contact.html">Contact</a></li>
-        <!-- <li><a href="#"><i class="bi bi-search"></i></a></li> -->
-      </ul>
-    </nav>
-  </div>
+    .right-panel p {
+      color: #aaa;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      max-width: 350px;
+    }
 
-  <div id="megaMenu" class="mega-menu">
-    <div class="row">
-     
-<div class="underline"></div>
-<div class="service-submenus d-flex flex-wrap">
-  <div class="service-group">
-    <h6>Energy</h6>
-    <ul>
-      <li><a href="#">Solar</a></li>
-      <li><a href="#">Wind</a></li>
-      <li><a href="#">Biomass</a></li>
-          <li><a href="#">Hydel Power</a></li>
-    </ul>
-  </div>
-  <div class="service-group">
-    <h6>Power</h6>
-    <ul>
-      <li><a href="transmission.html">transmission</a></li>
-      <li><a href="#">distribution</a></li>
-      <li><a href="#">Low Tention</a></li>
-        <li><a href="#">High Tention</a></li>
-         <li><a href="#">Panel Boards</a></li>
-    </ul>
-  </div>
-  <div class="service-group">
-    <h6>Lighting</h6>
-    <ul>
-      <li><a href="#">Residential</a></li>
-      <li><a href="#">Facade</a></li>
-      <li><a href="#">Commercial</a></li>
-       <li><a href="#">Industrial</a></li>
-      <li><a href="#">Street</a></li>
-      <li><a href="#">Park</a></li>
-      <li><a href="#">Stadium</a></li>
-      <li><a href="#">Hospital</a></li>
-    </ul>
-  </div>
-  <div class="service-group">
-    <h6>Automation</h6>
-    <ul>
-   
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Commercial</a></li>
-         <li><a href="#">Industrial</a></li>
-           <li><a href="#">Hospital</a></li>
-      <li><a href="#">IOT Based Automation</a></li>
-         <li><a href="#">Hotel</a></li>
-    </ul>
-  </div>
-  <div class="service-group">
-    <h6>Smart City</h6>
-    <ul>
-      <li><a href="smart-pole.html">Smart Pole</a></li>
-      <li><a href="#">Smart Conference Hall</a></li>
-       <li><a href="#">Smart Bollards</a></li>
-          <li><a href="#">Smart Bar Counter</a></li>
-              <li><a href="#">Smart Window Leaf AC</a></li>
-    </ul>
-  </div>
+    .btn-outline-light {
+      border-radius: 0;
+      border: 1px solid #fff;
+      padding: 10px 25px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
 
-   <div class="service-group">
-    <h6>R & D</h6>
-    <ul>
-      <li><a href="smart-pole.html">Smart Pole</a></li>
-    </ul>
-  </div>
+    .btn-outline-light:hover {
+      background-color: #fff;
+      color: #111;
+    }
 
-   
-</div>
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      right: 50px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: #aaa;
+      cursor: pointer;
+    }
 
+    .scroll-indicator .line {
+      width: 1px;
+      height: 60px;
+      background-color: #777;
+      margin: 5px 0;
+      opacity: 0.8;
+    }
+
+    .scroll-indicator .arrow-down {
+      width: 8px;
+      height: 8px;
+      border-left: 1px solid #777;
+      border-bottom: 1px solid #777;
+      transform: rotate(-45deg);
+      margin-top: 5px;
+      opacity: 0.8;
+    }
+
+    /* Socials */
+    .socials {
+      position: absolute;
+      right: 50px;
+      bottom: 30px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .socials a {
+      color: #aaa;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .socials a:hover {
+      color: #fff;
+    }
+
+    /* Background big text */
+    .background-text {
+      position: absolute;
+      left: -70px;
+      top: 0;
+      font-size: 8rem;
+      color: rgba(255, 255, 255, 0.05);
+      font-weight: 700;
+      letter-spacing: 5px;
+      transform: rotate(-90deg);
+      white-space: nowrap;
+      pointer-events: none;
+      transition: opacity 0.6s ease;
+    }
+/* ===========================
+   RESPONSIVE MEDIA QUERIES
+   =========================== */
+
+/* ---------- Tablets (≤992px) ---------- */
+@media (max-width: 992px) {
+  body {
+    height: auto;
+    overflow-y: auto;
+    background-color: #1f1f1f;
+  }
+
+  .layout-container {
+    flex-direction: column;
+    height: auto;
+    width: 95%;
+    margin: 40px auto;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+    height: auto;
+    padding: 40px 30px;
+  }
+
+  /* Hide vertical nav */
+  .vertical-nav {
+    display: none !important;
+  }
+
+  /* Image section first */
+  .left-panel {
+    order: 1;
+    justify-content: center;
+    padding: 0 30px; /* 🟢 added padding left & right */
+  }
+
+  .left-panel img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px; /* optional soft rounded edges */
+  }
+
+  /* Right panel second */
+  .right-panel {
+    order: 2;
+    padding: 60px 40px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .right-panel h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+    margin-bottom: 15px;
+  }
+
+  .right-panel p {
+    font-size: 1rem;
+    max-width: 90%;
+    margin: 0 auto 25px;
+  }
+
+  .btn-outline-light {
+    padding: 12px 30px;
+    font-size: 0.95rem;
+  }
+
+  /* Scroll indicator */
+  .scroll-indicator {
+    position: static;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .scroll-indicator .line {
+    height: 1px;
+    width: 40px;
+  }
+
+  .scroll-indicator .arrow-down {
+    transform: rotate(45deg);
+    border-color: #aaa;
+  }
+
+  /* Socials */
+  .socials {
+    position: static;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .marble-bg {
+    display: none;
+  }
+}
+
+/* ---------- Mobile (≤768px) ---------- */
+@media (max-width: 768px) {
+  .left-panel {
+    padding: 0 20px; /* 🟢 smaller padding for mobile */
+  }
+
+  .left-panel img {
+    height: 50vh;
+    border-radius: 8px;
+  }
+
+  .right-panel h1 {
+    font-size: 1.6rem;
+  }
+
+  .right-panel p {
+    font-size: 0.9rem;
+  }
+
+  .background-text {
+    font-size: 4rem;
+  }
+
+  .btn-outline-light {
+    font-size: 0.85rem;
+    padding: 10px 22px;
+  }
+
+  .scroll-indicator {
+    font-size: 10px;
+  }
+
+  .socials a {
+    font-size: 0.8rem;
+  }
+
+  .vertical-nav {
+    display: none !important;
+  }
+}
+
+/* ---------- Small Phones (≤480px) ---------- */
+@media (max-width: 480px) {
+  .layout-container {
+    width: 100%;
+    box-shadow: none;
+    height: auto;
+  }
+
+  .left-panel {
+    padding: 0 15px; /* 🟢 tighter padding for very small screens */
+  }
+
+  .left-panel img {
+    height: 40vh;
+    border-radius: 6px;
+  }
+
+  .right-panel {
+    padding: 40px 20px;
+  }
+
+  .right-panel h1 {
+    font-size: 1.4rem;
+  }
+
+  .right-panel p {
+    font-size: 0.85rem;
+  }
+
+  .background-text {
+    font-size: 3rem;
+    opacity: 0.05;
+  }
+
+  .btn-outline-light {
+    padding: 8px 18px;
+    font-size: 0.8rem;
+  }
+
+  .scroll-indicator {
+    gap: 8px;
+  }
+
+  .vertical-nav {
+    display: none !important;
+  }
+}
+
+
+  </style>
+</head>
+
+<body>
+  <div class="layout-container">
+    <div class="marble-bg"></div>
+
+    <!-- Left Section -->
+    <div class="left-panel">
+      <nav class="vertical-nav">
+        <a href="#">Home</a>
+        <a href="#">Our Projects</a>
+        <a href="#">Our Services</a>
+        <a href="#">Home Works</a>
+        <a href="#">Contact Us</a>
+      </nav>
+      <img src="../img/automation/animation background.jpg" alt="Interior Design" />
     </div>
-  </div>
-</header>
 
+    <!-- Right Section -->
+    <div class="right-panel">
+      <div class="background-text">STYLISH</div>
+      <h1>Innovative ideas,<br />stylish designs</h1>
+      <p>Interior design services for home & business</p>
+      <button class="btn btn-outline-light">Book Consultation</button>
 
-
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h1 class="text-white display-6 mb-4 wow fadeInDown" data-wow-delay="0.1s">WHO WE ARE ?</h1>
-                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> -->
-                  
-                </ol>    
-            </div>
-        </div>
-        <!-- Header End -->
-
-
-<!-- ---------- MAIN CONTENT ---------- -->
-<section class="bollard-section">
-  <div class="bollard-media-container">
-    <div class="bollard-glow"></div>
-    <video class="bollard-video" autoplay loop muted playsinline>
-      <source src="media/video 02.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video>
-
-  </div>
-
-  <div class="bollard-timeline">
-    <div class="bollard-point" data-color="#00ffff">
-      <h3>Bluetooth Connectivity</h3>
-      <p>Seamless pairing for instant smart control and synchronized lighting.</p>
-    </div>
-    <div class="bollard-point" data-color="#66ccff">
-      <h3>Wi-Fi Integration</h3>
-      <p>Connects to the cloud for diagnostics, updates, and automated scheduling.</p>
-    </div>
-    <div class="bollard-point" data-color="#ffaa00">
-      <h3>Wireless Charging</h3>
-      <p>Power your devices effortlessly with built-in wireless charging zones.</p>
-    </div>
-    <div class="bollard-point" data-color="#ff66cc">
-      <h3>Audio System</h3>
-      <p>Immersive ambient sound — designed for parks, walkways, and plazas.</p>
-    </div>
-    <div class="bollard-point" data-color="#ffffff">
-      <h3>Tuning & Dimming</h3>
-      <p>Precision control of brightness and tone to set any environment’s mood.</p>
-    </div>
-  </div>
-</section>
-
-
-   <!-- Footer Start -->
-<div class="tricky-footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
-  <div class="container py-5">
-    <div class="row g-5">
-
-      <!-- Column 1: Quick Links -->
-      <div class="col-md-6 col-lg-6 col-xl-3">
-        <div class="tricky-footer-item d-flex flex-column">
-          <h4 class="text-white mb-4">Quick Links</h4>
-          <a href="index.html">Home</a>
-          <a href="about.html">About us</a>
-          <a href="solution.html">Solutions</a>
-          <a href="applications.html">Applications</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="smart-pole.html">R & D</a>
-          <a href="contact.html">Contact</a>
-        </div>
+      <div class="scroll-indicator" id="nextSlide">
+        <span>01</span>
+        <div class="line"></div>
+        <span>05</span>
+        <div class="arrow-down"></div>
       </div>
 
-      <!-- Column 2: Services -->
-      <div class="col-md-6 col-lg-6 col-xl-3">
-        <div class="tricky-footer-item d-flex flex-column">
-          <h4 class="text-white mb-4">Services</h4>
-          <a href="#">Energy</a>
-          <a href="#">Power</a>
-          <a href="#">Lighting</a>
-          <a href="#">Automation</a>
-          <a href="#">Smart City</a>
-          <a href="#">R & D</a>
-        </div>
+      <div class="socials">
+        <a href="#">FB</a>
+        <a href="#">IG</a>
+        <a href="#">TW</a>
       </div>
-
-      <!-- Column 3: Applications -->
-      <div class="col-md-6 col-lg-6 col-xl-3">
-        <div class="tricky-footer-item d-flex flex-column">
-          <h4 class="text-white mb-4">Applications</h4>
-          <a href="#">Energy Generation</a>
-          <a href="#">Power</a>
-          <a href="#">Lighting</a>
-          <a href="#">Indoor Lighting</a>
-          <a href="#">Automation</a>
-          <a href="#">Smart City</a>
-          <a href="#">R & D</a>
-        </div>
-      </div>
-
-      <!-- Column 4: Contact Info -->
-      <div class="col-md-6 col-lg-6 col-xl-3">
-        <div class="tricky-footer-item d-flex flex-column">
-          <h4 class="text-white mb-4">Contact Info</h4>
-          <a href="#"><i class="fa fa-map-marker-alt text-secondary me-2"></i> Apurupa Towers, Road No:36, Jubilee Hills, Hyderabad, Telangana-500033</a>
-          <a href="mailto:info@arcotindia.com"><i class="fas fa-envelope text-secondary me-2"></i> info@arcotindia.com</a>
-          <a href="tel:+919848189899"><i class="fas fa-phone text-secondary me-2"></i> +91 98481 89899</a>
-        </div>
-      </div>
-
-      <!-- Social Media -->
-      <div class="col-lg-12 mt-4">
-        <div class="tricky-social-icons d-flex flex-wrap justify-content-start gap-3">
-          <a class="tricky-social-btn" href="#"><i class="fab fa-facebook-f"></i></a>
-          <a class="tricky-social-btn" href="#"><i class="fab fa-twitter"></i></a>
-          <a class="tricky-social-btn" href="#"><i class="fab fa-instagram"></i></a>
-          <a class="tricky-social-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a class="tricky-social-btn" href="#"><i class="fab fa-youtube"></i></a>
-          <a class="tricky-social-btn" href="#"><i class="fab fa-pinterest-p"></i></a>
-          <a class="tricky-social-btn" href="#"><i class="fab fa-whatsapp"></i></a>
-          <a class="tricky-social-btn" href="#"><i class="fab fa-telegram-plane"></i></a>
-          <a class="tricky-social-btn" href="#"><i class="fab fa-reddit-alien"></i></a>
-          <a class="tricky-social-btn" href="#"><i class="fab fa-threads"></i></a>
-        </div>
-      </div>
-
     </div>
   </div>
-</div>
+<script>
+  const slides = [
+    {
+      image: "../img/automation/hospitalautomation.png",
+      bgText: "STYLISH",
+      title: "Innovative ideas,<br>stylish designs",
+      text: "Interior design services for home & business"
+    },
+    {
+      image: "../img/automation/hospitalautomation.png",
+      bgText: "MODERN",
+      title: "Where style meets comfort",
+      text: "Bringing elegance and modern design together."
+    },
+    {
+      image: "../img/automation/hospitalautomation.png",
+      bgText: "ELEGANT",
+      title: "Crafted with passion",
+      text: "Designs that reflect your unique lifestyle."
+    },
+    {
+      image: "../img/automation/hospitalautomation.png",
+      bgText: "CREATIVE",
+      title: "Transforming spaces",
+      text: "From minimal to bold, we make it yours."
+    },
+    {
+      image: "../img/automation/hospitalautomation.png",
+      bgText: "LUXURY",
+      title: "Design beyond imagination",
+      text: "Luxury interiors designed to inspire."
+    }
+  ];
 
-<style>
- /* Footer Wrapper */
-.tricky-footer {
-  background: #1e2226;
-  color: #ccc;
-  font-size: 15px;
-  font-family: 'Six Caps', sans-serif;
-  font-weight: 300; /* light weight */
-  letter-spacing: 1px;
-  
-}
+  let currentSlide = 0;
+  const imgEl = document.querySelector(".left-panel img");
+  const bgTextEl = document.querySelector(".background-text");
+  const titleEl = document.querySelector(".right-panel h1");
+  const textEl = document.querySelector(".right-panel p");
+  const arrowEl = document.querySelector(".arrow-down");
 
-/* Footer Headings */
-.tricky-footer-item h4,
-.tricky-footer-item h5 {
-  font-weight: 400;
-  color: #fff;
-  margin-bottom: 15px;
-  font-size: 22px;
-  letter-spacing: 2px;
-}
+  // Show slide function
+  function showSlide(index) {
+    const slide = slides[index];
 
-/* Footer Links */
-.tricky-footer-item a {
-  color: #bbb;
-  margin-bottom: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  display: inline-block;
-  font-weight: 300;
-  font-size: 12px;
-}
-.tricky-footer-item a:hover {
-  color: #00bcd4;
-  padding-left: 5px;
-}
+    // Fade out
+    imgEl.style.opacity = 0;
+    titleEl.style.opacity = 0;
+    textEl.style.opacity = 0;
+    bgTextEl.style.opacity = 0;
 
-/* Social Media Icons */
-.tricky-social-icons .tricky-social-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: transparent;
-  color: #8f8c8c;
-  font-size: 13px;
-  transition: 0.3s;
-  font-family: 'Six Caps', sans-serif;
-  font-weight: 300;
-}
-.tricky-social-icons .tricky-social-btn:hover {
-  background: #434444;
-  color: #fff;
-  transform: scale(1.1);
-}
+    setTimeout(() => {
+      imgEl.src = slide.image;
+      bgTextEl.textContent = slide.bgText;
+      titleEl.innerHTML = slide.title;
+      textEl.textContent = slide.text;
 
-/* Copyright Section */
-.tricky-footer-bottom {
-  border-top: 1px solid #333;
-  color: #aaa;
-  font-size: 14px;
-  font-family: 'Six Caps', sans-serif;
-  font-weight: 300;
-  letter-spacing: 1px;
-}
-.tricky-footer-bottom a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 300;
-}
-.tricky-footer-bottom a:hover {
-  color: #00bcd4;
-}
-</style>
-<!-- Footer End -->
+      // Fade in
+      imgEl.style.opacity = 1;
+      titleEl.style.opacity = 1;
+      textEl.style.opacity = 1;
+      bgTextEl.style.opacity = 0.05;
+    }, 400);
+  }
 
-<!-- Copyright Start -->
-<div class="tricky-footer-bottom py-4 bg-dark">
-  <div class="container">
-    <div class="row g-4 align-items-center">
-      <div class="col-md-6 text-center text-md-start mb-md-0">
-        <span class="text-body">
-          <a href="https://arcotindia.com/" class="border-bottom text-white">
-            <i class="fas fa-copyright text-light me-2"></i>ARCOT
-          </a>, All Rights Reserved.
-        </span>
-      </div>
-      <!-- <div class="col-md-6 text-center text-md-end text-body">
-        Designed By <a class="border-bottom text-white" href="https://arcotindia.com/">ARCOT</a>
-      </div> -->
-    </div>
-  </div>
-</div>
-<!-- Copyright End -->
-
-         
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>    
-
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        
-
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-       <script>AOS.init();</script>
-
-
-
-        <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const counters = document.querySelectorAll(".number-value");
-
-    const options = {
-      threshold: 0.4
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          let count = 0;
-          const target = parseInt(el.dataset.target);
-          const speed = 3;
-
-          const updateCount = () => {
-            count++;
-            el.innerText = count + "+";
-            if (count < target) {
-              setTimeout(updateCount, speed * 10);
-            }
-          };
-          updateCount();
-          observer.unobserve(el);
-        }
-      });
-    }, options);
-
-    counters.forEach(counter => {
-      observer.observe(counter);
-    });
+  // Arrow click to go to next slide
+  arrowEl.addEventListener("click", () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
   });
+
+  // Auto slide every 5 seconds
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }, 5000);
+
+  // Initialize first slide
+  showSlide(currentSlide);
 </script>
 
-    </body>
 
+
+</body>
 </html>
