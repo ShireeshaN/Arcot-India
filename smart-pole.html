@@ -653,7 +653,7 @@ let autoCycle = setInterval(nextFeature, 4000);
     .mainfeatures-right-block {
       flex: 0.7;
       position: relative;
-      background-image: url('img/im.png');
+      background-image: url('img/bannerabout.webp');
       background-size: cover;
       background-position: center;
     }
@@ -765,7 +765,7 @@ let autoCycle = setInterval(nextFeature, 4000);
     .apartments-image-side {
       flex: 1;
       position: relative;
-    background-image: url('../img/sma.jpg');
+      background-image: url('img/carousel-1.webp');
       background-size: cover;
       background-position: center;
     }
@@ -926,144 +926,20 @@ let autoCycle = setInterval(nextFeature, 4000);
 <!-- section-1 -->
 
  <style>
-   
-    .mainfeatures-section {
-      display: flex;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #fff;
-      font-family: "Georgia", serif;
-      /* margin-bottom: 60px;  */
-      /* bottom gap added */
-    }
-
-    /* LEFT CONTENT AREA */
-    .mainfeatures-left-block {
-      flex: 0.3;
-      background-color: #cdcccb;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 4rem;
-      position: relative;
-    }
-
-    .mainfeatures-logo {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 3rem;
-    }
-
-    .mainfeatures-subtitle {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 1.2rem;
-      max-width: 260px;
-      line-height: 1.4;
-    }
-
-    .mainfeatures-link {
-      text-decoration: none;
-      color: #000;
-    }
-
-    .mainfeatures-description {
-      font-size: 0.9rem;
-      color: #444;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .mainfeatures-features {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .mainfeatures-features li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
-      position: relative;
-      font-size: 0.9rem;
-      color: #333;
-    }
-
-    .mainfeatures-features li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #101010;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    .mainfeatures-btn {
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #fff;
-      border: none;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .mainfeatures-btn:hover {
-      transform: translateY(-2px);
-    }
-
     /* RIGHT IMAGE AREA */
-    .mainfeatures-right-block {
+    .mainfeatures-right-block-2 {
       flex: 0.7;
       position: relative;
-      background-image: url('img/sma.jpg');
+      background-image: url('img/contactimg.webp');
       background-size: cover;
       background-position: center;
     }
-
-    .mainfeatures-heading {
-      position: absolute;
-      top: 30%;
-      left: -10%;
-      transform: translateY(-50%);
-      background-color: #fff;
-      padding: 1.2rem 2rem;
-      font-size: 3.5rem;
-      line-height: 1.1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-
     /* RESPONSIVE DESIGN */
     @media (max-width: 900px) {
-      .mainfeatures-section {
-        flex-direction: column;
-        height: auto;
-      }
-
-      .mainfeatures-left-block {
-        flex: none;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      .mainfeatures-right-block {
+      .mainfeatures-right-block-2 {
         flex: none;
         width: 100%;
         height: 60vh;
-      }
-
-      .mainfeatures-heading {
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2.2rem;
-      }
-
-      .mainfeatures-features {
-        text-align: left;
-        margin: 0 auto;
       }
     }
   </style>
@@ -1100,7 +976,7 @@ let autoCycle = setInterval(nextFeature, 4000);
   </div>
 
   <!-- RIGHT SIDE -->
-  <div class="mainfeatures-right-block">
+  <div class="mainfeatures-right-block-2">
     <div class="mainfeatures-heading">Wired<br>Charging</div>
   </div>
 </section>
@@ -1109,143 +985,24 @@ let autoCycle = setInterval(nextFeature, 4000);
 <!-- section-2 -->
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    .modern-apartments-wrap {
-      display: flex;
-      flex-direction: row;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #fff;
-      font-family: "Georgia", serif;
-    }
+    
 
     /* LEFT IMAGE SECTION */
-    .apartments-image-side {
+    .apartments-image-side-2 {
       flex: 1;
       position: relative;
       background-image: url('img/im.png');
       background-size: cover;
       background-position: center;
-    }
-
-    .apartments-main-heading {
-      position: absolute;
-      top: 35%;
-      right: -8%;
-      transform: translateY(-50%);
-      background-color: #fff;
-      padding: 1.2rem 2rem;
-      font-size: 3.5rem;
-      line-height: 1.1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      z-index: 2;
-    }
-
-    /* RIGHT TEXT SECTION */
-    .apartments-content-side {
-      flex: 0.3;
-      background-color: #cdcccb;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 4rem 5rem 4rem 8rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .apartments-logo {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 3rem;
-    }
-
-    .apartments-subtitle {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 1.2rem;
-      max-width: 260px;
-      line-height: 1.4;
-    }
-
-    .apartments-description {
-      font-size: 0.9rem;
-      color: #444;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .apartments-feature-list {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .apartments-feature-list li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
-      position: relative;
-      font-size: 0.9rem;
-      color: #333;
-    }
-
-    .apartments-feature-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #000;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    .apartments-btn {
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #fff;
-      border: none;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .apartments-btn:hover {
-      transform: translateY(-2px);
-    }
-
+    } 
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      .modern-apartments-wrap {
-        flex-direction: column;
-      }
-
-      .apartments-image-side {
+      .apartments-image-side-2 {
         flex: none;
         width: 100%;
         height: 60vh;
       }
 
-      .apartments-content-side {
-        flex: none;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      .apartments-main-heading {
-        right: 50%;
-        transform: translate(50%, -50%);
-        font-size: 2.2rem;
-      }
-
-      .apartments-feature-list {
-        text-align: left;
-        margin: 0 auto;
-      }
     }
   </style>
 
@@ -1253,7 +1010,7 @@ let autoCycle = setInterval(nextFeature, 4000);
 
 
   <!-- LEFT IMAGE SECTION -->
-  <div class="apartments-image-side">
+  <div class="apartments-image-side-2">
     <div class="apartments-main-heading">Wireless<br>Charging</div>
   </div>
 
@@ -1288,94 +1045,9 @@ let autoCycle = setInterval(nextFeature, 4000);
 
  <style>
    
-    .mainfeatures-section {
-      display: flex;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #fff;
-      font-family: "Georgia", serif;
-      /* margin-bottom: 60px;  */
-      /* bottom gap added */
-    }
-
-    /* LEFT CONTENT AREA */
-    .mainfeatures-left-block {
-      flex: 0.3;
-      background-color: #cdcccb;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 4rem;
-      position: relative;
-    }
-
-    .mainfeatures-logo {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 3rem;
-    }
-
-    .mainfeatures-subtitle {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 1.2rem;
-      max-width: 260px;
-      line-height: 1.4;
-    }
-
-    .mainfeatures-link {
-      text-decoration: none;
-      color: #000;
-    }
-
-    .mainfeatures-description {
-      font-size: 0.9rem;
-      color: #444;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .mainfeatures-features {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .mainfeatures-features li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
-      position: relative;
-      font-size: 0.9rem;
-      color: #333;
-    }
-
-    .mainfeatures-features li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #101010;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    .mainfeatures-btn {
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #fff;
-      border: none;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .mainfeatures-btn:hover {
-      transform: translateY(-2px);
-    }
 
     /* RIGHT IMAGE AREA */
-    .mainfeatures-right-block {
+    .mainfeatures-right-block-3 {
       flex: 0.7;
       position: relative;
       background-image: url('../img/sma.jpg');
@@ -1383,49 +1055,19 @@ let autoCycle = setInterval(nextFeature, 4000);
       background-position: center;
     }
 
-    .mainfeatures-heading {
-      position: absolute;
-      top: 30%;
-      left: -10%;
-      transform: translateY(-50%);
-      background-color: #fff;
-      padding: 1.2rem 2rem;
-      font-size: 3.5rem;
-      line-height: 1.1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
+  
 
     /* RESPONSIVE DESIGN */
     @media (max-width: 900px) {
-      .mainfeatures-section {
-        flex-direction: column;
-        height: auto;
-      }
+     
 
-      .mainfeatures-left-block {
-        flex: none;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      .mainfeatures-right-block {
+      .mainfeatures-right-block-3 {
         flex: none;
         width: 100%;
         height: 60vh;
       }
 
-      .mainfeatures-heading {
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2.2rem;
-      }
 
-      .mainfeatures-features {
-        text-align: left;
-        margin: 0 auto;
-      }
     }
   </style>
 
@@ -1461,7 +1103,7 @@ let autoCycle = setInterval(nextFeature, 4000);
   </div>
 
   <!-- RIGHT SIDE -->
-  <div class="mainfeatures-right-block">
+  <div class="mainfeatures-right-block-3">
     <div class="mainfeatures-heading">Air Quality<br>Sensor</div>
   </div>
 </section>
@@ -1470,21 +1112,10 @@ let autoCycle = setInterval(nextFeature, 4000);
 <!-- section-2 -->
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    .modern-apartments-wrap {
-      display: flex;
-      flex-direction: row;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #fff;
-      font-family: "Georgia", serif;
-    }
+  
 
     /* LEFT IMAGE SECTION */
-    .apartments-image-side {
+    .apartments-image-side-3 {
       flex: 1;
       position: relative;
       background-image: url('img/im.png');
@@ -1492,120 +1123,13 @@ let autoCycle = setInterval(nextFeature, 4000);
       background-position: center;
     }
 
-    .apartments-main-heading {
-      position: absolute;
-      top: 35%;
-      right: -8%;
-      transform: translateY(-50%);
-      background-color: #fff;
-      padding: 1.2rem 2rem;
-      font-size: 3.5rem;
-      line-height: 1.1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      z-index: 2;
-    }
-
-    /* RIGHT TEXT SECTION */
-    .apartments-content-side {
-      flex: 0.3;
-      background-color: #cdcccb;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 4rem 5rem 4rem 8rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .apartments-logo {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 3rem;
-    }
-
-    .apartments-subtitle {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 1.2rem;
-      max-width: 260px;
-      line-height: 1.4;
-    }
-
-    .apartments-description {
-      font-size: 0.9rem;
-      color: #444;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .apartments-feature-list {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .apartments-feature-list li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
-      position: relative;
-      font-size: 0.9rem;
-      color: #333;
-    }
-
-    .apartments-feature-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #000;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    .apartments-btn {
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #fff;
-      border: none;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .apartments-btn:hover {
-      transform: translateY(-2px);
-    }
-
+   
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      .modern-apartments-wrap {
-        flex-direction: column;
-      }
-
-      .apartments-image-side {
+      .apartments-image-side-3 {
         flex: none;
         width: 100%;
         height: 60vh;
-      }
-
-      .apartments-content-side {
-        flex: none;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      .apartments-main-heading {
-        right: 50%;
-        transform: translate(50%, -50%);
-        font-size: 2.2rem;
-      }
-
-      .apartments-feature-list {
-        text-align: left;
-        margin: 0 auto;
       }
     }
   </style>
@@ -1614,7 +1138,7 @@ let autoCycle = setInterval(nextFeature, 4000);
 
 
   <!-- LEFT IMAGE SECTION -->
-  <div class="apartments-image-side">
+  <div class="apartments-image-side-3">
     <div class="apartments-main-heading">Air Quality<br>Screen</div>
   </div>
 
@@ -1648,95 +1172,9 @@ let autoCycle = setInterval(nextFeature, 4000);
 <!-- section-1 -->
 
  <style>
-   
-    .mainfeatures-section {
-      display: flex;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #fff;
-      font-family: "Georgia", serif;
-      /* margin-bottom: 60px;  */
-      /* bottom gap added */
-    }
-
-    /* LEFT CONTENT AREA */
-    .mainfeatures-left-block {
-      flex: 0.3;
-      background-color: #cdcccb;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 4rem;
-      position: relative;
-    }
-
-    .mainfeatures-logo {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 3rem;
-    }
-
-    .mainfeatures-subtitle {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 1.2rem;
-      max-width: 260px;
-      line-height: 1.4;
-    }
-
-    .mainfeatures-link {
-      text-decoration: none;
-      color: #000;
-    }
-
-    .mainfeatures-description {
-      font-size: 0.9rem;
-      color: #444;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .mainfeatures-features {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .mainfeatures-features li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
-      position: relative;
-      font-size: 0.9rem;
-      color: #333;
-    }
-
-    .mainfeatures-features li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #101010;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    .mainfeatures-btn {
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #fff;
-      border: none;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .mainfeatures-btn:hover {
-      transform: translateY(-2px);
-    }
 
     /* RIGHT IMAGE AREA */
-    .mainfeatures-right-block {
+    .mainfeatures-right-block-4 {
       flex: 0.7;
       position: relative;
       background-image: url('img/im.png');
@@ -1744,48 +1182,13 @@ let autoCycle = setInterval(nextFeature, 4000);
       background-position: center;
     }
 
-    .mainfeatures-heading {
-      position: absolute;
-      top: 30%;
-      left: -10%;
-      transform: translateY(-50%);
-      background-color: #fff;
-      padding: 1.2rem 2rem;
-      font-size: 3.5rem;
-      line-height: 1.1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-
+    
     /* RESPONSIVE DESIGN */
     @media (max-width: 900px) {
-      .mainfeatures-section {
-        flex-direction: column;
-        height: auto;
-      }
-
-      .mainfeatures-left-block {
-        flex: none;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      .mainfeatures-right-block {
+      .mainfeatures-right-block-4 {
         flex: none;
         width: 100%;
         height: 60vh;
-      }
-
-      .mainfeatures-heading {
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2.2rem;
-      }
-
-      .mainfeatures-features {
-        text-align: left;
-        margin: 0 auto;
       }
     }
   </style>
@@ -1822,7 +1225,7 @@ let autoCycle = setInterval(nextFeature, 4000);
   </div>
 
   <!-- RIGHT SIDE -->
-  <div class="mainfeatures-right-block">
+  <div class="mainfeatures-right-block-4">
     <div class="mainfeatures-heading">Street<br>Lighting</div>
   </div>
 </section>
@@ -1831,141 +1234,22 @@ let autoCycle = setInterval(nextFeature, 4000);
 <!-- section-2 -->
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    .modern-apartments-wrap {
-      display: flex;
-      flex-direction: row;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #fff;
-      font-family: "Georgia", serif;
-    }
+ 
 
     /* LEFT IMAGE SECTION */
-    .apartments-image-side {
+    .apartments-image-side-4 {
       flex: 1;
       position: relative;
         background-image: url('img/im.png');
       background-position: center;
     }
 
-    .apartments-main-heading {
-      position: absolute;
-      top: 35%;
-      right: -8%;
-      transform: translateY(-50%);
-      background-color: #fff;
-      padding: 1.2rem 2rem;
-      font-size: 3.5rem;
-      line-height: 1.1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      z-index: 2;
-    }
-
-    /* RIGHT TEXT SECTION */
-    .apartments-content-side {
-      flex: 0.3;
-      background-color: #cdcccb;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 4rem 5rem 4rem 8rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .apartments-logo {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 3rem;
-    }
-
-    .apartments-subtitle {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 1.2rem;
-      max-width: 260px;
-      line-height: 1.4;
-    }
-
-    .apartments-description {
-      font-size: 0.9rem;
-      color: #444;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .apartments-feature-list {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .apartments-feature-list li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
-      position: relative;
-      font-size: 0.9rem;
-      color: #333;
-    }
-
-    .apartments-feature-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #000;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    .apartments-btn {
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #fff;
-      border: none;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .apartments-btn:hover {
-      transform: translateY(-2px);
-    }
-
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      .modern-apartments-wrap {
-        flex-direction: column;
-      }
-
-      .apartments-image-side {
+      .apartments-image-side-4 {
         flex: none;
         width: 100%;
         height: 60vh;
-      }
-
-      .apartments-content-side {
-        flex: none;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      .apartments-main-heading {
-        right: 50%;
-        transform: translate(50%, -50%);
-        font-size: 2.2rem;
-      }
-
-      .apartments-feature-list {
-        text-align: left;
-        margin: 0 auto;
       }
     }
   </style>
@@ -1974,7 +1258,7 @@ let autoCycle = setInterval(nextFeature, 4000);
 
 
   <!-- LEFT IMAGE SECTION -->
-  <div class="apartments-image-side">
+  <div class="apartments-image-side-4">
     <div class="apartments-main-heading">PA<br>Loudspeaker</div>
   </div>
 
@@ -2010,94 +1294,8 @@ let autoCycle = setInterval(nextFeature, 4000);
 
  <style>
    
-    .mainfeatures-section {
-      display: flex;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #fff;
-      font-family: "Georgia", serif;
-      /* margin-bottom: 60px;  */
-      /* bottom gap added */
-    }
-
-    /* LEFT CONTENT AREA */
-    .mainfeatures-left-block {
-      flex: 0.3;
-      background-color: #cdcccb;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 4rem;
-      position: relative;
-    }
-
-    .mainfeatures-logo {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 3rem;
-    }
-
-    .mainfeatures-subtitle {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 1.2rem;
-      max-width: 260px;
-      line-height: 1.4;
-    }
-
-    .mainfeatures-link {
-      text-decoration: none;
-      color: #000;
-    }
-
-    .mainfeatures-description {
-      font-size: 0.9rem;
-      color: #444;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .mainfeatures-features {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .mainfeatures-features li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
-      position: relative;
-      font-size: 0.9rem;
-      color: #333;
-    }
-
-    .mainfeatures-features li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #101010;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    .mainfeatures-btn {
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #fff;
-      border: none;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .mainfeatures-btn:hover {
-      transform: translateY(-2px);
-    }
-
     /* RIGHT IMAGE AREA */
-    .mainfeatures-right-block {
+    .mainfeatures-right-block-5 {
       flex: 0.7;
       position: relative;
       background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
@@ -2105,48 +1303,12 @@ let autoCycle = setInterval(nextFeature, 4000);
       background-position: center;
     }
 
-    .mainfeatures-heading {
-      position: absolute;
-      top: 30%;
-      left: -10%;
-      transform: translateY(-50%);
-      background-color: #fff;
-      padding: 1.2rem 2rem;
-      font-size: 3.5rem;
-      line-height: 1.1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-
     /* RESPONSIVE DESIGN */
     @media (max-width: 900px) {
-      .mainfeatures-section {
-        flex-direction: column;
-        height: auto;
-      }
-
-      .mainfeatures-left-block {
-        flex: none;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      .mainfeatures-right-block {
+      .mainfeatures-right-block-5 {
         flex: none;
         width: 100%;
         height: 60vh;
-      }
-
-      .mainfeatures-heading {
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2.2rem;
-      }
-
-      .mainfeatures-features {
-        text-align: left;
-        margin: 0 auto;
       }
     }
   </style>
@@ -2183,7 +1345,7 @@ let autoCycle = setInterval(nextFeature, 4000);
   </div>
 
   <!-- RIGHT SIDE -->
-  <div class="mainfeatures-right-block">
+  <div class="mainfeatures-right-block-5">
     <div class="mainfeatures-heading">Power Generation<br>System</div>
   </div>
 </section>
@@ -2192,21 +1354,10 @@ let autoCycle = setInterval(nextFeature, 4000);
 <!-- section-2 -->
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    .modern-apartments-wrap {
-      display: flex;
-      flex-direction: row;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #fff;
-      font-family: "Georgia", serif;
-    }
+    
 
     /* LEFT IMAGE SECTION */
-    .apartments-image-side {
+    .apartments-image-side-5 {
       flex: 1;
       position: relative;
       background-image: url('img/im.png');
@@ -2214,120 +1365,13 @@ let autoCycle = setInterval(nextFeature, 4000);
       background-position: center;
     }
 
-    .apartments-main-heading {
-      position: absolute;
-      top: 35%;
-      right: -8%;
-      transform: translateY(-50%);
-      background-color: #fff;
-      padding: 1.2rem 2rem;
-      font-size: 3.5rem;
-      line-height: 1.1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      z-index: 2;
-    }
-
-    /* RIGHT TEXT SECTION */
-    .apartments-content-side {
-      flex: 0.3;
-      background-color: #cdcccb;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 4rem 5rem 4rem 8rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .apartments-logo {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 3rem;
-    }
-
-    .apartments-subtitle {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 1.2rem;
-      max-width: 260px;
-      line-height: 1.4;
-    }
-
-    .apartments-description {
-      font-size: 0.9rem;
-      color: #444;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .apartments-feature-list {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .apartments-feature-list li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
-      position: relative;
-      font-size: 0.9rem;
-      color: #333;
-    }
-
-    .apartments-feature-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #000;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    .apartments-btn {
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #fff;
-      border: none;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .apartments-btn:hover {
-      transform: translateY(-2px);
-    }
-
+   
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      .modern-apartments-wrap {
-        flex-direction: column;
-      }
-
-      .apartments-image-side {
+      .apartments-image-side-5 {
         flex: none;
         width: 100%;
         height: 60vh;
-      }
-
-      .apartments-content-side {
-        flex: none;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      .apartments-main-heading {
-        right: 50%;
-        transform: translate(50%, -50%);
-        font-size: 2.2rem;
-      }
-
-      .apartments-feature-list {
-        text-align: left;
-        margin: 0 auto;
       }
     }
   </style>
@@ -2336,7 +1380,7 @@ let autoCycle = setInterval(nextFeature, 4000);
 
 
   <!-- LEFT IMAGE SECTION -->
-  <div class="apartments-image-side">
+  <div class="apartments-image-side-5">
     <div class="apartments-main-heading">RGB Pixel<br>LED Screen</div>
   </div>
 
@@ -2371,94 +1415,10 @@ let autoCycle = setInterval(nextFeature, 4000);
 
  <style>
    
-    .mainfeatures-section {
-      display: flex;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #fff;
-      font-family: "Georgia", serif;
-      /* margin-bottom: 60px;  */
-      /* bottom gap added */
-    }
 
-    /* LEFT CONTENT AREA */
-    .mainfeatures-left-block {
-      flex: 0.3;
-      background-color: #cdcccb;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 4rem;
-      position: relative;
-    }
-
-    .mainfeatures-logo {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 3rem;
-    }
-
-    .mainfeatures-subtitle {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 1.2rem;
-      max-width: 260px;
-      line-height: 1.4;
-    }
-
-    .mainfeatures-link {
-      text-decoration: none;
-      color: #000;
-    }
-
-    .mainfeatures-description {
-      font-size: 0.9rem;
-      color: #444;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .mainfeatures-features {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .mainfeatures-features li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
-      position: relative;
-      font-size: 0.9rem;
-      color: #333;
-    }
-
-    .mainfeatures-features li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #101010;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    .mainfeatures-btn {
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #fff;
-      border: none;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .mainfeatures-btn:hover {
-      transform: translateY(-2px);
-    }
 
     /* RIGHT IMAGE AREA */
-    .mainfeatures-right-block {
+    .mainfeatures-right-block-6 {
       flex: 0.7;
       position: relative;
       background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
@@ -2466,49 +1426,19 @@ let autoCycle = setInterval(nextFeature, 4000);
       background-position: center;
     }
 
-    .mainfeatures-heading {
-      position: absolute;
-      top: 30%;
-      left: -10%;
-      transform: translateY(-50%);
-      background-color: #fff;
-      padding: 1.2rem 2rem;
-      font-size: 3.5rem;
-      line-height: 1.1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
+   
 
     /* RESPONSIVE DESIGN */
     @media (max-width: 900px) {
-      .mainfeatures-section {
-        flex-direction: column;
-        height: auto;
-      }
+ 
 
-      .mainfeatures-left-block {
-        flex: none;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      .mainfeatures-right-block {
+      .mainfeatures-right-block-6 {
         flex: none;
         width: 100%;
         height: 60vh;
       }
 
-      .mainfeatures-heading {
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2.2rem;
-      }
-
-      .mainfeatures-features {
-        text-align: left;
-        margin: 0 auto;
-      }
+  
     }
   </style>
 
@@ -2544,7 +1474,7 @@ let autoCycle = setInterval(nextFeature, 4000);
   </div>
 
   <!-- RIGHT SIDE -->
-  <div class="mainfeatures-right-block">
+  <div class="mainfeatures-right-block-6">
     <div class="mainfeatures-heading">Motion<br>Detectors</div>
   </div>
 </section>
@@ -2553,21 +1483,10 @@ let autoCycle = setInterval(nextFeature, 4000);
 <!-- section-2 -->
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    .modern-apartments-wrap {
-      display: flex;
-      flex-direction: row;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #fff;
-      font-family: "Georgia", serif;
-    }
+    
 
     /* LEFT IMAGE SECTION */
-    .apartments-image-side {
+    .apartments-image-side-6 {
       flex: 1;
       position: relative;
     background-image: url('img/im.png');
@@ -2575,121 +1494,16 @@ let autoCycle = setInterval(nextFeature, 4000);
       background-position: center;
     }
 
-    .apartments-main-heading {
-      position: absolute;
-      top: 35%;
-      right: -8%;
-      transform: translateY(-50%);
-      background-color: #fff;
-      padding: 1.2rem 2rem;
-      font-size: 3.5rem;
-      line-height: 1.1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      z-index: 2;
-    }
-
-    /* RIGHT TEXT SECTION */
-    .apartments-content-side {
-      flex: 0.3;
-      background-color: #cdcccb;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 4rem 5rem 4rem 8rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .apartments-logo {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 3rem;
-    }
-
-    .apartments-subtitle {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 1.2rem;
-      max-width: 260px;
-      line-height: 1.4;
-    }
-
-    .apartments-description {
-      font-size: 0.9rem;
-      color: #444;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .apartments-feature-list {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .apartments-feature-list li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
-      position: relative;
-      font-size: 0.9rem;
-      color: #333;
-    }
-
-    .apartments-feature-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #000;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    .apartments-btn {
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #fff;
-      border: none;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .apartments-btn:hover {
-      transform: translateY(-2px);
-    }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      .modern-apartments-wrap {
-        flex-direction: column;
-      }
 
-      .apartments-image-side {
+      .apartments-image-side-6 {
         flex: none;
         width: 100%;
         height: 60vh;
       }
 
-      .apartments-content-side {
-        flex: none;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      .apartments-main-heading {
-        right: 50%;
-        transform: translate(50%, -50%);
-        font-size: 2.2rem;
-      }
-
-      .apartments-feature-list {
-        text-align: left;
-        margin: 0 auto;
-      }
     }
   </style>
 
@@ -2697,7 +1511,7 @@ let autoCycle = setInterval(nextFeature, 4000);
 
 
   <!-- LEFT IMAGE SECTION -->
-  <div class="apartments-image-side">
+  <div class="apartments-image-side-6">
     <div class="apartments-main-heading">Wi-Fi<br>Hotspot</div>
   </div>
 
@@ -2732,94 +1546,15 @@ let autoCycle = setInterval(nextFeature, 4000);
 
  <style>
    
-    .mainfeatures-section {
-      display: flex;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #fff;
-      font-family: "Georgia", serif;
-      /* margin-bottom: 60px;  */
-      /* bottom gap added */
-    }
+ 
 
-    /* LEFT CONTENT AREA */
-    .mainfeatures-left-block {
-      flex: 0.3;
-      background-color: #cdcccb;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 4rem;
-      position: relative;
-    }
 
-    .mainfeatures-logo {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 3rem;
-    }
 
-    .mainfeatures-subtitle {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 1.2rem;
-      max-width: 260px;
-      line-height: 1.4;
-    }
 
-    .mainfeatures-link {
-      text-decoration: none;
-      color: #000;
-    }
-
-    .mainfeatures-description {
-      font-size: 0.9rem;
-      color: #444;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .mainfeatures-features {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .mainfeatures-features li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
-      position: relative;
-      font-size: 0.9rem;
-      color: #333;
-    }
-
-    .mainfeatures-features li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #101010;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    .mainfeatures-btn {
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #fff;
-      border: none;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .mainfeatures-btn:hover {
-      transform: translateY(-2px);
-    }
+  
 
     /* RIGHT IMAGE AREA */
-    .mainfeatures-right-block {
+    .mainfeatures-right-block-7 {
       flex: 0.7;
       position: relative;
       background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
@@ -2827,49 +1562,19 @@ let autoCycle = setInterval(nextFeature, 4000);
       background-position: center;
     }
 
-    .mainfeatures-heading {
-      position: absolute;
-      top: 30%;
-      left: -10%;
-      transform: translateY(-50%);
-      background-color: #fff;
-      padding: 1.2rem 2rem;
-      font-size: 3.5rem;
-      line-height: 1.1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
+
 
     /* RESPONSIVE DESIGN */
     @media (max-width: 900px) {
-      .mainfeatures-section {
-        flex-direction: column;
-        height: auto;
-      }
+    
 
-      .mainfeatures-left-block {
-        flex: none;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      .mainfeatures-right-block {
+      .mainfeatures-right-block-7 {
         flex: none;
         width: 100%;
         height: 60vh;
       }
 
-      .mainfeatures-heading {
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2.2rem;
-      }
 
-      .mainfeatures-features {
-        text-align: left;
-        margin: 0 auto;
-      }
     }
   </style>
 
@@ -2905,7 +1610,7 @@ let autoCycle = setInterval(nextFeature, 4000);
   </div>
 
   <!-- RIGHT SIDE -->
-  <div class="mainfeatures-right-block">
+  <div class="mainfeatures-right-block-7">
     <div class="mainfeatures-heading">Intercom</div>
   </div>
 </section>
@@ -2914,21 +1619,10 @@ let autoCycle = setInterval(nextFeature, 4000);
 <!-- section-2 -->
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    .modern-apartments-wrap {
-      display: flex;
-      flex-direction: row;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #fff;
-      font-family: "Georgia", serif;
-    }
+  
 
     /* LEFT IMAGE SECTION */
-    .apartments-image-side {
+    .apartments-image-side-7 {
       flex: 1;
       position: relative;
    background-image: url('img/im.png');
@@ -2936,121 +1630,18 @@ let autoCycle = setInterval(nextFeature, 4000);
       background-position: center;
     }
 
-    .apartments-main-heading {
-      position: absolute;
-      top: 35%;
-      right: -8%;
-      transform: translateY(-50%);
-      background-color: #fff;
-      padding: 1.2rem 2rem;
-      font-size: 3.5rem;
-      line-height: 1.1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      z-index: 2;
-    }
-
-    /* RIGHT TEXT SECTION */
-    .apartments-content-side {
-      flex: 0.3;
-      background-color: #cdcccb;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 4rem 5rem 4rem 8rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .apartments-logo {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 3rem;
-    }
-
-    .apartments-subtitle {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 1.2rem;
-      max-width: 260px;
-      line-height: 1.4;
-    }
-
-    .apartments-description {
-      font-size: 0.9rem;
-      color: #444;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .apartments-feature-list {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .apartments-feature-list li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
-      position: relative;
-      font-size: 0.9rem;
-      color: #333;
-    }
-
-    .apartments-feature-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #000;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    .apartments-btn {
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #fff;
-      border: none;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .apartments-btn:hover {
-      transform: translateY(-2px);
-    }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      .modern-apartments-wrap {
-        flex-direction: column;
-      }
+   
 
-      .apartments-image-side {
+      .apartments-image-side-7 {
         flex: none;
         width: 100%;
         height: 60vh;
       }
 
-      .apartments-content-side {
-        flex: none;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      .apartments-main-heading {
-        right: 50%;
-        transform: translate(50%, -50%);
-        font-size: 2.2rem;
-      }
-
-      .apartments-feature-list {
-        text-align: left;
-        margin: 0 auto;
-      }
+      
     }
   </style>
 
@@ -3058,7 +1649,7 @@ let autoCycle = setInterval(nextFeature, 4000);
 
 
   <!-- LEFT IMAGE SECTION -->
-  <div class="apartments-image-side">
+  <div class="apartments-image-side-7">
     <div class="apartments-main-heading">Android<br>Touch Screen</div>
   </div>
 
@@ -3094,94 +1685,9 @@ let autoCycle = setInterval(nextFeature, 4000);
 
  <style>
    
-    .mainfeatures-section {
-      display: flex;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #fff;
-      font-family: "Georgia", serif;
-      /* margin-bottom: 60px;  */
-      /* bottom gap added */
-    }
-
-    /* LEFT CONTENT AREA */
-    .mainfeatures-left-block {
-      flex: 0.3;
-      background-color: #cdcccb;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 4rem;
-      position: relative;
-    }
-
-    .mainfeatures-logo {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 3rem;
-    }
-
-    .mainfeatures-subtitle {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 1.2rem;
-      max-width: 260px;
-      line-height: 1.4;
-    }
-
-    .mainfeatures-link {
-      text-decoration: none;
-      color: #000;
-    }
-
-    .mainfeatures-description {
-      font-size: 0.9rem;
-      color: #444;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .mainfeatures-features {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .mainfeatures-features li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
-      position: relative;
-      font-size: 0.9rem;
-      color: #333;
-    }
-
-    .mainfeatures-features li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #101010;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    .mainfeatures-btn {
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #fff;
-      border: none;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .mainfeatures-btn:hover {
-      transform: translateY(-2px);
-    }
 
     /* RIGHT IMAGE AREA */
-    .mainfeatures-right-block {
+    .mainfeatures-right-block-8 {
       flex: 0.7;
       position: relative;
       background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
@@ -3189,49 +1695,19 @@ let autoCycle = setInterval(nextFeature, 4000);
       background-position: center;
     }
 
-    .mainfeatures-heading {
-      position: absolute;
-      top: 30%;
-      left: -10%;
-      transform: translateY(-50%);
-      background-color: #fff;
-      padding: 1.2rem 2rem;
-      font-size: 3.5rem;
-      line-height: 1.1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
+    
 
     /* RESPONSIVE DESIGN */
     @media (max-width: 900px) {
-      .mainfeatures-section {
-        flex-direction: column;
-        height: auto;
-      }
+     
 
-      .mainfeatures-left-block {
-        flex: none;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      .mainfeatures-right-block {
+      .mainfeatures-right-block-8 {
         flex: none;
         width: 100%;
         height: 60vh;
       }
 
-      .mainfeatures-heading {
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2.2rem;
-      }
 
-      .mainfeatures-features {
-        text-align: left;
-        margin: 0 auto;
-      }
     }
   </style>
 
@@ -3267,7 +1743,7 @@ let autoCycle = setInterval(nextFeature, 4000);
   </div>
 
   <!-- RIGHT SIDE -->
-  <div class="mainfeatures-right-block">
+  <div class="mainfeatures-right-block-8">
     <div class="mainfeatures-heading">AI Based Voice<br>Communication</div>
   </div>
 </section>
@@ -3276,21 +1752,10 @@ let autoCycle = setInterval(nextFeature, 4000);
 <!-- section-2 -->
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    .modern-apartments-wrap {
-      display: flex;
-      flex-direction: row;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #fff;
-      font-family: "Georgia", serif;
-    }
+ 
 
     /* LEFT IMAGE SECTION */
-    .apartments-image-side {
+    .apartments-image-side-8 {
       flex: 1;
       position: relative;
       background-image: url('img/im.png');
@@ -3298,121 +1763,15 @@ let autoCycle = setInterval(nextFeature, 4000);
       background-position: center;
     }
 
-    .apartments-main-heading {
-      position: absolute;
-      top: 35%;
-      right: -8%;
-      transform: translateY(-50%);
-      background-color: #fff;
-      padding: 1.2rem 2rem;
-      font-size: 3.5rem;
-      line-height: 1.1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      z-index: 2;
-    }
-
-    /* RIGHT TEXT SECTION */
-    .apartments-content-side {
-      flex: 0.3;
-      background-color: #cdcccb;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 4rem 5rem 4rem 8rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .apartments-logo {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 3rem;
-    }
-
-    .apartments-subtitle {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 1.2rem;
-      max-width: 260px;
-      line-height: 1.4;
-    }
-
-    .apartments-description {
-      font-size: 0.9rem;
-      color: #444;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .apartments-feature-list {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .apartments-feature-list li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
-      position: relative;
-      font-size: 0.9rem;
-      color: #333;
-    }
-
-    .apartments-feature-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #000;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    .apartments-btn {
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #fff;
-      border: none;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .apartments-btn:hover {
-      transform: translateY(-2px);
-    }
-
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      .modern-apartments-wrap {
-        flex-direction: column;
-      }
-
-      .apartments-image-side {
+    
+      .apartments-image-side-8 {
         flex: none;
         width: 100%;
         height: 60vh;
       }
 
-      .apartments-content-side {
-        flex: none;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      .apartments-main-heading {
-        right: 50%;
-        transform: translate(50%, -50%);
-        font-size: 2.2rem;
-      }
-
-      .apartments-feature-list {
-        text-align: left;
-        margin: 0 auto;
-      }
     }
   </style>
 
@@ -3420,7 +1779,7 @@ let autoCycle = setInterval(nextFeature, 4000);
 
 
   <!-- LEFT IMAGE SECTION -->
-  <div class="apartments-image-side">
+  <div class="apartments-image-side-8">
     <div class="apartments-main-heading">AI Based<br>Camera</div>
   </div>
 
