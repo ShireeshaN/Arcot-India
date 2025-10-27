@@ -1,4 +1,7 @@
-
+html , body {
+  /* height: 100%; */
+  overflow-x: hidden;
+}
 /*** Spinner Start ***/
 #spinner {
     opacity: 0;
@@ -240,7 +243,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 60px 0 60px 0;
+
     transition: 0.5s;
 }
 
@@ -252,6 +255,29 @@
     color: var(--bs-white);
 }
 /*** Single Page Hero Header End ***/
+
+
+/*** rd Page Hero Header Start ***/
+.bg-breadcrumb-rd {
+    position: relative;
+    overflow: hidden;
+    background:url(../img/r&d_bannerimage.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100vh; 
+    transition: 0.5s;
+ 
+}
+
+.bg-breadcrumb-rd .breadcrumb {
+    position: relative;
+}
+
+.bg-breadcrumb-rd .breadcrumb .breadcrumb-item a {
+    color: var(--bs-white);
+}
+/*** rd Page Hero Header End ***/
 
 
 /*** Single Page Hero Header Start ***/

@@ -3,147 +3,1138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scroll Animation Gallery  
-   
+  <title>StudioX — Premium Split Animations</title>
 
-  </title>
+  <!-- Locomotive Scroll -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'Montserrat',sans-serif;
+      background:#111;color:#fff;
+      overflow-x:hidden;cursor:none;
+      transition: background 1s ease, color 1s ease;
+    }
+
+[data-theme="dark"] {
+  background: #111;
+  color: #fff;
+}
+
+[data-theme="light"] {
+  background: #f8f9fa;
+  color: #111;
+}
+
+ section[data-bg] {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+    transition: background 1s ease, color 1s ease;
+}
+
+
+    header{
+      position:fixed;top:0;left:0;width:100%;
+      padding:20px 50px;z-index:1000;
+      display:flex;justify-content:space-between;align-items:center;
+      background:rgba(0,0,0,0.3);backdrop-filter:blur(10px);
+    }
+    header .brand{font-weight:800;font-size:1.6rem;}
+    header nav a{color:#fff;margin-left:20px;text-decoration:none;font-weight:500;position:relative;}
+    header nav a:hover{color:#0d6efd;}
+
+    section{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;padding:80px 20px;}
+    .hero{flex-direction:column;text-align:center;background:#000;}
+    .hero h1{font-size:5rem;font-weight:800;line-height:1.2;}
+    .hero p{font-size:1.3rem;max-width:700px;margin:auto;color:#aaa;}
+
+    .split span{
+      display:inline-block;
+      transform:translateY(100%);
+      opacity:0;
+    }
+
+    .image-section img{width:100%;height:100vh;object-fit:cover;transform:scale(1.2);}
+    .text-section h2{font-size:3rem;font-weight:700;margin-bottom:20px;}
+    .horizontal-scroll{display:flex;flex-wrap:nowrap;height:100vh;}
+    .horizontal-scroll .panel{min-width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;background:#222;}
+    footer{padding:40px 0;text-align:center;background:#000;color:#888;}
+
+    /* Loader */
+    #loader{
+      position:fixed;top:0;left:0;width:100%;height:100vh;
+      background:#000;z-index:2000;display:flex;align-items:center;justify-content:center;
+      flex-direction:column;transition:all 1s ease;
+    }
+    #loader h1{font-size:3rem;font-weight:800;color:#fff;}
+    #loader.hidden{opacity:0;visibility:hidden;}
+
+    /* Cursor */
+    .cursor{
+      position:fixed;top:0;left:0;
+      width:30px;height:30px;
+      border:2px solid #fff;border-radius:50%;
+      transform:translate(-50%,-50%);
+      pointer-events:none;z-index:3000;
+      transition:transform 0.15s ease-out,width 0.25s ease,height 0.25s ease;
+      mix-blend-mode:difference;
+    }
+    .cursor.active{width:60px;height:60px;opacity:0.8;}
+
+    /* Page Transition Overlay */
+    #transition{
+      position:fixed;top:0;left:0;width:100%;height:100%;
+      background:#000;z-index:5000;
+      transform:translateY(100%);
+    }
+      .image-panel{
+    position:relative;
+    overflow:hidden;
+  }
+  .image-panel img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform:scale(1.2);
+  }
+  .image-mask{
+    position:absolute;
+    top:0;left:0;width:100%;height:100%;
+    background:#111;
+    transform-origin:left;
+    transform:scaleX(1);
+    z-index:2;
+  }
+  </style>
+</head>
+<body data-scroll-container>
+
+  <!-- Loader -->
+  <div id="loader">
+    <h1 class="split">StudioX</h1>
+  </div>
+
+  <!-- Transition Overlay -->
+  <div id="transition"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+
+  <!-- Header -->
+  <header data-scroll-sticky data-scroll-target="body">
+    <div class="brand magnetic">StudioX</div>
+    <nav>
+      <a href="#about" class="magnetic link">About</a>
+      <a href="#work" class="magnetic link">Work</a>
+      <a href="#contact" class="magnetic link">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section data-bg="https://picsum.photos/1600/900?random=5" class="hero" data-scroll-section>
+    <h1 class="split">Creative Digital Studio</h1>
+    <p class="split">We build immersive websites with premium animations</p>
+  </section>
+
+  <!-- Fullscreen Image Parallax -->
+  <section data-bg="https://picsum.photos/1600/900?random=5" class="image-section" data-scroll-section>
+    <img src="https://picsum.photos/1600/900?random=1" data-scroll data-scroll-speed="-2">
+  </section>
+
+  <!-- About -->
+  <section data-bg="https://picsum.photos/1600/900?random=5" id="about" class="text-section container text-center" data-scroll-section>
+    <h2 class="split">About Us</h2>
+    <p class="split">We create cutting-edge designs and animations for global brands.</p>
+  </section>
+
+<!-- Work Horizontal Scroll -->
+<section data-bg="https://picsum.photos/1600/900?random=5" id="work" class="horizontal-scroll" data-scroll-section>
+  <div class="panel image-panel">
+    <div class="image-mask"></div>
+    <img src="https://picsum.photos/900/600?random=2">
+  </div>
+  <div class="panel image-panel">
+    <div class="image-mask"></div>
+    <img src="https://picsum.photos/900/600?random=3">
+  </div>
+  <div class="panel image-panel">
+    <div class="image-mask"></div>
+    <img src="https://picsum.photos/900/600?random=4">
+  </div>
+</section>
+
+  <!-- Contact -->
+  <section data-bg="https://picsum.photos/1600/900?random=5" id="contact" class="text-section container text-center" data-scroll-section>
+    <h2 class="split">Let’s Collaborate</h2>
+    <p class="split">Contact us and let’s create something unforgettable.</p>
+    <a href="mailto:info@example.com" class="btn btn-light mt-4 magnetic link">Get in Touch</a>
+  </section>
+
+  <!-- Footer -->
+  <footer data-scroll-section>
+    © 2025 StudioX — All rights reserved
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+  <script>
+    // Split function
+    function splitText(el){
+      let text=el.innerText;
+      el.innerHTML="";
+      text.split("").forEach(letter=>{
+        let span=document.createElement("span");
+        span.textContent=letter;
+        el.appendChild(span);
+      });
+    }
+    document.querySelectorAll(".split").forEach(el=>splitText(el));
+
+    // Loader animation
+    gsap.to("#loader span",{y:0,opacity:1,stagger:0.05,duration:1,ease:"power4.out"});
+    setTimeout(()=>{document.getElementById("loader").classList.add("hidden");},2000);
+
+    // Locomotive Scroll
+    const scroll=new LocomotiveScroll({el:document.querySelector('[data-scroll-container]'),smooth:true,multiplier:1.2});
+    scroll.on("scroll",ScrollTrigger.update);
+    ScrollTrigger.scrollerProxy("[data-scroll-container]",{
+      scrollTop(value){return arguments.length?scroll.scrollTo(value,0,0):scroll.scroll.instance.scroll.y;},
+      getBoundingClientRect(){return{top:0,left:0,width:window.innerWidth,height:window.innerHeight};}
+    });
+    ScrollTrigger.addEventListener("refresh",()=>scroll.update());
+    ScrollTrigger.refresh();
+
+    // SplitText reveal on scroll
+    document.querySelectorAll(".split").forEach(el=>{
+      gsap.to(el.querySelectorAll("span"),{
+        y:0,opacity:1,stagger:0.04,duration:0.8,ease:"power4.out",
+        scrollTrigger:{trigger:el,scroller:"[data-scroll-container]",start:"top 80%"}
+      });
+    });
+
+    // Parallax images
+    gsap.utils.toArray("img").forEach(el=>{
+      gsap.from(el,{opacity:0,scale:1.2,duration:1.5,ease:"power4.out",
+        scrollTrigger:{trigger:el,scroller:"[data-scroll-container]",start:"top 90%"}
+      });
+    });
+
+    // Cursor
+    const cursor=document.querySelector(".cursor");
+    document.addEventListener("mousemove",e=>gsap.to(cursor,{x:e.clientX,y:e.clientY,duration:0.2}));
+    document.querySelectorAll("a,.btn,.magnetic").forEach(el=>{
+      el.addEventListener("mouseenter",()=>cursor.classList.add("active"));
+      el.addEventListener("mouseleave",()=>cursor.classList.remove("active"));
+    });
+    document.querySelectorAll(".magnetic").forEach(el=>{
+      el.addEventListener("mousemove",function(e){
+        const rect=this.getBoundingClientRect();
+        const x=e.clientX-rect.left-rect.width/2;
+        const y=e.clientY-rect.top-rect.height/2;
+        gsap.to(this,{x:x*0.3,y:y*0.3,duration:0.3});
+      });
+      el.addEventListener("mouseleave",()=>gsap.to(el,{x:0,y:0,duration:0.3}));
+    });
+
+    // Page transition
+    const transition=document.getElementById("transition");
+    function pageTransition(){
+      gsap.to(transition,{y:"0%",duration:0.8,ease:"power4.inOut"});
+      setTimeout(()=>{gsap.to(transition,{y:"100%",duration:0.8,ease:"power4.inOut"});},1200);
+    }
+    document.querySelectorAll(".link").forEach(link=>{
+      link.addEventListener("click",e=>{
+        e.preventDefault();
+        pageTransition();
+        setTimeout(()=>{window.location.href=link.href;},1200);
+      });
+    });
+
+    // Image Reveal Animations
+document.querySelectorAll(".image-panel").forEach(panel=>{
+  let img=panel.querySelector("img");
+  let mask=panel.querySelector(".image-mask");
+
+  gsap.set(img,{scale:1.2});
+  gsap.set(mask,{scaleX:1});
+
+  ScrollTrigger.create({
+    trigger:panel,
+    scroller:"[data-scroll-container]",
+    start:"top 80%",
+    end:"top 20%",
+    onEnter:()=>{
+      gsap.timeline()
+        .to(mask,{scaleX:0,duration:1.2,ease:"power3.inOut"})
+        .to(img,{scale:1,duration:1.2,ease:"power3.inOut"},"-=1");
+    },
+    onLeaveBack:()=>{
+      gsap.timeline()
+        .to(mask,{scaleX:1,duration:1.2,ease:"power3.inOut"})
+        .to(img,{scale:1.2,duration:1.2,ease:"power3.inOut"},"-=1");
+    }
+  });
+});
+
+// Scroll-triggered background theme changes
+gsap.utils.toArray("section").forEach((section, index) => {
+  ScrollTrigger.create({
+    trigger: section,
+    scroller: "[data-scroll-container]",
+    start: "top 50%",
+    end: "bottom 50%",
+    onEnter: () => {
+      document.body.setAttribute("data-theme", index % 2 === 0 ? "dark" : "light");
+    },
+    onEnterBack: () => {
+      document.body.setAttribute("data-theme", index % 2 === 0 ? "dark" : "light");
+    }
+  });
+});
+
+
+// Advanced Split Text Animation
+document.querySelectorAll(".split").forEach(el => {
+  gsap.fromTo(el.querySelectorAll("span"), 
+    {y:50, opacity:0}, 
+    {
+      y:0, opacity:1, 
+      stagger:0.05, duration:1, ease:"power4.out",
+      scrollTrigger: {
+        trigger: el,
+        scroller: "[data-scroll-container]",
+        start: "top 80%",
+        toggleActions: "play none none reverse"
+      }
+    }
+  );
+});
+
+
+document.querySelectorAll("section[data-bg]").forEach(section => {
+  section.style.backgroundImage = `url(${section.getAttribute("data-bg")})`;
+  gsap.from(section, {
+    backgroundPosition: "50% 0%",
+    backgroundPositionY: "50%",
+    ease: "none",
+    scrollTrigger: {
+      trigger: section,
+      scroller: "[data-scroll-container]",
+      scrub: true
+    }
+  });
+});
+
+
+  </script>
+</body>
+</html>
+
+
+2nd design 
+
+
+<!-- premium-3d-dynamic.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Premium 3D Dynamic — Aurora Labs</title>
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-1: #0b1020;
+      --muted: #9aa3b2;
+    }
+    html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: white;
-      overflow-x: hidden;
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, var(--bg-1) 0%, #0f1724 45%, #000 100%);
+      color: #ffffff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      perspective: 1200px; /* improves 3d-look for child transforms */
     }
 
-    section {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    /* NAV */
+    .nav-glass{
+      backdrop-filter: blur(8px);
+      background: rgba(2,6,23,0.35);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: transform .25s ease, background .25s ease;
+      transform-origin: center;
+    }
+    .nav-glass.small { transform: translateY(-6px) scale(.995); background: rgba(2,6,23,0.5); }
+
+    /* HERO */
+    .hero { padding-top: 96px; padding-bottom: 80px; }
+    .hero-title { font-weight: 800; line-height: 1.02; letter-spacing: -0.02em; transform-style: preserve-3d; }
+    .cta-btn { border-radius: 14px; padding: 12px 28px; font-weight: 600; will-change: transform; }
+
+    .glass-panel{
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.04);
+      padding: 14px;
+      transform-style: preserve-3d;
     }
 
-    /* Gallery Section */
-    .gallery-section {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
+    .stat { background: rgba(255,255,255,0.03); border-radius: 12px; padding: 12px; text-align:center; transform-style: preserve-3d; }
 
-    .gallery {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      position: relative;
-      z-index: 2;
-    }
+    .canvas-wrap { border-radius: 18px; overflow: hidden; height: 320px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.25)); display:flex; align-items:center; justify-content:center; position:relative; }
 
-    .gallery img {
-      object-fit: cover;
-      /* border-radius: 12px; */
-      transition: all 0.5s ease;
-      opacity: 1;
-    }
+    .case-card { background: rgba(255,255,255,0.03); border-radius: 14px; padding: 18px; transform-style: preserve-3d; will-change: transform, box-shadow; cursor: pointer; }
 
-    /* Heights decrease outward */
-    .gallery img.outer {
-      height: 280px;
-      width: 180px;
-    }
+    .input-soft { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.04); color: #e6eef8; border-radius: 10px; padding: 10px 12px; }
 
-    .gallery img.mid {
-      height: 380px;
-      width: 250px;
-    }
+    .accent-blob { position: absolute; width: 160px; height: 160px; border-radius: 28px; filter: blur(28px); opacity: 0.22; transform: translate3d(0,0,0); will-change: transform; pointer-events: none; }
+    .blob-1 { background: linear-gradient(135deg,#8b5cf6,#ec4899); left: -40px; bottom: -40px; }
+    .blob-2 { background: linear-gradient(135deg,#06b6d4,#60a5fa); right: -40px; top: -120px; opacity:0.18; filter: blur(36px); }
 
-    .gallery img.center {
-      height: 500px;
-      width: 390px;
-      z-index: 5;
-    }
-
-    /* Banner Text */
-    .banner-text {
+    /* subtle 3d shadow layer for cards (for depth) */
+    .card-depth::after {
+      content: '';
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 3rem;
-      opacity: 0;
+      left: 0; right: 0; bottom: -14px;
+      height: 22px;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.45), rgba(0,0,0,0.0) 50%);
+      filter: blur(16px);
+      z-index: -1;
+      border-radius: 18px;
+      transform-origin: center;
+      transition: transform .25s ease;
       pointer-events: none;
-      text-align: center;
-      z-index: 10;
+    }
+
+    /* responsive */
+    @media (max-width: 767.98px){
+      .canvas-wrap { display:none; } /* hide heavy 3D on small devices */
+      .hero { padding-top: 72px; padding-bottom: 64px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Intro Section -->
-  <section style="background:#222;">
-    <h1>Scroll Down 👇</h1>
-  </section>
+  <!-- NAV -->
+  <nav id="siteNav" class="navbar navbar-expand-md nav-glass position-fixed w-100 top-0 z-index-3">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand d-flex align-items-center gap-2 text-white" href="#">
+        <div class="d-flex align-items-center justify-content-center rounded-3" style="width:44px;height:44px;background:linear-gradient(135deg,#8b5cf6,#ec4899);font-weight:800;color:#071023;">A</div>
+        <span class="fw-semibold">Aurora Labs</span>
+      </a>
 
-  <!-- Gallery Section -->
-  <section class="gallery-section">
-    <div class="gallery">
-      <img src="img/energy/wind2.webp" class="outer">
-      <img src="img/energy/wind2.webp" class="mid">
-      <img src="img/energy/wind2.webp" class="center">
-      <img src="img/energy/wind2.webp" class="mid">
-      <img src="img/energy/wind2.webp" class="outer">
+      <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link text-white nav-link-anim" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link text-white nav-link-anim" href="#work">Work</a></li>
+          <li class="nav-item"><a class="nav-link text-white nav-link-anim" href="#pricing">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link text-white nav-link-anim" href="#contact">Contact</a></li>
+          <li class="nav-item ms-3"><button class="btn btn-outline-light btn-sm">Request Demo</button></li>
+        </ul>
+      </div>
     </div>
-    <div class="banner-text">King Lumi - About</div>
+  </nav>
+
+  <!-- HERO -->
+  <main class="container hero">
+    <div class="row align-items-center gx-5">
+      <div class="col-md-6">
+        <h1 id="heroTitle" class="display-5 hero-title">
+          Build a premium, international website —
+          <span id="hero3DText" style="background:linear-gradient(90deg,#8b5cf6,#ec4899); -webkit-background-clip:text; color:transparent;"> silky 3D interactions</span>
+          & smooth motion.
+        </h1>
+        <p id="heroSub" class="text-muted mt-3" style="color:var(--muted)">Immersive 3D elements, synchronized motion and dynamic interactions across the UI.</p>
+
+        <div class="d-flex align-items-center gap-3 mt-4">
+          <a id="ctaBtn" href="#contact" class="btn btn-primary cta-btn" style="background:linear-gradient(90deg,#6366f1,#ec4899); border:none;">Get a Proposal</a>
+          <a href="#work" class="text-decoration-none text-secondary">See case studies →</a>
+        </div>
+
+        <div class="d-flex gap-3 mt-4" id="statsRow">
+          <div class="stat card-depth" data-float-level="1" style="position:relative;">
+            <div class="h5 mb-0">99.98%</div>
+            <small class="text-muted">Uptime</small>
+          </div>
+          <div class="stat card-depth" data-float-level="2" style="position:relative;">
+            <div class="h5 mb-0">80+</div>
+            <small class="text-muted">Animations</small>
+          </div>
+          <div class="stat card-depth" data-float-level="3" style="position:relative;">
+            <div class="h5 mb-0">30ms</div>
+            <small class="text-muted">TTFB (demo)</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 position-relative">
+        <div class="glass-panel">
+          <!-- Canvas (3D) -->
+          <div class="canvas-wrap" id="canvasWrap">
+            <canvas id="threeCanvas" style="width:100%;height:100%;display:block"></canvas>
+            <div id="canvasFallback" style="position:absolute;left:0;right:0;top:0;bottom:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.35);font-size:14px">Loading 3D…</div>
+          </div>
+
+          <div class="mt-3">
+            <div class="small text-muted">Featured Project</div>
+            <div class="fw-semibold">Voyager Enterprise UI — 3D edition</div>
+            <div class="small mt-1" style="color:#9fb0c6">Interactive product showcase with depth, parallax and subtle physics.</div>
+          </div>
+        </div>
+
+        <!-- floating accents -->
+        <div class="accent-blob blob-1" id="blob1"></div>
+        <div class="accent-blob blob-2" id="blob2"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FEATURES -->
+  <section id="features" class="container py-5">
+    <h2 class="fw-bold">What you get</h2>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="p-4 rounded-3" style="background:rgba(255,255,255,0.02);" data-float-level="1">
+          <h5>Micro-interactions</h5>
+          <p class="text-muted small">Meaningful animations — button states, form feedback and input affordances.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 rounded-3" style="background:rgba(255,255,255,0.02);" data-float-level="2">
+          <h5>3D Product Showcases</h5>
+          <p class="text-muted small">Model viewers, configurable products and physics-forward interactions.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 rounded-3" style="background:rgba(255,255,255,0.02);" data-float-level="3">
+          <h5>Performance-first</h5>
+          <p class="text-muted small">Lazy-loaded models, low-poly fallbacks and LOD for speed across regions.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Next Section -->
-  <section style="background:#333;">
-    <h1>Next Section 🚀</h1>
+  <!-- WORK -->
+  <section id="work" class="container py-5">
+    <h3 class="fw-bold">Selected case studies</h3>
+    <div class="row mt-3 g-3">
+      <div class="col-md-4">
+        <div class="case-card card-depth" data-case="1">
+          <div style="height:160px;background:linear-gradient(180deg,#0b1220,#061022);border-radius:10px"></div>
+          <div class="fw-semibold mt-3">Project 1</div>
+          <div class="small text-muted">Design system, complex animations, and internationalization.</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="case-card card-depth" data-case="2">
+          <div style="height:160px;background:linear-gradient(180deg,#0b1220,#061022);border-radius:10px"></div>
+          <div class="fw-semibold mt-3">Project 2</div>
+          <div class="small text-muted">3D product configurator and motion system.</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="case-card card-depth" data-case="3">
+          <div style="height:160px;background:linear-gradient(180deg,#0b1220,#061022);border-radius:10px"></div>
+          <div class="fw-semibold mt-3">Project 3</div>
+          <div class="small text-muted">International deployment & performance tuning.</div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- PRICING -->
+  <section id="pricing" class="container py-5">
+    <h3 class="fw-bold">Pricing</h3>
+    <div class="row mt-3 g-3">
+      <div class="col-md-4">
+        <div class="p-4 rounded-3 case-card card-depth" data-float-level="2">
+          <div class="small text-muted">Starter</div>
+          <div class="h4 fw-bold">$5k</div>
+          <div class="small text-muted">Design audit, landing page, basic animations</div>
+          <div class="mt-3"><button class="btn btn-outline-light w-100">Choose</button></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 rounded-3 case-card card-depth" data-float-level="3">
+          <div class="small text-white">Growth</div>
+          <div class="h4 fw-bold text-white">$15k</div>
+          <div class="small text-white">Design system, multiple pages, advanced animations</div>
+          <div class="mt-3"><button class="btn btn-dark w-100">Choose</button></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 rounded-3 case-card card-depth" data-float-level="1">
+          <div class="small text-muted">Enterprise</div>
+          <div class="h4 fw-bold">Custom</div>
+          <div class="small text-muted">Full stack, SLA & monitoring, performance budget</div>
+          <div class="mt-3"><button class="btn btn-outline-light w-100">Choose</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <footer id="contact" class="container py-5">
+    <div class="mx-auto" style="max-width:720px;text-align:center">
+      <h4 class="fw-bold">Let's make something beautiful</h4>
+      <p class="text-muted">Tell us about your project — we'll prepare a global-ready plan with animations, performance targets and a deployment strategy.</p>
+
+      <form class="mt-4">
+        <div class="row g-2">
+          <div class="col-md-6"><input class="input-soft w-100" placeholder="Company / Name" /></div>
+          <div class="col-md-6"><input class="input-soft w-100" placeholder="Email" /></div>
+          <div class="col-12 mt-2"><textarea class="input-soft w-100" rows="4" placeholder="Project summary"></textarea></div>
+        </div>
+        <div class="mt-3"><button class="btn btn-primary" style="background:linear-gradient(90deg,#6366f1,#ec4899);border:none;">Send</button></div>
+      </form>
+
+      <div class="small text-muted mt-4">© <span id="year"></span> Aurora Labs — International digital craft</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/controls/OrbitControls.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+
   <script>
+    // --- basic DOM setup ---
+    document.getElementById('year').textContent = new Date().getFullYear();
     gsap.registerPlugin(ScrollTrigger);
 
-    // Animation timeline
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".gallery-section",
-        start: "top top",
-        end: "+=200%", // longer scroll to keep banner fixed
-        scrub: true,
-        pin: true
-      }
+    // feature flags (only heavy 3d on md+)
+    const enable3D = window.matchMedia('(min-width: 768px)').matches;
+
+    // normalized mouse pos for parallax (-1..1)
+    let mouseX = 0, mouseY = 0;
+    window.addEventListener('mousemove', (e)=>{
+      const cx = window.innerWidth/2, cy = window.innerHeight/2;
+      mouseX = (e.clientX - cx) / cx;
+      mouseY = (e.clientY - cy) / cy;
     });
 
-    // Phase 1 → enter: side images disappear, center expands
-    tl.to(".gallery img.outer", {x: -400, opacity: 0, duration: 1}, 0);
-    tl.to(".gallery img.mid:first-of-type", {x: -200, opacity: 0, duration: 1}, 0);
-    tl.to(".gallery img.mid:last-of-type", {x: 200, opacity: 0, duration: 1}, 0);
-    tl.to(".gallery img.outer:last-of-type", {x: 400, opacity: 0, duration: 1}, 0);
+    // reduce render rate for performance (e.g., 60 -> 45 fps)
+    const frameCap = 1000/45;
+    let lastFrame = 0;
 
-    tl.to(".gallery img.center", {
-      width: "100vw",
-      height: "100vh",
-      duration: 1
-    }, 0);
+    // --- GSAP scene + DOM motion setup ---
 
-    tl.to(".banner-text", {opacity: 1, y: -50, duration: 1}, 0.5);
+    // hero entrance + subtitle micro movement (parallax-linked)
+    gsap.from('#heroTitle', { y: 24, opacity: 0, duration: 0.9, ease: 'power3.out' });
+    gsap.from('#heroSub', { y: 18, opacity: 0, duration: 1, delay: .12, ease: 'power3.out' });
 
-    // Phase 2 → exit: when leaving section, shrink back & restore side images
-    tl.to(".banner-text", {opacity: 0, y: 0, duration: 1}, "exit");
-    tl.to(".gallery img.center", {
-      width: "220px",
-      height: "500px",
-      duration: 1
-    }, "exit");
-    tl.to(".gallery img.outer", {x: 0, opacity: 1, duration: 1}, "exit");
-    tl.to(".gallery img.mid", {x: 0, opacity: 1, duration: 1}, "exit");
+    // floating tiny movements for many elements (gives a "3D in DOM" feel) - uses data-float-level
+    const floatEls = gsap.utils.toArray('[data-float-level]');
+    floatEls.forEach(el=>{
+      const lvl = parseFloat(el.dataset.floatLevel) || 1;
+      gsap.to(el, {
+        y: `+=${6 * lvl}`,
+        x: `+=${4 * lvl}`,
+        repeat: -1, yoyo: true, ease: 'sine.inOut', duration: 3.2 + lvl * 0.8,
+        modifiers: { x: v => v } // ensures transform-friendly animation
+      });
+    });
+
+    // per-card hover tilt and depth
+    const cards = document.querySelectorAll('.case-card, .stat, .case-card .btn, .cta-btn, .p-4.rounded-3');
+    cards.forEach(card=>{
+      card.addEventListener('pointermove', (ev)=>{
+        const r = card.getBoundingClientRect();
+        const px = (ev.clientX - r.left) / r.width; // 0..1
+        const py = (ev.clientY - r.top) / r.height;
+        const rx = (py - 0.5) * -12; // rotateX
+        const ry = (px - 0.5) * 18;  // rotateY
+        gsap.to(card, { rotationX: rx, rotationY: ry, scale: 1.02, transformPerspective:800, transformOrigin: 'center', duration: 0.25, ease:'power3.out' });
+        // deepen shadow
+        const after = card.querySelector('::after'); // fallback; we also animate boxShadow
+        gsap.to(card, { boxShadow: `${(px-0.5)*12}px ${(py-0.5)*12}px 40px rgba(2,6,23,0.6)`, duration:.25 });
+      });
+      card.addEventListener('pointerleave', ()=> {
+        gsap.to(card, { rotationX: 0, rotationY: 0, scale: 1, boxShadow: 'none', duration: 0.5, ease:'power3.out' });
+      });
+    });
+
+    // nav item hover micro move
+    document.querySelectorAll('.nav-link-anim').forEach((link) => {
+      link.addEventListener('mouseenter', ()=> gsap.to(link, { y: -3, duration: .18 }));
+      link.addEventListener('mouseleave', ()=> gsap.to(link, { y: 0, duration: .18 }));
+    });
+
+    // scroll-triggered reveal for cards (staggered)
+    gsap.utils.toArray('.case-card, .p-4.rounded-3, .stat').forEach((el, i) => {
+      gsap.from(el, {
+        y: 28, opacity: 0, duration: 0.9, delay: i * 0.06,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 88%' }
+      });
+    });
+
+    // blob subtle orbit synced with mouse
+    function updateBlobs(){
+      const b1 = document.getElementById('blob1');
+      const b2 = document.getElementById('blob2');
+      if(b1 && b2){
+        gsap.to(b1, { x: mouseX * 18 + Math.sin(Date.now()/1400)*6, y: mouseY * 18 + Math.cos(Date.now()/1700)*6, duration: .4, ease: 'power2.out' });
+        gsap.to(b2, { x: mouseX * -18 + Math.cos(Date.now()/1700)*6, y: mouseY * -10 + Math.sin(Date.now()/1400)*6, duration: .4, ease: 'power2.out' });
+      }
+    }
+    gsap.ticker.add(updateBlobs);
+
+    // NAV shrink on scroll
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 30) nav.classList.add('small');
+      else nav.classList.remove('small');
+    });
+
+    // --- THREE.JS enhanced scene: reactive + timeline-driven ---
+    if (enable3D) {
+      (function initThree(){
+        const canvas = document.getElementById('threeCanvas');
+        const fallback = document.getElementById('canvasFallback');
+
+        // renderer
+        const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, preserveDrawingBuffer:false });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); // cap DPR for perf
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
+        renderer.outputEncoding = THREE.sRGBEncoding;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+
+        // scene & camera
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(50, canvas.clientWidth/canvas.clientHeight, 0.1, 100);
+        camera.position.set(0, 0.7, 3);
+
+        // LIGHTS - layered for depth
+        const hemi = new THREE.HemisphereLight(0xffffff, 0x222233, 0.5);
+        scene.add(hemi);
+        const key = new THREE.DirectionalLight(0xffffff, 1.0);
+        key.position.set(4, 6, 4); scene.add(key);
+        const rim = new THREE.DirectionalLight(0xff88aa, 0.25); rim.position.set(-4, -2, -3); scene.add(rim);
+
+        // central group (we animate this)
+        const root = new THREE.Group();
+        scene.add(root);
+
+        // materials
+        const ringMat = new THREE.MeshStandardMaterial({ color: 0x8b5cf6, metalness: 0.95, roughness: 0.08, envMapIntensity: 1 });
+        const coreMat = new THREE.MeshStandardMaterial({ color: 0xec4899, metalness: 0.75, roughness: 0.15 });
+
+        // central glossy ring
+        const torusGeo = new THREE.TorusGeometry(0.7, 0.15, 28, 64);
+        const torus = new THREE.Mesh(torusGeo, ringMat);
+        torus.rotation.x = Math.PI*0.1;
+        root.add(torus);
+
+        // inner emblem
+        const icoGeo = new THREE.IcosahedronGeometry(0.28, 1);
+        const ico = new THREE.Mesh(icoGeo, coreMat);
+        ico.position.y = 0.06;
+        root.add(ico);
+
+        // extra dynamic element: ribbon (thin tube) that pulses
+        const curve = new THREE.CatmullRomCurve3([
+          new THREE.Vector3(0.0, 0.45, 0.0),
+          new THREE.Vector3(0.9, 0.1, -0.4),
+          new THREE.Vector3(0.0, -0.15, 0.6),
+          new THREE.Vector3(-0.8, 0.05, -0.3),
+          new THREE.Vector3(0.1, 0.35, -0.1),
+        ]);
+        const tubeGeo = new THREE.TubeGeometry(curve, 64, 0.03, 8, true);
+        const tubeMat = new THREE.MeshStandardMaterial({ color: 0x60a5fa, emissive: 0x203fef, emissiveIntensity: 0.25, metalness: 0.6, roughness: 0.25 });
+        const ribbon = new THREE.Mesh(tubeGeo, tubeMat);
+        ribbon.position.set(0, -0.05, 0);
+        root.add(ribbon);
+
+        // satellites (same as earlier)
+        const satGroup = new THREE.Group();
+        const satCols = [0x60a5fa, 0x34d399, 0xfbbf24];
+        for (let i=0;i<3;i++){
+          const sGeo = new THREE.SphereGeometry(0.08 - i*0.01, 24, 24);
+          const sMat = new THREE.MeshStandardMaterial({ color: satCols[i], metalness: 0.6, roughness: 0.25, emissive: 0x000000 });
+          const s = new THREE.Mesh(sGeo, sMat);
+          satGroup.add(s);
+        }
+        root.add(satGroup);
+
+        // low-res environment via simple skybox-like color
+        scene.background = new THREE.Color(0x000000);
+
+        // controls (gentle)
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enablePan = false; controls.enableZoom = false;
+        controls.minPolarAngle = Math.PI/3.2; controls.maxPolarAngle = Math.PI/2.2;
+        controls.enableDamping = true; controls.dampingFactor = 0.08;
+        controls.rotateSpeed = 0.35;
+
+        // timeline-driven choreo with GSAP (coordinated 3D motion)
+        const tl = gsap.timeline({ repeat: -1, yoyo: true, defaults: { duration: 4, ease: 'sine.inOut' } });
+        tl.to(torus.rotation, { z: Math.PI*0.06 }, 0);
+        tl.to(ico.rotation, { x: Math.PI*0.6, y: Math.PI*0.9 }, 0);
+        tl.to(ribbon.rotation, { y: Math.PI*1.0 }, 0);
+        tl.to(root.position, { y: 0.06 }, 0);
+
+        // subtle particle field as Points
+        const particlesCount = 60;
+        const pGeo = new THREE.BufferGeometry();
+        const pPos = new Float32Array(particlesCount*3);
+        for (let i=0;i<particlesCount;i++){
+          pPos[i*3] = (Math.random()-0.5) * 3.6;
+          pPos[i*3+1] = (Math.random()-0.5) * 2.2;
+          pPos[i*3+2] = (Math.random()-0.5) * 3.6;
+        }
+        pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+        const pMat = new THREE.PointsMaterial({ size: 0.03, color: 0xffffff, transparent:true, opacity:0.65 });
+        const points = new THREE.Points(pGeo, pMat);
+        scene.add(points);
+
+        // reactive mouse influence: drive small rotation + ribbon warp
+        function applyMouseTo3D(){
+          // apply smoothed rotation to root based on mouseX/mouseY
+          const targetY = mouseX * 0.25;
+          const targetX = -mouseY * 0.12;
+          gsap.to(root.rotation, { x: targetX, y: targetY, duration: 0.6, ease: 'power2.out' });
+
+          // ribbon emissive/pulse based on distance of mouse from center
+          const intensity = 0.2 + Math.abs(mouseX)*0.6 + Math.abs(mouseY)*0.3;
+          gsap.to(tubeMat, { emissiveIntensity: intensity, duration: 0.5, ease: 'power2.out' });
+
+          // move camera subtly for parallax
+          gsap.to(camera.position, { x: mouseX * 0.25, y: 0.7 + mouseY * 0.15, duration: 0.6, ease: 'power2.out' });
+        }
+
+        // responsive resize
+        function onResize(){
+          const w = canvas.clientWidth;
+          const h = canvas.clientHeight;
+          renderer.setSize(w, h, false);
+          camera.aspect = w/h;
+          camera.updateProjectionMatrix();
+        }
+        window.addEventListener('resize', onResize);
+
+        // fade out fallback
+        fallback.style.opacity = '1';
+        setTimeout(()=> { fallback.style.transition = 'opacity 0.6s'; fallback.style.opacity = '0'; setTimeout(()=>fallback.remove(),700); }, 700);
+
+        // render loop with capped frame rate
+        const clock = new THREE.Clock();
+        function render(now){
+          if (now - lastFrame < frameCap) {
+            requestAnimationFrame(render); return;
+          }
+          lastFrame = now;
+
+          const t = clock.getElapsedTime();
+          // continuous small motions
+          torus.rotation.y += 0.0025 + Math.sin(t*0.8)*0.0008;
+          ico.rotation.x += 0.017 + Math.cos(t*0.6)*0.0015;
+          satGroup.rotation.y += 0.003 + Math.sin(t*0.4)*0.001;
+
+          // orbit satellites positions
+          for (let i=0;i<satGroup.children.length;i++){
+            const m = satGroup.children[i];
+            const ang = t * (0.6 + i * 0.15) + i * 2;
+            m.position.x = Math.cos(ang) * (0.9 + i * 0.12);
+            m.position.z = Math.sin(ang) * (0.9 + i * 0.12);
+            m.position.y = Math.sin(t * (1 + i * 0.3)) * 0.085;
+          }
+
+          // particles slow drift
+          points.rotation.y += 0.0009;
+
+          // apply mouse influence
+          applyMouseTo3D();
+
+          controls.update();
+          renderer.render(scene, camera);
+          requestAnimationFrame(render);
+        }
+        requestAnimationFrame(render);
+      })();
+    } else {
+      // if 3D disabled, remove fallback text (canvas hidden by CSS)
+      const fallback = document.getElementById('canvasFallback');
+      if (fallback) fallback.textContent = '';
+    }
+
+    // small utility: synchronize a DOM parallax with mouse and scroll (gives impression of unified 3D)
+    function domParallaxTick(){
+      // hero text slight tilt and translate
+      gsap.to('#heroTitle', { x: mouseX * 18, y: mouseY * 8, rotationY: mouseX * 4, duration: 0.8, ease: 'power2.out' });
+      gsap.to('#hero3DText', { x: -mouseX * 12, y: -mouseY * 6, duration: 0.9, ease: 'power2.out' });
+
+      // stats subtle pop based on mouseY
+      document.querySelectorAll('.stat').forEach((el, idx) => {
+        const depth = el.dataset.floatLevel || 1;
+        gsap.to(el, { y: (mouseY * 6) * depth, x: (mouseX * 6) * depth, duration: 0.6, ease:'power2.out' });
+      });
+    }
+    gsap.ticker.add(domParallaxTick);
+
+    // accessibility: keyboard focus outlines when tabbing
+    document.body.addEventListener('keyup', (e)=>{ if(e.key === 'Tab') document.body.classList.add('show-focus'); });
+
   </script>
-
 </body>
 </html>
+
+
+3rd design 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wanaka Style Premium Clone</title>
+
+<!-- GSAP & ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  padding: 100px 20px;
+  transition: background 1s ease, color 1s ease;
+}
+
+body[data-theme="dark"] {
+  background: #111;
+  color: #fff;
+}
+
+body[data-theme="light"] {
+  background: #f8f9fa;
+  color: #111;
+}
+
+.split span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.horizontal-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.panel {
+  flex: 0 0 100vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.panel img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.2);
+}
+
+.image-mask {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #111;
+  transform-origin: left;
+  transform: scaleX(1);
+  z-index: 2;
+}
+
+section[data-bg] {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+footer {
+  padding: 50px;
+  text-align: center;
+}
+</style>
+</head>
+<body data-theme="dark">
+
+<!-- HEADER SECTION -->
+<section id="header" data-bg="https://picsum.photos/1600/900?random=10">
+  <div class="container text-center">
+    <h1 class="split">Premium Studio Clone</h1>
+    <p>Dummy subtitle with smooth split-text animation</p>
+  </div>
+</section>
+
+<!-- HORIZONTAL SCROLL SECTION -->
+<section class="horizontal-scroll">
+  <div class="panel image-panel">
+    <div class="image-mask"></div>
+    <img src="https://picsum.photos/1600/900?random=1" alt="Dummy Image">
+  </div>
+  <div class="panel image-panel">
+    <div class="image-mask"></div>
+    <img src="https://picsum.photos/1600/900?random=2" alt="Dummy Image">
+  </div>
+  <div class="panel image-panel">
+    <div class="image-mask"></div>
+    <img src="https://picsum.photos/1600/900?random=3" alt="Dummy Image">
+  </div>
+</section>
+
+<!-- IMAGE REVEAL SECTION -->
+<section data-bg="https://picsum.photos/1600/900?random=5">
+  <div class="container text-center">
+    <h1 class="split">Image Reveal Section</h1>
+    <p>Dummy content showcasing premium animation.</p>
+  </div>
+</section>
+
+<!-- PARALLAX SECTION -->
+<section data-bg="https://picsum.photos/1600/900?random=6">
+  <div class="container text-center">
+    <h1 class="split">Parallax Background Section</h1>
+    <p>Another dummy section with background parallax.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Dummy Footer © 2025</p>
+</footer>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// Split-text animation
+document.querySelectorAll(".split").forEach(el => {
+  const text = el.innerText;
+  el.innerHTML = text.split("").map(char => `<span>${char}</span>`).join("");
+  gsap.fromTo(el.querySelectorAll("span"), 
+    {y:50, opacity:0}, 
+    {
+      y:0, opacity:1, 
+      stagger:0.05, duration:1, ease:"power4.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 80%",
+        toggleActions: "play none none reverse"
+      }
+    }
+  );
+});
+
+// Horizontal scroll section
+let scrollContainer = document.querySelector(".horizontal-scroll");
+let panels = gsap.utils.toArray(".panel");
+
+gsap.to(panels, {
+  xPercent: -100 * (panels.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".horizontal-scroll",
+    pin: true,
+    scrub: 1,
+    snap: 1 / (panels.length - 1),
+    end: () => "+=" + scrollContainer.offsetWidth
+  }
+});
+
+// Image reveal animation
+document.querySelectorAll(".image-panel").forEach(panel=>{
+  let img = panel.querySelector("img");
+  let mask = panel.querySelector(".image-mask");
+
+  gsap.set(img,{scale:1.2});
+  gsap.set(mask,{scaleX:1});
+
+  ScrollTrigger.create({
+    trigger:panel,
+    start:"top 80%",
+    end:"top 20%",
+    onEnter:()=>{
+      gsap.timeline()
+        .to(mask,{scaleX:0,duration:1.2,ease:"power3.inOut"})
+        .to(img,{scale:1,duration:1.2,ease:"power3.inOut"},"-=1");
+    },
+    onLeaveBack:()=>{
+      gsap.timeline()
+        .to(mask,{scaleX:1,duration:1.2,ease:"power3.inOut"})
+        .to(img,{scale:1.2,duration:1.2,ease:"power3.inOut"},"-=1");
+    }
+  });
+});
+
+// Background theme changes
+gsap.utils.toArray("section").forEach((section, index) => {
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top 50%",
+    end: "bottom 50%",
+    onEnter: () => {
+      document.body.setAttribute("data-theme", index % 2 === 0 ? "dark" : "light");
+    },
+    onEnterBack: () => {
+      document.body.setAttribute("data-theme", index % 2 === 0 ? "dark" : "light");
+    }
+  });
+});
+
+// Section background parallax
+document.querySelectorAll("section[data-bg]").forEach(section => {
+  section.style.backgroundImage = `url(${section.getAttribute("data-bg")})`;
+  gsap.from(section, {
+    backgroundPosition: "50% 0%",
+    ease: "none",
+    scrollTrigger: {
+      trigger: section,
+      scrub: true
+    }
+  });
+});
+</script>
+</body>
+</html>
+
+

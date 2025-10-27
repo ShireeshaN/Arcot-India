@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 
-   <head>
-    <meta charset="utf-8">
-    <title>Arcot Industries Private Limited </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="keywords" content="Arcot Industries, Power Solutions, Energy Management, Lighting Systems, Electrical Infrastructure, India">
-    <meta name="description" content="Arcot Industries Private Limited provides cutting-edge solutions in power distribution, energy management, and innovative lighting systems across India.">
-    <meta name="author" content="Arcot Industries">
+  <head>
+        <meta charset="utf-8">
+        <title>Arcot Industries Private Limited</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="keywords" content="About Arcot Industries, Engineering Company India, Smart City Solutions, Power Solutions, Energy Solutions, Lighting Systems, Automation Systems, R&D in Technology, Sustainable Infrastructure, Hyderabad Engineering Company">
+        <meta name="description" content="Learn about Arcot Industries — a pioneering engineering company offering sustainable and innovative solutions in Power, Energy, Lighting, Automation, Smart City Infrastructure, and R&D. Driven by innovation, powered by excellence.">
+       <link rel="icon" href="img/fevi.png" type="image/x-icon">
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
 
-    <!-- Favicon -->
-   <link rel="icon" href="img/fevi.png" type="image/x-icon">
+        <!-- Font Awesome (latest) -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"> -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+        
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome (latest) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Animation & Carousel Libraries -->
-    <link rel="stylesheet" href="lib/animate/animate.min.css">
-    <link rel="stylesheet" href="lib/owlcarousel/assets/owl.carousel.min.css">
-
-    <!-- Bootstrap & Custom CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-</head>
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
 
-    <body style="background-color:#060505">
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+           <link href="css/segments.css" rel="stylesheet">
+           <!-- GSAP & ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+
+    <body >
 
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -56,6 +62,7 @@
           <a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a>
         </li>
         <li><a href="solution.html">Solutions</a></li>
+        <li><a href="r_and_d.html">R&D</a></li>
     <li><a href="applications.html">Applications</a></li>
    <li><a href="gallery.html" >Gallery</a></li>
            <li><a href="contact.html">Contact</a></li>
@@ -157,7 +164,7 @@
 
 
        
-     <style>
+     <!-- <style>
  
 
    
@@ -270,7 +277,4513 @@
     <h2 class="text-white">Want to Build Smarter Cities?</h2>
     <p>Partner with us to deploy next-gen Smart Poles in your town, campus, or city.</p>
     <a href="contact.html" class="cta-button">Get in Touch</a>
-  </section>
+  </section> -->
+
+<div class="hero">
+  <h1>Arcot SmartPole</h1>
+  <p >Redefining urban infrastructure with intelligence, design & innovation.</p>
+
+</div>
+<!-- SMARTPOLE FEATURE SECTION -->
+<section class="smartpole-section" id="smartpole">
+
+  <div class="features-container">
+    <div class="features-list" id="featuresLeft"></div>
+
+    <div class="product-display" id="imageContainer">
+      <!-- Single common image -->
+      <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image active" alt="Smartpole Product">
+    </div>
+
+    <div class="features-list" id="featuresRight"></div>
+  </div>
+</section>
+
+<script>
+// FEATURES DATA (with icon class names)
+const features = [
+  {icon:"fa-solid fa-bolt", name:"EV Charger", desc:"Fast, efficient EV charging; solar/wind integration and QR payments."},
+  {icon:"fa-solid fa-triangle-exclamation", name:"Emergency SOS Alert", desc:"Instant SOS with GPS, voice/push activation and ICCC integration."},
+  {icon:"fa-solid fa-plug", name:"Wired Charging", desc:"Weatherproof, safe plug-and-charge with real-time power & metering."},
+  {icon:"fa-solid fa-wifi", name:"Wireless Charging", desc:"Contactless EV charging for convenient public/fleet use."},
+  {icon:"fa-solid fa-wind", name:"Air Quality Sensor", desc:"Real-time PM/CO₂/NO₂ monitoring with IoT reporting and alerts."},
+  {icon:"fa-solid fa-display", name:"Air Quality Screen", desc:"Outdoor AQI display with auto-brightness and public alerts."},
+  {icon:"fa-solid fa-lightbulb", name:"Street Lighting", desc:"Smart dimmable LEDs with motion, schedules and solar option."},
+  {icon:"fa-solid fa-volume-high", name:"PA Loudspeaker", desc:"Weatherproof public address for alerts, announcements and events."},
+  {icon:"fa-solid fa-solar-panel", name:"Power Generation System", desc:"Solar/wind hybrid generation with battery storage."},
+  {icon:"fa-solid fa-tv", name:"RGB Pixel LED Screen", desc:"High-bright dynamic display for ads, alerts and info."},
+  {icon:"fa-solid fa-person-running", name:"Motion Detector", desc:"Day/night movement detection that triggers lights/cameras."},
+  {icon:"fa-solid fa-wifi", name:"Wi-Fi Hotspot", desc:"Public broadband access and IoT connectivity with secure access."},
+  {icon:"fa-solid fa-microphone", name:"Intercom", desc:"Two-way citizen ↔ control center communication (audio/video)."},
+  {icon:"fa-solid fa-tablet-screen-button", name:"Android Touch Screen", desc:"Outdoor info kiosk: maps, tickets, navigation & services."},
+  {icon:"fa-solid fa-robot", name:"AI-Based Voice Communication", desc:"Multilingual voice assistant for info and commands."},
+  {icon:"fa-solid fa-camera", name:"AI-Based Camera", desc:"Smart video analytics (detection, ANPR, alerts) with edge/cloud support."},
+];
+
+const leftContainer = document.getElementById('featuresLeft');
+const rightContainer = document.getElementById('featuresRight');
+const image = document.querySelector('.product-image');
+
+const leftFeatures = features.slice(0, 8);
+const rightFeatures = features.slice(8, 16);
+
+function createFeatureElement(f, i) {
+  const div = document.createElement('div');
+  div.classList.add('feature');
+  if (i === 0) div.classList.add('active');
+  div.innerHTML = `
+    <div class="feature-header">
+      <i class="${f.icon} feature-icon"></i>
+      <span class="feature-title">${f.name}</span>
+    </div>
+    <div class="feature-desc">${f.desc}</div>
+  `;
+  div.addEventListener('click', () => setActiveFeature(i, true));
+  return div;
+}
+
+function setActiveFeature(i, manual=false) {
+  document.querySelectorAll('.feature').forEach(el => el.classList.remove('active'));
+  const allFeatures = document.querySelectorAll('.feature');
+  allFeatures[i].classList.add('active');
+  animateImage();
+  if (manual) {
+    clearInterval(autoCycle);
+    autoCycle = setInterval(nextFeature, 4000);
+  }
+}
+
+function animateImage() {
+  gsap.fromTo(image, 
+    { scale: 1.05, rotateY: 10, opacity: 0.6 },
+    { scale: 1, rotateY: 0, opacity: 1, duration: 1.4, ease: "power3.out" }
+  );
+}
+
+leftFeatures.forEach((f, i) => leftContainer.appendChild(createFeatureElement(f, i)));
+rightFeatures.forEach((f, i) => rightContainer.appendChild(createFeatureElement(f, i + 8)));
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Section animation
+gsap.to(".smartpole-section", {
+  opacity: 1, y: 0, duration: 1.2, ease: "power3.out",
+  scrollTrigger: { trigger: ".smartpole-section", start: "top 80%" }
+});
+
+// Left-right entry
+gsap.from(".features-list", {
+  opacity: 0,
+  x: i => (i === 0 ? -100 : 100),
+  duration: 1.3,
+  stagger: 0.2,
+  ease: "power2.out",
+  scrollTrigger: { trigger: ".features-container", start: "top 85%" }
+});
+
+// AUTO CYCLE
+let currentIndex = 0;
+function nextFeature() {
+  currentIndex = (currentIndex + 1) % features.length;
+  setActiveFeature(currentIndex);
+}
+let autoCycle = setInterval(nextFeature, 4000);
+</script>
+
+
+<style>
+
+    /* --- HERO SECTION --- */
+.hero {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #222;
+}
+
+.hero h1 {
+  font-family: "Roboto" sans-serif;
+  font-size: 3rem;
+  letter-spacing: 4px;
+  font-weight: 400;
+  background: linear-gradient(90deg, #ffffff, #a1a1a1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  opacity: 1;
+  transform: none;
+}
+
+.hero p {
+ font-family: "Roboto" sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: #cfcfcf;
+  margin-top: 8px;
+  opacity: 1;
+  transform: none;
+}
+/* --- SMARTPOLE SECTION --- */
+.smartpole-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 100px;
+  background-color: #222;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.features-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1600px;
+  gap: 60px;
+}
+
+/* --- FEATURE LISTS --- */
+.features-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 3;
+}
+
+.feature {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 14px 22px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: azure;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.feature:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(4px);
+}
+
+.feature.active {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 25px rgba(255,255,255,0.25);
+}
+
+.feature-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feature-icon {
+  font-size: 1.2rem;
+}
+
+.feature-desc {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  color: #111;
+  line-height: 1.4;
+}
+
+.feature.active .feature-desc {
+  max-height: 160px;
+  opacity: 1;
+}
+
+/* --- PRODUCT DISPLAY --- */
+.product-display {
+  flex: 1.4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  perspective: 1200px;
+}
+
+.product-image {
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(1);
+  transition: opacity 1.2s ease, transform 1.8s ease;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .features-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .product-display {
+    order: -1;
+    height: 50vh;
+  }
+
+  .product-image {
+    width: 70%;
+  }
+
+  .features-list {
+    width: 100%;
+    align-items: center;
+  }
+
+  .feature {
+    width: 200%;
+  }
+
+  .feature-header {
+    justify-content: flex-start;
+  }
+}
+</style>
+
+
+<!-- section-1 -->
+
+ <style>
+   
+    .mainfeatures-section {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+      /* margin-bottom: 60px;  */
+      /* bottom gap added */
+    }
+
+    /* LEFT CONTENT AREA */
+    .mainfeatures-left-block {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
+
+    .mainfeatures-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .mainfeatures-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .mainfeatures-link {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .mainfeatures-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .mainfeatures-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mainfeatures-features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .mainfeatures-features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .mainfeatures-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mainfeatures-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RIGHT IMAGE AREA */
+    .mainfeatures-right-block {
+      flex: 0.7;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mainfeatures-heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .mainfeatures-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .mainfeatures-left-block {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .mainfeatures-right-block {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .mainfeatures-heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .mainfeatures-features {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="mainfeatures-section">
+ 
+
+  <!-- LEFT SIDE -->
+  <div class="mainfeatures-left-block">
+    <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+    <div class="mainfeatures-description">
+      A smart and sustainable charging solution that efficiently powers electric vehicles while supporting cleaner and greener urban mobility.
+    </div>
+
+    <ul class="mainfeatures-features">
+      <li>Charges electric vehicles efficiently</li> 
+      <li>Reduces dependence on fossil fuels</li> 
+      <li>Supports fast charging</li> 
+      <li>Integrates with solar/wind energy systems</li> 
+      <li>Enables smart payment via QR</li> 
+      <li>Promotes eco-friendly urban transport</li> 
+      <li>Supports public and private charging setups</li> 
+      <li>Reduces air & noise pollution</li> 
+      <li>Compatible with multiple EV models</li> 
+      <li>Boosts sustainability image of the city</li> 
+    </ul>
+
+
+
+
+    <button class="mainfeatures-btn">
+      <a class="mainfeatures-link" href="contact.html">Know more →</a>
+    </button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="mainfeatures-right-block">
+    <div class="mainfeatures-heading">EV<br>Charger</div>
+  </div>
+</section>
+
+
+<!-- section-2 -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .modern-apartments-wrap {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+    }
+
+    /* LEFT IMAGE SECTION */
+    .apartments-image-side {
+      flex: 1;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .apartments-main-heading {
+      position: absolute;
+      top: 35%;
+      right: -8%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+
+    /* RIGHT TEXT SECTION */
+    .apartments-content-side {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 5rem 4rem 8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .apartments-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .apartments-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .apartments-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .apartments-feature-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .apartments-feature-list li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .apartments-feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .apartments-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .apartments-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .modern-apartments-wrap {
+        flex-direction: column;
+      }
+
+      .apartments-image-side {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .apartments-content-side {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .apartments-main-heading {
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .apartments-feature-list {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="modern-apartments-wrap">
+
+
+  <!-- LEFT IMAGE SECTION -->
+  <div class="apartments-image-side">
+    <div class="apartments-main-heading">Emergency<br>SOS Alerts</div>
+  </div>
+
+  <!-- RIGHT CONTENT SECTION -->
+  <div class="apartments-content-side">
+    <!-- <div class="apartments-logo">me.</div> -->
+    <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+    <div class="apartments-description">
+     A reliable safety system that provides immediate assistance during emergencies, connecting citizens to the nearest response centers and enhancing urban security.
+    </div>
+
+    <ul class="apartments-feature-list">
+      <li>Provides immediate emergency assistance</li> 
+      <li>Sends real-time alerts to control nearby centres</li> 
+      <li>Supports voice-based and push-button activation</li> 
+      <li>GPS-enabled location tracking</li> 
+      <li>Integrates with police, fire, and ambulance systems</li> 
+      <li>Operates during power outages</li> 
+      <li>Includes visual and audio signaling</li> 
+      <!-- <li>AI detects abnormal activities automatically</li> 
+      <li>Supports remote monitoring via ICCC</li> 
+      <li>Enhances citizen safety and security</li> -->
+    </ul>
+
+    <button class="apartments-btn">See more →</button>
+  </div>
+</section>
+
+<!-- section-1 -->
+
+ <style>
+   
+    .mainfeatures-section {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+      /* margin-bottom: 60px;  */
+      /* bottom gap added */
+    }
+
+    /* LEFT CONTENT AREA */
+    .mainfeatures-left-block {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
+
+    .mainfeatures-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .mainfeatures-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .mainfeatures-link {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .mainfeatures-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .mainfeatures-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mainfeatures-features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .mainfeatures-features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .mainfeatures-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mainfeatures-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RIGHT IMAGE AREA */
+    .mainfeatures-right-block {
+      flex: 0.7;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mainfeatures-heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .mainfeatures-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .mainfeatures-left-block {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .mainfeatures-right-block {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .mainfeatures-heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .mainfeatures-features {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="mainfeatures-section">
+ 
+
+  <!-- LEFT SIDE -->
+  <div class="mainfeatures-left-block">
+    <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+    <div class="mainfeatures-description">
+      A robust and safe wired charging solution that delivers fast, reliable power for various electric vehicles while optimizing energy use and minimizing downtime.
+    </div>
+
+    <ul class="mainfeatures-features">
+<li>Fast, stable wired EV charging interface</li> 
+<li>Safe plug-and-charge system</li> 
+<li>Weatherproof & vandal-proof sockets</li> 
+<li>Real-time power monitoring</li> 
+<li>Smart energy management through IoT</li> 
+<li>Suitable for cars, scooters, and e-bikes</li> 
+<li>Load-balanced multiple charging points</li> 
+<li>Integrated payment metering</li> 
+<li>Supports auto-shutdown after full charge</li>
+<li>Reduces charging downtime</li>
+    </ul>
+
+    <button class="mainfeatures-btn">
+      <a class="mainfeatures-link" href="contact.html">Know more →</a>
+    </button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="mainfeatures-right-block">
+    <div class="mainfeatures-heading">Wired<br>Charging</div>
+  </div>
+</section>
+
+
+<!-- section-2 -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .modern-apartments-wrap {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+    }
+
+    /* LEFT IMAGE SECTION */
+    .apartments-image-side {
+      flex: 1;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .apartments-main-heading {
+      position: absolute;
+      top: 35%;
+      right: -8%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+
+    /* RIGHT TEXT SECTION */
+    .apartments-content-side {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 5rem 4rem 8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .apartments-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .apartments-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .apartments-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .apartments-feature-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .apartments-feature-list li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .apartments-feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .apartments-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .apartments-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .modern-apartments-wrap {
+        flex-direction: column;
+      }
+
+      .apartments-image-side {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .apartments-content-side {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .apartments-main-heading {
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .apartments-feature-list {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="modern-apartments-wrap">
+
+
+  <!-- LEFT IMAGE SECTION -->
+  <div class="apartments-image-side">
+    <div class="apartments-main-heading">Wireless<br>Charging</div>
+  </div>
+
+  <!-- RIGHT CONTENT SECTION -->
+  <div class="apartments-content-side">
+    <!-- <div class="apartments-logo">me.</div> -->
+    <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+    <div class="apartments-description">
+      A contactless EV charging solution that offers convenience, safety, and futuristic infrastructure, ideal for public spaces and fleet charging hubs.
+    </div>
+
+    <ul class="apartments-feature-list">
+   <li>Contactless EV charging technology</li> 
+   <li>Convenient for users in public spaces</li> 
+   <li>Reduces wear and tear of connectors</li> 
+   <li>Safe and user-friendly operation</li> 
+   <li>Works with compatible EV models</li> 
+   <li>IoT-enabled monitoring and billing</li> 
+    <!--<li>Promotes futuristic infrastructure design</li> 
+   <li>Enables automatic alignment charging</li>
+    <li>Reduces human intervention</li> 
+    <li>Ideal for fleet and taxi charging hubs</li> -->
+    </ul>
+
+    <button class="apartments-btn">See more →</button>
+  </div>
+</section>
+
+<!-- section-1 -->
+
+ <style>
+   
+    .mainfeatures-section {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+      /* margin-bottom: 60px;  */
+      /* bottom gap added */
+    }
+
+    /* LEFT CONTENT AREA */
+    .mainfeatures-left-block {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
+
+    .mainfeatures-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .mainfeatures-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .mainfeatures-link {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .mainfeatures-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .mainfeatures-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mainfeatures-features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .mainfeatures-features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .mainfeatures-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mainfeatures-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RIGHT IMAGE AREA */
+    .mainfeatures-right-block {
+      flex: 0.7;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mainfeatures-heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .mainfeatures-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .mainfeatures-left-block {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .mainfeatures-right-block {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .mainfeatures-heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .mainfeatures-features {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="mainfeatures-section">
+ 
+
+  <!-- LEFT SIDE -->
+  <div class="mainfeatures-left-block">
+    <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+    <div class="mainfeatures-description">
+      An intelligent sensor system that monitors air pollutants in real-time, supports data-driven environmental policies, and helps cities maintain cleaner and healthier air.
+    </div>
+
+    <ul class="mainfeatures-features">
+      <li>Monitors PM2.5, PM10, CO₂, NO₂ levels</li> 
+      <li>Real-time air quality index display</li> 
+      <li>Helps in pollution control and city planning</li> 
+      <li>Data transmitted to ICCC via IoT</li> 
+      <li>AI predicts pollution trends</li>
+       <li>Alerts when air quality exceeds threshold</li>
+        <li>Supports citizen awareness programs</li>
+         <li>Integrates with smart pole display systems</li> 
+         <li>Enables data-driven environmental policies</li> 
+         <li>Low maintenance and long service life</li>
+    </ul>
+
+    <button class="mainfeatures-btn">
+      <a class="mainfeatures-link" href="contact.html">Know more →</a>
+    </button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="mainfeatures-right-block">
+    <div class="mainfeatures-heading">Air Quality<br>Sensor</div>
+  </div>
+</section>
+
+
+<!-- section-2 -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .modern-apartments-wrap {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+    }
+
+    /* LEFT IMAGE SECTION */
+    .apartments-image-side {
+      flex: 1;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .apartments-main-heading {
+      position: absolute;
+      top: 35%;
+      right: -8%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+
+    /* RIGHT TEXT SECTION */
+    .apartments-content-side {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 5rem 4rem 8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .apartments-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .apartments-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .apartments-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .apartments-feature-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .apartments-feature-list li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .apartments-feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .apartments-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .apartments-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .modern-apartments-wrap {
+        flex-direction: column;
+      }
+
+      .apartments-image-side {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .apartments-content-side {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .apartments-main-heading {
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .apartments-feature-list {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="modern-apartments-wrap">
+
+
+  <!-- LEFT IMAGE SECTION -->
+  <div class="apartments-image-side">
+    <div class="apartments-main-heading">Air Quality<br>Screen</div>
+  </div>
+
+  <!-- RIGHT CONTENT SECTION -->
+  <div class="apartments-content-side">
+    <!-- <div class="apartments-logo">me.</div> -->
+    <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+    <div class="apartments-description">
+      A public display system that shows live air quality data, promotes transparency, and engages citizens with real-time environmental information.
+    </div>
+
+    <ul class="apartments-feature-list">
+   <li>Displays live AQI data to citizens</li> 
+   <li>Integrates with environmental databases</li>
+    <li>Customizable LED visualization</li> 
+    <li>Energy-efficient, bright outdoor display</li> 
+    <li>Weatherproof & vandal-proof design</li> 
+    <li>Auto-brightness adjustment</li> 
+    <!-- <li>Supports public messages and alerts</li> 
+    <li>Enhances city transparency and engagement</li> 
+    <li>Connects to multiple sensor inputs</li> 
+    <li>Promotes public environmental awareness</li> -->
+    </ul>
+
+    <button class="apartments-btn">See more →</button>
+  </div>
+</section>
+
+<!-- section-1 -->
+
+ <style>
+   
+    .mainfeatures-section {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+      /* margin-bottom: 60px;  */
+      /* bottom gap added */
+    }
+
+    /* LEFT CONTENT AREA */
+    .mainfeatures-left-block {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
+
+    .mainfeatures-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .mainfeatures-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .mainfeatures-link {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .mainfeatures-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .mainfeatures-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mainfeatures-features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .mainfeatures-features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .mainfeatures-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mainfeatures-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RIGHT IMAGE AREA */
+    .mainfeatures-right-block {
+      flex: 0.7;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mainfeatures-heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .mainfeatures-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .mainfeatures-left-block {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .mainfeatures-right-block {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .mainfeatures-heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .mainfeatures-features {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="mainfeatures-section">
+ 
+
+  <!-- LEFT SIDE -->
+  <div class="mainfeatures-left-block">
+    <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+    <div class="mainfeatures-description">
+      Smart LED street lighting that saves energy, improves safety, and offers adaptive, IoT-controlled illumination for modern urban environments.
+    </div>
+
+    <ul class="mainfeatures-features">
+   <li>Smart LED lighting with dimming control</li> 
+   <li>Auto on/off via daylight sensors</li> 
+   <li>Reduces energy consumption up to 60%</li> 
+   <li>Integrated solar panel option</li> 
+   <li>Centralized remote management</li> 
+   <li>Motion-based adaptive brightness</li> 
+   <li>RGB options for events and alerts</li>
+  <li>Extended lifespan with low maintenance</li> 
+  <li>IoT-controlled group scheduling</li> 
+  <li>Enhances night visibility and safety</li>
+    </ul>
+
+    <button class="mainfeatures-btn">
+      <a class="mainfeatures-link" href="contact.html">Know more →</a>
+    </button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="mainfeatures-right-block">
+    <div class="mainfeatures-heading">Street<br>Lighting</div>
+  </div>
+</section>
+
+
+<!-- section-2 -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .modern-apartments-wrap {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+    }
+
+    /* LEFT IMAGE SECTION */
+    .apartments-image-side {
+      flex: 1;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .apartments-main-heading {
+      position: absolute;
+      top: 35%;
+      right: -8%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+
+    /* RIGHT TEXT SECTION */
+    .apartments-content-side {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 5rem 4rem 8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .apartments-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .apartments-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .apartments-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .apartments-feature-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .apartments-feature-list li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .apartments-feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .apartments-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .apartments-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .modern-apartments-wrap {
+        flex-direction: column;
+      }
+
+      .apartments-image-side {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .apartments-content-side {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .apartments-main-heading {
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .apartments-feature-list {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="modern-apartments-wrap">
+
+
+  <!-- LEFT IMAGE SECTION -->
+  <div class="apartments-image-side">
+    <div class="apartments-main-heading">PA<br>Loudspeaker</div>
+  </div>
+
+  <!-- RIGHT CONTENT SECTION -->
+  <div class="apartments-content-side">
+    <!-- <div class="apartments-logo">me.</div> -->
+    <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+    <div class="apartments-description">
+     A high-quality public announcement system that delivers clear audio for emergencies, community alerts, and event communications with smart integration.
+    </div>
+
+    <ul class="apartments-feature-list">
+      <li>Broadcasts emergency or public messages</li> 
+      <li>High-quality audio clarity and range</li> 
+      <li>Supports voice announcements and alerts</li> 
+      <li>Connects to ICCC or mobile command unit</li> 
+      <li>Weatherproof and tamper-resistant design</li>
+      <!-- <li>Enables community or event communication</li> 
+       <li>Multi-language announcement capability</li> 
+        <li>Scheduled or manual broadcasting</li> 
+       <li>Useful during disaster or evacuation events</li> 
+       <li>Integrates with AI voice automation</li> -->
+    </ul>
+
+    <button class="apartments-btn">See more →</button>
+  </div>
+</section>
+
+
+<!-- section-1 -->
+
+ <style>
+   
+    .mainfeatures-section {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+      /* margin-bottom: 60px;  */
+      /* bottom gap added */
+    }
+
+    /* LEFT CONTENT AREA */
+    .mainfeatures-left-block {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
+
+    .mainfeatures-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .mainfeatures-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .mainfeatures-link {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .mainfeatures-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .mainfeatures-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mainfeatures-features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .mainfeatures-features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .mainfeatures-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mainfeatures-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RIGHT IMAGE AREA */
+    .mainfeatures-right-block {
+      flex: 0.7;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mainfeatures-heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .mainfeatures-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .mainfeatures-left-block {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .mainfeatures-right-block {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .mainfeatures-heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .mainfeatures-features {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="mainfeatures-section">
+ 
+
+  <!-- LEFT SIDE -->
+  <div class="mainfeatures-left-block">
+    <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+    <div class="mainfeatures-description">
+      A smart and sustainable energy solution that integrates solar and wind hybrid systems to power urban infrastructure efficiently while reducing grid dependency.
+    </div>
+
+    <ul class="mainfeatures-features">
+    <li>Integrates solar or wind hybrid systems</li> 
+    <li>Ensures pole self-sustainability</li> 
+    <li>Reduces grid power dependency</li> 
+    <li>Energy stored in smart batteries</li> 
+    <li>Powers lights, sensors, and displays</li> 
+    <li>Monitors generation and consumption</li> 
+    <li>Low operational cost and green energy</li> 
+    <!-- <li>Resilient during outages or grid failures</li> 
+    <li>Supports remote energy management</li> 
+    <li>Contributes to city energy resilience</li> -->
+    </ul>
+
+    <button class="mainfeatures-btn">
+      <a class="mainfeatures-link" href="contact.html">Know more →</a>
+    </button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="mainfeatures-right-block">
+    <div class="mainfeatures-heading">Power Generation<br>System</div>
+  </div>
+</section>
+
+
+<!-- section-2 -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .modern-apartments-wrap {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+    }
+
+    /* LEFT IMAGE SECTION */
+    .apartments-image-side {
+      flex: 1;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .apartments-main-heading {
+      position: absolute;
+      top: 35%;
+      right: -8%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+
+    /* RIGHT TEXT SECTION */
+    .apartments-content-side {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 5rem 4rem 8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .apartments-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .apartments-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .apartments-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .apartments-feature-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .apartments-feature-list li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .apartments-feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .apartments-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .apartments-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .modern-apartments-wrap {
+        flex-direction: column;
+      }
+
+      .apartments-image-side {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .apartments-content-side {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .apartments-main-heading {
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .apartments-feature-list {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="modern-apartments-wrap">
+
+
+  <!-- LEFT IMAGE SECTION -->
+  <div class="apartments-image-side">
+    <div class="apartments-main-heading">RGB Pixel<br>LED Screen</div>
+  </div>
+
+  <!-- RIGHT CONTENT SECTION -->
+  <div class="apartments-content-side">
+    <!-- <div class="apartments-logo">me.</div> -->
+    <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+    <div class="apartments-description">
+      A full-color digital display that delivers dynamic content for advertising, alerts, and urban information while enhancing smart city engagement and branding.
+    </div>
+
+    <ul class="apartments-feature-list">
+   <li>Full-color dynamic digital display</li> 
+   <li>Displays ads, alerts, and traffic updates</li> 
+   <li>Supports image, video, and text content</li> 
+   <li>High-brightness and daylight visibility</li> 
+   <li>Controlled via centralized CMS</li> 
+   <li>Generates revenue via advertisements</li> 
+   <!-- <li>Integrated air quality and weather display</li> 
+   <li>IoT-enabled content scheduling</li> 
+   <li>Smart energy-saving operation</li> 
+   <li>Promotes smart city branding</li> -->
+    </ul>
+
+    <button class="apartments-btn">See more →</button>
+  </div>
+</section>
+
+<!-- section-1 -->
+
+ <style>
+   
+    .mainfeatures-section {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+      /* margin-bottom: 60px;  */
+      /* bottom gap added */
+    }
+
+    /* LEFT CONTENT AREA */
+    .mainfeatures-left-block {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
+
+    .mainfeatures-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .mainfeatures-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .mainfeatures-link {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .mainfeatures-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .mainfeatures-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mainfeatures-features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .mainfeatures-features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .mainfeatures-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mainfeatures-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RIGHT IMAGE AREA */
+    .mainfeatures-right-block {
+      flex: 0.7;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mainfeatures-heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .mainfeatures-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .mainfeatures-left-block {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .mainfeatures-right-block {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .mainfeatures-heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .mainfeatures-features {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="mainfeatures-section">
+ 
+
+  <!-- LEFT SIDE -->
+  <div class="mainfeatures-left-block">
+    <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+    <div class="mainfeatures-description">
+      An intelligent motion sensing system that detects movement, triggers automated responses, and enhances safety while optimizing energy usage.
+    </div>
+
+    <ul class="mainfeatures-features">
+    <li>Detects human and vehicle movement</li> 
+    <li>Triggers lights and cameras automatically</li> 
+    <li>Reduces unnecessary power consumption</li> 
+    <li>Integrates with AI surveillance systems</li> 
+    <li>Alerts ICCC in case of unusual activity</li>
+     <li>Supports perimeter security applications</li> 
+      <li>Adjustable sensitivity range</li> 
+     <!--<li>Enables predictive analytics for safety</li>
+      <li>Works seamlessly day and night</li> 
+      <li>Supports energy optimization</li> -->
+    </ul>
+
+    <button class="mainfeatures-btn">
+      <a class="mainfeatures-link" href="contact.html">Know more →</a>
+    </button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="mainfeatures-right-block">
+    <div class="mainfeatures-heading">Motion<br>Detectors</div>
+  </div>
+</section>
+
+
+<!-- section-2 -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .modern-apartments-wrap {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+    }
+
+    /* LEFT IMAGE SECTION */
+    .apartments-image-side {
+      flex: 1;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .apartments-main-heading {
+      position: absolute;
+      top: 35%;
+      right: -8%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+
+    /* RIGHT TEXT SECTION */
+    .apartments-content-side {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 5rem 4rem 8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .apartments-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .apartments-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .apartments-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .apartments-feature-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .apartments-feature-list li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .apartments-feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .apartments-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .apartments-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .modern-apartments-wrap {
+        flex-direction: column;
+      }
+
+      .apartments-image-side {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .apartments-content-side {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .apartments-main-heading {
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .apartments-feature-list {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="modern-apartments-wrap">
+
+
+  <!-- LEFT IMAGE SECTION -->
+  <div class="apartments-image-side">
+    <div class="apartments-main-heading">Wi-Fi<br>Hotspot</div>
+  </div>
+
+  <!-- RIGHT CONTENT SECTION -->
+  <div class="apartments-content-side">
+    <!-- <div class="apartments-logo">me.</div> -->
+    <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+    <div class="apartments-description">
+      A reliable public wireless network that provides high-speed connectivity, supports IoT devices, and promotes digital inclusion in smart cities.
+    </div>
+
+    <ul class="apartments-feature-list">
+ <li>Provides free/public wireless connectivity</li> 
+ <li>Supports high-speed broadband</li> 
+ <li>Enhances smart city connectivity</li> 
+ <li>Integrates with telecom network providers</li> 
+ <li>Promotes digital inclusion for citizens</li> 
+ <li>Supports IoT device communication</li> 
+ <!-- <li>Enables remote device management</li> 
+ <li>Secure and encrypted access points</li> 
+ <li>Helps emergency responders stay connected</li> 
+ <li>Can be monetized via service plans</li> -->
+    </ul>
+
+    <button class="apartments-btn">See more →</button>
+  </div>
+</section>
+
+<!-- section-1 -->
+
+ <style>
+   
+    .mainfeatures-section {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+      /* margin-bottom: 60px;  */
+      /* bottom gap added */
+    }
+
+    /* LEFT CONTENT AREA */
+    .mainfeatures-left-block {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
+
+    .mainfeatures-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .mainfeatures-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .mainfeatures-link {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .mainfeatures-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .mainfeatures-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mainfeatures-features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .mainfeatures-features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .mainfeatures-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mainfeatures-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RIGHT IMAGE AREA */
+    .mainfeatures-right-block {
+      flex: 0.7;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mainfeatures-heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .mainfeatures-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .mainfeatures-left-block {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .mainfeatures-right-block {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .mainfeatures-heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .mainfeatures-features {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="mainfeatures-section">
+ 
+
+  <!-- LEFT SIDE -->
+  <div class="mainfeatures-left-block">
+    <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+    <div class="mainfeatures-description">
+      A robust two-way communication system that connects citizens to control centers, ensuring safety, rapid response, and seamless public interaction.
+    </div>
+
+    <ul class="mainfeatures-features">
+      <li>Two-way communication with control center</li> 
+      <li>Provides direct citizen-police link</li> 
+      <li>Useful in emergencies and maintenance</li> 
+      <li>Supports audio/video calling</li> 
+      <li>Operates via VoIP or GSM module</li> 
+      <li>Rugged and weather-resistant design</li>
+        <li>AI-enabled noise reduction</li> 
+       <li>Automatic connection during SOS alerts</li> 
+       <li>Remote diagnostics and maintenance</li> 
+       <li>Enhances public interaction capabilities</li>
+    </ul>
+
+    <button class="mainfeatures-btn">
+      <a class="mainfeatures-link" href="contact.html">Know more →</a>
+    </button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="mainfeatures-right-block">
+    <div class="mainfeatures-heading">Intercom</div>
+  </div>
+</section>
+
+
+<!-- section-2 -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .modern-apartments-wrap {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+    }
+
+    /* LEFT IMAGE SECTION */
+    .apartments-image-side {
+      flex: 1;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .apartments-main-heading {
+      position: absolute;
+      top: 35%;
+      right: -8%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+
+    /* RIGHT TEXT SECTION */
+    .apartments-content-side {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 5rem 4rem 8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .apartments-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .apartments-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .apartments-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .apartments-feature-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .apartments-feature-list li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .apartments-feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .apartments-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .apartments-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .modern-apartments-wrap {
+        flex-direction: column;
+      }
+
+      .apartments-image-side {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .apartments-content-side {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .apartments-main-heading {
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .apartments-feature-list {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="modern-apartments-wrap">
+
+
+  <!-- LEFT IMAGE SECTION -->
+  <div class="apartments-image-side">
+    <div class="apartments-main-heading">Android<br>Touch Screen</div>
+  </div>
+
+  <!-- RIGHT CONTENT SECTION -->
+  <div class="apartments-content-side">
+    <!-- <div class="apartments-logo">me.</div> -->
+    <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+    <div class="apartments-description">
+      A user-friendly smart pole interface that provides real-time information, navigation, and interactive services while supporting city branding and public convenience.
+    </div>
+
+    <ul class="apartments-feature-list">
+    <li>User-friendly smart pole interface</li> 
+    <li>Displays maps, emergency info, weather</li> 
+    <li>Supports ticketing or info kiosk use</li> 
+    <li>Interactive for tourists and commuters</li> 
+    <li>Connects to city service APIs</li> 
+    <li>Real-time updates and navigation</li> 
+    <!--<li>Multilingual interface support</li> 
+     <li>Tamper-proof and sunlight readable</li> 
+    <li>Touchless gesture mode for hygiene</li> 
+    <li>Customizable UI for city branding</li> -->
+    </ul>
+
+    <button class="apartments-btn">See more →</button>
+  </div>
+</section>
+
+
+<!-- section-1 -->
+
+ <style>
+   
+    .mainfeatures-section {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+      /* margin-bottom: 60px;  */
+      /* bottom gap added */
+    }
+
+    /* LEFT CONTENT AREA */
+    .mainfeatures-left-block {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
+
+    .mainfeatures-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .mainfeatures-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .mainfeatures-link {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .mainfeatures-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .mainfeatures-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .mainfeatures-features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .mainfeatures-features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .mainfeatures-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mainfeatures-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RIGHT IMAGE AREA */
+    .mainfeatures-right-block {
+      flex: 0.7;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mainfeatures-heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .mainfeatures-section {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .mainfeatures-left-block {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .mainfeatures-right-block {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .mainfeatures-heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .mainfeatures-features {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="mainfeatures-section">
+ 
+
+  <!-- LEFT SIDE -->
+  <div class="mainfeatures-left-block">
+    <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+    <div class="mainfeatures-description">
+     An intelligent voice interface that allows real-time interaction with the smart pole system, providing assistance, accessibility, and automated responses.
+    </div>
+
+    <ul class="mainfeatures-features">
+     <li>Enables voice interaction with pole system</li> 
+     <li>Provides real-time AI assistant responses</li> 
+     <li>Converts speech to actionable commands</li> 
+     <li>Supports multilingual voice recognition</li> 
+     <li>Integrated with ICCC and databases</li> 
+     <li>Useful for public information and support</li> 
+     <li>Detects distress or panic voices</li> 
+     <li>Integrates with CCTV for context awareness</li> 
+     <li>Enables remote voice announcements</li> 
+     <li>Enhances accessibility for disabled users</li>
+    </ul>
+
+    <button class="mainfeatures-btn">
+      <a class="mainfeatures-link" href="contact.html">Know more →</a>
+    </button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="mainfeatures-right-block">
+    <div class="mainfeatures-heading">AI Based Voice<br>Communication</div>
+  </div>
+</section>
+
+
+<!-- section-2 -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .modern-apartments-wrap {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #fff;
+      font-family: "Georgia", serif;
+    }
+
+    /* LEFT IMAGE SECTION */
+    .apartments-image-side {
+      flex: 1;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .apartments-main-heading {
+      position: absolute;
+      top: 35%;
+      right: -8%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+
+    /* RIGHT TEXT SECTION */
+    .apartments-content-side {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 5rem 4rem 8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .apartments-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .apartments-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .apartments-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .apartments-feature-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .apartments-feature-list li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .apartments-feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .apartments-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .apartments-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .modern-apartments-wrap {
+        flex-direction: column;
+      }
+
+      .apartments-image-side {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .apartments-content-side {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .apartments-main-heading {
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .apartments-feature-list {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+<section class="modern-apartments-wrap">
+
+
+  <!-- LEFT IMAGE SECTION -->
+  <div class="apartments-image-side">
+    <div class="apartments-main-heading">AI Based<br>Camera</div>
+  </div>
+
+  <!-- RIGHT CONTENT SECTION -->
+  <div class="apartments-content-side">
+    <!-- <div class="apartments-logo">me.</div> -->
+    <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+    <div class="apartments-description">
+     A smart surveillance camera that delivers high-definition monitoring, AI-driven analytics, and real-time alerts for enhanced urban security.
+    </div>
+
+    <ul class="apartments-feature-list">
+   <li>Provides high-definition video surveillance</li>
+    <li>Detects motion, face, and objects automatically</li> 
+    <li>Integrates with ANPR & RLVD modules</li> 
+    <li>Real-time analytics and alerts to ICCC</li> 
+    <li>Night vision and thermal options</li> 
+    <li>AI filters false positives and noise</li> 
+    <!-- <li>Cloud and edge data storage supported</li> 
+    <li>Tracks suspicious or unattended objects</li> 
+    <li>Ensures 24×7 area surveillance</li> 
+    <li>Scalable for multiple lane monitoring</li> -->
+    </ul>
+
+    <button class="apartments-btn">See more →</button>
+  </div>
+</section>
+
+
+
+
+<section class="smart-section">
+
+  <div class="smartpole-text" id="smartpoleText">
+    <h5>Feature</h5>
+    <h2>Vehicle Incident Detection System (VIDS)</h2>
+    <p>
+      AI-powered adaptive street lighting that adjusts brightness automatically 
+      based on movement and environmental conditions for energy efficiency.
+    </p>
+    <ul>
+      <li> Real-time detection of accidents, collisions, and stopped vehicles</li>
+      <li> AI classifies severity based on impact and traffic density</li>
+      <li>Immediate ICCC alert with geo-coordinates and timestamps</li>
+        <li>Supports video evidence with pre/post-incident footage</li>
+      <li>Enables predictive analytics for accident-prone zones</li>
+      <li> Automatically triggers nearby Smart Pole emergency lights</li>
+        <li> Sends instant SOS notification to emergency services</li>
+      <li>Uses AI behaviour modelling to minimize false alerts</li>
+      <li> Works in all lighting and weather conditions</li>
+        <li>Reduces emergency response time dramatically</li>
+    </ul>
+  </div>
+
+  <div class="smartpole-image">
+    <img id="smartpoleImage" src="https://images.unsplash.com/photo-1581091870633-7ccfa0f3c3b3?auto=format&fit=crop&w=1000&q=80" alt="SmartPole Image">
+  </div>
+
+  <!-- Mobile buttons wrapper -->
+  <div class="nav-buttons-wrapper">
+    <button class="nav-btn" id="prevBtn">&#8592;</button>
+    <button class="nav-btn" id="nextBtn">&#8594;</button>
+  </div>
+
+  <!-- <div class="dots" id="smartpoleDots"></div> -->
+</section>
+
+
+<style>
+/* body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #fff;
+  color: #111;#ff
+  overflow-x: hidden;
+} */
+
+/* Container */
+.smart-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0 60px;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #fff;
+  
+}
+
+/* Text box */
+.smartpole-text {
+  width: 45%;
+  position: relative;
+}
+
+.smartpole-text h5 {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+.smartpole-text h5::after {
+  content: "";
+  display: block;
+  width: 350px;
+  height: 1px;
+  background: #000;
+  margin-top: 8px;
+}
+
+.smartpole-text h2 {
+  font-size: 26px;
+  text-transform: uppercase;
+  margin: 20px 0;
+  font-weight: 700;
+}
+
+.smartpole-text p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Bullet points */
+.smartpole-text ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.smartpole-text ul li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* bottom line */
+.smartpole-text::after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 1px;
+  background: #000;
+  margin-top: 50px;
+}
+
+/* Image container */
+.smartpole-image {
+  width: 50%;
+  overflow: hidden;
+  position: relative;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.smartpole-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  transition: transform 0.8s ease-in-out;
+}
+
+.smartpole-image:hover img {
+  transform: scale(1.03);
+}
+
+/* Navigation buttons */
+.nav-btn {
+  background: transparent;
+  color: #000;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.nav-btn:hover {
+  transform: scale(1.2);
+  color: #ffcc00;
+}
+
+/* Desktop positions */
+#prevBtn { left: 550px; top: 89%; position: absolute; transform: translateY(-50%); }
+#nextBtn { right: 740px; top: 89%; position: absolute; transform: translateY(-50%); }
+
+
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .smart-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: auto;
+  }
+
+  .smartpole-image {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .smartpole-text {
+    width: 100%;
+    margin-top: 0;
+    text-align: left;
+  }
+
+  .smartpole-text h5::after,
+  .smartpole-text::after {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .nav-buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    width: 100%;
+  }
+
+  #prevBtn, #nextBtn {
+    position: static;
+    transform: none;
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+  }
+
+  
+}
+</style>
+
+<script>
+const smartpoleMain = [
+  {
+    title: "Vehicle Incident Detection System (VIDS)",
+    desc: "AI-powered adaptive street lighting that adjusts brightness automatically based on movement and environmental conditions for energy efficiency.",
+    points: ["Real-time detection of accidents, collisions, and stopped vehicles", "AI classifies severity based on impact and traffic density", "Immediate ICCC alert with geo-coordinates and timestamps", "Supports video evidence with pre/post-incident footage", "Enables predictive analytics for accident-prone zones", "Automatically triggers nearby Smart Pole emergency lights", "Sends instant SOS notification to emergency services", "Uses AI behaviour modelling to minimize false alerts", "Works in all lighting and weather conditions", "Reduces emergency response time dramatically"],
+    img: "img/randd/Untitled design.png"
+  },
+  {
+    title: "Speed Violation Detection (SVD)",
+    desc: "Tracks air quality, temperature, humidity, and noise levels in real time for smart city applications.",
+    points: ["Detects lane-wise overspeeding vehicles with radar precision", "Works seamlessly with multi-lane highways and intersections", "Captures 3 photo frames + video clip for violation proof", "Integrates with ANPR for vehicle identification", "AI calibrates speed thresholds dynamically by zone/time", "Generates e-Challan automatically with timestamped evidence", "Works 24×7 under low light and adverse conditions", "Reduces manual enforcement and corruption", "Supports cloud or edge-based data storage", "Enhances driver discipline and road safety"],
+    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    title: "Vehicle Speed Detection System (VSDS)",
+    desc: "Uses AI-based video analytics to monitor vehicle flow, detect congestion, and improve traffic management.",
+    points: ["Measures vehicle speed in real-time using Doppler/Radar", "Accuracy ±2% under all environmental conditions", "Supports dual radar validation for accuracy", "Integrated with ICCC live dashboard analytics", "Displays overspeeding alerts on digital signboards", "Auto-syncs with enforcement databases (Vahan/e-Challan)", "Works for both approaching and receding vehicles", "Scalable for highways, city roads, or toll lanes", "Detects and classifies vehicle category simultaneously", "Reduces traffic accidents and improves regulation"],
+    img: "https://images.unsplash.com/photo-1517949908112-7201cc1261c7?auto=format&fit=crop&w=1000&q=80"
+  },
+    {
+    title: "Red Light Violation Detection (RLVD)",
+    desc: "Uses AI-based video analytics to monitor vehicle flow, detect congestion, and improve traffic management.",
+    points: ["AI detects vehicles crossing during red signal phase", "Uses frame-by-frame analysis synced with signal controller", "Captures license plate, lane position, and light status proof", "Supports automatic evidence tagging and storage", "Seamless integration with ANPR for challan generation", "Works for multi-directional junctions", "Detects signal jumping even in dense traffic", "Improves traffic discipline and safety compliance", "Reduces intersection accidents significantly", "Fully compliant with Smart City RFP standards"],
+    img: "https://images.unsplash.com/photo-1517949908112-7201cc1261c7?auto=format&fit=crop&w=1000&q=80"
+  },
+    {
+    title: "Automatic Number Plate Recognition (ANPR)",
+    desc: "Uses AI-based video analytics to monitor vehicle flow, detect congestion, and improve traffic management.",
+    points: ["Reads plates in multiple Indian languages and fonts", "Works at night, in rain, or at high vehicle speeds", "Integrates with Vahan, Sarathi, and e-Challan APIs", "Detects duplicate or tampered plates", "Captures 3–4 frames for accuracy validation", "Supports both static and mobile camera deployment", "OCR accuracy above 98% using deep learning", "Reduces enforcement manpower by automation", "Syncs data with ICCC analytics dashboard", "Core component for ITMS compliance"],
+    img: "https://images.unsplash.com/photo-1517949908112-7201cc1261c7?auto=format&fit=crop&w=1000&q=80"
+  },
+    {
+    title: "Automatic Traffic Counter & Classifier (ATCC)",
+    desc: "Uses AI-based video analytics to monitor vehicle flow, detect congestion, and improve traffic management.",
+    points: ["Classifies vehicles into 8+ standard categories (Car, Bus, Truck, etc.)", "Works using AI-based image recognition or radar sensors", "Provides hourly/daily traffic count reports", "Supports data-driven traffic flow optimization", "Detects abnormal vehicle compositions (e.g., oversized trucks)", "Integrates with toll, congestion, and planning modules", "Operates autonomously in 24×7 environments", "Data exported to GIS and analytics systems", "Useful for peak-hour prediction and planning", "Reduces congestion by intelligent signal timing"],
+    img: "https://images.unsplash.com/photo-1517949908112-7201cc1261c7?auto=format&fit=crop&w=1000&q=80"
+  },
+{
+  title: "Traffic Congestion Detection",
+  desc: "Traffic Congestion Detection uses AI to identify slow-moving zones, provides live congestion heatmaps, predictive analytics, and supports dynamic traffic management for smoother city flow and reduced emissions.",
+  points: [
+    "AI detects slow-moving traffic zones automatically",
+    "Live congestion heatmaps available to ICCC and public displays",
+    "Predictive analytics warn before congestion peaks",
+    "Supports dynamic signal timing adjustments",
+    "Integrated with drone surveillance for live visual feedback",
+    "Enables diversion planning via public announcements",
+    "Reduces waiting time and fuel consumption",
+    "Improves commuter satisfaction and city flow",
+    "Supports voice alerts through Smart Poles",
+    "Contributes to emission and pollution reduction"
+  ],
+  img: ""
+},
+{
+  title: "Real-Time Dashboard & Reports",
+  desc: "Real-Time Dashboard & Reports provides a unified ICCC dashboard with live data, interactive analytics, auto-refreshing updates, multi-layer maps, and exportable reports for data-driven governance and transparency.",
+  points: [
+    "Unified ICCC dashboard displaying live data from all junctions",
+    "Interactive visual charts for violations and analytics",
+    "Auto-refresh every few seconds for live status updates",
+    "Multi-layer map integration for geospatial awareness",
+    "Configurable KPIs and report templates",
+    "Cloud-based access for officials and administrators",
+    "Auto-generated daily/weekly performance summaries",
+    "Exportable reports (PDF, XLS, CSV) for audits",
+    "Integrates CCTV, ANPR, RLVD, and SVD modules",
+    "Enables data-driven governance and transparency"
+  ],
+  img: ""
+},
+{
+  title: "AI-Driven Monitoring & Violation Handling",
+  desc: "AI-Driven Monitoring & Violation Handling uses deep learning for object tracking and multi-type violation detection, self-learning models to improve accuracy, and integrates alerts and automated notifications for efficient, scalable traffic enforcement.",
+  points: [
+    "Deep learning-based object tracking and violation detection",
+    "Self-learning models improve accuracy over time",
+    "Detects multi-type violations in single frame (e.g., no helmet + triple riding)",
+    "AI reduces false positives using contextual verification",
+    "Integrates with voice and visual alert systems",
+    "Generates automated enforcement notifications",
+    "Supports multiple concurrent video streams",
+    "Works efficiently under variable illumination",
+    "Reduces human dependency in traffic control",
+    "Provides scalable, adaptive monitoring capabilities"
+  ],
+  img: ""
+},
+{
+  title: "Third-Party Database/API Integration",
+  desc: "Third-Party Database/API Integration enables seamless API-based connectivity with Vahan, Sarathi, RTO, and e-Challan systems, supporting secure data exchange, smart city synchronization, payment integration, and scalable, future-ready infrastructure.",
+  points: [
+    "Seamless integration with Vahan, Sarathi, RTO, e-Challan",
+    "Supports API-based data exchange for instant validation",
+    "Enables synchronization with Smart City Command Centers",
+    "Integrates payment gateways for fine collection",
+    "Works with law enforcement and public safety APIs",
+    "Modular architecture supports expansion",
+    "Provides secure access control and encryption",
+    "Real-time data push/pull to government servers",
+    "Enhances interoperability and scalability",
+    "Future-ready for 5G and edge AI environments"
+  ],
+  img: ""
+},
+{
+  title: "Emergency Response & Incident Alerts",
+  desc: "Emergency Response & Incident Alerts automatically generates and prioritizes notifications for accidents, fires, or hazards, integrating Smart Poles, geotagging, video capture, and analytics to ensure rapid and effective response for citizen safety.",
+  points: [
+    "Auto-generates alerts for accidents, fires, or hazardous conditions",
+    "Sends real-time notifications to ICCC and nearest responders",
+    "Integrates with Smart Poles for siren or PA system alerts",
+    "Captures incident video for later review",
+    "Geotags event for quick dispatch navigation",
+    "AI prioritizes critical alerts based on severity",
+    "Reduces incident-to-response time",
+    "Supports live 2-way communication channels",
+    "Enables automatic report logging and analytics",
+    "Enhances citizen safety and rapid action systems"
+  ],
+  img: ""
+},
+{
+  title: "Vehicle Category Wise Over Speed Alerts",
+  desc: "Vehicle Category Wise Over Speed Alerts uses AI to identify vehicle categories and apply appropriate speed limits, ensuring accurate, fair, and real-time over-speed notifications integrated with ICCC and lane display systems.",
+  points: [
+    "AI identifies category (e.g., truck vs. car) before flagging speed",
+    "Applies category-based speed limits automatically",
+    "Prevents false challans for smaller/lower-speed vehicles",
+    "Multi-lane compatibility with radar precision",
+    "Instant ICCC update on threshold breach",
+    "Configurable alert sounds or color codes",
+    "Integrated with lane display systems for live feedback",
+    "Stores violation type and category in logs",
+    "Complies with transport department norms",
+    "Enhances fairness and accuracy in enforcement"
+  ],
+  img: ""
+},
+{
+  title: "Custom ICCC Message Broadcasting",
+  desc: "Custom ICCC Message Broadcasting allows central control to send emergency or advisory messages through Smart Poles, VMS boards, voice alerts, and mobile apps, supporting multi-language, location-specific communication for citizen engagement and transparency.",
+  points: [
+    "Central control can broadcast emergency or advisory messages",
+    "Display on Smart Pole LEDs and traffic VMS boards",
+    "Multi-language message support for local population",
+    "Integrated with FM/voice alert and mobile app notifications",
+    "Can trigger location-specific emergency instructions",
+    "Works during festivals, accidents, or natural calamities",
+    "Fully remote-controllable via ICCC dashboard",
+    "Enables two-way citizen engagement and awareness",
+    "Helps manage panic during emergencies",
+    "Improves communication transparency in smart cities"
+  ],
+  img: ""
+},
+{
+  title: "Precision Speed Detection (Radar-based SVD)",
+  desc: "Precision Speed Detection (Radar-based SVD) uses certified Doppler or LIDAR sensors with high accuracy, dual-beam lane-wise measurement, AI calibration, and integrates camera evidence to ensure reliable, compliant speed monitoring under all conditions.",
+  points: [
+    "Uses certified Doppler or LIDAR sensors",
+    "Accuracy up to ±1 km/h",
+    "Supports dual-beam radar for lane-wise measurement",
+    "Records vehicle trajectory and velocity vectors",
+    "Integrates with camera evidence and timestamp overlay",
+    "Works for multi-lane, bi-directional roads",
+    "Provides violation ID linked to ANPR capture",
+    "Calibrated automatically via AI self-check",
+    "Weather and glare resistant hardware",
+    "Meets MoRTH and Smart City technical compliance"
+  ],
+  img: ""
+},
+{
+  title: "Vehicle Classification",
+  desc: "Vehicle Classification uses AI models with over 98% accuracy to differentiate between vehicle types, integrates with ANPR, RLVD, and SVD modules, and provides class-wise traffic reports for optimized planning and congestion management.",
+  points: [
+    "AI models classify vehicles with 98%+ accuracy",
+    "Differentiates between cars, trucks, autos, bikes, buses",
+    "Supports adaptive learning for regional vehicle types",
+    "Integrates with ANPR, RLVD, and SVD modules",
+    "Generates class-wise traffic reports",
+    "Enables congestion and planning optimization",
+    "Visual overlay display in ICCC dashboard",
+    "Works in both day and night conditions",
+    "Cross-verifies with ATCC data for validation",
+    "Reduces manual counting and survey costs"
+  ],
+  img: ""
+},
+{
+  title: "Multi-language Number Plate Reading",
+  desc: "Multi-language Number Plate Reading supports regional Indian languages using deep OCR models, handling complex fonts and scripts, integrating with e-Challan systems, and ensuring accurate recognition for enforcement across states.",
+  points: [
+    "Supports regional Indian languages (Telugu, Tamil, Hindi, etc.)",
+    "Uses deep OCR models for language detection",
+    "Handles complex fonts and non-standard plates",
+    "Improves enforcement in rural and semi-urban areas",
+    "Integrates with multilingual e-Challan systems",
+    "Auto-detects plate region from mixed scripts",
+    "Supports both Latin and Devanagari scripts",
+    "Provides accurate translation for ICCC records",
+    "Reduces errors in non-English plate recognition",
+    "Expands enforcement reach across states"
+  ],
+  img: ""
+}
+,
+{
+  title: "Instant Alerts via Email/SMS",
+  desc: "Instant Alerts via Email/SMS automatically sends notifications for every violation or incident using configurable templates and multi-channel delivery, ensuring timely, accurate, and transparent communication with vehicle owners, police, and ICCC staff.",
+  points: [
+    "Automatic SMS/email alerts for every violation or incident",
+    "Custom templates for vehicle owner, police, and ICCC staff",
+    "Multi-channel redundancy (GSM, internet, cloud push)",
+    "Geo-tagged incident link shared in alert for quick access",
+    "Configurable notification triggers by severity level",
+    "Supports multilingual message delivery",
+    "Integrates with e-Challan and enforcement dashboards",
+    "AI ensures no duplicate or missed alerts",
+    "Instant acknowledgment from recipients logged automatically",
+    "Increases transparency and timely enforcement"
+  ],
+  img: ""
+}
+,
+{
+  title: "Centralized Dashboard Integration (Vahan/E-Challan)",
+  desc: "Centralized Dashboard Integration connects all ITMS nodes and Smart Poles, providing real-time access to Vahan data for instant challan processing, seamless synchronization with RTO and traffic servers, and analytics-driven visibility for administrators.",
+  points: [
+    "Unified command center linking all ITMS nodes and poles",
+    "Real-time Vahan database access for owner verification",
+    "Auto-fetches vehicle and license data for challan processing",
+    "Seamless synchronization with RTO and traffic police servers",
+    "One-click challan generation from dashboard view",
+    "Displays status: paid/unpaid challans live",
+    "Supports secure role-based user access",
+    "Generates analytics by location, type, and period",
+    "Enables single-pane-of-glass visibility for administrators",
+    "Reduces manual database lookups drastically"
+  ],
+  img: ""
+}
+,
+{
+  title: "Lane-Based Speed Display System",
+  desc: "Lane-Based Speed Display System uses digital LED boards with color-coded alerts and radar integration to show live vehicle speeds per lane, enhancing driver awareness, compliance, and proactive overspeeding reduction.",
+  points: [
+    "Digital LED boards show live vehicle speeds by lane",
+    "Color-coded alerts (green-safe, yellow-warning, red-overspeed)",
+    "Encourages self-correction by drivers in real-time",
+    "Integrated with radar sensors for accuracy",
+    "Smart Poles broadcast audio alerts when limits exceeded",
+    "Customizable per zone (school, highway, residential)",
+    "Works autonomously or via ICCC scheduling",
+    "Enhances driver awareness and compliance",
+    "Reduces overspeeding incidents proactively",
+    "Adds citizen-friendly visual communication layer"
+  ],
+  img: ""
+},
+{
+  title: "Simultaneous Detection (Up to 256 Objects)",
+  desc: "Simultaneous Detection leverages advanced computer vision models and AI to track up to 256 objects including vehicles, pedestrians, and cyclists in real time, providing scalable and accurate urban traffic analytics.",
+  points: [
+    "Multi-object tracking via advanced computer vision models",
+    "Tracks vehicles, pedestrians, and cyclists simultaneously",
+    "AI assigns unique IDs to each moving object",
+    "Supports dense junctions and multiple lanes",
+    "Zero-lag analytics at 30–60 FPS real-time speed",
+    "Edge GPU accelerators ensure seamless processing",
+    "Reduces false alarms in busy traffic conditions",
+    "Improves analytics for safety zone management",
+    "Compatible with crowd management integration",
+    "Demonstrates scalable urban AI monitoring infrastructure"
+  ],
+  img: ""
+},
+{
+  title: "Detailed Traffic & Vehicle Logs",
+  desc: "Detailed Traffic & Vehicle Logs maintain timestamped records of vehicle movements, including plates, class, speed, lane, and direction, with secure storage and audit-ready access for accountability and forensic investigation.",
+  points: [
+    "Maintains timestamped logs for all vehicle movements",
+    "Records plate number, class, speed, lane, and direction",
+    "Stores event snapshots and video clips securely",
+    "Cloud or local backup options for redundancy",
+    "Logs accessible by authorized users for audits",
+    "Auto-archiving to reduce storage overload",
+    "Enables forensic investigation for incidents",
+    "Indexed search by time, plate, or violation type",
+    "Encrypted and digitally signed data entries",
+    "Ensures accountability and traceable operations"
+  ],
+  img: ""
+},
+{
+  title: "Enforcement Cost Reduction",
+  desc: "Enforcement Cost Reduction leverages automated systems and AI-driven Smart Poles to minimize manual surveillance, reduce operational costs, and provide a scalable, budget-friendly model for Smart City projects.",
+  points: [
+    "Eliminates need for manual surveillance officers",
+    "Lowers recurring field manpower expenditure",
+    "Fully automated challan generation and delivery",
+    "Reduces equipment maintenance via predictive AI",
+    "Uses solar or low-power Smart Pole systems",
+    "Cloud-based dashboards reduce local server costs",
+    "Optimized network usage with compression algorithms",
+    "Scalable model reduces total cost per junction",
+    "Quick ROI in less than 18–24 months",
+    "Sustainable and budget-friendly for Smart City projects"
+  ],
+  img: ""
+},
+{
+  title: "Electronic Challan Issuance (e-Challans)",
+  desc: "Electronic Challan Issuance automates enforcement by generating e-Challans with embedded evidence, linking to RTO portals, and enabling online payment while ensuring transparency and legal compliance.",
+  points: [
+    "Auto-generated challans for speed, RLVD, or helmet violations",
+    "Embedded photo/video evidence for legal admissibility",
+    "Linked to RTO and citizen portals for payment",
+    "Online payment through UPI, net banking, or wallets",
+    "AI prevents duplicate challans for same offense",
+    "Customizable fine structures per region",
+    "Auto-reminder system for unpaid challans",
+    "PDF challan instantly emailed to violator",
+    "Integrates with central government databases",
+    "Ensures transparent, paperless enforcement process"
+  ],
+  img: ""
+},
+{
+  title: "High-Quality Image & Video Evidence",
+  desc: "High-Quality Image & Video Evidence ensures every violation is captured clearly with multi-angle footage, secure storage, and AI-enhanced visuals for legal compliance and dispute-free enforcement.",
+  points: [
+    "Captures 1080p–4K video footage per violation",
+    "Multi-angle snapshots ensure clarity and proof",
+    "Automatic watermarking with date, time, and location",
+    "Secure storage with digital hash verification",
+    "Supports replay and download from ICCC",
+    "Day/night IR support ensures visibility always",
+    "Integrates AI enhancement for number plate clarity",
+    "Reduces legal disputes through solid visual evidence",
+    "Chain-of-custody maintained for legal compliance",
+    "Meets MoRTH and judicial evidence standards"
+  ],
+  img: ""
+}
+,
+{
+  title: "Vehicle Count and Classification",
+  desc: "Vehicle Count and Classification provides automated vehicle counts and type identification, feeding data into traffic management systems and planning models for efficient urban mobility and revenue analysis.",
+  points: [
+    "Provides vehicle count per minute/hour/day",
+    "AI identifies vehicle type automatically",
+    "Generates congestion density metrics",
+    "Integrates with adaptive traffic control systems",
+    "Feeds data into long-term planning models",
+    "Helps analyze urban traffic growth patterns",
+    "Custom report generation for planners and consultants",
+    "Real-time counters displayed on ICCC dashboard",
+    "Enables toll and parking revenue analysis",
+    "Reduces manual survey and data collection cost"
+  ],
+  img: ""
+},
+{
+  title: "Parking Management & Boom Barrier Integration",
+  desc: "Parking Management & Boom Barrier Integration automates vehicle entry/exit, fee calculation, and access control while providing real-time analytics and improving space utilization.",
+  points: [
+    "Integrates ANPR with automated parking systems",
+    "Detects entry/exit times and calculates fees",
+    "Auto-opens boom barriers for authorized vehicles",
+    "Prevents tailgating and unauthorized access",
+    "Real-time occupancy analytics on dashboard",
+    "Supports cashless digital payments (UPI, RFID)",
+    "Can manage both on-street and off-street parking",
+    "Integrates with Smart Pole lighting and guidance indicators",
+    "Reduces congestion around parking lots",
+    "Improves space utilization and user convenience"
+  ],
+  img: ""
+},
+{
+  title: "Two-Wheeler & Auto Number Plate Reading",
+  desc: "Two-Wheeler & Auto Number Plate Reading uses optimized cameras and AI to detect plates, violations, and small vehicle categories efficiently in urban and semi-urban Indian environments.",
+  points: [
+    "Optimized camera angles for small plate dimensions",
+    "AI filters partial or occluded plates with accuracy correction",
+    "Detects no-helmet and triple riding violations",
+    "Useful for urban and semi-urban Indian environments",
+    "Integrates with ICCC and challan backend automatically",
+    "Works in high-density traffic flow",
+    "Night-vision enabled for low-light capture",
+    "Supports region-specific two-wheeler formats",
+    "Auto-calibrates for motion blur correction",
+    "Enhances inclusion of smaller vehicle categories"
+  ],
+  img: ""
+},
+{
+  title: "Efficient Data Transmission",
+  desc: "Efficient Data Transmission ensures continuous, secure, and low-latency data flow using multiple connectivity methods and advanced caching for ICCC operations.",
+  points: [
+    "Uses fiber, 4G/5G, or LoRaWAN for connectivity",
+    "Compressed data packets for low-bandwidth zones",
+    "Supports real-time streaming and backup simultaneously",
+    "Edge caching minimizes latency to ICCC",
+    "AES-256 encryption ensures data security",
+    "Auto-fallback to redundant network during downtime",
+    "Compatible with hybrid cloud deployment models",
+    "Monitors link uptime and transmission speed",
+    "Ensures continuous live operations",
+    "Reduces packet loss in remote environments"
+  ],
+  img: ""
+}
+,
+{
+  title: "Smart Dashboards & Traffic Reports",
+  desc: "Smart Dashboards & Traffic Reports provide actionable insights through AI-driven analytics, visualizations, and automated reports for efficient traffic management.",
+  points: [
+    "Custom analytics for traffic volume, violation trends, and patterns",
+    "Multi-view interface for different roles (Admin/Police/Planner)",
+    "AI identifies recurring violations for focused enforcement",
+    "Heatmaps for congestion, safety zones, and incidents",
+    "Automated daily/weekly/monthly PDF reports",
+    "Configurable KPIs for city performance tracking",
+    "Integration with drone feeds and Smart Pole sensors",
+    "Supports mobile and desktop access",
+    "Graphical, intuitive UI for non-technical users",
+    "Improves strategic planning through visual data"
+  ],
+  img: ""
+},
+{
+  title: "Multi-Lane Comprehensive Insights",
+  desc: "Multi-Lane Comprehensive Insights monitor lane-wise traffic flow, violations, and patterns using AI for safer and more efficient intersections.",
+  points: [
+    "Detects lane-wise violations and traffic flow metrics",
+    "Identifies lane blocking or unauthorized U-turns",
+    "Provides synchronized multi-camera overview",
+    "Helps redesign traffic intersections intelligently",
+    "Supports AI lane analytics for pattern learning",
+    "Works even in unmarked or poorly painted roads",
+    "Real-time lane speed and density analysis",
+    "Reduces lane-crossing accidents significantly",
+    "Integrates with LED-based lane guidance systems",
+    "Enhances orderliness and lane discipline"
+  ],
+  img: ""
+},
+{
+  title: "Image Availability for Data Validation",
+  desc: "Ensures that all traffic violations have linked image evidence for verification, integrity, and public trust.",
+  points: [
+    "Every violation auto-links with corresponding image evidence",
+    "ICCC dashboard provides instant preview and download",
+    "Hash-based integrity check for image authenticity",
+    "Secure storage compliant with government data standards",
+    "Enables third-party audits or citizen grievance redressal",
+    "Prevents tampering or data corruption",
+    "AI-based tagging improves search efficiency",
+    "Metadata includes timestamp, location, and device ID",
+    "Enhances credibility of enforcement system",
+    "Ensures public trust and legal admissibility"
+  ],
+  img: ""
+},
+{
+  title: "AI Video Analytics for Congestion Detection",
+  desc: "Monitors traffic flow using AI to detect congestion, predict hotspots, and optimize city traffic management.",
+  points: [
+    "Detects slow-moving or halted traffic clusters",
+    "AI models track vehicle flow velocity across frames",
+    "Predictive congestion alerts on ICCC dashboard",
+    "Supports smart rerouting of traffic via VMS boards",
+    "Integrates with drone aerial data for visual validation",
+    "Historical trend analysis for recurring congestion zones",
+    "Generates adaptive signal control recommendations",
+    "Auto-updates congestion maps for public portals",
+    "Improves traffic management efficiency",
+    "Reduces fuel waste and carbon emissions"
+  ],
+  img: ""
+},
+{
+  title: "Real-Time Congestion Maps",
+  desc: "Provides live, color-coded congestion maps for city roads, enabling traffic optimization and better route planning.",
+  points: [
+    "Color-coded congestion visualization across city roads",
+    "GPS and camera data fused for accuracy",
+    "Updates dynamically every few seconds",
+    "Integrated with Google Maps or custom GIS",
+    "Public view option via Smart City mobile app",
+    "AI predicts congestion build-up before it happens",
+    "Displays alternate route suggestions",
+    "Enables ICCC traffic flow optimization",
+    "Enhances citizen experience and route planning",
+    "Supports data-driven decongestion policies"
+  ],
+  img: ""
+},
+{
+  title: "Forecasting Congestion Trends (Machine Learning)",
+  desc: "Uses ML models to analyze historical data and predict traffic congestion, enabling proactive planning and smoother traffic flow.",
+  points: [
+    "ML models learn from historical data to predict jams",
+    "Seasonal and event-based traffic forecasting",
+    "Correlates with school, office, or festival patterns",
+    "Helps pre-plan diversion and law enforcement strategies",
+    "AI suggests timing adjustments for traffic lights",
+    "Enables early resource allocation by ICCC teams",
+    "Improves traffic fluidity during high-demand hours",
+    "Supports proactive urban planning and analytics",
+    "Provides future traffic load simulations",
+    "Reduces reactive congestion management costs"
+  ],
+  img: ""
+},
+{
+  title: "Environmental Impact Assessment",
+  desc: "Analyzes traffic data with environmental sensors to monitor pollution and support sustainable urban planning.",
+  points: [
+    "Correlates traffic density with air quality sensor data",
+    "AI estimates CO₂ and particulate emission levels",
+    "Helps plan low-emission and green transport zones",
+    "Integrates with Smart Pole environment modules",
+    "Provides pollution hotspot mapping and alerts",
+    "Generates environmental performance indicators (EPI)",
+    "Enables policy decisions for eco-mobility programs",
+    "Tracks improvements from traffic optimization initiatives",
+    "Complies with Smart City sustainability metrics",
+    "Supports ESG (Environmental, Social, Governance) goals"
+  ],
+  img: ""
+},
+{
+  title: "Improper Parking Detection",
+  desc: "Monitors and enforces parking rules to improve traffic flow and reduce violations.",
+  points: [
+    "Detects vehicles parked in restricted or no-parking zones",
+    "AI tracks dwell time to classify temporary vs. illegal parking",
+    "Sends live alert to enforcement units",
+    "Integrates with ANPR and boom barriers",
+    "Captures and logs evidence for e-Challan processing",
+    "Works in commercial, school, or emergency access zones",
+    "Prevents bottlenecks and unauthorized encroachments",
+    "Reduces human patrolling requirement",
+    "Increases parking availability efficiency",
+    "Improves city traffic flow and orderliness"
+  ],
+  img: ""
+},
+{
+  title: "Automated Video/Photo Evidence Capture",
+  desc: "Captures and stores event evidence automatically for reliable enforcement and accountability.",
+  points: [
+    "Each detected event auto-recorded in high quality",
+    "Linked with violation ID and metadata tags",
+    "Video clip duration customizable (pre/post event)",
+    "Stored securely with redundancy and checksum validation",
+    "Available for playback, training, or court use",
+    "Tamper-proof evidence chain with time stamps",
+    "Supports on-demand compression for storage optimization",
+    "Ensures transparent enforcement operations",
+    "Eliminates need for manual screenshotting",
+    "Strengthens reliability and public accountability"
+  ],
+  img: ""
+},
+{
+  title: "AI-Enhanced Detection Accuracy",
+  desc: "AI and ML models improve detection precision and reliability for Smart City enforcement.",
+  points: [
+    "Deep neural network models continuously self-train",
+    "Filters out false positives like reflections or shadows",
+    "Enhances detection in low contrast or high glare conditions",
+    "Adapts to regional driving behaviors via ML feedback",
+    "Multi-camera validation for event accuracy",
+    ">98% detection precision verified by ICCC metrics",
+    "Auto-updates via cloud for model improvement",
+    "Reduces manual review load",
+    "Increases confidence in automated enforcement",
+    "Ensures global-class reliability in Smart City operations"
+  ],
+  img: ""
+},
+{
+  title: "Integrated Command Control Centre (ICCC) Alerts",
+  desc: "ICCC receives, prioritizes, and manages city-wide alerts for Smart City traffic and safety systems.",
+  points: [
+    "ICCC receives unified alerts from all city modules",
+    "Alerts color-coded by priority (critical/warning/info)",
+    "Supports escalation matrix and response tracking",
+    "Live alert pop-ups with incident location and video",
+    "Integrated with emergency dispatch and SOS systems",
+    "Configurable sound or light notifications",
+    "Historical alert analytics for trend monitoring",
+    "Enables city-wide situational awareness",
+    "Improves inter-department coordination",
+    "Core nerve center of Smart City ITMS infrastructure"
+  ],
+  img: ""
+},
+{
+  title: "Customizable System Configuration (Modular)",
+  desc: "Flexible and scalable system configuration for Smart City traffic and safety modules.",
+  points: [
+    "Plug-and-play module integration (ANPR, RLVD, SVD, etc.)",
+    "Scalable from a single junction to citywide deployment",
+    "Supports third-party hardware integration",
+    "Cloud, on-premises, or hybrid deployment options",
+    "Custom report and dashboard template design",
+    "Multilingual and multi-role interface accessibility",
+    "Modular firmware and software updates",
+    "Enables phased Smart City implementation",
+    "Reduces integration complexity and cost",
+    "Future-proof for evolving standards"
+  ],
+  img: ""
+},
+{
+  title: "4D ITMS Radar Camera Technology",
+  desc: "Next-generation radar and vision technology for precise traffic monitoring and enforcement.",
+  points: [
+    "Combines 3D vision + radar velocity + AI analytics",
+    "Enables 360° coverage of road cross-sections",
+    "Detects vehicle shape, speed, and trajectory in real time",
+    "Reduces false positives from occluded lanes",
+    "Works in fog, rain, and nighttime conditions",
+    "Integrates radar reflection with AI visual confirmation",
+    "Ideal for high-accuracy law enforcement zones",
+    "Complies with DGCA and Smart City norms",
+    "Reduces hardware footprint with integrated units",
+    "Represents next-gen traffic enforcement innovation"
+  ],
+  img: ""
+},
+{
+  title: "Data Collection from Cameras, Sensors, GPS",
+  desc: "Unified multi-source data acquisition for accurate traffic analytics and city monitoring.",
+  points: [
+    "Multi-source fusion (video, radar, GPS, environmental)",
+    "Correlates speed, location, and vehicle identity",
+    "Enhances analytics accuracy and reliability",
+    "Supports IoT edge gateways for preprocessing",
+    "Provides real-time telemetry to ICCC cloud",
+    "Reduces latency via local data aggregation",
+    "Enables event correlation across devices",
+    "Ensures consistent metadata tagging",
+    "Forms base layer for digital twin of city roads",
+    "Foundation for predictive and prescriptive analytics"
+  ],
+  img: ""
+},
+{
+  title: "Computer Vision-Based RLVD System",
+  desc: "AI-driven red light violation detection for accurate, maintenance-free traffic enforcement.",
+  points: [
+    "Deep learning detects signal color and vehicle position",
+    "Frame-by-frame violation classification",
+    "Works without physical road loops or sensors",
+    "Multi-camera calibration for wide intersections",
+    "Supports simultaneous vehicle detection in all lanes",
+    "Auto-saves pre/post violation video clips",
+    "Syncs with traffic signal controllers via API",
+    "Provides 99%+ detection accuracy rate",
+    "Reduces installation and maintenance cost",
+    "Modern AI alternative to inductive loop systems"
+  ],
+  img: ""
+},
+{
+  title: "Automated E-Challan Issuance",
+  desc: "Streamlined, legally compliant automated e-Challan system for fast enforcement and notifications.",
+  points: [
+    "One-click challan generation with validated evidence",
+    "Auto-syncs with RTO database for owner details",
+    "Generates unique violation reference ID",
+    "Supports online payment via integrated gateway",
+    "Sends instant SMS/email notification to violator",
+    "Updates status (paid/pending/contested) in dashboard",
+    "Auto-reports to city financial audit system",
+    "Saves manpower and processing time",
+    "Reduces manual paperwork to zero",
+    "Ensures legally compliant automated enforcement"
+  ],
+  img: ""
+},
+{
+  title: "Continuous Real-Time Monitoring",
+  desc: "24×7 live monitoring with AI-enabled analytics to ensure uninterrupted traffic enforcement and system reliability.",
+  points: [
+    "24×7 live monitoring via high-performance edge devices",
+    "Real-time analytics at junctions and highways",
+    "Automatic status checks for all system nodes",
+    "Live video wall view in ICCC",
+    "AI detects inactivity or camera faults instantly",
+    "Self-healing network architecture for uptime",
+    "Redundant backup servers ensure no downtime",
+    "Multi-operator access with audit tracking",
+    "Ensures uninterrupted law enforcement visibility",
+    "Foundation for proactive smart governance"
+  ],
+  img: ""
+},
+{
+  title: "Helmet & Rider Violation Detection System",
+  desc: "AI-powered detection of helmet-less riders and triple-riding violations for improved two-wheeler safety and automated enforcement.",
+  points: [
+    "Detects helmet-less riders and triple-riding violations",
+    "AI-based model trained on Indian two-wheeler datasets",
+    "Detects gender and posture for accurate recognition",
+    "Integrated with ANPR for challan automation",
+    "Day/night camera compatibility for 24×7 operation",
+    "Works in dense traffic with occlusion correction",
+    "Sends instant evidence to ICCC",
+    "Reduces accident rates for two-wheelers",
+    "Enables public awareness campaign integration",
+    "Enhances road safety compliance citywide"
+  ],
+  img: ""
+},
+{
+  title: "Traffic Event Classification (Radar + Computer Vision)",
+  desc: "Hybrid AI system combining radar and computer vision to classify traffic events like accidents, jams, and blockages for proactive city safety monitoring.",
+  points: [
+    "Dual-sensor AI model combining radar + vision data",
+    "Detects and classifies events like accidents, jams, or blockages",
+    "Distinguishes between moving and static objects",
+    "Event-level tagging for advanced analytics",
+    "Supports automated summary reports and alert videos",
+    "Integrates with ICCC for incident mapping",
+    "Learns continuously via machine learning feedback",
+    "Enables proactive city safety monitoring",
+    "Works under challenging environmental conditions",
+    "Next-generation hybrid AI event recognition system"
+  ],
+  img: ""
+},
+{
+  title: "Aerial Surveillance & Monitoring",
+  desc: "Real-time aerial video surveillance enhances traffic, crowd, and incident monitoring for better urban safety and ICCC situational awareness.",
+  points: [
+    "Provides real-time aerial video of traffic and crowd areas",
+    "Covers large regions beyond fixed cameras’ reach",
+    "Detects incidents, congestion, and accidents instantly",
+    "Enhances situational awareness for ICCC teams",
+    "Enables remote monitoring during public events",
+    "Offers top-down visibility for tactical operations",
+    "Streams HD/4K video to command centers",
+    "Reduces blind spots in existing camera networks",
+    "Operates autonomously on scheduled patrol routes",
+    "Improves urban safety, traffic, and crowd control"
+  ],
+  img: ""
+},
+{
+  title: "AI-Based Object & Vehicle Detection",
+  desc: "AI analyzes aerial footage to detect, classify, and track vehicles, people, and objects, improving ICCC security and traffic monitoring accuracy.",
+  points: [
+    "Recognizes vehicles, people, and objects from aerial footage",
+    "Classifies vehicle types using machine learning",
+    "Detects abandoned or suspicious objects automatically",
+    "AI filters false positives using multi-frame validation",
+    "Tracks moving targets in dense urban environments",
+    "Integrates with ANPR for aerial number plate reading",
+    "Supports behavioral pattern recognition (e.g., wrong-way driving)",
+    "AI alerts ICCC with automatic geotagging",
+    "Enhances security and enforcement accuracy",
+    "Reduces manual video analysis workload"
+  ],
+  img: ""
+},
+{
+  title: "Night Vision & Thermal Imaging",
+  desc: "Advanced night vision and thermal sensors detect heat signatures and anomalies, ensuring 24×7 surveillance and safety in low-light or obscured conditions.",
+  points: [
+    "Operates efficiently in complete darkness",
+    "Thermal sensors detect human or vehicle heat signatures",
+    "Ideal for nighttime patrolling or rescue missions",
+    "Penetrates fog, smoke, or low-light conditions",
+    "Captures temperature anomalies for fire prevention",
+    "Supports wildlife and environmental monitoring",
+    "AI highlights abnormal heat sources in real-time",
+    "Integrates with ICCC alert dashboard",
+    "Provides safety in 24×7 operations",
+    "Enhances reliability in critical night missions"
+  ],
+  img: ""
+},
+{
+  title: "Drone-Based Traffic Violation Detection",
+  desc: "Aerial drones detect traffic violations in real time, synchronizing with ground systems to ensure accurate evidence and reduce ground-level enforcement load.",
+  points: [
+    "Identifies traffic rule violations from aerial angle",
+    "Captures over-speeding, lane-cutting, and no-helmet cases",
+    "Auto-synchronizes video with ground ANPR cameras",
+    "Detects unauthorized parking or road obstructions",
+    "Sends real-time violation data to ICCC",
+    "AI ensures evidence accuracy and classification",
+    "Ideal for highways and high-traffic intersections",
+    "Works during VIP movements and emergencies",
+    "Reduces ground-level enforcement load",
+    "Strengthens traffic regulation compliance"
+  ],
+  img: ""
+},
+{
+  title: "Emergency Response & Disaster Management",
+  desc: "Rapid deployment drones and systems assist in accidents or natural disasters, providing live data, mapping affected zones, and improving coordination for faster response.",
+  points: [
+    "Rapid deployment during accidents or natural disasters",
+    "Provides live video to command centers for quick decision-making",
+    "Supports search and rescue with GPS and infrared tracking",
+    "Detects fire outbreaks or flood zones automatically",
+    "Guides emergency vehicles using live aerial routes",
+    "Enables mapping of affected zones in minutes",
+    "Reduces response time dramatically",
+    "Provides post-event documentation and analytics",
+    "Enhances coordination among rescue departments",
+    "Ensures safety of personnel during hazardous operations"
+  ],
+  img: ""
+},
+{
+  title: "Geo-Fencing & Route Automation",
+  desc: "Automated drones follow pre-set flight paths with virtual boundaries, AI-based route planning, and compliance monitoring for safe and repeatable operations.",
+  points: [
+    "Pre-programmed flight paths for automated missions",
+    "Virtual boundaries prevent drone from leaving assigned zones",
+    "Ensures compliance with DGCA/UAV regulations",
+    "Supports patrol scheduling at fixed intervals",
+    "Reduces operator workload with AI route planning",
+    "Logs every flight route and duration automatically",
+    "Can adapt flight paths based on live conditions",
+    "Prevents collision and unauthorized entry",
+    "Provides real-time route deviation alerts",
+    "Ensures safe, compliant, and repeatable operations"
+  ],
+  img: ""
+},
+{
+  title: "Real-Time Data Transmission to ICCC",
+  desc: "Encrypted drone video and telemetry streams are sent via 4G/5G or mesh networks to ICCC for immediate integration, analytics, and centralized situational awareness.",
+  points: [
+    "Streams encrypted video and telemetry to command centers",
+    "Uses 4G/5G or mesh network for ultra-low latency feed",
+    "Data securely transmitted to smart pole receivers",
+    "Enables immediate integration with traffic analytics",
+    "Provides real-time visual overlay on city map",
+    "Supports multiple drone streams simultaneously",
+    "AI indexes footage for event-based recall",
+    "Ensures uninterrupted communication links",
+    "Compatible with edge and cloud storage",
+    "Facilitates centralized situational awareness"
+  ],
+  img: ""
+},
+{
+  title: "Drone Docking & Charging Stations (Smart Poles Integrated)",
+  desc: "Smart poles act as automated VTOL drone hubs with wireless/solar charging, secure storage, and AI-managed flight cycles for enhanced operational efficiency.",
+  points: [
+    "Smart poles serve as automated drone charging hubs",
+    "Enables vertical take-off and landing (VTOL) platforms",
+    "Supports solar-powered wireless charging pads",
+    "Houses drones securely during standby periods",
+    "Enables quick launch for emergency dispatch",
+    "Integrates with ICCC via 5G or optical backhaul",
+    "Reduces need for manual battery replacement",
+    "Scheduled flight and return cycles managed by AI",
+    "Increases drone fleet uptime and autonomy",
+    "Enhances operational efficiency of aerial systems"
+  ],
+  img: ""
+},
+{
+  title: "High-Resolution Mapping & GIS Integration",
+  desc: "Captures detailed aerial imagery and integrates with GIS for 3D mapping, live city updates, and AI-driven urban planning insights.",
+  points: [
+    "Captures detailed aerial imagery for 3D mapping",
+    "Updates city maps with live environmental data",
+    "Identifies infrastructure changes and encroachments",
+    "Integrates with GIS for geospatial analysis",
+    "Supports road condition and asset monitoring",
+    "Provides accurate location tagging for events",
+    "Generates heatmaps for congestion or population density",
+    "Supports AI-driven urban planning decisions",
+    "Enables cross-verification with ground sensors",
+    "Creates digital twin models of city infrastructure"
+  ],
+  img: ""
+},
+{
+  title: "Crowd Management & Event Security",
+  desc: "Monitors large gatherings and ensures safety using AI-powered crowd tracking, real-time alerts, and event analytics.",
+  points: [
+    "Monitors large gatherings during events or protests",
+    "AI counts and tracks crowd density zones",
+    "Detects abnormal movement or panic situations",
+    "Alerts ICCC for crowd overflow or bottlenecks",
+    "Integrates with ground loudspeakers for announcements",
+    "Supports facial blur for privacy compliance",
+    "Real-time coordination with on-ground police units",
+    "Helps prevent stampedes and security breaches",
+    "Provides post-event analytical reports",
+    "Enhances public safety and event control efficiency"
+  ],
+  img: ""
+},
+{
+  title: "Aerial Surveillance for Smart Pole Maintenance",
+  desc: "Inspects and monitors Smart Poles using drones and AI for preventive maintenance and operational efficiency.",
+  points: [
+    "Inspects pole conditions without manual climbing",
+    "Detects physical damage, dust, or panel misalignment",
+    "Monitors solar panels and lighting performance",
+    "Captures visual data for maintenance reports",
+    "AI identifies corrosion or water ingress",
+    "Reduces downtime for on-site inspections",
+    "Enables preventive maintenance scheduling",
+    "Stores inspection data in ICCC cloud logs",
+    "Increases operational lifespan of infrastructure",
+    "Reduces manpower and risk in maintenance tasks"
+  ],
+  img: ""
+},
+{
+  title: "AI-Powered Threat Detection",
+  desc: "Monitors and identifies potential threats using AI for proactive security and rapid response.",
+  points: [
+    "Detects suspicious or unauthorized movements",
+    "Identifies objects like bags, weapons, or anomalies",
+    "Uses deep learning for threat categorization",
+    "Sends instant alert to ICCC and local law enforcement",
+    "Provides live tracking of intruders",
+    "Integrates with face/vehicle recognition databases",
+    "Operates autonomously with minimal false alerts",
+    "Ensures secure perimeters for critical infrastructure",
+    "Enhances rapid response capabilities",
+    "Strengthens public safety and surveillance reliability"
+  ],
+  img: ""
+},
+{
+  title: "Drone Fleet Management System",
+  desc: "Manages and optimizes multiple drones across city networks for continuous surveillance and operational efficiency.",
+  points: [
+    "Manages multiple drones across city networks",
+    "Assigns flight tasks dynamically using AI scheduler",
+    "Tracks live status, location, and battery levels",
+    "Generates reports for uptime and maintenance",
+    "Automates fleet rotation and duty scheduling",
+    "Integrates with ICCC dashboard and GIS maps",
+    "Supports remote software updates and diagnostics",
+    "Enables simultaneous multi-drone operations",
+    "Ensures redundancy and continuous coverage",
+    "Provides full operational control for administrators"
+  ],
+  img: ""
+},
+{
+  title: "Weather-Adaptive Flight Intelligence",
+  desc: "Monitors environmental conditions and dynamically adapts drone flight paths to ensure safe, reliable, and efficient operations.",
+  points: [
+    "Monitors wind speed, rain, and temperature in real-time",
+    "Auto-adjusts flight path during adverse conditions",
+    "Prevents flight in unsafe or restricted environments",
+    "AI dynamically recalibrates navigation stability",
+    "Sensors measure humidity and visibility continuously",
+    "Ensures reliable operations during changing weather",
+    "Integrates with meteorological APIs",
+    "Logs environmental data for each flight",
+    "Reduces crash risks and data loss",
+    "Extends drone operational efficiency year-round"
+  ],
+  img: ""
+},
+{
+  title: "AI-Based Data Analytics & Reporting",
+  desc: "Analyzes aerial and IoT data to generate actionable insights, predictive models, and comprehensive reports for smart city decision-making.",
+  points: [
+    "Analyzes aerial data for actionable insights",
+    "Generates traffic, crowd, and environment reports",
+    "Predictive modeling for incident prevention",
+    "Integrates multi-source data (drone + ITMS + poles)",
+    "Visualizes patterns in ICCC dashboards",
+    "Supports automated report scheduling",
+    "AI-based anomaly detection and tagging",
+    "Correlates aerial and ground-level metrics",
+    "Enables informed urban policy decisions",
+    "Enhances overall smart city intelligence"
+  ],
+  img: ""
+},
+{
+  title: "Integration with Law Enforcement Systems",
+  desc: "Seamlessly integrates drone and surveillance data with police and emergency units to enhance coordination, evidence tracking, and rapid response.",
+  points: [
+    "Real-time feed sharing with police and emergency units",
+    "Direct sync with surveillance databases",
+    "Enables auto-alerts for wanted vehicle detection",
+    "Records visual evidence admissible in court",
+    "Supports mission playback and incident replay",
+    "Links drone ID to operator credentials for audit trail",
+    "Reduces communication lag during emergencies",
+    "Enhances coordination among multiple agencies",
+    "Improves crime prevention and deterrence",
+    "Creates secure audit-compliant operations log"
+  ],
+  img: ""
+},
+{
+  title: "AI-Assisted Search & Rescue Operations",
+  desc: "Leverages AI and infrared technologies to locate missing persons, coordinate ground teams, and accelerate rescue operations in hazardous environments.",
+  points: [
+    "Identifies missing persons using facial AI",
+    "Detects human heat signatures via infrared",
+    "Pinpoints exact GPS coordinates of survivors",
+    "Supports coordination with ground rescue teams",
+    "Transmits real-time video for situational awareness",
+    "Operates safely in hazardous or unreachable zones",
+    "AI optimizes search grid based on probability mapping",
+    "Reduces rescue operation time significantly",
+    "Generates auto-generated incident reports",
+    "Enhances emergency readiness in smart cities"
+  ],
+  img: "img/itms-images/2.jpg                                                                                                                                                                                                                                                                                           "
+},
+{
+  title: "Unified Smart Pole + ITMS + Drone Ecosystem",
+  desc: "Provides an integrated smart city framework combining real-time monitoring, AI-driven enforcement, predictive analytics, and energy-efficient infrastructure for enhanced urban safety and governance.",
+  points: [
+    "360° situational awareness",
+    "AI-powered real-time enforcement",
+    "Predictive analytics for proactive governance",
+    "Energy-efficient, eco-friendly infrastructure",
+    "Seamless citizen safety and mobility integration",
+    "Data-driven decision-making for authorities",
+    "Scalable, modular, and future-ready architecture",
+    "Unified ICCC command and monitoring capability",
+    "Enhanced city resilience and sustainability",
+    "Foundation for next-generation Smart City ecosystems"
+  ],
+  img: "img/itms-images/2.jpg"
+}
+
+
+];
+
+let spIndex = 0;
+const spImgEl = document.getElementById("smartpoleImage");
+const spTextEl = document.getElementById("smartpoleText");
+const spDotsEl = document.getElementById("smartpoleDots");
+
+function updateSmartPole() {
+  const item = smartpoleMain[spIndex];
+  spImgEl.src = item.img;
+
+  let pointsHTML = "<ul>";
+  item.points.forEach(pt => pointsHTML += `<li>${pt}</li>`);
+  pointsHTML += "</ul>";
+
+  spTextEl.innerHTML = `
+    <h5>Feature</h5>
+    <h2>${item.title}</h2>
+    <p>${item.desc}</p>
+    ${pointsHTML}
+  `;
+
+  // Remove this block, it breaks JS when dots are deleted
+  // document.querySelectorAll("#smartpoleDots span").forEach((dot, i) => {
+  //   dot.classList.toggle("active", i === spIndex);
+  // });
+}
+
+
+
+// Navigation
+document.getElementById("nextBtn").onclick = () => {
+  spIndex = (spIndex + 1) % smartpoleMain.length;
+  updateSmartPole();
+};
+
+document.getElementById("prevBtn").onclick = () => {
+  spIndex = (spIndex - 1 + smartpoleMain.length) % smartpoleMain.length;
+  updateSmartPole();
+};
+
+// Auto-scroll
+let autoScroll = setInterval(() => {
+  spIndex = (spIndex + 1) % smartpoleMain.length;
+  updateSmartPole();
+}, 3500);
+
+document.querySelector(".smart-section").addEventListener("mouseenter", () => {
+  clearInterval(autoScroll);
+});
+
+document.querySelector(".smart-section").addEventListener("mouseleave", () => {
+  autoScroll = setInterval(() => {
+    spIndex = (spIndex + 1) % smartpoleMain.length;
+    updateSmartPole();
+  }, 3500);
+});
+
+updateSmartPole();
+</script>
+
 
 
    <!-- Footer Start -->
@@ -451,6 +4964,7 @@
         <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>    
 
         
+     
         <!-- JavaScript Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -458,10 +4972,20 @@
         <script src="lib/easing/easing.min.js"></script>
         <script src="lib/waypoints/waypoints.min.js"></script>
         <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+        <!-- FONT AWESOME -->
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
         
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+       <script>AOS.init();</script>
+       
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
     </body>
 
 </html>

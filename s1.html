@@ -1,148 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wind Energy - How It Works</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Apartments</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(#87ceeb, #e0f7fa); /* sky */
-      height: 100vh;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      /* font-family: "Georgia", serif;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      height: 100vh;
+      
+      background-color: #e7e2dc; */
       overflow: hidden;
     }
 
-    .wind-section {
-      position: relative;
-      width: 100%;
-      max-width: 1200px;
-      height: 90vh;
+    /* Left Section */
+    .left-section {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 40px;
+      flex: 0.3; /* narrower */
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
+      position: relative;
     }
 
-    /* SVG Scene */
-    .wind-scene {
-      width: 55%;
-    }
-
-    /* Text Area */
-    .wind-text {
-      width: 40%;
-      color: #222;
-    }
-
-    .wind-text h2 {
+    .logo {
       font-size: 2rem;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+      font-weight: bold;
+      margin-bottom: 3rem;
     }
 
-    .wind-text p {
-      font-size: 1rem;
+    .subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+    .hiper-link{
+      text-decoration: none;
+      color:#000;
+    }
+
+    .description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
       line-height: 1.6;
-      margin-bottom: 15px;
+      max-width: 320px;
     }
 
-    /* SVG Styling */
-    svg {
-      width: 100%;
-      height: auto;
+    .features {
+      list-style: none;
+      margin-bottom: 2rem;
     }
 
-    .turbine-blades {
-      transform-origin: center;
-      transform-box: fill-box;
+    .features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
     }
 
-    .wind-arrow {
-      stroke: #4fc3f7;
-      stroke-width: 3;
-      stroke-dasharray: 10 10;
-      animation: dashmove 2s linear infinite;
+    .features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
     }
 
-    @keyframes dashmove {
-      to {
-        stroke-dashoffset: -20;
+    .btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: white;
+      border: none;
+      /* border-radius: 8px; */
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Right Section */
+    .right-section {
+      flex: 0.7; /* wider */
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Heading overlay on image */
+    .heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: white;
+      padding: 1.2rem 2rem;
+      /* border-radius: 8px; */
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Optional: responsive for smaller screens */
+    @media (max-width: 900px) {
+      .left-section {
+        flex-direction: column;
       }
-    }
 
-    .house-light {
-      fill: #ccc;
-      transition: fill 1s ease;
-    }
+      .left-section {
+        flex: none;
+        width: 100%;
+        height: auto;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
 
-    .house-light.on {
-      fill: #ffeb3b;
+      .right-section {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .features {
+        text-align: left;
+        margin: 0 auto;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wind-section">
-    <!-- Left side: SVG Scene -->
-    <div class="wind-scene">
-      <svg viewBox="0 0 600 400">
-        <!-- Ground -->
-        <rect x="0" y="350" width="600" height="50" fill="#4caf50"/>
 
-        <!-- Wind Arrows -->
-        <line x1="20" y1="120" x2="200" y2="120" class="wind-arrow"/>
-        <line x1="20" y1="160" x2="200" y2="160" class="wind-arrow"/>
-        <line x1="20" y1="200" x2="200" y2="200" class="wind-arrow"/>
-
-        <!-- Wind Turbine -->
-        <g transform="translate(250,200)">
-          <rect x="-5" y="0" width="10" height="150" fill="#888"/>
-          <g class="turbine-blades">
-            <circle r="10" fill="#444"/>
-            <polygon points="0,-10 80,-20 0,-40" fill="#ddd"/>
-            <polygon points="0,10 -20,80 -40,0" fill="#ddd"/>
-            <polygon points="10,0 40,0 20,-80" fill="#ddd"/>
-          </g>
-        </g>
-
-        <!-- House -->
-        <g transform="translate(450,250)">
-          <rect x="0" y="50" width="80" height="60" fill="#795548"/>
-          <polygon points="0,50 40,10 80,50" fill="#00000"/>
-          <rect x="25" y="70" width="30" height="20" class="house-light"/>
-        </g>
-      </svg>
+  <!-- section 1 -->
+  <div class="left-section">
+    <!-- <div class="logo">me.</div> -->
+    <div class="subtitle">New home furniture collections and decoration accessories</div>
+    <div class="description">
+      Discover a new approach to modern living spaces — where comfort meets contemporary design. Our curated selections transform every corner into a statement of elegance and simplicity.
     </div>
 
-    <!-- Right side: Text -->
-    <div class="wind-text">
-      <h2>How Wind Energy Works</h2>
-      <p>1. Wind flows across the blades, making them rotate.</p>
-      <p>2. The rotor spins a shaft inside the nacelle (the box on top).</p>
-      <p>3. The shaft connects to a generator, producing electricity.</p>
-      <p>4. The power is transferred to homes and industries, lighting up communities sustainably.</p>
-    </div>
+    <ul class="features">
+      <li>Elegant minimalist interiors</li>
+      <li>High-quality wooden finishes</li>
+      <li>Eco-friendly materials</li>
+      <li>Smart home integration</li>
+      <li>Customizable design options</li>
+      <li>Luxury fittings and textures</li>
+    </ul>
+
+    <button class="btn"><a class="hiper-link" href="contact.html">Know more →</a></button>
   </div>
 
-  <script>
-    // Rotate turbine blades
-    gsap.to(".turbine-blades", {
-      rotate: 360,
-      transformOrigin: "center",
-      duration: 4,
-      repeat: -1,
-      ease: "linear"
-    });
+  <div class="right-section">
+    <div class="heading">Modern<br>Apartments</div>
+  </div>
 
-    // Animate house light turning on after delay
-    setTimeout(() => {
-      document.querySelector(".house-light").classList.add("on");
-    }, 4000);
-  </script>
+  <!-- section 2 -->
+
+   <style>
+    /* * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Georgia", serif;
+      display: flex;
+      flex-direction: row; image left, text right
+      height: 100vh;
+      overflow: hidden;
+      background-color: #e7e2dc;
+    } */
+
+    /* LEFT: IMAGE SECTION */
+    .left-section-2 {
+      display: flex;
+      flex-direction: row; /* image left, text right */
+      flex: 1;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* HEADING overlay */
+    .heading-2 {
+      position: absolute;
+      top: 35%;
+      right: -8%; /* slightly overlaps onto text */
+      transform: translateY(-50%);
+      background-color: white;
+      padding: 1.2rem 2rem;
+      /* border-radius: 8px; */
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+
+    /* RIGHT: TEXT SECTION */
+    .right-section-2 {
+      flex: 0.3;
+      background-color: #e7e2dc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 5rem 4rem 8rem; /* shifted right a bit */
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo-2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .subtitle-2 {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
+
+    .description-2 {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .features-2 {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .features-2 li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .features-2 li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .btn-2 {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: white;
+      border: none;
+      /* border-radius: 8px; */
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-2:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .left-section-2 {
+        flex-direction: column;
+      }
+
+      .left-section-2 {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .right-section-2 {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .heading-2 {
+        right: 50%;
+        transform: translate(50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .features-2 {
+        text-align: left;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+    <!-- LEFT IMAGE SECTION -->
+  <div class="left-section-2">
+    <div class="heading-2">Modern<br>apartments</div>
+  </div>
+
+  <!-- RIGHT TEXT SECTION -->
+  <div class="right-section-2">
+    <div class="logo-2">me.</div>
+    <div class="subtitle-2">New home furniture collections and decoration accessories</div>
+    <div class="description-2">
+      Discover a new approach to modern living spaces — where comfort meets contemporary design. Our curated selections transform every corner into a statement of elegance and simplicity.
+    </div>
+
+    <ul class="features-2">
+      <li>Elegant minimalist interiors</li>
+      <li>High-quality wooden finishes</li>
+      <li>Eco-friendly materials</li>
+      <li>Smart home integration</li>
+      <li>Customizable design options</li>
+      <li>Luxury fittings and textures</li>
+    </ul>
+
+    <button class="btn-2">See more →</button>
+  </div>
+
+
+
 </body>
 </html>
+
+
+
+

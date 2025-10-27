@@ -1,429 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Concept | Arcot Industries</title>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap" rel="stylesheet">
+<section class="mainfeatures-section">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
- body { font-family: 'Jost', sans-serif; background: #fff; color: #333; }
-
-  /* Main section structure */
-.concept-section {
-  position: relative;
-  background: #f2f2f2;
-  text-align: center;
-  overflow: hidden;
-}
-
-.concept-heading {
-  font-size: 2rem;
-  font-weight: 500;
-  padding: 60px 0 10px;
-  letter-spacing: 2px;
-  color: #222;
-  position: relative;
-}
-.concept-heading::after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 40px;
-  background-color: #555;
-  margin: 10px auto 0;
-}
-
-.concept-image-container {
-  position: relative;
-  background: url('img/bannerabout.webp') center/cover no-repeat;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: zoomIn 1.2s ease-out forwards;
-  transition: transform 0.6s ease;
-  will-change: transform;
-}
-
-/* 👇 Hover effect to zoom the background image */
-.concept-image-container:hover {
-  transform: scale(1.03);
-}
-/* Text box */
-.concept-text-box {
-  color: #fff;
-  max-width: 700px;
-  text-align: center;
-  padding: 20px 40px;
-  border-radius: 8px;
-  animation: fadeUp 1.4s ease-out forwards;
-}
-
-/* Optional hover glow effect */
-.concept-text-box:hover {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  transition: text-shadow 0.3s ease-in-out;
-}
-
-/* Headings */
-.concept-text-box h3 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  font-weight: 500;
-}
-.concept-text-box p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-  @media (max-width: 768px) {
-      .concept-heading {
-        font-size: 1.6rem;
-      }
-      .concept-image-container {
-        height: 420px;
-        padding: 0 20px;
-      }
-      .concept-text-box h3 {
-        font-size: 1.5rem;
-      }
-      .concept-text-box p {
-        font-size: 0.95rem;
-      }
+    * {
+      box-sizing: border-box;
     }
 
-/* Animations */
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes zoomIn {
-  0% {
-    transform: scale(1.05);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* Reuse class if needed */
-.animate-fade-up {
-  animation: fadeUp 1.2s ease-out forwards;
-}
-.animate-zoom-in {
-  animation: zoomIn 1s ease-out forwards;
-}
-
-      .section {
-      padding: 60px 20px;
-      background: #e6e6e6;
-      text-align: center;
+    .mainfeatures-section {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #e7e2dc;
+      font-family: "Georgia", serif;
+      margin-bottom: 60px; /* bottom gap added */
     }
 
-    .section h2 {
-      font-size: 2rem;
-      font-weight: 500;
-      letter-spacing: 2px;
-      color: #222;
+    /* LEFT CONTENT AREA */
+    .mainfeatures-left-block {
+      flex: 0.3;
+      background-color: #cdcccb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem;
       position: relative;
-      margin-bottom: 30px;
     }
 
-    .section h2::after {
-      content: "";
-      display: block;
-      width: 1px;
-      height: 40px;
-      background-color: #555;
-      margin: 10px auto 0;
+    .mainfeatures-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
     }
 
-.brand-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
-  padding: 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.08);
-  flex-wrap: wrap;
-  gap: 30px;
-}
+    .mainfeatures-subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      max-width: 260px;
+      line-height: 1.4;
+    }
 
-.brand-logo {
-  flex: 1 1 48%;
-  min-width: 300px;
-  text-align: center;
-}
+    .mainfeatures-link {
+      text-decoration: none;
+      color: #000;
+    }
 
-.brand-logo img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.5s ease;
-}
+    .mainfeatures-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
 
-.brand-logo:hover img {
-  transform: scale(1.05);
-}
+    .mainfeatures-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
 
-.brand-text {
-  flex: 1 1 48%;
-  min-width: 300px;
-  text-align: left;
-  opacity: 0;
-  animation: fadeRight 1.2s ease forwards;
-  animation-delay: 0.3s;
-}
+    .mainfeatures-features li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: #333;
+    }
 
-.brand-text p {
-  line-height: 1.8;
-  margin-bottom: 20px;
-  font-size: 16px;
-  color: #333;
-}
+    .mainfeatures-features li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #101010;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
 
-.animate-left {
-  opacity: 0;
-  animation: fadeLeft 1.2s ease forwards;
-}
+    .mainfeatures-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
 
-.animate-right {
-  opacity: 0;
-  animation: fadeRight 1.2s ease forwards;
-}
+    .mainfeatures-btn:hover {
+      transform: translateY(-2px);
+    }
 
-@keyframes fadeLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+    /* RIGHT IMAGE AREA */
+    .mainfeatures-right-block {
+      flex: 0.7;
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
 
-@keyframes fadeRight {
-  0% {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+    .mainfeatures-heading {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
 
-   @media (max-width: 768px) {
-      .brand-container {
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .mainfeatures-section {
         flex-direction: column;
-        text-align: center;
+        height: auto;
       }
-      .brand-text {
+
+      .mainfeatures-left-block {
+        flex: none;
+        width: 100%;
+        align-items: center;
         text-align: center;
+        padding: 2rem;
+      }
+
+      .mainfeatures-right-block {
+        flex: none;
+        width: 100%;
+        height: 60vh;
+      }
+
+      .mainfeatures-heading {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+      }
+
+      .mainfeatures-features {
+        text-align: left;
+        margin: 0 auto;
       }
     }
-    .feature-section {
-  background: #e7e8e8;
-  padding: 80px 20px;
-  text-align: center;
-}
-.section-heading h2 {
-  font-size: 40px;
-  letter-spacing: 2px;
-  color: #333;
-}
-.heading-line {
-  width: 2px;
-  height: 40px;
-  background: #333;
-  margin: 15px auto 50px;
-}
-
-.feature-block {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 1400px;
-  margin: 0 auto;
-  background: #e7e8e8;
-  padding: 30px;
-  gap: 30px;
-}
-.feature-text {
-  flex: 1 1 40%;
-  text-align: left;
-}
-.feature-sub {
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 2px;
-  color: #888;
-  margin-bottom: 5px;
-}
-.feature-number {
-  font-size: 48px;
-  margin: 0;
-  border-bottom: 2px solid #999;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-.feature-title {
-  font-size: 28px;
-  line-height: 1.5;
-  margin: 20px 0;
-  color: #222;
-}
-.feature-desc {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #444;
-}
-.feature-image {
-  flex: 1 1 55%;
-  text-align: center;
-}
-.feature-image img {
-  max-width: 100%;
-  border-radius: 4px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-}
-
-/* Mobile View */
-@media (max-width: 768px) {
-  .feature-block {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
-  .feature-text {
-    order: 2;
-    text-align: center;
-  }
-  .feature-image {
-    order: 1;
-  }
-}
-
- 
-
-  
   </style>
-</head>
-<body>
- <!-- Concept Section -->
-<section class="concept-section">
-  <h2 class="concept-heading">CONCEPT</h2>
-  <div class="concept-image-container animate-zoom-in">
-    <div class="concept-text-box animate-fade-up">
-      <h3>A new way to think;</h3>
-      <p>
-        with Arcot Smart Lighting,<br>
-        you control the orientation of the beautiful light<br>
-        output to where it is needed.<br><br>
-        Through innovative lighting,<br>
-        Arcot continues to evolve in response to the world’s lighting needs.
-      </p>
+
+  <!-- LEFT SIDE -->
+  <div class="mainfeatures-left-block">
+    <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
     </div>
+
+    <div class="mainfeatures-description">
+      Discover a new approach to modern living spaces — where comfort meets contemporary design. Our curated selections transform every corner into a statement of elegance and simplicity.
+    </div>
+
+    <ul class="mainfeatures-features">
+      <li>Elegant minimalist interiors</li>
+      <li>High-quality wooden finishes</li>
+      <li>Eco-friendly materials</li>
+      <li>Smart home integration</li>
+      <li>Customizable design options</li>
+      <li>Luxury fittings and textures</li>
+    </ul>
+
+    <button class="mainfeatures-btn">
+      <a class="mainfeatures-link" href="contact.html">Know more →</a>
+    </button>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="mainfeatures-right-block">
+    <div class="mainfeatures-heading">Modern<br>Apartments</div>
   </div>
 </section>
-
-
-<!-- BRAND SECTION -->
-<section class="section brand-section">
-  <h2>BRAND</h2>
-  <div class="brand-container">
-    <div class="brand-logo animate-left">
-      <img src="img/pr7.webp" alt="Arcot Lighting Logo">
-    </div>
-    <div class="brand-text animate-right">
-      <p>
-        A manufacturer of precision components that deals in a product group boasting the highest share in the world.<br>
-        The technology of Arcot Industries has been brought together to add new value to lighting.
-      </p>
-      <p>
-        Lighting equipment can be easily controlled with the development of our proprietary software that uses wireless technology and fresnel lenses just 1 mm thick created from resin molds developed for LED backlights. Using motor technology, we have enabled smooth, quiet movements.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-
-
-  <!-- FEATURES SECTION -->
-<section class="feature-section">
-  <div class="section-heading">
-    <h2>FEATURE</h2>
-    <div class="heading-line"></div>
-  </div>
-
-  <div class="feature-block">
-    <div class="feature-text">
-      <p class="feature-sub">FEATURE</p>
-      <h3 class="feature-number">01</h3>
-      <h4 class="feature-title">Creating spaces<br>by freely<br>controlling light</h4>
-      <p class="feature-desc">
-        The brightness, color, lit area,<br>
-        and angle can all be controlled.<br>
-        Using a timer relay,<br>
-        lighting can be automatically<br>
-        changed to preset scenarios.<br>
-        We provide support for<br>
-        creating attractive spaces<br>
-        which expand the possibilities of presentation.
-      </p>
-    </div>
-    <div class="feature-image">
-      <img src="img/carousel-1.webp" alt="Creating spaces by freely controlling light">
-    </div>
-  </div>
-
-
-  <div class="feature-block">
-     <div class="feature-image">
-      <img src="img/carousel-1.webp" alt="Creating spaces by freely controlling light">
-    </div>
-    <div class="feature-text">
-      <p class="feature-sub">FEATURE</p>
-      <h3 class="feature-number">01</h3>
-      <h4 class="feature-title">Creating spaces<br>by freely<br>controlling light</h4>
-      <p class="feature-desc">
-        The brightness, color, lit area,<br>
-        and angle can all be controlled.<br>
-        Using a timer relay,<br>
-        lighting can be automatically<br>
-        changed to preset scenarios.<br>
-        We provide support for<br>
-        creating attractive spaces<br>
-        which expand the possibilities of presentation.
-      </p>
-    </div>
-   
-  </div>
-</section>
-
-
-
-
-
-
-
-
- 
-
-</body>
-</html>
