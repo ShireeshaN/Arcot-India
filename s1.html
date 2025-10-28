@@ -88,7 +88,7 @@
     .left-panel img:hover { transform: scale(1.02); }
 
     /* Vertical Menu (kept but hidden on small screens) */
-    .vertical-nav {
+    /* .vertical-nav {
       position: absolute;
       left: 30px;
       bottom: 10px;
@@ -106,8 +106,25 @@
       letter-spacing: 2px;
       text-decoration: none;
       font-weight: 400;
-    }
+    } */
     .vertical-nav a:hover { color: #fff; }
+
+    .vertical-nav a {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: #777;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.vertical-nav a.active {
+  color: #fff;
+  font-weight: 700;
+}
+
 
     .right-panel {
       width: 55%;
@@ -288,11 +305,14 @@
       <div class="marble-bg" style="background-image: url('https://images.unsplash.com/photo-1534850336045-c8d0b06f4b42?auto=format&fit=crop&w=1400&q=80');"></div>
 
       <div class="left-panel">
-        <nav class="vertical-nav" aria-hidden="true">
-          <a href="#">Home</a>
-          <a href="#">Projects</a>
-          <a href="#">Services</a>
-        </nav>
+       <nav class="vertical-nav">
+  <a href="#feature1" class="active">Bluetooth</a>
+  <a href="#feature2">Wi-Fi</a>
+  <a href="#feature3">Wireless</a>
+  <a href="#feature4">Audio</a>
+  <a href="#feature5">Lighting</a>
+</nav>
+
         <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Bluetooth connectivity" />
       </div>
 

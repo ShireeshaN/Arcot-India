@@ -328,6 +328,17 @@ AOS.init({
 
 
 
+function toggleDropdown(event) {
+  event.preventDefault();
+  const dropdown = event.target.closest('.dropdown');
+  dropdown.classList.toggle('show');
+
+  // Close other dropdowns if open
+  document.querySelectorAll('.navmenu ul li.dropdown').forEach(li => {
+    if (li !== dropdown) li.classList.remove('show');
+  });
+}
+
 
 
 
