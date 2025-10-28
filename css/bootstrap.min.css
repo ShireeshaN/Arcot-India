@@ -642,7 +642,8 @@ progress {
     padding-right: var(--bs-gutter-x, 0.75rem);
     padding-left: var(--bs-gutter-x, 0.75rem);
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
+    height: 70vh;
 }
 
 @media(min-width: 576px) {
@@ -8316,7 +8317,8 @@ fieldset:disabled .btn {
 }
 
 .text-white {
-    color: #fff !important
+    color: #fff !important;
+    padding-top: 100px;
 }
 
 .text-body {
