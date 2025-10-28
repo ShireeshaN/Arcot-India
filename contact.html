@@ -42,19 +42,20 @@
         </div>
         <!-- Spinner End -->
 
-<header>
+<!-- HEADER START -->
+
+<header class="main-header">
   <div class="header-wrap position-relative">
-    <a href="index.html"><img src="img/logos.webp" alt="Logo" class="logo" loading="lazy"></a>
+    <a href="index.html">
+      <img src="img/logos.webp" alt="Logo" class="logo" loading="lazy">
+    </a>
     <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
     <nav class="navmenu" id="mainNav">
       <ul class="mb-0">
-         <li><a href="index.html" >Home</a></li>
-             <li><a href="about.html">About</a></li>
-        <li>
-          <a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a>
-        </li>
-       <li><a href="solution.html">Solutions</a></li>
-
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a></li>
+        <li><a href="solution.html">Solutions</a></li>
 <li class="dropdown">
   <a href="#" onclick="toggleDropdown(event)">R&D <i class="bi bi-chevron-down ms-1"></i></a>
   <ul class="dropdown-menu">
@@ -65,87 +66,78 @@
     <li><a href="#">Smart Bar Counter</a></li>
   </ul>
 </li>
-    <li><a href="applications.html">Applications</a></li>
-   <li><a href="gallery.html" >Gallery</a></li>
-           <li><a href="contact.html" class="active">Contact</a></li>
-        <!-- <li><a href="#"><i class="bi bi-search"></i></a></li> -->
+
+        <li><a href="applications.html">Applications</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </div>
 
+  <!-- Mega Menu -->
   <div id="megaMenu" class="mega-menu">
     <div class="row">
-     
-<div class="underline"></div>
-<div class="service-submenus d-flex flex-wrap">
-  <div class="service-group">
-    <h6>Energy</h6>
-    <ul>
-      <li><a href="#">Solar</a></li>
-      <li><a href="#">Wind</a></li>
-      <li><a href="#">Biomass</a></li>
-          <li><a href="#">Hydel Power</a></li>
-    </ul>
-  </div>
-  <div class="service-group">
-    <h6>Power</h6>
-    <ul>
-      <li><a href="transmission.html">transmission</a></li>
-      <li><a href="#">distribution</a></li>
-      <li><a href="#">Low Tention</a></li>
-        <li><a href="#">High Tention</a></li>
-         <li><a href="#">Panel Boards</a></li>
-    </ul>
-  </div>
-  <div class="service-group">
-    <h6>Lighting</h6>
-    <ul>
-      <li><a href="#">Residential</a></li>
-      <li><a href="#">Facade</a></li>
-      <li><a href="#">Commercial</a></li>
-       <li><a href="#">Industrial</a></li>
-      <li><a href="#">Street</a></li>
-      <li><a href="#">Park</a></li>
-      <li><a href="#">Stadium</a></li>
-      <li><a href="#">Hospital</a></li>
-    </ul>
-  </div>
-  <div class="service-group">
-    <h6>Automation</h6>
-    <ul>
-   
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Commercial</a></li>
-         <li><a href="#">Industrial</a></li>
-           <li><a href="#">Hospital</a></li>
-      <li><a href="#">IOT Based Automation</a></li>
-         <li><a href="#">Hotel</a></li>
-    </ul>
-  </div>
-  <div class="service-group">
-    <h6>Smart City</h6>
-    <ul>
-      <li><a href="smart-pole.html">Smart Pole</a></li>
-      <li><a href="#">Smart Conference Hall</a></li>
-       <li><a href="#">Smart Bollards</a></li>
-          <li><a href="#">Smart Bar Counter</a></li>
-              <li><a href="#">Smart Window Leaf AC</a></li>
-    </ul>
-  </div>
-
-   <div class="service-group">
-    <h6>R & D</h6>
-    <ul>
-      <li><a href="smart-pole.html">Smart Pole</a></li>
-    </ul>
-  </div>
-
-   
-</div>
-
+      <div class="underline"></div>
+      <div class="service-submenus d-flex flex-wrap">
+        <div class="service-group">
+          <h6>Energy</h6>
+          <ul>
+            <li><a href="#">Solar</a></li>
+            <li><a href="#">Wind</a></li>
+            <li><a href="#">Biomass</a></li>
+            <li><a href="#">Hydel Power</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>Power</h6>
+          <ul>
+            <li><a href="transmission.html">Transmission</a></li>
+            <li><a href="#">Distribution</a></li>
+            <li><a href="#">Low Tension</a></li>
+            <li><a href="#">High Tension</a></li>
+            <li><a href="#">Panel Boards</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>Lighting</h6>
+          <ul>
+            <li><a href="residential-lighting.html">Residential</a></li>
+            <li><a href="facade-lighting.html">Facade</a></li>
+            <li><a href="commercial-lighting.html">Commercial</a></li>
+            <li><a href="industrial-lighting.html">Industrial</a></li>
+            <li><a href="#">Street</a></li>
+            <li><a href="#">Park</a></li>
+            <li><a href="#">Stadium</a></li>
+            <li><a href="#">Hospital</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>Automation</h6>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Commercial</a></li>
+            <li><a href="#">Industrial</a></li>
+            <li><a href="#">Hospital</a></li>
+            <li><a href="#">IoT Based Automation</a></li>
+            <li><a href="#">Hotel</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>R & D</h6>
+          <ul>
+            <li><a href="smart-pole.html">Smart Pole</a></li>
+            <li><a href="#">Smart Conference Hall</a></li>
+            <li><a href="#">Smart Bollards</a></li>
+            <li><a href="#">Smart Bar Counter</a></li>
+            <li><a href="#">Smart Window Leaf AC</a></li>
+          </ul>
+        </div>
+       
+      </div>
     </div>
   </div>
 </header>
+<!-- HEADER END -->
 
 
 
