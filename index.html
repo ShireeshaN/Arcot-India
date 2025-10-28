@@ -46,19 +46,20 @@
         <!-- Spinner End -->
 
     
-<header>
+
+<!-- HEADER START -->
+<header class="main-header">
   <div class="header-wrap position-relative">
-    <a href="index.html"><img src="img/logos.webp" alt="Logo" class="logo" loading="lazy"></a>
+    <a href="index.html">
+      <img src="img/logos.webp" alt="Logo" class="logo" loading="lazy">
+    </a>
     <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
     <nav class="navmenu" id="mainNav">
       <ul class="mb-0">
-         <li><a href="index.html" class="active">Home</a></li>
-             <li><a href="about.html">About</a></li>
-        <li>
-          <a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a>
-        </li>
-<li><a href="solution.html">Solutions</a></li>
-
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a></li>
+        <li><a href="solution.html">Solutions</a></li>
 <li class="dropdown">
   <a href="#" onclick="toggleDropdown(event)">R&D <i class="bi bi-chevron-down ms-1"></i></a>
   <ul class="dropdown-menu">
@@ -70,476 +71,399 @@
   </ul>
 </li>
 
-        
-    <li><a href="applications.html">Applications</a></li>
-   <li><a href="gallery.html" >Gallery</a></li>
-           <li><a href="contact.html">Contact</a></li>
-        <!-- <li><a href="#"><i class="bi bi-search"></i></a></li> -->
+        <li><a href="applications.html">Applications</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </div>
 
+  <!-- Mega Menu -->
   <div id="megaMenu" class="mega-menu">
     <div class="row">
-     
-<div class="underline"></div>
-<div class="service-submenus d-flex flex-wrap">
-  <div class="service-group">
-    <h6>Energy</h6>
-    <ul>
-      <li><a href="#">Solar</a></li>
-      <li><a href="#">Wind</a></li>
-      <li><a href="#">Biomass</a></li>
-          <li><a href="#">Hydel Power</a></li>
-    </ul>
-  </div>
-  <div class="service-group">
-    <h6>Power</h6>
-    <ul>
-      <li><a href="transmission.html">transmission</a></li>
-      <li><a href="#">distribution</a></li>
-      <li><a href="#">Low Tention</a></li>
-        <li><a href="#">High Tention</a></li>
-         <li><a href="#">Panel Boards</a></li>
-    </ul>
-  </div>
-  <div class="service-group">
-    <h6>Lighting</h6>
-    <ul>
-      <li><a href="residential-lighting.html">Residential</a></li>
-      <li><a href="facade-lighting">Facade</a></li>
-      <li><a href="commercial-lighting">Commercial</a></li>
-       <li><a href="industrial-lighting">Industrial</a></li>
-      <li><a href="#">Street</a></li>
-      <li><a href="#">Park</a></li>
-      <li><a href="#">Stadium</a></li>
-      <li><a href="#">Hospital</a></li>
-    </ul>
-  </div>
-  <div class="service-group">
-    <h6>Automation</h6>
-    <ul>
-   
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Commercial</a></li>
-         <li><a href="#">Industrial</a></li>
-           <li><a href="#">Hospital</a></li>
-      <li><a href="#">IOT Based Automation</a></li>
-         <li><a href="#">Hotel</a></li>
-    </ul>
-  </div>
-  <div class="service-group">
-    <h6>Smart City</h6>
-    <ul>
-      <li><a href="smart-pole.html">Smart Pole</a></li>
-      <li><a href="#">Smart Conference Hall</a></li>
-       <li><a href="#">Smart Bollards</a></li>
-          <li><a href="#">Smart Bar Counter</a></li>
-              <li><a href="#">Smart Window Leaf AC</a></li>
-    </ul>
-  </div>
-
-   <div class="service-group">
-    <h6>R & D</h6>
-    <ul>
-      <li><a href="smart-pole.html">Smart Pole</a></li>
-    </ul>
-  </div>
-
-   
-</div>
-
-    </div>
-  </div>
-
-
-  
-
+      <div class="underline"></div>
+      <div class="service-submenus d-flex flex-wrap">
+        <div class="service-group">
+          <h6>Energy</h6>
+          <ul>
+            <li><a href="#">Solar</a></li>
+            <li><a href="#">Wind</a></li>
+            <li><a href="#">Biomass</a></li>
+            <li><a href="#">Hydel Power</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>Power</h6>
+          <ul>
+            <li><a href="transmission.html">Transmission</a></li>
+            <li><a href="#">Distribution</a></li>
+            <li><a href="#">Low Tension</a></li>
+            <li><a href="#">High Tension</a></li>
+            <li><a href="#">Panel Boards</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>Lighting</h6>
+          <ul>
+            <li><a href="residential-lighting.html">Residential</a></li>
+            <li><a href="facade-lighting.html">Facade</a></li>
+            <li><a href="commercial-lighting.html">Commercial</a></li>
+            <li><a href="industrial-lighting.html">Industrial</a></li>
+            <li><a href="#">Street</a></li>
+            <li><a href="#">Park</a></li>
+            <li><a href="#">Stadium</a></li>
+            <li><a href="#">Hospital</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>Automation</h6>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Commercial</a></li>
+            <li><a href="#">Industrial</a></li>
+            <li><a href="#">Hospital</a></li>
+            <li><a href="#">IoT Based Automation</a></li>
+            <li><a href="#">Hotel</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>R & D</h6>
+          <ul>
+            <li><a href="smart-pole.html">Smart Pole</a></li>
+            <li><a href="#">Smart Conference Hall</a></li>
+            <li><a href="#">Smart Bollards</a></li>
+            <li><a href="#">Smart Bar Counter</a></li>
+            <li><a href="#">Smart Window Leaf AC</a></li>
+          </ul>
+        </div>
+       
+      </div>
     </div>
   </div>
 </header>
 
 
-<!-- banner section -->
-<div class="banner-video-carousel">
+
+<!-- HEADER END -->
+
+<!-- BANNER SECTION START -->
+<div class="banner-image-carousel">
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
       <!-- Slide 1 -->
       <div class="swiper-slide">
-        <video class="banner-video" muted playsinline>
-          <source src="media/windvi.mp4" type="video/mp4" />
-        </video>
+        <img class="banner-image" src="img/newbanners/powerad energy.png" alt="Harnessing Wind Power" />
         <div class="banner-content">
-          <h1 class="">Harnessing Wind Power</h1>
+          <h1>Harnessing Wind</h1>
         </div>
       </div>
 
       <!-- Slide 2 -->
       <div class="swiper-slide">
-        <video class="banner-video" muted playsinline>
-          <source src="media/solarvi.mp4" type="video/mp4" />
-        </video>
+        <img class="banner-image" src="img/newbanners/panels.png" alt="Sustainable Solar Energy" />
         <div class="banner-content">
-          <h2>Sustainable Solar Energy</h2>
+          <h1>Sustainable Solar</h1>
         </div>
       </div>
 
       <!-- Slide 3 -->
       <div class="swiper-slide">
-        <video class="banner-video" muted playsinline>
-          <source src="media/transmissionvi.mp4" type="video/mp4" />
-        </video>
+        <img class="banner-image" src="img/newbanners/3.png" alt="Reliable Power Transmission" />
         <div class="banner-content">
-          <h2>Reliable Power Transmission</h2>
+          <h1>Reliable Power</h1>
         </div>
       </div>
 
       <!-- Slide 4 -->
       <div class="swiper-slide">
-        <video class="banner-video" muted playsinline>
-          <source src="media/lighting2.4.mp4" type="video/mp4" />
-        </video>
+        <img class="banner-image" src="img/newbanners/4.png" alt="Smart & Efficient Lighting" />
         <div class="banner-content">
-          <h2>Smart & Efficient Lighting</h2>
+          <h1>Smart & Efficient</h1>
+          <h2>Lighting Solutions</h2>
         </div>
       </div>
 
       <!-- Slide 5 -->
       <div class="swiper-slide">
-        <video class="banner-video" muted playsinline>
-          <source src="media/iot5.0.mp4" type="video/mp4" />
-        </video>
+        <img class="banner-image" src="img/newbanners/5.png" alt="Intelligent IoT Solutions" />
         <div class="banner-content">
-          <h2>Intelligent IoT Solutions</h2>
+          <h1>Intelligent IoT</h1>
+          <h2>Connected Innovation</h2>
         </div>
       </div>
     </div>
-
-    <!-- Swiper Navigation + Pagination -->
-    <!-- <div class="swiper-pagination"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div> -->
   </div>
 </div>
-
-<!-- banner section -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
-
-
+<!-- BANNER SECTION END -->
 
 <style>
-    /* Section position relative for overlays */
-.enhanced-section {
-  position: relative;
-  overflow: hidden;
-  background-color: #000; /* fallback */
+/* === HEADER === */
+.main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(48, 47, 47, 0.35); /* transparent glassy overlay */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Particle canvas fills section behind content */
-#particle-canvas {
+.header-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 40px;
+}
+
+.logo {
+  max-height: 48px;
+}
+
+.navmenu ul {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.navmenu ul li a {
+  font-family: 'Six Caps', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 4px;
+  font-size: 11px;
+  font-weight: 300;
+  transition: 0.3s;
+}
+
+.navmenu ul li a:hover {
+  color: #ffcc66;
+}
+
+/* === BANNER === */
+.banner-image-carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 8s ease-in-out;
+}
+
+.swiper-slide-active .banner-image {
+  transform: scale(1.1);
+}
+
+.banner-content {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
-  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding-left: 8%;
+  background: rgba(0, 0, 0, 0.35);
 }
 
-/* Background image with blur and transparency */
-.enhanced-section .bg-image {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 100%;
-  background: url('img/carousel-1.webp') no-repeat center center;
-  background-size: cover;
-  filter: blur(0px) brightness(0.3);
-  opacity: 0.3;
-  z-index: 2;
-  pointer-events: none;
-}
-.enhanced-section .bg-image1 {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 100%;
-  background: url('img/segmentimgs/seg1 (11).webp') no-repeat center center;
-  background-size: cover;
-  filter: blur(0px) brightness(0.3);
-  opacity: 0.3;
-  z-index: 2;
-  pointer-events: none;
+.banner-content h1,
+.banner-content h2 {
+  font-family: 'Six Caps', sans-serif;
+
+  letter-spacing: 6px;
+font-size: 40px !important;
+  margin: 0;
+  color: #d2cbcb;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+  font-weight: lighter !important;
 }
 
-.enhanced-section .bg-image2 {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 100%;
-  background: url('img/segmentimgs/facadelights.webp') no-repeat center center;
-  background-size: cover;
-  filter: blur(0px) brightness(0.3);
-  opacity: 0.3;
-  z-index: 2;
-  pointer-events: none;
+.swiper-slide-active .banner-content h1,
+.swiper-slide-active .banner-content h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
 }
 
-.enhanced-section .bg-image3 {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 100%;
-  background: url('img/solutionbanners.webp') no-repeat center center;
-  background-size: cover;
-  filter: blur(0px) brightness(0.3);
-  opacity: 0.3;
-  z-index: 2;
-  pointer-events: none;
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .header-wrap {
+    padding: 10px 20px;
+  }
+
+  .navmenu {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(6px);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .navmenu.show {
+    display: flex;
+  }
+
+  .navmenu ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 28px;
+  }
 }
-
-.enhanced-section .bg-image4 {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 100%;
-  background: url('img/segmentimgs/smart2.webp') no-repeat center center;
-  background-size: cover;
-  filter: blur(0px) brightness(0.3);
-  opacity: 0.3;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.enhanced-section .bg-image5 {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 100%;
-  background: url('img/segmentimgs/smartpole1.webp') no-repeat center center;
-  background-size: cover;
-  filter: blur(0px) brightness(0.3);
-  opacity: 0.3;
-  z-index: 2;
-  pointer-events: none; 
-}
-
-
-
-
-/* Content sits above bg-image and particles */
-.enhanced-section > .section-header1,
-.enhanced-section > .gallery-wrapper,
-.enhanced-section > .scroll-arrow {
-  position: relative;
-  z-index: 3;
-}
-
 </style>
+
+<script>
+function toggleMenu() {
+  document.getElementById('mainNav').classList.toggle('show');
+}
+
+function toggleMegaMenu(event) {
+  event.preventDefault();
+  document.getElementById('megaMenu').classList.toggle('show');
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    speed: 1500,
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+  });
+});
+</script>
+
 
 
 <!-- about start -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
 
-<style>
- 
-
-    .sec {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow-x: hidden;
-      background-color: #000;
-    }
-
-    /* Gallery Section */
-    .about-section {
+    /* Main Div */
+    .applechild-container {
       position: relative;
-      height: 100vh;
+      width: 100%;
+      height: 100vh; /* Full screen height */
+      background: #000;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       overflow: hidden;
     }
 
-    .about {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .about img {
-      object-fit: cover;
-      
-      transition: all 0.5s ease;
-      opacity: 1;
-    }
-
-    
-    .about img.outer {
-      height: 280px;
-      width: 170px;
-    }
-
-    .about img.mid {
-      height: 380px;
-      width: 200px;
-    }
-
-    .about img.center {
-      height: 500px;
-      width: 250px;
-      z-index: 5;
-    }
-
-    
-    .about-text {
-      position: absolute;
-      top: 0;
-      left: 0;
+    /* Image full fit (no crop) */
+    .applechild-container img {
       width: 100%;
       height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-top: 20%;
-      padding: 5%;
-      max-width: 700px;
-      font-size: 1.2rem;
-      line-height: 1.6;
-      opacity: 0;
-      pointer-events: none;
-      z-index: 10;
-     
+      object-fit: contain;   /* FULL visibility - no crop */
+      object-position: center;
+      z-index: 1;
     }
 
-    .about-text::before {
-      content: "";
+    /* Dark Overlay */
+    .applechild-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0));
-      z-index: -1;
     }
 
-    .about-text h1 {
-      font-size: 1.5rem;
-      letter-spacing: 5px;
-      
-      font-weight: lighter;
-      font-family: "Font Awesome 5 Free";
-      margin-bottom: 20px;
-      color: #fff;
-
+    /* Light Rays */
+    .applechild-light-rays {
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 80vw;
+      height: 80vw;
+      background: radial-gradient(ellipse at top right, rgba(255,255,255,0.6), transparent 70%);
+      filter: blur(80px);
+      opacity: 0;
+      animation: applechild-fadeIn 2s ease-in-out forwards;
+      z-index: 3;
     }
 
-    .about-text p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      color: #c5c2c2;
+    /* Animated Text */
+    .applechild-text {
+      position: absolute;
+      top: 50%;                 /* vertical middle */
+      left: 10%;                /* align left */
+      transform: translateY(-50%);
+      color: white;
+      font-size: clamp(1.8rem, 5vw, 3.5rem); /* Responsive size */
+      font-weight: 300;         /* thin text */
+      letter-spacing: 3px;      /* spacing */
+      text-transform: uppercase;
+      text-shadow: 0 0 20px rgba(0,0,0,0.7);
+      opacity: 0;
+      animation: applechild-textIn 2s ease-out forwards 1s;
+      z-index: 4;
     }
 
-    .about-text span {
-      font-weight: bold;
-      font-size: 1rem;
+    /* Animations */
+    @keyframes applechild-fadeIn {
+      from { opacity: 0; transform: scale(0.8) rotate(-15deg); }
+      to { opacity: 0.6; transform: scale(1) rotate(0deg); }
     }
 
-    /* ---------- MOBILE STYLES ---------- */
+    @keyframes applechild-textIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(-50%); }
+    }
+
+    /* Mobile tweaks */
     @media (max-width: 768px) {
-      .about {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-      }
-
-      .about img.outer {
-        height: 120px;
-        width: 80px;
-      }
-
-      .about img.mid {
-        height: 160px;
-        width: 100px;
-      }
-
-      .about img.center {
-        height: 200px;
-        width: 130px;
-      }
-
-      /* make outer images half visible */
-      .about {
-        transform: scale(0.9);
-      }
-
-      .about-text {
-        padding: 8%;
-        font-size: 1rem;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-        
-        max-width: 100%;
-      }
-
-      .about-text h1 {
-        font-size: 1.6rem;
-      }
-
-      .about-text p {
-        font-size: 0.9rem;
-      }
-
-      .about-text span {
-        font-size: 0.8rem;
-      }
-
-      .about-text::before {
-        background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0));
+      .applechild-text {
+        left: 5%;  /* closer to edge */
+        font-size: clamp(1.4rem, 6vw, 2.2rem);
+        letter-spacing: 2px;
       }
     }
   </style>
- <!-- About Section -->
-<section class="about-section sec">
-  <div class="about">
-    <img src="img/specialanimationimg/99.png" class="outer">
-    <img src="img/specialanimationimg/100.png" class="mid">
-    <img src="img/specialanimationimg/101.png" class="center">
-    <img src="img/specialanimationimg/102.png" class="mid">
-    <img src="img/specialanimationimg/103.png" class="outer">
+ <div class="applechild-container">
+    <!-- Image -->
+    <img src="img/childapple.png" alt="Background">
+
+    <!-- Overlay -->
+    <div class="applechild-overlay"></div>
+
+    <!-- Light Rays -->
+    <div class="applechild-light-rays"></div>
+
+    <!-- Animated Text -->
+    <div class="applechild-text">Magic of Light</div>
   </div>
-  <div class="about-text">
-    <h1>Arcot – Powering the Future with Innovation</h1>
-    <p>
-      At Arcot, we are driven by a vision to build a brighter, smarter, 
-      and sustainable future with innovative power solutions, smart automation, 
-      and next-generation products that empower industries and communities.
-    </p>
-    <!-- <span>Vijay Swarna</span> -->
-  </div>
-</section>
-
-
-
-
-
 <!-- about end -->
+
 
 <!-- POWER START with Videos -->
 <section class="section-wraps" style="background-color: #000;">
