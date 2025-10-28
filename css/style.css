@@ -881,7 +881,7 @@ html , body {
 }
 
 .service-group ul li {
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
 }
 
 .service-group ul li a {
@@ -1128,49 +1128,73 @@ html , body {
 
 
 
-
 /* Normal Dropdown for R&D */
 .navmenu ul li.dropdown {
   position: relative;
 }
 
+/* Dropdown Container */
 .navmenu ul li .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
   background: #000; /* black background */
   display: none;
-  flex-direction: column; /* stack vertically */
-  min-width: 200px;
+  flex-direction: column;
+  min-width: 220px; /* slightly narrower */
   padding: 0;
   margin: 0;
   border: 1px solid #030303;
   z-index: 1001;
+  overflow: hidden;
 }
 
+/* Dropdown Items */
 .navmenu ul li .dropdown-menu li {
   width: 100%;
 }
 
+/* Dropdown Links */
 .navmenu ul li .dropdown-menu li a {
   display: block;
-  padding: 10px 20px;
-  color: #fff; /* white text */
+  padding: 8px 16px; /* reduced spacing */
+  color: #fff;
   text-decoration: none;
   font-size: 12px;
-  letter-spacing: 2px;
+  letter-spacing: 1px; /* slightly tighter */
   text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hover Animation: subtle letter-spacing and underline slide-in */
+.navmenu ul li .dropdown-menu li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: width 0.3s ease;
 }
 
 .navmenu ul li .dropdown-menu li a:hover {
-  background: #111; /* darker on hover */
+  background: #111;
+  letter-spacing: 2px;
+  color: rgb(202, 207, 207); /* optional: slight neon hover color */
 }
 
+.navmenu ul li .dropdown-menu li a:hover::after {
+  width: 100%;
+}
+
+/* Show Dropdown */
 .navmenu ul li.dropdown.show .dropdown-menu {
   display: flex;
 }
 
-/* Mobile support for dropdown */
+/* Mobile Support */
 @media (max-width: 768px) {
   .navmenu ul li .dropdown-menu {
     position: static;
@@ -1180,9 +1204,21 @@ html , body {
   }
 
   .navmenu ul li .dropdown-menu li a {
-    padding: 8px 20px;
+    padding: 8px 16px;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .navmenu ul li .dropdown-menu li a:hover {
+    background: #111;
+    color: rgb(210, 214, 214);
+  }
+
+  .navmenu ul li .dropdown-menu li a::after {
+    display: none; /* cleaner on mobile */
   }
 }
+
 
 
     /* header */
