@@ -1,169 +1,516 @@
-<div class="smart-bollard-layout">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Bollard — Features</title>
 
-    <!-- ✅ Left Vertical Nav -->
-    <ul class="sb-side-nav">
-        <li><a href="#feature1">Bluetooth Connectivity</a></li>
-        <li><a href="#feature2">Wi-Fi Integration</a></li>
-        <li><a href="#feature3">Wireless Charging</a></li>
-        <li><a href="#feature4">Audio System</a></li>
-        <li><a href="#feature5">Tuning & Dimming</a></li>
-    </ul>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-    <!-- ✅ Feature Sections -->
-    <div class="sb-content">
-        
-        <!-- 1 -->
-        <section class="sb-section" id="feature1">
-            <div class="sb-text">
-                <h2>Bluetooth Connectivity</h2>
-                <p>Remote control, monitoring, and smart configuration via Bluetooth devices.</p>
-            </div>
-            <div class="sb-img">
-                <img src="https://via.placeholder.com/500x350?text=Bluetooth+Connectivity" alt="">
-            </div>
-        </section>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html,body { height:100%; scroll-behavior:smooth; }
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #111;
+      color: #fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+    }
 
-        <!-- 2 -->
-        <section class="sb-section" id="feature2">
-            <div class="sb-text">
-                <h2>Wi-Fi Integration</h2>
-                <p>Secure wireless communication with cloud systems for smart city analytics.</p>
-            </div>
-            <div class="sb-img">
-                <img src="https://via.placeholder.com/500x350?text=WiFi+Integration" alt="">
-            </div>
-        </section>
+    /* ---------- LEFT FIXED VERTICAL SIDEBAR ---------- */
+    .left-fixed-nav {
+      position: fixed;
+      left: 24px;                /* distance from left edge */
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1100;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      pointer-events: auto;
+      user-select: none;
+    }
 
-        <!-- 3 -->
-        <section class="sb-section" id="feature3">
-            <div class="sb-text">
-                <h2>Wireless Charging</h2>
-                <p>Charge e-bikes, scooters, and portable devices without the hassle of cables.</p>
-            </div>
-            <div class="sb-img">
-                <img src="https://via.placeholder.com/500x350?text=Wireless+Charging" alt="">
-            </div>
-        </section>
+    /* the vertical rail (thin line) */
+    .left-fixed-nav .rail {
+      width: 2px;
+      height: 360px;           /* adjust length to visually match screenshot */
+      background: rgba(255,255,255,0.06);
+      position: relative;
+      border-radius: 2px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding-top: 18px;
+    }
 
-        <!-- 4 -->
-        <section class="sb-section" id="feature4">
-            <div class="sb-text">
-                <h2>Audio System</h2>
-                <p>Built-in speakers for alerts, guidance, and public announcements.</p>
-            </div>
-            <div class="sb-img">
-                <img src="https://via.placeholder.com/500x350?text=Audio+System" alt="">
-            </div>
-        </section>
+    /* active indicator (moves up/down) */
+    .left-fixed-nav .indicator {
+      position: absolute;
+      left: -6px; /* places indicator slightly left of the rail */
+      width: 4px;
+      height: 36px;
+      background: #fff;
+      border-radius: 2px;
+      transform-origin: center;
+      transition: transform 350ms cubic-bezier(.2,.9,.2,1), top 350ms cubic-bezier(.2,.9,.2,1);
+      will-change: top, transform;
+      top: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    }
 
-        <!-- 5 -->
-        <section class="sb-section" id="feature5">
-            <div class="sb-text">
-                <h2>Tuning & Dimming</h2>
-                <p>Smart lighting control with adaptive brightness and energy efficiency.</p>
-            </div>
-            <div class="sb-img">
-                <img src="https://via.placeholder.com/500x350?text=Tuning+%26+Dimming" alt="">
-            </div>
-        </section>
+    /* the stacked vertical links container */
+    .left-fixed-nav .items {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center;
+      justify-content:flex-start;
+      pointer-events: auto;
+    }
 
+    /* each item uses vertical writing mode like screenshot */
+    .left-fixed-nav a.side-link {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg); /* to read top->down like screenshot */
+      text-decoration: none;
+      color: #8c8c8c;
+      font-size: 13px;
+      letter-spacing: 2px;
+      font-weight: 500;
+      padding: 4px 6px;
+      display:inline-block;
+      transition: color 180ms ease, font-weight 180ms ease;
+    }
+
+    /* active state: white + bold */
+    .left-fixed-nav a.side-link.active {
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+    }
+
+    /* hover */
+    .left-fixed-nav a.side-link:hover { color: #fff; }
+
+    /* small visual tick / caret on left of active (optional) */
+    .left-fixed-nav .tick {
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      background: transparent;
+      transition: background 180ms ease;
+      margin-left: -14px;
+    }
+    .left-fixed-nav .tick.active { background: #fff; box-shadow: 0 6px 16px rgba(0,0,0,0.35); }
+
+    /* ---------- YOUR ORIGINAL PAGE STYLES (kept intact) ---------- */
+    .feature-section {
+      position: relative;
+      width: 100%;
+      min-height: 90vh;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      background: linear-gradient(180deg, rgba(18,18,18,1) 0%, rgba(22,22,22,1) 100%);
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .layout-card {
+      width: 90%;
+      max-width: 1300px;
+      height: 85vh;
+      background-color: #1f1f1f;
+      display: flex;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .marble-bg {
+      position: absolute;
+      top: -40px;
+      left: -40px;
+      width: 45%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+      opacity: 0.08;
+      transform: rotate(-1deg);
+      pointer-events: none;
+    }
+
+    .left-panel {
+      position: relative;
+      z-index: 2;
+      width: 45%;
+      background-color: #222;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-left: 60px;
+    }
+
+    .left-panel img {
+      width: calc(100% - 50px);
+      height: 100%;
+      object-fit: cover;
+      opacity: 1;
+      transform: scale(1);
+      transition: transform 0.35s ease;
+      display: block;
+    }
+    .left-panel img:hover { transform: scale(1.02); }
+
+    /* small vertical nav inside left-panel removed — global left nav used instead */
+
+    .right-panel {
+      width: 55%;
+      background-color: #181818;
+      padding: 80px 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .background-text {
+      position: absolute;
+      left: -70px;
+      top: 20px;
+      font-size: 8rem;
+      color: rgba(255,255,255,0.03);
+      font-weight: 700;
+      letter-spacing: 5px;
+      transform: rotate(-90deg);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .right-panel h1 { font-size: 2rem; font-weight: 600; line-height: 1.4; margin-bottom: 12px; color: #fff; }
+    .right-panel p { color: #bbb; font-size: 0.98rem; line-height: 1.7; margin-bottom: 28px; max-width: 420px; }
+
+    .btn-outline-light {
+      border-radius: 0; border: 1px solid #fff; padding: 10px 25px;
+      font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;
+      transition: all 0.18s ease; width: fit-content; background: transparent; color: #fff;
+    }
+    .btn-outline-light:hover { background-color:#fff; color:#111; }
+
+    .scroll-indicator {
+      position: absolute; right:40px; top:50%; transform:translateY(-50%);
+      display:flex; flex-direction:column; align-items:center; gap:12px;
+      font-size:12px; letter-spacing:2px; color:#bbb; cursor:default; z-index:6;
+    }
+
+    .scroll-indicator .numbers { display:flex; gap:10px; align-items:center; color:#ddd; font-weight:600; }
+    .scroll-indicator .numbers .current { color:#fff; font-size:14px; }
+    .scroll-indicator .line { width:1px; height:60px; background-color:rgba(255,255,255,0.08); margin:5px 0; }
+
+    .scroll-indicator .arrow {
+      width:36px; height:36px; display:grid; place-items:center;
+      border:1px solid rgba(255,255,255,0.08); color:#ddd; background:rgba(255,255,255,0.02);
+      text-decoration:none; font-size:14px; user-select:none;
+    }
+    .scroll-indicator .arrow:hover { background:rgba(255,255,255,0.04); }
+
+    .socials { position:absolute; right:40px; bottom:30px; display:flex; gap:20px; z-index:6; }
+    .socials a { color:#bbb; text-decoration:none; } .socials a:hover { color:#fff; }
+
+    /* responsive */
+    @media (max-width: 992px) {
+      .layout-card { flex-direction: column; height:auto; min-height:75vh; }
+      .left-panel, .right-panel { width:100%; padding:30px; height:auto; }
+      .left-panel img { width:100%; height:55vh; object-fit:cover; border-radius:8px; }
+      .background-text { display:none; }
+      .left-fixed-nav { left: 12px; }
+      .left-fixed-nav .rail { height: 300px; }
+    }
+    @media (max-width: 768px) {
+      .right-panel { padding:30px; text-align:center; align-items:center; }
+      .right-panel p { max-width:100%; }
+      .left-fixed-nav { display:none; } /* hide left fixed nav on very small screens */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ---------- LEFT FIXED NAV (single, global) ---------- -->
+  <nav class="left-fixed-nav" aria-label="Feature navigation">
+    <div class="rail" role="presentation">
+      <div class="indicator" id="leftIndicator" aria-hidden="true"></div>
     </div>
-</div>
 
+    <div class="items" role="tablist" aria-orientation="vertical">
+      <a class="side-link active" href="#feature1" data-index="1" role="tab" aria-selected="true">Bluetooth Connectivity</a>
+      <a class="side-link" href="#feature2" data-index="2" role="tab" aria-selected="false">Wi-Fi Integration</a>
+      <a class="side-link" href="#feature3" data-index="3" role="tab" aria-selected="false">Wireless Charging</a>
+      <a class="side-link" href="#feature4" data-index="4" role="tab" aria-selected="false">Audio System</a>
+      <a class="side-link" href="#feature5" data-index="5" role="tab" aria-selected="false">Tuning &amp; Dimming</a>
+    </div>
+  </nav>
 
-<style>
-  .smart-bollard-layout {
-    display: flex;
-    gap: 50px;
-    padding: 50px;
-}
+  <!-- ========== FEATURE SECTIONS (unchanged layout) ========== -->
 
-.sb-side-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: sticky;
-    top: 120px;
-}
+  <!-- Feature 1 -->
+  <section id="feature1" class="feature-section" data-index="1" aria-labelledby="f1-title">
+    <div class="layout-card" role="region" aria-label="Feature 1 — Bluetooth Connectivity">
+      <div class="marble-bg" style="background-image:url('https://images.unsplash.com/photo-1534850336045-c8d0b06f4b42?auto=format&fit=crop&w=1400&q=80');"></div>
 
-.sb-side-nav li {
-    margin: 20px 0;
-}
+      <div class="left-panel">
+        <!-- removed inner vertical nav to keep single global nav -->
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Bluetooth connectivity" />
+      </div>
 
-.sb-side-nav a {
-    text-decoration: none;
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: #333;
-    transition: 0.3s ease;
-}
+      <div class="right-panel">
+        <div class="background-text">BLUETOOTH</div>
+        <h1 id="f1-title">Bluetooth Connectivity</h1>
+        <p>Seamless short-range pairing for maintenance tools, local control and diagnostics — quick, secure and energy-efficient.</p>
+        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
 
-.sb-side-nav a:hover,
-.sb-side-nav a.active {
-    color: #00a8ff;
-    letter-spacing: 1px;
-}
+        <div class="scroll-indicator" aria-hidden="false">
+          <div class="numbers"><span class="current">01</span><span>/ 05</span></div>
+          <div class="line" aria-hidden="true"></div>
+          <a class="arrow" href="#" data-next="2" title="Next feature" aria-label="Next feature">→</a>
+        </div>
 
-.sb-content {
-    width: 100%;
-}
+        <div class="socials" aria-hidden="true">
+          <a href="#">FB</a>
+          <a href="#">IG</a>
+          <a href="#">TW</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-.sb-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 80px;
-    gap: 50px;
-}
+  <!-- Feature 2 -->
+  <section id="feature2" class="feature-section" data-index="2" aria-labelledby="f2-title">
+    <div class="layout-card" role="region" aria-label="Feature 2 — Wi-Fi Integration">
+      <div class="marble-bg" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80');"></div>
 
-.sb-section:nth-child(even) {
-    flex-direction: row-reverse;
-}
+      <div class="left-panel">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80" alt="Wi-Fi integration" />
+      </div>
 
-.sb-text h2 {
-    font-size: 30px;
-    margin-bottom: 10px;
-}
+      <div class="right-panel">
+        <div class="background-text">WIFI</div>
+        <h1 id="f2-title">Wi-Fi Integration</h1>
+        <p>Robust broadband connectivity for remote monitoring, OTA updates and cloud telemetry — stable across public spaces.</p>
+        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
 
-.sb-text p {
-    font-size: 18px;
-    opacity: 0.8;
-}
+        <div class="scroll-indicator">
+          <div class="numbers"><span class="current">02</span><span>/ 05</span></div>
+          <div class="line"></div>
+          <a class="arrow" href="#" data-next="3" title="Next feature">→</a>
+        </div>
 
-.sb-img img {
-    width: 500px;
-    border-radius: 10px;
-    object-fit: cover;
-}
+        <div class="socials"><a href="#">FB</a></div>
+      </div>
+    </div>
+  </section>
 
-/* ✅ Mobile responsive */
-@media(max-width: 900px){
-    .smart-bollard-layout {
-        flex-direction: column;
-        gap: 30px;
-    }
-    
-    .sb-section {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .sb-img img {
-        width: 100%;
-    }
-}
+  <!-- Feature 3 -->
+  <section id="feature3" class="feature-section" data-index="3" aria-labelledby="f3-title">
+    <div class="layout-card" role="region" aria-label="Feature 3 — Wireless Charging">
+      <div class="marble-bg" style="background-image:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1400&q=80');"></div>
 
-</style>
+      <div class="left-panel">
+        <img src="https://images.unsplash.com/photo-1542444459-db1b7a9f75b0?auto=format&fit=crop&w=1200&q=80" alt="Wireless charging" />
+      </div>
 
-<!-- ✅ ScrollReveal -->
-<script src="https://unpkg.com/scrollreveal"></script>
-<script>
-ScrollReveal().reveal('.sb-section', { 
-    delay: 150,
-    duration: 1000,
-    distance: '50px',
-    origin: 'bottom',
-    reset: false
-});
-</script>
+      <div class="right-panel">
+        <div class="background-text">CHARGE</div>
+        <h1 id="f3-title">Wireless Charging</h1>
+        <p>Integrated inductive pads for low-power device charging — convenient and weather-protected for compatible devices.</p>
+        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
+
+        <div class="scroll-indicator">
+          <div class="numbers"><span class="current">03</span><span>/ 05</span></div>
+          <div class="line"></div>
+          <a class="arrow" href="#" data-next="4" title="Next feature">→</a>
+        </div>
+
+        <div class="socials"><a href="#">IG</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 4 -->
+  <section id="feature4" class="feature-section" data-index="4" aria-labelledby="f4-title">
+    <div class="layout-card" role="region" aria-label="Feature 4 — Audio System">
+      <div class="marble-bg" style="background-image:url('https://images.unsplash.com/photo-1502849396440-0d7d5b6f0d2d?auto=format&fit=crop&w=1400&q=80');"></div>
+
+      <div class="left-panel">
+        <img src="https://images.unsplash.com/photo-1512446812281-9a2a3fd1f0f6?auto=format&fit=crop&w=1200&q=80" alt="Audio system" />
+      </div>
+
+      <div class="right-panel">
+        <div class="background-text">AUDIO</div>
+        <h1 id="f4-title">Audio System</h1>
+        <p>Built-in speakers for public announcements, ambient sound or localized messaging — adjustable volume & scheduling.</p>
+        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
+
+        <div class="scroll-indicator">
+          <div class="numbers"><span class="current">04</span><span>/ 05</span></div>
+          <div class="line"></div>
+          <a class="arrow" href="#" data-next="5" title="Next feature">→</a>
+        </div>
+
+        <div class="socials"><a href="#">TW</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 5 -->
+  <section id="feature5" class="feature-section" data-index="5" aria-labelledby="f5-title">
+    <div class="layout-card" role="region" aria-label="Feature 5 — Tuning & Dimming">
+      <div class="marble-bg" style="background-image:url('https://images.unsplash.com/photo-1505691723518-36a70aaf5b2a?auto=format&fit=crop&w=1400&q=80');"></div>
+
+      <div class="left-panel">
+        <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80" alt="Tuning and dimming" />
+      </div>
+
+      <div class="right-panel">
+        <div class="background-text">DIMMING</div>
+        <h1 id="f5-title">Tuning &amp; Dimming</h1>
+        <p>Adaptive lighting control with fine dimming and color tuning — improves visibility while reducing glare and energy consumption.</p>
+        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
+
+        <div class="scroll-indicator">
+          <div class="numbers"><span class="current">05</span><span>/ 05</span></div>
+          <div class="line"></div>
+          <a class="arrow" href="#" data-next="1" title="Back to first feature">→</a>
+        </div>
+
+        <div class="socials">
+          <a href="#">FB</a>
+          <a href="#">IG</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="contact" style="height:1px;visibility:hidden;"></div>
+
+  <script>
+    (function(){
+      // Elements
+      const sideLinks = document.querySelectorAll('.left-fixed-nav .side-link');
+      const indicator = document.getElementById('leftIndicator');
+      const sections = Array.from(document.querySelectorAll('.feature-section'));
+      const OFFSET_TOP = 18; // top padding within rail where indicator starts
+      const RAIL_HEIGHT = document.querySelector('.left-fixed-nav .rail').clientHeight;
+      const ITEM_GAP = 18; // must match CSS gap between items
+      const ITEM_COUNT = sideLinks.length;
+
+      // Compute positions of link centers inside the rail
+      function computeIndicatorPositions() {
+        // Determine vertical positions for each item inside the rail
+        // We'll space them evenly inside the visible rail area with top padding = OFFSET_TOP
+        const rail = document.querySelector('.left-fixed-nav .rail');
+        const itemsContainer = document.querySelector('.left-fixed-nav .items');
+        const itemEls = Array.from(itemsContainer.children);
+        // Use the actual element positions to be exact
+        const railRect = rail.getBoundingClientRect();
+        const positions = itemEls.map(el => {
+          const r = el.getBoundingClientRect();
+          // compute position relative to rail top
+          const top = r.top + r.height/2 - railRect.top;
+          return Math.round(top);
+        });
+        return positions;
+      }
+
+      // On load, compute positions and set indicator to first
+      let positions = computeIndicatorPositions();
+      function moveIndicatorTo(index) {
+        // index is 1-based feature index
+        const pos = positions[index - 1] || positions[0];
+        indicator.style.top = pos + 'px';
+        // Slight vertical transform animate (tweak)
+        indicator.style.transform = 'translateY(-50%)';
+      }
+
+      // highlight active link
+      function setActiveLink(index) {
+        sideLinks.forEach(a => {
+          const idx = Number(a.dataset.index);
+          a.classList.toggle('active', idx === index);
+          a.setAttribute('aria-selected', idx === index ? 'true' : 'false');
+        });
+      }
+
+      // Smooth click handling for side links
+      sideLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const idx = Number(link.dataset.index);
+          const target = document.getElementById('feature' + idx);
+          if (!target) return;
+          // Smooth scroll so it feels premium
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Update active states immediately (so nav feels responsive)
+          setActiveLink(idx);
+          // move indicator after a small delay to allow layout/position to update
+          setTimeout(() => moveIndicatorTo(idx), 120);
+        });
+      });
+
+      // IntersectionObserver to auto-detect section in view (scrollspy)
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const idx = Number(entry.target.dataset.index);
+            setActiveLink(idx);
+            moveIndicatorTo(idx);
+            // Update small current number inside the section (keeps your previous logic)
+            const cur = entry.target.querySelector('.numbers .current');
+            if (cur) cur.textContent = String(idx).padStart(2, '0');
+          }
+        });
+      }, { threshold: 0.58 }); // ~58% visible to be considered active
+
+      sections.forEach(s => io.observe(s));
+
+      // Recompute positions on resize (important)
+      window.addEventListener('resize', () => {
+        setTimeout(() => {
+          positions = computeIndicatorPositions();
+          // keep indicator on current active
+          const active = document.querySelector('.left-fixed-nav .side-link.active');
+          const idx = active ? Number(active.dataset.index) : 1;
+          moveIndicatorTo(idx);
+        }, 160);
+      });
+
+      // Initialize indicator positions + first state
+      window.addEventListener('load', () => {
+        positions = computeIndicatorPositions();
+        moveIndicatorTo(1);
+        setActiveLink(1);
+      });
+
+      // Arrow buttons inside sections: jump to next
+      document.querySelectorAll('.scroll-indicator .arrow').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const next = Number(btn.dataset.next);
+          const target = document.getElementById('feature' + next);
+          if (!target) return;
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+    })();
+  </script>
+</body>
+</html>
