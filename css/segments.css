@@ -2,7 +2,7 @@
 
     section {
       min-height: 70vh;
-      padding: 0px 40px 60px;
+      /* padding: 0px 40px 0; */
       position: relative;
       padding-top: 20px;
     }
