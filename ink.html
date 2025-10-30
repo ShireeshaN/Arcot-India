@@ -335,192 +335,188 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-<!-- about start -->
-  <!-- ===== ABOUT ARCOT SECTION ===== -->
-  <section class="page-box">
-    <div class="page-container">
-      <div class="left-panel">
-        <div class="intro-text">Arcot Legacy</div>
-        <div class="main-title">Where Innovation Becomes Infrastructure</div>
-        <div class="about-desc">
-          At <strong>Arcot , </strong> we don’t just build structures — we craft intelligent ecosystems.  
-          <br>
-          Our designs blend advanced engineering with <strong>adaptive intelligence,</strong> with <strong>empowering cities to sense,</strong> respond, and evolve.  
-          <br>
-         From smart mobility to  <strong>sustainable energy,</strong> Arcot’s vision is to redefine what progress feels like <strong>  — intuitive, invisible, and enduring.</strong>
-        </div>
-      </div>
+<!-- ===== ABOUT ARCOT SECTION ===== -->
+<section class="about-banner">
+  <div class="about-left">
+    <div class="intro-text">Arcot Legacy</div>
+    <h2 class="main-title">Where Innovation Becomes Infrastructure</h2>
+    <p class="about-desc">
+      At <strong>Arcot</strong>, we don’t just build structures — we craft intelligent ecosystems.  
+      <br><br>
+      Our designs blend advanced engineering with <strong>adaptive intelligence</strong>, empowering cities to sense, respond, and evolve.  
+      <br><br>
+      From smart mobility to <strong>sustainable energy</strong>, Arcot’s vision is to redefine what progress feels like — <strong>intuitive, invisible, and enduring.</strong>
+    </p>
+  </div>
 
-      
-
-
-      <div class="image-side">
-        <img src="img/aboutsimg.png" alt="Arcot Smart Infrastructure">
-        <div class="image-overlay"></div>
-        <div class="right-blue-bar">
-          <div class="readon-text">
-            <span>A</span>
-            <span>R</span>
-            <span>C</span>
-            <span>O</span>
-            <span>T</span>
-            <span style="margin-top:8px;">I</span>
-            <span>N</span>
-            <span>D</span>
-            <span>I</span>
-            <span>A</span>
-          </div>
-        </div>
+  <div class="about-right">
+    <img src="img/aboutsimg.png" alt="Arcot Smart Infrastructure">
+    <div class="overlay"></div>
+    <div class="vertical-bar">
+      <div class="readon-text">
+        <span>A</span>
+        <span>R</span>
+        <span>C</span>
+        <span>O</span>
+        <span>T</span>
+        <span style="margin-top:8px;">I</span>
+        <span>N</span>
+        <span>D</span>
+        <span>I</span>
+        <span>A</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 <style>
-    /* * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Playfair Display', serif;
-      background-color: #f2f2f2;
-      color: #111;
-      
-    } */
+/* ---------- Layout ---------- */
+.about-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 85vh; /* slightly shorter than full screen */
+  background-color: #fff;
+  overflow: hidden;
+  padding: 60px 0;
+}
 
-    .page-box {
-      width: 100%;
-      height: 100vh;
-      background-color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow-x: hidden;
-      margin: 0; padding: 0;
-    }
+/* ---------- Left (Text Side) ---------- */
+.about-left {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 100px;
+}
 
-    .page-container {
-      display: flex;
-      width: 90%;
-      max-width: 1200px;
-      height: 90vh;
-      background: #fff;
-      overflow: hidden;
-      /* box-shadow: 0 8px 25px rgba(0,0,0,0.08); */
-      border-radius: 10px;
-    }
+.intro-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #666;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
 
-    .left-panel {
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 80px 80px 120px;
-    }
+.main-title {
+  font-size: 3.4rem;
+  color: #000;
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
 
-    .intro-text {
-      font-family: 'Roboto', sans-serif;
-      font-size: 15px;
-      color: #666;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
+.about-desc {
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  color: #444;
+  line-height: 1.8;
+  max-width: 580px;
+}
 
-    .main-title {
-      font-size: 3.5rem;
-      line-height: 1.1;
-      letter-spacing: 2px;
-      /* font-weight: 100; */
-      color: #000;
-      margin-bottom: 25px;
-    }
+.about-desc strong {
+  color: #000;
+  font-weight: 500;
+}
 
-    .about-desc {
-      font-family: 'Roboto', sans-serif;
-      font-size: 16px;
-      color: #444;
-      line-height: 1.8;
-      max-width: 420px;
-    }
+/* ---------- Right (Image Side) ---------- */
+.about-right {
+  flex: 0.9;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  height: 70vh; /* reduced image height */
+  max-height: 650px;
+  margin-right: 60px;
+}
 
-    .about-desc strong {
-      color: #000;
-      font-weight: 500;
-    }
+.about-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* filter: grayscale(100%) brightness(0.9); */
+  transition: transform 1.5s ease;
+}
 
-    .image-side {
-      width: 50%;
-      position: relative;
-      overflow: hidden;
-    }
+.about-right:hover img {
+  transform: scale(1.03);
+}
 
-    .image-side img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(100%) brightness(0.9);
-      opacity: 0.95;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition: transform 1.5s ease;
-    }
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.15), rgba(0,0,0,0.25));
+  z-index: 1;
+}
 
-    .image-side:hover img {
-      transform: scale(1.03);
-    }
+.vertical-bar {
+  width: 80px;
+  background-color: #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  z-index: 2;
+  flex-direction: column;
+  gap: 4px;
+}
 
-    .image-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(0,0,0,0.25));
-      z-index: 1;
-    }
+.readon-text {
+  font-family: 'Roboto', sans-serif;
+  color: #111;
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 4px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+}
 
-    .right-blue-bar {
-      width: 100px;
-      background-color: #d9d9d9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      z-index: 2;
-      flex-direction: column;
-      gap: 4px;
-    }
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+  .about-banner {
+    flex-direction: column;
+    padding: 40px 0;
+    min-height: auto;
+  }
 
-    .readon-text {
-      font-family: 'Roboto', sans-serif;
-      color: #111;
-      font-weight: 300;
-      font-size: 16px;
-      letter-spacing: 4px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      line-height: 1.2;
-    }
+  .about-left {
+    padding: 50px 25px;
+    text-align: center;
+  }
 
-    .readon-text span {
-      display: block;
-    }
+  .main-title {
+    font-size: 2.6rem;
+  }
 
-    @media (max-width:992px){
-      .page-box { height: auto; 
-      padding-top: 60px;}
-      .page-container { flex-direction: column; height: auto; }
-      .left-panel, .image-side { width: 100%; padding: 40px 20px; }
-      .main-title { font-size: 2.8rem; text-align: center; }
-      .intro-text, .about-desc { max-width: 100%; text-align: center; margin: 0 auto 25px; }
-      .image-side { order: -1; height: 50vh; }
-      .right-blue-bar { display: none; }
-    }
-  </style>
-<!-- about end -->
+  .about-desc {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .about-right {
+    width: 90%;
+    height: 45vh; /* smaller for mobile */
+    margin: 20px auto;
+  }
+
+  .vertical-bar {
+    display: none;
+  }
+}
+</style>
+
+
+
 
 
 <!-- ⚡ PREMIUM POWER SECTION -->
@@ -532,10 +528,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <div class="power-gallery">
     <div class="power-images">
-      <img src="img/application/68.webp" class="show" data-key="transmission" alt="Transmission">
-      <img src="img/application/69.webp" data-key="distribution" alt="Distribution">
-      <img src="img/application/70.webp" data-key="htlt" alt="HT & LT Panels">
-      <img src="img/application/71.webp" data-key="control" alt="Control Panels">
+      <img src="img/transmission-lines/transmission-lines-2.jpeg" class="show" data-key="transmission" alt="Transmission">
+      <img src="img/transmission-lines/distribution-lines.png" data-key="distribution" alt="Distribution">
+      <img src="img/transmission-lines/ltandht panels.jpg" data-key="htlt" alt="HT & LT Panels">
+      <img src="img/transmission-lines/control-panel.jpg" data-key="control" alt="Control Panels">
     </div>
 
     <div class="power-menu">
@@ -801,7 +797,7 @@ startAuto();
 .energyx-gallery {
   display: flex;
   width: 100%;
-  height: 500px;
+  height: 1000px;
   overflow: hidden;
 }
 
@@ -1390,7 +1386,7 @@ updateAutoiotUI();
   flex: 0 0 82%;
   position: relative;
   overflow: hidden;
-  height: 80vh;
+  height: 100vh;
 }
 
 .autoiot-media {
@@ -1863,7 +1859,7 @@ document.addEventListener("DOMContentLoaded", function() {
   color: #111;
   font-family: 'Inter', sans-serif;
   overflow: hidden;
-  padding-bottom: 60px;
+  /* padding-bottom: 60px; */
 }
 
 /* Heading (aligned like Power & Lighting) */
@@ -1891,7 +1887,7 @@ document.addEventListener("DOMContentLoaded", function() {
 .applica-slider-container {
   position: relative;
   width: 100%;
-  height: 520px;
+  height: 800px;
   overflow: hidden;
   margin-top: 20px;
 }
@@ -2037,7 +2033,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   .applechild-container img {
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
     object-fit: contain;
     object-position: center;
