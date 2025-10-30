@@ -1,200 +1,277 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>I’d Go Will Ya — Auto Image Change</title>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Playfair Display', serif;
-      background-color: #eef1f6;
-      color: #000;
-      overflow-x: hidden;
-    }
-
-    section.page-box {
-      width: 100%;
-      height: 100vh;
-      background-color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .page-container {
-      display: flex;
-      width: 90%;
-      max-width: 1200px;
-      height: 90vh;
-      background: #fff;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-    }
-
-    .left-panel {
-      width: 50%;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 80px 80px 120px;
-    }
-
-    .intro-text {
-      font-family: 'Roboto', sans-serif;
-      font-size: 17px;
-      color: #999;
-      line-height: 1.8;
-      margin-bottom: 40px;
-      max-width: 170px;
-    }
-
-    .main-title {
-      font-size: 3.8rem;
-      line-height: 1.1;
-      letter-spacing: 3px;
-      color: #000;
-      font-weight: 400;
-      position: relative;
-    }
-
-    .main-title span { display: block; }
-
-    .main-title::after {
-      content:"";
-      position:absolute;
-      right:-80px;
-      top:50%;
-      width:60px;
-      height:1px;
-      background:#000;
-    }
-
-    .image-side {
-      width: 50%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .image-side img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(100%) brightness(1.05);
-      opacity: 0.9;
-      transition: opacity 1s ease;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    .right-blue-bar {
-      width: 100px;
-      background-color: #bbbfc7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      z-index: 2;
-    }
-
-    .right-blue-bar.left {
-      left: 0;
-      right: auto;
-    }
-
-    .readon-text {
-      font-family: 'Roboto', sans-serif;
-      color: #fff;
-      font-weight: 550;
-      font-size: 16px;
-      line-height: 1.5;
-      letter-spacing: 10px;
-      position: relative;
-    }
-
-    .o1, .o2 { margin-left: 16px; position: relative; top: 2px; }
-
-    
-
-    @media (max-width:992px){
-      section.page-box { height: auto; }
-      .page-container { flex-direction: column; height: auto; }
-      .left-panel, .image-side { width: 100%; padding: 40px 20px; }
-      .main-title { font-size: 3rem; text-align: center; }
-      .main-title::after { display: none; }
-      .intro-text { max-width: 100%; text-align: center; margin: 0 auto 25px; }
-      .image-side { order: -1; height: 50vh; }
-      .image-side img { filter: none; }
-      .right-blue-bar { display: none; }
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- ===== SECTION 1 ===== -->
-  <section class="page-box">
-    <div class="page-container">
-      <div class="left-panel">
-        <div class="intro-text">The story how I chased, got close, but never caught one</div>
-        <div class="main-title"><span>I’D</span><span>GO</span><span>WILL</span><span>YA</span></div>
+<!-- ===== ARCOT R&D SECTION (same alignment, not full page) ===== -->
+<section class="rd-wrapper">
+  <!-- LEFT SECTION -->
+  <div class="rd-text-section">
+    <div class="rd-content">
+      <div class="rd-text-content">
+        <h1 class="rd-headline">Research &</h1>
+        <h1 class="rd-subheadline">Development</h1>
+        <p class="rd-desc">
+          At Arcot India, innovation isn’t a department — it’s our DNA.
+          Our R&D division stands at the crossroads of technology, design, and sustainability, redefining how cities think, connect, and evolve.
+        </p>
+        <a href="#" class="rd-read-more">explore more</a>
+        <p class="rd-page-count">01/05</p>
       </div>
-      <div class="image-side" data-images='["https://images.unsplash.com/photo-1507525428034-b723cf961d3e","https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixid=1","https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixid=2"]'>
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" alt="">
-        <div class="right-blue-bar">
-          <div class="readon-text"><span>R</span><br><span>E</span><span class="o1">O</span><br><span>A</span><span class="o2">N</span><br><span>D</span></div>
-        </div>
+
+      <div class="rd_thumbs">
+        <img src="img/randd/smartpole.png" data-main="img/randd/smartpole.png" alt="Smart Pole" class="active" />
+        <img src="img/randd/smartbollad.png" data-main="img/randd/smartbollad.png" alt="Smart Bollard" />
+        <img src="img/randd/smarttable.png" data-main="img/randd/smarttable.png" alt="Smart Conference Table" />
+        <img src="img/randd/Bar-counter-1.jpg" data-main="img/randd/Bar-counter-5.jpg" alt="Smart Bar Counter" />
+        <img src="img/comingsoon-2.jpg" data-main="img/comingsoon-2.jpg" alt="Smart Window Leaf AC" />
       </div>
     </div>
-  </section>
+  </div>
 
+  <!-- RIGHT SECTION -->
+  <div class="rd_image_section">
+    <div class="rd_image_wrapper">
+      <div class="rd_red_line"></div>
+      <img src="img/randd/smartpole.png" class="main-img" alt="Main Image" />
+    </div>
 
+    <div class="rd_red_box">
+      <h4>Smart Pole</h4>
+      <p>Where Connectivity Meets Design</p>
+      <div class="arrow-btn">→</div>
+    </div>
+  </div>
+</section>
 
-  <script>
-  // Auto image slideshow without refresh
-  document.querySelectorAll('.image-side').forEach(side => {
-    const img = side.querySelector('img');
-    const imageList = JSON.parse(side.dataset.images);
-    let index = 0;
+<style>
+  /* ===== R&D SECTION (same alignment, just removed full-height) ===== */
+  .rd-wrapper {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #fff;
+    color: #000;
+    min-height: 600px;
+    margin: 100px 0; /* space from other sections */
+  }
 
-    setInterval(() => {
-      index = (index + 1) % imageList.length;
-      const newImg = document.createElement('img');
-      newImg.src = imageList[index] + '?auto=format&fit=crop&w=1600&q=80';
-      newImg.style.opacity = '0';
-      newImg.style.position = 'absolute';
-      newImg.style.top = '0';
-      newImg.style.left = '0';
-      newImg.style.width = '100%';
-      newImg.style.height = '100%';
-      newImg.style.objectFit = 'cover';
-      newImg.style.filter = 'grayscale(100%) brightness(1.05)';
-      newImg.style.transition = 'opacity 1s ease';
+  .rd-text-section {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding: 4rem 3rem;
+  }
 
-      side.appendChild(newImg);
+  .rd-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+  }
 
-      requestAnimationFrame(() => {
-        newImg.style.opacity = '0.9';
-        img.style.opacity = '0';
-      });
+  .rd-text-content { flex: 1; padding-right: 2rem; }
 
-      setTimeout(() => {
-        img.src = newImg.src;
-        img.style.opacity = '0.9';
-        newImg.remove();
-      }, 1000);
-    }, 5000); // change image every 5 seconds
+  .rd-headline {
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: #514f4f;
+  }
+
+  .rd-subheadline {
+    font-size: 3.2rem;
+    color: #cfcfcf;
+    font-weight: 300;
+    margin-top: -10px;
+  }
+
+  .rd-desc {
+    color: #777;
+    max-width: 380px;
+    margin: 25px 0;
+    line-height: 1.7;
+  }
+
+  .rd-read-more {
+    color: #535151;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+  }
+
+  .rd-page-count {
+    font-size: 1rem;
+    color: #aaa;
+    margin-top: 1.5rem;
+  }
+
+  /* Thumbnails */
+  .rd_thumbs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-end;
+  }
+
+  .rd_thumbs img {
+    width: 85px;
+    height: 110px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 6px;
+  }
+
+  .rd_thumbs img.active {
+    filter: grayscale(0%);
+    border: 3px solid #171616;
+  }
+
+  .rd_thumbs img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+
+  /* RIGHT SECTION */
+  .rd_image_section {
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: #f3f3f3;
+    overflow: hidden;
+  }
+
+  .rd_image_wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: opacity 0.8s ease-in-out;
+  }
+
+  .rd_red_line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 100px;
+    background-color: #cfcfcf;
+  }
+
+  .rd_red_box {
+    width: 100%;
+    background-color: #000000;
+    color: #918b8b;
+    padding: 2.5rem 3rem;
+    text-align: right;
+  }
+
+  .rd_red_box h4 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+
+  .rd_red_box p {
+    margin-top: 5px;
+    font-size: 0.95rem;
+    opacity: 0.85;
+  }
+
+  .arrow-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    width: 60px;
+    height: 80px;
+    color: #d5d0d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 992px) {
+    .rd-wrapper {
+      flex-direction: column;
+      height: auto;
+      margin: 50px 0;
+    }
+
+    .rd-text-section,
+    .rd_image_section {
+      width: 100%;
+      padding: 2rem;
+    }
+
+    .rd_thumbs {
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .rd_red_box {
+      text-align: center;
+    }
+  }
+</style>
+
+<script>
+  const rd_thumbs = document.querySelectorAll(".rd_thumbs img");
+  const mainImg = document.querySelector(".main-img");
+  const pageCount = document.querySelector(".rd-page-count");
+  const redTitle = document.querySelector(".rd_red_box h4");
+  const redText = document.querySelector(".rd_red_box p");
+  const arrowBtn = document.querySelector(".arrow-btn");
+
+  const captions = [
+    { title: "Smart Pole", text: "Where Connectivity Meets Design" },
+    { title: "Smart Bollard", text: "Grounded in Design. Driven by Data" },
+    { title: "Smart Conference Table", text: "Where Collaboration Meets Intelligence" },
+    { title: "Smart Bar Counter", text: "Where Design Pours Innovation" },
+    { title: "Smart Window Leaf AC", text: "Reinventing Air. Intelligently" }
+  ];
+
+  let index = 0;
+  const total = rd_thumbs.length;
+
+  function showImage(i) {
+    rd_thumbs.forEach((thumb) => thumb.classList.remove("active"));
+    rd_thumbs[i].classList.add("active");
+    mainImg.style.opacity = 0;
+    setTimeout(() => {
+      mainImg.src = rd_thumbs[i].getAttribute("data-main");
+      mainImg.style.opacity = 1;
+    }, 400);
+    redTitle.textContent = captions[i].title;
+    redText.textContent = captions[i].text;
+    pageCount.textContent = `0${i + 1}/0${total}`;
+    index = i;
+  }
+
+  rd_thumbs.forEach((thumb, i) => {
+    thumb.addEventListener("click", () => showImage(i));
   });
-  </script>
 
-</body>
-</html>
+  arrowBtn.addEventListener("click", () => {
+    index = (index + 1) % total;
+    showImage(index);
+  });
+
+  setInterval(() => {
+    index = (index + 1) % total;
+    showImage(index);
+  }, 4000);
+</script>

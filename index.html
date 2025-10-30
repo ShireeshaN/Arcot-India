@@ -168,7 +168,8 @@
       <div class="swiper-slide">
         <img class="banner-image" src="img/newbanners/3.png" alt="Reliable Power Transmission" />
         <div class="banner-content">
-          <h1>Identity in Every Illumination</h1>
+          <h1>Identity in Every <br>
+            <strong style="font-weight: 700;">Illumination</strong></h1>
         </div>
       </div>
 
@@ -193,7 +194,7 @@
 
             <!-- Slide 6 -->
       <div class="swiper-slide">
-        <img class="banner-image" src="img/newbanners/6.png" alt="Intelligent IoT Solutions" />
+        <img class="banner-image" src="img/randd/smartbollad.png" alt="Intelligent IoT Solutions" />
         <div class="banner-content">
           <h1>Compact Design<br> Infinite Intelligence</h1>
           <!-- <h2>Connected Innovation</h2> -->
@@ -392,7 +393,7 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 .intro-text {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Switzer";
   font-size: 14px;
   color: #666;
   letter-spacing: 2px;
@@ -402,9 +403,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 .main-title {
   font-size: 3.4rem;
+  font-family: "Switzer";
   color: #000;
   line-height: 1.1;
   margin-bottom: 25px;
+  font-weight: 300;
 }
 
 .about-desc {
@@ -417,7 +420,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 .about-desc strong {
   color: #000;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 /* ---------- Right (Image Side) ---------- */
@@ -549,8 +552,8 @@ document.addEventListener("DOMContentLoaded", function () {
 /* === PREMIUM WHITE + BLACK OVERLAY DESIGN === */
 .power-premium {
   position: relative;
-  background: #f7f7f7;
-  font-family: 'Inter', sans-serif;
+  background: #fff;
+  /* font-family: 'Inter', sans-serif; */
   color: #fff;
   overflow: hidden;
 }
@@ -561,12 +564,13 @@ document.addEventListener("DOMContentLoaded", function () {
   padding-top: 20px; /* ⬅ reduced left padding for alignment */
   z-index: 5;
   position: relative;
-  margin-left: 0; /* ensures alignment with image edge */
+  margin-left: 20px; /* ensures alignment with image edge */
+  font-family: "Switzer";
 }
 
 .power-header h2 {
   font-size: 3rem;
-  font-family: "Plus Jakarta";
+  font-family: "Switzer";
   /* font-weight: 600; */
   color: #111;
   letter-spacing: 0.5px;
@@ -641,6 +645,7 @@ document.addEventListener("DOMContentLoaded", function () {
   letter-spacing: 1px;
   margin: 14px 0;
   transition: all 0.4s ease;
+  font-family: "DM Sans";
 }
 
 .power-menu li.active {
@@ -674,43 +679,45 @@ document.addEventListener("DOMContentLoaded", function () {
 </style>
 
 <script>
-const imgs = document.querySelectorAll('.power-images img');
-const menuItems = document.querySelectorAll('.power-menu li');
-let current = 0;
-let autoSwitch;
+(() => {
+  const imgs = document.querySelectorAll('.power-images img');
+  const menuItems = document.querySelectorAll('.power-menu li');
+  let current = 0;
+  let autoSwitch;
 
-function showImage(i) {
-  imgs.forEach((img, idx) => img.classList.toggle('show', idx === i));
-  menuItems.forEach((li, idx) => li.classList.toggle('active', idx === i));
-  current = i;
-}
+  function showImage(i) {
+    imgs.forEach((img, idx) => img.classList.toggle('show', idx === i));
+    menuItems.forEach((li, idx) => li.classList.toggle('active', idx === i));
+    current = i;
+  }
 
-function nextImage() {
-  current = (current + 1) % imgs.length;
-  showImage(current);
-}
+  function nextImage() {
+    current = (current + 1) % imgs.length;
+    showImage(current);
+  }
 
-function startAuto() {
-  autoSwitch = setInterval(nextImage, 5000);
-}
+  function startAuto() {
+    autoSwitch = setInterval(nextImage, 5000);
+  }
 
-function resetAuto() {
-  clearInterval(autoSwitch);
+  function resetAuto() {
+    clearInterval(autoSwitch);
+    startAuto();
+  }
+
+  menuItems.forEach((li, i) => {
+    li.addEventListener('mouseenter', () => {
+      showImage(i);
+      resetAuto();
+    });
+    li.addEventListener('click', () => {
+      showImage(i);
+      resetAuto();
+    });
+  });
+
   startAuto();
-}
-
-menuItems.forEach((li, i) => {
-  li.addEventListener('mouseenter', () => {
-    showImage(i);
-    resetAuto();
-  });
-  li.addEventListener('click', () => {
-    showImage(i);
-    resetAuto();
-  });
-});
-
-startAuto();
+})();
 </script>
 
 
@@ -764,7 +771,7 @@ startAuto();
  /* ===== ENERGY SECTION WRAPPER ===== */
 .energyx-section {
   width: 100%;
-  background: linear-gradient(180deg, #f7f7f7 0%, #eaeaea 100%);
+  background: linear-gradient(180deg, #fff 0%, #fff 100%);
   overflow: hidden;
   font-family: 'Inter', sans-serif;
   color: #111;
@@ -774,11 +781,13 @@ startAuto();
 .energyx-header {
   padding-top: 20px;
   text-align: left;
+  font-family: "Switzer";
+  margin-left: 20px;
 }
 
 .energyx-header h2 {
   font-size: 40px;
-  font-weight: 600;
+  /* font-weight: 600; */
   color: #111;
   letter-spacing: 0.5px;
   margin-bottom: 10px;
@@ -1044,7 +1053,7 @@ goNext();
 /* === LIGHTING SECTION === */
 .lighting-premium {
   position: relative;
-  background: linear-gradient(180deg, #e2e2e2 0%, #cecece 50%, #bababa 100%);
+  background: linear-gradient(180deg, #fff 0%, #fff 50%, #fff 100%);
 
   font-family: 'Inter', sans-serif;
   overflow: hidden;
@@ -1057,11 +1066,13 @@ goNext();
   text-align: left;
   position: relative;
   z-index: 5;
+  margin-left: 20px;
+  font-family: "Switzer";
 }
 
 .lighting-header h2 {
   font-size: 3rem;
-  font-weight: 600;
+  /* font-weight: 600; */
   color: #111;
   margin-bottom: 10px;
   letter-spacing: 0.5px;
@@ -1332,7 +1343,7 @@ updateAutoiotUI();
 <style>
 /* === PREMIUM AUTOMATION SECTION (Refined Alignment & Active Underline) === */
 .automation-section {
-  background: linear-gradient(180deg, #efefef 0%, #e3e3e3 45%, #d7d7d7 100%);
+  background: linear-gradient(180deg, #fff 0%, #fff 45%, #fff 100%);
   font-family: 'Inter', sans-serif;
   color: #111;
   overflow: hidden;
@@ -1343,11 +1354,13 @@ updateAutoiotUI();
 .automation-head {
   padding-top: 20px;
   text-align: left;
+  margin-left: 20px;
+  font-family: "Switzer";
 }
 
 .automation-title {
   font-size: 2.8rem;
-  font-weight: 600;
+  /* font-weight: 600; */
   color: #111;
   margin-bottom: 10px;
   position: relative;
@@ -1417,7 +1430,7 @@ updateAutoiotUI();
 }
 
 .automation-tabs li {
-  font-size: 1.15rem;
+  font-size: 2rem;
   font-weight: 400;
   color: #333;
   padding: 10px 0;
@@ -1425,6 +1438,7 @@ updateAutoiotUI();
   cursor: pointer;
   position: relative;
   transition: all 0.4s ease;
+  letter-spacing: 2.5px;
 }
 
 .automation-tabs li::after {
@@ -1445,7 +1459,7 @@ updateAutoiotUI();
 .automation-tabs li.active {
   color: #000;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  
 }
 
 .automation-tabs li.active::after {
@@ -1483,277 +1497,298 @@ updateAutoiotUI();
 
 
 
-<!-- ⚙️ R&D SECTION -->
-<section class="rnd-section">
-  <div class="rnd-header" data-aos="fade-up" data-aos-duration="1000">
-    <h2 class="rnd-title">R&amp;D</h2>
-    <p class="rnd-subtitle">Pioneering innovation through advanced research, design, and future-ready technologies.</p>
+<!-- ===== ARCOT R&D SECTION (Stable Image Version) ===== -->
+<section class="rd-wrapper">
+  <!-- LEFT SECTION -->
+  <div class="rd-text-section">
+    <div class="rd-content">
+      <div class="rd-text-content">
+        <h1 class="rd-headline">Research &</h1>
+        <h1 class="rd-subheadline">Development</h1>
+        <p class="rd-desc">
+          At Arcot India, innovation isn’t a department — it’s our DNA.
+          Our R&D division stands at the crossroads of technology, design, and sustainability, redefining how cities think, connect, and evolve.
+        </p>
+        <a href="#" class="rd-read-more">explore more</a>
+        <p class="rd-page-count">01/05</p>
+      </div>
+
+      <div class="rd_thumbs">
+        <img src="img/randd/smartpole.png" data-main="img/randd/smartpole.png" alt="Smart Pole" class="active" />
+        <img src="img/randd/smartbollad.png" data-main="img/randd/smartbollad.png" alt="Smart Bollard" />
+        <img src="img/randd/smarttable.png" data-main="img/randd/smarttable.png" alt="Smart Conference Table" />
+        <img src="img/randd/Bar-counter-1.jpg" data-main="img/randd/Bar-counter-5.jpg" alt="Smart Bar Counter" />
+        <img src="img/comingsoon-2.jpg" data-main="img/comingsoon-2.jpg" alt="Smart Window Leaf AC" />
+      </div>
+    </div>
   </div>
 
-  <div class="rnd-gallery">
-    <div class="gallery-wrap">
-      <!-- LEFT: vertical thumbnails -->
-      <div class="thumb-column" id="thumbColumn" role="list">
-        <div class="thumb active" data-img="img/randd/smartpole.png" role="listitem" tabindex="0">
-          <div class="thumb-img"><img src="img/randd/smartpole.png" alt="Smart Pole"></div>
-          <div class="thumb-label">Smart Pole</div>
-        </div>
+  <!-- RIGHT SECTION -->
+  <div class="rd_image_section">
+    <div class="rd_image_wrapper">
+      <div class="rd_red_line"></div>
+      <img src="img/randd/smartpole.png" class="main-img" alt="Main Image" />
+    </div>
 
-        <div class="thumb" data-img="img/randd/smartbollad.png" role="listitem" tabindex="0">
-          <div class="thumb-img"><img src="img/randd/smartbollad.png" alt="Smart Bollard"></div>
-          <div class="thumb-label">Smart Bollard</div>
-        </div>
-
-        <div class="thumb" data-img="img/comingsoon.webp" role="listitem" tabindex="0">
-          <div class="thumb-img"><img src="img/comingsoon.webp" alt="Smart Bar Counter"></div>
-          <div class="thumb-label">Smart Bar Counter</div>
-        </div>
-
-        <div class="thumb" data-img="img/randd/smarttable.png" role="listitem" tabindex="0">
-          <div class="thumb-img"><img src="img/randd/smarttable.png" alt="Smart Conference Table"></div>
-          <div class="thumb-label">Smart Conference Table</div>
-        </div>
-
-        <div class="thumb" data-img="img/comingsoon.webp" role="listitem" tabindex="0">
-          <div class="thumb-img"><img src="img/comingsoon.webp" alt="Windowleaf AC"></div>
-          <div class="thumb-label">Windowleaf AC</div>
-        </div>
-      </div>
-
-      <!-- RIGHT: big preview -->
-      <div class="preview-column">
-        <div class="preview-frame" aria-live="polite">
-          <img id="previewImg" src="img/randd/smartpole.png" alt="Preview" />
-        </div>
-        <div id="previewCaption" class="preview-caption">Smart Pole</div>
-      </div>
+    <div class="rd_red_box">
+      <h4>Smart Pole</h4>
+      <p>Where Connectivity Meets Design</p>
+      <div class="arrow-btn">→</div>
     </div>
   </div>
 </section>
 
 <style>
-/* === Premium Monochrome R&D Styling (Perfect Left Alignment) === */
-
-.rnd-section {
-  background: linear-gradient(180deg, #f1f1f1 0%, #e7e7e7 50%, #dddddd 100%);
-  color: #111;
-  font-family: 'Inter', sans-serif;
-  padding-bottom: 60px;
-  overflow: hidden;
-}
-
-/* Header */
-.rnd-header {
-  padding-top: 20px;
-  /* padding-left: 2%;  */
-  text-align: left;
-}
-
-.rnd-title {
-  font-size: 40px;
-  font-weight: 600;
-  color: #111;
-  letter-spacing: 0.5px;
-  margin-bottom: 10px;
-  position: relative;
-}
-
-.rnd-subtitle {
-  font-size: 16px;
-  color: #444;
-  max-width: 550px;
-  line-height: 1.6;
-  margin-top: 15px;
-}
-
-/* Gallery Wrapper */
-.rnd-gallery {
-  /* padding-left: 5.5%;  */
-  padding-right: 3%;
-  margin-top: 20px;
-}
-
-.gallery-wrap {
-  display: flex;
-  gap: 18px;
-  align-items: stretch;
-  width: 100%;
-  margin: 0 auto;
-}
-
-/* LEFT - Thumbnails */
-.thumb-column {
-  width: 130px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding: 6px;
-  overflow-y: auto;
-  align-items: flex-start;
-  border-right: 1px solid rgba(0,0,0,0.08);
-}
-
-.thumb {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  cursor: pointer;
-  width: 100%;
-  transition: transform .18s ease;
-}
-
-.thumb-img {
-  width: 100%;
-  height: 82px;
-  overflow: hidden;
-  background: #111;
-}
-
-.thumb-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.thumb-label {
-  font-size: 12px;
-  color: #333;
-  margin-top: 8px;
-  opacity: 0.8;
-}
-
-.thumb.active .thumb-img {
-  transform: scale(1.03);
-  border: 2px solid #eee;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-.thumb.active .thumb-label {
-  font-weight: 600;
-  color: #000;
-}
-
-/* RIGHT - Preview */
-.preview-column {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 8px 0 8px 30px;
-}
-
-.preview-frame {
-  width: 100%;
-  height: 560px; /* ✅ slightly taller for consistency with Power & Lighting */
-  overflow: hidden;
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.preview-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity .36s ease, transform .6s ease;
-  opacity: 1;
-}
-
-.preview-caption {
-  color: #111;
-  font-size: 22px;
-  font-weight: 500;
-  opacity: 0.85;
-  margin-top: 10px;
-}
-
-/* Scrollbar */
-.thumb-column::-webkit-scrollbar {
-  width: 8px;
-}
-.thumb-column::-webkit-scrollbar-thumb {
-  background: rgba(0,0,0,0.1);
-  border-radius: 6px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .gallery-wrap {
-    flex-direction: column;
-  }
-  .thumb-column {
+  .rd-wrapper {
+    display: flex;
+    align-items: stretch;
     width: 100%;
-    flex-direction: row;
+    overflow: hidden;
+    background-color: #fff;
+    color: #000;
+    min-height: 650px;
+    margin: 50px 0 10px ;
+  }
+
+  .rd-text-section {
+    width: 50%;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 10px 8px;
-    border-right: none;
+    background: #fff;
+    padding: 4rem 3rem;
   }
-  .thumb {
-    width: 30%;
+
+  .rd-content {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
+    max-width: 600px;
   }
-  .thumb-img {
-    height: 68px;
-    width: 78%;
+
+  .rd-text-content { flex: 1; padding-right: 2rem; }
+
+  .rd-headline {
+    font-size: 3.2rem;
+    /* font-weight: 600; */
+    color: #000;
+    font-family: "Switzer";
   }
-  .preview-column {
+
+  .rd-subheadline {
+    font-size: 3.2rem;
+    color: #a4a0a0;
+    font-weight: 300;
+    margin-top: -10px;
+  }
+
+  .rd-desc {
+    color: #777;
+    max-width: 380px;
+    margin: 25px 0;
+    line-height: 1.7;
+  }
+
+  .rd-read-more {
+    color: #535151;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+  }
+
+  .rd-page-count {
+    font-size: 1rem;
+    color: #aaa;
+    margin-top: 1.5rem;
+  }
+
+  /* Thumbnails */
+  .rd_thumbs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-end;
+  }
+
+  .rd_thumbs img {
+    width: 85px;
+    height: 110px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    /* border-radius: 6px; */
+  }
+
+  .rd_thumbs img.active {
+    filter: grayscale(0%);
+    border: 3px solid #171616;
+  }
+
+  .rd_thumbs img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+
+  /* RIGHT SECTION */
+  .rd_image_section {
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: #f3f3f3;
+    overflow: hidden;
+  }
+
+  .rd_image_wrapper {
+    flex: 1;
+    display: flex;
     align-items: center;
-    padding: 0;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 600px; /* fixed height for image stability */
+    overflow: hidden;
   }
-  .preview-frame {
-    height: 42vh;
-    max-width: 100%;
+
+  .main-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
   }
-  .preview-caption {
-    text-align: center;
-    color: #222;
+
+  .rd_red_line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 100px;
+    background-color: #cfcfcf;
   }
-}
+
+  .rd_red_box {
+    width: 100%;
+    background-color: #000000;
+    color: #918b8b;
+    padding: 2.5rem 3rem;
+    text-align: right;
+    position: relative;
+  }
+
+  .rd_red_box h4 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+
+  .rd_red_box p {
+    margin-top: 5px;
+    font-size: 0.95rem;
+    opacity: 0.85;
+  }
+
+  .arrow-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    width: 60px;
+    height: 80px;
+    color: #d5d0d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 992px) {
+    .rd-wrapper {
+      flex-direction: column;
+      height: auto;
+      margin: 50px 0;
+    }
+
+    .rd-text-section,
+    .rd_image_section {
+      width: 100%;
+      padding: 2rem;
+    }
+
+    .rd_image_wrapper {
+      height: 400px;
+    }
+
+    .rd_thumbs {
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .rd_red_box {
+      text-align: center;
+    }
+  }
 </style>
 
 <script>
-(function(){
-  const thumbs = Array.from(document.querySelectorAll('.thumb'));
-  const previewImg = document.getElementById('previewImg');
-  const previewCaption = document.getElementById('previewCaption');
-  let current = 0;
-  let timer = null;
-  const INTERVAL = 4000;
+(() => {
+  const rd_thumbs = document.querySelectorAll(".rd_thumbs img");
+  const mainImg = document.querySelector(".main-img");
+  const pageCount = document.querySelector(".rd-page-count");
+  const redTitle = document.querySelector(".rd_red_box h4");
+  const redText = document.querySelector(".rd_red_box p");
+  const arrowBtn = document.querySelector(".arrow-btn");
 
-  function setActive(index, userTriggered = false) {
-    index = (index + thumbs.length) % thumbs.length;
-    thumbs.forEach((t,i)=> t.classList.toggle('active', i === index));
+  const captions = [
+    { title: "Smart Pole", text: "Where Connectivity Meets Design" },
+    { title: "Smart Bollard", text: "Grounded in Design. Driven by Data" },
+    { title: "Smart Conference Table", text: "Where Collaboration Meets Intelligence" },
+    { title: "Smart Bar Counter", text: "Where Design Pours Innovation" },
+    { title: "Smart Window Leaf AC", text: "Reinventing Air. Intelligently" }
+  ];
 
-    previewImg.style.opacity = 0;
-    setTimeout(()=> {
-      const src = thumbs[index].dataset.img;
-      const label = thumbs[index].querySelector('.thumb-label').textContent || '';
-      previewImg.src = src;
-      previewCaption.textContent = label;
-      previewImg.onload = () => { previewImg.style.opacity = 1; };
-    }, 150);
+  let index = 0;
+  const total = rd_thumbs.length;
 
-    current = index;
-    if (userTriggered) startAuto();
+  function showImage(i) {
+    rd_thumbs.forEach((thumb) => thumb.classList.remove("active"));
+    rd_thumbs[i].classList.add("active");
+    mainImg.style.opacity = 0;
+    setTimeout(() => {
+      mainImg.src = rd_thumbs[i].getAttribute("data-main");
+      mainImg.style.opacity = 1;
+    }, 400);
+    redTitle.textContent = captions[i].title;
+    redText.textContent = captions[i].text;
+    pageCount.textContent = `0${i + 1}/0${total}`;
+    index = i;
   }
 
-  thumbs.forEach((t, i) => {
-    t.addEventListener('click', ()=> setActive(i, true));
+  rd_thumbs.forEach((thumb, i) => {
+    thumb.addEventListener("click", () => showImage(i));
   });
 
-  function startAuto() {
-    if (timer) clearInterval(timer);
-    timer = setInterval(()=> setActive((current + 1) % thumbs.length, false), INTERVAL);
-  }
+  document.querySelector(".arrow-btn").addEventListener("click", () => {
+    index = (index + 1) % total;
+    showImage(index);
+  });
 
-  setActive(0, false);
-  startAuto();
+  setInterval(() => {
+    index = (index + 1) % total;
+    showImage(index);
+  }, 4000);
 })();
 </script>
+
 
 
 
@@ -1855,9 +1890,9 @@ document.addEventListener("DOMContentLoaded", function() {
 <style>
 /* === APPLICATIONS SECTION === */
 .applications-section {
-  background: linear-gradient(180deg, #f2f2f2 0%, #e8e8e8 50%, #dedede 100%);
+  background: linear-gradient(180deg, #fff 0%, #fff 50%, #fff 100%);
   color: #111;
-  font-family: 'Inter', sans-serif;
+ font-family: "Switzer";
   overflow: hidden;
   /* padding-bottom: 60px; */
 }
@@ -1867,11 +1902,12 @@ document.addEventListener("DOMContentLoaded", function() {
   text-align: left;
   /* margin-left: 6%; */
   padding-top: 20px;
+  margin-left: 20px;
 }
 
 .applications-title {
   font-size: 40px;
-  font-weight: 600;
+  /* font-weight: 600; */
   color: #111;
   margin-bottom: 10px;
 }
@@ -2015,7 +2051,7 @@ document.addEventListener("DOMContentLoaded", function() {
   <div class="applechild-light-rays"></div>
 
   <!-- Animated Text -->
-  <div class="applechild-text">Magic of Illumination</div>
+  <div class="applechild-text">Magic of <br><strong>Illumination</strong></div>
 </div>
 
 <style>
@@ -2419,8 +2455,8 @@ Smart City & R&D: Innovative smart city tech & research.
       <div class="col-md-6 text-center text-md-start mb-md-0">
         <span class="text-body">
           <a href="https://arcotindia.com/" class="border-bottom text-white">
-            <i class="fas fa-copyright text-light me-2"></i>ARCOT
-          </a>, All Rights Reserved.
+            <i class="fas fa-copyright text-light me-2"></i>ARCOT All Rights Reserved.
+          </a>
         </span>
       </div>
       <!-- <div class="col-md-6 text-center text-md-end text-body">
