@@ -556,7 +556,7 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto 50px auto;
-    height: 500px;
+    height: 90vh;
     overflow: hidden;
   }
   .lightssec-slider img {
@@ -773,16 +773,103 @@
 
 
 
+
+
+
+<!-- illumis start -->
+<section class="illumis">
+  <div class="content">
+    <h1>Illuminate the Darkness</h1>
+    <p>Bringing brilliance to every shadow — redefining the art of light.</p>
+  </div>
+</section>
+
+<style>
+  .illumis {
+    height: 100vh;
+    width: 100%;
+    background: url("img/BlackGray.png") no-repeat right center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    background-color: #000;
+    overflow: hidden;
+  }
+
+  .illumis .content {
+    position: relative;
+    z-index: 2;
+    padding: 0 5%;
+    max-width: 600px;
+  }
+
+  .illumis h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #ffffff, #c0c0c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInUp 1.5s ease-out;
+  }
+
+  .illumis p {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    color: #ccc;
+    animation: fadeInUp 2s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* 📱 Mobile */
+  @media (max-width: 768px) {
+    .illumis {
+      background: url("img/BlackGraymobile.png") no-repeat center center;
+      background-size: cover;
+      justify-content: center;
+      align-items: flex-end;
+      text-align: start;
+    }
+
+    .illumis .content {
+      padding: 20px;
+      max-width: 90%;
+      margin-bottom: 40px;
+    }
+
+    .illumis h1 {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    .illumis p {
+      font-size: 1rem;
+      color: #ccc;
+    }
+  }
+</style>
+<!-- illumis end -->
+
 <!-- animinew  start-->
 <!-- LIGHT SOLUTIONS SLIDER START -->
 <div class="lightsanimi-section">
   <!-- Background images -->
-  <div class="lightsanimi-bg active" style="background-image: url('img/17.png');"></div>
-  <div class="lightsanimi-bg" style="background-image: url('img/10.png');"></div>
-  <div class="lightsanimi-bg" style="background-image: url('img/11.png');"></div>
-  <div class="lightsanimi-bg" style="background-image: url('img/12.png');"></div>
-  <div class="lightsanimi-bg" style="background-image: url('img/20.png');"></div>
-  <div class="lightsanimi-bg" style="background-image: url('img/19.png');"></div>
+  <div class="lightsanimi-bg active" style="background-image: url('img/wd.png');"></div>
+  <div class="lightsanimi-bg" style="background-image: url('img/wd.png');"></div>
+  <div class="lightsanimi-bg" style="background-image: url('img/wd.png');"></div>
+  <div class="lightsanimi-bg" style="background-image: url('img/wd.png');"></div>
+  <div class="lightsanimi-bg" style="background-image: url('img/wd.png);"></div>
+  <div class="lightsanimi-bg" style="background-image: url('img/wd.png');"></div>
 
   <!-- Gradient overlay -->
   <div class="lightsanimi-overlay"></div>
@@ -939,8 +1026,6 @@
 <!-- LIGHT SOLUTIONS SLIDER END -->
 
 <!-- animinew end -->
-
-
     
 </body>
 
