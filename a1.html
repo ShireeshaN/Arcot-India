@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Illumination</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      width: 100%;
+      font-family: "Poppins", sans-serif;
+      color: #fff;
+      background-color: #000;
+      overflow: hidden;
+    }
+
+    /* 🌆 Desktop Background */
+    .hero {
+      height: 100%;
+      width: 100%;
+      background: url("img/BlackGray.png") no-repeat right center;
+      background-size: cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    /* .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0.2) 100%);
+    } */
+
+    .content {
+      position: relative;
+      z-index: 2;
+      padding: 0 5%;
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #ffffff, #c0c0c0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 15px;
+      color: #ccc;
+      animation: fadeInUp 2s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 📱 MOBILE DESIGN */
+    @media (max-width: 768px) {
+      .hero {
+        background: url("img/BlackGraymobile.png") no-repeat center center;
+        background-size: cover;
+        justify-content: center;
+        align-items: flex-end;
+        text-align: start;
+      }
+
+      /* .overlay {
+        background: rgba(0,0,0,0.7);
+      } */
+
+      .content {
+        padding: 20px;
+        max-width: 90%;
+        margin-bottom: 40px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #ccc;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Illuminate the Darkness</h1>
+      <p>Bringing brilliance to every shadow — redefining the art of light.</p>
+    </div>
+  </section>
+</body>
+</html>
