@@ -289,704 +289,535 @@
     <a href="contact.html" class="cta-button">Get in Touch</a>
   </section> -->
 
-<section class="smartpole-section" id="smartpole">
+    <div class="hero">
+        <h1>FEATURES</h1>
+        <!-- <p>Redefining urban infrastructure with intelligence, design & innovation.</p> -->
 
-  <div class="hero">
-    <h1>FEATURES</h1>
-  </div>
-
-  <div class="features-container">
-    <div class="features-list" id="featuresLeft"></div>
-
-    <div class="product-display" id="imageContainer">
-      <img src="img/randd/Smartpole-product-removebg-preview.png"
-           class="product-image"
-           alt="Smartpole Product">
     </div>
+    <!-- SMARTPOLE FEATURE SECTION -->
+    <section class="smartpole-section" id="smartpole">
 
-    <div class="features-list" id="featuresRight"></div>
-  </div>
+        <div class="features-container">
+            <div class="features-list" id="featuresLeft"></div>
 
-</section>
-
-<style>
-  /* --- HERO SECTION --- */
-  .hero {
-    height: 35vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #111;
-    color: #fff;
-  }
-
-  .hero h1 {
-    font-family: "Roboto", sans-serif;
-    font-size: 3.2rem;
-    font-weight: 400;
-    letter-spacing: 6px;
-    color: #e0e0e0;
-  }
-
-  /* --- MAIN SECTION --- */
-  .smartpole-section {
-    background: #111;
-    color: #fff;
-    padding: 60px 100px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .features-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1600px;
-    margin: 0 auto;
-    gap: 60px;
-  }
-
-  /* --- FEATURE LIST --- */
-  .features-list {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .feature {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 10px;
-    padding: 14px 22px;
-    color: #d6d6d6;
-    cursor: pointer;
-    transition: transform 0.35s ease, background 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
-    will-change: transform, background, color;
-    overflow: hidden;
-  }
-
-  .feature:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
-  }
-
-  .feature.active {
-    background: #fff;
-    color: #000;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
-    transform: scale(1.02);
-  }
-
-  .feature-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 1rem;
-    font-weight: 500;
-  }
-
-  .feature-icon {
-    font-size: 1.2rem;
-    opacity: 0.9;
-  }
-
-  /* --- SMOOTH DESC ANIMATION --- */
-  .feature-desc {
-    color: #111;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-top: 10px;
-    opacity: 0;
-    max-height: 0;
-    transform: translateY(-5px);
-    transition: opacity 0.5s ease, max-height 0.6s ease, transform 0.6s ease;
-    will-change: opacity, transform;
-  }
-
-  .feature.active .feature-desc {
-    opacity: 1;
-    max-height: 160px;
-    transform: translateY(0);
-  }
-
-  /* --- PRODUCT DISPLAY (STATIC IMAGE) --- */
-  .product-display {
-    flex: 1.4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .product-image {
-    width: 90%;
-    height: auto;
-    object-fit: contain;
-    filter: brightness(0.9) contrast(1.05);
-    transition: none; /* static */
-  }
-
-  /* --- RESPONSIVE --- */
-  @media (max-width: 1024px) {
-    .smartpole-section {
-      padding: 40px 40px;
-    }
-
-    .features-container {
-      flex-direction: column;
-      gap: 40px;
-    }
-
-    .product-display {
-      order: -1;
-      height: 45vh;
-    }
-
-    .product-image {
-      width: 80%;
-    }
-
-    .features-list {
-      width: 100%;
-      align-items: center;
-    }
-
-    .feature {
-      width: 90%;
-    }
-  }
-</style>
-
-<script>
-  const features = [
-    { icon: "fa-solid fa-bolt", name: "EV Charger", desc: "Fast, efficient EV charging; solar/wind integration and QR payments." },
-    { icon: "fa-solid fa-triangle-exclamation", name: "Emergency SOS Alert", desc: "Instant SOS with GPS, voice/push activation and ICCC integration." },
-    { icon: "fa-solid fa-plug", name: "Wired Charging", desc: "Multiple wired charging options to power diverse devices efficiently." },
-    { icon: "fa-solid fa-wifi", name: "Wireless Charging", desc: "Advanced wireless charging technology for seamless, cable-free power." },
-    { icon: "fa-solid fa-wind", name: "Air Quality Sensor", desc: "Real-time PM/CO₂/NO₂ monitoring with IoT reporting and alerts." },
-    { icon: "fa-solid fa-display", name: "Air Quality Screen", desc: "Outdoor AQI display with auto-brightness and public alerts." },
-    { icon: "fa-solid fa-lightbulb", name: "Street Lighting", desc: "Smart dimmable LEDs with motion, scheduling, and solar option." },
-    { icon: "fa-solid fa-volume-high", name: "PA Loudspeaker", desc: "Weatherproof public address for alerts and announcements." },
-    { icon: "fa-solid fa-solar-panel", name: "Power Generation System", desc: "Solar/wind hybrid generation with battery storage." },
-    { icon: "fa-solid fa-tv", name: "RGB Pixel LED Screen", desc: "High-bright dynamic display for ads, alerts, and info." },
-    { icon: "fa-solid fa-person-running", name: "Motion Detector", desc: "Movement detection that triggers lights and cameras." },
-    { icon: "fa-solid fa-wifi", name: "Wi-Fi Hotspot", desc: "Public broadband and IoT connectivity with secure access." },
-    { icon: "fa-solid fa-microphone", name: "Intercom", desc: "Two-way citizen ↔ control center communication (audio/video)." },
-    { icon: "fa-solid fa-tablet-screen-button", name: "Android Touch Screen", desc: "Outdoor info kiosk: maps, tickets, navigation & services." },
-    { icon: "fa-solid fa-robot", name: "AI Voice Communication", desc: "Multilingual voice assistant for info and smart commands." },
-    { icon: "fa-solid fa-camera", name: "AI Camera", desc: "Smart video analytics (detection, ANPR, alerts) with edge/cloud." },
-  ];
-
-  const leftContainer = document.getElementById('featuresLeft');
-  const rightContainer = document.getElementById('featuresRight');
-
-  const leftFeatures = features.slice(0, 8);
-  const rightFeatures = features.slice(8, 16);
-
-  function createFeatureElement(f, i) {
-    const div = document.createElement('div');
-    div.classList.add('feature');
-    if (i === 0) div.classList.add('active');
-    div.innerHTML = `
-      <div class="feature-header">
-        <i class="${f.icon} feature-icon"></i>
-        <span class="feature-title">${f.name}</span>
-      </div>
-      <div class="feature-desc">${f.desc}</div>
-    `;
-    div.addEventListener('click', () => setActiveFeature(i, true));
-    return div;
-  }
-
-  function setActiveFeature(i, manual = false) {
-    const all = document.querySelectorAll('.feature');
-    if (all[i].classList.contains('active')) return;
-
-    all.forEach(el => el.classList.remove('active'));
-    all[i].classList.add('active');
-
-    if (manual) {
-      clearInterval(autoCycle);
-      autoCycle = setInterval(nextFeature, 4000);
-    }
-  }
-
-  leftFeatures.forEach((f, i) => leftContainer.appendChild(createFeatureElement(f, i)));
-  rightFeatures.forEach((f, i) => rightContainer.appendChild(createFeatureElement(f, i + 8)));
-
-  let currentInd = 0;
-  function nextFeature() {
-    currentInd = (currentInd + 1) % features.length;
-    setActiveFeature(currentInd);
-  }
-  let autoCycle = setInterval(nextFeature, 4000);
-</script>
-
-  <style>
-    /* *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
-    body{
-      font-family:"Poppins",sans-serif;
-      background:#111;
-      color:#fff;
-      overflow-x:hidden;
-      position:relative;
-    } */
-
-    /* ===== FEATURE SECTIONS ===== */
-    .feature-section{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      height:100vh;
-      background:#181818;
-      border-bottom:1px solid rgba(255,255,255,0.05);
-      overflow:hidden;
-      position:relative;
-    }
-
-    .layout-card{
-      display:flex;
-      width:90%;
-      max-width:1300px;
-      height:85vh;
-      background:#1a1a1a;
-      box-shadow:0 8px 40px rgba(0,0,0,0.5);
-      overflow:hidden;
-      position:relative;
-      border-radius:14px;
-    }
-
-    .left-panel{
-      width:50%;
-      height:100%;
-      overflow:hidden;
-    }
-    .left-panel img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    .right-panel{
-      width:50%;
-      padding:80px 90px 60px 90px;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-start;
-      position:relative;
-    }
-    .right-panel h1{
-      font-size:2rem;
-      font-weight:600;
-      margin-bottom:20px;
-      color:#fff;
-      position:relative;
-    }
-
-    .points{
-      list-style:none;
-      padding-left:0;
-      color:#bfbfbf;
-      font-size:1rem;
-      line-height:1.8;
-    }
-    .points li{
-      position:relative;
-      padding-left:18px;
-    }
-    .points li::before{
-      content:"•";
-      position:absolute;
-      left:0;
-      color:#fff;
-      font-weight:bold;
-    }
-
-    /* PAGE INDICATOR */
-    .page-indicator{
-      position:absolute;
-      right:40px;
-      top:80px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      color:#ccc;
-    }
-    .page-count{
-      font-size:1rem;
-      letter-spacing:2px;
-      font-weight:500;
-      color:#e0e0e0;
-      margin-bottom:10px;
-    }
-    .indicator-line{
-      width:1px;
-      height:20vh;
-      background:rgba(255,255,255,0.3);
-      margin-bottom:10px;
-    }
-    .indicator-arrow{
-      font-size:1.3rem;
-      color:#ccc;
-      cursor:pointer;
-      transition:all 0.3s ease;
-    }
-    .indicator-arrow:hover{
-      color:#fff;
-      transform:translateY(3px);
-    }
-    .indicator-label{
-      position:absolute;
-      bottom:40px;
-      right:40px;
-      font-size:0.9rem;
-      color:#777;
-      letter-spacing:2px;
-      text-transform:uppercase;
-    }
-
-    /* ===== FIXED LEFT VERTICAL NAVIGATION ===== */
-    .feature-quick-nav {
-      position: fixed;
-      top: 50%;
-      left: 25px;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 2000;
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(6px);
-      padding: 10px 8px;
-      border-radius: 12px;
-    }
-
-    .feature-quick-nav a {
-      font-size: 14px;
-      font-weight: 500;
-      color: #aaa;
-      text-decoration: none;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-      padding: 4px 0;
-      text-align: center;
-      position: relative;
-    }
-
-    .feature-quick-nav a::before {
-      content: "";
-      position: absolute;
-      left: -6px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 4px;
-      height: 0%;
-      background: #fff;
-      border-radius: 2px;
-      transition: height 0.3s ease;
-    }
-
-    .feature-quick-nav a.active {
-      color: #fff;
-    }
-
-    .feature-quick-nav a.active::before {
-      height: 100%;
-    }
-
-    /* ========== MOBILE VIEW FIX ========== */
-    @media(max-width:992px){
-      .layout-card{
-        flex-direction:column;
-        height:auto;
-        width:95%;
-      }
-      .left-panel,.right-panel{width:100%;}
-      .left-panel{height:300px;}
-      .right-panel{
-        padding:40px 25px 80px 25px;
-        align-items:flex-start;
-      }
-      .right-panel h1{text-align:start;width:100%;}
-      .points{
-        font-size:0.95rem;
-        line-height:1.7;
-        margin-top:10px;
-      }
-      .page-indicator{
-        position:relative;
-        right:auto;
-        top:auto;
-        margin:40px auto 20px auto;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-      }
-      .page-count{font-size:0.9rem;}
-      .indicator-line{height:80px;}
-      .indicator-arrow{font-size:1.2rem;}
-      .indicator-label{
-        position:relative;
-        bottom:auto;
-        right:auto;
-        text-align:center;
-        margin-top:10px;
-        width:100%;
-        font-size:0.85rem;
-        color:#999;
-      }
-      .feature-quick-nav{display:none;}
-    }
-  </style>
-
-
-
-
-
-<!-- ================= INNOVATION SECTION START ================= -->
-<section id="innovation" class="innovation">
-  <div class="innovation-container">
-    <!-- Fixed Left Navigation -->
-    <nav class="innovation-nav">
-      <ul>
-        <li class="active" data-index="0">01</li>
-        <li data-index="1">02</li>
-        <li data-index="2">03</li>
-      </ul>
-    </nav>
-
-    <!-- Scroll Area -->
-    <div class="innovation-wrapper">
-      <!-- Item 1 -->
-      <div class="innovation-item active" data-index="0">
-        <div class="innovation-image">
-          <img src="img/feature1.png" alt="Smart Pole" />
-        </div>
-        <div class="innovation-content">
-          <div class="innovation-header">
-            <h2>Smart Pole</h2>
-            <div class="innovation-count">
-              <span>01</span> / <span>16</span>
-              <div class="line"></div>
-              <div class="arrow">↓</div>
+            <div class="product-display" id="imageContainer">
+                <!-- Single common image -->
+                <img src="img/randd/Smartpole-product-removebg-preview.png" class="product-image active"
+                    alt="Smartpole Product">
             </div>
-          </div>
-          <ul>
-            <li>EV Charging integration</li>
-            <li>AI-based camera analytics</li>
-            <li>5G-ready connectivity</li>
-            <li>Solar power optimization</li>
-            <li>IoT monitoring and alerts</li>
-          </ul>
-        </div>
-      </div>
 
-      <!-- Item 2 -->
-      <div class="innovation-item" data-index="1">
-        <div class="innovation-image">
-          <img src="img/feature2.png" alt="Smart Bollard" />
+            <div class="features-list" id="featuresRight"></div>
         </div>
-        <div class="innovation-content">
-          <div class="innovation-header">
-            <h2>Smart Bollard</h2>
-            <div class="innovation-count">
-              <span>02</span> / <span>16</span>
-              <div class="line"></div>
-              <div class="arrow">↓</div>
-            </div>
-          </div>
-          <ul>
-            <li>Wireless connectivity</li>
-            <li>Energy-efficient lighting</li>
-            <li>Sensor-based activation</li>
-            <li>Weather-resistant design</li>
-          </ul>
-        </div>
-      </div>
+    </section>
 
-      <!-- Item 3 -->
-      <div class="innovation-item" data-index="2">
-        <div class="innovation-image">
-          <img src="img/feature3.png" alt="Smart Bench" />
-        </div>
-        <div class="innovation-content">
-          <div class="innovation-header">
-            <h2>Smart Bench</h2>
-            <div class="innovation-count">
-              <span>03</span> / <span>16</span>
-              <div class="line"></div>
-              <div class="arrow">↓</div>
-            </div>
-          </div>
-          <ul>
-            <li>Wireless charging ports</li>
-            <li>Wi-Fi integration</li>
-            <li>Durable outdoor material</li>
-            <li>LED under-lighting</li>
-          </ul>
-        </div>
-      </div>
+    <script>
+        // FEATURES DATA (with icon class names)
+        const features = [
+            { icon: "fa-solid fa-bolt", name: "EV Charger", desc: "Fast, efficient EV charging; solar/wind integration and QR payments." },
+            { icon: "fa-solid fa-triangle-exclamation", name: "Emergency SOS Alert", desc: "Instant SOS with GPS, voice/push activation and ICCC integration." },
+            { icon: "fa-solid fa-plug", name: "Wired Charging", desc: "The Smart Pole integrates multiple wired charging options to power diverse public and personal devices efficiently." },
+            { icon: "fa-solid fa-wifi", name: "Wireless Charging", desc: "The Smart Pole features advanced wireless charging technology, offering seamless and cable-free power access for all modern smart devices." },
+            { icon: "fa-solid fa-wind", name: "Air Quality Sensor", desc: "Real-time PM/CO₂/NO₂ monitoring with IoT reporting and alerts." },
+            { icon: "fa-solid fa-display", name: "Air Quality Screen", desc: "Outdoor AQI display with auto-brightness and public alerts." },
+            { icon: "fa-solid fa-lightbulb", name: "Street Lighting", desc: "Smart dimmable LEDs with motion, schedules and solar option." },
+            { icon: "fa-solid fa-volume-high", name: "PA Loudspeaker", desc: "Weatherproof public address for alerts, announcements and events." },
+            { icon: "fa-solid fa-solar-panel", name: "Power Generation System", desc: "Solar/wind hybrid generation with battery storage." },
+            { icon: "fa-solid fa-tv", name: "RGB Pixel LED Screen", desc: "High-bright dynamic display for ads, alerts and info." },
+            { icon: "fa-solid fa-person-running", name: "Motion Detector", desc: "Day/night movement detection that triggers lights/cameras." },
+            { icon: "fa-solid fa-wifi", name: "Wi-Fi Hotspot", desc: "Public broadband access and IoT connectivity with secure access." },
+            { icon: "fa-solid fa-microphone", name: "Intercom", desc: "Two-way citizen ↔ control center communication (audio/video)." },
+            { icon: "fa-solid fa-tablet-screen-button", name: "Android Touch Screen", desc: "Outdoor info kiosk: maps, tickets, navigation & services." },
+            { icon: "fa-solid fa-robot", name: "AI-Based Voice Communication", desc: "Multilingual voice assistant for info and commands." },
+            { icon: "fa-solid fa-camera", name: "AI-Based Camera", desc: "Smart video analytics (detection, ANPR, alerts) with edge/cloud support." },
+        ];
+
+        const leftContainer = document.getElementById('featuresLeft');
+        const rightContainer = document.getElementById('featuresRight');
+        const image = document.querySelector('.product-image');
+
+        const leftFeatures = features.slice(0, 8);
+        const rightFeatures = features.slice(8, 16);
+
+        function createFeatureElement(f, i) {
+            const div = document.createElement('div');
+            div.classList.add('feature');
+            if (i === 0) div.classList.add('active');
+            div.innerHTML = `
+    <div class="feature-header">
+      <i class="${f.icon} feature-icon"></i>
+      <span class="feature-title">${f.name}</span>
     </div>
-  </div>
-</section>
+    <div class="feature-desc">${f.desc}</div>
+  `;
+            div.addEventListener('click', () => setActiveFeature(i, true));
+            return div;
+        }
 
-<!-- ================= STYLES ================= -->
-<style>
-html, body {
-  scroll-behavior: smooth;
-  margin: 0;
-  padding: 0;
+        function setActiveFeature(i, manual = false) {
+            document.querySelectorAll('.feature').forEach(el => el.classList.remove('active'));
+            const allFeatures = document.querySelectorAll('.feature');
+            allFeatures[i].classList.add('active');
+            animateImage();
+            if (manual) {
+                clearInterval(autoCycle);
+                autoCycle = setInterval(nextFeature, 4000);
+            }
+        }
+
+        function animateImage() {
+            gsap.fromTo(image,
+                { scale: 1.05, rotateY: 10, opacity: 0.6 },
+                { scale: 1, rotateY: 0, opacity: 1, duration: 1.4, ease: "power3.out" }
+            );
+        }
+
+        leftFeatures.forEach((f, i) => leftContainer.appendChild(createFeatureElement(f, i)));
+        rightFeatures.forEach((f, i) => rightContainer.appendChild(createFeatureElement(f, i + 8)));
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Section animation
+        gsap.to(".smartpole-section", {
+            opacity: 1, y: 0, duration: 1.2, ease: "power3.out",
+            scrollTrigger: { trigger: ".smartpole-section", start: "top 80%" }
+        });
+
+        // Left-right entry
+        gsap.from(".features-list", {
+            opacity: 0,
+            x: i => (i === 0 ? -100 : 100),
+            duration: 1.3,
+            stagger: 0.2,
+            ease: "power2.out",
+            scrollTrigger: { trigger: ".features-container", start: "top 85%" }
+        });
+
+        // AUTO CYCLE
+        let currentInd = 0;
+        function nextFeature() {
+            currentInd = (currentInd + 1) % features.length;
+            setActiveFeature(currentInd);
+        }
+        let autoCycle = setInterval(nextFeature, 4000);
+    </script>
+
+    <style>
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background-color: #222;
+        }
+
+        .hero h1 {
+            font-family: "Roboto" sans-serif;
+            font-size: 3rem;
+            letter-spacing: 4px;
+            font-weight: 400;
+            background: linear-gradient(90deg, #ffffff, #a1a1a1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            opacity: 1;
+            transform: none;
+        }
+
+        .hero p {
+            font-family: "Roboto" sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: #cfcfcf;
+            margin-top: 8px;
+            opacity: 1;
+            transform: none;
+        }
+
+        /* --- SMARTPOLE SECTION --- */
+        .smartpole-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 100px;
+            background-color: #222;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .features-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1600px;
+            gap: 60px;
+        }
+
+        /* --- FEATURE LISTS --- */
+        .features-list {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            z-index: 3;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.07);
+            padding: 14px 22px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-family: "Roboto", sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: azure;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(4px);
+        }
+
+        .feature.active {
+            background: #fff;
+            color: #000;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+        }
+
+        .feature-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-icon {
+            font-size: 1.2rem;
+        }
+
+        .feature-desc {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.6s ease, opacity 0.6s ease;
+            font-size: 0.9rem;
+            margin-top: 6px;
+            color: #111;
+            line-height: 1.4;
+        }
+
+        .feature.active .feature-desc {
+            max-height: 160px;
+            opacity: 1;
+        }
+
+        /* --- PRODUCT DISPLAY --- */
+        .product-display {
+            flex: 1.4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            perspective: 1200px;
+        }
+
+        .product-image {
+            width: 90%;
+            height: auto;
+            object-fit: contain;
+            filter: brightness(1);
+            transition: opacity 1.2s ease, transform 1.8s ease;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 1024px) {
+            .features-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+
+            .product-display {
+                order: -1;
+                height: 50vh;
+            }
+
+            .product-image {
+                width: 70%;
+            }
+
+            .features-list {
+                width: 100%;
+                align-items: center;
+            }
+
+            .feature {
+                width: 200%;
+            }
+
+            .feature-header {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- section-1 -->
+
+    <style>
+        .mainfeatures-section {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #fff;
+     
+            /* margin-bottom: 60px;  */
+            /* bottom gap added */
+        }
+
+        /* LEFT CONTENT AREA */
+        .mainfeatures-left-block {
+            flex: 0.3;
+            background-color: #cdcccb;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 4rem;
+            position: relative;
+        }
+
+        .mainfeatures-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 3rem;
+        }
+
+        .mainfeatures-subtitle {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 1.2rem;
+            max-width: 260px;
+            line-height: 1.4;
+        }
+
+        .mainfeatures-link {
+            text-decoration: none;
+            color: #000;
+        }
+
+ 
+        .mainfeatures-description {
+            font-size: 0.9rem;
+            color: #444;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            max-width: 320px;
+           font-weight: 500;
+        }
+
+        .mainfeatures-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .mainfeatures-features li {
+            margin-bottom: 0.6rem;
+            padding-left: 1.2rem;
+            position: relative;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .mainfeatures-features li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #101010;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .mainfeatures-btn {
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background-color: #fff;
+            border: none;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .mainfeatures-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* RIGHT IMAGE AREA */
+        .mainfeatures-right-block {
+            flex: 0.7;
+            position: relative;
+            background-image: url('img/randd/mainfeatures/EVcharging.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+.mainfeatures-heading {
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 30%;
+    left: -10%;
+    transform: translateY(-50%);
+    color: #fafafa;
+background-color: rgba(0, 0, 0, 0.2); /* Transparent white */
+    padding: 1.2rem 2rem;
+    font-size: 2.5rem;
+    line-height: 1.1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.3); /* optional subtle border */
+    border-radius: 8px;
 }
 
-.innovation {
-  background: #111;
-  color: #f5f5f5;
-  font-family: "Poppins", sans-serif;
-  position: relative;
-  overflow: hidden;
-}
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+            .mainfeatures-section {
+                flex-direction: column;
+                height: auto;
+            }
 
-.innovation-container {
-  display: flex;
-}
+            .mainfeatures-left-block {
+                flex: none;
+                width: 100%;
+                align-items: center;
+                text-align: center;
+                padding: 2rem;
+            }
 
-/* Navbar */
-.innovation-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 20;
-}
+            .mainfeatures-right-block {
+                flex: none;
+                width: 100%;
+                height: 60vh;
+            }
 
-.innovation-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+            .mainfeatures-heading {
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 2.2rem;
+            }
 
-.innovation-nav li {
-  color: #888;
-  padding: 6px 0;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.3s;
-  text-align: center;
-}
+            .mainfeatures-features {
+                text-align: left;
+                margin: 0 auto;
+            }
+        }
+    </style>
 
-.innovation-nav li.active,
-.innovation-nav li:hover {
-  color: #fff;
-  font-weight: 600;
-  border-left: 2px solid #fff;
-  padding-left: 8px;
-}
+    <section class="mainfeatures-section">
 
-/* Layout */
-.innovation-wrapper {
-  flex: 1;
-  margin-left: 70px;
-}
 
-.innovation-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100vh;
-  padding: 80px 100px;
-  background: #1a1a1a;
-  opacity: 0.4;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
+        <!-- LEFT SIDE -->
+        <div data-aos="fade-down" data-aos-delay="300" class="mainfeatures-left-block">
+            <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
 
-.innovation-item.active {
-  opacity: 1;
-  transform: translateY(0);
-}
+            <div data-aos="fade-up" data-aos-delay="500" class="mainfeatures-description">
+                A smart and sustainable charging solution that efficiently powers electric vehicles while supporting
+                cleaner and greener urban mobility.
+            </div>
 
-/* Image */
-.innovation-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-.innovation-image img {
-  width: 80%;
-  height: auto;
-  border-radius: 10px;
-}
+            <ul data-aos="fade-up" data-aos-delay="300" data-aos-delay="800" class="mainfeatures-features">
+             <li>Charges electric vehicles</li>
+<li>Reduces fuel costs</li>
+<li>Supports clean energy</li>
+<li>Enables home and public charging</li>
+<li>Promotes sustainable transport</li>
+<li>Increases EV convenience</li>
+<li>Reduces carbon emissions</li>
+<li>Enhances smart grid integration</li>
+<li>Adds value to properties</li>
+<li>Supports fleet electrification</li>
+            </ul>
 
-/* Text */
-.innovation-content {
-  flex: 1;
-  padding-left: 60px;
-}
-.innovation-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.innovation-header h2 {
-  font-size: 32px;
-  color: #fff;
-  margin: 0;
-}
-.innovation-count {
-  text-align: right;
-  font-size: 14px;
-  color: #ccc;
-}
-.line {
-  width: 1px;
-  height: 80px;
-  background: #444;
-  margin: 10px auto;
-}
-.arrow {
-  font-size: 18px;
-  color: #ccc;
-  cursor: pointer;
-}
-.arrow:hover {
-  color: #fff;
-}
-.innovation-content ul {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0 0 0;
-}
-.innovation-content ul li {
-  margin-bottom: 8px;
-  color: #ccc;
-}
 
-/* Mobile */
-@media (max-width: 768px) {
-  .innovation-nav {
-    display: none;
-  }
-  .innovation-item {
-    flex-direction: column;
-    text-align: center;
-    padding: 40px 20px;
-  }
-  .innovation-content {
-    padding-left: 0;
-  }
-  .innovation-image img {
-    width: 90%;
-    margin-bottom: 20px;
-  }
-}
-</style>
+
+
+            <button class="mainfeatures-btn" data-aos="fade-down" data-aos-delay="300">
+                <a data-aos="fade-up" data-aos-delay="600" data-aos-delay="0" class="mainfeatures-link"
+                    href="contact.html">Know more →</a>
+            </button>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div data-aos="fade-up" class="mainfeatures-right-block">
+            <div class="mainfeatures-heading">EV<br>Charger</div>
+        </div>
+    </section>
+
+
+
+
+
+    
+
+    <!-- section-2 -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .modern-apartments-wrap {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #fff;
+            font-family: "Georgia", serif;
+        }
+
+        /* LEFT IMAGE SECTION */
+        .apartments-image-side {
+            flex: 1;
+            position: relative;
+            background-image: url('img/randd/mainfeatures/EmergencySOSalert.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .apartments-main-heading {
+             font-family: sans-serif;
+
+            position: absolute;
+            top: 35%;
+            right: -8%;
+            transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.2) !important; /* Transparent white */
+            padding: 1.2rem 2rem;
+              color: #f5f5f5;
+    font-size: 2.5rem;
+    line-height: 1.1;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.3) !important; /* optional subtle border */
+            z-index: 2;
+            background-color: rgba(255, 255, 255, 0.2); /* Transparent white */
+        }
 
 
 
@@ -994,14 +825,1022 @@ html, body {
 
 
 
+        
+        /* RIGHT TEXT SECTION */
+        .apartments-content-side {
+            flex: 0.3;
+            background-color: #cdcccb;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 4rem 5rem 4rem 8rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .apartments-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 3rem;
+        }
+
+        .apartments-subtitle {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 1.2rem;
+            max-width: 260px;
+            line-height: 1.4;
+        }
+
+        .apartments-description {
+
+            font-size: 0.9rem;
+            color: #444;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            max-width: 320px;
+            font-weight: 500 !important;
+        }
+
+        .apartments-feature-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .apartments-feature-list li {
+            margin-bottom: 0.6rem;
+            padding-left: 1.2rem;
+            position: relative;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .apartments-feature-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #000;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .apartments-btn {
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background-color: #fff;
+            border: none;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .apartments-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .modern-apartments-wrap {
+                flex-direction: column;
+            }
+
+            .apartments-image-side {
+                flex: none;
+                width: 100%;
+                height: 60vh;
+            }
+
+            .apartments-content-side {
+                flex: none;
+                width: 100%;
+                align-items: center;
+                text-align: center;
+                padding: 2rem;
+            }
+
+            .apartments-main-heading {
+                right: 50%;
+                transform: translate(50%, -50%);
+                font-size: 2.2rem;
+            }
+
+            .apartments-feature-list {
+                text-align: left;
+                margin: 0 auto;
+            }
+        }
+    </style>
+
+    <section class="modern-apartments-wrap">
+
+
+        <!-- LEFT IMAGE SECTION -->
+        <div class="apartments-image-side">
+            <div class="apartments-main-heading">Emergency<br>SOS Alerts</div>
+        </div>
+
+        <!-- RIGHT CONTENT SECTION -->
+        <div class="apartments-content-side">
+            <!-- <div class="apartments-logo">me.</div> -->
+            <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+            <div class="apartments-description" data-aos="fade-down" data-aos-delay="300">
+                A reliable safety system that provides immediate assistance during emergencies, connecting citizens to
+                the nearest response centers and enhancing urban security.
+            </div>
+
+            <ul class="apartments-feature-list" data-aos="fade-down" data-aos-delay="300">
+              <li>Enables emergency alerts</li>
+<li>Instant help request</li>
+<li>Improves public safety</li>
+<li>Direct link to authorities</li>
+<li>Quick response to incidents</li>
+<li>Supports crime reporting</li>
+<li>Assists lost or injured persons</li>
+<li>Visible and accessible 24/7</li>
+<li>Boosts citizen confidence</li>
+<li>Essential in isolated areas</li>
+            </ul>
+
+            <button data-aos="fade-down" data-aos-delay="300" class="apartments-btn">See more →</button>
+        </div>
+    </section>
+
+    <!-- section-1 -->
+
+    <style>
+        /* RIGHT IMAGE AREA */
+        .mainfeatures-right-block-2 {
+            flex: 0.7;
+            position: relative;
+            background-image: url('img/randd/mainfeatures/WiredCharging.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+            .mainfeatures-right-block-2 {
+                flex: none;
+                width: 100%;
+                height: 60vh;
+            }
+        }
+    </style>
+
+    <section class="mainfeatures-section">
+
+
+        <!-- LEFT SIDE -->
+        <div class="mainfeatures-left-block">
+            <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+            <div class="mainfeatures-description" data-aos="fade-down" data-aos-delay="300">
+                The Smart Pole integrates multiple wired charging options to power diverse public and personal devices efficiently. 
+                Designed for safety and versatility, it supports seamless energy access in outdoor environments.
+            </div>
+
+            <ul class="mainfeatures-features" data-aos="fade-down" data-aos-delay="300">
+<li>Charges mobile devices</li>
+<li>Supports all USB devices</li>
+<li>Provides 24/7 public charging</li>
+<li>Ideal for emergencies</li>
+<li>Encourages longer outdoor use</li>
+<li>Boosts user convenience</li>
+<li>Reliable power access</li>
+<li>Adds smart utility to poles</li>
+<li>Useful in transit areas</li>
+<li>Enhances urban infrastructure</li>
+
+            </ul>
+
+            <button class="mainfeatures-btn" data-aos="fade-down" data-aos-delay="300">
+                <a class="mainfeatures-link" href="contact.html">Know more →</a>
+            </button>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="mainfeatures-right-block-2">
+            <div class="mainfeatures-heading">Wired<br>Charging</div>
+        </div>
+    </section>
+
+
+    <!-- section-2 -->
+
+    <style>
+        /* LEFT IMAGE SECTION */
+        .apartments-image-side-2 {
+            flex: 1;
+            position: relative;
+            background-image: url('img/randd/mainfeatures/WIRELESS CHARGING.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .apartments-image-side-2 {
+                flex: none;
+                width: 100%;
+                height: 60vh;
+            }
+
+        }
+    </style>
+
+    <section class="modern-apartments-wrap">
+
+
+        <!-- LEFT IMAGE SECTION -->
+        <div class="apartments-image-side-2">
+            <div class="apartments-main-heading">Wireless<br>Charging</div>
+        </div>
+
+        <!-- RIGHT CONTENT SECTION -->
+        <div class="apartments-content-side">
+            <!-- <div class="apartments-logo">me.</div> -->
+            <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+            <div class="apartments-description" data-aos="fade-down" data-aos-delay="300">
+               The Smart Pole features advanced wireless charging technology, offering seamless and cable-free power access for all modern smart devices.
+            </div>
+
+            <ul class="apartments-feature-list" data-aos="fade-down" data-aos-delay="300">
+                <li>Pull-out & Slide-in Models for flexible design integration.</li>
+                <li>Rack-in / Rack-out Modules for easy maintenance and upgrades.</li>
+                
+<li>No cables needed</li>
+<li>Convenient for travel</li>
+<li>Supports multiple devices</li>
+<li>Reduces clutter</li>
+<li>Fast wireless charging</li>
+<li>Works during power outages</li>
+<li>Compact and lightweight</li>
+<!-- <li>Easy to carry</li>
+<li>Ideal for emergencies</li>   -->
+            </ul>
+
+            <button data-aos="fade-down" data-aos-delay="300" class="apartments-btn">See more →</button>
+        </div>
+    </section>
+
+    <!-- section-1 -->
+
+    <style>
+        /* RIGHT IMAGE AREA */
+        .mainfeatures-right-block-3 {
+            flex: 0.7;
+            position: relative;
+            background-image: url('img/randd/mainfeatures/AirQualitySensor.jpg');
+            background-size: cover;
+            background-position: center;
+        }
 
 
 
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+
+
+            .mainfeatures-right-block-3 {
+                flex: none;
+                width: 100%;
+                height: 60vh;
+            }
+
+
+        }
+    </style>
+
+    <section class="mainfeatures-section">
+
+
+        <!-- LEFT SIDE -->
+        <div class="mainfeatures-left-block">
+            <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+            <div class="mainfeatures-description" data-aos="fade-down" data-aos-delay="300">
+                An intelligent sensor system that monitors air pollutants in real-time, supports data-driven
+                environmental policies, and helps cities maintain cleaner and healthier air.
+            </div>
+
+            <ul class="mainfeatures-features" data-aos="fade-down" data-aos-delay="300">
+               <li>Monitors air pollution levels</li>
+<li>Detects harmful gases (e.g., CO2,NO2)</li>
+<li>Provides real-time environmental data</li>
+<li>Supports public health initiatives</li>
+<li>Alerts during poor air quality</li>
+<li>Helps in smart city planning</li>
+<li>Tracks pollution trends over time</li>
+<li>Aids climate and weather analysis</li>
+<li>Improves urban living conditions</li>
+<li>Promotes environmental awareness</li>
+            </ul>
+
+            <button class="mainfeatures-btn" data-aos="fade-down" data-aos-delay="300">
+                <a class="mainfeatures-link" href="contact.html">Know more →</a>
+            </button>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="mainfeatures-right-block-3">
+            <div class="mainfeatures-heading">Air Quality<br>Sensor</div>
+        </div>
+    </section>
+
+
+    <!-- section-2 -->
+
+    <style>
+        /* LEFT IMAGE SECTION */
+        .apartments-image-side-3 {
+            flex: 1;
+            position: relative;
+            background-image: url('img/randd/mainfeatures/Air Quality Screen.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .apartments-image-side-3 {
+                flex: none;
+                width: 100%;
+                height: 60vh;
+            }
+        }
+    </style>
+
+    <section class="modern-apartments-wrap">
+
+
+        <!-- LEFT IMAGE SECTION -->
+        <div class="apartments-image-side-3">
+            <div class="apartments-main-heading">Air Quality<br>Screen</div>
+        </div>
+
+        <!-- RIGHT CONTENT SECTION -->
+        <div class="apartments-content-side">
+            <!-- <div class="apartments-logo">me.</div> -->
+            <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+            <div class="apartments-description" data-aos="fade-down" data-aos-delay="300">
+                A public display system that shows live air quality data, promotes transparency, and engages citizens
+                with real-time environmental information.
+            </div>
+
+            <ul class="apartments-feature-list" data-aos="fade-down" data-aos-delay="300">
+              <li>Monitors real-time air quality</li>
+<li>Displays pollution levels</li>
+<li>Raises environmental awareness</li>
+<li>Supports public health</li>
+<li>Helps in city planning</li>
+<li>Detects harmful gases</li>
+<li>Tracks environmental trends</li>
+<li>Encourages eco-friendly behavior</li>
+<!-- <li>Integrates with smart city data</li>
+<li>Alerts during hazardous conditions</li> -->
+            </ul>
+
+            <button class="apartments-btn" data-aos="fade-down" data-aos-delay="300">See more →</button>
+        </div>
+    </section>
+
+    <!-- section-1 -->
+
+    <style>
+        /* RIGHT IMAGE AREA */
+        .mainfeatures-right-block-4 {
+            flex: 0.7;
+            position: relative;
+            background-image: url('img/randd/mainfeatures/Street Lighting.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+            .mainfeatures-right-block-4 {
+                flex: none;
+                width: 100%;
+                height: 60vh;
+            }
+        }
+    </style>
+
+    <section class="mainfeatures-section">
+
+
+        <!-- LEFT SIDE -->
+        <div class="mainfeatures-left-block">
+            <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+            <div class="mainfeatures-description" data-aos="fade-down" data-aos-delay="300">
+                Smart LED street lighting that saves energy, improves safety, and offers adaptive, IoT-controlled
+                illumination for modern urban environments.
+            </div>
+
+            <ul class="mainfeatures-features" data-aos="fade-down" data-aos-delay="300">
+               <li>Illuminates public spaces</li>
+<li>Enhances road safety</li>
+<li>Reduces crime risk</li>
+<li>Improves night visibility</li>
+<li>Enables adaptive brightness</li>
+<li>Saves energy with smart control</li>
+<li>Supports pedestrian safety</li>
+<li>Automated on/off scheduling</li>
+<li>Integrates with motion sensors</li>
+<li>Monitors lighting status remotely</li>
+            </ul>
+
+            <button class="mainfeatures-btn" data-aos="fade-down" data-aos-delay="300">
+                <a class="mainfeatures-link" href="contact.html">Know more →</a>
+            </button>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="mainfeatures-right-block-4">
+            <div class="mainfeatures-heading">Street<br>Lighting</div>
+        </div>
+    </section>
+
+
+    <!-- section-2 -->
+
+    <style>
+        /* LEFT IMAGE SECTION */
+        .apartments-image-side-4 {
+            flex: 1;
+            position: relative;
+            background-image: url('img/randd/mainfeatures/PA Loudspeaker.jpg');
+            background-position: center;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .apartments-image-side-4 {
+                flex: none;
+                width: 100%;
+                height: 60vh;
+            }
+        }
+    </style>
+
+    <section class="modern-apartments-wrap">
+
+
+        <!-- LEFT IMAGE SECTION -->
+        <div class="apartments-image-side-4">
+            <div class="apartments-main-heading">PA<br>Loudspeaker</div>
+        </div>
+
+        <!-- RIGHT CONTENT SECTION -->
+        <div class="apartments-content-side">
+            <!-- <div class="apartments-logo">me.</div> -->
+            <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+            <div class="apartments-description" data-aos="fade-down" data-aos-delay="300">
+                A high-quality public announcement system that delivers clear audio for emergencies, community alerts,
+                and event communications with smart integration.
+            </div>
+
+            <ul class="apartments-feature-list" data-aos="fade-down" data-aos-delay="300">
+              <li>Public announcements</li>
+<li>Emergency alerts</li>
+<li>Disaster warnings</li>
+<li>Traffic updates</li>
+<li>Event notifications</li>
+<li>Lost & found messages</li>
+<li>Crowd control assistance</li>
+<li>Security alerts</li>
+<li>Weather updates</li>
+<li>Promotes civic awareness</li>
+            </ul>
+
+            <button class="apartments-btn" data-aos="fade-down" data-aos-delay="300">See more →</button>
+        </div>
+    </section>
+
+
+    <!-- section-1 -->
+
+    <style>
+        /* RIGHT IMAGE AREA */
+        .mainfeatures-right-block-5 {
+            flex: 0.7;
+            position: relative;
+            background-image: url('img/randd/mainfeatures/Power Generation System.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+            .mainfeatures-right-block-5 {
+                flex: none;
+                width: 100%;
+                height: 60vh;
+            }
+        }
+    </style>
+
+    <section class="mainfeatures-section">
+
+
+        <!-- LEFT SIDE -->
+        <div class="mainfeatures-left-block">
+            <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+            <div class="mainfeatures-description" data-aos="fade-down" data-aos-delay="300">
+                A smart and sustainable energy solution that integrates solar and wind hybrid systems to power urban
+                infrastructure efficiently while reducing grid dependency.
+            </div>
+
+            <ul class="mainfeatures-features" data-aos="fade-down" data-aos-delay="300">
+              <li>Provides renewable energy</li>
+<li>Reduces electricity costs</li>
+<li>Enables off-grid operation</li>
+<li>Supports exo-friendly cities</li>
+<li>Powers smart pole features</li>
+<li>Works during power outages</li>
+<li>Minimizes carbon footprint</li>
+<li>Lowers maintenance expenses</li>
+<li>Promotes energy independence</li>
+<li>Enhances sustainability efforts</li>
+            </ul>
+
+            <button class="mainfeatures-btn" data-aos="fade-down" data-aos-delay="300">
+                <a class="mainfeatures-link" href="contact.html">Know more →</a>
+            </button>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="mainfeatures-right-block-5">
+            <div class="mainfeatures-heading">Power Generation<br>System</div>
+        </div>
+    </section>
+
+
+    <!-- section-2 -->
+
+    <style>
+        /* LEFT IMAGE SECTION */
+        .apartments-image-side-5 {
+            flex: 1;
+            position: relative;
+            background-image: url('img/randd/mainfeatures/RGB Pixel LED Screen.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .apartments-image-side-5 {
+                flex: none;
+                width: 100%;
+                height: 60vh;
+            }
+        }
+    </style>
+
+    <section class="modern-apartments-wrap">
+
+
+        <!-- LEFT IMAGE SECTION -->
+        <div class="apartments-image-side-5" >
+            <div class="apartments-main-heading">RGB Pixel<br>LED Screen</div>
+        </div>
+
+        <!-- RIGHT CONTENT SECTION -->
+        <div class="apartments-content-side">
+            <!-- <div class="apartments-logo">me.</div> -->
+            <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+            <div class="apartments-description" data-aos="fade-down" data-aos-delay="300">
+                A full-color digital display that delivers dynamic content for advertising, alerts, and urban
+                information while enhancing smart city engagement and branding.
+            </div>
+
+            <ul class="apartments-feature-list" data-aos="fade-down" data-aos-delay="300">
+             <li>Displays vibrant public messages</li>
+<li>Supports real-time alerts</li>
+<li>Shows weather and traffic info</li>
+<li>Enhances city communication</li>
+<li>Broadcasts advertisements and events</li>
+<li>Engages citizens visually</li>
+<li>Offers high visibility day/night</li>
+<li>Customizable content display</li>
+<!-- <li>Improves urban aesthetics</li>
+<li>Supports emergency notifications</li> -->
+            </ul>
+
+            <button class="apartments-btn" data-aos="fade-down" data-aos-delay="300">See more →</button>
+        </div>
+    </section>
+
+    <!-- section-1 -->
+
+    <style>
+        /* RIGHT IMAGE AREA */
+        .mainfeatures-right-block-6 {
+            flex: 0.7;
+            position: relative;
+            background-image: url('img/randd/mainfeatures/Motion Detector.jpg');
+            background-size: cover;
+            background-position: center;
+        }
 
 
 
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
 
 
+            .mainfeatures-right-block-6 {
+                flex: none;
+                width: 100%;
+                height: 60vh;
+            }
+
+
+        }
+    </style>
+
+    <section class="mainfeatures-section">
+
+
+        <!-- LEFT SIDE -->
+        <div class="mainfeatures-left-block">
+            <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+            <div class="mainfeatures-description" data-aos="fade-down" data-aos-delay="300">
+                An intelligent motion sensing system that detects movement, triggers automated responses, and enhances
+                safety while optimizing energy usage.
+            </div>
+
+            <ul class="mainfeatures-features" data-aos="fade-down" data-aos-delay="300">
+              <li>Detects human or vehicle movement</li>
+<li>Activates lights when motion sensed</li>
+<li>Enhances energy efficiency</li>
+<li>Improves security monitoring</li>
+<li>Supports real-time surveillance</li>
+<li>Triggers alerts or recordings</li>
+<li>Helps manage pedestrian flow</li>
+<li>Reduces unnecessary lighting</li>
+<li>Integrates with other smart systems</li>
+<li>Assists in traffic and crowd control</li>
+            </ul>
+
+            <button class="mainfeatures-btn" data-aos="fade-down" data-aos-delay="300">
+                <a class="mainfeatures-link" href="contact.html">Know more →</a>
+            </button>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="mainfeatures-right-block-6">
+            <div class="mainfeatures-heading">Motion<br>Detectors</div>
+        </div>
+    </section>
+
+
+    <!-- section-2 -->
+
+    <style>
+        /* LEFT IMAGE SECTION */
+        .apartments-image-side-6 {
+            flex: 1;
+            position: relative;
+            background-image: url('img/randd/mainfeatures/Wi-Fi Hotspot.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+
+            .apartments-image-side-6 {
+                flex: none;
+                width: 100%;
+                height: 60vh;
+            }
+
+        }
+    </style>
+
+    <section class="modern-apartments-wrap">
+
+
+        <!-- LEFT IMAGE SECTION -->
+        <div class="apartments-image-side-6">
+            <div class="apartments-main-heading">Wi-Fi<br>Hotspot</div>
+        </div>
+
+        <!-- RIGHT CONTENT SECTION -->
+        <div class="apartments-content-side">
+            <!-- <div class="apartments-logo">me.</div> -->
+            <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+            <div class="apartments-description" data-aos="fade-down" data-aos-delay="300">
+                A reliable public wireless network that provides high-speed connectivity, supports IoT devices, and
+                promotes digital inclusion in smart cities.
+            </div>
+
+            <ul class="apartments-feature-list" data-aos="fade-down" data-aos-delay="300">
+              <li>Provides free public internet</li>
+<li>Enhances digital connectivity</li>
+<li>Supports smart city applications</li>
+<li>Connects users on the go</li>
+<li>Bridges digital divide</li>
+<li>Boosts tourism and foot traffic</li>
+<li>Supports emergency communication</li>
+<li>Enables real-time data access</li>
+<!-- <li>Improves user convenience</li>
+<li>Facilitates mobile working and learning </li> -->
+            </ul>
+
+            <button class="apartments-btn">See more →</button>
+        </div>
+    </section>
+
+    <!-- section-1 -->
+
+    <style>
+        /* RIGHT IMAGE AREA */
+        .mainfeatures-right-block-7 {
+            flex: 0.7;
+            position: relative;
+            background-image: url('img/randd/mainfeatures/Intercom.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+
+
+            .mainfeatures-right-block-7 {
+                flex: none;
+                width: 100%;
+                height: 60vh;
+            }
+
+
+        }
+    </style>
+
+    <section class="mainfeatures-section">
+
+
+        <!-- LEFT SIDE -->
+        <div class="mainfeatures-left-block">
+            <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+            <div class="mainfeatures-description" data-aos="fade-down" data-aos-delay="300">
+                A robust two-way communication system that connects citizens to control centers, ensuring safety, rapid
+                response, and seamless public interaction.
+            </div>
+
+            <ul class="mainfeatures-features" data-aos="fade-down" data-aos-delay="300">
+              <li>Enables two-way communication</li>
+<li>Assists in emergencies</li>
+<li>Connects public with authorities</li>
+<li>Improves public safety</li>
+<li>Supports remote assistance</li>
+<li>Facilitates help requests</li>
+<li>Enhances accessibility for all</li>
+<li>Useful in crowded or remote areas</li>
+<li>Monitors suspicious ativity reports</li>
+<li>Strengthens smart city infrastructure</li>
+            </ul>
+
+            <button class="mainfeatures-btn" data-aos="fade-down" data-aos-delay="300">
+                <a class="mainfeatures-link" href="contact.html">Know more →</a>
+            </button>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="mainfeatures-right-block-7">
+            <div class="mainfeatures-heading">Intercom</div>
+        </div>
+    </section>
+
+
+    <!-- section-2 -->
+
+    <style>
+        /* LEFT IMAGE SECTION */
+        .apartments-image-side-7 {
+            flex: 1;
+            position: relative;
+            background-image: url('img/randd/mainfeatures/android touch screen.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+
+
+            .apartments-image-side-7 {
+                flex: none;
+                width: 100%;
+                height: 60vh;
+            }
+
+
+        }
+    </style>
+
+    <section class="modern-apartments-wrap">
+
+
+        <!-- LEFT IMAGE SECTION -->
+        <div class="apartments-image-side-7">
+            <div class="apartments-main-heading">Android<br>Touch Screen</div>
+        </div>
+
+        <!-- RIGHT CONTENT SECTION -->
+        <div class="apartments-content-side">
+            <!-- <div class="apartments-logo">me.</div> -->
+            <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+            <div class="apartments-description" data-aos="fade-down" data-aos-delay="300">
+                A user-friendly smart pole interface that provides real-time information, navigation, and interactive
+                services while supporting city branding and public convenience.
+            </div>
+
+            <ul class="apartments-feature-list" data-aos="fade-down" data-aos-delay="300">
+               <li>Provides interactive user interface</li>
+<li>Displays maps and directions</li>
+<li>Offers public information access</li>
+<li>Allows emergency service contact</li>
+<li>Supports multilingual options</li>
+<li>Enables service requests</li>
+<li>Enhances user engagement</li>
+<!-- <li>Shows transport and event updates</li>
+<li>Accessible for all age groups</li>
+<li>Improves urban digital experience</li> -->
+            </ul>
+
+            <button class="apartments-btn">See more →</button>
+        </div>
+    </section>
+
+
+    <!-- section-1 -->
+
+    <style>
+        /* RIGHT IMAGE AREA */
+        .mainfeatures-right-block-8 {
+            flex: 0.7;
+            position: relative;
+            background-image: url('img/randd/mainfeatures/Ai based voice communication.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+
+
+            .mainfeatures-right-block-8 {
+                flex: none;
+                width: 100%;
+                height: 60vh;
+            }
+
+
+        }
+    </style>
+
+    <section class="mainfeatures-section">
+
+
+        <!-- LEFT SIDE -->
+        <div class="mainfeatures-left-block">
+            <!-- <div class="mainfeatures-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+
+            <div class="mainfeatures-description" data-aos="fade-down" data-aos-delay="300">
+                An intelligent voice interface that allows real-time interaction with the smart pole system, providing
+                assistance, accessibility, and automated responses.
+            </div>
+
+            <ul class="mainfeatures-features" data-aos="fade-down" data-aos-delay="300">
+               <li>Public announcements</li>
+<li>Emergency alerts</li>
+<li>Voice-controlled lighting</li>
+<li>Security alerts</li>
+<li>Traffic updates</li>
+<li>environmental monitoring</li>
+<li>Tourist guidance</li>
+<li>Noise detection</li>
+<li>Crowd management</li>
+<li>Interactive citizen assistance</li>
+            </ul>
+
+            <button class="mainfeatures-btn" data-aos="fade-down" data-aos-delay="300">
+                <a class="mainfeatures-link" href="contact.html">Know more →</a>
+            </button>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="mainfeatures-right-block-8">
+            <div class="mainfeatures-heading">AI Based Voice<br>Communication</div>
+        </div>
+    </section>
+
+
+    <!-- section-2 -->
+
+    <style>
+        /* LEFT IMAGE SECTION */
+        .apartments-image-side-8 {
+            flex: 1;
+            position: relative;
+            background-image: url('img/randd/mainfeatures/AI-Based Camera.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+
+            .apartments-image-side-8 {
+                flex: none;
+                width: 100%;
+                height: 60vh;
+            }
+
+        }
+    </style>
+
+    <section class="modern-apartments-wrap">
+
+
+        <!-- LEFT IMAGE SECTION -->
+        <div class="apartments-image-side-8">
+            <div class="apartments-main-heading">AI Based<br>Camera</div>
+        </div>
+
+        <!-- RIGHT CONTENT SECTION -->
+        <div class="apartments-content-side">
+            <!-- <div class="apartments-logo">me.</div> -->
+            <!-- <div class="apartments-subtitle">
+      New home furniture collections and decoration accessories
+    </div> -->
+            <div class="apartments-description" data-aos="fade-down" data-aos-delay="300">
+                A smart surveillance camera that delivers high-definition monitoring, AI-driven analytics, and real-time
+                alerts for enhanced urban security.
+            </div>
+
+            <ul class="apartments-feature-list" data-aos="fade-down" data-aos-delay="300">
+              <li>Provides full-area surveillance</li>
+<li>Tracks movement intelligently</li>
+<li>Detects unusual activities</li>
+<li>Enhances public safety</li>
+<li>Supports real-time monitoring</li>
+<li>Facilitates traffic management</li>
+<li>Assists in crime prevention</li>
+<li>Automatically follows objects</li>
+<li>Reduces blind spots</li>
+            </ul>
+
+            <button class="apartments-btn" data-aos="fade-down" data-aos-delay="300">See more →</button>
+        </div>
+    </section>
 
 
 
@@ -2517,7 +3356,7 @@ html, body {
       </div> -->
     </div>
   </div>
-</div>  ok eppudu bagane undi gani kinda nundi e section scroll chesaka kindaki 
+</div>
 <!-- Copyright End -->
 
     <!-- Back to Top -->
@@ -2555,62 +3394,6 @@ html, body {
             easing: 'ease-out-cubic'
         });
     </script>
-    <!-- ================= SCRIPT ================= -->
-
-
-
-
-<!-- ================= SCRIPT ================= -->
-<script>
-const items = document.querySelectorAll('.innovation-item');
-const navLinks = document.querySelectorAll('.innovation-nav li');
-const arrows = document.querySelectorAll('.arrow');
-let current = 0;
-
-function setActive(index) {
-  if (index < 0) index = items.length - 1;
-  if (index >= items.length) index = 0;
-  current = index;
-
-  items.forEach((it, i) => it.classList.toggle('active', i === index));
-  navLinks.forEach((n, i) => n.classList.toggle('active', i === index));
-
-  window.scrollTo({
-    top: items[index].offsetTop,
-    behavior: "smooth"
-  });
-}
-
-// Navbar click
-navLinks.forEach((link) => {
-  link.addEventListener('click', () => {
-    setActive(Number(link.dataset.index));
-  });
-});
-
-// Down arrow click
-arrows.forEach((arrow) => {
-  arrow.addEventListener('click', () => {
-    setActive(current + 1);
-  });
-});
-
-// Scroll detection
-window.addEventListener('scroll', () => {
-  let idx = 0;
-  let min = Infinity;
-  items.forEach((item, i) => {
-    const dist = Math.abs(item.getBoundingClientRect().top - window.innerHeight / 2);
-    if (dist < min) {
-      min = dist;
-      idx = i;
-    }
-  });
-  setActive(idx);
-});
-</script>
-
-
 
 
 </body>

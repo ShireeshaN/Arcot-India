@@ -295,7 +295,7 @@
 
     </div>
     <!-- SMARTPOLE FEATURE SECTION -->
-    <section class="smartpole-section" id="smartpole">
+    <section class="smartpole-section pt-2" id="smartpole">
 
         <div class="features-container">
             <div class="features-list" id="featuresLeft"></div>
@@ -477,7 +477,7 @@
             font-size: 1rem;
             font-weight: 500;
             color: azure;
-            border-radius: 10px;
+            /* border-radius: 10px; */
             backdrop-filter: blur(10px);
         }
 
@@ -571,442 +571,80 @@
 
 
 
-
-
-
-
-
-
-
-    <!-- section-1 -->
-
-    <style>
-        .mainfeatures-section {
-            display: flex;
-            height: 100vh;
-            overflow: hidden;
-            background-color: #fff;
-     
-            /* margin-bottom: 60px;  */
-            /* bottom gap added */
-        }
-
-        /* LEFT CONTENT AREA */
-        .mainfeatures-left-block {
-            flex: 0.3;
-            background-color: #cdcccb;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 4rem;
-            position: relative;
-        }
-
-        .mainfeatures-logo {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 3rem;
-        }
-
-        .mainfeatures-subtitle {
-            font-size: 0.9rem;
-            color: #555;
-            margin-bottom: 1.2rem;
-            max-width: 260px;
-            line-height: 1.4;
-        }
-
-        .mainfeatures-link {
-            text-decoration: none;
-            color: #000;
-        }
-
- 
-        .mainfeatures-description {
-            font-size: 0.9rem;
-            color: #444;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            max-width: 320px;
-           font-weight: 500;
-        }
-
-        .mainfeatures-features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .mainfeatures-features li {
-            margin-bottom: 0.6rem;
-            padding-left: 1.2rem;
-            position: relative;
-            font-size: 0.9rem;
-            color: #333;
-        }
-
-        .mainfeatures-features li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #101010;
-            font-size: 1.2rem;
-            line-height: 1;
-        }
-
-        .mainfeatures-btn {
-            margin-top: 1rem;
-            padding: 0.8rem 1.5rem;
-            background-color: #fff;
-            border: none;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-
-        .mainfeatures-btn:hover {
-            transform: translateY(-2px);
-        }
-
-        /* RIGHT IMAGE AREA */
-        .mainfeatures-right-block {
-            flex: 0.7;
-            position: relative;
-            background-image: url('img/randd/mainfeatures/EVcharging.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-.mainfeatures-heading {
-    font-family: sans-serif;
-    letter-spacing: 2px;
-    position: absolute;
-    top: 30%;
-    left: -10%;
-    transform: translateY(-50%);
-    color: #fafafa;
-background-color: rgba(0, 0, 0, 0.2); /* Transparent white */
-    padding: 1.2rem 2rem;
-    font-size: 2.5rem;
-    line-height: 1.1;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.3); /* optional subtle border */
-    border-radius: 8px;
-}
-
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 900px) {
-            .mainfeatures-section {
-                flex-direction: column;
-                height: auto;
-            }
-
-            .mainfeatures-left-block {
-                flex: none;
-                width: 100%;
-                align-items: center;
-                text-align: center;
-                padding: 2rem;
-            }
-
-            .mainfeatures-right-block {
-                flex: none;
-                width: 100%;
-                height: 60vh;
-            }
-
-            .mainfeatures-heading {
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-size: 2.2rem;
-            }
-
-            .mainfeatures-features {
-                text-align: left;
-                margin: 0 auto;
-            }
-        }
-    </style>
-
-    <section class="mainfeatures-section">
-
-
-        <!-- LEFT SIDE -->
-        <div data-aos="fade-down" data-aos-delay="300" class="mainfeatures-left-block">
-            <!-- <div class="mainfeatures-subtitle">
-      New home furniture collections and decoration accessories
-    </div> -->
-
-            <div data-aos="fade-up" data-aos-delay="500" class="mainfeatures-description">
-                A smart and sustainable charging solution that efficiently powers electric vehicles while supporting
-                cleaner and greener urban mobility.
-            </div>
-
-            <ul data-aos="fade-up" data-aos-delay="300" data-aos-delay="800" class="mainfeatures-features">
-             <li>Charges electric vehicles</li>
-<li>Reduces fuel costs</li>
-<li>Supports clean energy</li>
-<li>Enables home and public charging</li>
-<li>Promotes sustainable transport</li>
-<li>Increases EV convenience</li>
-<li>Reduces carbon emissions</li>
-<li>Enhances smart grid integration</li>
-<li>Adds value to properties</li>
-<li>Supports fleet electrification</li>
-            </ul>
-
-
-
-
-            <button class="mainfeatures-btn" data-aos="fade-down" data-aos-delay="300">
-                <a data-aos="fade-up" data-aos-delay="600" data-aos-delay="0" class="mainfeatures-link"
-                    href="contact.html">Know more →</a>
-            </button>
-        </div>
-
-        <!-- RIGHT SIDE -->
-        <div data-aos="fade-up" class="mainfeatures-right-block">
-            <div class="mainfeatures-heading">EV<br>Charger</div>
-        </div>
-    </section>
-
-
-
-
-
-    
-
-    <!-- section-2 -->
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        .modern-apartments-wrap {
-            display: flex;
-            flex-direction: row;
-            height: 100vh;
-            overflow: hidden;
-            background-color: #fff;
-            font-family: "Georgia", serif;
-        }
-
-        /* LEFT IMAGE SECTION */
-        .apartments-image-side {
-            flex: 1;
-            position: relative;
-            background-image: url('img/randd/mainfeatures/EmergencySOSalert.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .apartments-main-heading {
-             font-family: sans-serif;
-
-            position: absolute;
-            top: 35%;
-            right: -8%;
-            transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.2) !important; /* Transparent white */
-            padding: 1.2rem 2rem;
-              color: #f5f5f5;
-    font-size: 2.5rem;
-    line-height: 1.1;
-         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border: 2px solid rgba(255, 255, 255, 0.3) !important; /* optional subtle border */
-            z-index: 2;
-            background-color: rgba(255, 255, 255, 0.2); /* Transparent white */
-        }
-
-
-
-
-
-
-
-        
-        /* RIGHT TEXT SECTION */
-        .apartments-content-side {
-            flex: 0.3;
-            background-color: #cdcccb;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 4rem 5rem 4rem 8rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .apartments-logo {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 3rem;
-        }
-
-        .apartments-subtitle {
-            font-size: 0.9rem;
-            color: #555;
-            margin-bottom: 1.2rem;
-            max-width: 260px;
-            line-height: 1.4;
-        }
-
-        .apartments-description {
-
-            font-size: 0.9rem;
-            color: #444;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            max-width: 320px;
-            font-weight: 500 !important;
-        }
-
-        .apartments-feature-list {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .apartments-feature-list li {
-            margin-bottom: 0.6rem;
-            padding-left: 1.2rem;
-            position: relative;
-            font-size: 0.9rem;
-            color: #333;
-        }
-
-        .apartments-feature-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #000;
-            font-size: 1.2rem;
-            line-height: 1;
-        }
-
-        .apartments-btn {
-            margin-top: 1rem;
-            padding: 0.8rem 1.5rem;
-            background-color: #fff;
-            border: none;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-
-        .apartments-btn:hover {
-            transform: translateY(-2px);
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .modern-apartments-wrap {
-                flex-direction: column;
-            }
-
-            .apartments-image-side {
-                flex: none;
-                width: 100%;
-                height: 60vh;
-            }
-
-            .apartments-content-side {
-                flex: none;
-                width: 100%;
-                align-items: center;
-                text-align: center;
-                padding: 2rem;
-            }
-
-            .apartments-main-heading {
-                right: 50%;
-                transform: translate(50%, -50%);
-                font-size: 2.2rem;
-            }
-
-            .apartments-feature-list {
-                text-align: left;
-                margin: 0 auto;
-            }
-        }
-    </style>
-
-    <section class="modern-apartments-wrap">
-
-
-        <!-- LEFT IMAGE SECTION -->
-        <div class="apartments-image-side">
-            <div class="apartments-main-heading">Emergency<br>SOS Alerts</div>
-        </div>
-
-        <!-- RIGHT CONTENT SECTION -->
-        <div class="apartments-content-side">
-            <!-- <div class="apartments-logo">me.</div> -->
-            <!-- <div class="apartments-subtitle">
-      New home furniture collections and decoration accessories
-    </div> -->
-            <div class="apartments-description" data-aos="fade-down" data-aos-delay="300">
-                A reliable safety system that provides immediate assistance during emergencies, connecting citizens to
-                the nearest response centers and enhancing urban security.
-            </div>
-
-            <ul class="apartments-feature-list" data-aos="fade-down" data-aos-delay="300">
-              <li>Enables emergency alerts</li>
-<li>Instant help request</li>
-<li>Improves public safety</li>
-<li>Direct link to authorities</li>
-<li>Quick response to incidents</li>
-<li>Supports crime reporting</li>
-<li>Assists lost or injured persons</li>
-<li>Visible and accessible 24/7</li>
-<li>Boosts citizen confidence</li>
-<li>Essential in isolated areas</li>
-            </ul>
-
-            <button data-aos="fade-down" data-aos-delay="300" class="apartments-btn">See more →</button>
-        </div>
-    </section>
-
-    <!-- section-1 -->
-
-    <style>
-        /* RIGHT IMAGE AREA */
-        .mainfeatures-right-block-2 {
-            flex: 0.7;
-            position: relative;
-            background-image: url('img/randd/mainfeatures/WiredCharging.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 900px) {
-            .mainfeatures-right-block-2 {
-                flex: none;
-                width: 100%;
-                height: 60vh;
-            }
-        }
-    </style>
-
-    <section class="mainfeatures-section">
-
-
-        <!-- LEFT SIDE -->
-        <div class="mainfeatures-left-block">
-            <!-- <div class="mainfeatures-subtitle">
-      New home furniture collections and decoration accessories
-    </div> -->
-
-            <div class="mainfeatures-description" data-aos="fade-down" data-aos-delay="300">
-                The Smart Pole integrates multiple wired charging options to power diverse public and personal devices efficiently. 
-                Designed for safety and versatility, it supports seamless energy access in outdoor environments.
-            </div>
-
-            <ul class="mainfeatures-features" data-aos="fade-down" data-aos-delay="300">
-                <li>Charges mobile devices</li>
+<!-- Feature 1 -->
+<section id="feature1" class="feature-section">
+  <div class="layout-card">
+    <div class="left-panel">
+      <img src="img/randd/mainfeatures/ev-charging-h.png" alt="Smart Pole">
+    </div>
+    <div class="right-panel">
+      <h1>EV Charger</h1>
+      <ul class="points">
+        <li>Charges electric vehicles</li>
+        <li>Reduces fuel costs</li>
+        <li>Supports clean energy</li>
+        <li>Enables home and public charging</li>
+        <li>Promotes sustainable transport</li>
+        <li>Increases EV convenience</li>
+        <li>Reduces carbon emissions</li>
+        <li>Enhances smart grid integration</li>
+        <li>Adds value to properties</li>
+        <li>Supports fleet electrification</li>
+      </ul>
+
+      <div class="page-indicator">
+        <div class="page-count">01 / 16</div>
+        <div class="indicator-line"></div>
+        <div class="indicator-arrow" onclick="nextFeature(1)">↓</div>
+      </div>
+
+      <div class="indicator-label">Neuro Pole</div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature 2 -->
+<section id="feature2" class="feature-section">
+  <div class="layout-card">
+    <div class="left-panel">
+      <img src="img/randd/mainfeatures/EmergencySOSalert.jpg" alt="Smart Bollard">
+    </div>
+    <div class="right-panel">
+      <h1>Emergency SOS Alerts</h1>
+      <ul class="points">
+        <li>Enables emergency alerts</li>
+        <li>Instant help request</li>
+        <li>Improves public safety</li>
+       <li>Direct link to authorities</li>
+       <li>Quick response to incidents</li>
+       <li>Supports crime reporting</li>
+        <li>Assists lost or injured persons</li>
+        <li>Visible and accessible 24/7</li>
+        <li>Boosts citizen confidence</li>
+         <li>Essential in isolated areas</li>
+      </ul>
+
+      <div class="page-indicator">
+        <div class="page-count">02 / 16</div>
+        <div class="indicator-line"></div>
+        <div class="indicator-arrow" onclick="nextFeature(2)">↓</div>
+      </div>
+
+      <div class="indicator-label">Neuro Pole</div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature 3 -->
+<section id="feature3" class="feature-section">
+  <div class="layout-card">
+    <div class="left-panel">
+      <img src="img/randd/mainfeatures/wired-charging-h.png" alt="Smart Bench">
+    </div>
+    <div class="right-panel">
+      <h1>Wired Charging</h1>
+      <ul class="points">
+<li>Charges mobile devices</li>
 <li>Supports all USB devices</li>
 <li>Provides 24/7 public charging</li>
 <li>Ideal for emergencies</li>
@@ -1016,65 +654,30 @@ background-color: rgba(0, 0, 0, 0.2); /* Transparent white */
 <li>Adds smart utility to poles</li>
 <li>Useful in transit areas</li>
 <li>Enhances urban infrastructure</li>
+      </ul>
 
-            </ul>
+      <div class="page-indicator">
+        <div class="page-count">03 / 16</div>
+        <div class="indicator-line"></div>
+        <div class="indicator-arrow" onclick="nextFeature(3)">↓</div>
+      </div>
 
-            <button class="mainfeatures-btn" data-aos="fade-down" data-aos-delay="300">
-                <a class="mainfeatures-link" href="contact.html">Know more →</a>
-            </button>
-        </div>
+      <div class="indicator-label">Neuro Pole</div>
+    </div>
+  </div>
+</section>
 
-        <!-- RIGHT SIDE -->
-        <div class="mainfeatures-right-block-2">
-            <div class="mainfeatures-heading">Wired<br>Charging</div>
-        </div>
-    </section>
-
-
-    <!-- section-2 -->
-
-    <style>
-        /* LEFT IMAGE SECTION */
-        .apartments-image-side-2 {
-            flex: 1;
-            position: relative;
-            background-image: url('img/randd/mainfeatures/WIRELESS CHARGING.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .apartments-image-side-2 {
-                flex: none;
-                width: 100%;
-                height: 60vh;
-            }
-
-        }
-    </style>
-
-    <section class="modern-apartments-wrap">
-
-
-        <!-- LEFT IMAGE SECTION -->
-        <div class="apartments-image-side-2">
-            <div class="apartments-main-heading">Wireless<br>Charging</div>
-        </div>
-
-        <!-- RIGHT CONTENT SECTION -->
-        <div class="apartments-content-side">
-            <!-- <div class="apartments-logo">me.</div> -->
-            <!-- <div class="apartments-subtitle">
-      New home furniture collections and decoration accessories
-    </div> -->
-            <div class="apartments-description" data-aos="fade-down" data-aos-delay="300">
-               The Smart Pole features advanced wireless charging technology, offering seamless and cable-free power access for all modern smart devices.
-            </div>
-
-            <ul class="apartments-feature-list" data-aos="fade-down" data-aos-delay="300">
-                <li>Pull-out & Slide-in Models for flexible design integration.</li>
-                <li>Rack-in / Rack-out Modules for easy maintenance and upgrades.</li>
+<!-- Feature 4 -->
+<section id="feature4" class="feature-section">
+  <div class="layout-card">
+    <div class="left-panel">
+      <img src="img/randd/mainfeatures/wireless-charging-h.png" alt="Smart Bus Stop">
+    </div>
+    <div class="right-panel">
+      <h1>Wireless Charging</h1>
+      <ul class="points">
+     <li>Pull-out & Slide-in Models for flexible design integration.</li>
+      <li>Rack-in / Rack-out Modules for easy maintenance and upgrades.</li>
                 
 <li>No cables needed</li>
 <li>Convenient for travel</li>
@@ -1083,58 +686,31 @@ background-color: rgba(0, 0, 0, 0.2); /* Transparent white */
 <li>Fast wireless charging</li>
 <li>Works during power outages</li>
 <li>Compact and lightweight</li>
-<!-- <li>Easy to carry</li>
-<li>Ideal for emergencies</li>   -->
-            </ul>
+<li>Easy to carry</li>
+<li>Ideal for emergencies</li>  
+      </ul>
 
-            <button data-aos="fade-down" data-aos-delay="300" class="apartments-btn">See more →</button>
-        </div>
-    </section>
+      <div class="page-indicator">
+        <div class="page-count">04 / 16</div>
+        <div class="indicator-line"></div>
+        <div class="indicator-arrow" onclick="nextFeature(4)">↓</div>
+      </div>
 
-    <!-- section-1 -->
+      <div class="indicator-label">Neuro Pole</div>
+    </div>
+  </div>
+</section>
 
-    <style>
-        /* RIGHT IMAGE AREA */
-        .mainfeatures-right-block-3 {
-            flex: 0.7;
-            position: relative;
-            background-image: url('img/randd/mainfeatures/AirQualitySensor.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-
-
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 900px) {
-
-
-            .mainfeatures-right-block-3 {
-                flex: none;
-                width: 100%;
-                height: 60vh;
-            }
-
-
-        }
-    </style>
-
-    <section class="mainfeatures-section">
-
-
-        <!-- LEFT SIDE -->
-        <div class="mainfeatures-left-block">
-            <!-- <div class="mainfeatures-subtitle">
-      New home furniture collections and decoration accessories
-    </div> -->
-
-            <div class="mainfeatures-description" data-aos="fade-down" data-aos-delay="300">
-                An intelligent sensor system that monitors air pollutants in real-time, supports data-driven
-                environmental policies, and helps cities maintain cleaner and healthier air.
-            </div>
-
-            <ul class="mainfeatures-features" data-aos="fade-down" data-aos-delay="300">
-               <li>Monitors air pollution levels</li>
+<!-- Feature 5 -->
+<section id="feature5" class="feature-section">
+  <div class="layout-card">
+    <div class="left-panel">
+      <img src="img/randd/mainfeatures/air-quality-sensor-h.png" alt="Smart Waste Bin">
+    </div>
+    <div class="right-panel">
+      <h1>Air Quality Sensor</h1>
+      <ul class="points">
+ <li>Monitors air pollution levels</li>
 <li>Detects harmful gases (e.g., CO2,NO2)</li>
 <li>Provides real-time environmental data</li>
 <li>Supports public health initiatives</li>
@@ -1144,64 +720,29 @@ background-color: rgba(0, 0, 0, 0.2); /* Transparent white */
 <li>Aids climate and weather analysis</li>
 <li>Improves urban living conditions</li>
 <li>Promotes environmental awareness</li>
-            </ul>
+      </ul>
 
-            <button class="mainfeatures-btn" data-aos="fade-down" data-aos-delay="300">
-                <a class="mainfeatures-link" href="contact.html">Know more →</a>
-            </button>
-        </div>
+      <div class="page-indicator">
+        <div class="page-count">05 / 16</div>
+        <div class="indicator-line"></div>
+        <div class="indicator-arrow" onclick="nextFeature(5)">↓</div>
+      </div>
 
-        <!-- RIGHT SIDE -->
-        <div class="mainfeatures-right-block-3">
-            <div class="mainfeatures-heading">Air Quality<br>Sensor</div>
-        </div>
-    </section>
+      <div class="indicator-label">Neuro Pole</div>
+    </div>
+  </div>
+</section>
 
-
-    <!-- section-2 -->
-
-    <style>
-        /* LEFT IMAGE SECTION */
-        .apartments-image-side-3 {
-            flex: 1;
-            position: relative;
-            background-image: url('img/randd/mainfeatures/Air Quality Screen.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .apartments-image-side-3 {
-                flex: none;
-                width: 100%;
-                height: 60vh;
-            }
-        }
-    </style>
-
-    <section class="modern-apartments-wrap">
-
-
-        <!-- LEFT IMAGE SECTION -->
-        <div class="apartments-image-side-3">
-            <div class="apartments-main-heading">Air Quality<br>Screen</div>
-        </div>
-
-        <!-- RIGHT CONTENT SECTION -->
-        <div class="apartments-content-side">
-            <!-- <div class="apartments-logo">me.</div> -->
-            <!-- <div class="apartments-subtitle">
-      New home furniture collections and decoration accessories
-    </div> -->
-            <div class="apartments-description" data-aos="fade-down" data-aos-delay="300">
-                A public display system that shows live air quality data, promotes transparency, and engages citizens
-                with real-time environmental information.
-            </div>
-
-            <ul class="apartments-feature-list" data-aos="fade-down" data-aos-delay="300">
-              <li>Monitors real-time air quality</li>
+<!-- Feature 6 -->
+<section id="feature6" class="feature-section">
+  <div class="layout-card">
+    <div class="left-panel">
+      <img src="img/randd/mainfeatures/air-quality-screen-h.png" alt="Smart Parking">
+    </div>
+    <div class="right-panel">
+      <h1>Air Quality Screen</h1>
+      <ul class="points">
+<li>Monitors real-time air quality</li>
 <li>Displays pollution levels</li>
 <li>Raises environmental awareness</li>
 <li>Supports public health</li>
@@ -1209,53 +750,31 @@ background-color: rgba(0, 0, 0, 0.2); /* Transparent white */
 <li>Detects harmful gases</li>
 <li>Tracks environmental trends</li>
 <li>Encourages eco-friendly behavior</li>
-<!-- <li>Integrates with smart city data</li>
-<li>Alerts during hazardous conditions</li> -->
-            </ul>
+<li>Integrates with smart city data</li>
+<li>Alerts during hazardous conditions</li>
+      </ul>
 
-            <button class="apartments-btn" data-aos="fade-down" data-aos-delay="300">See more →</button>
-        </div>
-    </section>
+      <div class="page-indicator">
+        <div class="page-count">06 / 16</div>
+        <div class="indicator-line"></div>
+        <div class="indicator-arrow" onclick="nextFeature(6)">↓</div>
+      </div>
 
-    <!-- section-1 -->
+      <div class="indicator-label">Neuro Pole</div>
+    </div>
+  </div>
+</section>
 
-    <style>
-        /* RIGHT IMAGE AREA */
-        .mainfeatures-right-block-4 {
-            flex: 0.7;
-            position: relative;
-            background-image: url('img/randd/mainfeatures/Street Lighting.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 900px) {
-            .mainfeatures-right-block-4 {
-                flex: none;
-                width: 100%;
-                height: 60vh;
-            }
-        }
-    </style>
-
-    <section class="mainfeatures-section">
-
-
-        <!-- LEFT SIDE -->
-        <div class="mainfeatures-left-block">
-            <!-- <div class="mainfeatures-subtitle">
-      New home furniture collections and decoration accessories
-    </div> -->
-
-            <div class="mainfeatures-description" data-aos="fade-down" data-aos-delay="300">
-                Smart LED street lighting that saves energy, improves safety, and offers adaptive, IoT-controlled
-                illumination for modern urban environments.
-            </div>
-
-            <ul class="mainfeatures-features" data-aos="fade-down" data-aos-delay="300">
-               <li>Illuminates public spaces</li>
+<!-- Feature 7 -->
+<section id="feature7" class="feature-section">
+  <div class="layout-card">
+    <div class="left-panel">
+      <img src="img/randd/mainfeatures/street-lighting-h.png" alt="Smart Traffic Light">
+    </div>
+    <div class="right-panel">
+      <h1>Street Lighting</h1>
+      <ul class="points">
+          <li>Illuminates public spaces</li>
 <li>Enhances road safety</li>
 <li>Reduces crime risk</li>
 <li>Improves night visibility</li>
@@ -1265,62 +784,29 @@ background-color: rgba(0, 0, 0, 0.2); /* Transparent white */
 <li>Automated on/off scheduling</li>
 <li>Integrates with motion sensors</li>
 <li>Monitors lighting status remotely</li>
-            </ul>
+      </ul>
 
-            <button class="mainfeatures-btn" data-aos="fade-down" data-aos-delay="300">
-                <a class="mainfeatures-link" href="contact.html">Know more →</a>
-            </button>
-        </div>
+      <div class="page-indicator">
+        <div class="page-count">07 / 16</div>
+        <div class="indicator-line"></div>
+        <div class="indicator-arrow" onclick="nextFeature(7)">↓</div>
+      </div>
 
-        <!-- RIGHT SIDE -->
-        <div class="mainfeatures-right-block-4">
-            <div class="mainfeatures-heading">Street<br>Lighting</div>
-        </div>
-    </section>
+      <div class="indicator-label">Neuro Pole</div>
+    </div>
+  </div>
+</section>
 
-
-    <!-- section-2 -->
-
-    <style>
-        /* LEFT IMAGE SECTION */
-        .apartments-image-side-4 {
-            flex: 1;
-            position: relative;
-            background-image: url('img/randd/mainfeatures/PA Loudspeaker.jpg');
-            background-position: center;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .apartments-image-side-4 {
-                flex: none;
-                width: 100%;
-                height: 60vh;
-            }
-        }
-    </style>
-
-    <section class="modern-apartments-wrap">
-
-
-        <!-- LEFT IMAGE SECTION -->
-        <div class="apartments-image-side-4">
-            <div class="apartments-main-heading">PA<br>Loudspeaker</div>
-        </div>
-
-        <!-- RIGHT CONTENT SECTION -->
-        <div class="apartments-content-side">
-            <!-- <div class="apartments-logo">me.</div> -->
-            <!-- <div class="apartments-subtitle">
-      New home furniture collections and decoration accessories
-    </div> -->
-            <div class="apartments-description" data-aos="fade-down" data-aos-delay="300">
-                A high-quality public announcement system that delivers clear audio for emergencies, community alerts,
-                and event communications with smart integration.
-            </div>
-
-            <ul class="apartments-feature-list" data-aos="fade-down" data-aos-delay="300">
-              <li>Public announcements</li>
+<!-- Feature 8 -->
+<section id="feature8" class="feature-section">
+  <div class="layout-card">
+    <div class="left-panel">
+      <img src="img/randd/mainfeatures/pa-loud-speaker-h.png" alt="Smart Lighting System">
+    </div>
+    <div class="right-panel">
+      <h1>PA Loudspeaker</h1>
+      <ul class="points">
+   <li>Public announcements</li>
 <li>Emergency alerts</li>
 <li>Disaster warnings</li>
 <li>Traffic updates</li>
@@ -1330,51 +816,29 @@ background-color: rgba(0, 0, 0, 0.2); /* Transparent white */
 <li>Security alerts</li>
 <li>Weather updates</li>
 <li>Promotes civic awareness</li>
-            </ul>
+      </ul>
 
-            <button class="apartments-btn" data-aos="fade-down" data-aos-delay="300">See more →</button>
-        </div>
-    </section>
+      <div class="page-indicator">
+        <div class="page-count">08 / 16</div>
+        <div class="indicator-line"></div>
+        <div class="indicator-arrow" onclick="nextFeature(8)">↓</div>
+      </div>
 
+      <div class="indicator-label">Neuro Pole</div>
+    </div>
+  </div>
+</section>
 
-    <!-- section-1 -->
-
-    <style>
-        /* RIGHT IMAGE AREA */
-        .mainfeatures-right-block-5 {
-            flex: 0.7;
-            position: relative;
-            background-image: url('img/randd/mainfeatures/Power Generation System.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 900px) {
-            .mainfeatures-right-block-5 {
-                flex: none;
-                width: 100%;
-                height: 60vh;
-            }
-        }
-    </style>
-
-    <section class="mainfeatures-section">
-
-
-        <!-- LEFT SIDE -->
-        <div class="mainfeatures-left-block">
-            <!-- <div class="mainfeatures-subtitle">
-      New home furniture collections and decoration accessories
-    </div> -->
-
-            <div class="mainfeatures-description" data-aos="fade-down" data-aos-delay="300">
-                A smart and sustainable energy solution that integrates solar and wind hybrid systems to power urban
-                infrastructure efficiently while reducing grid dependency.
-            </div>
-
-            <ul class="mainfeatures-features" data-aos="fade-down" data-aos-delay="300">
-              <li>Provides renewable energy</li>
+<!-- Feature 9 -->
+<section id="feature9" class="feature-section">
+  <div class="layout-card">
+    <div class="left-panel">
+      <img src="img/randd/mainfeatures/power-generation-system-h.png" alt="Smart Surveillance">
+    </div>
+    <div class="right-panel">
+      <h1>Power Generation System</h1>
+      <ul class="points">
+       <li>Provides renewable energy</li>
 <li>Reduces electricity costs</li>
 <li>Enables off-grid operation</li>
 <li>Supports exo-friendly cities</li>
@@ -1384,64 +848,29 @@ background-color: rgba(0, 0, 0, 0.2); /* Transparent white */
 <li>Lowers maintenance expenses</li>
 <li>Promotes energy independence</li>
 <li>Enhances sustainability efforts</li>
-            </ul>
+      </ul>
 
-            <button class="mainfeatures-btn" data-aos="fade-down" data-aos-delay="300">
-                <a class="mainfeatures-link" href="contact.html">Know more →</a>
-            </button>
-        </div>
+      <div class="page-indicator">
+        <div class="page-count">09 / 16</div>
+        <div class="indicator-line"></div>
+        <div class="indicator-arrow" onclick="nextFeature(9)">↓</div>
+      </div>
 
-        <!-- RIGHT SIDE -->
-        <div class="mainfeatures-right-block-5">
-            <div class="mainfeatures-heading">Power Generation<br>System</div>
-        </div>
-    </section>
+      <div class="indicator-label">Neuro Pole</div>
+    </div>
+  </div>
+</section>
 
-
-    <!-- section-2 -->
-
-    <style>
-        /* LEFT IMAGE SECTION */
-        .apartments-image-side-5 {
-            flex: 1;
-            position: relative;
-            background-image: url('img/randd/mainfeatures/RGB Pixel LED Screen.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .apartments-image-side-5 {
-                flex: none;
-                width: 100%;
-                height: 60vh;
-            }
-        }
-    </style>
-
-    <section class="modern-apartments-wrap">
-
-
-        <!-- LEFT IMAGE SECTION -->
-        <div class="apartments-image-side-5" >
-            <div class="apartments-main-heading">RGB Pixel<br>LED Screen</div>
-        </div>
-
-        <!-- RIGHT CONTENT SECTION -->
-        <div class="apartments-content-side">
-            <!-- <div class="apartments-logo">me.</div> -->
-            <!-- <div class="apartments-subtitle">
-      New home furniture collections and decoration accessories
-    </div> -->
-            <div class="apartments-description" data-aos="fade-down" data-aos-delay="300">
-                A full-color digital display that delivers dynamic content for advertising, alerts, and urban
-                information while enhancing smart city engagement and branding.
-            </div>
-
-            <ul class="apartments-feature-list" data-aos="fade-down" data-aos-delay="300">
-             <li>Displays vibrant public messages</li>
+<!-- Feature 10 -->
+<section id="feature10" class="feature-section">
+  <div class="layout-card">
+    <div class="left-panel">
+      <img src="img/randd/mainfeatures/rgb-pixel-led-screen-h.png" alt="Smart Kiosk">
+    </div>
+    <div class="right-panel">
+      <h1>RGB Pixel LED Screen</h1>
+      <ul class="points">
+ <li>Displays vibrant public messages</li>
 <li>Supports real-time alerts</li>
 <li>Shows weather and traffic info</li>
 <li>Enhances city communication</li>
@@ -1449,58 +878,31 @@ background-color: rgba(0, 0, 0, 0.2); /* Transparent white */
 <li>Engages citizens visually</li>
 <li>Offers high visibility day/night</li>
 <li>Customizable content display</li>
-<!-- <li>Improves urban aesthetics</li>
-<li>Supports emergency notifications</li> -->
-            </ul>
+<li>Improves urban aesthetics</li>
+<li>Supports emergency notifications</li>
+      </ul>
 
-            <button class="apartments-btn" data-aos="fade-down" data-aos-delay="300">See more →</button>
-        </div>
-    </section>
+      <div class="page-indicator">
+        <div class="page-count">10 / 16</div>
+        <div class="indicator-line"></div>
+        <div class="indicator-arrow" onclick="nextFeature(10)">↓</div>
+      </div>
 
-    <!-- section-1 -->
+      <div class="indicator-label">Neuro Pole</div>
+    </div>
+  </div>
+</section>
 
-    <style>
-        /* RIGHT IMAGE AREA */
-        .mainfeatures-right-block-6 {
-            flex: 0.7;
-            position: relative;
-            background-image: url('img/randd/mainfeatures/Motion Detector.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-
-
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 900px) {
-
-
-            .mainfeatures-right-block-6 {
-                flex: none;
-                width: 100%;
-                height: 60vh;
-            }
-
-
-        }
-    </style>
-
-    <section class="mainfeatures-section">
-
-
-        <!-- LEFT SIDE -->
-        <div class="mainfeatures-left-block">
-            <!-- <div class="mainfeatures-subtitle">
-      New home furniture collections and decoration accessories
-    </div> -->
-
-            <div class="mainfeatures-description" data-aos="fade-down" data-aos-delay="300">
-                An intelligent motion sensing system that detects movement, triggers automated responses, and enhances
-                safety while optimizing energy usage.
-            </div>
-
-            <ul class="mainfeatures-features" data-aos="fade-down" data-aos-delay="300">
-              <li>Detects human or vehicle movement</li>
+<!-- Feature 11 -->
+<section id="feature11" class="feature-section">
+  <div class="layout-card">
+    <div class="left-panel">
+      <img src="img/randd/mainfeatures/motion-detector-h.png" alt="Smart Water Meter">
+    </div>
+    <div class="right-panel">
+      <h1>Motion Detectors</h1>
+      <ul class="points">
+     <li>Detects human or vehicle movement</li>
 <li>Activates lights when motion sensed</li>
 <li>Enhances energy efficiency</li>
 <li>Improves security monitoring</li>
@@ -1510,65 +912,28 @@ background-color: rgba(0, 0, 0, 0.2); /* Transparent white */
 <li>Reduces unnecessary lighting</li>
 <li>Integrates with other smart systems</li>
 <li>Assists in traffic and crowd control</li>
-            </ul>
+      </ul>
 
-            <button class="mainfeatures-btn" data-aos="fade-down" data-aos-delay="300">
-                <a class="mainfeatures-link" href="contact.html">Know more →</a>
-            </button>
-        </div>
+      <div class="page-indicator">
+        <div class="page-count">11 / 16</div>
+        <div class="indicator-line"></div>
+        <div class="indicator-arrow" onclick="nextFeature(11)">↓</div>
+      </div>
 
-        <!-- RIGHT SIDE -->
-        <div class="mainfeatures-right-block-6">
-            <div class="mainfeatures-heading">Motion<br>Detectors</div>
-        </div>
-    </section>
+      <div class="indicator-label">Neuro Pole</div>
+    </div>
+  </div>
+</section>
 
-
-    <!-- section-2 -->
-
-    <style>
-        /* LEFT IMAGE SECTION */
-        .apartments-image-side-6 {
-            flex: 1;
-            position: relative;
-            background-image: url('img/randd/mainfeatures/Wi-Fi Hotspot.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-
-            .apartments-image-side-6 {
-                flex: none;
-                width: 100%;
-                height: 60vh;
-            }
-
-        }
-    </style>
-
-    <section class="modern-apartments-wrap">
-
-
-        <!-- LEFT IMAGE SECTION -->
-        <div class="apartments-image-side-6">
-            <div class="apartments-main-heading">Wi-Fi<br>Hotspot</div>
-        </div>
-
-        <!-- RIGHT CONTENT SECTION -->
-        <div class="apartments-content-side">
-            <!-- <div class="apartments-logo">me.</div> -->
-            <!-- <div class="apartments-subtitle">
-      New home furniture collections and decoration accessories
-    </div> -->
-            <div class="apartments-description" data-aos="fade-down" data-aos-delay="300">
-                A reliable public wireless network that provides high-speed connectivity, supports IoT devices, and
-                promotes digital inclusion in smart cities.
-            </div>
-
-            <ul class="apartments-feature-list" data-aos="fade-down" data-aos-delay="300">
+<!-- Feature 12 -->
+<section id="feature12" class="feature-section">
+  <div class="layout-card">
+    <div class="left-panel">
+      <img src="img/randd/mainfeatures/wifi-hotspot-h.png" alt="Smart Energy Meter">
+    </div>
+    <div class="right-panel">
+      <h1>Wi-Fi Hotspot</h1>
+      <ul class="points">
               <li>Provides free public internet</li>
 <li>Enhances digital connectivity</li>
 <li>Supports smart city applications</li>
@@ -1577,58 +942,31 @@ background-color: rgba(0, 0, 0, 0.2); /* Transparent white */
 <li>Boosts tourism and foot traffic</li>
 <li>Supports emergency communication</li>
 <li>Enables real-time data access</li>
-<!-- <li>Improves user convenience</li>
-<li>Facilitates mobile working and learning </li> -->
-            </ul>
+<li>Improves user convenience</li>
+<li>Facilitates mobile working and learning </li>
+      </ul>
 
-            <button class="apartments-btn">See more →</button>
-        </div>
-    </section>
+      <div class="page-indicator">
+        <div class="page-count">12 / 16</div>
+        <div class="indicator-line"></div>
+        <div class="indicator-arrow" onclick="nextFeature(12)">↓</div>
+      </div>
 
-    <!-- section-1 -->
+      <div class="indicator-label">Neuro Pole</div>
+    </div>
+  </div>
+</section>
 
-    <style>
-        /* RIGHT IMAGE AREA */
-        .mainfeatures-right-block-7 {
-            flex: 0.7;
-            position: relative;
-            background-image: url('img/randd/mainfeatures/Intercom.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-
-
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 900px) {
-
-
-            .mainfeatures-right-block-7 {
-                flex: none;
-                width: 100%;
-                height: 60vh;
-            }
-
-
-        }
-    </style>
-
-    <section class="mainfeatures-section">
-
-
-        <!-- LEFT SIDE -->
-        <div class="mainfeatures-left-block">
-            <!-- <div class="mainfeatures-subtitle">
-      New home furniture collections and decoration accessories
-    </div> -->
-
-            <div class="mainfeatures-description" data-aos="fade-down" data-aos-delay="300">
-                A robust two-way communication system that connects citizens to control centers, ensuring safety, rapid
-                response, and seamless public interaction.
-            </div>
-
-            <ul class="mainfeatures-features" data-aos="fade-down" data-aos-delay="300">
-              <li>Enables two-way communication</li>
+<!-- Feature 13 -->
+<section id="feature13" class="feature-section">
+  <div class="layout-card">
+    <div class="left-panel">
+      <img src="img/randd/mainfeatures/EmergencySOSalert.jpg" alt="Smart EV Charger">
+    </div>
+    <div class="right-panel">
+      <h1>Intercom</h1>
+      <ul class="points">
+         <li>Enables two-way communication</li>
 <li>Assists in emergencies</li>
 <li>Connects public with authorities</li>
 <li>Improves public safety</li>
@@ -1638,128 +976,61 @@ background-color: rgba(0, 0, 0, 0.2); /* Transparent white */
 <li>Useful in crowded or remote areas</li>
 <li>Monitors suspicious ativity reports</li>
 <li>Strengthens smart city infrastructure</li>
-            </ul>
+      </ul>
 
-            <button class="mainfeatures-btn" data-aos="fade-down" data-aos-delay="300">
-                <a class="mainfeatures-link" href="contact.html">Know more →</a>
-            </button>
-        </div>
+      <div class="page-indicator">
+        <div class="page-count">13 / 16</div>
+        <div class="indicator-line"></div>
+        <div class="indicator-arrow" onclick="nextFeature(13)">↓</div>
+      </div>
 
-        <!-- RIGHT SIDE -->
-        <div class="mainfeatures-right-block-7">
-            <div class="mainfeatures-heading">Intercom</div>
-        </div>
-    </section>
+      <div class="indicator-label">Neuro Pole</div>
+    </div>
+  </div>
+</section>
 
-
-    <!-- section-2 -->
-
-    <style>
-        /* LEFT IMAGE SECTION */
-        .apartments-image-side-7 {
-            flex: 1;
-            position: relative;
-            background-image: url('img/randd/mainfeatures/android touch screen.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-
-
-            .apartments-image-side-7 {
-                flex: none;
-                width: 100%;
-                height: 60vh;
-            }
-
-
-        }
-    </style>
-
-    <section class="modern-apartments-wrap">
-
-
-        <!-- LEFT IMAGE SECTION -->
-        <div class="apartments-image-side-7">
-            <div class="apartments-main-heading">Android<br>Touch Screen</div>
-        </div>
-
-        <!-- RIGHT CONTENT SECTION -->
-        <div class="apartments-content-side">
-            <!-- <div class="apartments-logo">me.</div> -->
-            <!-- <div class="apartments-subtitle">
-      New home furniture collections and decoration accessories
-    </div> -->
-            <div class="apartments-description" data-aos="fade-down" data-aos-delay="300">
-                A user-friendly smart pole interface that provides real-time information, navigation, and interactive
-                services while supporting city branding and public convenience.
-            </div>
-
-            <ul class="apartments-feature-list" data-aos="fade-down" data-aos-delay="300">
-               <li>Provides interactive user interface</li>
+<!-- Feature 14 -->
+<section id="feature14" class="feature-section">
+  <div class="layout-card">
+    <div class="left-panel">
+      <img src="img/randd/mainfeatures/android-touch-screen-h.png" alt="Smart Display Board">
+    </div>
+    <div class="right-panel">
+      <h1>Android Touch Screen</h1>
+      <ul class="points">
+      <li>Provides interactive user interface</li>
 <li>Displays maps and directions</li>
 <li>Offers public information access</li>
 <li>Allows emergency service contact</li>
 <li>Supports multilingual options</li>
 <li>Enables service requests</li>
 <li>Enhances user engagement</li>
-<!-- <li>Shows transport and event updates</li>
+<li>Shows transport and event updates</li>
 <li>Accessible for all age groups</li>
-<li>Improves urban digital experience</li> -->
-            </ul>
+<li>Improves urban digital experience</li>
+      </ul>
 
-            <button class="apartments-btn">See more →</button>
-        </div>
-    </section>
+      <div class="page-indicator">
+        <div class="page-count">14 / 16</div>
+        <div class="indicator-line"></div>
+        <div class="indicator-arrow" onclick="nextFeature(14)">↓</div>
+      </div>
 
+      <div class="indicator-label">Neuro Pole</div>
+    </div>
+  </div>
+</section>
 
-    <!-- section-1 -->
-
-    <style>
-        /* RIGHT IMAGE AREA */
-        .mainfeatures-right-block-8 {
-            flex: 0.7;
-            position: relative;
-            background-image: url('img/randd/mainfeatures/Ai based voice communication.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-
-
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 900px) {
-
-
-            .mainfeatures-right-block-8 {
-                flex: none;
-                width: 100%;
-                height: 60vh;
-            }
-
-
-        }
-    </style>
-
-    <section class="mainfeatures-section">
-
-
-        <!-- LEFT SIDE -->
-        <div class="mainfeatures-left-block">
-            <!-- <div class="mainfeatures-subtitle">
-      New home furniture collections and decoration accessories
-    </div> -->
-
-            <div class="mainfeatures-description" data-aos="fade-down" data-aos-delay="300">
-                An intelligent voice interface that allows real-time interaction with the smart pole system, providing
-                assistance, accessibility, and automated responses.
-            </div>
-
-            <ul class="mainfeatures-features" data-aos="fade-down" data-aos-delay="300">
-               <li>Public announcements</li>
+<!-- Feature 15 -->
+<section id="feature15" class="feature-section">
+  <div class="layout-card">
+    <div class="left-panel">
+      <img src="img/randd/mainfeatures/aibased-voice-communication-h.png" alt="Smart Environmental Sensor">
+    </div>
+    <div class="right-panel">
+      <h1>AI Based Voice Communication</h1>
+      <ul class="points">
+       <li>Public announcements</li>
 <li>Emergency alerts</li>
 <li>Voice-controlled lighting</li>
 <li>Security alerts</li>
@@ -1769,65 +1040,29 @@ background-color: rgba(0, 0, 0, 0.2); /* Transparent white */
 <li>Noise detection</li>
 <li>Crowd management</li>
 <li>Interactive citizen assistance</li>
-            </ul>
+      </ul>
 
-            <button class="mainfeatures-btn" data-aos="fade-down" data-aos-delay="300">
-                <a class="mainfeatures-link" href="contact.html">Know more →</a>
-            </button>
-        </div>
+      <div class="page-indicator">
+        <div class="page-count">15 / 16</div>
+        <div class="indicator-line"></div>
+        <div class="indicator-arrow" onclick="nextFeature(15)">↓</div>
+      </div>
 
-        <!-- RIGHT SIDE -->
-        <div class="mainfeatures-right-block-8">
-            <div class="mainfeatures-heading">AI Based Voice<br>Communication</div>
-        </div>
-    </section>
+      <div class="indicator-label">Neuro Pole</div>
+    </div>
+  </div>
+</section>
 
-
-    <!-- section-2 -->
-
-    <style>
-        /* LEFT IMAGE SECTION */
-        .apartments-image-side-8 {
-            flex: 1;
-            position: relative;
-            background-image: url('img/randd/mainfeatures/AI-Based Camera.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-
-            .apartments-image-side-8 {
-                flex: none;
-                width: 100%;
-                height: 60vh;
-            }
-
-        }
-    </style>
-
-    <section class="modern-apartments-wrap">
-
-
-        <!-- LEFT IMAGE SECTION -->
-        <div class="apartments-image-side-8">
-            <div class="apartments-main-heading">AI Based<br>Camera</div>
-        </div>
-
-        <!-- RIGHT CONTENT SECTION -->
-        <div class="apartments-content-side">
-            <!-- <div class="apartments-logo">me.</div> -->
-            <!-- <div class="apartments-subtitle">
-      New home furniture collections and decoration accessories
-    </div> -->
-            <div class="apartments-description" data-aos="fade-down" data-aos-delay="300">
-                A smart surveillance camera that delivers high-definition monitoring, AI-driven analytics, and real-time
-                alerts for enhanced urban security.
-            </div>
-
-            <ul class="apartments-feature-list" data-aos="fade-down" data-aos-delay="300">
-              <li>Provides full-area surveillance</li>
+<!-- Feature 16 -->
+<section id="feature16" class="feature-section">
+  <div class="layout-card">
+    <div class="left-panel">
+      <img src="img/randd/mainfeatures/ai-based-camera-h.png" alt="Smart City Dashboard">
+    </div>
+    <div class="right-panel">
+      <h1>AI Based Camera</h1>
+      <ul class="points">
+        <li>Provides full-area surveillance</li>
 <li>Tracks movement intelligently</li>
 <li>Detects unusual activities</li>
 <li>Enhances public safety</li>
@@ -1836,11 +1071,212 @@ background-color: rgba(0, 0, 0, 0.2); /* Transparent white */
 <li>Assists in crime prevention</li>
 <li>Automatically follows objects</li>
 <li>Reduces blind spots</li>
-            </ul>
+      </ul>
 
-            <button class="apartments-btn" data-aos="fade-down" data-aos-delay="300">See more →</button>
-        </div>
-    </section>
+      <div class="page-indicator">
+        <div class="page-count">16 / 16</div>
+        <div class="indicator-line"></div>
+        <div class="indicator-arrow" onclick="nextFeature(16)">↓</div>
+      </div>
+
+      <div class="indicator-label">Neuro Pole</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .feature-section{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+    background:#181818;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    overflow:hidden;
+    position:relative;
+  }
+
+  .layout-card{
+    display:flex;
+    width:90%;
+    max-width:1300px;
+    height:85vh;
+    background:#1a1a1a;
+    box-shadow:0 8px 40px rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:relative;
+  }
+
+  .left-panel{
+    width:50%;
+    height:100%;
+    overflow:hidden;
+  }
+  .left-panel img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .right-panel{
+    width:50%;
+    padding:80px 90px 60px 90px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    position:relative;
+  }
+
+  .right-panel h1{
+    font-size:2rem;
+    font-weight:600;
+    margin-bottom:20px;
+    color:#fff;
+    position:relative;
+  }
+
+  .page-indicator{
+    position:absolute;
+    right:40px;
+    top:80px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    color:#ccc;
+  }
+
+  .page-count{
+    font-size:1rem;
+    letter-spacing:2px;
+    font-weight:500;
+    color:#e0e0e0;
+    margin-bottom:10px;
+  }
+
+  .indicator-line{
+    width:1px;
+    height:20vh;
+    background:rgba(255,255,255,0.3);
+    margin-bottom:10px;
+  }
+
+  .indicator-arrow{
+    font-size:1.3rem;
+    color:#ccc;
+    cursor:pointer;
+    transition:all 0.3s ease;
+  }
+  .indicator-arrow:hover{
+    color:#fff;
+    transform:translateY(3px);
+  }
+
+  .points{
+    list-style:none;
+    padding-left:0;
+    color:#bfbfbf;
+    font-size:1rem;
+    line-height:1.8;
+  }
+  .points li{
+    position:relative;
+    padding-left:18px;
+  }
+  .points li::before{
+    content:"•";
+    position:absolute;
+    left:0;
+    color:#fff;
+    font-weight:bold;
+  }
+
+  .indicator-label{
+    position:absolute;
+    bottom:40px;
+    right:40px;
+    font-size:0.9rem;
+    color:#777;
+    letter-spacing:2px;
+    text-transform:uppercase;
+  }
+
+  @media(max-width:992px){
+    .layout-card{
+      flex-direction:column;
+      height:auto;
+      width:95%;
+    }
+
+    .left-panel,
+    .right-panel{
+      width:100%;
+    }
+
+    .left-panel{
+      height:300px;
+    }
+
+    .right-panel{
+      padding:40px 25px 80px 25px;
+      align-items:flex-start;
+    }
+
+    .right-panel h1{
+      text-align:start;
+      width:100%;
+    }
+
+    .points{
+      font-size:0.95rem;
+      line-height:1.7;
+      margin-top:10px;
+    }
+
+    .page-indicator{
+      position:relative;
+      right:auto;
+      top:auto;
+      margin:40px auto 20px auto;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    .page-count{
+      font-size:0.9rem;
+    }
+
+    .indicator-line{
+      height:80px;
+    }
+
+    .indicator-arrow{
+      font-size:1.2rem;
+    }
+
+    .indicator-label{
+      position:relative;
+      bottom:auto;
+      right:auto;
+      text-align:center;
+      margin-top:10px;
+      width:100%;
+      font-size:0.85rem;
+      color:#999;
+    }
+  }
+</style>
+
+
+
+
+
+
+
+
+
+ 
 
 
 
@@ -3394,6 +2830,12 @@ background-color: rgba(0, 0, 0, 0.2); /* Transparent white */
             easing: 'ease-out-cubic'
         });
     </script>
+    <script>
+function nextFeature(num) {
+  const next = num === 16 ? 1 : num + 1;
+  document.querySelector('#feature' + next).scrollIntoView({ behavior: 'smooth' });
+}
+</script>
 
 
 </body>
