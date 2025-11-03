@@ -1,398 +1,343 @@
-<section class="mainfeatures-section">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Features — 16 Sections</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
-    * {
-      box-sizing: border-box;
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+    body{
+      font-family:"Poppins",sans-serif;
+      background:#111;
+      color:#fff;
     }
 
-    .mainfeatures-section {
-      display: flex;
-      height: 100vh;
-      overflow: hidden;
-      background-color: #e7e2dc;
-      font-family: "Georgia", serif;
-      margin-bottom: 60px; /* bottom gap added */
+    .feature-section{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:100vh;
+      background:#181818;
+      border-bottom:1px solid rgba(255,255,255,0.05);
+      overflow:hidden;
+      position:relative;
     }
 
-    /* LEFT CONTENT AREA */
-    .mainfeatures-left-block {
-      flex: 0.3;
-      background-color: #cdcccb;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 4rem;
-      position: relative;
+    .layout-card{
+      display:flex;
+      width:90%;
+      max-width:1300px;
+      height:85vh;
+      background:#1a1a1a;
+      box-shadow:0 8px 40px rgba(0,0,0,0.5);
+      overflow:hidden;
+      position:relative;
     }
 
-    .mainfeatures-logo {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 3rem;
+    .left-panel{
+      width:50%;
+      height:100%;
+      overflow:hidden;
+    }
+    .left-panel img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
     }
 
-    .mainfeatures-subtitle {
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 1.2rem;
-      max-width: 260px;
-      line-height: 1.4;
+    .right-panel{
+      width:50%;
+      padding:80px 90px 60px 90px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      position:relative;
+    }
+    .right-panel h1{
+      font-size:2rem;
+      font-weight:600;
+      margin-bottom:20px;
+      color:#fff;
+      position:relative;
     }
 
-    .mainfeatures-link {
-      text-decoration: none;
-      color: #000;
+    /* PAGE INDICATOR */
+    .page-indicator{
+      position:absolute;
+      right:40px;
+      top:80px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      color:#ccc;
     }
 
-    .mainfeatures-description {
-      font-size: 0.9rem;
-      color: #444;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      max-width: 320px;
+    .page-count{
+      font-size:1rem;
+      letter-spacing:2px;
+      font-weight:500;
+      color:#e0e0e0;
+      margin-bottom:10px;
     }
 
-    .mainfeatures-features {
-      list-style: none;
-      margin-bottom: 2rem;
+    .indicator-line{
+      width:1px;
+      height:20vh;
+      background:rgba(255,255,255,0.3);
+      margin-bottom:10px;
     }
 
-    .mainfeatures-features li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
-      position: relative;
-      font-size: 0.9rem;
-      color: #333;
+    .indicator-arrow{
+      font-size:1.3rem;
+      color:#ccc;
+      cursor:pointer;
+      transition:all 0.3s ease;
+    }
+    .indicator-arrow:hover{
+      color:#fff;
+      transform:translateY(3px);
     }
 
-    .mainfeatures-features li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #101010;
-      font-size: 1.2rem;
-      line-height: 1;
+    .points{
+      list-style:none;
+      padding-left:0;
+      color:#bfbfbf;
+      font-size:1rem;
+      line-height:1.8;
+    }
+    .points li{
+      position:relative;
+      padding-left:18px;
+    }
+    .points li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      color:#fff;
+      font-weight:bold;
     }
 
-    .mainfeatures-btn {
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #fff;
-      border: none;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
+    .indicator-label{
+      position:absolute;
+      bottom:40px;
+      right:40px;
+      font-size:0.9rem;
+      color:#777;
+      letter-spacing:2px;
+      text-transform:uppercase;
     }
 
-    .mainfeatures-btn:hover {
-      transform: translateY(-2px);
+    /* LEFT NAVIGATION */
+    .feature-quick-nav{
+      position:fixed;
+      left:25px;
+      top:50%;
+      transform:translateY(-50%);
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      z-index:999;
+    }
+    .feature-quick-nav a{
+      font-size:14px;
+      font-weight:500;
+      color:#888;
+      text-decoration:none;
+      letter-spacing:1px;
+      transition:all 0.2s ease;
+      padding-bottom:3px;
+    }
+    .feature-quick-nav a.active{
+      color:#fff;
+      border-bottom:2px solid #fff;
     }
 
-    /* RIGHT IMAGE AREA */
-    .mainfeatures-right-block {
-      flex: 0.7;
-      position: relative;
-      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .mainfeatures-heading {
-      position: absolute;
-      top: 30%;
-      left: -10%;
-      transform: translateY(-50%);
-      background-color: #fff;
-      padding: 1.2rem 2rem;
-      font-size: 3.5rem;
-      line-height: 1.1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-
-    /* RESPONSIVE DESIGN */
-    @media (max-width: 900px) {
-      .mainfeatures-section {
-        flex-direction: column;
-        height: auto;
+    /* ========== MOBILE VIEW FIX ========== */
+    @media(max-width:992px){
+      .layout-card{
+        flex-direction:column;
+        height:auto;
+        width:95%;
       }
 
-      .mainfeatures-left-block {
-        flex: none;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
+      .left-panel,
+      .right-panel{
+        width:100%;
       }
 
-      .mainfeatures-right-block {
-        flex: none;
-        width: 100%;
-        height: 60vh;
+      .left-panel{
+        height:300px;
       }
 
-      .mainfeatures-heading {
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2.2rem;
+      .right-panel{
+        padding:40px 25px 80px 25px;
+        align-items:flex-start;
       }
 
-      .mainfeatures-features {
-        text-align: left;
-        margin: 0 auto;
+      .right-panel h1{
+        text-align:start;
+        width:100%;
+      }
+
+      .points{
+        font-size:0.95rem;
+        line-height:1.7;
+        margin-top:10px;
+      }
+
+      /* Indicator below points for mobile */
+      .page-indicator{
+        position:relative;
+        right:auto;
+        top:auto;
+        margin:40px auto 20px auto;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .page-count{
+        font-size:0.9rem;
+      }
+
+      .indicator-line{
+        height:80px;
+      }
+
+      .indicator-arrow{
+        font-size:1.2rem;
+      }
+
+      .indicator-label{
+        position:relative;
+        bottom:auto;
+        right:auto;
+        text-align:center;
+        margin-top:10px;
+        width:100%;
+        font-size:0.85rem;
+        color:#999;
+      }
+
+      /* Hide vertical nav in mobile */
+      .feature-quick-nav{
+        display:none;
       }
     }
   </style>
+</head>
+<body>
 
-  <!-- LEFT SIDE -->
-  <div class="mainfeatures-left-block">
-    <div class="mainfeatures-subtitle">
-      New home furniture collections and decoration accessories
+  <!-- Vertical Quick Navigation -->
+  <nav class="feature-quick-nav">
+    <a href="#feature1" class="active">01</a>
+    <a href="#feature2">02</a>
+    <a href="#feature3">03</a>
+    <a href="#feature4">04</a>
+    <a href="#feature5">05</a>
+    <a href="#feature6">06</a>
+    <a href="#feature7">07</a>
+    <a href="#feature8">08</a>
+    <a href="#feature9">09</a>
+    <a href="#feature10">10</a>
+    <a href="#feature11">11</a>
+    <a href="#feature12">12</a>
+    <a href="#feature13">13</a>
+    <a href="#feature14">14</a>
+    <a href="#feature15">15</a>
+    <a href="#feature16">16</a>
+  </nav>
+
+  <!-- Example: Feature 1 -->
+  <section id="feature1" class="feature-section">
+    <div class="layout-card">
+      <div class="left-panel">
+        <img src="img/11.png" alt="Feature 1">
+      </div>
+      <div class="right-panel">
+        <h1>Smart Pole</h1>
+        <ul class="points">
+          <li>EV Charging integration</li>
+          <li>AI-based camera analytics</li>
+          <li>5G-ready connectivity</li>
+          <li>Solar power optimization</li>
+          <li>IoT monitoring and alerts</li>
+          <li>Modular component design</li>
+          <li>Voice assistant interface</li>
+          <li>Environmental sensing</li>
+          <li>Durable weatherproof body</li>
+          <li>Night illumination system</li>
+        </ul>
+
+        <div class="page-indicator">
+          <div class="page-count">01 / 16</div>
+          <div class="indicator-line"></div>
+          <div class="indicator-arrow" onclick="nextFeature(1)">↓</div>
+        </div>
+
+        <div class="indicator-label">Smart Pole</div>
+      </div>
     </div>
+  </section>
 
-    <div class="mainfeatures-description">
-      Discover a new approach to modern living spaces — where comfort meets contemporary design. Our curated selections transform every corner into a statement of elegance and simplicity.
+  <!-- Feature 2 -->
+  <section id="feature2" class="feature-section">
+    <div class="layout-card">
+      <div class="left-panel">
+        <img src="img/11.png" alt="Feature 2">
+      </div>
+      <div class="right-panel">
+        <h1>Smart Bollard</h1>
+        <ul class="points">
+          <li>Impact-resistant construction</li>
+          <li>Integrated motion detection</li>
+          <li>Adaptive street lighting</li>
+          <li>Data-driven urban analytics</li>
+          <li>Wi-Fi hotspot enabled</li>
+          <li>AI-powered foot traffic count</li>
+          <li>Modular smart core</li>
+          <li>Eco-friendly materials</li>
+          <li>Minimal maintenance design</li>
+          <li>Dynamic RGB illumination</li>
+        </ul>
+
+        <div class="page-indicator">
+          <div class="page-count">02 / 16</div>
+          <div class="indicator-line"></div>
+          <div class="indicator-arrow" onclick="nextFeature(2)">↓</div>
+        </div>
+
+        <div class="indicator-label">Smart Bollard</div>
+      </div>
     </div>
+  </section>
 
-    <ul class="mainfeatures-features">
-      <li>Elegant minimalist interiors</li>
-      <li>High-quality wooden finishes</li>
-      <li>Eco-friendly materials</li>
-      <li>Smart home integration</li>
-      <li>Customizable design options</li>
-      <li>Luxury fittings and textures</li>
-    </ul>
+  <!-- Continue same pattern up to feature16... -->
 
-    <button class="mainfeatures-btn">
-      <a class="mainfeatures-link" href="contact.html">Know more →</a>
-    </button>
-  </div>
+  <script>
+    const totalFeatures = 16;
+    function nextFeature(current) {
+      const next = current === totalFeatures ? 1 : current + 1;
+      document.getElementById("feature" + next).scrollIntoView({ behavior: "smooth" });
+    }
 
-  <!-- RIGHT SIDE -->
-  <div class="mainfeatures-right-block">
-    <div class="mainfeatures-heading">Modern<br>Apartments</div>
-  </div>
-</section>
+    // Highlight nav item on scroll
+    const sections=document.querySelectorAll(".feature-section");
+    const navLinks=document.querySelectorAll(".feature-quick-nav a");
+    const observer=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const id=entry.target.id;
+          navLinks.forEach(link=>{
+            link.classList.toggle("active",link.getAttribute("href")==="#"+id);
+          });
+        }
+      });
+    },{threshold:0.6});
+    sections.forEach(sec=>observer.observe(sec));
+  </script>
 
-
-
-
-<h1>EV CHARGER</h1>
-<li>Charges electric vehicles</li>
-<li>Reduces fuel costs</li>
-<li>Supports clean energy</li>
-<li>Enables home and public charging</li>
-<li>Promotes sustainable transport</li>
-<li>Increases EV convenience</li>
-<li>Reduces carbon emissions</li>
-<li>Enhances smart grid integration</li>
-<li>Adds value to properties</li>
-<li>Supports fleet electrification</li>
-
-
-
-<h1>EMERGENCY SOS ALERT</h1>
-<li>Enables emergency alerts</li>
-<li>Instant help request</li>
-<li>Improves public safety</li>
-<li>Direct link to authorities</li>
-<li>Quick response to incidents</li>
-<li>Supports crime reporting</li>
-<li>Assists lost or injured persons</li>
-<li>Visible and accessible 24/7</li>
-<li>Boosts citizen confidence</li>
-<li>Essential in isolated areas</li>
-
-
-
-<h1>WIRED CHARGING</h1>
-<li>Charges mobile devices</li>
-<li>Supports all USB devices</li>
-<li>Provides 24/7 public charging</li>
-<li>Ideal for emergencies</li>
-<li>Encourages longer outdoor use</li>
-<li>Boosts user convenience</li>
-<li>Reliable power access</li>
-<li>Adds smart utility to poles</li>
-<li>Useful in transit areas</li>
-<li>Enhances urban infrastructure</li>
-
-
-
-<h1>WIRELESS CHARGING</h1>
-<li>Charges phones on-the-go</li>
-<li>No cables needed</li>
-<li>Convenient for travel</li>
-<li>Supports multiple devices</li>
-<li>Reduces clutter</li>
-<li>Fast wireless charging</li>
-<li>Works during power outages</li>
-<li>Compact and lightweight</li>
-<li>Easy to carry</li>
-<li>Ideal for emergencies</li>
-
-
-
-<h1>AIR QUALITY SENSOR</h1>
-<li>Monitors air pollution levels</li>
-<li>Detects harmful gases (e.g., CO2,NO2)</li>
-<li>Provides real-time environmental data</li>
-<li>Supports public health initiatives</li>
-<li>Alerts during poor air quality</li>
-<li>Helps in smart city planning</li>
-<li>Tracks pollution trends over time</li>
-<li>Aids climate and weather analysis</li>
-<li>Improves urban living conditions</li>
-<li>Promotes environmental awareness</li>
-
-
-
-<h1>AIR QUALITY SCREEN</h1>
-<li>Monitors real-time air quality</li>
-<li>Displays pollution levels</li>
-<li>Raises environmental awareness</li>
-<li>Supports public health</li>
-<li>Helps in city planning</li>
-<li>Detects harmful gases</li>
-<li>Tracks environmental trends</li>
-<li>Encourages eco-friendly behavior</li>
-<li>Integrates with smart city data</li>
-<li>Alerts during hazardous conditions</li>
-
-
-
-<h1>STREET LIGHTING</h1>
-<li>Illuminates public spaces</li>
-<li>Enhances road safety</li>
-<li>Reduces crime risk</li>
-<li>Improves night visibility</li>
-<li>Enables adaptive brightness</li>
-<li>Saves energy with smart control</li>
-<li>Supports pedestrian safety</li>
-<li>Automated on/off scheduling</li>
-<li>Integrates with motion sensors</li>
-<li>Monitors lighting status remotely</li>
-
-
-
-<h1>PA LOUD SPEAKER</h1>
-<li>Public announcements</li>
-<li>Emergency alerts</li>
-<li>Disaster warnings</li>
-<li>Traffic updates</li>
-<li>Event notifications</li>
-<li>Lost & found messages</li>
-<li>Crowd control assistance</li>
-<li>Security alerts</li>
-<li>Weather updates</li>
-<li>Promotes civic awareness</li>
-
-
-
-<h1>POWER GENERATION SYSTEM</h1>
-<li>Provides renewable energy</li>
-<li>Reduces electricity costs</li>
-<li>Enables off-grid operation</li>
-<li>Supports exo-friendly cities</li>
-<li>Powers smart pole features</li>
-<li>Works during power outages</li>
-<li>Minimizes carbon footprint</li>
-<li>Lowers maintenance expenses</li>
-<li>Promotes energy independence</li>
-<li>Enhances sustainability efforts</li>
-
-
-
-<h1>RGB PIXEL LED SCREEN</h1>
-<li>Displays vibrant public messages</li>
-<li>Supports real-time alerts</li>
-<li>Shows weather and traffic info</li>
-<li>Enhances city communication</li>
-<li>Broadcasts advertisements and events</li>
-<li>Engages citizens visually</li>
-<li>Offers high visibility day/night</li>
-<li>Customizable content display</li>
-<li>Improves urban aesthetics</li>
-<li>Supports emergency notifications</li>
-
-
-
-<h1>MOTION DETECTOR</h1>
-<li>Detects human or vehicle movement</li>
-<li>Activates lights when motion sensed</li>
-<li>Enhances energy efficiency</li>
-<li>Improves security monitoring</li>
-<li>Supports real-time surveillance</li>
-<li>Triggers alerts or recordings</li>
-<li>Helps manage pedestrian flow</li>
-<li>Reduces unnecessary lighting</li>
-<li>Integrates with other smart systems</li>
-<li>Assists in traffic and crowd control</li>
-
-
-
-<h1>WI-FI HOTSPOT</h1>
-<li>Provides free public internet</li>
-<li>Enhances digital connectivity</li>
-<li>Supports smart city applications</li>
-<li>Connects users on the go</li>
-<li>Bridges digital divide</li>
-<li>Boosts tourism and foot traffic</li>
-<li>Supports emergency communication</li>
-<li>Enables real-time data access</li>
-<li>Improves user convenience</li>
-<li>Facilitates mobile working and learning </li>
-
-
-
-<h1>INTERCOM</h1>
-<li>Enables two-way communication</li>
-<li>Assists in emergencies</li>
-<li>Connects public with authorities</li>
-<li>Improves public safety</li>
-<li>Supports remote assistance</li>
-<li>Facilitates help requests</li>
-<li>Enhances accessibility for all</li>
-<li>Useful in crowded or remote areas</li>
-<li>Monitors suspicious ativity reports</li>
-<li>Strengthens smart city infrastructure</li>
-
-
-<h1>ANDROID TOUCH SCREEN</h1>
-<li>Provides interactive user interface</li>
-<li>Displays maps and directions</li>
-<li>Offers public information access</li>
-<li>Allows emergency service contact</li>
-<li>Supports multilingual options</li>
-<li>Enables service requests</li>
-<li>Enhances user engagement</li>
-<li>Shows transport and event updates</li>
-<li>Accessible for all age groups</li>
-<li>Improves urban digital experience</li>
-
-
-
-<h1>AI BASED CAMERA</h1>
-<li>Provides full-area surveillance</li>
-<li>Tracks movement intelligently</li>
-<li>Detects unusual activities</li>
-<li>Enhances public safety</li>
-<li>Supports real-time monitoring</li>
-<li>Facilitates traffic management</li>
-<li>Assists in crime prevention</li>
-<li>Automatically follows objects</li>
-<li>Reduces blind spots</li>
-
-
-
-<h1>AI BASED VOICE COMMUNICATION</h1>
-<li>Public announcements</li>
-<li>Emergency alerts</li>
-<li>Voice-controlled lighting</li>
-<li>Security alerts</li>
-<li>Traffic updates</li>
-<li>environmental monitoring</li>
-<li>Tourist guidance</li>
-<li>Noise detection</li>
-<li>Crowd management</li>
-<li>Interactive citizen assistance</li>
+</body>
+</html>
