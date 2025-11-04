@@ -1,113 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Illumination</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voltage to Lighting Type Visual</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
 
+  body {
+    height: 100vh;
+    background: linear-gradient(to right, #0d0d0d, #3f3f3f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+    transition: all 0.4s ease;
+  }
+
+  /* Voltage bar */
+  .voltage-bar {
+    position: relative;
+    width: 6px;
+    height: 520px;
+    background: #333;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .voltage-fill {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(180deg, #9b9b9b, #c4c8cc);
+    border-radius: 10px;
+    transition: height 0.3s ease;
+  }
+
+  /* Knob */
+  .knob {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border: 3px solid #7a7e7e;
+    border-radius: 50%;
+    cursor: grab;
+    transition: box-shadow 0.2s ease;
+    z-index: 5;
+  }
+
+  .knob:active {
+    cursor: grabbing;
+    box-shadow: 0 0 15px #babcbc;
+  }
+
+  /* Voltage labels */
+  .labels {
+    position: absolute;
+    left: -80px;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #fff;
+    text-align: right;
+  }
+
+  /* Category name beside line */
+  .category {
+    position: absolute;
+    left: 40px;
+    font-weight: 600;
+    color: #fff;
+    font-size: 14px;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+  }
+
+  /* Right side image box */
+  .image-box {
+    width: 750px;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: background-image 0.4s ease-in-out;
+  }
+
+  /* ----------- MOBILE VIEW ----------- */
+  @media (max-width: 768px) {
     body {
-      height: 100vh;
-      width: 100%;
-      font-family: "Poppins", sans-serif;
-      color: #fff;
-      background-color: #000;
-      overflow: hidden;
-    }
-
-    /* 🌆 Desktop Background */
-    .hero {
-      height: 100%;
-      width: 100%;
-      background: url("img/BlackGray.png") no-repeat right center;
-      background-size: cover;
-      position: relative;
-      display: flex;
-      align-items: center;
+      height: auto;
+      flex-direction: column;
       justify-content: flex-start;
+      padding: 20px 10px;
     }
 
-    /* .overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0.2) 100%);
-    } */
+    .container {
+      flex-direction: column;
+      gap: 60px;
+      width: 100%;
+      align-items: center;
+    }
 
-    .content {
+    /* horizontal voltage bar */
+    .voltage-bar {
+      width: 80%;
+      height: 8px;
+      background: #333;
+      border-radius: 10px;
       position: relative;
-      z-index: 2;
-      padding: 0 5%;
-      max-width: 600px;
     }
 
-    h1 {
-      font-size: 3rem;
-      text-transform: uppercase;
-      font-weight: 600;
-      line-height: 1.2;
-      letter-spacing: 2px;
-      background: linear-gradient(90deg, #ffffff, #c0c0c0);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: fadeInUp 1.5s ease-out;
+    .voltage-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(to right, #9b9b9b, #c4c8cc);
+      transition: width 0.3s ease;
     }
 
-    p {
-      font-size: 1.2rem;
-      margin-top: 15px;
-      color: #ccc;
-      animation: fadeInUp 2s ease-out;
+    /* labels horizontal */
+    .labels {
+      position: absolute;
+      top: -25px;
+      left: 0;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      color: #fff;
+      font-size: 10px;
+      text-align: center;
     }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
+    .knob {
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 26px;
+      height: 26px;
     }
 
-    /* 📱 MOBILE DESIGN */
-    @media (max-width: 768px) {
-      .hero {
-        background: url("img/BlackGraymobile.png") no-repeat center center;
-        background-size: cover;
-        justify-content: center;
-        align-items: flex-end;
-        text-align: start;
-      }
-
-      /* .overlay {
-        background: rgba(0,0,0,0.7);
-      } */
-
-      .content {
-        padding: 20px;
-        max-width: 90%;
-        margin-bottom: 40px;
-      }
-
-      h1 {
-        font-size: 1.8rem;
-        letter-spacing: 1px;
-      }
-
-      p {
-        font-size: 1rem;
-        color: #ccc;
-      }
+    .category {
+      top: -45px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 13px;
+      text-align: center;
     }
-  </style>
+
+    .image-box {
+      width: 95%;
+      height: 220px;
+      border-radius: 8px;
+    }
+  }
+</style>
 </head>
 <body>
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="content">
-      <h1>Illuminate the Darkness</h1>
-      <p>Bringing brilliance to every shadow — redefining the art of light.</p>
+
+<div class="container">
+  <!-- Voltage bar -->
+  <div class="voltage-bar" id="bar">
+    <div class="voltage-fill" id="fill"></div>
+    <div class="labels">
+      <span>690V</span>
+      <span>550V</span>
+      <span>415V</span>
+      <span>280V</span>
+      <span>210V</span>
+      <span>160V</span>
+      <span>110V</span>
     </div>
-  </section>
+    <div class="knob" id="knob"></div>
+    <div class="category" id="categoryLabel">Residential</div>
+  </div>
+
+  <!-- Image box -->
+  <div class="image-box" id="imageBox" style="background-image: url('img/lighting/lightingsectwo/0.png');"></div>
+</div>
+
+<script>
+  const knob = document.getElementById("knob");
+  const bar = document.getElementById("bar");
+  const fill = document.getElementById("fill");
+  const imageBox = document.getElementById("imageBox");
+  const categoryLabel = document.getElementById("categoryLabel");
+
+  const ranges = [
+    { min: 110, max: 160, name: "Residential", image: "img/lighting/lightingsectwo/0.png" },
+    { min: 161, max: 210, name: "Hospitality", image: "img/lighting/lightingsectwo/1.png" },
+    { min: 211, max: 280, name: "Facade", image: "img/lighting/lightingsectwo/2.png" },
+    { min: 281, max: 415, name: "Commercial", image: "img/lighting/lightingsectwo/3.png" },
+    { min: 416, max: 550, name: "Outdoor", image: "img/lighting/lightingsectwo/5.png" },
+    { min: 551, max: 690, name: "Industrial", image: "img/lighting/lightingsectwo/1.png" }
+  ];
+
+  let isDragging = false;
+  const minVolt = 110;
+  const maxVolt = 690;
+
+  knob.style.bottom = "0px";
+  updateDisplay(minVolt);
+
+  knob.addEventListener("mousedown", () => isDragging = true);
+  document.addEventListener("mouseup", () => isDragging = false);
+
+  document.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    handleDrag(e.clientX, e.clientY);
+  });
+
+  knob.addEventListener("touchstart", () => isDragging = true);
+  document.addEventListener("touchend", () => isDragging = false);
+  document.addEventListener("touchmove", (e) => {
+    if (!isDragging) return;
+    const touch = e.touches[0];
+    handleDrag(touch.clientX, touch.clientY);
+  });
+
+  function handleDrag(clientX, clientY) {
+    const rect = bar.getBoundingClientRect();
+
+    // Desktop vertical
+    if (window.innerWidth > 768) {
+      const y = Math.min(Math.max(clientY - rect.top, 0), rect.height);
+      const percent = 1 - y / rect.height;
+      const voltage = Math.round(minVolt + percent * (maxVolt - minVolt));
+
+      knob.style.bottom = `${rect.height - y - 14}px`;
+      fill.style.height = `${percent * 100}%`;
+      updateDisplay(voltage);
+    } 
+    // Mobile horizontal
+    else {
+      const x = Math.min(Math.max(clientX - rect.left, 0), rect.width);
+      const percent = x / rect.width;
+      const voltage = Math.round(minVolt + percent * (maxVolt - minVolt));
+
+      knob.style.left = `${percent * 100}%`;
+      fill.style.width = `${percent * 100}%`;
+      updateDisplay(voltage);
+    }
+  }
+
+  function updateDisplay(voltage) {
+    const range = ranges.find(r => voltage >= r.min && voltage <= r.max);
+    if (range) {
+      categoryLabel.textContent = `${voltage}V — ${range.name}`;
+      imageBox.style.backgroundImage = `url('${range.image}')`;
+    }
+  }
+</script>
+
 </body>
 </html>
