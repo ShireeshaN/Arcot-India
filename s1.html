@@ -3,878 +3,421 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smart Bollard — Features</title>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
+  <title>Expanding Product Grid with Images
+  
+  </title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: "Poppins", sans-serif;
-      background-color: #111;
-      color: #fff;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      line-height: 1.4;
     }
 
-    /* Each feature takes full viewport height */
-    .feature-section {
-      position: relative;
-      width: 100%;
-      min-height: 90vh;
-      height: 90vh;
+    body {
+      background-color: #3f3f3f;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 30px;
-      background: linear-gradient(180deg, rgba(18,18,18,1) 0%, rgba(22,22,22,1) 100%);
-      overflow: hidden;
-      border-bottom: 1px solid rgba(255,255,255,0.03);
-    }
-
-    /* Inner card (same as your layout-container) */
-    .layout-card {
-      width: 90%;
-      max-width: 1300px;
-      height: 85vh;
-      background-color: #1f1f1f;
-      display: flex;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-      overflow: hidden;
-      position: relative;
-    }
-
-    /* Marble / decorative bg (kept subtle) */
-    .marble-bg {
-      position: absolute;
-      top: -40px;
-      left: -40px;
-      width: 45%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      z-index: 1;
-      opacity: 0.08;
-      transform: rotate(-1deg);
-      pointer-events: none;
-    }
-
-    .left-panel {
-      position: relative;
-      z-index: 2;
-      width: 45%;
-      background-color: #222;
-      overflow: hidden;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding-left: 60px;
-    }
-
-    .left-panel img {
-      width: calc(100% - 50px);
-      height: 100%;
-      object-fit: cover;
-      opacity: 1;
-      transform: scale(1);
-      transition: transform 0.35s ease;
-      display: block;
-    }
-
-    /* subtle zoom on hover (not an entrance animation) */
-    .left-panel img:hover { transform: scale(1.02); }
-
-    /* Vertical Menu (kept but hidden on small screens) */
-    /* .vertical-nav {
-      position: absolute;
-      left: 30px;
-      bottom: 10px;
-      display: flex;
+      min-height: 100vh;
       flex-direction: column;
-      align-items: center;
-      gap: 22px;
-      z-index: 5;
-    }
-    .vertical-nav a {
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      color: #bbb;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-decoration: none;
-      font-weight: 400;
-    } */
-    .vertical-nav a:hover { color: #fff; }
-
-    .vertical-nav a {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  color: #777;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-.vertical-nav a.active {
-  color: #fff;
-  font-weight: 700;
-}
-
-
-    .right-panel {
-      width: 55%;
-      background-color: #181818;
-      padding: 80px 100px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-      z-index: 2;
     }
 
-    .background-text {
-      position: absolute;
-      left: -70px;
-      top: 20px;
-      font-size: 8rem;
-      color: rgba(255,255,255,0.03);
-      font-weight: 700;
-      letter-spacing: 5px;
-      transform: rotate(-90deg);
-      white-space: nowrap;
-      pointer-events: none;
-    }
-
-    .right-panel h1 {
-      font-size: 2rem;
-      font-weight: 600;
-      line-height: 1.4;
-      margin-bottom: 12px;
-      color: #fff;
-    }
-    .right-panel p {
-      color: #bbb;
-      font-size: 0.98rem;
-      line-height: 1.7;
-      margin-bottom: 28px;
-      max-width: 420px;
-    }
-
-    .btn-outline-light {
-      border-radius: 0;
-      border: 1px solid #fff;
-      padding: 10px 25px;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all 0.18s ease;
-      width: fit-content;
-      background: transparent;
-      color: #fff;
-    }
-    .btn-outline-light:hover {
-      background-color: #fff;
-      color: #111;
-    }
-
-    /* Scroll indicator (shows current index / total and arrow) */
-    .scroll-indicator {
-      position: absolute;
-      right: 40px;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      font-size: 12px;
-      letter-spacing: 2px;
-      color: #bbb;
-      cursor: default;
-      z-index: 6;
-    }
-    .scroll-indicator .numbers {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      color: #ddd;
-      font-weight: 600;
-    }
-    .scroll-indicator .numbers .current {
-      color: #fff;
-      font-size: 14px;
-    }
-    .scroll-indicator .line {
-      width: 1px;
-      height: 60px;
-      background-color: rgba(255,255,255,0.08);
-      margin: 5px 0;
-    }
-
-    .scroll-indicator .arrow {
-      width: 36px;
-      height: 36px;
+    .grid {
       display: grid;
-      place-items: center;
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #ddd;
-      background: rgba(255,255,255,0.02);
-      text-decoration: none;
-      font-size: 14px;
-      user-select: none;
-    }
-    .scroll-indicator .arrow:hover {
-      background: rgba(255,255,255,0.04);
+      grid-template-rows: repeat(2, 350px);
+      width: 100%;
+      max-width: 1800px;
     }
 
-    /* Right-bottom socials */
-    .socials {
-      position: absolute;
-      right: 40px;
-      bottom: 30px;
+    .row {
       display: flex;
-      gap: 20px;
-      z-index: 6;
+      border-top: 2px solid #fff;
+      border-left: 2px solid #fff;
     }
-    .socials a { color: #bbb; text-decoration: none; }
-    .socials a:hover { color: #fff; }
 
-    /* Numbered quick-nav (fixed left) */
-    .feature-quick-nav {
-      position: fixed;
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
+    .box {
+      flex: 1;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      background-color: #4a4a4a;
+      position: relative;
+      overflow: hidden;
+      transition: flex 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .box img.icon {
+      width: 70px;
+      height: auto;
+      filter: brightness(0) invert(1);
+      transition: all 0.4s ease;
+    }
+
+    /* Hover expand behavior */
+    .row:hover .box {
+      flex: 0.8;
+      opacity: 0.5;
+    }
+
+    .row .box:hover {
+      flex: 3;
+      opacity: 1;
+      background-color: #fff;
+    }
+
+    .row .box:hover img.icon {
+      opacity: 0.1;
+      transform: scale(1.2);
+    }
+
+    /* Overlay container (for heading + images + labels) */
+    .overlay {
+      position: absolute;
+      inset: 0;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      z-index: 999;
-    }
-    .feature-quick-nav a {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 6px;
-      background: rgba(255,255,255,0.03);
-      color: #ddd;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 13px;
-      border: 1px solid rgba(255,255,255,0.02);
-    }
-    .feature-quick-nav a.active {
-      background: #fff;
-      color: #111;
-      border-color: rgba(255,255,255,0.12);
+      justify-content: flex-start;
+      align-items: center;
+      opacity: 0;
+      transition: all 0.5s ease;
+      padding-top: 40px;
     }
 
-    /* Responsive adjustments */
-    @media (max-width: 992px) {
-      .layout-card { flex-direction: column; height: auto; min-height: 75vh; }
-      .left-panel, .right-panel { width: 100%; padding: 30px; height: auto; }
-      .left-panel img { width: 100%; height: 55vh; object-fit: cover; border-radius: 8px; }
-      .background-text { display: none; }
-      .feature-quick-nav { left: 8px; }
-      .scroll-indicator { right: 18px; }
+    .box:hover .overlay {
+      opacity: 1;
     }
+
+    .overlay h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #111;
+      padding-bottom: 5px;
+    }
+
+    .product-gallery {
+      display: flex;
+      gap: 25px;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .product-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+    }
+
+    .product-item img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+
+    .product-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-item p {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #111;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .row {
+        flex-wrap: wrap;
+      }
+      .box {
+        flex: 1 1 33%;
+        height: 280px;
+      }
+      .product-item img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
     @media (max-width: 768px) {
-      .right-panel { padding: 30px; text-align: center; align-items: center; }
-      .right-panel p { max-width: 100%; }
-      .vertical-nav { display: none; }
+      .box {
+        flex: 1 1 50%;
+        height: 250px;
+      }
+      .overlay h2 {
+        font-size: 1.4rem;
+      }
+      .product-item img {
+        width: 70px;
+        height: 70px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .box {
+        flex: 1 1 100%;
+        height: 220px;
+      }
+      .overlay h2 {
+        font-size: 1.2rem;
+      }
+      .product-item img {
+        width: 60px;
+        height: 60px;
+      }
     }
   </style>
 </head>
 <body>
-
-  <!-- fixed quick nav to jump to a feature -->
-  <nav class="feature-quick-nav" aria-label="Feature navigation">
-    <a href="#feature1" data-index="1" class="active">01</a>
-    <a href="#feature2" data-index="2">02</a>
-    <a href="#feature3" data-index="3">03</a>
-    <a href="#feature4" data-index="4">04</a>
-    <a href="#feature5" data-index="5">05</a>
-    <a href="#feature6" data-index="6">06</a>
-    <a href="#feature7" data-index="7">07</a>
-    <a href="#feature8" data-index="8">08</a>
-    <a href="#feature9" data-index="9">09</a>
-    <a href="#feature10" data-index="10">10</a>
-    <a href="#feature11" data-index="11">11</a>
-    <a href="#feature12" data-index="12">12</a>
-    <a href="#feature13" data-index="13">13</a>
-    <a href="#feature14" data-index="14">14</a>
-    <a href="#feature15" data-index="15">15</a>
-    <a href="#feature16" data-index="16">16</a>
-    
-  </nav>
-
-  <!-- ===== Feature 1 ===== -->
-  <section id="feature1" class="feature-section" data-index="1" aria-labelledby="f1-title">
-    <div class="layout-card" role="region" aria-label="Feature 1 — Bluetooth Connectivity">
-      <div class="marble-bg" style="background-image: url('https://images.unsplash.com/photo-1534850336045-c8d0b06f4b42?auto=format&fit=crop&w=1400&q=80');"></div>
-
-      <div class="left-panel">
-       <nav class="vertical-nav">
-  <a href="#feature1" class="active">Bluetooth</a>
-  <a href="#feature2">Wi-Fi</a>
-  <a href="#feature3">Wireless</a>
-  <a href="#feature4">Audio</a>
-  <a href="#feature5">Lighting</a>
-  <a href="#feature6" >06</a>
-    <a href="#feature7" >07</a>
-    <a href="#feature8" >08</a>
-    <a href="#feature9" >09</a>
-    <a href="#feature10" >10</a>
-    <a href="#feature11" >11</a>
-    <a href="#feature12" >12</a>
-    <a href="#feature13" >13</a>
-    <a href="#feature14" >14</a>
-    <a href="#feature15" >15</a>
-    <a href="#feature16" >16</a>
-</nav>
-
-        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Bluetooth connectivity" />
-      </div>
-
-      <div class="right-panel">
-        <div class="background-text">BLUETOOTH</div>
-        <h1 id="f1-title">Bluetooth Connectivity</h1>
-        <p>Seamless short-range pairing for maintenance tools, local control and diagnostics — quick, secure and energy-efficient.</p>
-        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
-
-        <div class="scroll-indicator" aria-hidden="false">
-          <div class="numbers"><span class="current">01</span><span>/ 16</span></div>
-          <div class="line" aria-hidden="true"></div>
-          <a class="arrow" href="#" data-next="2" title="Next feature" aria-label="Next feature">→</a>
-        </div>
-
-        <div class="socials" aria-hidden="true">
-          <a href="#">FB</a>
-          <a href="#">IG</a>
-          <a href="#">TW</a>
+  <div class="grid">
+    <!-- Row 1 -->
+    <div class="row">
+      <div class="box">
+        <img src="img/16.png" class="icon" alt="Light Icon" />
+        <div class="overlay">
+          <h2>COB LIGHT</h2>
+          <div class="product-gallery">
+            <div class="product-item">
+              <img src="img/16.png" alt="COB GENERAL LIGHTS" />
+              <p>COB GENERAL LIGHTS</p>
+            </div>
+            <div class="product-item">
+              <img src="img/16.png" alt="COB WALL WASHER" />
+              <p>COB WALL WASHER</p>
+            </div>
+            <div class="product-item">
+              <img src="img/16.png" alt="COB WATER RESISTANT" />
+              <p>COB WATER RESISTANT LIGHTS</p>
+            </div>
+            <div class="product-item">
+              <img src="img/16.png" alt="LASER LIGHTS" />
+              <p>LASER LIGHTS</p>
+            </div>
+            <div class="product-item">
+              <img src="img/16.png" alt="SPOT LIGHTS" />
+              <p>SPOT LIGHTS</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ===== Feature 2 ===== -->
-  <section id="feature2" class="feature-section" data-index="2" aria-labelledby="f2-title">
-    <div class="layout-card" role="region" aria-label="Feature 2 — Wi-Fi Integration">
-      <div class="marble-bg" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80');"></div>
-
-      <div class="left-panel">
-        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80" alt="Wi-Fi integration" />
-      </div>
-
-      <div class="right-panel">
-        <div class="background-text">WIFI</div>
-        <h1 id="f2-title">Wi-Fi Integration</h1>
-        <p>Robust broadband connectivity for remote monitoring, OTA updates and cloud telemetry — stable across public spaces.</p>
-        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
-
-        <div class="scroll-indicator">
-          <div class="numbers"><span class="current">02</span><span>/ 16</span></div>
-          <div class="line"></div>
-          <a class="arrow" href="#" data-next="3" title="Next feature">→</a>
-        </div>
-
-        <div class="socials">
-          <a href="#">FB</a>
+      <div class="box">
+        <img src="icon2.png" class="icon" alt="Light Icon" />
+        <div class="overlay">
+          <h2>LED LIGHT</h2>
+          <div class="product-gallery">
+            <div class="product-item">
+              <img src="led1.png" alt="PANEL LIGHTS" />
+              <p>PANEL LIGHTS</p>
+            </div>
+            <div class="product-item">
+              <img src="led2.png" alt="SURFACE LIGHTS" />
+              <p>SURFACE LIGHTS</p>
+            </div>
+            <div class="product-item">
+              <img src="led3.png" alt="DOWNLIGHTS" />
+              <p>DOWNLIGHTS</p>
+            </div>
+            <div class="product-item">
+              <img src="led4.png" alt="SPOTLIGHTS" />
+              <p>SPOTLIGHTS</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ===== Feature 3 ===== -->
-  <section id="feature3" class="feature-section" data-index="3" aria-labelledby="f3-title">
-    <div class="layout-card" role="region" aria-label="Feature 3 — Wireless Charging">
-      <div class="marble-bg" style="background-image: url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1400&q=80');"></div>
-
-      <div class="left-panel">
-        <img src="https://images.unsplash.com/photo-1542444459-db1b7a9f75b0?auto=format&fit=crop&w=1200&q=80" alt="Wireless charging" />
+      <div class="box">
+        <img src="icon3.png" class="icon" alt="Track Light" />
+        <div class="overlay">
+          <h2>TRACK LIGHT</h2>
+          <div class="product-gallery">
+            <div class="product-item">
+              <img src="track1.png" alt="LINEAR TRACK" />
+              <p>LINEAR TRACK</p>
+            </div>
+            <div class="product-item">
+              <img src="track2.png" alt="SPOT TRACK" />
+              <p>SPOT TRACK</p>
+            </div>
+            <div class="product-item">
+              <img src="track3.png" alt="ADJUSTABLE" />
+              <p>ADJUSTABLE</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="right-panel">
-        <div class="background-text">CHARGE</div>
-        <h1 id="f3-title">Wireless Charging</h1>
-        <p>Integrated inductive pads for low-power device charging — convenient and weather-protected for compatible devices.</p>
-        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
-
-        <div class="scroll-indicator">
-          <div class="numbers"><span class="current">03</span><span>/ 05</span></div>
-          <div class="line"></div>
-          <a class="arrow" href="#" data-next="4" title="Next feature">→</a>
+      <div class="box">
+        <img src="icon4.png" class="icon" alt="Magnetic Light" />
+        <div class="overlay">
+          <h2>MAGNETIC LIGHT</h2>
+          <div class="product-gallery">
+            <div class="product-item">
+              <img src="mag1.png" alt="LINEAR" />
+              <p>LINEAR MODULE</p>
+            </div>
+            <div class="product-item">
+              <img src="mag2.png" alt="SPOT" />
+              <p>SPOT MODULE</p>
+            </div>
+            <div class="product-item">
+              <img src="mag3.png" alt="WASHER" />
+              <p>WALL WASHER</p>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div class="socials">
-          <a href="#">IG</a>
+      <div class="box">
+        <img src="icon5.png" class="icon" alt="Profile Light" />
+        <div class="overlay">
+          <h2>PROFILE LIGHT</h2>
+          <div class="product-gallery">
+            <div class="product-item">
+              <img src="pro1.png" alt="SURFACE PROFILE" />
+              <p>SURFACE PROFILE</p>
+            </div>
+            <div class="product-item">
+              <img src="pro2.png" alt="SUSPENDED PROFILE" />
+              <p>SUSPENDED PROFILE</p>
+            </div>
+            <div class="product-item">
+              <img src="pro3.png" alt="RECESSED PROFILE" />
+              <p>RECESSED PROFILE</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ===== Feature 4 ===== -->
-  <section id="feature4" class="feature-section" data-index="4" aria-labelledby="f4-title">
-    <div class="layout-card" role="region" aria-label="Feature 4 — Audio System">
-      <div class="marble-bg" style="background-image: url('https://images.unsplash.com/photo-1502849396440-0d7d5b6f0d2d?auto=format&fit=crop&w=1400&q=80');"></div>
-
-      <div class="left-panel">
-        <img src="https://images.unsplash.com/photo-1512446812281-9a2a3fd1f0f6?auto=format&fit=crop&w=1200&q=80" alt="Audio system" />
-      </div>
-
-      <div class="right-panel">
-        <div class="background-text">AUDIO</div>
-        <h1 id="f4-title">Audio System</h1>
-        <p>Built-in speakers for public announcements, ambient sound or localized messaging — adjustable volume & scheduling.</p>
-        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
-
-        <div class="scroll-indicator">
-          <div class="numbers"><span class="current">04</span><span>/ 05</span></div>
-          <div class="line"></div>
-          <a class="arrow" href="#" data-next="5" title="Next feature">→</a>
-        </div>
-
-        <div class="socials">
-          <a href="#">TW</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Feature 5 ===== -->
-  <section id="feature5" class="feature-section" data-index="5" aria-labelledby="f5-title">
-    <div class="layout-card" role="region" aria-label="Feature 5 — Tuning & Dimming">
-      <div class="marble-bg" style="background-image: url('https://images.unsplash.com/photo-1505691723518-36a70aaf5b2a?auto=format&fit=crop&w=1400&q=80');"></div>
-
-      <div class="left-panel">
-        <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80" alt="Tuning and dimming" />
-      </div>
-
-      <div class="right-panel">
-        <div class="background-text">DIMMING</div>
-        <h1 id="f5-title">Tuning &amp; Dimming</h1>
-        <p>Adaptive lighting control with fine dimming and color tuning — improves visibility while reducing glare and energy consumption.</p>
-        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
-
-        <div class="scroll-indicator">
-          <div class="numbers"><span class="current">05</span><span>/ 05</span></div>
-          <div class="line"></div>
-          <a class="arrow" href="#" data-next="6" title="Next feature">→</a>
-        </div>
-
-        <div class="socials">
-          <a href="#">FB</a>
-          <a href="#">IG</a>
+    <!-- Row 2 (you can copy similar structure for other products) -->
+    <div class="row">
+           <div class="box">
+        <img src="icon1.png" class="icon" alt="Light Icon" />
+        <div class="overlay">
+          <h2>COB LIGHT</h2>
+          <div class="product-gallery">
+            <div class="product-item">
+              <img src="cob1.png" alt="COB GENERAL LIGHTS" />
+              <p>COB GENERAL LIGHTS</p>
+            </div>
+            <div class="product-item">
+              <img src="cob2.png" alt="COB WALL WASHER" />
+              <p>COB WALL WASHER</p>
+            </div>
+            <div class="product-item">
+              <img src="cob3.png" alt="COB WATER RESISTANT" />
+              <p>COB WATER RESISTANT LIGHTS</p>
+            </div>
+            <div class="product-item">
+              <img src="cob4.png" alt="LASER LIGHTS" />
+              <p>LASER LIGHTS</p>
+            </div>
+            <div class="product-item">
+              <img src="cob5.png" alt="SPOT LIGHTS" />
+              <p>SPOT LIGHTS</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-
-    <!-- ===== Feature 6 ===== -->
-  <section id="feature6" class="feature-section" data-index="6" aria-labelledby="f6-title">
-    <div class="layout-card" role="region" aria-label="Feature 6 — Tuning & Dimming">
-      <div class="marble-bg" style="background-image: url('https://images.unsplash.com/photo-1505691723518-36a70aaf5b2a?auto=format&fit=crop&w=1400&q=80');"></div>
-
-      <div class="left-panel">
-        <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80" alt="Tuning and dimming" />
-      </div>
-
-      <div class="right-panel">
-        <div class="background-text">DIMMING</div>
-        <h1 id="f6-title">Tuning &amp; Dimming</h1>
-        <p>Adaptive lighting control with fine dimming and color tuning — improves visibility while reducing glare and energy consumption.</p>
-        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
-
-        <div class="scroll-indicator">
-          <div class="numbers"><span class="current">06</span><span>/ 16</span></div>
-          <div class="line"></div>
-          <a class="arrow" href="#" data-next="7" title="Next feature">→</a>
-        </div>
-
-        <div class="socials">
-          <a href="#">FB</a>
-          <a href="#">IG</a>
+      <div class="box">
+        <img src="icon2.png" class="icon" alt="Light Icon" />
+        <div class="overlay">
+          <h2>LED LIGHT</h2>
+          <div class="product-gallery">
+            <div class="product-item">
+              <img src="led1.png" alt="PANEL LIGHTS" />
+              <p>PANEL LIGHTS</p>
+            </div>
+            <div class="product-item">
+              <img src="led2.png" alt="SURFACE LIGHTS" />
+              <p>SURFACE LIGHTS</p>
+            </div>
+            <div class="product-item">
+              <img src="led3.png" alt="DOWNLIGHTS" />
+              <p>DOWNLIGHTS</p>
+            </div>
+            <div class="product-item">
+              <img src="led4.png" alt="SPOTLIGHTS" />
+              <p>SPOTLIGHTS</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-
-    <!-- ===== Feature 7 ===== -->
-  <section id="feature7" class="feature-section" data-index="7" aria-labelledby="f7-title">
-    <div class="layout-card" role="region" aria-label="Feature 7 — Tuning & Dimming">
-      <div class="marble-bg" style="background-image: url('https://images.unsplash.com/photo-1505691723518-36a70aaf5b2a?auto=format&fit=crop&w=1400&q=80');"></div>
-
-      <div class="left-panel">
-        <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80" alt="Tuning and dimming" />
-      </div>
-
-      <div class="right-panel">
-        <div class="background-text">DIMMING</div>
-        <h1 id="f7-title">Tuning &amp; Dimming</h1>
-        <p>Adaptive lighting control with fine dimming and color tuning — improves visibility while reducing glare and energy consumption.</p>
-        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
-
-        <div class="scroll-indicator">
-          <div class="numbers"><span class="current">07</span><span>/ 16</span></div>
-          <div class="line"></div>
-          <a class="arrow" href="#" data-next="8" title="Next feature">→</a>
-        </div>
-
-        <div class="socials">
-          <a href="#">FB</a>
-          <a href="#">IG</a>
+      <div class="box">
+        <img src="icon3.png" class="icon" alt="Track Light" />
+        <div class="overlay">
+          <h2>TRACK LIGHT</h2>
+          <div class="product-gallery">
+            <div class="product-item">
+              <img src="track1.png" alt="LINEAR TRACK" />
+              <p>LINEAR TRACK</p>
+            </div>
+            <div class="product-item">
+              <img src="track2.png" alt="SPOT TRACK" />
+              <p>SPOT TRACK</p>
+            </div>
+            <div class="product-item">
+              <img src="track3.png" alt="ADJUSTABLE" />
+              <p>ADJUSTABLE</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-
-    <!-- ===== Feature 8 ===== -->
-  <section id="feature8" class="feature-section" data-index="8" aria-labelledby="f8-title">
-    <div class="layout-card" role="region" aria-label="Feature 8 — Tuning & Dimming">
-      <div class="marble-bg" style="background-image: url('https://images.unsplash.com/photo-1505691723518-36a70aaf5b2a?auto=format&fit=crop&w=1400&q=80');"></div>
-
-      <div class="left-panel">
-        <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80" alt="Tuning and dimming" />
+      <div class="box">
+        <img src="icon4.png" class="icon" alt="Magnetic Light" />
+        <div class="overlay">
+          <h2>MAGNETIC LIGHT</h2>
+          <div class="product-gallery">
+            <div class="product-item">
+              <img src="mag1.png" alt="LINEAR" />
+              <p>LINEAR MODULE</p>
+            </div>
+            <div class="product-item">
+              <img src="mag2.png" alt="SPOT" />
+              <p>SPOT MODULE</p>
+            </div>
+            <div class="product-item">
+              <img src="mag3.png" alt="WASHER" />
+              <p>WALL WASHER</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="right-panel">
-        <div class="background-text">DIMMING</div>
-        <h1 id="f8-title">Tuning &amp; Dimming</h1>
-        <p>Adaptive lighting control with fine dimming and color tuning — improves visibility while reducing glare and energy consumption.</p>
-        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
-
-        <div class="scroll-indicator">
-          <div class="numbers"><span class="current">08</span><span>/ 16</span></div>
-          <div class="line"></div>
-          <a class="arrow" href="#" data-next="9" title="Next feature">→</a>
-        </div>
-
-        <div class="socials">
-          <a href="#">FB</a>
-          <a href="#">IG</a>
+      <div class="box">
+        <img src="icon5.png" class="icon" alt="Profile Light" />
+        <div class="overlay">
+          <h2>PROFILE LIGHT</h2>
+          <div class="product-gallery">
+            <div class="product-item">
+              <img src="pro1.png" alt="SURFACE PROFILE" />
+              <p>SURFACE PROFILE</p>
+            </div>
+            <div class="product-item">
+              <img src="pro2.png" alt="SUSPENDED PROFILE" />
+              <p>SUSPENDED PROFILE</p>
+            </div>
+            <div class="product-item">
+              <img src="pro3.png" alt="RECESSED PROFILE" />
+              <p>RECESSED PROFILE</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
-
-
-    <!-- ===== Feature 9 ===== -->
-  <section id="feature9" class="feature-section" data-index="9" aria-labelledby="f9-title">
-    <div class="layout-card" role="region" aria-label="Feature 9 — Tuning & Dimming">
-      <div class="marble-bg" style="background-image: url('https://images.unsplash.com/photo-1505691723518-36a70aaf5b2a?auto=format&fit=crop&w=1400&q=80');"></div>
-
-      <div class="left-panel">
-        <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80" alt="Tuning and dimming" />
-      </div>
-
-      <div class="right-panel">
-        <div class="background-text">DIMMING</div>
-        <h1 id="f9-title">Tuning &amp; Dimming</h1>
-        <p>Adaptive lighting control with fine dimming and color tuning — improves visibility while reducing glare and energy consumption.</p>
-        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
-
-        <div class="scroll-indicator">
-          <div class="numbers"><span class="current">09</span><span>/ 16</span></div>
-          <div class="line"></div>
-          <a class="arrow" href="#" data-next="10" title="Next feature">→</a>
-        </div>
-
-        <div class="socials">
-          <a href="#">FB</a>
-          <a href="#">IG</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-    <!-- ===== Feature 10 ===== -->
-  <section id="feature10" class="feature-section" data-index="10" aria-labelledby="f10-title">
-    <div class="layout-card" role="region" aria-label="Feature 10 — Tuning & Dimming">
-      <div class="marble-bg" style="background-image: url('https://images.unsplash.com/photo-1505691723518-36a70aaf5b2a?auto=format&fit=crop&w=1400&q=80');"></div>
-
-      <div class="left-panel">
-        <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80" alt="Tuning and dimming" />
-      </div>
-
-      <div class="right-panel">
-        <div class="background-text">DIMMING</div>
-        <h1 id="f10-title">Tuning &amp; Dimming</h1>
-        <p>Adaptive lighting control with fine dimming and color tuning — improves visibility while reducing glare and energy consumption.</p>
-        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
-
-        <div class="scroll-indicator">
-          <div class="numbers"><span class="current">10</span><span>/ 16</span></div>
-          <div class="line"></div>
-          <a class="arrow" href="#" data-next="11" title="Next feature">→</a>
-        </div>
-
-        <div class="socials">
-          <a href="#">FB</a>
-          <a href="#">IG</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-    <!-- ===== Feature 11 ===== -->
-  <section id="feature11" class="feature-section" data-index="11" aria-labelledby="f11-title">
-    <div class="layout-card" role="region" aria-label="Feature 11 — Tuning & Dimming">
-      <div class="marble-bg" style="background-image: url('https://images.unsplash.com/photo-1505691723518-36a70aaf5b2a?auto=format&fit=crop&w=1400&q=80');"></div>
-
-      <div class="left-panel">
-        <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80" alt="Tuning and dimming" />
-      </div>
-
-      <div class="right-panel">
-        <div class="background-text">DIMMING</div>
-        <h1 id="f11-title">Tuning &amp; Dimming</h1>
-        <p>Adaptive lighting control with fine dimming and color tuning — improves visibility while reducing glare and energy consumption.</p>
-        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
-
-        <div class="scroll-indicator">
-          <div class="numbers"><span class="current">11</span><span>/ 16</span></div>
-          <div class="line"></div>
-          <a class="arrow" href="#" data-next="12" title="Next feature">→</a>
-        </div>
-
-        <div class="socials">
-          <a href="#">FB</a>
-          <a href="#">IG</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-    <!-- ===== Feature 12 ===== -->
-  <section id="feature12" class="feature-section" data-index="12" aria-labelledby="f12-title">
-    <div class="layout-card" role="region" aria-label="Feature 12 — Tuning & Dimming">
-      <div class="marble-bg" style="background-image: url('https://images.unsplash.com/photo-1505691723518-36a70aaf5b2a?auto=format&fit=crop&w=1400&q=80');"></div>
-
-      <div class="left-panel">
-        <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80" alt="Tuning and dimming" />
-      </div>
-
-      <div class="right-panel">
-        <div class="background-text">DIMMING</div>
-        <h1 id="f12-title">Tuning &amp; Dimming</h1>
-        <p>Adaptive lighting control with fine dimming and color tuning — improves visibility while reducing glare and energy consumption.</p>
-        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
-
-        <div class="scroll-indicator">
-          <div class="numbers"><span class="current">12</span><span>/ 16</span></div>
-          <div class="line"></div>
-          <a class="arrow" href="#" data-next="13" title="Next feature">→</a>
-        </div>
-
-        <div class="socials">
-          <a href="#">FB</a>
-          <a href="#">IG</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <!-- ===== Feature 13 ===== -->
-  <section id="feature13" class="feature-section" data-index="13" aria-labelledby="f13-title">
-    <div class="layout-card" role="region" aria-label="Feature 13 — Tuning & Dimming">
-      <div class="marble-bg" style="background-image: url('https://images.unsplash.com/photo-1505691723518-36a70aaf5b2a?auto=format&fit=crop&w=1400&q=80');"></div>
-
-      <div class="left-panel">
-        <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80" alt="Tuning and dimming" />
-      </div>
-
-      <div class="right-panel">
-        <div class="background-text">DIMMING</div>
-        <h1 id="f13-title">Tuning &amp; Dimming</h1>
-        <p>Adaptive lighting control with fine dimming and color tuning — improves visibility while reducing glare and energy consumption.</p>
-        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
-
-        <div class="scroll-indicator">
-          <div class="numbers"><span class="current">13</span><span>/ 16</span></div>
-          <div class="line"></div>
-          <a class="arrow" href="#" data-next="14" title="Next feature">→</a>
-        </div>
-
-        <div class="socials">
-          <a href="#">FB</a>
-          <a href="#">IG</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-    <!-- ===== Feature 14 ===== -->
-  <section id="feature14" class="feature-section" data-index="14" aria-labelledby="f14-title">
-    <div class="layout-card" role="region" aria-label="Feature 14 — Tuning & Dimming">
-      <div class="marble-bg" style="background-image: url('https://images.unsplash.com/photo-1505691723518-36a70aaf5b2a?auto=format&fit=crop&w=1400&q=80');"></div>
-
-      <div class="left-panel">
-        <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80" alt="Tuning and dimming" />
-      </div>
-
-      <div class="right-panel">
-        <div class="background-text">DIMMING</div>
-        <h1 id="f5-title">Tuning &amp; Dimming</h1>
-        <p>Adaptive lighting control with fine dimming and color tuning — improves visibility while reducing glare and energy consumption.</p>
-        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
-
-        <div class="scroll-indicator">
-          <div class="numbers"><span class="current">14</span><span>/ 16</span></div>
-          <div class="line"></div>
-          <a class="arrow" href="#" data-next="15" title="Next feature">→</a>
-        </div>
-
-        <div class="socials">
-          <a href="#">FB</a>
-          <a href="#">IG</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <!-- ===== Feature 15 ===== -->
-  <section id="feature15" class="feature-section" data-index="15" aria-labelledby="f15-title">
-    <div class="layout-card" role="region" aria-label="Feature 15 — Tuning & Dimming">
-      <div class="marble-bg" style="background-image: url('https://images.unsplash.com/photo-1505691723518-36a70aaf5b2a?auto=format&fit=crop&w=1400&q=80');"></div>
-
-      <div class="left-panel">
-        <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80" alt="Tuning and dimming" />
-      </div>
-
-      <div class="right-panel">
-        <div class="background-text">DIMMING</div>
-        <h1 id="f15-title">Tuning &amp; Dimming</h1>
-        <p>Adaptive lighting control with fine dimming and color tuning — improves visibility while reducing glare and energy consumption.</p>
-        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
-
-        <div class="scroll-indicator">
-          <div class="numbers"><span class="current">15</span><span>/ 16</span></div>
-          <div class="line"></div>
-          <a class="arrow" href="#" data-next="16" title="Next feature">→</a>
-        </div>
-
-        <div class="socials">
-          <a href="#">FB</a>
-          <a href="#">IG</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <!-- ===== Feature 16 ===== -->
-  <section id="feature16" class="feature-section" data-index="16" aria-labelledby="f16-title">
-    <div class="layout-card" role="region" aria-label="Feature 16 — Tuning & Dimming">
-      <div class="marble-bg" style="background-image: url('https://images.unsplash.com/photo-1505691723518-36a70aaf5b2a?auto=format&fit=crop&w=1400&q=80');"></div>
-
-      <div class="left-panel">
-        <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80" alt="Tuning and dimming" />
-      </div>
-
-      <div class="right-panel">
-        <div class="background-text">DIMMING</div>
-        <h1 id="f16-title">Tuning &amp; Dimming</h1>
-        <p>Adaptive lighting control with fine dimming and color tuning — improves visibility while reducing glare and energy consumption.</p>
-        <button class="btn btn-outline-light" onclick="location.href='#contact'">Learn More</button>
-
-        <div class="scroll-indicator">
-          <div class="numbers"><span class="current">16</span><span>/ 16</span></div>
-          <div class="line"></div>
-          <a class="arrow" href="#" data-next="1" title="Back to first feature">→</a>
-        </div>
-
-        <div class="socials">
-          <a href="#">FB</a>
-          <a href="#">IG</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Optional contact anchor -->
-  <div id="contact" style="height:1px;visibility:hidden;"></div>
-
-  <script>
-    // Minimal JS to update current index and enable next-arrow jumps.
-    (function () {
-      const sections = Array.from(document.querySelectorAll('.feature-section'));
-      const total = sections.length;
-      const quickNavLinks = document.querySelectorAll('.feature-quick-nav a');
-      const arrowButtons = document.querySelectorAll('.scroll-indicator .arrow');
-
-      // Helper: set active quick-nav link
-      function setActiveNav(index) {
-        quickNavLinks.forEach(a => a.classList.toggle('active', Number(a.dataset.index) === index));
-      }
-
-      // Helper: update numbers in visible section(s)
-      function updateSectionNumbers(index) {
-        const sec = document.querySelector(`.feature-section[data-index="${index}"]`);
-        if (!sec) return;
-        const currentSpan = sec.querySelector('.numbers .current');
-        if (currentSpan) currentSpan.textContent = String(index).padStart(2, '0');
-      }
-
-      // Arrow click -> jump to next (immediate)
-      arrowButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          const nextIndex = Number(btn.dataset.next);
-          const target = document.querySelector(`#feature${nextIndex}`);
-          if (target) {
-            // jump instantly (no smooth)
-            target.scrollIntoView({ block: 'start', behavior: 'auto' });
-            // update UI
-            setActiveNav(nextIndex);
-            updateSectionNumbers(nextIndex);
-          }
-        });
-      });
-
-      // Quick nav click: also jump and highlight
-      quickNavLinks.forEach(link => {
-        link.addEventListener('click', (ev) => {
-          // allow default anchor to jump; still update highlighting
-          const idx = Number(link.dataset.index);
-          setTimeout(() => {
-            setActiveNav(idx);
-            updateSectionNumbers(idx);
-          }, 10);
-        });
-      });
-
-      // Use IntersectionObserver to detect which section is in view and update numbers & quick nav
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const idx = Number(entry.target.dataset.index);
-            setActiveNav(idx);
-            updateSectionNumbers(idx);
-          }
-        });
-      }, { root: null, threshold: 0.6 });
-
-      sections.forEach(s => observer.observe(s));
-
-      // initialize numbers for all sections to their index (so indicators show correct on load)
-      sections.forEach(s => {
-        const idx = Number(s.dataset.index);
-        const currentSpan = s.querySelector('.numbers .current');
-        if (currentSpan) currentSpan.textContent = String(idx).padStart(2, '0');
-      });
-
-      // set first quick nav active initially
-      setActiveNav(1);
-    })();
-  </script>
+  </div>
 </body>
 </html>
