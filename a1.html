@@ -1,272 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Voltage to Lighting Type Visual</title>
-<style>
-  * {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neue White Layout</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #333;
+      overflow: hidden;
+      background-color: #fff;
+    }
+
+    /* ===== LAYOUT CONTAINER ===== */
+    .layout {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+
+    /* ===== LEFT PANEL ===== */
+ .left-panel {
+  flex: 1;
+  max-width: 30%; /* keeps left compact */
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 100px;
+  position: relative;
+  z-index: 10;
+}
+
+    .content-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .content-text p {
+      font-size:18px;
+      line-height: 3;
+      text-transform: lowercase;
+      letter-spacing: 1px;
+      margin: 0.5rem 0;
+      transition: color 0.3s, transform 0.3s;
+      cursor: pointer;
+        text-transform: uppercase;
+    }
+
+    .content-text p:hover {
+      transform: translateX(8px);
+      color: #9a623a;
+    }
+
+    .content-text .highlight {
+      color: #9a623a;
+      font-weight: bold;
+    }
+
+    /* ===== RIGHT PANEL (IMAGE AREA) ===== */
+.right-panel {
+  position: relative;
+  width: 70%; /* wider image area */
+  height: 100vh;
+  overflow: hidden;
+}
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;        /* fills entire panel */
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+.background.hidden {
+  opacity: 0;
+}
+
+
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 80px;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(4px);
+      border-right: 1px solid rgba(230, 230, 230, 0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 0;
+      z-index: 20;
+  
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+
+    .nav-dots {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+      gap: 10px;
+    }
+
+    .nav-dots .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #bbb;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .nav-dots .dot.active {
+      background: #333;
+      transform: scale(1.3);
+    }
+
+    .about-link {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 0.8rem;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+ @media (max-width: 992px) {
+
+  html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
   }
 
-  body {
-    height: 100vh;
-    background: linear-gradient(to right, #0d0d0d, #3f3f3f);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  /* === MAIN LAYOUT === */
+  .layout {
+    flex-direction: column-reverse; /* Image first, then text */
+    width: 100%;
+    height: auto;
+  }
+
+  /* === IMAGE PANEL (TOP, 50% HEIGHT) === */
+  .right-panel {
+    order: -1;
+    width: 100%;
+    height: 40vh; /* Half of screen height */
+    position: relative;
     overflow: hidden;
   }
 
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 200px;
-    transition: all 0.4s ease;
-  }
-
-  /* Voltage bar */
-  .voltage-bar {
-    position: relative;
-    width: 6px;
-    height: 520px;
-    background: #333;
-    border-radius: 10px;
-    flex-shrink: 0;
-  }
-
-  .voltage-fill {
+  .background {
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 0%;
-    background: linear-gradient(180deg, #9b9b9b, #c4c8cc);
-    border-radius: 10px;
-    transition: height 0.3s ease;
-  }
-
-  /* Knob */
-  .knob {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    width: 30px;
-    height: 30px;
-    background: #fff;
-    border: 3px solid #7a7e7e;
-    border-radius: 50%;
-    cursor: grab;
-    transition: box-shadow 0.2s ease;
-    z-index: 5;
-  }
-
-  .knob:active {
-    cursor: grabbing;
-    box-shadow: 0 0 15px #babcbc;
-  }
-
-  /* Voltage labels */
-  .labels {
-    position: absolute;
-    left: -80px;
     top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
+    object-fit: cover;              /* ensures full coverage */
+    background-size: cover;         /* fills full width and height */
+    background-position: center;    /* perfectly centered */
+    background-repeat: no-repeat;
+    transition: opacity 1s ease-in-out;
+  }
+
+  /* === TEXT STRIP BELOW IMAGE === */
+  .left-panel {
+    width: 100%;
+    max-width: 100%;
+    background-color: #fff;
+    padding: 1rem 0;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-size: 14px;
-    color: #fff;
-    text-align: right;
+    justify-content: center;
+    align-items: center;
   }
 
-  /* Category name beside line */
-  .category {
-    position: absolute;
-    left: 40px;
-    font-weight: 600;
-    color: #fff;
-    font-size: 14px;
-    transition: opacity 0.3s ease;
+  .content-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    width: 100%;
+    padding: 0 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
     white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
-  /* Right side image box */
-  .image-box {
-    width: 750px;
-    height: 500px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    transition: background-image 0.4s ease-in-out;
+  .content-text::-webkit-scrollbar {
+    display: none;
   }
 
-  /* ----------- MOBILE VIEW ----------- */
-  @media (max-width: 768px) {
-    body {
-      height: auto;
-      flex-direction: column;
-      justify-content: flex-start;
-      padding: 20px 10px;
-    }
-
-    .container {
-      flex-direction: column;
-      gap: 60px;
-      width: 100%;
-      align-items: center;
-    }
-
-    /* horizontal voltage bar */
-    .voltage-bar {
-      width: 80%;
-      height: 8px;
-      background: #333;
-      border-radius: 10px;
-      position: relative;
-    }
-
-    .voltage-fill {
-      width: 0%;
-      height: 100%;
-      background: linear-gradient(to right, #9b9b9b, #c4c8cc);
-      transition: width 0.3s ease;
-    }
-
-    /* labels horizontal */
-    .labels {
-      position: absolute;
-      top: -25px;
-      left: 0;
-      width: 100%;
-      flex-direction: row;
-      justify-content: space-between;
-      color: #fff;
-      font-size: 10px;
-      text-align: center;
-    }
-
-    .knob {
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 26px;
-      height: 26px;
-    }
-
-    .category {
-      top: -45px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 13px;
-      text-align: center;
-    }
-
-    .image-box {
-      width: 95%;
-      height: 220px;
-      border-radius: 8px;
-    }
+  .content-text p {
+    flex: 0 0 auto;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    color: #333;
+    cursor: pointer;
+    scroll-snap-align: center;
+    transition: transform 0.3s, color 0.3s;
   }
-</style>
+
+  .content-text p:hover,
+  .content-text .highlight {
+    color: #9a623a;
+    transform: scale(1.1);
+  }
+
+  /* === HIDE SIDEBAR ON MOBILE === */
+  .sidebar {
+    display: none;
+  }
+}
+
+  </style>
 </head>
-<body>
 
-<div class="container">
-  <!-- Voltage bar -->
-  <div class="voltage-bar" id="bar">
-    <div class="voltage-fill" id="fill"></div>
-    <div class="labels">
-      <span>690V</span>
-      <span>550V</span>
-      <span>415V</span>
-      <span>280V</span>
-      <span>210V</span>
-      <span>160V</span>
-      <span>110V</span>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">A R C</div>
+
+    <div class="nav-dots" id="navDots">
+      <div class="dot active" data-index="0"></div>
+      <div class="dot" data-index="1"></div>
+      <div class="dot" data-index="2"></div>
+      <div class="dot" data-index="3"></div>
+      <div class="dot" data-index="4"></div>
+      <div class="dot" data-index="5"></div>
+      <div class="dot" data-index="6"></div>
+      <div class="dot" data-index="7"></div>
     </div>
-    <div class="knob" id="knob"></div>
-    <div class="category" id="categoryLabel">Residential</div>
+
+    <div class="about-link">WE ARE</div>
   </div>
 
-  <!-- Image box -->
-  <div class="image-box" id="imageBox" style="background-image: url('img/lighting/lightingsectwo/0.png');"></div>
-</div>
+  <!-- Main Layout -->
+  <div class="layout">
+    <!-- LEFT -->
+    <div class="left-panel">
+      <div class="content-text">
+         <p data-bg="../img/lighting/lightingsecthree/5.png">Illuminate</p>
+        <p data-bg="../img/lighting/lightingsecthree/6.png">Radiate</p>
+        <p data-bg="../img/lighting/lightingsecthree/7.png">Luminate</p>
+       
+        <p class="highlight" data-bg="../img/lighting/lightingsecthree/1.png">Glow</p>
+        <p data-bg="../img/lighting/lightingsecthree/2.png">Dazzle</p>
+        <p data-bg="../img/lighting/lightingsecthree/3.png">Luminate</p>
+        <p data-bg="../img/lighting/lightingsecthree/4.png">Gleam</p>
+       
+      </div>
+    </div>
 
-<script>
-  const knob = document.getElementById("knob");
-  const bar = document.getElementById("bar");
-  const fill = document.getElementById("fill");
-  const imageBox = document.getElementById("imageBox");
-  const categoryLabel = document.getElementById("categoryLabel");
+    <!-- RIGHT -->
+    <div class="right-panel">
+      <div class="background" id="bg1" style="background-image: url('../img/lighting/lightingsecthree/1.png');"></div>
+      <div class="background hidden" id="bg2"></div>
+    </div>
+  </div>
 
-  const ranges = [
-    { min: 110, max: 160, name: "Residential", image: "img/lighting/lightingsectwo/0.png" },
-    { min: 161, max: 210, name: "Hospitality", image: "img/lighting/lightingsectwo/1.png" },
-    { min: 211, max: 280, name: "Facade", image: "img/lighting/lightingsectwo/2.png" },
-    { min: 281, max: 415, name: "Commercial", image: "img/lighting/lightingsectwo/3.png" },
-    { min: 416, max: 550, name: "Outdoor", image: "img/lighting/lightingsectwo/5.png" },
-    { min: 551, max: 690, name: "Industrial", image: "img/lighting/lightingsectwo/1.png" }
-  ];
+  <script>
+    const items = document.querySelectorAll('.content-text p');
+    const dots = document.querySelectorAll('.nav-dots .dot');
+    const bg1 = document.getElementById('bg1');
+    const bg2 = document.getElementById('bg2');
+    let showingBg1 = true;
+    let currentIndex = 0;
+    let autoChange;
 
-  let isDragging = false;
-  const minVolt = 110;
-  const maxVolt = 690;
+    function changeBackground(index) {
+      const p = items[index];
+      const newBg = p.getAttribute('data-bg');
+      const activeBg = showingBg1 ? bg1 : bg2;
+      const hiddenBg = showingBg1 ? bg2 : bg1;
 
-  knob.style.bottom = "0px";
-  updateDisplay(minVolt);
+      items.forEach(el => el.classList.remove('highlight'));
+      dots.forEach(el => el.classList.remove('active'));
 
-  knob.addEventListener("mousedown", () => isDragging = true);
-  document.addEventListener("mouseup", () => isDragging = false);
+      p.classList.add('highlight');
+      dots[index].classList.add('active');
 
-  document.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
-    handleDrag(e.clientX, e.clientY);
-  });
-
-  knob.addEventListener("touchstart", () => isDragging = true);
-  document.addEventListener("touchend", () => isDragging = false);
-  document.addEventListener("touchmove", (e) => {
-    if (!isDragging) return;
-    const touch = e.touches[0];
-    handleDrag(touch.clientX, touch.clientY);
-  });
-
-  function handleDrag(clientX, clientY) {
-    const rect = bar.getBoundingClientRect();
-
-    // Desktop vertical
-    if (window.innerWidth > 768) {
-      const y = Math.min(Math.max(clientY - rect.top, 0), rect.height);
-      const percent = 1 - y / rect.height;
-      const voltage = Math.round(minVolt + percent * (maxVolt - minVolt));
-
-      knob.style.bottom = `${rect.height - y - 14}px`;
-      fill.style.height = `${percent * 100}%`;
-      updateDisplay(voltage);
-    } 
-    // Mobile horizontal
-    else {
-      const x = Math.min(Math.max(clientX - rect.left, 0), rect.width);
-      const percent = x / rect.width;
-      const voltage = Math.round(minVolt + percent * (maxVolt - minVolt));
-
-      knob.style.left = `${percent * 100}%`;
-      fill.style.width = `${percent * 100}%`;
-      updateDisplay(voltage);
+      const img = new Image();
+      img.src = newBg;
+      img.onload = () => {
+        hiddenBg.style.backgroundImage = `url('${newBg}')`;
+        hiddenBg.classList.remove('hidden');
+        activeBg.classList.add('hidden');
+        showingBg1 = !showingBg1;
+      };
     }
-  }
 
-  function updateDisplay(voltage) {
-    const range = ranges.find(r => voltage >= r.min && voltage <= r.max);
-    if (range) {
-      categoryLabel.textContent = `${voltage}V — ${range.name}`;
-      imageBox.style.backgroundImage = `url('${range.image}')`;
+    function handleClick(i) {
+      currentIndex = i;
+      changeBackground(currentIndex);
+      resetAutoChange();
     }
-  }
-</script>
 
+    items.forEach((p, i) => p.addEventListener('click', () => handleClick(i)));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => handleClick(i)));
+
+    function startAutoChange() {
+      autoChange = setInterval(() => {
+        currentIndex = (currentIndex + 1) % items.length;
+        changeBackground(currentIndex);
+      }, 3000);
+    }
+
+    function resetAutoChange() {
+      clearInterval(autoChange);
+      startAutoChange();
+    }
+
+    startAutoChange();
+  </script>
 </body>
 </html>
