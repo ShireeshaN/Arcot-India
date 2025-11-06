@@ -1413,10 +1413,11 @@ goNext();
     }
 
     .lightsegproducts-box img.lightsegproducts-icon {
-      width: 70px;
+      width: 200px;
       height: auto;
-      filter: brightness(0) invert(1);
+      /* filter: brightness(0) invert(1); */
       transition: all 0.4s ease;
+   
     }
 
     /* Hover expand behavior */
@@ -1431,27 +1432,37 @@ goNext();
       background-color: #fff;
     }
 
-    .lightsegproducts-row .lightsegproducts-box:hover img.lightsegproducts-icon {
-      opacity: 0.1;
-      transform: scale(1.2);
-    }
+   /* Remove transparency on hover — hide the icon completely */
+.lightsegproducts-row .lightsegproducts-box:hover img.lightsegproducts-icon {
+  opacity: 0;
+  transform: scale(1.2);
+}
 
-    /* Overlay container (for heading + images + labels) */
-    .lightsegproducts-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      opacity: 0;
-      transition: all 0.5s ease;
-      padding-top: 40px;
-    }
+/* Keep background solid white when hovered */
+.lightsegproducts-row .lightsegproducts-box:hover {
+  flex: 3;
+  opacity: 1;
+  background-color: #ffffff;
+}
 
-    .lightsegproducts-box:hover .lightsegproducts-overlay {
-      opacity: 1;
-    }
+
+/* Optional: overlay looks smoother & clean */
+.lightsegproducts-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.5s ease;
+  padding-top: 40px;
+  background-color: rgba(255, 255, 255, 0.95); /* <— soft white overlay layer */
+}
+
+.lightsegproducts-box:hover .lightsegproducts-overlay {
+  opacity: 1;
+}
 
     .lightsegproducts-overlay h2 {
       font-size: 1.8rem;
@@ -1533,8 +1544,9 @@ goNext();
         font-size: 1.2rem;
       }
       .lightsegproducts-item img {
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
+       
       }
     }
   </style>
@@ -1546,53 +1558,47 @@ goNext();
     <!-- Row 1 -->
     <div class="lightsegproducts-row">
       <div class="lightsegproducts-box">
-        <img src="img/10.png" class="lightsegproducts-icon" alt="Light Icon" />
+        <img src="img/productsimgs/1.png" class="lightsegproducts-icon" alt="Light Icon" />
         <div class="lightsegproducts-overlay">
           <h2>COB LIGHTS</h2>
           <div class="lightsegproducts-gallery">
             <div class="lightsegproducts-item">
-              <img src="img/16.png" alt="COB GENERAL LIGHTS" />
+              <img src="img/productsimgs/1.png" alt="COB GENERAL LIGHTS" />
               <p>COB GENERAL LIGHTS</p>
             </div>
             <div class="lightsegproducts-item">
-              <img src="img/16.png" alt="COB WALL WASHER" />
+              <img src="img/productsimgs/2.png" alt="COB WALL WASHER" />
               <p>COB WALL WASHER</p>
             </div>
             <div class="lightsegproducts-item">
-              <img src="img/16.png" alt="COB WATER RESISTANT" />
+              <img src="img/productsimgs/3.png" alt="COB WATER RESISTANT" />
               <p>COB WATER RESISTANT LIGHTS</p>
             </div>
-            <!-- <div class="lightsegproducts-item">
-              <img src="img/16.png" alt="LASER LIGHTS" />
-              <p>LASER LIGHTS</p>
-            </div> -->
-            <!-- <div class="lightsegproducts-item">
-              <img src="img/16.png" alt="SPOT LIGHTS" />
-              <p>SPOT LIGHTS</p>
-            </div> -->
+            
+        
           </div>
         </div>
       </div>
 
       <div class="lightsegproducts-box">
-        <img src="icon2.png" class="lightsegproducts-icon" alt="Light Icon" />
+        <img src="img/productsimgs/4.png" class="lightsegproducts-icon" alt="Light Icon" />
         <div class="lightsegproducts-overlay">
           <h2>LASER BLADES</h2>
           <div class="lightsegproducts-gallery">
             <div class="lightsegproducts-item">
-              <img src="led1.png" alt="PANEL LIGHTS" />
+              <img src="img/productsimgs/4.png" alt="PANEL LIGHTS" />
               <p>PANEL LIGHTS</p>
             </div>
             <div class="lightsegproducts-item">
-              <img src="led2.png" alt="SURFACE LIGHTS" />
+              <img src="img/productsimgs/4.png" alt="SURFACE LIGHTS" />
               <p>SURFACE LIGHTS</p>
             </div>
             <div class="lightsegproducts-item">
-              <img src="led3.png" alt="DOWNLIGHTS" />
+              <img src="img/productsimgs/5.png" alt="DOWNLIGHTS" />
               <p>DOWNLIGHTS</p>
             </div>
             <div class="lightsegproducts-item">
-              <img src="led4.png" alt="SPOTLIGHTS" />
+              <img src="img/productsimgs/4.png" alt="SPOTLIGHTS" />
               <p>SPOTLIGHTS</p>
             </div>
           </div>
