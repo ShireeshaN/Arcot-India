@@ -1515,6 +1515,7 @@ startLightingAuto();
         <img src="img/randd/smarttable.png" data-main="img/randd/smarttable.png" alt="Smart Conference Table" />
         <img src="img/randd/Bar-counter-1.jpg" data-main="img/randd/Bar-counter-5.jpg" alt="Smart Bar Counter" />
         <img src="img/comingsoon-2.jpg" data-main="img/comingsoon-2.jpg" alt="Smart Window Leaf AC" />
+        
       </div>
     </div>
   </div>
@@ -1553,7 +1554,7 @@ startLightingAuto();
     align-items: center;
     justify-content: center;
     background: #fff;
-    padding: 4rem 3rem;
+    padding: 4rem 7rem;
   }
 
   .rd-content {
@@ -1562,6 +1563,7 @@ startLightingAuto();
     align-items: center;
     width: 100%;
     max-width: 600px;
+    
   }
 
   .rd-text-content { flex: 1; padding-right: 2rem; }
@@ -1786,10 +1788,9 @@ startLightingAuto();
 })();
 </script>
 
+<!-- ===== ARCOT R&D SECTION  end (Stable Image Version) ===== -->
 
-
-
-<!-- 🌐 APPLICATIONS SECTION -->
+<!-- 🌐 APPLICATIONS SECTION start -->
 <section class="applications-section">
   <!-- Heading -->
   <div class="applications-head" data-aos="fade-up">
@@ -2031,9 +2032,978 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 }
 </style>
+<!-- 🌐 APPLICATIONS SECTION end -->
 
 
 
+<!-- Lightseg Products Section start -->
+<div class="lightsegproducts-wrapper">
+  <style>
+    .lightsegproducts-wrapper {
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 60px 0;
+    }
+
+    .lightsegproducts-grid {
+      display: grid;
+      grid-template-rows: repeat(2, 350px);
+      width: 100%;
+      max-width: 1800px;
+    }
+
+    .lightsegproducts-row {
+      display: flex;
+      border-top: 2px solid #fff;
+      border-left: 2px solid #fff;
+    }
+
+    .lightsegproducts-box {
+      flex: 1;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      background-color: #bdbbbb;
+      position: relative;
+      overflow: hidden;
+      transition: flex 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .lightsegproducts-box img.lightsegproducts-icon {
+      width: 70px;
+      height: auto;
+      filter: brightness(0) invert(1);
+      transition: all 0.4s ease;
+    }
+
+    /* Hover expand behavior */
+    .lightsegproducts-row:hover .lightsegproducts-box {
+      flex: 0.8;
+      opacity: 0.5;
+    }
+
+    .lightsegproducts-row .lightsegproducts-box:hover {
+      flex: 3;
+      opacity: 1;
+      background-color: #fff;
+    }
+
+    .lightsegproducts-row .lightsegproducts-box:hover img.lightsegproducts-icon {
+      opacity: 0.1;
+      transform: scale(1.2);
+    }
+
+    /* Overlay container (for heading + images + labels) */
+    .lightsegproducts-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      opacity: 0;
+      transition: all 0.5s ease;
+      padding-top: 40px;
+    }
+
+    .lightsegproducts-box:hover .lightsegproducts-overlay {
+      opacity: 1;
+    }
+
+    .lightsegproducts-overlay h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #111;
+      padding-bottom: 5px;
+    }
+
+    .lightsegproducts-gallery {
+      display: flex;
+      gap: 25px;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .lightsegproducts-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+    }
+
+    .lightsegproducts-item img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+
+    .lightsegproducts-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .lightsegproducts-item p {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #111;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .lightsegproducts-row {
+        flex-wrap: wrap;
+      }
+      .lightsegproducts-box {
+        flex: 1 1 33%;
+        height: 280px;
+      }
+      .lightsegproducts-item img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .lightsegproducts-box {
+        flex: 1 1 50%;
+        height: 250px;
+      }
+      .lightsegproducts-overlay h2 {
+        font-size: 1.4rem;
+      }
+      .lightsegproducts-item img {
+        width: 70px;
+        height: 70px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .lightsegproducts-box {
+        flex: 1 1 100%;
+        height: 220px;
+      }
+      .lightsegproducts-overlay h2 {
+        font-size: 1.2rem;
+      }
+      .lightsegproducts-item img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  </style>
+
+  <div class="lightsegproducts-grid">
+    <!-- Row 1 -->
+    <div class="lightsegproducts-row">
+      <div class="lightsegproducts-box">
+        <img src="img/10.png" class="lightsegproducts-icon" alt="Light Icon" />
+        <div class="lightsegproducts-overlay">
+          <h2>COB LIGHT</h2>
+          <div class="lightsegproducts-gallery">
+            <div class="lightsegproducts-item">
+              <img src="img/16.png" alt="COB GENERAL LIGHTS" />
+              <p>COB GENERAL LIGHTS</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="img/16.png" alt="COB WALL WASHER" />
+              <p>COB WALL WASHER</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="img/16.png" alt="COB WATER RESISTANT" />
+              <p>COB WATER RESISTANT LIGHTS</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="img/16.png" alt="LASER LIGHTS" />
+              <p>LASER LIGHTS</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="img/16.png" alt="SPOT LIGHTS" />
+              <p>SPOT LIGHTS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lightsegproducts-box">
+        <img src="icon2.png" class="lightsegproducts-icon" alt="Light Icon" />
+        <div class="lightsegproducts-overlay">
+          <h2>LED LIGHT</h2>
+          <div class="lightsegproducts-gallery">
+            <div class="lightsegproducts-item">
+              <img src="led1.png" alt="PANEL LIGHTS" />
+              <p>PANEL LIGHTS</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="led2.png" alt="SURFACE LIGHTS" />
+              <p>SURFACE LIGHTS</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="led3.png" alt="DOWNLIGHTS" />
+              <p>DOWNLIGHTS</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="led4.png" alt="SPOTLIGHTS" />
+              <p>SPOTLIGHTS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lightsegproducts-box">
+        <img src="icon3.png" class="lightsegproducts-icon" alt="Track Light" />
+        <div class="lightsegproducts-overlay">
+          <h2>TRACK LIGHT</h2>
+          <div class="lightsegproducts-gallery">
+            <div class="lightsegproducts-item">
+              <img src="track1.png" alt="LINEAR TRACK" />
+              <p>LINEAR TRACK</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="track2.png" alt="SPOT TRACK" />
+              <p>SPOT TRACK</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="track3.png" alt="ADJUSTABLE" />
+              <p>ADJUSTABLE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lightsegproducts-box">
+        <img src="icon4.png" class="lightsegproducts-icon" alt="Magnetic Light" />
+        <div class="lightsegproducts-overlay">
+          <h2>MAGNETIC LIGHT</h2>
+          <div class="lightsegproducts-gallery">
+            <div class="lightsegproducts-item">
+              <img src="mag1.png" alt="LINEAR" />
+              <p>LINEAR MODULE</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="mag2.png" alt="SPOT" />
+              <p>SPOT MODULE</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="mag3.png" alt="WASHER" />
+              <p>WALL WASHER</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lightsegproducts-box">
+        <img src="icon5.png" class="lightsegproducts-icon" alt="Profile Light" />
+        <div class="lightsegproducts-overlay">
+          <h2>PROFILE LIGHT</h2>
+          <div class="lightsegproducts-gallery">
+            <div class="lightsegproducts-item">
+              <img src="pro1.png" alt="SURFACE PROFILE" />
+              <p>SURFACE PROFILE</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="pro2.png" alt="SUSPENDED PROFILE" />
+              <p>SUSPENDED PROFILE</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="pro3.png" alt="RECESSED PROFILE" />
+              <p>RECESSED PROFILE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="lightsegproducts-row">
+      <div class="lightsegproducts-box">
+        <img src="icon1.png" class="lightsegproducts-icon" alt="Light Icon" />
+        <div class="lightsegproducts-overlay">
+          <h2>COB LIGHT</h2>
+          <div class="lightsegproducts-gallery">
+            <div class="lightsegproducts-item">
+              <img src="cob1.png" alt="COB GENERAL LIGHTS" />
+              <p>COB GENERAL LIGHTS</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="cob2.png" alt="COB WALL WASHER" />
+              <p>COB WALL WASHER</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="cob3.png" alt="COB WATER RESISTANT" />
+              <p>COB WATER RESISTANT LIGHTS</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="cob4.png" alt="LASER LIGHTS" />
+              <p>LASER LIGHTS</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="cob5.png" alt="SPOT LIGHTS" />
+              <p>SPOT LIGHTS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lightsegproducts-box">
+        <img src="icon2.png" class="lightsegproducts-icon" alt="Light Icon" />
+        <div class="lightsegproducts-overlay">
+          <h2>LED LIGHT</h2>
+          <div class="lightsegproducts-gallery">
+            <div class="lightsegproducts-item">
+              <img src="led1.png" alt="PANEL LIGHTS" />
+              <p>PANEL LIGHTS</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="led2.png" alt="SURFACE LIGHTS" />
+              <p>SURFACE LIGHTS</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="led3.png" alt="DOWNLIGHTS" />
+              <p>DOWNLIGHTS</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="led4.png" alt="SPOTLIGHTS" />
+              <p>SPOTLIGHTS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lightsegproducts-box">
+        <img src="icon3.png" class="lightsegproducts-icon" alt="Track Light" />
+        <div class="lightsegproducts-overlay">
+          <h2>TRACK LIGHT</h2>
+          <div class="lightsegproducts-gallery">
+            <div class="lightsegproducts-item">
+              <img src="track1.png" alt="LINEAR TRACK" />
+              <p>LINEAR TRACK</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="track2.png" alt="SPOT TRACK" />
+              <p>SPOT TRACK</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="track3.png" alt="ADJUSTABLE" />
+              <p>ADJUSTABLE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lightsegproducts-box">
+        <img src="icon4.png" class="lightsegproducts-icon" alt="Magnetic Light" />
+        <div class="lightsegproducts-overlay">
+          <h2>MAGNETIC LIGHT</h2>
+          <div class="lightsegproducts-gallery">
+            <div class="lightsegproducts-item">
+              <img src="mag1.png" alt="LINEAR" />
+              <p>LINEAR MODULE</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="mag2.png" alt="SPOT" />
+              <p>SPOT MODULE</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="mag3.png" alt="WASHER" />
+              <p>WALL WASHER</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lightsegproducts-box">
+        <img src="icon5.png" class="lightsegproducts-icon" alt="Profile Light" />
+        <div class="lightsegproducts-overlay">
+          <h2>PROFILE LIGHT</h2>
+          <div class="lightsegproducts-gallery">
+            <div class="lightsegproducts-item">
+              <img src="pro1.png" alt="SURFACE PROFILE" />
+              <p>SURFACE PROFILE</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="pro2.png" alt="SUSPENDED PROFILE" />
+              <p>SUSPENDED PROFILE</p>
+            </div>
+            <div class="lightsegproducts-item">
+              <img src="pro3.png" alt="RECESSED PROFILE" />
+              <p>RECESSED PROFILE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Lightseg Products Section end -->
+
+<!-- proudcutss start -->
+<section class="arcotproducts-section">
+  <h2 class="arcotproducts-title">PRODUCTS</h2>
+
+  <!-- Tabs -->
+  <div class="arcotproducts-tabs">
+    <button class="arcotproducts-tab" data-category="COB">COB</button>
+    <button class="arcotproducts-tab" data-category="LASERBLADES">LASER BLADES</button>
+    <button class="arcotproducts-tab" data-category="WALLWASHERS">WALL WASHERS</button>
+    <button class="arcotproducts-tab" data-category="MAGNETIC">MAGNETIC TRACK</button>
+    <button class="arcotproducts-tab active" data-category="INDUSTRY">INDUSTRY</button>
+  </div>
+
+  <!-- Dynamic Layout Container -->
+  <div id="arcotproducts-container" class="arcotproducts-container"></div>
+</section>
+
+<style>
+  /* ---------- ARCOT PRODUCTS SECTION STYLES ---------- */
+  .arcotproducts-section {
+    text-align: center;
+    /* padding: 80px 20px; */
+    background: #f9f9f9;
+    color: #222;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .arcotproducts-title {
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  /* ---------- Tabs ---------- */
+  .arcotproducts-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 60px;
+  }
+
+  .arcotproducts-tab {
+    padding: 15px 40px;
+    border: 1px solid #aaa;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.25s ease;
+  }
+
+  .arcotproducts-tab.active {
+    background: #333;
+    color: #fff;
+    border-color: #333;
+  }
+
+  .arcotproducts-tab:hover {
+    background: #eee;
+  }
+
+  /* ---------- Layout (Black Grid Style) ---------- */
+  .arcotproducts-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 50vh);
+    gap: 5px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 5px;
+  }
+
+  .arcotproducts-box {
+    position: relative;
+    overflow: hidden;
+    background-color: #111;
+  }
+
+  .arcotproducts-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  .arcotproducts-box:hover img {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+
+  .arcotproducts-box h2 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.8rem;
+    /* font-weight: bold; */
+    margin: 0;
+    color: #fff;
+  }
+
+  .arcotproducts-indoor {
+    grid-row: span 2;
+  }
+
+  .arcotproducts-outdoor {
+    grid-row: span 2;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .arcotproducts-container {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+
+    .arcotproducts-indoor,
+    .arcotproducts-outdoor {
+      grid-row: auto;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .arcotproducts-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+
+<script>
+  (function () {
+    const layoutData = {
+      COB: [
+        { title: "Indoor Light", image: "assets/img/10.png", class: "arcotproducts-box arcotproducts-indoor" },
+        { title: "New Products", image: "assets/img/10.png", class: "arcotproducts-box" },
+        { title: "Outdoor Light", image: "assets/img/10.png", class: "arcotproducts-box arcotproducts-outdoor" },
+        { title: "Auto Tracking Light", image: "assets/img/10.png", class: "arcotproducts-box" },
+      ],
+      LASERBLADES: [
+        { title: "Indoor Light", image: "assets/img/11.png", class: "arcotproducts-box arcotproducts-indoor" },
+        { title: "New Products", image: "assets/img/11.png", class: "arcotproducts-box" },
+        { title: "Outdoor Light", image: "assets/img/11.png", class: "arcotproducts-box arcotproducts-outdoor" },
+        { title: "Auto Tracking Light", image: "assets/img/11.png", class: "arcotproducts-box" },
+      ],
+      WALLWASHERS: [
+        { title: "Indoor Light", image: "assets/img/10.png", class: "arcotproducts-box arcotproducts-indoor" },
+        { title: "New Products", image: "assets/img/10.png", class: "arcotproducts-box" },
+        { title: "Outdoor Light", image: "assets/img/10.png", class: "arcotproducts-box arcotproducts-outdoor" },
+        { title: "Auto Tracking Light", image: "assets/img/10.png", class: "arcotproducts-box" },
+      ],
+      MAGNETIC: [
+        { title: "Indoor Light", image: "assets/img/10.png", class: "arcotproducts-box arcotproducts-indoor" },
+        { title: "New Products", image: "assets/img/10.png", class: "arcotproducts-box" },
+        { title: "Outdoor Light", image: "assets/img/10.png", class: "arcotproducts-box arcotproducts-outdoor" },
+        { title: "Auto Tracking Light", image: "assets/img/10.png", class: "arcotproducts-box" },
+      ],
+      INDUSTRY: [
+        { title: "Indoor Light", image: "assets/img/10.png", class: "arcotproducts-box arcotproducts-indoor" },
+        { title: "New Products", image: "assets/img/10.png", class: "arcotproducts-box" },
+        { title: "Outdoor Light", image: "assets/img/10.png", class: "arcotproducts-box arcotproducts-outdoor" },
+        { title: "Auto Tracking Light", image: "assets/img/10.png", class: "arcotproducts-box" },
+      ],
+    };
+
+    const layoutContainer = document.getElementById("arcotproducts-container");
+    const tabs = document.querySelectorAll(".arcotproducts-tab");
+
+    function showLayout(category) {
+      tabs.forEach((tab) => tab.classList.remove("active"));
+      document
+        .querySelector(`.arcotproducts-tab[data-category="${category}"]`)
+        .classList.add("active");
+
+      layoutContainer.innerHTML = "";
+
+      const items = layoutData[category];
+      if (!items || items.length === 0) {
+        layoutContainer.innerHTML =
+          '<p style="grid-column: 1 / -1; color: #fff; padding: 50px;">No images available for this category.</p>';
+        return;
+      }
+
+      items.forEach((item) => {
+        const div = document.createElement("div");
+        div.className = item.class;
+        div.innerHTML = `
+          <img src="${item.image}" alt="${item.title}">
+          <h2>${item.title}</h2>
+        `;
+        layoutContainer.appendChild(div);
+      });
+    }
+
+    // Tab click handler
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () =>
+        showLayout(tab.getAttribute("data-category"))
+      );
+    });
+
+    // Default load
+    showLayout("INDUSTRY");
+  })();
+</script>
+
+<!-- products end -->
+
+
+<!-- lightanimation start -->
+
+<!-- Lightsmans Section (drop this div into your page) -->
+<div class="lightsmans-wrapper">
+  <!-- Sidebar (now contained inside the section) -->
+  <div class="lightsmans-sidebar">
+    <div class="lightsmans-logo">A R C</div>
+
+    <div class="lightsmans-nav-dots" id="lightsmansNavDots">
+      <div class="lightsmans-dot active" data-index="0"></div>
+      <div class="lightsmans-dot" data-index="1"></div>
+      <div class="lightsmans-dot" data-index="2"></div>
+      <div class="lightsmans-dot" data-index="3"></div>
+      <div class="lightsmans-dot" data-index="4"></div>
+      <div class="lightsmans-dot" data-index="5"></div>
+      <div class="lightsmans-dot" data-index="6"></div>
+      <div class="lightsmans-dot" data-index="7"></div>
+    </div>
+
+    <div class="lightsmans-about-link">WE ARE</div>
+  </div>
+
+  <!-- Main Layout -->
+  <div class="lightsmans-layout">
+    <!-- LEFT (text) -->
+    <div class="lightsmans-left">
+      <div class="lightsmans-content">
+        <p data-bg="../img/lighting/lightingsecthree/5.png">Illuminate</p>
+        <p data-bg="../img/lighting/lightingsecthree/6.png">Radiate</p>
+        <p data-bg="../img/lighting/lightingsecthree/7.png">Luminate</p>
+        <p class="highlight" data-bg="../img/lighting/lightingsecthree/1.png">Glow</p>
+        <p data-bg="../img/lighting/lightingsecthree/2.png">Dazzle</p>
+        <p data-bg="../img/lighting/lightingsecthree/3.png">Luminate</p>
+        <p data-bg="../img/lighting/lightingsecthree/4.png">Gleam</p>
+      </div>
+    </div>
+
+    <!-- RIGHT (images) -->
+    <div class="lightsmans-right">
+      <div class="lightsmans-bg" id="lightsmansBg1" style="background-image: url('../img/lighting/lightingsecthree/1.png');"></div>
+      <div class="lightsmans-bg hidden" id="lightsmansBg2"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* SECTION WRAPPER - keeps sidebar inside this section */
+.lightsmans-wrapper {
+  position: relative;            /* important: contain sidebar here */
+  width: 100%;
+  height: 100vh;                 /* change to auto if you want natural height */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+  background-color: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* SIDEBAR (contained inside wrapper) */
+.lightsmans-sidebar {
+  position: absolute;            /* contained inside .lightsmans-wrapper */
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  border-right: 1px solid rgba(230, 230, 230, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+.lightsmans-logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.lightsmans-nav-dots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 10px;
+  padding: 1rem 0;
+}
+
+.lightsmans-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #bbb;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.lightsmans-dot.active {
+  background: #333;
+  transform: scale(1.3);
+}
+
+.lightsmans-about-link {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.8rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* MAIN LAYOUT (text + image) */
+.lightsmans-layout {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin-left: 80px; /* reserve space for sidebar so layout doesn't go under it */
+  box-sizing: border-box;
+}
+
+/* LEFT TEXT COLUMN */
+.lightsmans-left {
+  flex: 1;
+  max-width: 30%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 100px;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.lightsmans-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.lightsmans-content p {
+  font-size: 18px;
+  line-height: 3;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+  color: #333;
+}
+
+.lightsmans-content p:hover {
+  transform: translateX(8px);
+  color: #9a623a;
+}
+
+.lightsmans-content .highlight {
+  color: #9a623a;
+  font-weight: bold;
+}
+
+/* RIGHT IMAGE PANEL */
+.lightsmans-right {
+  position: relative;
+  width: 70%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.lightsmans-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+.lightsmans-bg.hidden {
+  opacity: 0;
+}
+
+@media (max-width: 992px) {
+  /* overall wrapper */
+  .lightsmans-wrapper {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  /* hide sidebar for clean mobile look */
+  .lightsmans-sidebar {
+    display: none;
+  }
+
+  /* main layout: image top, text below */
+  .lightsmans-layout {
+    margin-left: 0;
+    flex-direction: column-reverse;
+    height: auto;
+    width: 100%;
+  }
+
+  /* === IMAGE PANEL === */
+  .lightsmans-right {
+    order: -1;
+    width: 100%;
+    height: 50vh; /* full width, half screen height */
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lightsmans-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 1s ease-in-out;
+  }
+
+  /* === TEXT STRIP (horizontal scroll) === */
+  .lightsmans-left {
+    width: 100%;
+    background: #fff;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lightsmans-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 1.5rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .lightsmans-content::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* === Each p element (lighting text) === */
+  .lightsmans-content p {
+    flex: 0 0 auto;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    margin: 0;
+    scroll-snap-align: center;
+    transition: color 0.3s, transform 0.3s;
+  }
+
+  .lightsmans-content p:hover {
+    transform: scale(1.1);
+    color: #9a623a;
+  }
+
+  .lightsmans-content .highlight {
+    color: #9a623a;
+    font-weight: 700;
+    transform: scale(1.1);
+  }
+}
+
+</style>
+
+<script>
+/* Isolated script for this section (uses prefixed class/IDs) */
+(function() {
+  const items = document.querySelectorAll('.lightsmans-content p');
+  const dots = document.querySelectorAll('.lightsmans-dot');
+  const bg1 = document.getElementById('lightsmansBg1');
+  const bg2 = document.getElementById('lightsmansBg2');
+  let showingBg1 = true;
+  let currentIndex = 0;
+  let autoChange;
+
+  function changeBackground(index) {
+    if (!items[index]) return;
+    const p = items[index];
+    const newBg = p.getAttribute('data-bg');
+    const activeBg = showingBg1 ? bg1 : bg2;
+    const hiddenBg = showingBg1 ? bg2 : bg1;
+
+    items.forEach(el => el.classList.remove('highlight'));
+    dots.forEach(el => el.classList.remove('active'));
+
+    p.classList.add('highlight');
+    if (dots[index]) dots[index].classList.add('active');
+
+    // preload image then swap
+    const img = new Image();
+    img.src = newBg;
+    img.onload = () => {
+      hiddenBg.style.backgroundImage = `url('${newBg}')`;
+      hiddenBg.classList.remove('hidden');
+      activeBg.classList.add('hidden');
+      showingBg1 = !showingBg1;
+    };
+  }
+
+  function handleClick(i) {
+    currentIndex = i;
+    changeBackground(currentIndex);
+    resetAutoChange();
+  }
+
+  items.forEach((p, i) => p.addEventListener('click', () => handleClick(i)));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => handleClick(i)));
+
+  function startAutoChange() {
+    autoChange = setInterval(() => {
+      currentIndex = (currentIndex + 1) % items.length;
+      changeBackground(currentIndex);
+    }, 3000);
+  }
+
+  function resetAutoChange() {
+    clearInterval(autoChange);
+    startAutoChange();
+  }
+
+  startAutoChange();
+})();
+</script>
+
+<!-- lightanimation end -->
 
 <!-- apple light start -->
 <!-- Spotlight Section -->
