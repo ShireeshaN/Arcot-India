@@ -808,7 +808,7 @@ document.addEventListener("DOMContentLoaded", function () {
 .energyx-gallery {
   display: flex;
   width: 100%;
-  height: 1000px;
+  height: 850px;
   overflow: hidden;
 }
 
@@ -1011,1033 +1011,17 @@ goNext();
 </script>
 
 
-<!-- ⚡ LIGHTING SECTION (Integrated & Premium Layout) -->
-<section class="lighting-premium">
-  <div class="lighting-header" data-aos="fade-up">
+
+       <div class="lighting-header " data-aos="fade-up">
     <h2>Lighting</h2>
-    <p>Innovative façade, street, and architectural lighting that transforms every space with brilliance.</p>
+    <p>Innovative Facade ,Street and Architectural Lighting that Transforms Every Space with brilliance.
+          <!-- Our R&D division stands at the crossroads of technology, design, and sustainability, redefining how cities think, connect, and evolve. -->
+          </p>
   </div>
-
-  <div class="lighting-slider">
-    <!-- Slides -->
-    <div class="lighting-slide active" style="background-image:url('img/lighting/residentaillighting.png')"></div>
-    <div class="lighting-slide" style="background-image:url('img/lighting/facadelighting.webp')"></div>
-    <div class="lighting-slide" style="background-image:url('img/lighting/commerciallighting.png')"></div>
-    <div class="lighting-slide" style="background-image:url('img/lighting/industriallighting.png')"></div>
-    <div class="lighting-slide" style="background-image:url('img/lighting/hospitallighting.png')"></div>
-    <div class="lighting-slide" style="background-image:url('img/lighting/stadium_banner_1920x1080 (1).jpg')"></div>
-    <div class="lighting-slide" style="background-image:url('img/lighting/officelighting.png')"></div>
-    <div class="lighting-slide" style="background-image:url('img/lighting/outdoorlighting.png')"></div>
-
-    <!-- Content -->
-    <div class="lighting-content">
-      <h1 id="lighting-title">Residential Lighting</h1>
-      <h3 id="lighting-subtitle">Premium · Elegant · Efficient</h3>
-      <div class="lighting-dots-wrap">
-        <div class="lighting-dots">
-          <div class="lighting-dot active" data-index="0"></div>
-          <div class="lighting-dot" data-index="1"></div>
-          <div class="lighting-dot" data-index="2"></div>
-          <div class="lighting-dot" data-index="3"></div>
-          <div class="lighting-dot" data-index="4"></div>
-          <div class="lighting-dot" data-index="5"></div>
-          <div class="lighting-dot" data-index="6"></div>
-          <div class="lighting-dot" data-index="7"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-</section>
-
-<style>
-/* === LIGHTING SECTION === */
-.lighting-premium {
-  position: relative;
-  background: linear-gradient(180deg, #fff 0%, #fff 50%, #fff 100%);
-
-  font-family: "Poppins", sans-serif;
-  overflow: hidden;
-  color: #fff;
-}
-
-/* --- Heading --- */
-.lighting-header {
-  padding-top: 20px; /* aligned like Power section */
-  text-align: left;
-  position: relative;
-  z-index: 5;
-  margin-left: 20px;
-  font-family: "Roboto" , sans-serif;
-}
-
-.lighting-header h2 {
-  font-size: 3rem;
-  /* font-weight: 600; */
-  color: #111;
-  margin-bottom: 10px;
-  letter-spacing: 0.5px;
-}
-
-.lighting-header p {
-  font-size: 1.1rem;
-  color: #444;
-  max-width: 480px;
-  line-height: 1.6;
-}
-
-/* --- Slider --- */
-.lighting-slider {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.lighting-slide {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1.2s ease-in-out;
-}
-
-.lighting-slide.active {
-  opacity: 1;
-  animation: lightingZoom 12s ease-in-out forwards;
-}
-
-@keyframes lightingZoom {
-  from { transform: scale(1); }
-  to { transform: scale(1.1); }
-}
-
-/* --- Overlay & Content --- */
-.lighting-slider::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.1) 100%);
-  z-index: 1;
-}
-
-.lighting-content {
-  position: absolute;
-  top: 50%;
-  left: 4%;
-  transform: translateY(-50%);
-  z-index: 2;
-  color: #fff;
-}
-
-.lighting-content h1 {
-  font-size: 3rem;
-  font-weight: 400;
-  margin-bottom: 10px;
-}
-
-.lighting-content h3 {
-  font-size: 1.2rem;
-  font-weight: 300;
-  margin-bottom: 30px;
-  color: #ddd;
-}
-
-/* --- Dots --- */
-.lighting-dots {
-  display: flex;
-  gap: 8px;
-}
-
-.lighting-dot {
-  width: 10px;
-  height: 10px;
-  background: rgba(255,255,255,0.5);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.lighting-dot.active {
-  background: #fff;
-  transform: scale(1.3);
-}
-
-/* --- Icons --- */
-.lighting-icons {
-  position: absolute;
-  bottom: 40px;
-  left: 4%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  z-index: 3;
-}
-
-.lighting-icon {
-  padding: 10px 20px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: #fff;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.lighting-icon.active {
-  background: #000;
-  border-color: #000;
-}
-
-.lighting-icon:hover {
-  transform: scale(1.05);
-}
-
-/* --- Responsive --- */
-@media (max-width: 992px) {
-  .lighting-header { padding: 60px 20px 30px; }
-  .lighting-content h1 { font-size: 2.2rem; }
-  .lighting-icons { left: 20px; bottom: 25px; }
-  .lighting-slider {
-
-  height: 50vh;
-  overflow: hidden;
-}
-}
-</style>
-
-<script>
-const lightingSlides = document.querySelectorAll('.lighting-slide');
-const lightingDots = document.querySelectorAll('.lighting-dot');
-const lightingIcons = document.querySelectorAll('.lighting-icon');
-const lightingTitle = document.getElementById('lighting-title');
-const lightingSubtitle = document.getElementById('lighting-subtitle');
-
-const lightingTitles = [
-  "Residential Lighting","Facade Lighting","Commercial Lighting","Industrial Lighting",
-  "Hospitality Lighting","Stadium Lighting","Office Lighting","Outdoor Lighting"
-];
-const lightingSubtitles = [
-  "Premium · Elegant · Efficient","Modern · Architectural · Stylish",
-  "Smart · Professional · Reliable","Heavy Duty · Robust · Safe",
-  "Warm · Welcoming · Aesthetic","Trendy · Attractive · Efficient",
-  "Productive · Comfortable · Bright","Durable · Weatherproof · Safe"
-];
-
-let currentLighting = 0, lightingTimer;
-
-function showLighting(i){
-  lightingSlides.forEach((s,idx)=>s.classList.toggle('active',idx===i));
-  lightingDots.forEach((d,idx)=>d.classList.toggle('active',idx===i));
-  lightingIcons.forEach((ic,idx)=>ic.classList.toggle('active',idx===i));
-  lightingTitle.textContent = lightingTitles[i];
-  lightingSubtitle.textContent = lightingSubtitles[i];
-  currentLighting=i;
-}
-
-function nextLighting(){
-  currentLighting = (currentLighting + 1) % lightingSlides.length;
-  showLighting(currentLighting);
-}
-
-function startLightingAuto(){
-  lightingTimer=setInterval(nextLighting,5000);
-}
-
-lightingDots.forEach(d=>{
-  d.addEventListener('click',()=>{
-    clearInterval(lightingTimer);
-    showLighting(+d.dataset.index);
-    startLightingAuto();
-  });
-});
-
-lightingIcons.forEach(ic=>{
-  ic.addEventListener('click',()=>{
-    clearInterval(lightingTimer);
-    showLighting(+ic.dataset.index);
-    startLightingAuto();
-  });
-});
-
-showLighting(0);
-startLightingAuto();
-</script>
-
-
-
-<!-- automation-showcase -->
-<section class="automation-showcase">
-  <style>
-    * { box-sizing: border-box; margin:0; padding:0; }
-    .automation-showcase { font-family: "Poppins", sans-serif; 
-    /* background: #f5f5f5;  */
-    overflow-x: hidden; }
-
-    .automation-hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      overflow: hidden;
-      background-color: #fff;
-    }
-
-    .automation-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      z-index: 1;
-    }
-
-    .automation-bg.shrink {
-      animation: bgShrink 2s ease forwards;
-    }
-
-    @keyframes bgShrink {
-      0% { width: 100%; }
-      100% { width: 55%; }
-    }
-
-    .automation-textbox {
-      position: relative;
-      width: 40%;
-      margin-left: auto;
-      padding: 5rem 3rem;
-      opacity: 0;
-      transform: translateX(40px);
-      z-index: 2;
-    }
-
-    .automation-textbox.active {
-      animation: textAppear 1.2s ease forwards;
-    }
-
-    @keyframes textAppear {
-      0% { opacity: 0; transform: translateX(50px); }
-      100% { opacity: 1; transform: translateX(0); }
-    }
-
-    .automation-textbox h2 {
-      font-weight: 500;
-      font-size: 2rem;
-      line-height: 1.4;
-      color: #222;
-      letter-spacing: 1px;
-      margin-bottom: 1.2rem;
-      text-transform: uppercase;
-    }
-
-    .automation-textbox p {
-      color: #666;
-      font-size: 15px;
-      line-height: 1.8;
-      margin-bottom: 2rem;
-    }
-
-    .btn-automation {
-      background-color: #444;
-      color: #fff;
-      padding: 10px 24px;
-      border-radius: 0;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 14px;
-      transition: 0.3s;
-    }
-
-    .btn-automation:hover { background-color: #000; }
-
-    .automation-next {
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
-      font-size: 2rem;
-      color: #000;
-      background: transparent;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 3;
-      user-select: none;
-    }
-
-    /* Heading Section */
-.automation-head {
-  padding-top: 20px;
-  text-align: left;
-  margin-left: 20px;
-  font-family: "Poppins", sans-serif;
-  background-color: #fff;
-}
-
-.automation-title {
-  font-size: 2.8rem;
-  /* font-weight: 600; */
-  color: #111;
-  margin-bottom: 10px;
-  position: relative;
-}
-
-/* .automation-title::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 60px;
-  height: 2px;
-  background: #c7a66b;
-  border-radius: 2px;
-} */
-
-.automation-subtitle {
-  font-size: 1.05rem;
-  color: #444;
-  max-width: 500px;
-  line-height: 1.6;
-  margin-top: 18px;
-}
-
-    @media (max-width: 992px) {
-      .automation-hero { flex-direction: column; height: auto; }
-      .automation-bg { width: 45%; height: 70vw; }
-      .automation-textbox { width: 50%; padding: 2rem 1rem; opacity: 1; transform: none; animation: none; }
-      .automation-textbox h2 { font-size: 1rem; }
-      .automation-next { display: none; }
-    }
-  </style>
-
-    <!-- Heading + Tagline -->
-  <div class="automation-head" data-aos="fade-up">
-    <h2 class="automation-title">Automation</h2>
-    <p class="automation-subtitle">
-      Intelligent control systems for smart homes, industries, and commercial spaces.
-    </p>
-  </div>
-
-  <div class="automation-hero">
-    <div class="automation-bg" id="autoBg"></div>
-    <div class="automation-textbox" id="autoTextbox">
-      <h2 id="autoTitle"></h2>
-      <p id="autoDesc"></p>
-      <button class="btn btn-automation" id="autoBtn">Read More</button>
-    </div>
-    <div class="automation-next" id="autoNext">&#10095;</div>
-  </div>
-
-  <script>
-    const automationSlides = [
-      { image: 'img/automation/homeautomation.png', title: 'Residential Automation', text: 'Elevate your lifestyle with intelligent home control — comfort, security, and energy efficiency at your fingertips.', button: 'Know More' },
-      { image: 'img/automation/commercialautomation.png', title: 'Commercial Automation', text: 'Optimize every corner of your workspace with cutting-edge automation that boosts productivity and sustainability.', button: 'Know More' },
-      { image: 'img/automation/industriesautomation.png', title: 'Industrial Automation', text: 'Automate, analyze, and advance your operations with precision-engineered industrial control systems.', button: 'Know More' },
-      { image: 'img/automation/hospitalautomation.png', title: 'Hospital Automation', text: 'Seamless healthcare automation designed to enhance patient care, streamline workflows, and improve outcomes.', button: 'Know More' },
-      { image: 'img/automation/hotelautomation.png', title: 'Hotel Automation', text: 'Transform guest experiences with smart automation — from lighting to comfort, luxury meets innovation.', button: 'Know More' },
-    ];
-
-    let autoIndex = 0;
-    const autoBg = document.getElementById('autoBg');
-    const autoTextbox = document.getElementById('autoTextbox');
-    const autoTitle = document.getElementById('autoTitle');
-    const autoDesc = document.getElementById('autoDesc');
-    const autoBtn = document.getElementById('autoBtn');
-    const autoNext = document.getElementById('autoNext');
-
-    function showAutomationSlide(index) {
-      autoBg.classList.remove('shrink');
-      autoTextbox.classList.remove('active');
-
-      autoBg.style.backgroundImage = `url('${automationSlides[index].image}')`;
-      autoTitle.textContent = automationSlides[index].title;
-      autoDesc.textContent = automationSlides[index].text;
-      autoBtn.textContent = automationSlides[index].button;
-
-      setTimeout(() => {
-        autoBg.classList.add('shrink');
-        setTimeout(() => autoTextbox.classList.add('active'), 1000);
-      }, 1000);
-    }
-
-    function nextAutomationSlide() {
-      autoIndex = (autoIndex + 1) % automationSlides.length;
-      showAutomationSlide(autoIndex);
-    }
-
-    window.addEventListener('load', () => showAutomationSlide(autoIndex));
-    setInterval(nextAutomationSlide, 7000);
-    autoNext.addEventListener('click', nextAutomationSlide);
-  </script>
-</section>
-<!-- automation-showcase -->
-
-
-
-
-
-
-
-
-<!-- ===== ARCOT R&D SECTION (Stable Image Version) ===== -->
-<section class="rd-wrapper">
-  <!-- LEFT SECTION -->
-  <div class="rd-text-section">
-    <div class="rd-content">
-      <div class="rd-text-content">
-        <h1 class="rd-headline">Research &</h1>
-        <h1 class="rd-subheadline">Development</h1>
-        <p class="rd-desc">
-          At Arcot India, innovation isn’t a department — it’s our DNA.
-          Our R&D division stands at the crossroads of technology, design, and sustainability, redefining how cities think, connect, and evolve.
-          
-        </p>
-        <a href="#" class="rd-read-more">explore more</a>
-        <p class="rd-page-count">01/05</p>
-      </div>
-
-      <div class="rd_thumbs">
-        <img src="img/randd/smartpole.png" data-main="img/randd/smartpole.png" alt="Smart Pole" class="active" />
-        <img src="img/randd/smartbollad.png" data-main="img/randd/smartbollad.png" alt="Smart Bollard" />
-        <img src="img/randd/smarttable.png" data-main="img/randd/smarttable.png" alt="Smart Conference Table" />
-        <img src="img/randd/Bar-counter-1.jpg" data-main="img/randd/Bar-counter-5.jpg" alt="Smart Bar Counter" />
-        <img src="img/comingsoon-2.jpg" data-main="img/comingsoon-2.jpg" alt="Smart Window Leaf AC" />
-        
-      </div>
-    </div>
-  </div>
-
-  <!-- RIGHT SECTION -->
-  <div class="rd_image_section">
-    <div class="rd_image_wrapper">
-      <div class="rd_red_line"></div>
-      <img src="img/randd/smartpole.png" class="main-img" alt="Main Image" />
-    </div>
-
-    <div class="rd_red_box">
-      <h4>Smart Pole</h4>
-      <p>Where Connectivity Meets Design</p>
-      <div class="arrow-btn">→</div>
-    </div>
-  </div>
-</section>
-
-<style>
-  .rd-wrapper {
-    display: flex;
-    align-items: stretch;
-    width: 100%;
-    overflow: hidden;
-    background-color: #fff;
-    color: #000;
-    min-height: 650px;
-    margin: 50px 0 10px ;
-    font-family: "Poppins", sans-serif;
-  }
-
-  .rd-text-section {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    padding: 4rem 7rem;
-  }
-
-  .rd-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 600px;
-    
-  }
-
-  .rd-text-content { flex: 1; padding-right: 2rem; }
-
-  .rd-headline {
-    font-size: 3.2rem;
-    /* font-weight: 600; */
-    color: #000;
-    font-family: "Poppins", sans-serif;
-  }
-
-  .rd-subheadline {
-    font-size: 3.2rem;
-    color: #a4a0a0;
-    font-weight: 300;
-    margin-top: -10px;
-  }
-
-  .rd-desc {
-    color: #777;
-    max-width: 380px;
-    margin: 25px 0;
-    line-height: 1.7;
-  }
-
-  .rd-read-more {
-    color: #535151;
-    font-weight: 500;
-    text-decoration: none;
-    border-bottom: 1px solid #000;
-  }
-
-  .rd-page-count {
-    font-size: 1rem;
-    color: #aaa;
-    margin-top: 1.5rem;
-  }
-
-  /* Thumbnails */
-  .rd_thumbs {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: flex-end;
-  }
-
-  .rd_thumbs img {
-    width: 85px;
-    height: 110px;
-    object-fit: cover;
-    filter: grayscale(100%);
-    transition: 0.3s ease;
-    cursor: pointer;
-    border: 2px solid transparent;
-    /* border-radius: 6px; */
-  }
-
-  .rd_thumbs img.active {
-    filter: grayscale(0%);
-    border: 3px solid #171616;
-  }
-
-  .rd_thumbs img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.05);
-  }
-
-  /* RIGHT SECTION */
-  .rd_image_section {
-    width: 50%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background: #f3f3f3;
-    overflow: hidden;
-  }
-
-  .rd_image_wrapper {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 100%;
-    height: 600px; /* fixed height for image stability */
-    overflow: hidden;
-  }
-
-  .main-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(100%);
-    opacity: 1;
-    transition: opacity 0.8s ease-in-out;
-  }
-
-  .rd_red_line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 10px;
-    height: 100px;
-    background-color: #cfcfcf;
-  }
-
-  .rd_red_box {
-    width: 100%;
-    background-color: #000000;
-    color: #918b8b;
-    padding: 2.5rem 3rem;
-    text-align: right;
-    position: relative;
-  }
-
-  .rd_red_box h4 {
-    margin: 0;
-    font-weight: 500;
-    font-size: 1.5rem;
-  }
-
-  .rd_red_box p {
-    margin-top: 5px;
-    font-size: 0.95rem;
-    opacity: 0.85;
-  }
-
-  .arrow-btn {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    width: 60px;
-    height: 80px;
-    color: #d5d0d0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 1.5rem;
-  }
-
-  @media (max-width: 992px) {
-    .rd-wrapper {
-      flex-direction: column;
-      height: auto;
-      margin: 50px 0;
-    }
-
-    .rd-text-section,
-    .rd_image_section {
-      width: 100%;
-      padding: 2rem;
-    }
-
-    .rd_image_wrapper {
-      height: 400px;
-    }
-
-    .rd_thumbs {
-      flex-direction: row;
-      justify-content: center;
-      margin-top: 2rem;
-    }
-
-    .rd_red_box {
-      text-align: center;
-    }
-  }
-</style>
-
-<script>
-(() => {
-  const rd_thumbs = document.querySelectorAll(".rd_thumbs img");
-  const mainImg = document.querySelector(".main-img");
-  const pageCount = document.querySelector(".rd-page-count");
-  const redTitle = document.querySelector(".rd_red_box h4");
-  const redText = document.querySelector(".rd_red_box p");
-  const arrowBtn = document.querySelector(".arrow-btn");
-
-  const captions = [
-    { title: "Smart Pole", text: "Where Connectivity Meets Design" },
-    { title: "Smart Bollard", text: "Grounded in Design. Driven by Data" },
-    { title: "Smart Conference Table", text: "Where Collaboration Meets Intelligence" },
-    { title: "Smart Bar Counter", text: "Where Design Pours Innovation" },
-    { title: "Smart Window Leaf AC", text: "Reinventing Air. Intelligently" }
-  ];
-
-  let index = 0;
-  const total = rd_thumbs.length;
-
-  function showImage(i) {
-    rd_thumbs.forEach((thumb) => thumb.classList.remove("active"));
-    rd_thumbs[i].classList.add("active");
-    mainImg.style.opacity = 0;
-    setTimeout(() => {
-      mainImg.src = rd_thumbs[i].getAttribute("data-main");
-      mainImg.style.opacity = 1;
-    }, 400);
-    redTitle.textContent = captions[i].title;
-    redText.textContent = captions[i].text;
-    pageCount.textContent = `0${i + 1}/0${total}`;
-    index = i;
-  }
-
-  rd_thumbs.forEach((thumb, i) => {
-    thumb.addEventListener("click", () => showImage(i));
-  });
-
-  document.querySelector(".arrow-btn").addEventListener("click", () => {
-    index = (index + 1) % total;
-    showImage(index);
-  });
-
-  setInterval(() => {
-    index = (index + 1) % total;
-    showImage(index);
-  }, 4000);
-})();
-</script>
-
-<!-- ===== ARCOT R&D SECTION  end (Stable Image Version) ===== -->
-
-<!-- 🌐 APPLICATIONS SECTION start -->
-<section class="applications-section">
-  <!-- Heading -->
-  <div class="applications-head" data-aos="fade-up">
-    <h2 class="applications-title">Applications</h2>
-    <p class="applications-subtitle">
-      From power to automation, we deliver end-to-end smart infrastructure applications built for the future.
-    </p>
-  </div>
-
-  <!-- Slider -->
-  <div class="applica-slider-container">
-    <div class="applica-slide active">
-      <video autoplay loop muted playsinline>
-        <source src="media/powersapplication.mp4" type="video/mp4">
-      </video>
-      <div class="applica-overlay"></div>
-      <div class="applica-content">
-        <h2>Power Systems</h2>
-        <p>Reliable power infrastructure covering generation, transmission, and distribution with advanced LT and HT panels.</p>
-      </div>
-    </div>
-
-    <div class="applica-slide">
-      <video autoplay loop muted playsinline>
-        <source src="media/energyapplications.mp4" type="video/mp4">
-      </video>
-      <div class="applica-overlay"></div>
-      <div class="applica-content">
-        <h2>Energy Solutions</h2>
-        <p>Delivering sustainable solar, wind, biomass, and hydel projects designed for long-term energy security.</p>
-      </div>
-    </div>
-
-    <div class="applica-slide">
-      <video autoplay loop muted playsinline>
-        <source src="media/lightingapplication.mp4" type="video/mp4">
-      </video>
-      <div class="applica-overlay"></div>
-      <div class="applica-content">
-        <h2>Lighting Technology</h2>
-        <p>Advanced lighting systems that enhance safety, aesthetics, and energy efficiency for every environment.</p>
-      </div>
-    </div>
-
-    <div class="applica-slide">
-      <video autoplay loop muted playsinline>
-        <source src="media/automationapplication.mp4" type="video/mp4">
-      </video>
-      <div class="applica-overlay"></div>
-      <div class="applica-content">
-        <h2>Automation Systems</h2>
-        <p>Smart IoT automation across homes, industries, hospitals, and hotels for intelligent operations.</p>
-      </div>
-    </div>
-
-    <div class="applica-slide">
-      <video autoplay loop muted playsinline>
-        <source src="media/randdapplication.mp4" type="video/mp4">
-      </video>
-      <div class="applica-overlay"></div>
-      <div class="applica-content">
-        <h2>Innovation & R&D</h2>
-        <p>Developing next-generation products — smart poles, bollards, and energy-efficient IoT systems.</p>
-      </div>
-    </div>
-
-    <!-- Arrows -->
-    <div class="applica-arrows">
-      <div class="applica-arrow-btn" id="applica-prev">&#10094;</div>
-      <div class="applica-arrow-btn" id="applica-next">&#10095;</div>
-    </div>
-  </div>
-</section>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const slides = document.querySelectorAll(".applica-slide");
-  let current = 0;
-
-  function showSlide(index) {
-    slides.forEach((s, i) => s.classList.toggle("active", i === index));
-    current = index;
-  }
-
-  document.getElementById("applica-next").addEventListener("click", () => {
-    showSlide((current + 1) % slides.length);
-  });
-
-  document.getElementById("applica-prev").addEventListener("click", () => {
-    showSlide((current - 1 + slides.length) % slides.length);
-  });
-});
-</script>
-
-<style>
-/* === APPLICATIONS SECTION === */
-.applications-section {
-  background: linear-gradient(180deg, #fff 0%, #fff 50%, #fff 100%);
-  color: #111;
- font-family: "Poppins", sans-serif;
-  overflow: hidden;
-  /* padding-bottom: 60px; */
-}
-
-/* Heading (aligned like Power & Lighting) */
-.applications-head {
-  text-align: left;
-  /* margin-left: 6%; */
-  padding-top: 20px;
-  margin-left: 20px;
-}
-
-.applications-title {
-  font-size: 40px;
-  /* font-weight: 600; */
-  color: #111;
-  margin-bottom: 10px;
-}
-
-.applications-subtitle {
-  font-size: 16px;
-  color: #444;
-  max-width: 500px;
-  line-height: 1.6;
-}
-
-/* Slider */
-.applica-slider-container {
-  position: relative;
-  width: 100%;
-  height: 800px;
-  overflow: hidden;
-  margin-top: 20px;
-}
-
-.applica-slide {
-  display: none;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0; left: 0;
-}
-
-.applica-slide.active {
-  display: block;
-}
-
-.applica-slide video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.applica-overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0.85) 80%);
-}
-
-.applica-content {
-  position: absolute;
-  top: 30%;
-  right: 8%;
-  max-width: 450px;
-  color: #f5f5f5;
-  text-align: right;
-}
-
-.applica-content h2 {
-  font-size: 34px;
-  font-weight: 500;
-}
-
-.applica-content p {
-  margin-top: 10px;
-  line-height: 1.6;
-  color: #ddd;
-}
-
-/* Arrows */
-.applica-arrows {
-  position: absolute;
-  bottom: 25px;
-  right: 40px;
-  display: flex;
-  gap: 15px;
-}
-.applica-arrow-btn {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: 1px solid #ccc;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* 📱 Mobile */
-@media(max-width:768px){
-  .applications-head {
-    margin-left: 5%;
-    text-align: left;
-  }
-  .applications-title {
-    font-size: 28px;
-  }
-  .applications-subtitle {
-    font-size: 14px;
-    max-width: 90%;
-  }
-  .applica-slider-container {
-    height: 300px;
-  }
-  .applica-content {
-    top: 25%;
-    left: 5%;
-    right: 5%;
-    max-width: 90%;
-    text-align: center;
-  }
-  .applica-content h2 {
-    font-size: 22px;
-  }
-  .applica-content p {
-    font-size: 14px;
-  }
-  .applica-arrows {
-    bottom: 10px;
-    right: 50%;
-    transform: translateX(50%);
-  }
-  .applica-arrow-btn {
-    width: 35px;
-    height: 35px;
-    font-size: 16px;
-  }
-}
-</style>
-<!-- 🌐 APPLICATIONS SECTION end -->
-
-
 
 <!-- Lightseg Products Section start -->
 <div class="lightsegproducts-wrapper">
+  
   <style>
     .lightsegproducts-wrapper {
       background-color: #ffffff;
@@ -2045,7 +1029,7 @@ document.addEventListener("DOMContentLoaded", function() {
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      padding: 60px 0;
+      padding: 10px 0;
     }
 
     .lightsegproducts-grid {
@@ -2202,7 +1186,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   </style>
 
+
+
   <div class="lightsegproducts-grid">
+ 
     <!-- Row 1 -->
     <div class="lightsegproducts-row">
       <div class="lightsegproducts-box">
@@ -2795,6 +1782,745 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <!-- lightanimation end -->
+
+
+<!-- ⚡ LIGHTING SECTION (Integrated & Premium Layout) -->
+<section class="lighting-premium">
+  <div class="lighting-header" data-aos="fade-up">
+    <h2>Research & Development</h2>
+    <p>At Arcot India, innovation isn’t a department — it’s our DNA.
+          <!-- Our R&D division stands at the crossroads of technology, design, and sustainability, redefining how cities think, connect, and evolve. -->
+          </p>
+  </div>
+
+  <div class="lighting-slider">
+    <!-- Slides -->
+    <div class="lighting-slide active" style="background-image:url('img/randd/smartpole.png')"></div>
+    <div class="lighting-slide" style="background-image:url('img/randd/smartbollad.png')"></div>
+    <div class="lighting-slide" style="background-image:url('img/randd/smarttable.png')"></div>
+    <div class="lighting-slide" style="background-image:url('img/comingsoon.webp')"></div>
+    <div class="lighting-slide" style="background-image:url('img/comingsoon.webp')"></div>
+    <!-- <div class="lighting-slide" style="background-image:url('img/lighting/stadium_banner_1920x1080 (1).jpg')"></div>
+    <div class="lighting-slide" style="background-image:url('img/lighting/officelighting.png')"></div>
+    <div class="lighting-slide" style="background-image:url('img/lighting/outdoorlighting.png')"></div> -->
+
+    <!-- Content -->
+    <div class="lighting-content">
+      <h1 id="lighting-title">Smart Pole</h1>
+      <h3 id="lighting-subtitle">Where Connectivity Meets Design</h3>
+      <div class="lighting-dots-wrap">
+        <div class="lighting-dots">
+          <div class="lighting-dot active" data-index="0"></div>
+          <div class="lighting-dot" data-index="1"></div>
+          <div class="lighting-dot" data-index="2"></div>
+          <div class="lighting-dot" data-index="3"></div>
+          <div class="lighting-dot" data-index="4"></div>
+          <!--<div class="lighting-dot" data-index="5"></div>
+           <div class="lighting-dot" data-index="6"></div>
+          <div class="lighting-dot" data-index="7"></div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+<style>
+/* === LIGHTING SECTION === */
+.lighting-premium {
+  position: relative;
+  background: linear-gradient(180deg, #fff 0%, #fff 50%, #fff 100%);
+
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* --- Heading --- */
+.lighting-header {
+  padding-top: 20px; /* aligned like Power section */
+  text-align: left;
+  position: relative;
+  z-index: 5;
+  margin-left: 20px;
+  font-family: "Roboto" , sans-serif;
+}
+
+.lighting-header h2 {
+  font-size: 3rem;
+  /* font-weight: 600; */
+  color: #111;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.lighting-header p {
+  font-size: 1.1rem;
+  color: #444;
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+/* --- Slider --- */
+.lighting-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.lighting-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.lighting-slide.active {
+  opacity: 1;
+  animation: lightingZoom 12s ease-in-out forwards;
+}
+
+@keyframes lightingZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+/* --- Overlay & Content --- */
+.lighting-slider::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.1) 100%);
+  z-index: 1;
+}
+
+.lighting-content {
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: #fff;
+}
+
+.lighting-content h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.lighting-content h3 {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+  color: #ddd;
+}
+
+/* --- Dots --- */
+.lighting-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.lighting-dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lighting-dot.active {
+  background: #fff;
+  transform: scale(1.3);
+}
+
+/* --- Icons --- */
+.lighting-icons {
+  position: absolute;
+  bottom: 40px;
+  left: 4%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  z-index: 3;
+}
+
+.lighting-icon {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lighting-icon.active {
+  background: #000;
+  border-color: #000;
+}
+
+.lighting-icon:hover {
+  transform: scale(1.05);
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .lighting-header { padding: 60px 20px 30px; }
+  .lighting-content h1 { font-size: 2.2rem; }
+  .lighting-icons { left: 20px; bottom: 25px; }
+  .lighting-slider {
+
+  height: 50vh;
+  overflow: hidden;
+}
+}
+</style>
+
+<script>
+const lightingSlides = document.querySelectorAll('.lighting-slide');
+const lightingDots = document.querySelectorAll('.lighting-dot');
+const lightingIcons = document.querySelectorAll('.lighting-icon');
+const lightingTitle = document.getElementById('lighting-title');
+const lightingSubtitle = document.getElementById('lighting-subtitle');
+
+const lightingTitles = [
+  "Smart Pole","Smart Bollard","Smart Conference Table","Smart Bar Counter",
+  "Smart Window Leaf AC"
+];
+const lightingSubtitles = [
+  "Where Connectivity Meets Design","Grounded in Design. Driven by Data",
+  "Where Collaboration Meets Intelligence","Where Design Pours Innovation",
+  "Reinventing Air. Intelligently · Aesthetic",
+  "Trendy · Attractive · Efficient"
+  // "Productive · Comfortable · Bright","Durable · Weatherproof · Safe"
+];
+
+let currentLighting = 0, lightingTimer;
+
+function showLighting(i){
+  lightingSlides.forEach((s,idx)=>s.classList.toggle('active',idx===i));
+  lightingDots.forEach((d,idx)=>d.classList.toggle('active',idx===i));
+  lightingIcons.forEach((ic,idx)=>ic.classList.toggle('active',idx===i));
+  lightingTitle.textContent = lightingTitles[i];
+  lightingSubtitle.textContent = lightingSubtitles[i];
+  currentLighting=i;
+}
+
+function nextLighting(){
+  currentLighting = (currentLighting + 1) % lightingSlides.length;
+  showLighting(currentLighting);
+}
+
+function startLightingAuto(){
+  lightingTimer=setInterval(nextLighting,5000);
+}
+
+lightingDots.forEach(d=>{
+  d.addEventListener('click',()=>{
+    clearInterval(lightingTimer);
+    showLighting(+d.dataset.index);
+    startLightingAuto();
+  });
+});
+
+lightingIcons.forEach(ic=>{
+  ic.addEventListener('click',()=>{
+    clearInterval(lightingTimer);
+    showLighting(+ic.dataset.index);
+    startLightingAuto();
+  });
+});
+
+showLighting(0);
+startLightingAuto();
+</script>
+
+
+
+<!-- automation-showcase -->
+<section class="automation-showcase">
+  <style>
+    * { box-sizing: border-box; margin:0; padding:0; }
+    .automation-showcase { font-family: "Poppins", sans-serif; 
+    /* background: #f5f5f5;  */
+    overflow-x: hidden; }
+
+    .automation-hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      overflow: hidden;
+      background-color: #fff;
+    }
+
+    .automation-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+    }
+
+    .automation-bg.shrink {
+      animation: bgShrink 2s ease forwards;
+    }
+
+    @keyframes bgShrink {
+      0% { width: 100%; }
+      100% { width: 55%; }
+    }
+
+    .automation-textbox {
+      position: relative;
+      width: 40%;
+      margin-left: auto;
+      padding: 5rem 3rem;
+      opacity: 0;
+      transform: translateX(40px);
+      z-index: 2;
+    }
+
+    .automation-textbox.active {
+      animation: textAppear 1.2s ease forwards;
+    }
+
+    @keyframes textAppear {
+      0% { opacity: 0; transform: translateX(50px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
+    .automation-textbox h2 {
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 1.4;
+      color: #222;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+    }
+
+    .automation-textbox p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .btn-automation {
+      background-color: #444;
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .btn-automation:hover { background-color: #000; }
+
+    .automation-next {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #000;
+      background: transparent;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 3;
+      user-select: none;
+    }
+
+    /* Heading Section */
+.automation-head {
+  padding-top: 20px;
+  text-align: left;
+  margin-left: 20px;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+}
+
+.automation-title {
+  font-size: 2.8rem;
+  /* font-weight: 600; */
+  color: #111;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/* .automation-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: #c7a66b;
+  border-radius: 2px;
+} */
+
+.automation-subtitle {
+  font-size: 1.05rem;
+  color: #444;
+  max-width: 500px;
+  line-height: 1.6;
+  margin-top: 18px;
+}
+
+    @media (max-width: 992px) {
+      .automation-hero { flex-direction: column; height: auto; }
+      .automation-bg { width: 45%; height: 70vw; }
+      .automation-textbox { width: 50%; padding: 2rem 1rem; opacity: 1; transform: none; animation: none; }
+      .automation-textbox h2 { font-size: 1rem; }
+      .automation-next { display: none; }
+    }
+  </style>
+
+    <!-- Heading + Tagline -->
+  <div class="automation-head" data-aos="fade-up">
+    <h2 class="automation-title">Automation</h2>
+    <p class="automation-subtitle">
+      Intelligent control systems for smart homes, industries, and commercial spaces.
+    </p>
+  </div>
+
+  <div class="automation-hero">
+    <div class="automation-bg" id="autoBg"></div>
+    <div class="automation-textbox" id="autoTextbox">
+      <h2 id="autoTitle"></h2>
+      <p id="autoDesc"></p>
+      <button class="btn btn-automation" id="autoBtn">Read More</button>
+    </div>
+    <div class="automation-next" id="autoNext">&#10095;</div>
+  </div>
+
+  <script>
+    const automationSlides = [
+      { image: 'img/automation/homeautomation.png', title: 'Residential Automation', text: 'Elevate your lifestyle with intelligent home control — comfort, security, and energy efficiency at your fingertips.', button: 'Know More' },
+      { image: 'img/automation/commercialautomation.png', title: 'Commercial Automation', text: 'Optimize every corner of your workspace with cutting-edge automation that boosts productivity and sustainability.', button: 'Know More' },
+      { image: 'img/automation/industriesautomation.png', title: 'Industrial Automation', text: 'Automate, analyze, and advance your operations with precision-engineered industrial control systems.', button: 'Know More' },
+      { image: 'img/automation/hospitalautomation.png', title: 'Hospital Automation', text: 'Seamless healthcare automation designed to enhance patient care, streamline workflows, and improve outcomes.', button: 'Know More' },
+      { image: 'img/automation/hotelautomation.png', title: 'Hotel Automation', text: 'Transform guest experiences with smart automation — from lighting to comfort, luxury meets innovation.', button: 'Know More' },
+    ];
+
+    let autoIndex = 0;
+    const autoBg = document.getElementById('autoBg');
+    const autoTextbox = document.getElementById('autoTextbox');
+    const autoTitle = document.getElementById('autoTitle');
+    const autoDesc = document.getElementById('autoDesc');
+    const autoBtn = document.getElementById('autoBtn');
+    const autoNext = document.getElementById('autoNext');
+
+    function showAutomationSlide(index) {
+      autoBg.classList.remove('shrink');
+      autoTextbox.classList.remove('active');
+
+      autoBg.style.backgroundImage = `url('${automationSlides[index].image}')`;
+      autoTitle.textContent = automationSlides[index].title;
+      autoDesc.textContent = automationSlides[index].text;
+      autoBtn.textContent = automationSlides[index].button;
+
+      setTimeout(() => {
+        autoBg.classList.add('shrink');
+        setTimeout(() => autoTextbox.classList.add('active'), 1000);
+      }, 1000);
+    }
+
+    function nextAutomationSlide() {
+      autoIndex = (autoIndex + 1) % automationSlides.length;
+      showAutomationSlide(autoIndex);
+    }
+
+    window.addEventListener('load', () => showAutomationSlide(autoIndex));
+    setInterval(nextAutomationSlide, 7000);
+    autoNext.addEventListener('click', nextAutomationSlide);
+  </script>
+</section>
+<!-- automation-showcase -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== ARCOT R&D SECTION  end (Stable Image Version) ===== -->
+
+<!-- 🌐 APPLICATIONS SECTION start -->
+<section class="applications-section">
+  <!-- Heading -->
+  <div class="applications-head" data-aos="fade-up">
+    <h2 class="applications-title">Applications</h2>
+    <p class="applications-subtitle">
+      From power to automation, we deliver end-to-end smart infrastructure applications built for the future.
+    </p>
+  </div>
+
+  <!-- Slider -->
+  <div class="applica-slider-container">
+    <div class="applica-slide active">
+      <video autoplay loop muted playsinline>
+        <source src="media/powersapplication.mp4" type="video/mp4">
+      </video>
+      <div class="applica-overlay"></div>
+      <div class="applica-content">
+        <h2>Power Systems</h2>
+        <p>Reliable power infrastructure covering generation, transmission, and distribution with advanced LT and HT panels.</p>
+      </div>
+    </div>
+
+    <div class="applica-slide">
+      <video autoplay loop muted playsinline>
+        <source src="media/energyapplications.mp4" type="video/mp4">
+      </video>
+      <div class="applica-overlay"></div>
+      <div class="applica-content">
+        <h2>Energy Solutions</h2>
+        <p>Delivering sustainable solar, wind, biomass, and hydel projects designed for long-term energy security.</p>
+      </div>
+    </div>
+
+    <div class="applica-slide">
+      <video autoplay loop muted playsinline>
+        <source src="media/lightingapplication.mp4" type="video/mp4">
+      </video>
+      <div class="applica-overlay"></div>
+      <div class="applica-content">
+        <h2>Lighting Technology</h2>
+        <p>Advanced lighting systems that enhance safety, aesthetics, and energy efficiency for every environment.</p>
+      </div>
+    </div>
+
+    <div class="applica-slide">
+      <video autoplay loop muted playsinline>
+        <source src="media/automationapplication.mp4" type="video/mp4">
+      </video>
+      <div class="applica-overlay"></div>
+      <div class="applica-content">
+        <h2>Automation Systems</h2>
+        <p>Smart IoT automation across homes, industries, hospitals, and hotels for intelligent operations.</p>
+      </div>
+    </div>
+
+    <div class="applica-slide">
+      <video autoplay loop muted playsinline>
+        <source src="media/randdapplication.mp4" type="video/mp4">
+      </video>
+      <div class="applica-overlay"></div>
+      <div class="applica-content">
+        <h2>Innovation & R&D</h2>
+        <p>Developing next-generation products — smart poles, bollards, and energy-efficient IoT systems.</p>
+      </div>
+    </div>
+
+    <!-- Arrows -->
+    <div class="applica-arrows">
+      <div class="applica-arrow-btn" id="applica-prev">&#10094;</div>
+      <div class="applica-arrow-btn" id="applica-next">&#10095;</div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const slides = document.querySelectorAll(".applica-slide");
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((s, i) => s.classList.toggle("active", i === index));
+    current = index;
+  }
+
+  document.getElementById("applica-next").addEventListener("click", () => {
+    showSlide((current + 1) % slides.length);
+  });
+
+  document.getElementById("applica-prev").addEventListener("click", () => {
+    showSlide((current - 1 + slides.length) % slides.length);
+  });
+});
+</script>
+
+<style>
+/* === APPLICATIONS SECTION === */
+.applications-section {
+  background: linear-gradient(180deg, #fff 0%, #fff 50%, #fff 100%);
+  color: #111;
+ font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  /* padding-bottom: 60px; */
+}
+
+/* Heading (aligned like Power & Lighting) */
+.applications-head {
+  text-align: left;
+  /* margin-left: 6%; */
+  padding-top: 20px;
+  margin-left: 20px;
+}
+
+.applications-title {
+  font-size: 40px;
+  /* font-weight: 600; */
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.applications-subtitle {
+  font-size: 16px;
+  color: #444;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* Slider */
+.applica-slider-container {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.applica-slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+}
+
+.applica-slide.active {
+  display: block;
+}
+
+.applica-slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.applica-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0.85) 80%);
+}
+
+.applica-content {
+  position: absolute;
+  top: 30%;
+  right: 8%;
+  max-width: 450px;
+  color: #f5f5f5;
+  text-align: right;
+}
+
+.applica-content h2 {
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.applica-content p {
+  margin-top: 10px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* Arrows */
+.applica-arrows {
+  position: absolute;
+  bottom: 25px;
+  right: 40px;
+  display: flex;
+  gap: 15px;
+}
+.applica-arrow-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* 📱 Mobile */
+@media(max-width:768px){
+  .applications-head {
+    margin-left: 5%;
+    text-align: left;
+  }
+  .applications-title {
+    font-size: 28px;
+  }
+  .applications-subtitle {
+    font-size: 14px;
+    max-width: 90%;
+  }
+  .applica-slider-container {
+    height: 300px;
+  }
+  .applica-content {
+    top: 25%;
+    left: 5%;
+    right: 5%;
+    max-width: 90%;
+    text-align: center;
+  }
+  .applica-content h2 {
+    font-size: 22px;
+  }
+  .applica-content p {
+    font-size: 14px;
+  }
+  .applica-arrows {
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  .applica-arrow-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+}
+</style>
+<!-- 🌐 APPLICATIONS SECTION end -->
+
+
+
+
 
 <!-- apple light start -->
 <!-- Spotlight Section -->
