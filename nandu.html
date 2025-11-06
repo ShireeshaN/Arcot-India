@@ -1,343 +1,262 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smart Features — 16 Sections</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+<!-- COMMERCIAL AUTOMATION STARTS-->
+ <section class="cp-section" id="cpSection">
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
-    body{
-      font-family:"Poppins",sans-serif;
-      background:#111;
-      color:#fff;
+    :root{
+      --cp-gold:#FFC300;
+      --cp-dark:#1A1A1A;
+      --cp-light:#E0E0E0;
     }
 
-    .feature-section{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      height:100vh;
-      background:#181818;
-      border-bottom:1px solid rgba(255,255,255,0.05);
-      overflow:hidden;
+    .cp-section{
       position:relative;
-    }
-
-    .layout-card{
-      display:flex;
-      width:90%;
-      max-width:1300px;
-      height:85vh;
-      background:#1a1a1a;
-      box-shadow:0 8px 40px rgba(0,0,0,0.5);
-      overflow:hidden;
-      position:relative;
-    }
-
-    .left-panel{
-      width:50%;
-      height:100%;
-      overflow:hidden;
-    }
-    .left-panel img{
       width:100%;
+      height:100vh;
+      background-size:cover;
+      background-position:center;
+      background-color:var(--cp-dark);
+      color:var(--cp-light);
+      font-family:'Open Sans',sans-serif;
+      transition:background-image 1s ease-in-out;
+    }
+
+    .cp-overlay{
+      position:absolute;top:0;left:0;width:100%;height:100%;
+      background:rgba(255,255,255,0.12);
+      pointer-events:none;
+    }
+
+    .cp-inner{
+      position:relative;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
       height:100%;
-      object-fit:cover;
-      display:block;
+      padding:5%;
+      z-index:1;
     }
 
-    .right-panel{
-      width:50%;
-      padding:80px 90px 60px 90px;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-start;
-      position:relative;
-    }
-    .right-panel h1{
-      font-size:2rem;
-      font-weight:600;
-      margin-bottom:20px;
-      color:#fff;
-      position:relative;
-    }
+    .cp-content{ max-width:40%; margin-top:50px; }
+    .cp-content h1{ font-family:'Poppins',sans-serif; font-size:4rem; font-weight:900; line-height:1.1; }
+    .cp-content p{ margin:1rem 0; color:#eee; }
+    .cp-btn{ background:var(--cp-gold); color:#111; font-weight:600; border:none; padding:.5rem 1rem; border-radius:6px; }
 
-    /* PAGE INDICATOR */
-    .page-indicator{
+    /* carousel area */
+    .cp-carousel{
       position:absolute;
-      right:40px;
-      top:80px;
+      bottom:80px;
+      right:5%;
       display:flex;
-      flex-direction:column;
-      align-items:center;
-      color:#ccc;
+      overflow:hidden;
+      width:560px;
+      height:250px;
     }
 
-    .page-count{
-      font-size:1rem;
-      letter-spacing:2px;
-      font-weight:500;
-      color:#e0e0e0;
-      margin-bottom:10px;
-    }
-
-    .indicator-line{
-      width:1px;
-      height:20vh;
-      background:rgba(255,255,255,0.3);
-      margin-bottom:10px;
-    }
-
-    .indicator-arrow{
-      font-size:1.3rem;
-      color:#ccc;
-      cursor:pointer;
-      transition:all 0.3s ease;
-    }
-    .indicator-arrow:hover{
-      color:#fff;
-      transform:translateY(3px);
-    }
-
-    .points{
-      list-style:none;
-      padding-left:0;
-      color:#bfbfbf;
-      font-size:1rem;
-      line-height:1.8;
-    }
-    .points li{
-      position:relative;
-      padding-left:18px;
-    }
-    .points li::before{
-      content:"•";
+    .cp-card{
+      width:160px;
+      height:250px;
+      border-radius:12px;
+      overflow:hidden;
+      flex-shrink:0;
       position:absolute;
-      left:0;
+      transition:transform 1s ease-in-out, z-index .5s;
+      background:#111;
+      margin-right:10px;
+    }
+    .cp-card img{ width:100%; height:100%; object-fit:cover; }
+
+    .cp-info{
+      position:absolute; bottom:0; left:0; width:100%; padding:.5rem;
+      background:linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 100%);
       color:#fff;
-      font-weight:bold;
     }
+    .cp-info h3{ font-size:.9rem; margin:0; font-weight:700; text-align:start; }
+    .cp-info p{ font-size:.7rem; margin:0; text-align:start; }
 
-    .indicator-label{
-      position:absolute;
-      bottom:40px;
-      right:40px;
-      font-size:0.9rem;
-      color:#777;
-      letter-spacing:2px;
-      text-transform:uppercase;
-    }
+    .cp-nav{ position:absolute; bottom:20px; left:50%; transform:translateX(-50%); display:flex; gap:.5rem; z-index:2; }
+    .cp-nav button{ background:rgba(0,0,0,0.5); border:none; border-radius:50%; width:40px; height:40px; color:#fff; }
 
-    /* LEFT NAVIGATION */
-    .feature-quick-nav{
-      position:fixed;
-      left:25px;
-      top:50%;
-      transform:translateY(-50%);
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      z-index:999;
-    }
-    .feature-quick-nav a{
-      font-size:14px;
-      font-weight:500;
-      color:#888;
-      text-decoration:none;
-      letter-spacing:1px;
-      transition:all 0.2s ease;
-      padding-bottom:3px;
-    }
-    .feature-quick-nav a.active{
-      color:#fff;
-      border-bottom:2px solid #fff;
-    }
-
-    /* ========== MOBILE VIEW FIX ========== */
+    /* responsive */
     @media(max-width:992px){
-      .layout-card{
-        flex-direction:column;
-        height:auto;
-        width:95%;
-      }
-
-      .left-panel,
-      .right-panel{
-        width:100%;
-      }
-
-      .left-panel{
-        height:300px;
-      }
-
-      .right-panel{
-        padding:40px 25px 80px 25px;
-        align-items:flex-start;
-      }
-
-      .right-panel h1{
-        text-align:start;
-        width:100%;
-      }
-
-      .points{
-        font-size:0.95rem;
-        line-height:1.7;
-        margin-top:10px;
-      }
-
-      /* Indicator below points for mobile */
-      .page-indicator{
-        position:relative;
-        right:auto;
-        top:auto;
-        margin:40px auto 20px auto;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-      }
-
-      .page-count{
-        font-size:0.9rem;
-      }
-
-      .indicator-line{
-        height:80px;
-      }
-
-      .indicator-arrow{
-        font-size:1.2rem;
-      }
-
-      .indicator-label{
-        position:relative;
-        bottom:auto;
-        right:auto;
-        text-align:center;
-        margin-top:10px;
-        width:100%;
-        font-size:0.85rem;
-        color:#999;
-      }
-
-      /* Hide vertical nav in mobile */
-      .feature-quick-nav{
-        display:none;
-      }
+      .cp-inner{ flex-direction:column; align-items:center; text-align:center; }
+      .cp-content{ max-width:80%; margin-top:30px; }
+      .cp-carousel{ width:400px; height:200px; bottom:40px; }
+      .cp-card{ width:140px; height:200px; }
+    }
+    @media(max-width:576px){
+      .cp-section{ height:auto; padding-bottom:50px; }
+      .cp-inner{ flex-direction:column; padding:8% 5%; }
+      .cp-content{ max-width:95%; text-align:center; margin-top:10px; }
+      .cp-content h1{ font-size:1.8rem; }
+      .cp-carousel{ position:relative; width:100%; max-width:320px; height:auto; margin-top:25px; overflow-x:auto; gap:8px; padding-bottom:10px; }
+      .cp-card{ position:relative; width:80px; height:80px; transform:none !important; }
+      .cp-info{ position:static; background:none; padding:0; text-align:center; }
+      .cp-info p{ display:none; }
+      .cp-nav{ position:relative; margin-top:10px; }
     }
   </style>
-</head>
-<body>
 
-  <!-- Vertical Quick Navigation -->
-  <nav class="feature-quick-nav">
-    <a href="#feature1" class="active">01</a>
-    <a href="#feature2">02</a>
-    <a href="#feature3">03</a>
-    <a href="#feature4">04</a>
-    <a href="#feature5">05</a>
-    <a href="#feature6">06</a>
-    <a href="#feature7">07</a>
-    <a href="#feature8">08</a>
-    <a href="#feature9">09</a>
-    <a href="#feature10">10</a>
-    <a href="#feature11">11</a>
-    <a href="#feature12">12</a>
-    <a href="#feature13">13</a>
-    <a href="#feature14">14</a>
-    <a href="#feature15">15</a>
-    <a href="#feature16">16</a>
-  </nav>
+  <div class="cp-overlay" id="cpOverlay"></div>
 
-  <!-- Example: Feature 1 -->
-  <section id="feature1" class="feature-section">
-    <div class="layout-card">
-      <div class="left-panel">
-        <img src="img/11.png" alt="Feature 1">
-      </div>
-      <div class="right-panel">
-        <h1>Smart Pole</h1>
-        <ul class="points">
-          <li>EV Charging integration</li>
-          <li>AI-based camera analytics</li>
-          <li>5G-ready connectivity</li>
-          <li>Solar power optimization</li>
-          <li>IoT monitoring and alerts</li>
-          <li>Modular component design</li>
-          <li>Voice assistant interface</li>
-          <li>Environmental sensing</li>
-          <li>Durable weatherproof body</li>
-          <li>Night illumination system</li>
-        </ul>
-
-        <div class="page-indicator">
-          <div class="page-count">01 / 16</div>
-          <div class="indicator-line"></div>
-          <div class="indicator-arrow" onclick="nextFeature(1)">↓</div>
-        </div>
-
-        <div class="indicator-label">Smart Pole</div>
-      </div>
+  <div class="cp-inner">
+    <div class="cp-content">
+      <span id="cpLocation">Location 1</span>
+      <h1 id="cpTitle">Commercial Parts Showcase</h1>
+      <p id="cpDescription">Description 1</p>
+      <a href="#" class="cp-btn">Explore Parts</a>
     </div>
-  </section>
 
-  <!-- Feature 2 -->
-  <section id="feature2" class="feature-section">
-    <div class="layout-card">
-      <div class="left-panel">
-        <img src="img/11.png" alt="Feature 2">
-      </div>
-      <div class="right-panel">
-        <h1>Smart Bollard</h1>
-        <ul class="points">
-          <li>Impact-resistant construction</li>
-          <li>Integrated motion detection</li>
-          <li>Adaptive street lighting</li>
-          <li>Data-driven urban analytics</li>
-          <li>Wi-Fi hotspot enabled</li>
-          <li>AI-powered foot traffic count</li>
-          <li>Modular smart core</li>
-          <li>Eco-friendly materials</li>
-          <li>Minimal maintenance design</li>
-          <li>Dynamic RGB illumination</li>
-        </ul>
+    <div class="cp-carousel" id="cpCarousel"></div>
 
-        <div class="page-indicator">
-          <div class="page-count">02 / 16</div>
-          <div class="indicator-line"></div>
-          <div class="indicator-arrow" onclick="nextFeature(2)">↓</div>
-        </div>
-
-        <div class="indicator-label">Smart Bollard</div>
-      </div>
+    <div class="cp-nav">
+      <button id="cpPrev" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
+      <button id="cpNext" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
     </div>
-  </section>
-
-  <!-- Continue same pattern up to feature16... -->
+  </div>
 
   <script>
-    const totalFeatures = 16;
-    function nextFeature(current) {
-      const next = current === totalFeatures ? 1 : current + 1;
-      document.getElementById("feature" + next).scrollIntoView({ behavior: "smooth" });
-    }
+    (function(){
+      // data
+      const CP_CARDS = [
+        {bg:'../img/automation/commercialautomation.png', title:'Commercial', location:'Location 1', desc:'Description 1'},
+        {bg:'../img/automation/homeautomation.png', title:'Home', location:'Location 2', desc:'Description 2'},
+        {bg:'../img/automation/hospitalautomation.png', title:'Hospital', location:'Location 3', desc:'Description 3'},
+        {bg:'../img/automation/hotelautomation.png', title:'Hotel', location:'Location 4', desc:'Description 4'},
+        {bg:'../img/automation/iot.png', title:'IoT', location:'Location 5', desc:'Description 5'},
+        {bg:'../img/automation/industriesautomation.png', title:'Office', location:'Location 6', desc:'Description 6'},
+        {bg:'../img/automation/homeauto.jpg', title:'School', location:'Location 7', desc:'Description 7'},
+        {bg:'../img/automation/animation background.jpg', title:'Factory', location:'Location 8', desc:'Description 8'}
+      ];
 
-    // Highlight nav item on scroll
-    const sections=document.querySelectorAll(".feature-section");
-    const navLinks=document.querySelectorAll(".feature-quick-nav a");
-    const observer=new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          const id=entry.target.id;
-          navLinks.forEach(link=>{
-            link.classList.toggle("active",link.getAttribute("href")==="#"+id);
-          });
+      // state
+      let cpVisible = [];
+      let cpIndex = 0;
+      const CP_STEP = 170 + 10;
+
+      // DOM
+      const cpCarousel = document.getElementById('cpCarousel');
+      const cpSection = document.getElementById('cpSection');
+      const cpTitle = document.getElementById('cpTitle');
+      const cpLocation = document.getElementById('cpLocation');
+      const cpDescription = document.getElementById('cpDescription');
+      const btnPrev = document.getElementById('cpPrev');
+      const btnNext = document.getElementById('cpNext');
+
+      // Create initial three cards
+      for(let i=0;i<3;i++){
+        const data = CP_CARDS[i % CP_CARDS.length];
+        const card = document.createElement('div');
+        card.className = 'cp-card';
+        card.innerHTML = `<img src="${data.bg}" alt="${data.title}">
+                          <div class="cp-info"><h3>${data.title}</h3><p>${data.desc}</p></div>`;
+        const scale = i===1 ? 1.2 : 1;
+        const z = i===1 ? 2 : 1;
+        card.style.transform = `translateX(${i * CP_STEP}px) scale(${scale})`;
+        card.style.zIndex = z;
+        cpCarousel.appendChild(card);
+        cpVisible.push(card);
+      }
+
+      // slide function
+      function cpSlideForward(){
+        cpVisible.forEach((card,i)=>{
+          const newX = (i - 1) * CP_STEP;
+          const scale = (i - 1 === 1) ? 1.2 : 1;
+          const z = (i - 1 === 1) ? 2 : 1;
+          card.style.transform = `translateX(${newX}px) scale(${scale})`;
+          card.style.zIndex = z;
+        });
+
+        const removed = cpVisible.shift();
+        if (removed) cpCarousel.removeChild(removed);
+
+        cpIndex = (cpIndex + 1) % CP_CARDS.length;
+        const nextIdx = (cpIndex + 2) % CP_CARDS.length;
+        const nextData = CP_CARDS[nextIdx];
+
+        const newCard = document.createElement('div');
+        newCard.className = 'cp-card';
+        newCard.innerHTML = `<img src="${nextData.bg}" alt="${nextData.title}">
+                             <div class="cp-info"><h3>${nextData.title}</h3><p>${nextData.desc}</p></div>`;
+        newCard.style.transform = `translateX(${2 * CP_STEP}px) scale(1)`;
+        newCard.style.zIndex = 1;
+        cpCarousel.appendChild(newCard);
+        cpVisible.push(newCard);
+
+        // update center content
+        const center = cpVisible[1];
+        if(center){
+          const imgSrc = center.querySelector('img').src;
+          const centerTitle = center.querySelector('h3').textContent;
+          cpSection.style.backgroundImage = `url('${imgSrc}')`;
+          cpTitle.textContent = centerTitle;
+          // use the same nextData.location/desc for right-side text to match previous logic
+          cpLocation.textContent = nextData.location;
+          cpDescription.textContent = nextData.desc;
         }
-      });
-    },{threshold:0.6});
-    sections.forEach(sec=>observer.observe(sec));
-  </script>
+      }
 
-</body>
-</html>
+      // optional manual controls (advance)
+      let cpInterval = setInterval(cpSlideForward, 2500);
+      btnNext.addEventListener('click', ()=>{
+        clearInterval(cpInterval);
+        cpSlideForward();
+        cpInterval = setInterval(cpSlideForward, 2500);
+      });
+
+      // previous - simulate backwards slide
+      btnPrev.addEventListener('click', ()=>{
+        clearInterval(cpInterval);
+        // compute previous item index and prepend new card
+        const prevIndex = (cpIndex - 1 + CP_CARDS.length) % CP_CARDS.length;
+        const prevData = CP_CARDS[prevIndex];
+
+        // remove last card visually, then shift positions right
+        const last = cpVisible.pop();
+        if(last) cpCarousel.removeChild(last);
+
+        // create new card to insert at start (left)
+        const newLeft = document.createElement('div');
+        newLeft.className = 'cp-card';
+        newLeft.innerHTML = `<img src="${prevData.bg}" alt="${prevData.title}">
+                             <div class="cp-info"><h3>${prevData.title}</h3><p>${prevData.desc}</p></div>`;
+        // place it off-screen left
+        newLeft.style.transform = `translateX(${-1 * CP_STEP}px) scale(1)`;
+        newLeft.style.zIndex = 1;
+        cpCarousel.insertBefore(newLeft, cpCarousel.firstChild);
+        cpVisible.unshift(newLeft);
+
+        // animate all to the right
+        cpVisible.forEach((card,i)=>{
+          const newX = i * CP_STEP;
+          const scale = (i === 1) ? 1.2 : 1;
+          const z = (i === 1) ? 2 : 1;
+          // small timeout to ensure transition applies
+          requestAnimationFrame(()=> {
+            card.style.transform = `translateX(${newX}px) scale(${scale})`;
+            card.style.zIndex = z;
+          });
+        });
+
+        // update cpIndex backward
+        cpIndex = prevIndex;
+        // update center content after a short delay to allow animation
+        setTimeout(()=>{
+          const center = cpVisible[1];
+          if(center){
+            const imgSrc = center.querySelector('img').src;
+            const centerTitle = center.querySelector('h3').textContent;
+            cpSection.style.backgroundImage = `url('${imgSrc}')`;
+            cpTitle.textContent = centerTitle;
+            cpLocation.textContent = prevData.location;
+            cpDescription.textContent = prevData.desc;
+          }
+        }, 320);
+
+        cpInterval = setInterval(cpSlideForward, 2500);
+      });
+
+      // expose nothing (self-contained)
+    })();
+  </script>
+</section>
+<!--COMMERCIAL AUTOMATION END-->
