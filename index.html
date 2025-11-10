@@ -429,7 +429,7 @@ document.addEventListener("DOMContentLoaded", function () {
   flex: 0.9;
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   height: 70vh; /* reduced image height */
   max-height: 650px;
   margin-right: 60px;
@@ -1387,7 +1387,7 @@ goNext();
 
     .lightsegproducts-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 12px;
       width: 100%;
       max-width: 1800px;
@@ -2076,11 +2076,11 @@ startLightingAuto();
     }
 
     .automation-textbox.active {
-      animation: textAppear 1.2s ease forwards;
+      animation: textAppear 0s ease forwards;
     }
 
     @keyframes textAppear {
-      0% { opacity: 0; transform: translateX(50px); }
+      0% { opacity: 0; transform: translateX(100px); }
       100% { opacity: 1; transform: translateX(0); }
     }
 
@@ -2234,7 +2234,7 @@ startLightingAuto();
     }
 
     window.addEventListener('load', () => showAutomationSlide(autoIndex));
-    setInterval(nextAutomationSlide, 7000);
+    setInterval(nextAutomationSlide, 3000);
     autoNext.addEventListener('click', nextAutomationSlide);
   </script>
 </section>
