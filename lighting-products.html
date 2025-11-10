@@ -390,6 +390,180 @@ section {
 }
 </style>
 
+<script>
+/* --- PRODUCT DATA (same as your original) --- */
+const allProducts = {
+  recessed: [
+    {
+      name: "Downlights ",type: "Recessed", designer: "Olle Lundberg",images: {
+        black: "img/lighting product images/recessed/recessed-b-cob.png",
+        bronze: "img/lighting product images/recessed/recessed-g-cob.png",
+        white: "img/lighting product images/recessed/recessed-w-cob.png",
+        silver: "img/lighting product images/recessed/recessed-s-cob.png",
+      },
+    },
+    {
+      name: "Spotlights",
+      type: "Recessed",
+      designer: "Olle Lundberg",
+      images: {
+        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
+        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
+        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
+        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
+      },
+
+    },
+
+    {
+      name: "COB Lights",
+      type: "Recessed",
+      designer: "Olle Lundberg",
+      images: {
+        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
+        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
+        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
+        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
+      },
+
+    },
+
+    {
+      name: "Linear Recessed Profiles",
+      type: "Recessed",
+      designer: "Olle Lundberg",
+      images: {
+        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
+        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
+        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
+        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
+      },
+
+    },
+
+        {
+      name: "Panel Lights",
+      type: "Recessed",
+      designer: "Olle Lundberg",
+      images: {
+        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
+        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
+        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
+        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
+      },
+
+    },
+
+   {
+      name: "Trimless Recessed Lights",
+      type: "Recessed",
+      designer: "Olle Lundberg",
+      images: {
+        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
+        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
+        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
+        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
+      },
+
+    },
+
+       {
+      name: "Adjustable Recessed Fixtures",
+      type: "Recessed",
+      designer: "Olle Lundberg",
+      images: {
+        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
+        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
+        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
+        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
+      },
+
+    },
+
+           {
+      name: "Anti-glare Downlights",
+      type: "Recessed",
+      designer: "Olle Lundberg",
+      images: {
+        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
+        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
+        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
+        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
+      },
+
+    },
+
+    
+  ],
+  ceiling: [
+    {
+      name: "COB Lights",
+      type: "Ceiling",
+      designer: "John Doe",
+      images: {
+        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=LUMINA+FLAT+BLACK",
+        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=LUMINA+FLAT+BRONZE",
+        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=LUMINA+FLAT+WHITE",
+        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=LUMINA+FLAT+SILVER",
+      },
+    },
+  ],
+  pendant: [],
+  wall: [],
+  table: [],
+  bollard: [],
+  pole: [],
+  extceiling: [],
+  office: [],
+};
+
+/* --- SHOW PRODUCTS --- */
+function showProducts(category) {
+  const grid = document.getElementById("productGrid");
+  grid.innerHTML = "";
+  const items = allProducts[category] || [];
+  renderProducts(items);
+}
+
+/* --- SHOW ALL PRODUCTS --- */
+function showAllProducts() {
+  const grid = document.getElementById("productGrid");
+  grid.innerHTML = "";
+  const items = Object.values(allProducts).flat();
+  renderProducts(items);
+}
+
+/* --- RENDER FUNCTION --- */
+function renderProducts(items) {
+  const grid = document.getElementById("productGrid");
+  items.forEach((p) => {
+    const card = document.createElement("div");
+    card.className = "product-card";
+    const defaultColor = "black";
+    card.innerHTML = `
+      <img src="${p.images[defaultColor]}" alt="${p.name}" />
+      <div class="product-info">
+        <h3>${p.name}</h3>
+        <div class="type">${p.type}</div>
+        <div class="designer">${p.designer}</div>
+        <div class="color-options">
+          ${Object.keys(p.images)
+            .map(
+              (color) =>
+                `<span class="color-dot ${color}" onmouseover="this.closest('.product-card').querySelector('img').src='${p.images[color]}'"></span>`
+            )
+            .join("")}
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+/* --- INITIAL LOAD --- */
+showAllProducts();
+</script>
+
 
 
 
@@ -600,179 +774,7 @@ section {
 
 
 
-<script>
-/* --- PRODUCT DATA (same as your original) --- */
-const allProducts = {
-  recessed: [
-    {
-      name: "Downlights ",type: "Recessed", designer: "Olle Lundberg",images: {
-        black: "img/lighting product images/recessed/recessed-b-cob.png",
-        bronze: "img/lighting product images/recessed/recessed-g-cob.png",
-        white: "img/lighting product images/recessed/recessed-w-cob.png",
-        silver: "img/lighting product images/recessed/recessed-s-cob.png",
-      },
-    },
-    {
-      name: "Spotlights",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
 
-    },
-
-    {
-      name: "COB Lights",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
-
-    },
-
-    {
-      name: "Linear Recessed Profiles",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
-
-    },
-
-        {
-      name: "Panel Lights",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
-
-    },
-
-   {
-      name: "Trimless Recessed Lights",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
-
-    },
-
-       {
-      name: "Adjustable Recessed Fixtures",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
-
-    },
-
-           {
-      name: "Anti-glare Downlights",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
-
-    },
-
-    
-  ],
-  ceiling: [
-    {
-      name: "COB Lights",
-      type: "Ceiling",
-      designer: "John Doe",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=LUMINA+FLAT+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=LUMINA+FLAT+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=LUMINA+FLAT+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=LUMINA+FLAT+SILVER",
-      },
-    },
-  ],
-  pendant: [],
-  wall: [],
-  table: [],
-  bollard: [],
-  pole: [],
-  extceiling: [],
-  office: [],
-};
-
-/* --- SHOW PRODUCTS --- */
-function showProducts(category) {
-  const grid = document.getElementById("productGrid");
-  grid.innerHTML = "";
-  const items = allProducts[category] || [];
-  renderProducts(items);
-}
-
-/* --- SHOW ALL PRODUCTS --- */
-function showAllProducts() {
-  const grid = document.getElementById("productGrid");
-  grid.innerHTML = "";
-  const items = Object.values(allProducts).flat();
-  renderProducts(items);
-}
-
-/* --- RENDER FUNCTION --- */
-function renderProducts(items) {
-  const grid = document.getElementById("productGrid");
-  items.forEach((p) => {
-    const card = document.createElement("div");
-    card.className = "product-card";
-    const defaultColor = "black";
-    card.innerHTML = `
-      <img src="${p.images[defaultColor]}" alt="${p.name}" />
-      <div class="product-info">
-        <h3>${p.name}</h3>
-        <div class="type">${p.type}</div>
-        <div class="designer">${p.designer}</div>
-        <div class="color-options">
-          ${Object.keys(p.images)
-            .map(
-              (color) =>
-                `<span class="color-dot ${color}" onmouseover="this.closest('.product-card').querySelector('img').src='${p.images[color]}'"></span>`
-            )
-            .join("")}
-        </div>
-      </div>
-    `;
-    grid.appendChild(card);
-  });
-}
-
-/* --- INITIAL LOAD --- */
-showAllProducts();
-</script>
 
     </body>
 

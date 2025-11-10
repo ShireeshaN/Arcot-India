@@ -1374,7 +1374,7 @@ goNext();
 
 <!-- Lightseg Products Section start -->
 <div class="lightsegproducts-wrapper">
-  
+
   <style>
     .lightsegproducts-wrapper {
       background-color: #ffffff;
@@ -1382,138 +1382,121 @@ goNext();
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      padding: 10px 0;
+      padding: 40px 0;
     }
 
     .lightsegproducts-grid {
       display: grid;
-      grid-template-rows: repeat(2, 350px);
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
       width: 100%;
       max-width: 1800px;
     }
 
-    .lightsegproducts-row {
-      display: flex;
-      border-top: 2px solid #fff;
-      border-left: 2px solid #fff;
-    }
-
     .lightsegproducts-box {
-      flex: 1;
-      border-right: 2px solid #fff;
-      border-bottom: 2px solid #fff;
-      background-color: #bdbbbb;
       position: relative;
       overflow: hidden;
-      transition: flex 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+      background: #e0e0e0;
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 350px;
+      border: 1px solid #fff;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
       cursor: pointer;
+      border-radius: 10px;
+    }
+
+    .lightsegproducts-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Floating animation for icons */
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
     }
 
     .lightsegproducts-box img.lightsegproducts-icon {
-      width: 200px;
+      width: 180px;
       height: auto;
-      /* filter: brightness(0) invert(1); */
-      transition: all 0.4s ease;
-   
+      transition: transform 0.6s ease, opacity 0.6s ease;
+      animation: floatIcon 3s ease-in-out infinite;
     }
 
-    /* Hover expand behavior */
-    .lightsegproducts-row:hover .lightsegproducts-box {
-      flex: 0.8;
-      opacity: 0.5;
+    .lightsegproducts-box:hover img.lightsegproducts-icon {
+      transform: translateY(-20px) scale(1.05);
+      opacity: 0.8;
     }
 
-    .lightsegproducts-row .lightsegproducts-box:hover {
-      flex: 3;
+    /* Overlay reveal - diagonal style */
+    .lightsegproducts-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #ffffff 50%, #f5f5f5 50%);
+      clip-path: polygon(0 100%, 100% 0, 100% 100%, 0% 100%);
+      transition: clip-path 0.7s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.6s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+    }
+
+    .lightsegproducts-box:hover .lightsegproducts-overlay {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
       opacity: 1;
-      background-color: #fff;
     }
-
-   /* Remove transparency on hover — hide the icon completely */
-.lightsegproducts-row .lightsegproducts-box:hover img.lightsegproducts-icon {
-  opacity: 0;
-  transform: scale(1.2);
-}
-
-/* Keep background solid white when hovered */
-.lightsegproducts-row .lightsegproducts-box:hover {
-  flex: 3;
-  opacity: 1;
-  background-color: #ffffff;
-}
-
-
-/* Optional: overlay looks smoother & clean */
-.lightsegproducts-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  opacity: 0;
-  transition: all 0.5s ease;
-  padding-top: 40px;
-  background-color: rgba(255, 255, 255, 0.95); /* <— soft white overlay layer */
-}
-
-.lightsegproducts-box:hover .lightsegproducts-overlay {
-  opacity: 1;
-}
 
     .lightsegproducts-overlay h2 {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 700;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+      color: #111;
+      text-align: center;
       border-bottom: 2px solid #111;
-      padding-bottom: 5px;
+      padding-bottom: 4px;
     }
 
     .lightsegproducts-gallery {
       display: flex;
-      gap: 25px;
-      align-items: flex-start;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
     }
 
     .lightsegproducts-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       text-align: center;
     }
 
     .lightsegproducts-item img {
-      width: 120px;
-      height: 120px;
+      width: 90px;
+      height: 90px;
       object-fit: contain;
-      transition: transform 0.4s ease;
+      transition: transform 0.3s ease;
     }
 
     .lightsegproducts-item:hover img {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
 
     .lightsegproducts-item p {
-      margin-top: 8px;
+      margin-top: 6px;
       font-size: 0.9rem;
-      font-weight: 500;
       color: #111;
+      font-weight: 500;
     }
 
-    /* Responsive */
+    /* Responsive adjustments */
     @media (max-width: 1024px) {
-      .lightsegproducts-row {
-        flex-wrap: wrap;
-      }
       .lightsegproducts-box {
-        flex: 1 1 33%;
-        height: 280px;
+        height: 300px;
       }
       .lightsegproducts-item img {
         width: 80px;
@@ -1523,11 +1506,10 @@ goNext();
 
     @media (max-width: 768px) {
       .lightsegproducts-box {
-        flex: 1 1 50%;
-        height: 250px;
+        height: 260px;
       }
       .lightsegproducts-overlay h2 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
       }
       .lightsegproducts-item img {
         width: 70px;
@@ -1537,49 +1519,63 @@ goNext();
 
     @media (max-width: 480px) {
       .lightsegproducts-box {
-        flex: 1 1 100%;
         height: 220px;
       }
       .lightsegproducts-overlay h2 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
       .lightsegproducts-item img {
-        width: 100px;
-        height: 100px;
-       
+        width: 60px;
+        height: 60px;
       }
     }
   </style>
 
-
-
   <div class="lightsegproducts-grid">
- 
-    <!-- Row 1 -->
-    <div class="lightsegproducts-row">
-      <div class="lightsegproducts-box">
-        <img src="img/productsimgs/1.png" class="lightsegproducts-icon" alt="Light Icon" />
+
+    <!-- Product 1 -->
+    <div class="lightsegproducts-box">
+      <img src="img/productsimgs/1.png" class="lightsegproducts-icon" alt="COB Light" />
         <div class="lightsegproducts-overlay">
-          <h2>COB LIGHTS</h2>
-          <div class="lightsegproducts-gallery">
-            <div class="lightsegproducts-item">
-              <img src="img/productsimgs/1.png" alt="COB GENERAL LIGHTS" />
-              <p>COB GENERAL LIGHTS</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="img/productsimgs/2.png" alt="COB WALL WASHER" />
-              <p>COB WALL WASHER</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="img/productsimgs/3.png" alt="COB WATER RESISTANT" />
-              <p>COB WATER RESISTANT LIGHTS</p>
-            </div>
-            
-        
+        <h2>COB LIGHTS</h2>
+        <div class="lightsegproducts-gallery">
+          <div class="lightsegproducts-item">
+            <img src="img/productsimgs/4.png" alt="PANEL LIGHTS" />
+            <p>PANEL LIGHTS</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="img/productsimgs/5.png" alt="DOWNLIGHTS" />
+            <p>DOWNLIGHTS</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="img/productsimgs/6.png" alt="SPOTLIGHTS" />
+            <p>SPOTLIGHTS</p>
           </div>
         </div>
       </div>
+    </div>
 
+    <!-- Product 2 -->
+    <div class="lightsegproducts-box">
+      <img src="img/productsimgs/4.png" class="lightsegproducts-icon" alt="Laser Blade" />
+      <div class="lightsegproducts-overlay">
+        <h2>SURFACE LIGHTS</h2>
+        <div class="lightsegproducts-gallery">
+          <div class="lightsegproducts-item">
+            <img src="img/productsimgs/4.png" alt="PANEL LIGHTS" />
+            <p>PANEL LIGHTS</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="img/productsimgs/5.png" alt="DOWNLIGHTS" />
+            <p>DOWNLIGHTS</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="img/productsimgs/6.png" alt="SPOTLIGHTS" />
+            <p>SPOTLIGHTS</p>
+          </div>
+        </div>
+      </div>
+    </div>
       <div class="lightsegproducts-box">
         <img src="img/productsimgs/4.png" class="lightsegproducts-icon" alt="Light Icon" />
         <div class="lightsegproducts-overlay">
@@ -1602,189 +1598,316 @@ goNext();
         </div>
       </div>
 
-      <div class="lightsegproducts-box">
-        <img src="icon3.png" class="lightsegproducts-icon" alt="Track Light" />
-        <div class="lightsegproducts-overlay">
-          <h2>SURFACE</h2>
-          <div class="lightsegproducts-gallery">
-            <div class="lightsegproducts-item">
-              <img src="track1.png" alt="LINEAR TRACK" />
-              <p>LINEAR TRACK</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="track2.png" alt="SPOT TRACK" />
-              <p>SPOT TRACK</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="track3.png" alt="ADJUSTABLE" />
-              <p>ADJUSTABLE</p>
-            </div>
+    <!-- Product 3 -->
+    <div class="lightsegproducts-box">
+      <img src="icon3.png" class="lightsegproducts-icon" alt="Surface Light" />
+      <div class="lightsegproducts-overlay">
+        <h2>TRACK LIGHTS</h2>
+        <div class="lightsegproducts-gallery">
+          <div class="lightsegproducts-item">
+            <img src="track1.png" alt="LINEAR TRACK" />
+            <p>LINEAR TRACK</p>
           </div>
-        </div>
-      </div>
-
-      <div class="lightsegproducts-box">
-        <img src="icon4.png" class="lightsegproducts-icon" alt="Magnetic Light" />
-        <div class="lightsegproducts-overlay">
-          <h2>PROFILES</h2>
-          <div class="lightsegproducts-gallery">
-            <div class="lightsegproducts-item">
-              <img src="mag1.png" alt="LINEAR" />
-              <p>LINEAR MODULE</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="mag2.png" alt="SPOT" />
-              <p>SPOT MODULE</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="mag3.png" alt="WASHER" />
-              <p>WALL WASHER</p>
-            </div>
+          <div class="lightsegproducts-item">
+            <img src="track2.png" alt="SPOT TRACK" />
+            <p>SPOT TRACK</p>
           </div>
-        </div>
-      </div>
-
-      <div class="lightsegproducts-box">
-        <img src="icon5.png" class="lightsegproducts-icon" alt="Profile Light" />
-        <div class="lightsegproducts-overlay">
-          <h2>M TRACK</h2>
-          <div class="lightsegproducts-gallery">
-            <div class="lightsegproducts-item">
-              <img src="pro1.png" alt="SURFACE PROFILE" />
-              <p>SURFACE PROFILE</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="pro2.png" alt="SUSPENDED PROFILE" />
-              <p>SUSPENDED PROFILE</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="pro3.png" alt="RECESSED PROFILE" />
-              <p>RECESSED PROFILE</p>
-            </div>
+          <div class="lightsegproducts-item">
+            <img src="track3.png" alt="ADJUSTABLE" />
+            <p>ADJUSTABLE</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Row 2 -->
-    <div class="lightsegproducts-row">
-      <div class="lightsegproducts-box">
-        <img src="icon1.png" class="lightsegproducts-icon" alt="Light Icon" />
-        <div class="lightsegproducts-overlay">
-          <h2>SM TRACK</h2>
-          <div class="lightsegproducts-gallery">
-            <div class="lightsegproducts-item">
-              <img src="cob1.png" alt="COB GENERAL LIGHTS" />
-              <p>COB GENERAL LIGHTS</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="cob2.png" alt="COB WALL WASHER" />
-              <p>COB WALL WASHER</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="cob3.png" alt="COB WATER RESISTANT" />
-              <p>COB WATER RESISTANT LIGHTS</p>
-            </div>
-            <!-- <div class="lightsegproducts-item">
-              <img src="cob4.png" alt="LASER LIGHTS" />
-              <p>LASER LIGHTS</p>
-            </div> -->
-            <!-- <div class="lightsegproducts-item">
-              <img src="cob5.png" alt="SPOT LIGHTS" />
-              <p>SPOT LIGHTS</p>
-            </div> -->
+    <!-- Product 4 -->
+    <div class="lightsegproducts-box">
+      <img src="icon4.png" class="lightsegproducts-icon" alt="Profile Light" />
+      <div class="lightsegproducts-overlay">
+        <h2>MAGNETIC TRACK LIGHTS</h2>
+        <div class="lightsegproducts-gallery">
+          <div class="lightsegproducts-item">
+            <img src="mag1.png" alt="LINEAR MODULE" />
+            <p>LINEAR MODULE</p>
           </div>
-        </div>
-      </div>
-
-      <div class="lightsegproducts-box">
-        <img src="icon2.png" class="lightsegproducts-icon" alt="Light Icon" />
-        <div class="lightsegproducts-overlay">
-          <h2>RECESSED</h2>
-          <div class="lightsegproducts-gallery">
-            <div class="lightsegproducts-item">
-              <img src="led1.png" alt="PANEL LIGHTS" />
-              <p>PANEL LIGHTS</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="led2.png" alt="SURFACE LIGHTS" />
-              <p>SURFACE LIGHTS</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="led3.png" alt="DOWNLIGHTS" />
-              <p>DOWNLIGHTS</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="led4.png" alt="SPOTLIGHTS" />
-              <p>SPOTLIGHTS</p>
-            </div>
+          <div class="lightsegproducts-item">
+            <img src="mag2.png" alt="SPOT MODULE" />
+            <p>SPOT MODULE</p>
           </div>
-        </div>
-      </div>
-
-      <div class="lightsegproducts-box">
-        <img src="icon3.png" class="lightsegproducts-icon" alt="Track Light" />
-        <div class="lightsegproducts-overlay">
-          <h2>SURFACE</h2>
-          <div class="lightsegproducts-gallery">
-            <div class="lightsegproducts-item">
-              <img src="track1.png" alt="LINEAR TRACK" />
-              <p>LINEAR TRACK</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="track2.png" alt="SPOT TRACK" />
-              <p>SPOT TRACK</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="track3.png" alt="ADJUSTABLE" />
-              <p>ADJUSTABLE</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="lightsegproducts-box">
-        <img src="icon4.png" class="lightsegproducts-icon" alt="Magnetic Light" />
-        <div class="lightsegproducts-overlay">
-          <h2>PROFILES</h2>
-          <div class="lightsegproducts-gallery">
-            <div class="lightsegproducts-item">
-              <img src="mag1.png" alt="LINEAR" />
-              <p>LINEAR MODULE</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="mag2.png" alt="SPOT" />
-              <p>SPOT MODULE</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="mag3.png" alt="WASHER" />
-              <p>WALL WASHER</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="lightsegproducts-box">
-        <img src="icon5.png" class="lightsegproducts-icon" alt="Profile Light" />
-        <div class="lightsegproducts-overlay">
-          <h2>PROFILE LIGHT</h2>
-          <div class="lightsegproducts-gallery">
-            <div class="lightsegproducts-item">
-              <img src="pro1.png" alt="SURFACE PROFILE" />
-              <p>SURFACE PROFILE</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="pro2.png" alt="SUSPENDED PROFILE" />
-              <p>SUSPENDED PROFILE</p>
-            </div>
-            <div class="lightsegproducts-item">
-              <img src="pro3.png" alt="RECESSED PROFILE" />
-              <p>RECESSED PROFILE</p>
-            </div>
+          <div class="lightsegproducts-item">
+            <img src="mag3.png" alt="WALL WASHER" />
+            <p>WALL WASHER</p>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Product 5 -->
+    <div class="lightsegproducts-box">
+      <img src="icon5.png" class="lightsegproducts-icon" alt="M Track" />
+      <div class="lightsegproducts-overlay">
+        <h2>SLIM TRACK LIGHTS</h2>
+        <div class="lightsegproducts-gallery">
+          <div class="lightsegproducts-item">
+            <img src="pro1.png" alt="SURFACE PROFILE" />
+            <p>SURFACE PROFILE</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="pro2.png" alt="SUSPENDED PROFILE" />
+            <p>SUSPENDED PROFILE</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="pro3.png" alt="RECESSED PROFILE" />
+            <p>RECESSED PROFILE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- Product 1 -->
+    <div class="lightsegproducts-box">
+      <img src="img/productsimgs/1.png" class="lightsegproducts-icon" alt="COB Light" />
+        <div class="lightsegproducts-overlay">
+        <h2>LASER BLADES LIGHTS</h2>
+        <div class="lightsegproducts-gallery">
+          <div class="lightsegproducts-item">
+            <img src="img/productsimgs/4.png" alt="PANEL LIGHTS" />
+            <p>PANEL LIGHTS</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="img/productsimgs/5.png" alt="DOWNLIGHTS" />
+            <p>DOWNLIGHTS</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="img/productsimgs/6.png" alt="SPOTLIGHTS" />
+            <p>SPOTLIGHTS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="lightsegproducts-box">
+      <img src="img/productsimgs/4.png" class="lightsegproducts-icon" alt="Laser Blade" />
+      <div class="lightsegproducts-overlay">
+        <h2>LINEAR PROFILES</h2>
+        <div class="lightsegproducts-gallery">
+          <div class="lightsegproducts-item">
+            <img src="img/productsimgs/4.png" alt="PANEL LIGHTS" />
+            <p>PANEL LIGHTS</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="img/productsimgs/5.png" alt="DOWNLIGHTS" />
+            <p>DOWNLIGHTS</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="img/productsimgs/6.png" alt="SPOTLIGHTS" />
+            <p>SPOTLIGHTS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="lightsegproducts-box">
+      <img src="icon3.png" class="lightsegproducts-icon" alt="Surface Light" />
+      <div class="lightsegproducts-overlay">
+        <h2>PANEL LIGHTS</h2>
+        <div class="lightsegproducts-gallery">
+          <div class="lightsegproducts-item">
+            <img src="track1.png" alt="LINEAR TRACK" />
+            <p>LINEAR TRACK</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="track2.png" alt="SPOT TRACK" />
+            <p>SPOT TRACK</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="track3.png" alt="ADJUSTABLE" />
+            <p>ADJUSTABLE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="lightsegproducts-box">
+      <img src="icon4.png" class="lightsegproducts-icon" alt="Profile Light" />
+      <div class="lightsegproducts-overlay">
+        <h2>NEON FLEX</h2>
+        <div class="lightsegproducts-gallery">
+          <div class="lightsegproducts-item">
+            <img src="mag1.png" alt="LINEAR MODULE" />
+            <p>LINEAR MODULE</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="mag2.png" alt="SPOT MODULE" />
+            <p>SPOT MODULE</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="mag3.png" alt="WALL WASHER" />
+            <p>WALL WASHER</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="lightsegproducts-box">
+      <img src="icon5.png" class="lightsegproducts-icon" alt="M Track" />
+      <div class="lightsegproducts-overlay">
+        <h2>HI-BAY</h2>
+        <div class="lightsegproducts-gallery">
+          <div class="lightsegproducts-item">
+            <img src="pro1.png" alt="SURFACE PROFILE" />
+            <p>SURFACE PROFILE</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="pro2.png" alt="SUSPENDED PROFILE" />
+            <p>SUSPENDED PROFILE</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="pro3.png" alt="RECESSED PROFILE" />
+            <p>RECESSED PROFILE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- Product 5 -->
+    <div class="lightsegproducts-box">
+      <img src="icon5.png" class="lightsegproducts-icon" alt="M Track" />
+      <div class="lightsegproducts-overlay">
+        <h2>FLOOD LIGHTS</h2>
+        <div class="lightsegproducts-gallery">
+          <div class="lightsegproducts-item">
+            <img src="pro1.png" alt="SURFACE PROFILE" />
+            <p>SURFACE PROFILE</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="pro2.png" alt="SUSPENDED PROFILE" />
+            <p>SUSPENDED PROFILE</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="pro3.png" alt="RECESSED PROFILE" />
+            <p>RECESSED PROFILE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+        <!-- Product 5 -->
+    <div class="lightsegproducts-box">
+      <img src="icon5.png" class="lightsegproducts-icon" alt="M Track" />
+      <div class="lightsegproducts-overlay">
+        <h2>STREET LIGHTS</h2>
+        <div class="lightsegproducts-gallery">
+          <div class="lightsegproducts-item">
+            <img src="pro1.png" alt="SURFACE PROFILE" />
+            <p>SURFACE PROFILE</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="pro2.png" alt="SUSPENDED PROFILE" />
+            <p>SUSPENDED PROFILE</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="pro3.png" alt="RECESSED PROFILE" />
+            <p>RECESSED PROFILE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- Product 5 -->
+    <div class="lightsegproducts-box">
+      <img src="icon5.png" class="lightsegproducts-icon" alt="M Track" />
+      <div class="lightsegproducts-overlay">
+        <h2>RECESSED INGROUND LIGHTS</h2>
+        <div class="lightsegproducts-gallery">
+          <div class="lightsegproducts-item">
+            <img src="pro1.png" alt="SURFACE PROFILE" />
+            <p>SURFACE PROFILE</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="pro2.png" alt="SUSPENDED PROFILE" />
+            <p>SUSPENDED PROFILE</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="pro3.png" alt="RECESSED PROFILE" />
+            <p>RECESSED PROFILE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+        <!-- Product 5 -->
+    <div class="lightsegproducts-box">
+      <img src="icon5.png" class="lightsegproducts-icon" alt="M Track" />
+      <div class="lightsegproducts-overlay">
+        <h2>WALL WASHER LIGHTS</h2>
+        <div class="lightsegproducts-gallery">
+          <div class="lightsegproducts-item">
+            <img src="pro1.png" alt="SURFACE PROFILE" />
+            <p>SURFACE PROFILE</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="pro2.png" alt="SUSPENDED PROFILE" />
+            <p>SUSPENDED PROFILE</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="pro3.png" alt="RECESSED PROFILE" />
+            <p>RECESSED PROFILE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- Product 5 -->
+    <div class="lightsegproducts-box">
+      <img src="icon5.png" class="lightsegproducts-icon" alt="M Track" />
+      <div class="lightsegproducts-overlay">
+        <h2>SPIKES</h2>
+        <div class="lightsegproducts-gallery">
+          <div class="lightsegproducts-item">
+            <img src="pro1.png" alt="SURFACE PROFILE" />
+            <p>SURFACE PROFILE</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="pro2.png" alt="SUSPENDED PROFILE" />
+            <p>SUSPENDED PROFILE</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="pro3.png" alt="RECESSED PROFILE" />
+            <p>RECESSED PROFILE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- Product 5 -->
+    <div class="lightsegproducts-box">
+      <img src="icon5.png" class="lightsegproducts-icon" alt="M Track" />
+      <div class="lightsegproducts-overlay">
+        <h2>BOLLARDS</h2>
+        <div class="lightsegproducts-gallery">
+          <div class="lightsegproducts-item">
+            <img src="pro1.png" alt="SURFACE PROFILE" />
+            <p>SURFACE PROFILE</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="pro2.png" alt="SUSPENDED PROFILE" />
+            <p>SUSPENDED PROFILE</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="pro3.png" alt="RECESSED PROFILE" />
+            <p>RECESSED PROFILE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 <!-- Lightseg Products Section end -->
