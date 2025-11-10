@@ -1,262 +1,416 @@
-<!-- COMMERCIAL AUTOMATION STARTS-->
- <section class="cp-section" id="cpSection">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Arcot Industries Lighting Products</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    :root{
-      --cp-gold:#FFC300;
-      --cp-dark:#1A1A1A;
-      --cp-light:#E0E0E0;
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: #f8f8f8;
     }
 
-    .cp-section{
-      position:relative;
-      width:100%;
-      height:100vh;
-      background-size:cover;
-      background-position:center;
-      background-color:var(--cp-dark);
-      color:var(--cp-light);
-      font-family:'Open Sans',sans-serif;
-      transition:background-image 1s ease-in-out;
+    .lighting-container {
+      display: flex;
+      min-height: 100vh;
     }
 
-    .cp-overlay{
-      position:absolute;top:0;left:0;width:100%;height:100%;
-      background:rgba(255,255,255,0.12);
-      pointer-events:none;
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: #fff;
+      border-right: 1px solid #ddd;
+      padding: 25px 15px;
+      box-sizing: border-box;
     }
 
-    .cp-inner{
-      position:relative;
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      height:100%;
-      padding:5%;
-      z-index:1;
+    .sidebar h2 {
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 25px;
     }
 
-    .cp-content{ max-width:40%; margin-top:50px; }
-    .cp-content h1{ font-family:'Poppins',sans-serif; font-size:4rem; font-weight:900; line-height:1.1; }
-    .cp-content p{ margin:1rem 0; color:#eee; }
-    .cp-btn{ background:var(--cp-gold); color:#111; font-weight:600; border:none; padding:.5rem 1rem; border-radius:6px; }
-
-    /* carousel area */
-    .cp-carousel{
-      position:absolute;
-      bottom:80px;
-      right:5%;
-      display:flex;
-      overflow:hidden;
-      width:560px;
-      height:250px;
+    .sidebar h2.mobile-toggle {
+      display: none;
+      cursor: pointer;
     }
 
-    .cp-card{
-      width:160px;
-      height:250px;
-      border-radius:12px;
-      overflow:hidden;
-      flex-shrink:0;
-      position:absolute;
-      transition:transform 1s ease-in-out, z-index .5s;
-      background:#111;
-      margin-right:10px;
+    .category {
+      list-style: none;
+      padding-left: 0;
     }
-    .cp-card img{ width:100%; height:100%; object-fit:cover; }
 
-    .cp-info{
-      position:absolute; bottom:0; left:0; width:100%; padding:.5rem;
-      background:linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 100%);
-      color:#fff;
+    .category li {
+      margin-bottom: 8px;
     }
-    .cp-info h3{ font-size:.9rem; margin:0; font-weight:700; text-align:start; }
-    .cp-info p{ font-size:.7rem; margin:0; text-align:start; }
 
-    .cp-nav{ position:absolute; bottom:20px; left:50%; transform:translateX(-50%); display:flex; gap:.5rem; z-index:2; }
-    .cp-nav button{ background:rgba(0,0,0,0.5); border:none; border-radius:50%; width:40px; height:40px; color:#fff; }
-
-    /* responsive */
-    @media(max-width:992px){
-      .cp-inner{ flex-direction:column; align-items:center; text-align:center; }
-      .cp-content{ max-width:80%; margin-top:30px; }
-      .cp-carousel{ width:400px; height:200px; bottom:40px; }
-      .cp-card{ width:140px; height:200px; }
+    .category button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: 15px;
+      color: #333;
+      padding: 10px 12px;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.3s ease;
     }
-    @media(max-width:576px){
-      .cp-section{ height:auto; padding-bottom:50px; }
-      .cp-inner{ flex-direction:column; padding:8% 5%; }
-      .cp-content{ max-width:95%; text-align:center; margin-top:10px; }
-      .cp-content h1{ font-size:1.8rem; }
-      .cp-carousel{ position:relative; width:100%; max-width:320px; height:auto; margin-top:25px; overflow-x:auto; gap:8px; padding-bottom:10px; }
-      .cp-card{ position:relative; width:80px; height:80px; transform:none !important; }
-      .cp-info{ position:static; background:none; padding:0; text-align:center; }
-      .cp-info p{ display:none; }
-      .cp-nav{ position:relative; margin-top:10px; }
+
+    .category button::after {
+      content: "→";
+      color: #999;
+      margin-left: auto;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .category button.active::after {
+      color: #000;
+      transform: translateX(3px);
+    }
+
+    .category button:hover {
+      background: #eaeaea;
+      color: #000;
+    }
+
+    .submenu {
+      list-style: none;
+      margin-left: 15px;
+      display: none;
+    }
+
+    .submenu li a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .submenu li a:hover {
+      color: #000;
+    }
+
+    /* Products */
+    .product-section {
+      flex: 1;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    /* Horizontal filters */
+    .product-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 15px;
+      margin-bottom: 20px;
+    }
+
+    .product-filters .filter-group label {
+      font-weight: 600;
+      margin-right: 5px;
+    }
+
+    .product-filters .filter-group button {
+      border: 1px solid #ddd;
+      background: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 13px;
+    }
+
+    .product-filters .filter-group button.active {
+      background: #00bcd4;
+      color: #fff;
+      border-color: #00bcd4;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 35px;
+      width: 100%;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    .product-card {
+      position: relative;
+      background: #e6e6e6;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card img {
+      width: 230px;
+      transition: transform 0.4s ease;
+      margin-top: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .product-card h3 {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #111;
+      text-align: center;
+      z-index: 3;
+      position: relative;
+    }
+
+    .product-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #e6e6e6;
+      z-index: 1;
+      transition: all 0.8s ease;
+    }
+
+    .product-card:hover::before {
+      background: linear-gradient(140deg, #ffffff 55%, #e6e6e6 45%);
+    }
+
+    @media (max-width: 1024px) {
+      .product-card img {
+        width: 180px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .lighting-container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .sidebar h2 {
+        display: none;
+      }
+
+      .sidebar h2.mobile-toggle {
+        display: block;
+      }
+
+      .category {
+        display: none;
+      }
+
+      .category.show {
+        display: block;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
     }
   </style>
+</head>
 
-  <div class="cp-overlay" id="cpOverlay"></div>
+<body>
 
-  <div class="cp-inner">
-    <div class="cp-content">
-      <span id="cpLocation">Location 1</span>
-      <h1 id="cpTitle">Commercial Parts Showcase</h1>
-      <p id="cpDescription">Description 1</p>
-      <a href="#" class="cp-btn">Explore Parts</a>
+  <div class="lighting-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Lighting</h2>
+      <h2 class="mobile-toggle" onclick="toggleSidebar()">Lighting ☰</h2>
+      <ul class="category">
+        <li><button onclick="filterProducts('all', this)">All</button></li>
+        <li>
+          <button onclick="toggleMenu(this); filterProducts('cob', this)">COB Lights</button>
+          <ul class="submenu">
+            <li><a href="#">COB Downlight</a></li>
+            <li><a href="#">COB Surface</a></li>
+            <li><a href="#">COB Zoom</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleMenu(this); filterProducts('surface', this)">Surface Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Surface Round</a></li>
+            <li><a href="#">Surface Square</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleMenu(this); filterProducts('track', this)">Track Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleMenu(this); filterProducts('magnetic', this)">Magnetic Track Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Magnetic Type 1</a></li>
+            <li><a href="#">Magnetic Type 2</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleMenu(this); filterProducts('slimtrack', this)">Slim Track Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Slim Type 1</a></li>
+            <li><a href="#">Slim Type 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Products -->
+    <div class="product-section">
+
+      <!-- Horizontal Filters -->
+      <div class="product-filters">
+        <div class="filter-group">
+          <label>Type:</label>
+          <button onclick="filterAttribute('type','indoor')">Indoor</button>
+          <button onclick="filterAttribute('type','outdoor')">Outdoor</button>
+        </div>
+        <div class="filter-group">
+          <label>Mounting:</label>
+          <button onclick="filterAttribute('mount','ceiling')">Ceiling</button>
+          <button onclick="filterAttribute('mount','wall')">Wall</button>
+        </div>
+        <div class="filter-group">
+          <label>IP Rating:</label>
+          <button onclick="filterAttribute('ip','ip20')">IP20</button>
+          <button onclick="filterAttribute('ip','ip65')">IP65</button>
+        </div>
+        <div class="filter-group">
+          <label>Wattage:</label>
+          <button onclick="filterAttribute('watt','10w')">10W</button>
+          <button onclick="filterAttribute('watt','20w')">20W</button>
+        </div>
+        <div class="filter-group">
+          <label>Control:</label>
+          <button onclick="filterAttribute('control','dali')">DALI</button>
+          <button onclick="filterAttribute('control','onoff')">On/Off</button>
+        </div>
+        <div class="filter-group">
+          <label>Application:</label>
+          <button onclick="filterAttribute('app','residential')">Residential</button>
+          <button onclick="filterAttribute('app','commercial')">Commercial</button>
+        </div>
+        <div class="filter-group">
+          <label>Body Color:</label>
+          <button onclick="filterAttribute('color','white')">White</button>
+          <button onclick="filterAttribute('color','black')">Black</button>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid" id="productGrid">
+        <!-- Example Products -->
+        <div class="product-card" data-category="track" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="10w" data-control="dali" data-app="commercial" data-color="white">
+          <img src="img/productsimgs/5.png" alt="Track Type 1">
+          <h3>Track Type 1</h3>
+        </div>
+        <div class="product-card" data-category="magnetic" data-type="outdoor" data-mount="wall" data-ip="ip65" data-watt="20w" data-control="onoff" data-app="residential" data-color="black">
+          <img src="img/productsimgs/magnetic1.png" alt="Magnetic Track 1">
+          <h3>Magnetic Track 1</h3>
+        </div>
+        <div class="product-card" data-category="slimtrack" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="10w" data-control="dali" data-app="commercial" data-color="white">
+          <img src="img/productsimgs/slimtrack1.png" alt="Slim Track 1">
+          <h3>Slim Track 1</h3>
+        </div>
+        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="10w" data-control="dali" data-app="residential" data-color="white">
+          <img src="img/productsimgs/1.png" alt="COB Downlight">
+          <h3>COB Downlight</h3>
+        </div>
+        <div class="product-card" data-category="surface" data-type="outdoor" data-mount="wall" data-ip="ip65" data-watt="20w" data-control="onoff" data-app="commercial" data-color="black">
+          <img src="img/productsimgs/3.png" alt="Surface Round">
+          <h3>Surface Round</h3>
+        </div>
+      </div>
+
     </div>
 
-    <div class="cp-carousel" id="cpCarousel"></div>
-
-    <div class="cp-nav">
-      <button id="cpPrev" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
-      <button id="cpNext" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
-    </div>
   </div>
 
   <script>
-    (function(){
-      // data
-      const CP_CARDS = [
-        {bg:'../img/automation/commercialautomation.png', title:'Commercial', location:'Location 1', desc:'Description 1'},
-        {bg:'../img/automation/homeautomation.png', title:'Home', location:'Location 2', desc:'Description 2'},
-        {bg:'../img/automation/hospitalautomation.png', title:'Hospital', location:'Location 3', desc:'Description 3'},
-        {bg:'../img/automation/hotelautomation.png', title:'Hotel', location:'Location 4', desc:'Description 4'},
-        {bg:'../img/automation/iot.png', title:'IoT', location:'Location 5', desc:'Description 5'},
-        {bg:'../img/automation/industriesautomation.png', title:'Office', location:'Location 6', desc:'Description 6'},
-        {bg:'../img/automation/homeauto.jpg', title:'School', location:'Location 7', desc:'Description 7'},
-        {bg:'../img/automation/animation background.jpg', title:'Factory', location:'Location 8', desc:'Description 8'}
-      ];
+    function toggleMenu(btn) {
+      const submenu = btn.nextElementSibling;
+      const allMenus = document.querySelectorAll(".submenu");
+      allMenus.forEach(m => { if (m !== submenu) m.style.display = "none"; });
+      if (submenu) submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+    }
 
-      // state
-      let cpVisible = [];
-      let cpIndex = 0;
-      const CP_STEP = 170 + 10;
+    function filterProducts(category, btn) {
+      const cards = document.querySelectorAll(".product-card");
+      const buttons = document.querySelectorAll(".category > li > button");
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
 
-      // DOM
-      const cpCarousel = document.getElementById('cpCarousel');
-      const cpSection = document.getElementById('cpSection');
-      const cpTitle = document.getElementById('cpTitle');
-      const cpLocation = document.getElementById('cpLocation');
-      const cpDescription = document.getElementById('cpDescription');
-      const btnPrev = document.getElementById('cpPrev');
-      const btnNext = document.getElementById('cpNext');
-
-      // Create initial three cards
-      for(let i=0;i<3;i++){
-        const data = CP_CARDS[i % CP_CARDS.length];
-        const card = document.createElement('div');
-        card.className = 'cp-card';
-        card.innerHTML = `<img src="${data.bg}" alt="${data.title}">
-                          <div class="cp-info"><h3>${data.title}</h3><p>${data.desc}</p></div>`;
-        const scale = i===1 ? 1.2 : 1;
-        const z = i===1 ? 2 : 1;
-        card.style.transform = `translateX(${i * CP_STEP}px) scale(${scale})`;
-        card.style.zIndex = z;
-        cpCarousel.appendChild(card);
-        cpVisible.push(card);
-      }
-
-      // slide function
-      function cpSlideForward(){
-        cpVisible.forEach((card,i)=>{
-          const newX = (i - 1) * CP_STEP;
-          const scale = (i - 1 === 1) ? 1.2 : 1;
-          const z = (i - 1 === 1) ? 2 : 1;
-          card.style.transform = `translateX(${newX}px) scale(${scale})`;
-          card.style.zIndex = z;
+      // Show/hide based on category
+      cards.forEach(c => {
+        const activeFiltersKeys = Object.keys(activeFilters);
+        let show = category === "all" || c.dataset.category === category;
+        // Check horizontal filters
+        activeFiltersKeys.forEach(k => {
+          if (c.dataset[k] !== activeFilters[k]) show = false;
         });
+        c.style.display = show ? "flex" : "none";
+      });
+    }
 
-        const removed = cpVisible.shift();
-        if (removed) cpCarousel.removeChild(removed);
+    function toggleSidebar() {
+      document.querySelector(".category").classList.toggle("show");
+    }
 
-        cpIndex = (cpIndex + 1) % CP_CARDS.length;
-        const nextIdx = (cpIndex + 2) % CP_CARDS.length;
-        const nextData = CP_CARDS[nextIdx];
+    let activeFilters = {};
+    function filterAttribute(attr, value) {
+      // Toggle filter
+      if (activeFilters[attr] === value) delete activeFilters[attr];
+      else activeFilters[attr] = value;
 
-        const newCard = document.createElement('div');
-        newCard.className = 'cp-card';
-        newCard.innerHTML = `<img src="${nextData.bg}" alt="${nextData.title}">
-                             <div class="cp-info"><h3>${nextData.title}</h3><p>${nextData.desc}</p></div>`;
-        newCard.style.transform = `translateX(${2 * CP_STEP}px) scale(1)`;
-        newCard.style.zIndex = 1;
-        cpCarousel.appendChild(newCard);
-        cpVisible.push(newCard);
+      const cards = document.querySelectorAll(".product-card");
+      const activeCategoryBtn = document.querySelector(".category button.active");
+      const activeCategory = activeCategoryBtn ? activeCategoryBtn.textContent.toLowerCase().replace(/ /g,'') : "all";
 
-        // update center content
-        const center = cpVisible[1];
-        if(center){
-          const imgSrc = center.querySelector('img').src;
-          const centerTitle = center.querySelector('h3').textContent;
-          cpSection.style.backgroundImage = `url('${imgSrc}')`;
-          cpTitle.textContent = centerTitle;
-          // use the same nextData.location/desc for right-side text to match previous logic
-          cpLocation.textContent = nextData.location;
-          cpDescription.textContent = nextData.desc;
+      cards.forEach(card => {
+        let show = activeCategory === "all" || card.dataset.category.toLowerCase() === activeCategory;
+        for (let key in activeFilters) {
+          if (card.dataset[key] !== activeFilters[key]) show = false;
         }
-      }
-
-      // optional manual controls (advance)
-      let cpInterval = setInterval(cpSlideForward, 2500);
-      btnNext.addEventListener('click', ()=>{
-        clearInterval(cpInterval);
-        cpSlideForward();
-        cpInterval = setInterval(cpSlideForward, 2500);
+        card.style.display = show ? "flex" : "none";
       });
 
-      // previous - simulate backwards slide
-      btnPrev.addEventListener('click', ()=>{
-        clearInterval(cpInterval);
-        // compute previous item index and prepend new card
-        const prevIndex = (cpIndex - 1 + CP_CARDS.length) % CP_CARDS.length;
-        const prevData = CP_CARDS[prevIndex];
-
-        // remove last card visually, then shift positions right
-        const last = cpVisible.pop();
-        if(last) cpCarousel.removeChild(last);
-
-        // create new card to insert at start (left)
-        const newLeft = document.createElement('div');
-        newLeft.className = 'cp-card';
-        newLeft.innerHTML = `<img src="${prevData.bg}" alt="${prevData.title}">
-                             <div class="cp-info"><h3>${prevData.title}</h3><p>${prevData.desc}</p></div>`;
-        // place it off-screen left
-        newLeft.style.transform = `translateX(${-1 * CP_STEP}px) scale(1)`;
-        newLeft.style.zIndex = 1;
-        cpCarousel.insertBefore(newLeft, cpCarousel.firstChild);
-        cpVisible.unshift(newLeft);
-
-        // animate all to the right
-        cpVisible.forEach((card,i)=>{
-          const newX = i * CP_STEP;
-          const scale = (i === 1) ? 1.2 : 1;
-          const z = (i === 1) ? 2 : 1;
-          // small timeout to ensure transition applies
-          requestAnimationFrame(()=> {
-            card.style.transform = `translateX(${newX}px) scale(${scale})`;
-            card.style.zIndex = z;
-          });
-        });
-
-        // update cpIndex backward
-        cpIndex = prevIndex;
-        // update center content after a short delay to allow animation
-        setTimeout(()=>{
-          const center = cpVisible[1];
-          if(center){
-            const imgSrc = center.querySelector('img').src;
-            const centerTitle = center.querySelector('h3').textContent;
-            cpSection.style.backgroundImage = `url('${imgSrc}')`;
-            cpTitle.textContent = centerTitle;
-            cpLocation.textContent = prevData.location;
-            cpDescription.textContent = prevData.desc;
-          }
-        }, 320);
-
-        cpInterval = setInterval(cpSlideForward, 2500);
+      // Highlight active buttons
+      document.querySelectorAll('.product-filters button').forEach(b => b.classList.remove('active'));
+      Object.entries(activeFilters).forEach(([k,v]) => {
+        document.querySelectorAll(`.product-filters button[onclick="filterAttribute('${k}','${v}')"]`).forEach(b => b.classList.add('active'));
       });
-
-      // expose nothing (self-contained)
-    })();
+    }
   </script>
-</section>
-<!--COMMERCIAL AUTOMATION END-->
+
+</body>
+
+</html>

@@ -3,28 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Section</title>
+<title>About Section - Premium Minimal</title>
 <style>
-body {
+/* body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background-color: #fff;
   color: #111;
-}
+} */
 
+/* ---- Layout ---- */
 .about-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 100px 8%;
   gap: 60px;
-  position: relative;
 }
 
 .about-image {
   flex: 1;
   overflow: hidden;
-  border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
@@ -41,9 +40,6 @@ body {
 
 .about-content {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .about-content h2 {
@@ -59,39 +55,55 @@ body {
   bottom: -8px;
   left: 0;
   width: 60px;
-  height: 3px;
-  background: #111;
+  height: 2px;
+  background: #000;
 }
 
 .about-content p {
   font-size: 16px;
   line-height: 1.8;
   color: #555;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
+/* ---- Premium Minimal Button ---- */
 .about-content a {
   display: inline-block;
   text-decoration: none;
-  background-color: #111;
-  color: #fff;
-  padding: 12px 26px;
-  border-radius: 30px;
-  font-size: 15px;
+  background: transparent;
+  color: #111;
+  border: 1px solid #111;
+  padding: 8px 20px;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .about-content a:hover {
-  background-color: #333;
+  background-color: #111;
+  color: #fff;
   transform: translateY(-2px);
 }
 
-/* Responsive layout */
+/* ---- Hover Arrow ---- */
+.about-content a::after {
+  content: "→";
+  font-size: 13px;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.about-content a:hover::after {
+  transform: translateX(4px);
+}
+
+/* ---- Responsive ---- */
 @media (max-width: 992px) {
   .about-section {
     flex-direction: column-reverse;
-    padding: 70px 6%;
     text-align: center;
+    padding: 70px 6%;
   }
 
   .about-content h2::after {
@@ -106,11 +118,12 @@ body {
 <section class="about-section">
   <div class="about-content">
     <h2>About Our Company</h2>
-    <p>We are a team of innovators and creators dedicated to designing meaningful digital experiences. Our focus is on delivering premium, modern, and scalable solutions that empower businesses to grow with confidence and creativity.</p>
-    <a href="#learnmore">Learn More</a>
+    <p>We’re a passionate team driven by design and innovation, creating digital experiences that merge elegance with function. Every project reflects our dedication to precision, performance, and premium quality.</p>
+    <a href="contact.html">Learn More</a>
   </div>
+
   <div class="about-image">
-    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=80" alt="About Us">
+    <img src="img/aboutsimg.png" alt="About Us">
   </div>
 </section>
 
