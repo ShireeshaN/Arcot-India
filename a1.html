@@ -1,342 +1,761 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Neue White Layout</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Arcot Industries Private Limited</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Arcot Industries Hyderabad, Industrial Power Solutions, Smart City India, Automation Systems, Lighting Company India, Solar Power, Engineering Solutions Hyderabad">
+  <meta name="description" content="Arcot Industries delivers cutting-edge solutions in Power, Energy, Lighting, Automation, Smart City Infrastructure, and R&D across India.">
+  <link rel="icon" href="img/fevi.png" type="image/x-icon">
 
-  <style>
-    html, body {
-      margin: 0;
-      height: 100%;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      color: #333;
-      overflow: hidden;
-      background-color: #fff;
-    }
-
-    /* ===== LAYOUT CONTAINER ===== */
-    .layout {
-      display: flex;
-      height: 100vh;
-      width: 100vw;
-      overflow: hidden;
-    }
-
-    /* ===== LEFT PANEL ===== */
- .left-panel {
-  flex: 1;
-  max-width: 30%; /* keeps left compact */
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 100px;
-  position: relative;
-  z-index: 10;
-}
-
-    .content-text {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .content-text p {
-      font-size:18px;
-      line-height: 3;
-      text-transform: lowercase;
-      letter-spacing: 1px;
-      margin: 0.5rem 0;
-      transition: color 0.3s, transform 0.3s;
-      cursor: pointer;
-        text-transform: uppercase;
-    }
-
-    .content-text p:hover {
-      transform: translateX(8px);
-      color: #9a623a;
-    }
-
-    .content-text .highlight {
-      color: #9a623a;
-      font-weight: bold;
-    }
-
-    /* ===== RIGHT PANEL (IMAGE AREA) ===== */
-.right-panel {
-  position: relative;
-  width: 70%; /* wider image area */
-  height: 100vh;
-  overflow: hidden;
-}
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;        /* fills entire panel */
-  background-position: center center;
-  background-repeat: no-repeat;
-  transition: opacity 1s ease-in-out;
-  opacity: 1;
-}
-.background.hidden {
-  opacity: 0;
-}
-
-
-    /* ===== SIDEBAR ===== */
-    .sidebar {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 80px;
-      height: 100vh;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(4px);
-      border-right: 1px solid rgba(230, 230, 230, 0.6);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      padding: 2rem 0;
-      z-index: 20;
-  
-    }
-
-    .logo {
-      font-weight: bold;
-      font-size: 1.2rem;
-      letter-spacing: 1px;
-    }
-
-    .nav-dots {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      flex-grow: 1;
-      gap: 10px;
-    }
-
-    .nav-dots .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #bbb;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    .nav-dots .dot.active {
-      background: #333;
-      transform: scale(1.3);
-    }
-
-    .about-link {
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      font-size: 0.8rem;
-      color: #999;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
- @media (max-width: 992px) {
-
-  html, body {
-    overflow-x: hidden;
-    overflow-y: auto;
-    height: auto;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* === MAIN LAYOUT === */
-  .layout {
-    flex-direction: column-reverse; /* Image first, then text */
-    width: 100%;
-    height: auto;
-  }
-
-  /* === IMAGE PANEL (TOP, 50% HEIGHT) === */
-  .right-panel {
-    order: -1;
-    width: 100%;
-    height: 40vh; /* Half of screen height */
-    position: relative;
-    overflow: hidden;
-  }
-
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;              /* ensures full coverage */
-    background-size: cover;         /* fills full width and height */
-    background-position: center;    /* perfectly centered */
-    background-repeat: no-repeat;
-    transition: opacity 1s ease-in-out;
-  }
-
-  /* === TEXT STRIP BELOW IMAGE === */
-  .left-panel {
-    width: 100%;
-    max-width: 100%;
-    background-color: #fff;
-    padding: 1rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .content-text {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 2rem;
-    width: 100%;
-    padding: 0 1rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .content-text::-webkit-scrollbar {
-    display: none;
-  }
-
-  .content-text p {
-    flex: 0 0 auto;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0;
-    color: #333;
-    cursor: pointer;
-    scroll-snap-align: center;
-    transition: transform 0.3s, color 0.3s;
-  }
-
-  .content-text p:hover,
-  .content-text .highlight {
-    color: #9a623a;
-    transform: scale(1.1);
-  }
-
-  /* === HIDE SIDEBAR ON MOBILE === */
-  .sidebar {
-    display: none;
-  }
-}
-
-  </style>
+  <!-- Fonts & Libraries -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <div class="logo">A R C</div>
 
-    <div class="nav-dots" id="navDots">
-      <div class="dot active" data-index="0"></div>
-      <div class="dot" data-index="1"></div>
-      <div class="dot" data-index="2"></div>
-      <div class="dot" data-index="3"></div>
-      <div class="dot" data-index="4"></div>
-      <div class="dot" data-index="5"></div>
-      <div class="dot" data-index="6"></div>
-      <div class="dot" data-index="7"></div>
-    </div>
+<!-- HEADER START -->
 
-    <div class="about-link">WE ARE</div>
+<header class="main-header">
+  <div class="header-wrap position-relative">
+    <a href="index.html">
+      <img src="img/logos.webp" alt="Logo" class="logo" loading="lazy">
+    </a>
+    <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
+    <nav class="navmenu" id="mainNav">
+      <ul class="mb-0">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1 "></i></a></li>
+        <li><a href="solution.html">Solutions</a></li>
+<li class="dropdown">
+  <a href="#" onclick="toggleDropdown(event)">R&D <i class="bi bi-chevron-down ms-1"></i></a>
+  <ul class="dropdown-menu">
+    <li><a href="smart-pole.html">Smart Pole</a></li>
+    <li><a href="#">Smart Bollard</a></li>
+    <li><a href="#">Smart Conference Table</a></li>
+    <li><a href="#">Smart Window Leaf AC</a></li>
+    <li><a href="#">Smart Bar Counter</a></li>
+  </ul>
+</li>
+
+        <li><a href="applications.html">Applications</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </div>
 
-  <!-- Main Layout -->
-  <div class="layout">
-    <!-- LEFT -->
-    <div class="left-panel">
-      <div class="content-text">
-         <p data-bg="../img/lighting/lightingsecthree/5.png">Illuminate</p>
-        <p data-bg="../img/lighting/lightingsecthree/6.png">Radiate</p>
-        <p data-bg="../img/lighting/lightingsecthree/7.png">Luminate</p>
-       
-        <p class="highlight" data-bg="../img/lighting/lightingsecthree/1.png">Glow</p>
-        <p data-bg="../img/lighting/lightingsecthree/2.png">Dazzle</p>
-        <p data-bg="../img/lighting/lightingsecthree/3.png">Luminate</p>
-        <p data-bg="../img/lighting/lightingsecthree/4.png">Gleam</p>
+  <!-- Mega Menu -->
+  <div id="megaMenu" class="mega-menu">
+    <div class="row">
+      <div class="underline"></div>
+      <div class="service-submenus d-flex flex-wrap">
+        <div class="service-group">
+          <h6>Energy</h6>
+          <ul>
+            <li><a href="#">Solar</a></li>
+            <li><a href="#">Wind</a></li>
+            <li><a href="#">Biomass</a></li>
+            <li><a href="#">Hydel Power</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>Power</h6>
+          <ul>
+            <li><a href="transmission.html">Transmission</a></li>
+            <li><a href="#">Distribution</a></li>
+            <li><a href="#">Low Tension</a></li>
+            <li><a href="#">High Tension</a></li>
+            <li><a href="#">Panel Boards</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>Lighting</h6>
+          <ul>
+            <li><a href="residential-lighting.html">Residential</a></li>
+            <li><a href="facade-lighting.html">Facade</a></li>
+            <li><a href="commercial-lighting.html">Commercial</a></li>
+            <li><a href="industrial-lighting.html">Industrial</a></li>
+            <li><a href="#">Street</a></li>
+            <li><a href="#">Park</a></li>
+            <li><a href="#">Stadium</a></li>
+            <li><a href="#">Hospital</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>Automation</h6>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Commercial</a></li>
+            <li><a href="#">Industrial</a></li>
+            <li><a href="#">Hospital</a></li>
+            <li><a href="#">IoT Based Automation</a></li>
+            <li><a href="#">Hotel</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>R & D</h6>
+          <ul>
+            <li><a href="smart-pole.html">Smart Pole</a></li>
+            <li><a href="#">Smart Conference Hall</a></li>
+            <li><a href="#">Smart Bollards</a></li>
+            <li><a href="#">Smart Bar Counter</a></li>
+            <li><a href="#">Smart Window Leaf AC</a></li>
+          </ul>
+        </div>
        
       </div>
     </div>
+  </div>
+</header>
+<!-- HEADER END -->
 
-    <!-- RIGHT -->
-    <div class="right-panel">
-      <div class="background" id="bg1" style="background-image: url('../img/lighting/lightingsecthree/1.png');"></div>
-      <div class="background hidden" id="bg2"></div>
+<!-- PRODUCTS SECTION START -->
+<section class="lighting-products pt-5">
+  <div class="lighting-container">
+    <!-- Sidebar -->
+    <aside class="sidebar pt-5">
+      <h2>Lighting</h2>
+      <h2 class="mobile-toggle" onclick="toggleSidebar()">Lighting ☰</h2>
+
+      <ul class="category">
+        <li><button onclick="filterProducts('all')" class="active">All</button></li>
+        <li>
+          <button onclick="toggleMenu(this); filterProducts('cob')">COB Lights</button>
+          <ul class="submenu">
+            <li><a href="#">COB Downlight</a></li>
+            <li><a href="#">COB Surface</a></li>
+            <li><a href="#">COB Zoom</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleMenu(this); filterProducts('surface')">Surface Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Surface Round</a></li>
+            <li><a href="#">Surface Square</a></li>
+          </ul>
+        </li>
+      
+                <li>
+          <button onclick="toggleMenu(this); filterProducts('track')">Track Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+                <li>
+          <button onclick="toggleMenu(this); filterProducts('Magnetic')">Magnetic Track Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+
+
+                <li>
+          <button onclick="toggleMenu(this); filterProducts('slimtrack')">Slim Track Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+
+
+                <li>
+          <button onclick="toggleMenu(this); filterProducts('laserblades')">Laser Blades</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+
+                <li>
+          <button onclick="toggleMenu(this); filterProducts('linearprofiles')">Linear Profiles</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+
+                <li>
+          <button onclick="toggleMenu(this); filterProducts('panellights')">Panel Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+
+                <li>
+          <button onclick="toggleMenu(this); filterProducts('neon')">Neon Flex</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+
+                <li>
+          <button onclick="toggleMenu(this); filterProducts('hibay')">Hi -Bay</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+
+                <li>
+          <button onclick="toggleMenu(this); filterProducts('flood')">Flood Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+
+                <li>
+          <button onclick="toggleMenu(this); filterProducts('street')">Street Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+
+                <li>
+          <button onclick="toggleMenu(this); filterProducts('ground')">Recessed Inground Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <button onclick="toggleMenu(this); filterProducts('track')">Wall Washers</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+
+                <li>
+          <button onclick="toggleMenu(this); filterProducts('wallwasher')">Wall Washers</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+
+                <li>
+          <button onclick="toggleMenu(this); filterProducts('spikes')">Spikes</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+
+                <li>
+          <button onclick="toggleMenu(this); filterProducts('bollards')">Bollards</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+
+                <li>
+          <button onclick="toggleMenu(this); filterProducts('twoway')">Two Way Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <button onclick="toggleMenu(this); filterProducts('track')">Sandliyer's Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+
+                <li>
+          <button onclick="toggleMenu(this); filterProducts('track')">Wall Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+
+                <li>
+          <button onclick="toggleMenu(this); filterProducts('track')">Pendant Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+                        <li>
+          <button onclick="toggleMenu(this); filterProducts('track')">Hanging Linear Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Product Grid -->
+    <div class="product-section">
+      <div class="product-grid" id="productGrid">
+        <div class="product-card" data-category="cob">
+          <img src="img/productsimgs/1.png" alt="COB Downlight" />
+          <h3>COB Downlight</h3>
+        </div>
+        <div class="product-card" data-category="cob">
+          <img src="img/productsimgs/2.png" alt="COB Surface" />
+          <h3>COB Surface</h3>
+        </div>
+        <div class="product-card" data-category="surface">
+          <img src="img/productsimgs/3.png" alt="Surface Round" />
+          <h3>Surface Round</h3>
+        </div>
+        <div class="product-card" data-category="surface">
+          <img src="img/productsimgs/4.png" alt="Surface Square" />
+          <h3>Surface Square</h3>
+        </div>
+        <div class="product-card" data-category="track">
+          <img src="img/productsimgs/5.png" alt="Track Type 1" />
+          <h3>Track Type 1</h3>
+        </div>
+        <div class="product-card" data-category="track">
+          <img src="img/productsimgs/6.png" alt="Track Type 2" />
+          <h3>Track Type 2</h3>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 
-  <script>
-    const items = document.querySelectorAll('.content-text p');
-    const dots = document.querySelectorAll('.nav-dots .dot');
-    const bg1 = document.getElementById('bg1');
-    const bg2 = document.getElementById('bg2');
-    let showingBg1 = true;
-    let currentIndex = 0;
-    let autoChange;
+<!-- PRODUCTS SECTION END -->
 
-    function changeBackground(index) {
-      const p = items[index];
-      const newBg = p.getAttribute('data-bg');
-      const activeBg = showingBg1 ? bg1 : bg2;
-      const hiddenBg = showingBg1 ? bg2 : bg1;
 
-      items.forEach(el => el.classList.remove('highlight'));
-      dots.forEach(el => el.classList.remove('active'));
 
-      p.classList.add('highlight');
-      dots[index].classList.add('active');
+<!-- ================= STYLES ================= -->
+<style>
+.lighting-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  background: #f8f8f8;
+  color: #111;
+  font-family: "Poppins", sans-serif;
+}
 
-      const img = new Image();
-      img.src = newBg;
-      img.onload = () => {
-        hiddenBg.style.backgroundImage = `url('${newBg}')`;
-        hiddenBg.classList.remove('hidden');
-        activeBg.classList.add('hidden');
-        showingBg1 = !showingBg1;
-      };
-    }
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  padding: 25px;
+  transition: all 0.4s ease;
+}
+.sidebar h2 {
+  font-size: 20px;
+  color: #111;
+  margin-bottom: 25px;
+  font-weight: 700;
+  text-align: center;
+}
+.sidebar h2.mobile-toggle {
+  display: none;
+  cursor: pointer;
+  text-align: left;
+}
+.category {
+  list-style: none;
+}
+.category li {
+  margin-bottom: 8px;
+}
+.category button {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 15px;
+  color: #333;
+  padding: 10px 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+.category button::after {
+  content: "→";
+  font-size: 16px;
+  color: #999;
+  transition: all 0.3s ease;
+}
+.category button:hover,
+.category button.active {
+  background: #eaeaea;
+  color: #000;
+}
+.category button:hover::after,
+.category button.active::after {
+  color: #000;
+  transform: translateX(3px);
+}
+.submenu {
+  list-style: none;
+  margin-left: 15px;
+  display: none;
+}
+.submenu li a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+.submenu li a:hover {
+  color: #000;
+}
 
-    function handleClick(i) {
-      currentIndex = i;
-      changeBackground(currentIndex);
-      resetAutoChange();
-    }
+/* Products */
+.product-section {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  width: 100%;
+  max-width: 1300px;
+}
+.product-card {
+  position: relative;
+  background: #e6e6e6;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 360px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+.product-card:hover {
+  transform: translateY(-8px);
+}
+.product-card img {
+  width: 230px;
+  transition: transform 0.9s ease;
+  z-index: 2;
+  position: relative;
+}
+.product-card:hover img {
+  transform: translate(-20px, -45px) scale(1.18);
+}
+.product-card h3 {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #111;
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+  z-index: 3;
+}
+.product-card:hover h3 {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.product-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #e6e6e6;
+  z-index: 1;
+  transition: all 1s ease;
+}
+.product-card:hover::before {
+  background: linear-gradient(140deg, #ffffff 55%, #e6e6e6 45%);
+}
 
-    items.forEach((p, i) => p.addEventListener('click', () => handleClick(i)));
-    dots.forEach((dot, i) => dot.addEventListener('click', () => handleClick(i)));
+/* Responsive */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  .product-card {
+    height: 300px;
+  }
+  .product-card img {
+    width: 190px;
+  }
+}
+@media (max-width: 768px) {
+  .lighting-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+  .sidebar h2 {
+    display: none;
+  }
+  .sidebar h2.mobile-toggle {
+    display: block;
+  }
+  .category {
+    display: none;
+  }
+  .category.show {
+    display: block;
+  }
+  .product-section {
+    padding: 20px;
+  }
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 
-    function startAutoChange() {
-      autoChange = setInterval(() => {
-        currentIndex = (currentIndex + 1) % items.length;
-        changeBackground(currentIndex);
-      }, 3000);
-    }
+<!-- ================= SCRIPT ================= -->
 
-    function resetAutoChange() {
-      clearInterval(autoChange);
-      startAutoChange();
-    }
 
-    startAutoChange();
-  </script>
+   <!-- Footer Start -->
+<div class="tricky-footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
+  <div class="container py-5">
+    <div class="row g-5">
+
+      <!-- Column 1: Quick Links -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About us</a>
+          <a href="solution.html">Solutions</a>
+          <a href="applications.html">Applications</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="smart-pole.html">R & D</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <!-- Column 2: Services -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Services</h4>
+          <a href="#">Energy</a>
+          <a href="#">Power</a>
+          <a href="#">Lighting</a>
+          <a href="#">Automation</a>
+          <a href="#">Smart City</a>
+          <a href="#">R & D</a>
+        </div>
+      </div>
+
+      <!-- Column 3: Applications -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Applications</h4>
+          <a href="#">Energy Generation</a>
+          <a href="#">Power</a>
+          <a href="#">Lighting</a>
+          <a href="#">Indoor Lighting</a>
+          <a href="#">Automation</a>
+          <a href="#">Smart City</a>
+          <a href="#">R & D</a>
+        </div>
+      </div>
+
+      <!-- Column 4: Contact Info -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Contact Info</h4>
+          <a href="#"><i class="fa fa-map-marker-alt text-secondary me-2"></i> Apurupa Towers, Road No:36, Jubilee Hills, Hyderabad, Telangana-500033</a>
+          <a href="mailto:info@arcotindia.com"><i class="fas fa-envelope text-secondary me-2"></i> info@arcotindia.com</a>
+          <a href="tel:+919848189899"><i class="fas fa-phone text-secondary me-2"></i> +91 98481 89899</a>
+        </div>
+      </div>
+
+      <!-- Social Media -->
+      <div class="col-lg-12 mt-4">
+        <div class="tricky-social-icons d-flex flex-wrap justify-content-start gap-3">
+          <a class="tricky-social-btn" href="#"><i class="fab fa-facebook-f"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-instagram"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-youtube"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-pinterest-p"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-whatsapp"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-telegram-plane"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-reddit-alien"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-threads"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+ /* Footer Wrapper */
+.tricky-footer {
+  background: #1e2226;
+  color: #ccc;
+  font-size: 15px;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 300; /* light weight */
+  letter-spacing: 1px;
+  
+}
+
+/* Footer Headings */
+.tricky-footer-item h4,
+.tricky-footer-item h5 {
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+/* Footer Links */
+.tricky-footer-item a {
+  color: #bbb;
+  margin-bottom: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  font-weight: 300;
+  font-size: 12px;
+}
+.tricky-footer-item a:hover {
+  color: #00bcd4;
+  padding-left: 5px;
+}
+
+/* Social Media Icons */
+.tricky-social-icons .tricky-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  color: #8f8c8c;
+  font-size: 13px;
+  transition: 0.3s;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 300;
+}
+.tricky-social-icons .tricky-social-btn:hover {
+  background: #434444;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Copyright Section */
+.tricky-footer-bottom {
+  border-top: 1px solid #333;
+  color: #aaa;
+  font-size: 14px;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.tricky-footer-bottom a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+}
+.tricky-footer-bottom a:hover {
+  color: #00bcd4;
+}
+</style>
+<!-- Footer End -->
+
+<!-- Copyright Start -->
+<div class="tricky-footer-bottom py-4 bg-dark">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-6 text-center text-md-start mb-md-0">
+        <span class="text-body">
+          <a href="https://arcotindia.com/" class="border-bottom text-white">
+            <i class="fas fa-copyright text-light me-2"></i>ARCOT All Rights Reserved.
+          </a>
+        </span>
+      </div>
+      <!-- <div class="col-md-6 text-center text-md-end text-body">
+        Designed By <a class="border-bottom text-white" href="https://arcotindia.com/">ARCOT</a>
+      </div> -->
+    </div>
+  </div>
+</div>
+<!-- Copyright End -->
+         
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>  
+
+
+                <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+       <script>AOS.init();</script>
+<script>
+function toggleMenu(btn) {
+  const submenu = btn.nextElementSibling;
+  const allMenus = document.querySelectorAll(".submenu");
+  const allButtons = document.querySelectorAll(".category button");
+  allMenus.forEach((m) => { if (m !== submenu) m.style.display = "none"; });
+  allButtons.forEach((b) => b.classList.remove("active"));
+  if (submenu.style.display === "block") submenu.style.display = "none";
+  else { submenu.style.display = "block"; btn.classList.add("active"); }
+}
+function filterProducts(category) {
+  const cards = document.querySelectorAll(".product-card");
+  const buttons = document.querySelectorAll(".category button");
+  buttons.forEach((b) => b.classList.remove("active"));
+  buttons.forEach((b) => {
+    if (b.textContent.toLowerCase().includes(category) || category === "all") b.classList.add("active");
+  });
+  cards.forEach((c) => {
+    c.style.display = category === "all" || c.dataset.category === category ? "flex" : "none";
+  });
+}
+function toggleSidebar() {
+  document.querySelector(".category").classList.toggle("show");
+}
+</script>
+
 </body>
 </html>

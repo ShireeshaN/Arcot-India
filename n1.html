@@ -3,391 +3,385 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Full Product Page</title>
+<title>Lighting Products</title>
 
 <style>
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #fff;
+* {
   margin: 0;
-  padding: 40px;
-  color: #111;
-}
-
-/* --- FILTER SECTION --- */
-.filters {
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid #ddd;
-  padding: 30px 20px;
-  margin-bottom: 50px;
-}
-
-.filter-box {
-  flex: 1;
-  padding: 0 30px;
-  border-right: 1px solid #eee;
-}
-.filter-box:last-child {
-  border-right: none;
-}
-
-.filter-box h4 {
-  font-size: 14px;
-  font-weight: 600;
-  color: #777;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-}
-
-.filter-box ul {
-  list-style: none;
   padding: 0;
-  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.filter-box ul li {
+body {
+  display: flex;
+  background: #f8f8f8;
+  color: #111;
+  min-height: 100vh;
+  flex-direction: row;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  padding: 25px;
+  transition: all 0.4s ease;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  color: #111;
+  margin-bottom: 25px;
+  font-weight: 700;
+  text-align: center;
+  cursor: default;
+}
+
+.sidebar h2.mobile-toggle {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  text-align: left;
+}
+
+.category {
+  list-style: none;
+}
+
+.category li {
   margin-bottom: 8px;
 }
 
-.filter-box ul li a {
-  position: relative;
-  text-decoration: none;
-  color: #000;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.filter-box ul li a::after {
-  content: "";
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: #000;
-  transition: width 0.3s ease;
-}
-.filter-box ul li a:hover::after {
+.category button {
   width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 15px;
+  color: #333;
+  padding: 10px 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  border-radius: 6px;
 }
 
-/* --- PRODUCT GRID --- */
+.category button::after {
+  content: "→";
+  font-size: 16px;
+  color: #999;
+  transition: all 0.3s ease;
+}
+
+.category button:hover,
+.category button.active {
+  background: #eaeaea;
+  color: #000;
+}
+
+.category button:hover::after,
+.category button.active::after {
+  color: #000;
+  transform: translateX(3px);
+}
+
+/* SUBMENU */
+.submenu {
+  list-style: none;
+  margin-left: 15px;
+  display: none;
+}
+
+.submenu li {
+  padding: 5px 0;
+}
+
+.submenu li a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.submenu li a:hover {
+  color: #000;
+}
+
+/* PRODUCT SECTION */
+.product-section {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-}
-
-.product-card {
-  background: #d9d9d9;
-  border-radius: 4px;
-  overflow: hidden;
-  text-align: center;
-  position: relative;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-4px);
-}
-
-.product-card img {
+  gap: 35px;
   width: 100%;
-  height: 340px;
-  object-fit: contain;
-  background: #d9d9d9;
-  transition: opacity 0.3s ease;
+  max-width: 1300px;
 }
 
-.product-info {
-  padding: 25px 10px;
-}
-
-.product-info h3 {
-  font-size: 15px;
-  font-weight: 700;
-  margin: 0;
-}
-
-.product-info .type {
-  font-size: 14px;
-  color: #333;
-  margin-top: 4px;
-}
-
-.product-info .designer {
-  font-size: 13px;
-  color: #888;
-  margin-top: 8px;
-  transition: opacity 0.3s ease;
-}
-
-.color-options {
+/* PRODUCT CARD */
+.product-card {
+  position: relative;
+  background: #e6e6e6;
+  border-radius: 14px;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  margin-top: 12px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  height: 360px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
 }
 
-.product-card:hover .designer {
-  opacity: 0;
+.product-card:hover {
+  transform: translateY(-8px);
 }
 
-.product-card:hover .color-options {
+/* Image */
+.product-card img {
+  width: 220px;
+  transition: transform 0.9s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.product-card:hover img {
+  transform: translate(-20px, -45px) scale(1.15);
+}
+
+/* Product name */
+.product-card h3 {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #111;
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+  z-index: 3;
+}
+
+.product-card:hover h3 {
   opacity: 1;
-  pointer-events: all;
+  transform: translate(-50%, 0);
 }
 
-/* --- COLOR DOTS --- */
-.color-dot {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  display: inline-block;
-  border: 1px solid #777;
-  transition: transform 0.2s ease;
+/* Diagonal hover tone */
+.product-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #e6e6e6;
+  z-index: 1;
+  transition: all 1s ease;
 }
-.color-dot:hover {
-  transform: scale(1.2);
+
+.product-card:hover::before {
+  background: linear-gradient(140deg, #ffffff 55%, #e6e6e6 45%);
 }
-.color-dot.black {
-  background: #000;
+
+/* ------------------- RESPONSIVE ------------------- */
+
+/* Tablet view */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  .product-card {
+    height: 300px;
+  }
+  .product-card img {
+    width: 190px;
+  }
 }
-.color-dot.white {
-  background: #fff;
-  border: 1px solid #999;
-}
-.color-dot.bronze {
-  background: #a97142;
-}
-.color-dot.silver {
-  background: #c0c0c0;
+
+/* Mobile view */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 20px;
+  }
+
+  .sidebar h2 {
+    display: none;
+  }
+
+  .sidebar h2.mobile-toggle {
+    display: block;
+    font-size: 18px;
+    text-align: left;
+    margin: 0;
+  }
+
+  .category {
+    display: none;
+    margin-top: 15px;
+  }
+
+  .category.show {
+    display: block;
+  }
+
+  .product-section {
+    padding: 20px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .product-card {
+    height: 280px;
+  }
+
+  .product-card img {
+    width: 170px;
+  }
+
+  .product-card:hover img {
+    transform: translate(-15px, -35px) scale(1.1);
+  }
+
+  .product-card h3 {
+    font-size: 1rem;
+    bottom: 20px;
+  }
 }
 </style>
 </head>
 
 <body>
-<!-- ===== FILTER SECTION ===== -->
-<div class="filters">
-  <div class="filter-box">
-    <h4>Indoor</h4>
-    <ul>
-      <li><a href="#" onclick="showProducts('recessed')">Recessed</a></li>
-      <li><a href="#" onclick="showProducts('ceiling')">Ceiling</a></li>
-      <li><a href="#" onclick="showProducts('pendant')">Pendant</a></li>
-      <li><a href="#" onclick="showProducts('wall')">Wall</a></li>
-      <li><a href="#" onclick="showProducts('table')">Table</a></li>
-    </ul>
-  </div>
 
-  <div class="filter-box">
-    <h4>Outdoor</h4>
-    <ul>
-      <li><a href="#" onclick="showProducts('bollard')">Bollard</a></li>
-      <li><a href="#" onclick="showProducts('pole')">Pole</a></li>
-      <li><a href="#" onclick="showProducts('extceiling')">Ceiling</a></li>
-    </ul>
-  </div>
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <!-- Desktop title -->
+  <h2>Lighting</h2>
+  <!-- Mobile toggle -->
+  <h2 class="mobile-toggle" onclick="toggleSidebar()">Lighting ☰</h2>
 
-  <div class="filter-box">
-    <h4>Facade</h4>
-    <ul>
-      <li><a href="#" onclick="showProducts('office')">Office & Education</a></li>
-      <li><a href="#" onclick="showProducts('healthcare')">Healthcare</a></li>
-      <li><a href="#" onclick="showProducts('hospitality')">Hospitality</a></li>
-      <li><a href="#" onclick="showProducts('street')">Street & Pathways</a></li>
-    </ul>
-  </div>
+  <ul class="category">
+    <li><button onclick="filterProducts('all')" class="active">All</button></li>
+    <li>
+      <button onclick="toggleMenu(this); filterProducts('cob')">COB Lights</button>
+      <ul class="submenu">
+        <li><a href="#">COB Downlight</a></li>
+        <li><a href="#">COB Surface</a></li>
+        <li><a href="#">COB Zoom</a></li>
+      </ul>
+    </li>
+    <li>
+      <button onclick="toggleMenu(this); filterProducts('surface')">Surface Lights</button>
+      <ul class="submenu">
+        <li><a href="#">Surface Round</a></li>
+        <li><a href="#">Surface Square</a></li>
+      </ul>
+    </li>
+    <li>
+      <button onclick="toggleMenu(this); filterProducts('track')">Track Lights</button>
+      <ul class="submenu">
+        <li><a href="#">Track Type 1</a></li>
+        <li><a href="#">Track Type 2</a></li>
+      </ul>
+    </li>
+  </ul>
+</aside>
 
-  <div class="filter-box">
-    <h4>All</h4>
-    <ul>
-      <li><a href="#" onclick="showAllProducts()">All Products</a></li>
-    </ul>
+<!-- PRODUCT GRID -->
+<section class="product-section">
+  <div class="product-grid" id="productGrid">
+    <div class="product-card" data-category="cob">
+      <img src="img/productsimgs/1.png" alt="COB Downlight" />
+      <h3>COB Downlight</h3>
+    </div>
+    <div class="product-card" data-category="cob">
+      <img src="img/productsimgs/2.png" alt="COB Surface" />
+      <h3>COB Surface</h3>
+    </div>
+    <div class="product-card" data-category="surface">
+      <img src="img/productsimgs/3.png" alt="Surface Round" />
+      <h3>Surface Round</h3>
+    </div>
+    <div class="product-card" data-category="surface">
+      <img src="img/productsimgs/4.png" alt="Surface Square" />
+      <h3>Surface Square</h3>
+    </div>
+    <div class="product-card" data-category="track">
+      <img src="img/productsimgs/5.png" alt="Track Type 1" />
+      <h3>Track Type 1</h3>
+    </div>
+    <div class="product-card" data-category="track">
+      <img src="img/productsimgs/6.png" alt="Track Type 2" />
+      <h3>Track Type 2</h3>
+    </div>
   </div>
-</div>
-
-<!-- ===== PRODUCT GRID ===== -->
-<div class="product-grid" id="productGrid"></div>
+</section>
 
 <script>
-/* --- PRODUCT DATA (same as your original) --- */
-const allProducts = {
-  recessed: [
-    {
-      name: "Downlights ",type: "Recessed", designer: "Olle Lundberg",images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+ADJUSTABLE+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+ADJUSTABLE+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+ADJUSTABLE+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+ADJUSTABLE+SILVER",
-      },
-    },
-    {
-      name: "Spotlights",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
+function toggleMenu(btn) {
+  const submenu = btn.nextElementSibling;
+  const allButtons = document.querySelectorAll(".category button");
+  const allMenus = document.querySelectorAll(".submenu");
 
-    },
+  allMenus.forEach((menu) => {
+    if (menu !== submenu) menu.style.display = "none";
+  });
 
-    {
-      name: "COB Lights",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
+  allButtons.forEach((b) => b.classList.remove("active"));
 
-    },
-
-    {
-      name: "Linear Recessed Profiles",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
-
-    },
-
-        {
-      name: "Panel Lights",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
-
-    },
-
-   {
-      name: "Trimless Recessed Lights",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
-
-    },
-
-       {
-      name: "Adjustable Recessed Fixtures",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
-
-    },
-
-           {
-      name: "Anti-glare Downlights",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
-
-    },
-
-    
-  ],
-  ceiling: [
-    {
-      name: "COB Lights",
-      type: "Ceiling",
-      designer: "John Doe",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=LUMINA+FLAT+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=LUMINA+FLAT+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=LUMINA+FLAT+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=LUMINA+FLAT+SILVER",
-      },
-    },
-  ],
-  pendant: [],
-  wall: [],
-  table: [],
-  bollard: [],
-  pole: [],
-  extceiling: [],
-  office: [],
-};
-
-/* --- SHOW PRODUCTS --- */
-function showProducts(category) {
-  const grid = document.getElementById("productGrid");
-  grid.innerHTML = "";
-  const items = allProducts[category] || [];
-  renderProducts(items);
+  if (submenu.style.display === "block") {
+    submenu.style.display = "none";
+  } else {
+    submenu.style.display = "block";
+    btn.classList.add("active");
+  }
 }
 
-/* --- SHOW ALL PRODUCTS --- */
-function showAllProducts() {
-  const grid = document.getElementById("productGrid");
-  grid.innerHTML = "";
-  const items = Object.values(allProducts).flat();
-  renderProducts(items);
-}
+function filterProducts(category) {
+  const cards = document.querySelectorAll(".product-card");
+  const buttons = document.querySelectorAll(".category button");
+  buttons.forEach((btn) => btn.classList.remove("active"));
 
-/* --- RENDER FUNCTION --- */
-function renderProducts(items) {
-  const grid = document.getElementById("productGrid");
-  items.forEach((p) => {
-    const card = document.createElement("div");
-    card.className = "product-card";
-    const defaultColor = "black";
-    card.innerHTML = `
-      <img src="${p.images[defaultColor]}" alt="${p.name}" />
-      <div class="product-info">
-        <h3>${p.name}</h3>
-        <div class="type">${p.type}</div>
-        <div class="designer">${p.designer}</div>
-        <div class="color-options">
-          ${Object.keys(p.images)
-            .map(
-              (color) =>
-                `<span class="color-dot ${color}" onmouseover="this.closest('.product-card').querySelector('img').src='${p.images[color]}'"></span>`
-            )
-            .join("")}
-        </div>
-      </div>
-    `;
-    grid.appendChild(card);
+  buttons.forEach((btn) => {
+    if (
+      btn.textContent.trim().toLowerCase().includes(category.toLowerCase()) ||
+      (category === "all" && btn.textContent.trim().toLowerCase() === "all")
+    ) {
+      btn.classList.add("active");
+    }
+  });
+
+  cards.forEach((card) => {
+    if (category === "all" || card.dataset.category === category) {
+      card.style.display = "flex";
+    } else {
+      card.style.display = "none";
+    }
   });
 }
 
-/* --- INITIAL LOAD --- */
-showAllProducts();
+function toggleSidebar() {
+  const categoryList = document.querySelector(".category");
+  categoryList.classList.toggle("show");
+}
 </script>
+
 </body>
 </html>

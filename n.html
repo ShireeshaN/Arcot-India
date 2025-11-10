@@ -1,272 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valora Heights Hotel 3D Animation</title>
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lighting Products</title>
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
+    * {
       margin: 0;
-      background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-      background-attachment: fixed;
-      color: #fff;
-      overflow-x: hidden;
-      perspective: 1500px;
-      transition: background 1s ease-in-out;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", "Poppins", sans-serif;
     }
 
-    /* Background that changes dynamically (not blurred now) */
-    .dynamic-bg {
-      position: fixed;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      transition: opacity 1.2s ease-in-out;
-      z-index: -1;
+    body {
+      display: flex;
+      height: 100vh;
+      background: #f4f4f4;
+      color: #111;
     }
 
-    .hero-overlay {
-      background: rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(2px);
-      position: absolute;
-      inset: 0;
-      z-index: 0;
+    /* Sidebar */
+    .sidebar {
+      width: 270px;
+      background: #fff;
+      border-right: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 0;
+      align-items: flex-start;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.03);
+      overflow-y: auto;
     }
 
-    section.hotel-layout {
+    .sidebar h2 {
+      width: 100%;
+      text-align: center;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      color: #111;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .menu-item {
+      width: 100%;
+      padding: 14px 30px;
+      cursor: pointer;
       position: relative;
-      min-height: 100vh;
-      padding: 100px 0;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+
+    .menu-item:hover {
+      background: #f2f2f2;
+    }
+
+    .menu-item::after {
+      content: "➜";
+      position: absolute;
+      right: 25px;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.3s ease;
+      color: #555;
+    }
+
+    .menu-item:hover::after,
+    .menu-item.active::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .menu-item.active {
+      background: #e9e9e9;
+      color: #000;
+      font-weight: 600;
+    }
+
+    /* Submenu */
+    .submenu {
+      width: 100%;
+      background: #fafafa;
+      display: none;
+      flex-direction: column;
+      padding-left: 50px;
+      border-left: 2px solid #e0e0e0;
+    }
+
+    .submenu.show {
+      display: flex;
+      animation: dropdown 0.3s ease;
+    }
+
+    @keyframes dropdown {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .submenu-item {
+      padding: 10px 0;
+      cursor: pointer;
+      color: #555;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .submenu-item:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    /* Right side container */
+    .content {
+      flex: 1;
+      padding: 40px;
+      background: #f8f8f8;
       display: flex;
       flex-direction: column;
       align-items: center;
+      overflow-y: auto;
+    }
+
+    /* Grid layout for product boxes */
+    .lightsegproducts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      width: 100%;
+      max-width: 1600px;
+    }
+
+    .lightsegproducts-box {
+      position: relative;
+      background: #e2e2e2;
+      height: 350px;
+      display: flex;
+      align-items: center;
       justify-content: center;
       overflow: hidden;
+      border-radius: 10px;
+      transition: all 0.5s ease;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
 
-    .main-heading {
-      transition: opacity 1s ease;
-      z-index: 5;
-      position: relative;
+    .lightsegproducts-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
 
-    .heading-hidden {
-      opacity: 0;
+    /* Floating animation for the icon */
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
     }
 
-    .card-glass {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(15px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 1px;
-      color: #fff;
-      overflow: hidden;
-      transition: all 0.8s ease;
-      opacity: 1;
-      transform: translateY(0);
-     
+    .lightsegproducts-icon {
+      width: 180px;
+      height: auto;
+      animation: floatIcon 3s ease-in-out infinite;
+      transition: transform 0.6s ease, opacity 0.6s ease;
+      z-index: 1;
     }
 
-    .card-glass .card-img-top {
-      height: 260px;
-      object-fit: cover;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    .lightsegproducts-box:hover .lightsegproducts-icon {
+      transform: translateY(-20px) scale(1.05);
+      opacity: 0.7;
     }
 
-    .card-body {
-      padding: 25px;
-    }
-
-    .card-body h5 {
-      font-weight: 600;
-      font-size: 1.4rem;
-    }
-
-    .card-body p {
-      color: #ddd;
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-    }
-
-    /* ===== PHASE 1: Move Up Quickly ===== */
-    .move-up-fast {
-      animation: moveUpFast 1s ease forwards;
-    }
-
-    @keyframes moveUpFast {
-      0% { transform: translateY(0); opacity: 1; }
-      100% { transform: translateY(-200px); opacity: 0; }
-    }
-
-    /* ===== PHASE 2: Cinematic 3D Animation ===== */
-    .center-show {
+    /* Overlay style (shows product name only) */
+    .lightsegproducts-overlay {
       position: absolute;
-      top: 55%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      inset: 0;
+      background: linear-gradient(135deg, #ffffff 50%, #f2f2f2 50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    .lightsegproducts-box:hover .lightsegproducts-overlay {
       opacity: 1;
-      z-index: 10;
-      width: 350px;
-      animation: flyRotateDisappear 4.5s cubic-bezier(0.45, 0, 0.55, 1) forwards;
-     
     }
 
-    /* === 3D Animation (Rotate 100° Y and fade) === */
-    @keyframes flyRotateDisappear {
-      0% {
-        opacity: 0;
-        transform: translate(80%, -50%) rotateY(-40deg) scale(0.8);
-      }
-    
-      70% {
-        opacity: 1;
-        transform: translate(-50%, -50%) rotateY(40deg) scale(0.95);
-      }
-      100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) rotateY(100deg) scale(0.7);
-      }
+    .lightsegproducts-overlay h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #111;
+      border-bottom: 2px solid #111;
+      padding-bottom: 4px;
+      letter-spacing: 0.5px;
     }
 
-    @media (max-width: 992px) {
-      .card-img-top { height: 220px; }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 3px;
     }
   </style>
 </head>
-
 <body>
-  <div id="dynamicBg" class="dynamic-bg"></div>
+  <div class="sidebar">
+    <h2>Lighting</h2>
 
-  <section class="hotel-layout position-relative">
-    <div class="hero-overlay"></div>
+    <div class="menu-item active" onclick="showProducts('all', this)">All</div>
 
-    <div class="container position-relative text-center">
-      <h1 id="mainHeading" class="fw-bold display-5 mb-5 main-heading">
-        Explore <span style="color:#d5c9a3;">Valora Heights Hotel</span>
-      </h1>
-
-      <div class="row g-4 justify-content-center" id="cardContainer">
-        <div class="col-md-3 col-sm-6">
-          <div class="card-glass">
-            <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Room">
-            <div class="card-body">
-              <h5>Alpine Loft</h5>
-              <p>3 Guests • 85 sqm</p>
-              <p>A refined escape inspired by the timeless beauty of the mountains.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6">
-          <div class="card-glass">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Room">
-            <div class="card-body">
-              <h5>Mountain View Suite</h5>
-              <p>2 Guests • 60 sqm</p>
-              <p>Enjoy a stunning panoramic view from your private balcony.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6">
-          <div class="card-glass">
-            <img src="https://images.unsplash.com/photo-1600047509358-9dc75507daeb?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Room">
-            <div class="card-body">
-              <h5>Luxury Cabin</h5>
-              <p>4 Guests • 110 sqm</p>
-              <p>Designed for elegance and comfort with a warm wooden interior.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6">
-          <div class="card-glass">
-            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Room">
-            <div class="card-body">
-              <h5>Valora Penthouse</h5>
-              <p>2 Guests • 120 sqm</p>
-              <p>A premium suite offering the best views and luxury experience.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="menu-item" onclick="toggleSubmenu(this)">COB Lights</div>
+    <div class="submenu">
+      <div class="submenu-item" onclick="navigateTo('COB Panel Light')">Panel Light</div>
+      <div class="submenu-item" onclick="navigateTo('COB Downlight')">Downlight</div>
+      <div class="submenu-item" onclick="navigateTo('COB Spotlight')">Spotlight</div>
     </div>
-  </section>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">Surface Lights</div>
+    <div class="submenu">
+      <div class="submenu-item" onclick="navigateTo('Surface Round Light')">Round</div>
+      <div class="submenu-item" onclick="navigateTo('Surface Square Light')">Square</div>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">Track Lights</div>
+    <div class="submenu">
+      <div class="submenu-item" onclick="navigateTo('Track Linear')">Linear</div>
+      <div class="submenu-item" onclick="navigateTo('Track Adjustable')">Adjustable</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="lightsegproducts-grid" id="productContainer"></div>
+  </div>
 
   <script>
-    const cards = document.querySelectorAll('.card-glass');
-    const heading = document.getElementById('mainHeading');
-    const dynamicBg = document.getElementById('dynamicBg');
+    const productContainer = document.getElementById("productContainer");
 
-    function startSequence() {
-      heading.classList.remove('heading-hidden');
+    function toggleSubmenu(element) {
+      document.querySelectorAll(".menu-item").forEach(item => item.classList.remove("active"));
+      element.classList.add("active");
 
-      // Wait 5 seconds before all cards move up
-      setTimeout(() => {
-        cards.forEach(card => {
-          card.classList.remove('center-show');
-          card.style.display = 'block';
-          card.classList.add('move-up-fast');
-        });
+      // Collapse others
+      document.querySelectorAll(".submenu").forEach(sub => sub.classList.remove("show"));
 
-        setTimeout(() => {
-          cards.forEach(card => {
-            card.classList.remove('move-up-fast');
-            card.style.display = 'none';
-          });
-          heading.classList.add('heading-hidden');
-          playSingleCardSequence();
-        }, 1200);
-      }, 5000);
-    }
-
-    // === Single card 3D sequence + background sync on disappear ===
-    function playSingleCardSequence() {
-      let index = 0;
-
-      function showNextCard() {
-        if (index >= cards.length) {
-          setTimeout(startSequence, 1500);
-          return;
-        }
-
-        const card = cards[index];
-        const imgSrc = card.querySelector('.card-img-top').src;
-
-        card.style.display = 'block';
-        card.classList.add('center-show');
-
-        // Fade in background clearly when card starts to disappear
-        setTimeout(() => {
-          dynamicBg.style.backgroundImage = `url(${imgSrc})`;
-          dynamicBg.style.opacity = "1";
-
-          // Keep background for 3 seconds before fading out
-          setTimeout(() => {
-            dynamicBg.style.opacity = "0";
-          }, 3000);
-        }, 2500); // show background during last rotation phase
-
-        setTimeout(() => {
-          card.classList.remove('center-show');
-          card.style.display = 'none';
-          index++;
-          setTimeout(showNextCard, 800);
-        }, 4500);
+      const nextSubmenu = element.nextElementSibling;
+      if (nextSubmenu && nextSubmenu.classList.contains("submenu")) {
+        nextSubmenu.classList.add("show");
       }
-
-      showNextCard();
     }
 
-    startSequence();
+    function showProducts(type, element) {
+      document.querySelectorAll(".menu-item").forEach(item => item.classList.remove("active"));
+      element.classList.add("active");
+      document.querySelectorAll(".submenu").forEach(sub => sub.classList.remove("show"));
+      productContainer.innerHTML = "";
+
+      if (type === "all") {
+        const items = [
+          { name: "COB LIGHTS", img: "img/productsimgs/1.png" },
+          { name: "SURFACE LIGHTS", img: "https://via.placeholder.com/300x200?text=Surface+Light" },
+          { name: "TRACK LIGHTS", img: "https://via.placeholder.com/300x200?text=Track+Light" },
+          { name: "MAGNETIC TRACK", img: "https://via.placeholder.com/300x200?text=Magnetic+Track" },
+          { name: "LINEAR PROFILES", img: "https://via.placeholder.com/300x200?text=Linear+Profiles" },
+          { name: "NEON FLEX", img: "https://via.placeholder.com/300x200?text=Neon+Flex" }
+        ];
+        items.forEach(p => createProductBox(p.name, p.img));
+      }
+    }
+
+    function createProductBox(name, img) {
+      const box = document.createElement("div");
+      box.className = "lightsegproducts-box";
+      box.innerHTML = `
+        <img src="${img}" alt="${name}" class="lightsegproducts-icon" />
+        <div class="lightsegproducts-overlay"><h2>${name}</h2></div>
+      `;
+      productContainer.appendChild(box);
+    }
+
+    function navigateTo(name) {
+      window.location.href = `product.html?name=${encodeURIComponent(name)}`;
+    }
+
+    // Default load
+    showProducts("all", document.querySelector(".menu-item.active"));
   </script>
 </body>
 </html>

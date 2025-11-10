@@ -1,384 +1,621 @@
-<!-- Lightseg Products Section start -->
-<div class="lightsegproducts-wrapper">
+<!DOCTYPE html>
+<html lang="en">
 
-  <style>
-    .lightsegproducts-wrapper {
-      background-color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding: 40px 0;
-    }
+<head>
+  <meta charset="utf-8">
+  <title>Arcot Industries Private Limited</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Arcot Industries Hyderabad, Industrial Power Solutions, Smart City India, Automation Systems, Lighting Company India, Solar Power, Engineering Solutions Hyderabad">
+  <meta name="description" content="Arcot Industries delivers cutting-edge solutions in Power, Energy, Lighting, Automation, Smart City Infrastructure, and R&D across India.">
+  <link rel="icon" href="img/fevi.png" type="image/x-icon">
 
-    .lightsegproducts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 12px;
-      width: 100%;
-      max-width: 1800px;
-    }
+  <!-- Fonts & Libraries -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="css/style.css" rel="stylesheet">
+</head>
 
-    .lightsegproducts-box {
-      position: relative;
-      overflow: hidden;
-      background: #e0e0e0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 350px;
-      border: 1px solid #fff;
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-      cursor: pointer;
-      border-radius: 10px;
-    }
+<body>
 
-    .lightsegproducts-box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
+<!-- HEADER START -->
+<header class="main-header">
+  <div class="header-wrap position-relative">
+    <a href="index.html">
+      <img src="img/logos.webp" alt="Logo" class="logo" loading="lazy">
+    </a>
+    <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
+    <nav class="navmenu" id="mainNav">
+      <ul class="mb-0">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a></li>
+        <li><a href="solution.html">Solutions</a></li>
+        <li class="dropdown">
+          <a href="#" onclick="toggleDropdown(event)">R&D <i class="bi bi-chevron-down ms-1"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="smart-pole.html">Smart Pole</a></li>
+            <li><a href="#">Smart Bollard</a></li>
+            <li><a href="#">Smart Conference Table</a></li>
+            <li><a href="#">Smart Window Leaf AC</a></li>
+            <li><a href="#">Smart Bar Counter</a></li>
+          </ul>
+        </li>
+        <li><a href="applications.html">Applications</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
 
-    /* Floating animation for icons */
-    @keyframes floatIcon {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-
-    .lightsegproducts-box img.lightsegproducts-icon {
-      width: 180px;
-      height: auto;
-      transition: transform 0.6s ease, opacity 0.6s ease;
-      animation: floatIcon 3s ease-in-out infinite;
-    }
-
-    .lightsegproducts-box:hover img.lightsegproducts-icon {
-      transform: translateY(-20px) scale(1.05);
-      opacity: 0.8;
-    }
-
-    /* Overlay reveal - diagonal style */
-    .lightsegproducts-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, #ffffff 50%, #f5f5f5 50%);
-      clip-path: polygon(0 100%, 100% 0, 100% 100%, 0% 100%);
-      transition: clip-path 0.7s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.6s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-    }
-
-    .lightsegproducts-box:hover .lightsegproducts-overlay {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-      opacity: 1;
-    }
-
-    .lightsegproducts-overlay h2 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 15px;
-      color: #111;
-      text-align: center;
-      border-bottom: 2px solid #111;
-      padding-bottom: 4px;
-    }
-
-    .lightsegproducts-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 10px;
-    }
-
-    .lightsegproducts-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .lightsegproducts-item img {
-      width: 90px;
-      height: 90px;
-      object-fit: contain;
-      transition: transform 0.3s ease;
-    }
-
-    .lightsegproducts-item:hover img {
-      transform: scale(1.1);
-    }
-
-    .lightsegproducts-item p {
-      margin-top: 6px;
-      font-size: 0.9rem;
-      color: #111;
-      font-weight: 500;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 1024px) {
-      .lightsegproducts-box {
-        height: 300px;
-      }
-      .lightsegproducts-item img {
-        width: 80px;
-        height: 80px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .lightsegproducts-box {
-        height: 260px;
-      }
-      .lightsegproducts-overlay h2 {
-        font-size: 1.3rem;
-      }
-      .lightsegproducts-item img {
-        width: 70px;
-        height: 70px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .lightsegproducts-box {
-        height: 220px;
-      }
-      .lightsegproducts-overlay h2 {
-        font-size: 1.1rem;
-      }
-      .lightsegproducts-item img {
-        width: 60px;
-        height: 60px;
-      }
-    }
-  </style>
-
-  <div class="lightsegproducts-grid">
-
-    <!-- Product 1 -->
-    <div class="lightsegproducts-box">
-      <img src="img/productsimgs/1.png" class="lightsegproducts-icon" alt="COB Light" />
-        <div class="lightsegproducts-overlay">
-        <h2>COB LIGHTS</h2>
-        <div class="lightsegproducts-gallery">
-          <div class="lightsegproducts-item">
-            <img src="img/productsimgs/4.png" alt="PANEL LIGHTS" />
-            <p>PANEL LIGHTS</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="img/productsimgs/5.png" alt="DOWNLIGHTS" />
-            <p>DOWNLIGHTS</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="img/productsimgs/6.png" alt="SPOTLIGHTS" />
-            <p>SPOTLIGHTS</p>
-          </div>
+  <!-- Mega Menu -->
+  <div id="megaMenu" class="mega-menu">
+    <div class="row">
+      <div class="underline"></div>
+      <div class="service-submenus d-flex flex-wrap">
+        <!-- Energy -->
+        <div class="service-group">
+          <h6>Energy</h6>
+          <ul>
+            <li><a href="#">Solar</a></li>
+            <li><a href="#">Wind</a></li>
+            <li><a href="#">Biomass</a></li>
+            <li><a href="#">Hydel Power</a></li>
+          </ul>
+        </div>
+        <!-- Power -->
+        <div class="service-group">
+          <h6>Power</h6>
+          <ul>
+            <li><a href="transmission.html">Transmission</a></li>
+            <li><a href="#">Distribution</a></li>
+            <li><a href="#">Low Tension</a></li>
+            <li><a href="#">High Tension</a></li>
+            <li><a href="#">Panel Boards</a></li>
+          </ul>
+        </div>
+        <!-- Lighting -->
+        <div class="service-group">
+          <h6>Lighting</h6>
+          <ul>
+            <li><a href="residential-lighting.html">Residential</a></li>
+            <li><a href="facade-lighting.html">Facade</a></li>
+            <li><a href="commercial-lighting.html">Commercial</a></li>
+            <li><a href="industrial-lighting.html">Industrial</a></li>
+            <li><a href="#">Street</a></li>
+            <li><a href="#">Park</a></li>
+            <li><a href="#">Stadium</a></li>
+            <li><a href="#">Hospital</a></li>
+          </ul>
+        </div>
+        <!-- Automation -->
+        <div class="service-group">
+          <h6>Automation</h6>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Commercial</a></li>
+            <li><a href="#">Industrial</a></li>
+            <li><a href="#">Hospital</a></li>
+            <li><a href="#">IoT Based Automation</a></li>
+            <li><a href="#">Hotel</a></li>
+          </ul>
+        </div>
+        <!-- R&D -->
+        <div class="service-group">
+          <h6>R & D</h6>
+          <ul>
+            <li><a href="smart-pole.html">Smart Pole</a></li>
+            <li><a href="#">Smart Conference Hall</a></li>
+            <li><a href="#">Smart Bollards</a></li>
+            <li><a href="#">Smart Bar Counter</a></li>
+            <li><a href="#">Smart Window Leaf AC</a></li>
+          </ul>
         </div>
       </div>
     </div>
+  </div>
+</header>
+<!-- HEADER END -->
 
-    <!-- Product 2 -->
-    <div class="lightsegproducts-box">
-      <img src="img/productsimgs/4.png" class="lightsegproducts-icon" alt="Laser Blade" />
-      <div class="lightsegproducts-overlay">
-        <h2>LASER BLADES</h2>
-        <div class="lightsegproducts-gallery">
-          <div class="lightsegproducts-item">
-            <img src="img/productsimgs/4.png" alt="PANEL LIGHTS" />
-            <p>PANEL LIGHTS</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="img/productsimgs/5.png" alt="DOWNLIGHTS" />
-            <p>DOWNLIGHTS</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="img/productsimgs/6.png" alt="SPOTLIGHTS" />
-            <p>SPOTLIGHTS</p>
-          </div>
+<!-- PRODUCTS SECTION START -->
+<section class="lighting-products pt-5">
+  <div class="lighting-container">
+    <!-- Sidebar -->
+    <aside class="sidebar pt-5">
+      <h2>Lighting</h2>
+      <h2 class="mobile-toggle" onclick="toggleSidebar()">Lighting ☰</h2>
+
+      <ul class="category">
+        <li><button onclick="filterProducts('all')" class="active">All</button></li>
+        <li>
+          <button onclick="toggleMenu(this); filterProducts('cob')">COB Lights</button>
+          <ul class="submenu">
+            <li><a href="#">COB Downlight</a></li>
+            <li><a href="#">COB Surface</a></li>
+            <li><a href="#">COB Zoom</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleMenu(this); filterProducts('surface')">Surface Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Surface Round</a></li>
+            <li><a href="#">Surface Square</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleMenu(this); filterProducts('track')">Track Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Product Grid -->
+    <div class="product-section">
+      <div class="product-grid" id="productGrid">
+        <div class="product-card" data-category="cob">
+          <img src="img/productsimgs/1.png" alt="COB Downlight" />
+          <h3>COB Downlight</h3>
+        </div>
+        <div class="product-card" data-category="cob">
+          <img src="img/productsimgs/2.png" alt="COB Surface" />
+          <h3>COB Surface</h3>
+        </div>
+        <div class="product-card" data-category="surface">
+          <img src="img/productsimgs/3.png" alt="Surface Round" />
+          <h3>Surface Round</h3>
+        </div>
+        <div class="product-card" data-category="surface">
+          <img src="img/productsimgs/4.png" alt="Surface Square" />
+          <h3>Surface Square</h3>
+        </div>
+        <div class="product-card" data-category="track">
+          <img src="img/productsimgs/5.png" alt="Track Type 1" />
+          <h3>Track Type 1</h3>
+        </div>
+        <div class="product-card" data-category="track">
+          <img src="img/productsimgs/6.png" alt="Track Type 2" />
+          <h3>Track Type 2</h3>
         </div>
       </div>
     </div>
+  </div>
+</section>
+<!-- PRODUCTS SECTION END -->
 
-    <!-- Product 3 -->
-    <div class="lightsegproducts-box">
-      <img src="icon3.png" class="lightsegproducts-icon" alt="Surface Light" />
-      <div class="lightsegproducts-overlay">
-        <h2>SURFACE</h2>
-        <div class="lightsegproducts-gallery">
-          <div class="lightsegproducts-item">
-            <img src="track1.png" alt="LINEAR TRACK" />
-            <p>LINEAR TRACK</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="track2.png" alt="SPOT TRACK" />
-            <p>SPOT TRACK</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="track3.png" alt="ADJUSTABLE" />
-            <p>ADJUSTABLE</p>
-          </div>
+<!-- ================= STYLES ================= -->
+<style>
+.lighting-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  background: #f8f8f8;
+  color: #111;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  padding: 25px 15px;
+  box-sizing: border-box;
+}
+.sidebar h2 {
+  font-size: 20px;
+  color: #111;
+  margin-bottom: 25px;
+  font-weight: 700;
+  text-align: center;
+}
+.sidebar h2.mobile-toggle {
+  display: none;
+  cursor: pointer;
+  text-align: left;
+}
+.category {
+  list-style: none;
+  padding-left: 0;
+}
+.category li {
+  margin-bottom: 8px;
+}
+.category button {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: right;
+  font-size: 15px;
+  color: #333;
+  padding: 10px 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+.category button::after {
+  content: "→";
+  font-size: 16px;
+  color: #999;
+  transition: all 0.3s ease;
+  justify-content: flex-end;
+}
+.category button:hover,
+.category button.active {
+  background: #eaeaea;
+  color: #000;
+}
+.category button:hover::after,
+.category button.active::after {
+  color: #000;
+  transform: translateX(3px);
+}
+.submenu {
+  list-style: none;
+  margin-left: 15px;
+  display: none;
+}
+.submenu li a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+.submenu li a:hover {
+  color: #000;
+}
+
+/* Products */
+.product-section {
+  flex: 1;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  gap: 35px;
+  width: 100%;
+  max-width: 1300px;
+}
+.product-card {
+  position: relative;
+  background: #e6e6e6;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 360px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+.product-card:hover {
+  transform: translateY(-8px);
+}
+.product-card img {
+  width: 230px;
+  transition: transform 0.9s ease;
+  z-index: 2;
+  position: relative;
+}
+.product-card:hover img {
+  transform: translate(-20px, -45px) scale(1.18);
+}
+.product-card h3 {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #111;
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+  z-index: 3;
+}
+.product-card:hover h3 {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.product-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #e6e6e6;
+  z-index: 1;
+  transition: all 1s ease;
+}
+.product-card:hover::before {
+  background: linear-gradient(140deg, #ffffff 55%, #e6e6e6 45%);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .product-card img {
+    width: 180px;
+  }
+}
+@media (max-width: 768px) {
+  .lighting-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+  }
+  .sidebar h2 {
+    display: none;
+  }
+  .sidebar h2.mobile-toggle {
+    display: block;
+  }
+  .category {
+    display: none;
+  }
+  .category.show {
+    display: block;
+  }
+  .product-section {
+    padding: 20px;
+  }
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+</style>
+
+<!-- JS -->
+<script>
+function toggleMenu(btn) {
+  const submenu = btn.nextElementSibling;
+  const allMenus = document.querySelectorAll(".submenu");
+  const allButtons = document.querySelectorAll(".category button");
+  allMenus.forEach((m) => { if (m !== submenu) m.style.display = "none"; });
+  allButtons.forEach((b) => b.classList.remove("active"));
+  if (submenu.style.display === "block") submenu.style.display = "none";
+  else { submenu.style.display = "block"; btn.classList.add("active"); }
+}
+
+function filterProducts(category) {
+  const cards = document.querySelectorAll(".product-card");
+  const buttons = document.querySelectorAll(".category button");
+  buttons.forEach((b) => b.classList.remove("active"));
+  buttons.forEach((b) => {
+    if (b.textContent.toLowerCase().includes(category) || category === "all") b.classList.add("active");
+  });
+  cards.forEach((c) => {
+    c.style.display = category === "all" || c.dataset.category === category ? "flex" : "none";
+  });
+}
+
+function toggleSidebar() {
+  document.querySelector(".category").classList.toggle("show");
+}
+
+// Navbar dropdown arrow fix
+document.querySelectorAll('.navmenu li a').forEach(link => {
+  if(link.nextElementSibling && link.querySelector('i') === null) {
+    const arrow = document.createElement('i');
+    arrow.className = 'bi bi-chevron-down ms-1';
+    link.appendChild(arrow);
+  }
+});
+</script>
+
+
+   <!-- Footer Start -->
+<div class="tricky-footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
+  <div class="container py-5">
+    <div class="row g-5">
+
+      <!-- Column 1: Quick Links -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About us</a>
+          <a href="solution.html">Solutions</a>
+          <a href="applications.html">Applications</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="smart-pole.html">R & D</a>
+          <a href="contact.html">Contact</a>
         </div>
       </div>
-    </div>
 
-    <!-- Product 4 -->
-    <div class="lightsegproducts-box">
-      <img src="icon4.png" class="lightsegproducts-icon" alt="Profile Light" />
-      <div class="lightsegproducts-overlay">
-        <h2>PROFILES</h2>
-        <div class="lightsegproducts-gallery">
-          <div class="lightsegproducts-item">
-            <img src="mag1.png" alt="LINEAR MODULE" />
-            <p>LINEAR MODULE</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="mag2.png" alt="SPOT MODULE" />
-            <p>SPOT MODULE</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="mag3.png" alt="WALL WASHER" />
-            <p>WALL WASHER</p>
-          </div>
+      <!-- Column 2: Services -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Services</h4>
+          <a href="#">Energy</a>
+          <a href="#">Power</a>
+          <a href="#">Lighting</a>
+          <a href="#">Automation</a>
+          <a href="#">Smart City</a>
+          <a href="#">R & D</a>
         </div>
       </div>
-    </div>
 
-    <!-- Product 5 -->
-    <div class="lightsegproducts-box">
-      <img src="icon5.png" class="lightsegproducts-icon" alt="M Track" />
-      <div class="lightsegproducts-overlay">
-        <h2>M TRACK</h2>
-        <div class="lightsegproducts-gallery">
-          <div class="lightsegproducts-item">
-            <img src="pro1.png" alt="SURFACE PROFILE" />
-            <p>SURFACE PROFILE</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="pro2.png" alt="SUSPENDED PROFILE" />
-            <p>SUSPENDED PROFILE</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="pro3.png" alt="RECESSED PROFILE" />
-            <p>RECESSED PROFILE</p>
-          </div>
+      <!-- Column 3: Applications -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Applications</h4>
+          <a href="#">Energy Generation</a>
+          <a href="#">Power</a>
+          <a href="#">Lighting</a>
+          <a href="#">Indoor Lighting</a>
+          <a href="#">Automation</a>
+          <a href="#">Smart City</a>
+          <a href="#">R & D</a>
         </div>
       </div>
-    </div>
 
-        <!-- Product 1 -->
-    <div class="lightsegproducts-box">
-      <img src="img/productsimgs/1.png" class="lightsegproducts-icon" alt="COB Light" />
-        <div class="lightsegproducts-overlay">
-        <h2>COB LIGHTS</h2>
-        <div class="lightsegproducts-gallery">
-          <div class="lightsegproducts-item">
-            <img src="img/productsimgs/4.png" alt="PANEL LIGHTS" />
-            <p>PANEL LIGHTS</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="img/productsimgs/5.png" alt="DOWNLIGHTS" />
-            <p>DOWNLIGHTS</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="img/productsimgs/6.png" alt="SPOTLIGHTS" />
-            <p>SPOTLIGHTS</p>
-          </div>
+      <!-- Column 4: Contact Info -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Contact Info</h4>
+          <a href="#"><i class="fa fa-map-marker-alt text-secondary me-2"></i> Apurupa Towers, Road No:36, Jubilee Hills, Hyderabad, Telangana-500033</a>
+          <a href="mailto:info@arcotindia.com"><i class="fas fa-envelope text-secondary me-2"></i> info@arcotindia.com</a>
+          <a href="tel:+919848189899"><i class="fas fa-phone text-secondary me-2"></i> +91 98481 89899</a>
         </div>
       </div>
-    </div>
 
-    <!-- Product 2 -->
-    <div class="lightsegproducts-box">
-      <img src="img/productsimgs/4.png" class="lightsegproducts-icon" alt="Laser Blade" />
-      <div class="lightsegproducts-overlay">
-        <h2>LASER BLADES</h2>
-        <div class="lightsegproducts-gallery">
-          <div class="lightsegproducts-item">
-            <img src="img/productsimgs/4.png" alt="PANEL LIGHTS" />
-            <p>PANEL LIGHTS</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="img/productsimgs/5.png" alt="DOWNLIGHTS" />
-            <p>DOWNLIGHTS</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="img/productsimgs/6.png" alt="SPOTLIGHTS" />
-            <p>SPOTLIGHTS</p>
-          </div>
+      <!-- Social Media -->
+      <div class="col-lg-12 mt-4">
+        <div class="tricky-social-icons d-flex flex-wrap justify-content-start gap-3">
+          <a class="tricky-social-btn" href="#"><i class="fab fa-facebook-f"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-instagram"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-youtube"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-pinterest-p"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-whatsapp"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-telegram-plane"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-reddit-alien"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-threads"></i></a>
         </div>
       </div>
-    </div>
 
-    <!-- Product 3 -->
-    <div class="lightsegproducts-box">
-      <img src="icon3.png" class="lightsegproducts-icon" alt="Surface Light" />
-      <div class="lightsegproducts-overlay">
-        <h2>SURFACE</h2>
-        <div class="lightsegproducts-gallery">
-          <div class="lightsegproducts-item">
-            <img src="track1.png" alt="LINEAR TRACK" />
-            <p>LINEAR TRACK</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="track2.png" alt="SPOT TRACK" />
-            <p>SPOT TRACK</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="track3.png" alt="ADJUSTABLE" />
-            <p>ADJUSTABLE</p>
-          </div>
-        </div>
-      </div>
     </div>
-
-    <!-- Product 4 -->
-    <div class="lightsegproducts-box">
-      <img src="icon4.png" class="lightsegproducts-icon" alt="Profile Light" />
-      <div class="lightsegproducts-overlay">
-        <h2>PROFILES</h2>
-        <div class="lightsegproducts-gallery">
-          <div class="lightsegproducts-item">
-            <img src="mag1.png" alt="LINEAR MODULE" />
-            <p>LINEAR MODULE</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="mag2.png" alt="SPOT MODULE" />
-            <p>SPOT MODULE</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="mag3.png" alt="WALL WASHER" />
-            <p>WALL WASHER</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Product 5 -->
-    <div class="lightsegproducts-box">
-      <img src="icon5.png" class="lightsegproducts-icon" alt="M Track" />
-      <div class="lightsegproducts-overlay">
-        <h2>M TRACK</h2>
-        <div class="lightsegproducts-gallery">
-          <div class="lightsegproducts-item">
-            <img src="pro1.png" alt="SURFACE PROFILE" />
-            <p>SURFACE PROFILE</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="pro2.png" alt="SUSPENDED PROFILE" />
-            <p>SUSPENDED PROFILE</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="pro3.png" alt="RECESSED PROFILE" />
-            <p>RECESSED PROFILE</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </div>
-<!-- Lightseg Products Section end -->
+
+<style>
+ /* Footer Wrapper */
+.tricky-footer {
+  background: #1e2226;
+  color: #ccc;
+  font-size: 15px;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 300; /* light weight */
+  letter-spacing: 1px;
+  
+}
+
+/* Footer Headings */
+.tricky-footer-item h4,
+.tricky-footer-item h5 {
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+/* Footer Links */
+.tricky-footer-item a {
+  color: #bbb;
+  margin-bottom: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  font-weight: 300;
+  font-size: 12px;
+}
+.tricky-footer-item a:hover {
+  color: #00bcd4;
+  padding-left: 5px;
+}
+
+/* Social Media Icons */
+.tricky-social-icons .tricky-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  color: #8f8c8c;
+  font-size: 13px;
+  transition: 0.3s;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 300;
+}
+.tricky-social-icons .tricky-social-btn:hover {
+  background: #434444;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Copyright Section */
+.tricky-footer-bottom {
+  border-top: 1px solid #333;
+  color: #aaa;
+  font-size: 14px;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.tricky-footer-bottom a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+}
+.tricky-footer-bottom a:hover {
+  color: #00bcd4;
+}
+</style>
+<!-- Footer End -->
+
+<!-- Copyright Start -->
+<div class="tricky-footer-bottom py-4 bg-dark">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-6 text-center text-md-start mb-md-0">
+        <span class="text-body">
+          <a href="https://arcotindia.com/" class="border-bottom text-white">
+            <i class="fas fa-copyright text-light me-2"></i>ARCOT
+          </a>, All Rights Reserved.
+        </span>
+      </div>
+      <!-- <div class="col-md-6 text-center text-md-end text-body">
+        Designed By <a class="border-bottom text-white" href="https://arcotindia.com/">ARCOT</a>
+      </div> -->
+    </div>
+  </div>
+</div>
+<!-- Copyright End -->
+
+         
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>    
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+       <script>AOS.init();</script>
+
+</body>
+</html>
