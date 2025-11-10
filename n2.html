@@ -1,1566 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <title>Arcot Industries Private Limited</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <!-- SEO Meta Tags -->
-  <meta name="keywords"
-    content="Arcot Industries contact, Arcot Industries location, Arcot Industries Hyderabad, electrical company contact, smart lighting contact, customer support">
-  <meta name="description"
-    content="Get in touch with Arcot Industries for inquiries about our products, services, or business opportunities. Visit our office or reach out via phone or email.">
-  <meta name="author" content="Arcot Industries">
-  <link rel="icon" href="img/logos.webp" type="image/x-icon">
-  <!-- Google Web Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lighting Products</title>
 
-  <!-- Font Awesome (latest) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"> -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 
-  <!-- Libraries Stylesheet -->
-  <link rel="stylesheet" href="lib/animate/animate.min.css" />
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+body {
+  display: flex;
+  background: #f8f8f8;
+  color: #111;
+  min-height: 100vh;
+  flex-direction: row;
+}
 
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  padding: 25px;
+  transition: all 0.4s ease;
+}
 
-  <!-- Customized Bootstrap Stylesheet -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+.sidebar h2 {
+  font-size: 20px;
+  color: #111;
+  margin-bottom: 25px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}
 
+.category {
+  list-style: none;
+}
 
-  <!-- Template Stylesheet -->
-  <link href="css/style.css" rel="stylesheet">
+.category li {
+  margin-bottom: 8px;
+}
 
+.category button {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 15px;
+  color: #333;
+  padding: 10px 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.category button::after {
+  content: "→";
+  font-size: 16px;
+  color: #999;
+  transition: all 0.3s ease;
+}
+
+.category button:hover,
+.category button.active {
+  background: #eaeaea;
+  color: #000;
+}
+
+.category button:hover::after,
+.category button.active::after {
+  color: #000;
+  transform: translateX(3px);
+}
+
+/* SUBMENU */
+.submenu {
+  list-style: none;
+  margin-left: 15px;
+  display: none;
+}
+
+.submenu li {
+  padding: 5px 0;
+}
+
+.submenu li a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.submenu li a:hover {
+  color: #000;
+}
+
+/* PRODUCT SECTION */
+.product-section {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  width: 100%;
+  max-width: 1300px;
+}
+
+/* PRODUCT CARD */
+.product-card {
+  position: relative;
+  background: #e6e6e6;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 360px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Image */
+.product-card img {
+  width: 210px;
+  transition: transform 0.9s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.product-card:hover img {
+  transform: translate(-20px, -45px) scale(1.15);
+}
+
+/* Product name */
+.product-card h3 {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #111;
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+  z-index: 3;
+}
+
+.product-card:hover h3 {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* Diagonal hover tone */
+.product-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #e6e6e6;
+  z-index: 1;
+  transition: all 1s ease;
+}
+
+.product-card:hover::before {
+  background: linear-gradient(140deg, #ffffff 55%, #e6e6e6 45%);
+}
+
+/* ------------------- RESPONSIVE ------------------- */
+
+/* Tablet view */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  .product-card {
+    height: 300px;
+  }
+  .product-card img {
+    width: 180px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 20px;
+  }
+
+  .sidebar h2 {
+    font-size: 18px;
+    text-align: left;
+    margin: 0;
+  }
+
+  .category {
+    display: none;
+    margin-top: 15px;
+  }
+
+  .category.show {
+    display: block;
+  }
+
+  .product-section {
+    padding: 20px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .product-card {
+    height: 280px;
+  }
+
+  .product-card img {
+    width: 160px;
+  }
+
+  .product-card:hover img {
+    transform: translate(-15px, -35px) scale(1.1);
+  }
+
+  .product-card h3 {
+    font-size: 1rem;
+    bottom: 20px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- Spinner Start -->
-  <div id="spinner"
-    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-      <span class="sr-only">Loading...</span>
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <h2 onclick="toggleSidebar()">Lighting ☰</h2>
+  <ul class="category">
+    <li><button onclick="filterProducts('all')" class="active">All</button></li>
+    <li>
+      <button onclick="toggleMenu(this); filterProducts('cob')">COB Lights</button>
+      <ul class="submenu">
+        <li><a href="#">COB Downlight</a></li>
+        <li><a href="#">COB Surface</a></li>
+        <li><a href="#">COB Zoom</a></li>
+      </ul>
+    </li>
+    <li>
+      <button onclick="toggleMenu(this); filterProducts('surface')">Surface Lights</button>
+      <ul class="submenu">
+        <li><a href="#">Surface Round</a></li>
+        <li><a href="#">Surface Square</a></li>
+      </ul>
+    </li>
+    <li>
+      <button onclick="toggleMenu(this); filterProducts('track')">Track Lights</button>
+      <ul class="submenu">
+        <li><a href="#">Track Type 1</a></li>
+        <li><a href="#">Track Type 2</a></li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+
+<!-- PRODUCT GRID -->
+<section class="product-section">
+  <div class="product-grid" id="productGrid">
+    <div class="product-card" data-category="cob">
+      <img src="img/productsimgs/1.png" alt="COB Downlight" />
+      <h3>COB Downlight</h3>
     </div>
-  </div>
-  <!-- Spinner End -->
-
-  <header>
-    <div class="header-wrap position-relative">
-      <a href="index.html"><img src="img/logos.webp" alt="Logo" class="logo" loading="lazy"></a>
-      <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
-      <nav class="navmenu" id="mainNav">
-        <ul class="mb-0">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li>
-            <a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a>
-          </li>
-          <li><a href="solution.html">Solutions</a></li>
-          <li><a href="applications.html">Applications</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
-          <!-- <li><a href="#"><i class="bi bi-search"></i></a></li> -->
-        </ul>
-      </nav>
+    <div class="product-card" data-category="cob">
+      <img src="img/productsimgs/2.png" alt="COB Surface" />
+      <h3>COB Surface</h3>
     </div>
-
-    <div id="megaMenu" class="mega-menu">
-      <div class="row">
-
-        <div class="underline"></div>
-        <div class="service-submenus d-flex flex-wrap">
-          <div class="service-group">
-            <h6>Energy</h6>
-            <ul>
-              <li><a href="#">Solar</a></li>
-              <li><a href="#">Wind</a></li>
-              <li><a href="#">Biomass</a></li>
-              <li><a href="#">Hydel Power</a></li>
-            </ul>
-          </div>
-          <div class="service-group">
-            <h6>Power</h6>
-            <ul>
-              <li><a href="transmission.html">transmission</a></li>
-              <li><a href="#">distribution</a></li>
-              <li><a href="#">Low Tention</a></li>
-              <li><a href="#">High Tention</a></li>
-              <li><a href="#">Panel Boards</a></li>
-            </ul>
-          </div>
-          <div class="service-group">
-            <h6>Lighting</h6>
-            <ul>
-              <li><a href="#">Residential</a></li>
-              <li><a href="#">Facade</a></li>
-              <li><a href="#">Commercial</a></li>
-              <li><a href="#">Industrial</a></li>
-              <li><a href="#">Street</a></li>
-              <li><a href="#">Park</a></li>
-              <li><a href="#">Stadium</a></li>
-              <li><a href="#">Hospital</a></li>
-            </ul>
-          </div>
-
-          <div class="service-group">
-            <h6>Automation</h6>
-            <ul>
-
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Commercial</a></li>
-              <li><a href="#">Industrial</a></li>
-              <li><a href="#">Hospital</a></li>
-              <li><a href="#">IOT Based Automation</a></li>
-              <li><a href="#">Hotel</a></li>
-            </ul>
-          </div>
-
-
-          <div class="service-group">
-            <h6>Smart City</h6>
-            <ul>
-              <li><a href="smart-pole.html">Smart Pole</a></li>
-              <li><a href="#">Smart Conference Hall</a></li>
-              <li><a href="#">Smart Bollards</a></li>
-              <li><a href="#">Smart Bar Counter</a></li>
-              <li><a href="#">Smart Window Leaf AC</a></li>
-            </ul>
-          </div>
-
-          <div class="service-group">
-            <h6>R & D</h6>
-            <ul>
-              <li><a href="smart-pole.html">Smart Pole</a></li>
-            </ul>
-          </div>
-
-        </div>
-
-      </div>
+    <div class="product-card" data-category="surface">
+      <img src="img/productsimgs/3.png" alt="Surface Round" />
+      <h3>Surface Round</h3>
     </div>
-  </header>
-
-
- 
-
-
-
-<!-- HOTEL AUTOMATION STARTS-->
-
-<div>
-<style>
-  body {
-    margin: 0;
-    background: #fff;
-    font-family: "Inter", sans-serif;
-    overflow-x: hidden;
-  }
-
-  .split-section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 6px;
-    padding: 90px 0;
-    background-color: #fff;
-  }
-
-  .slice-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .slice {
-    width: 240px;
-    background-repeat: no-repeat;
-    background-size: 720px auto;
-    background-position-y: top;
-    transition: transform 1s ease-in-out;
-  }
-
-  .slice-group:nth-child(1) .slice { height: 480px; background-position-x: 0%; }
-  .slice-group:nth-child(2) .slice { height: 430px; background-position-x: 50%; }
-  .slice-group:nth-child(3) .slice { height: 380px; background-position-x: 100%; }
-
-  .slice-content {
-    text-align: center;
-    max-width: 240px;
-    margin-top: 12px;
-    transition: transform 1s ease-in-out;
-  }
-
-  h3, p {
-    margin: 0;
-    letter-spacing: 0.3px;
-  }
-
-  h3 {
-    font-family: "Playfair Display", serif;
-    font-weight: 600;
-    color: #111;
-    font-size: 1.4rem;
-    margin-bottom: 6px;
-  }
-
-  p {
-    font-family: "Inter", sans-serif;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #444;
-  }
-
-  /* Scroll animation classes */
-  .scroll-up {
-    transform: translateY(-100%);
-  }
-
-  .scroll-down {
-    transform: translateY(100%);
-  }
-
-  .in-view {
-    transform: translateY(0);
-  }
-
-   /* ✅ Mobile view fix: keep one row (3 columns scaled down) */
-  @media (max-width: 768px) {
-    .split-section {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: nowrap;
-      gap: 2px;
-      padding: 50px 10px;
-      
-    }
-
-    .slice-group {
-      flex: 1;
-      max-width: 32%;
-    }
-
-    .slice {
-      width: 100%;
-      height: 100px;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .slice-content {
-      max-width: 100%;
-      margin-top: 8px;
-     
-    }
-
-    h3 {
-      font-size: 1rem;
-    }
-
-    p {
-      font-size: 0.85rem;
-      line-height: 1.4;
-    }
-  }
-
-  
-</style>
-
-<section class="split-section" id="splitSection">
-  <div class="slice-group">
-    <div class="slice"></div>
-    <div class="slice-content"><h3 id="title1"></h3></div>
-  </div>
-  <div class="slice-group">
-    <div class="slice"></div>
-    <div class="slice-content"><p id="desc2"></p></div>
-  </div>
-  <div class="slice-group">
-    <div class="slice"></div>
-    <div class="slice-content"><p id="desc3"></p></div>
+    <div class="product-card" data-category="surface">
+      <img src="img/productsimgs/4.png" alt="Surface Square" />
+      <h3>Surface Square</h3>
+    </div>
+    <div class="product-card" data-category="track">
+      <img src="img/productsimgs/5.png" alt="Track Type 1" />
+      <h3>Track Type 1</h3>
+    </div>
+    <div class="product-card" data-category="track">
+      <img src="img/productsimgs/6.png" alt="Track Type 2" />
+      <h3>Track Type 2</h3>
+    </div>
   </div>
 </section>
 
 <script>
-const sets = [
-  [
-    { img: "../img/sool1.jpg", text: "Smart Living" },
-    { img: "../img/sool1.jpg", text: "Experience harmony between design and technology." },
-    { img: "../img/sool1.jpg", text: "Live intelligently, effortlessly, beautifully." }
-  ],
-  [
-    { img: "../img/automation/homeauto.jpg", text: "Luxury Lighting" },
-    { img: "../img/automation/homeauto.jpg", text: "Light that adapts perfectly to every moment." },
-    { img: "../img/automation/homeauto.jpg", text: "Elegance in illumination and control." }
-  ],
-  [
-    { img: "../img/automation/hospitalautomation.png", text: "Smart Healthcare" },
-    { img: "../img/automation/hospitalautomation.png", text: "Intelligent systems that save time and lives." },
-    { img: "../img/automation/hospitalautomation.png", text: "Care enhanced through connected innovation." }
-  ],
-  [
-    { img: "../img/automation/hotelautomation.png", text: "Hotel Automation" },
-    { img: "../img/automation/hotelautomation.png", text: "Redefine luxury hospitality with smart experiences." },
-    { img: "../img/automation/hotelautomation.png", text: "A stay that feels effortlessly intelligent." }
-  ],
-  [
-    { img: "../img/automation/industriesautomation.png", text: "Industrial Intelligence" },
-    { img: "../img/automation/industriesautomation.png", text: "Automation that powers productivity." },
-    { img: "../img/automation/industriesautomation.png", text: "Future-ready efficiency, today." }
-  ],
-  [
-    { img: "../img/automation/iot.png", text: "IoT Connectivity" },
-    { img: "../img/automation/iot.png", text: "Everything connected, everything smart." },
-    { img: "../img/automation/iot.png", text: "Seamless tech woven into daily life." }
-  ],
-];
+function toggleMenu(btn) {
+  const submenu = btn.nextElementSibling;
+  const allButtons = document.querySelectorAll(".category button");
+  const allMenus = document.querySelectorAll(".submenu");
 
-let currentIndex = 0;
-const groups = document.querySelectorAll(".slice-group");
+  allMenus.forEach((menu) => {
+    if (menu !== submenu) menu.style.display = "none";
+  });
 
-function updateSet(index) {
-  const currentSet = sets[index];
+  allButtons.forEach((b) => b.classList.remove("active"));
 
-  groups.forEach((group, i) => {
-    const slice = group.querySelector(".slice");
-    const content = group.querySelector(".slice-content");
-    const textEl = content.querySelector("h3, p");
+  if (submenu.style.display === "block") {
+    submenu.style.display = "none";
+  } else {
+    submenu.style.display = "block";
+    btn.classList.add("active");
+  }
+}
 
-    // Scroll old content down
-    slice.classList.remove("in-view");
-    content.classList.remove("in-view");
-    slice.classList.add("scroll-down");
-    content.classList.add("scroll-down");
+function filterProducts(category) {
+  const cards = document.querySelectorAll(".product-card");
+  const buttons = document.querySelectorAll(".category button");
+  buttons.forEach((btn) => btn.classList.remove("active"));
 
-    // After scroll-out, replace and scroll-in new
-    setTimeout(() => {
-      slice.style.backgroundImage = `url('${currentSet[i].img}')`;
-      textEl.textContent = currentSet[i].text;
+  buttons.forEach((btn) => {
+    if (
+      btn.textContent.trim().toLowerCase().includes(category.toLowerCase()) ||
+      (category === "all" && btn.textContent.trim().toLowerCase() === "all")
+    ) {
+      btn.classList.add("active");
+    }
+  });
 
-      slice.classList.remove("scroll-down");
-      content.classList.remove("scroll-down");
-      slice.classList.add("scroll-up");
-
-      // Trigger next slide into view
-      requestAnimationFrame(() => {
-        slice.classList.remove("scroll-up");
-        content.classList.remove("scroll-up");
-        slice.classList.add("in-view");
-        content.classList.add("in-view");
-      });
-    }, 1000);
+  cards.forEach((card) => {
+    if (category === "all" || card.dataset.category === category) {
+      card.style.display = "flex";
+    } else {
+      card.style.display = "none";
+    }
   });
 }
 
-// Initial load
-window.addEventListener("load", () => {
-  updateSet(0);
-  groups.forEach(group => {
-    group.querySelector(".slice").classList.add("in-view");
-    group.querySelector(".slice-content").classList.add("in-view");
-  });
-
-  // Cycle every 5 seconds
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % sets.length;
-    updateSet(currentIndex);
-  }, 5000);
-});
+function toggleSidebar() {
+  const categoryList = document.querySelector(".category");
+  categoryList.classList.toggle("show");
+}
 </script>
 
-</div>
-
-<!-- HOTEL AUTOMATION ENDS-->
-
-
-
-  <!-- HOME AUTOMATION STARTS-->
-
-<section class="homeautomation-hero">
-  <!-- Slides -->
-  <div class="homeautomation-slide active" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80')"></div>
-  <div class="homeautomation-slide" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80')"></div>
-  <div class="homeautomation-slide" style="background-image:url('https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1600&q=80')"></div>
-  <div class="homeautomation-slide" style="background-image:url('https://images.unsplash.com/photo-1586105251261-72a756497a11?auto=format&fit=crop&w=1600&q=80')"></div>
-  <div class="homeautomation-slide" style="background-image:url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1600&q=80')"></div>
-
-  <!-- Text Content -->
-  <div class="homeautomation-content" id="homeautomation-text">
-    <h6>Smart Living</h6>
-    <h1>Home<br><span>Automation</span></h1>
-    <p>There is a moment in every smart home where technology meets comfort and elegance.</p>
-    <a href="#" class="homeautomation-cta">LEARN MORE</a>
-  </div>
-
-  <!-- Controls -->
-  <div class="homeautomation-controls">
-    <div class="homeautomation-dot active" data-index="0"></div>
-    <div class="homeautomation-dot" data-index="1"></div>
-    <div class="homeautomation-dot" data-index="2"></div>
-    <div class="homeautomation-dot" data-index="3"></div>
-    <div class="homeautomation-dot" data-index="4"></div>
-    <div class="homeautomation-arrow" id="homeautomation-nextBtn">
-      <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3.5 7L14.5 7" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M8 2.5L3.5 7L8 11.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-  </div>
-
-  <!-- Rotate button -->
-  <div class="homeautomation-rotate-btn">
-    <svg width="28" height="28" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 6v2a6 6 0 1 1-5.196 3.034" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <path d="M12 2v4h-4" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    </svg>
-  </div>
-
-
-<style>
-/* 🌟 HOME AUTOMATION STYLES 🌟 */
-.homeautomation-hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  background: #000;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-}
-
-/* Background Slides */
-.homeautomation-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1.3s ease;
-}
-.homeautomation-slide.active { opacity: 1; }
-
-/* Gradient overlay */
-.homeautomation-hero::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 55%;
-  background: linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0) 100%);
-  z-index: 1;
-}
-
-/* Text block */
-.homeautomation-content {
-  position: relative;
-  z-index: 2;
-  width: 45%;
-  padding-left: 8%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 18px;
-  animation: fadeUp 1s ease .4s both;
-}
-
-.homeautomation-content h6 {
-  font-size: 14px;
-  letter-spacing: 2px;
-  color: #b5d7b1;
-  text-transform: uppercase;
-}
-
-.homeautomation-content h1 {
-  font-size: 90px;
-  line-height: 0.9;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: transparent;
-  -webkit-text-stroke: 2px #fff;
-  letter-spacing: 8px;
-  margin: 0;
-}
-.homeautomation-content h1 span {
-  color: #fff;
-  -webkit-text-stroke: 0;
-}
-
-.homeautomation-content p {
-  max-width: 420px;
-  color: rgba(255,255,255,0.85);
-  font-size: 15px;
-  line-height: 1.6;
-  margin-top: 10px;
-}
-
-.homeautomation-cta {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 28px;
-  border: 2px solid #fff;
-  border-radius: 30px;
-  color: #fff;
-  font-weight: 600;
-  font-size: 14px;
-  transition: all .3s ease;
-}
-.homeautomation-cta:hover {
-  background: #2a713a;
-  border-color: #2a713a;
-  transform: translateY(-3px);
-}
-
-/* Controls */
-.homeautomation-controls {
-  position: absolute;
-  right: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-}
-.homeautomation-dot {
-  width: 12px;
-  height: 12px;
-  border: 2px solid #fff;
-  border-radius: 2px;
-  transform: rotate(45deg);
-  transition: .25s;
-  cursor: pointer;
-}
-.homeautomation-dot.active {
-  background: #fff;
-  transform: rotate(45deg) scale(0.95);
-}
-
-.homeautomation-arrow {
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 10px;
-  transition: all .3s;
-  cursor: pointer;
-}
-.homeautomation-arrow:hover { transform: translateX(-4px); }
-
-.homeautomation-rotate-btn {
-  position: absolute;
-  right: 25px;
-  bottom: 25px;
-  width: 64px;
-  height: 64px;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .homeautomation-hero {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    text-align: left;
-    padding-top: 60px;
-    height: auto;
-  }
-
-  .homeautomation-content {
-    width: 100%;
-    padding: 0 6%;
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .homeautomation-content h1 {
-    font-size: 42px;
-    letter-spacing: 3px;
-    line-height: 1.1;
-  }
-
-  .homeautomation-content p {
-    font-size: 13px;
-    max-width: 95%;
-  }
-
-  .homeautomation-cta {
-    margin-top: 0;
-    padding: 8px 18px;
-    font-size: 12px;
-    border-width: 1.5px;
-  }
-
-  .homeautomation-controls {
-    position: relative;
-    top: auto;
-    margin-top: 15px;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .homeautomation-dot { width: 8px; height: 8px; }
-  .homeautomation-arrow { width: 34px; height: 34px; border-radius: 8px; }
-  .homeautomation-rotate-btn { width: 46px; height: 46px; right: 15px; bottom: 15px; }
-}
-</style>
-
-<script>
-const homeSlides = document.querySelectorAll('.homeautomation-slide');
-const homeDots = document.querySelectorAll('.homeautomation-dot');
-const homeText = document.getElementById('homeautomation-text');
-const homeNextBtn = document.getElementById('homeautomation-nextBtn');
-
-const homeTextData = [
-  { title1: "Home", title2: "Automation", desc: "Seamless control of lighting, temperature, and devices — all from your fingertips." },
-  { title1: "Smart", title2: "Lighting", desc: "Illuminate your home with efficiency and style through automated smart lighting." },
-  { title1: "Secure", title2: "Living", desc: "Experience peace of mind with integrated smart locks and camera systems." },
-  { title1: "Energy", title2: "Control", desc: "Monitor and optimize your home’s energy usage with AI-driven solutions." },
-  { title1: "Climate", title2: "Comfort", desc: "Smart thermostats adjust your environment for perfect comfort at all times." }
-];
-
-let homeIndex = 0;
-let homeAutoSlide;
-
-function homeShowSlide(i){
-  homeSlides.forEach(s => s.classList.remove('active'));
-  homeDots.forEach(d => d.classList.remove('active'));
-  homeSlides[i].classList.add('active');
-  homeDots[i].classList.add('active');
-  homeText.innerHTML = `
-    <h6>Smart Living</h6>
-    <h1>${homeTextData[i].title1}<br><span>${homeTextData[i].title2}</span></h1>
-    <p>${homeTextData[i].desc}</p>
-    <a href="#" class="homeautomation-cta">LEARN MORE</a>`;
-}
-
-function homeStartAuto(){
-  homeAutoSlide = setInterval(()=>{
-    homeIndex = (homeIndex + 1) % homeSlides.length;
-    homeShowSlide(homeIndex);
-  },6000);
-}
-
-homeDots.forEach(dot=>{
-  dot.addEventListener('click',()=>{
-    clearInterval(homeAutoSlide);
-    homeIndex = parseInt(dot.dataset.index);
-    homeShowSlide(homeIndex);
-    homeStartAuto();
-  });
-});
-
-homeNextBtn.addEventListener('click',()=>{
-  clearInterval(homeAutoSlide);
-  homeIndex = (homeIndex + 1) % homeSlides.length;
-  homeShowSlide(homeIndex);
-  homeStartAuto();
-});
-
-homeStartAuto();
-</script>
-</section>
-<!-- HOME AUTOMATION ENDS-->
-
-
-<!-- INDUSTRIAL AUTOMATION STARTS-->
-
-<section class="industrial-automation-showcase">
-
-  <style>
-  :root {
-    --industrial-primary: #ffc300;
-    --industrial-bg: whitesmoke;
-  }
-
-  .industrial-automation-showcase {
-    width: 100%;
-    height: 100vh;
-    background: var(--industrial-bg);
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow-x: hidden;
-  }
-
-  .industrial-slider-container {
-    position: relative;
-    width: 90%;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .industrial-slide {
-    display: none;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
-    position: relative;
-  }
-
-  .industrial-slide.active {
-    display: flex;
-  }
-
-  /* === Left Card === */
-  .industrial-content-card {
-    background: #fff;
-    color: #000;
-    padding: 2rem;
-    width: 480px;
-    height: 380px;
-    border-radius: 2px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: absolute;
-    left: 10px;
-    z-index: 2;
-    transform: translateX(10px);
-  }
-
-  .industrial-content-card h2 {
-    font-weight: 800;
-    font-size: 2.2rem;
-  }
-
-  .industrial-content-card p {
-    font-size: 1rem;
-    color: #333;
-    margin-top: 0.8rem;
-    line-height: 1.6;
-  }
-
-  .industrial-btn {
-    background: var(--industrial-primary);
-    border: none;
-    color: #000;
-    font-weight: 600;
-    padding: 0.6rem 1.5rem;
-    margin-top: 1.2rem;
-    border-radius: 30px;
-    width: fit-content;
-  }
-
-  /* === Right Image === */
-  .industrial-slide img {
-    width: 75%;
-    height: 90%;
-    object-fit: cover;
-    border-radius: 1px;
-    transition: transform 0.6s ease-in-out;
-  }
-
-  .industrial-slide.active img {
-    transform: scale(1.03);
-  }
-
-  /* === Dots === */
-  .industrial-dots {
-    position: absolute;
-    left: 10px;
-    top: calc(50% + 230px);
-    display: flex;
-    gap: 10px;
-    z-index: 5;
-  }
-
-  .industrial-dot {
-    width: 12px;
-    height: 12px;
-    background: #bbb;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .industrial-dot.active {
-    background: var(--industrial-primary);
-    transform: scale(1.2);
-  }
-
-  /* === Responsive === */
-  @media (max-width: 992px) {
-    .industrial-slide {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .industrial-content-card {
-      position: relative;
-      transform: none;
-      left: 0;
-      width: 90%;
-      height: auto;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .industrial-slide img {
-      width: 95%;
-      height: 350px;
-    }
-
-    .industrial-dots {
-      position: relative;
-      top: auto;
-      left: 0;
-      justify-content: center;
-      margin-top: 15px;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .industrial-automation-showcase {
-      height: auto;
-      padding: 40px 0;
-    }
-
-    .industrial-slider-container {
-      width: 100%;
-      height: auto;
-    }
-
-    .industrial-slide {
-      flex-direction: column;
-    }
-
-    .industrial-slide img {
-      width: 100%;
-      height: 260px;
-      border-radius: 0;
-    }
-
-    .industrial-content-card {
-      width: 95%;
-      margin: 15px auto;
-      padding: 1.5rem;
-      height: auto;
-      text-align: center;
-      box-shadow: none;
-    }
-
-    .industrial-content-card h2 {
-      font-size: 1.5rem;
-    }
-
-    .industrial-content-card p {
-      font-size: 0.85rem;
-      line-height: 1.5;
-    }
-
-    .industrial-btn {
-      padding: 0.5rem 1.2rem;
-      font-size: 0.9rem;
-    }
-
-    .industrial-dots {
-      margin-top: 15px;
-      gap: 8px;
-    }
-
-    .industrial-dot {
-      width: 10px;
-      height: 10px;
-    }
-  }
-  </style>
-
-  <div class="industrial-slider-container">
-
-    <!-- === Slide 1 === -->
-    <div class="industrial-slide active">
-      <div class="industrial-content-card">
-        <h2>SMART FACTORY AUTOMATION</h2>
-        <p>Integrating intelligent control and monitoring systems for advanced industrial efficiency.</p>
-        <button class="industrial-btn">Explore</button>
-      </div>
-      <img src="../img/application/72.webp" alt="Smart Factory">
-    </div>
-
-    <!-- === Slide 2 === -->
-    <div class="industrial-slide">
-      <div class="industrial-content-card">
-        <h2>PROCESS OPTIMIZATION</h2>
-        <p>Automated solutions designed to enhance production flow and reduce operational costs.</p>
-        <button class="industrial-btn">Explore</button>
-      </div>
-      <img src="../img/application/72.webp" alt="Process Optimization">
-    </div>
-
-    <!-- === Slide 3 === -->
-    <div class="industrial-slide">
-      <div class="industrial-content-card">
-        <h2>ENERGY MANAGEMENT</h2>
-        <p>Smart energy automation for sustainability and improved performance tracking.</p>
-        <button class="industrial-btn">Explore</button>
-      </div>
-      <img src="../img/application/72.webp" alt="Energy Management">
-    </div>
-
-    <!-- === Slide 4 === -->
-    <div class="industrial-slide">
-      <div class="industrial-content-card">
-        <h2>ROBOTIC AUTOMATION</h2>
-        <p>Precision robotics that redefine productivity in modern industrial applications.</p>
-        <button class="industrial-btn">Explore</button>
-      </div>
-      <img src="../img/application/72.webp" alt="Robotic Automation">
-    </div>
-
-    <!-- === Slide 5 === -->
-    <div class="industrial-slide">
-      <div class="industrial-content-card">
-        <h2>REMOTE MONITORING</h2>
-        <p>Seamless connectivity for real-time analysis and industrial performance insights.</p>
-        <button class="industrial-btn">Explore</button>
-      </div>
-      <img src="../img/application/72.webp" alt="Remote Monitoring">
-    </div>
-
-    <!-- === Dots === -->
-    <div class="industrial-dots">
-      <span class="industrial-dot active" data-index="0"></span>
-      <span class="industrial-dot" data-index="1"></span>
-      <span class="industrial-dot" data-index="2"></span>
-      <span class="industrial-dot" data-index="3"></span>
-      <span class="industrial-dot" data-index="4"></span>
-    </div>
-
-  </div>
-
-  <script>
-    const industrialSlides = document.querySelectorAll('.industrial-slide');
-    const industrialDots = document.querySelectorAll('.industrial-dot');
-    let industrialCurrent = 0;
-
-    function industrialShowSlide(index) {
-      industrialSlides.forEach((slide, i) => slide.classList.toggle('active', i === index));
-      industrialDots.forEach((dot, i) => dot.classList.toggle('active', i === index));
-      industrialCurrent = index;
-    }
-
-    industrialDots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        industrialShowSlide(parseInt(dot.dataset.index));
-      });
-    });
-
-    function industrialNextSlide() {
-      industrialCurrent = (industrialCurrent + 1) % industrialSlides.length;
-      industrialShowSlide(industrialCurrent);
-    }
-
-    setInterval(industrialNextSlide, 5000);
-  </script>
-</section>
-<!-- INDUSTRIAL AUTOMATION ENDS -->
-
-
-<!-- COMMERCIAL AUTOMATION STARTS-->
- <section class="cp-section" id="cpSection">
-  <style>
-    :root{
-      --cp-gold:#FFC300;
-      --cp-dark:#1A1A1A;
-      --cp-light:#E0E0E0;
-    }
-
-    .cp-section{
-      position:relative;
-      width:100%;
-      height:100vh;
-      background-size:cover;
-      background-position:center;
-      background-color:var(--cp-dark);
-      color:var(--cp-light);
-      font-family:'Open Sans',sans-serif;
-      transition:background-image 1s ease-in-out;
-    }
-
-    .cp-overlay{
-      position:absolute;top:0;left:0;width:100%;height:100%;
-      background:rgba(255,255,255,0.12);
-      pointer-events:none;
-    }
-
-    .cp-inner{
-      position:relative;
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      height:100%;
-      padding:5%;
-      z-index:1;
-    }
-
-    .cp-content{ max-width:40%; margin-top:50px; }
-    .cp-content h1{ font-family:'Poppins',sans-serif; font-size:4rem; font-weight:900; line-height:1.1; }
-    .cp-content p{ margin:1rem 0; color:#eee; }
-    .cp-btn{ background:var(--cp-gold); color:#111; font-weight:600; border:none; padding:.5rem 1rem; border-radius:6px; }
-
-    /* carousel area */
-    .cp-carousel{
-      position:absolute;
-      bottom:80px;
-      right:5%;
-      display:flex;
-      overflow:hidden;
-      width:560px;
-      height:250px;
-    }
-
-    .cp-card{
-      width:160px;
-      height:250px;
-      border-radius:12px;
-      overflow:hidden;
-      flex-shrink:0;
-      position:absolute;
-      transition:transform 1s ease-in-out, z-index .5s;
-      background:#111;
-      margin-right:10px;
-    }
-    .cp-card img{ width:100%; height:100%; object-fit:cover; }
-
-    .cp-info{
-      position:absolute; bottom:0; left:0; width:100%; padding:.5rem;
-      background:linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 100%);
-      color:#fff;
-    }
-    .cp-info h3{ font-size:.9rem; margin:0; font-weight:700; text-align:start; }
-    .cp-info p{ font-size:.7rem; margin:0; text-align:start; }
-
-    .cp-nav{ position:absolute; bottom:20px; left:50%; transform:translateX(-50%); display:flex; gap:.5rem; z-index:2; }
-    .cp-nav button{ background:rgba(0,0,0,0.5); border:none; border-radius:50%; width:40px; height:40px; color:#fff; }
-
-    /* responsive */
-    @media(max-width:992px){
-      .cp-inner{ flex-direction:column; align-items:center; text-align:center; }
-      .cp-content{ max-width:80%; margin-top:30px; }
-      .cp-carousel{ width:400px; height:200px; bottom:40px; }
-      .cp-card{ width:140px; height:200px; }
-    }
-    @media(max-width:576px){
-      .cp-section{ height:auto; padding-bottom:50px; }
-      .cp-inner{ flex-direction:column; padding:8% 5%; }
-      .cp-content{ max-width:95%; text-align:center; margin-top:10px; }
-      .cp-content h1{ font-size:1.8rem; }
-      .cp-carousel{ position:relative; width:100%; max-width:320px; height:auto; margin-top:25px; overflow-x:auto; gap:8px; padding-bottom:10px; }
-      .cp-card{ position:relative; width:80px; height:80px; transform:none !important; }
-      .cp-info{ position:static; background:none; padding:0; text-align:center; }
-      .cp-info p{ display:none; }
-      .cp-nav{ position:relative; margin-top:10px; }
-    }
-  </style>
-
-  <div class="cp-overlay" id="cpOverlay"></div>
-
-  <div class="cp-inner">
-    <div class="cp-content">
-      <span id="cpLocation">Location 1</span>
-      <h1 id="cpTitle">Commercial Parts Showcase</h1>
-      <p id="cpDescription">Description 1</p>
-      <a href="#" class="cp-btn">Explore Parts</a>
-    </div>
-
-    <div class="cp-carousel" id="cpCarousel"></div>
-
-    <div class="cp-nav">
-      <button id="cpPrev" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
-      <button id="cpNext" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
-    </div>
-  </div>
-
-  <script>
-    (function(){
-      // data
-      const CP_CARDS = [
-        {bg:'../img/automation/commercialautomation.png', title:'Commercial', location:'Location 1', desc:'Description 1'},
-        {bg:'../img/automation/homeautomation.png', title:'Home', location:'Location 2', desc:'Description 2'},
-        {bg:'../img/automation/hospitalautomation.png', title:'Hospital', location:'Location 3', desc:'Description 3'},
-        {bg:'../img/automation/hotelautomation.png', title:'Hotel', location:'Location 4', desc:'Description 4'},
-        {bg:'../img/automation/iot.png', title:'IoT', location:'Location 5', desc:'Description 5'},
-        {bg:'../img/automation/industriesautomation.png', title:'Office', location:'Location 6', desc:'Description 6'},
-        {bg:'../img/automation/homeauto.jpg', title:'School', location:'Location 7', desc:'Description 7'},
-        {bg:'../img/automation/animation background.jpg', title:'Factory', location:'Location 8', desc:'Description 8'}
-      ];
-
-      // state
-      let cpVisible = [];
-      let cpIndex = 0;
-      const CP_STEP = 170 + 10;
-
-      // DOM
-      const cpCarousel = document.getElementById('cpCarousel');
-      const cpSection = document.getElementById('cpSection');
-      const cpTitle = document.getElementById('cpTitle');
-      const cpLocation = document.getElementById('cpLocation');
-      const cpDescription = document.getElementById('cpDescription');
-      const btnPrev = document.getElementById('cpPrev');
-      const btnNext = document.getElementById('cpNext');
-
-      // Create initial three cards
-      for(let i=0;i<3;i++){
-        const data = CP_CARDS[i % CP_CARDS.length];
-        const card = document.createElement('div');
-        card.className = 'cp-card';
-        card.innerHTML = `<img src="${data.bg}" alt="${data.title}">
-                          <div class="cp-info"><h3>${data.title}</h3><p>${data.desc}</p></div>`;
-        const scale = i===1 ? 1.2 : 1;
-        const z = i===1 ? 2 : 1;
-        card.style.transform = `translateX(${i * CP_STEP}px) scale(${scale})`;
-        card.style.zIndex = z;
-        cpCarousel.appendChild(card);
-        cpVisible.push(card);
-      }
-
-      // slide function
-      function cpSlideForward(){
-        cpVisible.forEach((card,i)=>{
-          const newX = (i - 1) * CP_STEP;
-          const scale = (i - 1 === 1) ? 1.2 : 1;
-          const z = (i - 1 === 1) ? 2 : 1;
-          card.style.transform = `translateX(${newX}px) scale(${scale})`;
-          card.style.zIndex = z;
-        });
-
-        const removed = cpVisible.shift();
-        if (removed) cpCarousel.removeChild(removed);
-
-        cpIndex = (cpIndex + 1) % CP_CARDS.length;
-        const nextIdx = (cpIndex + 2) % CP_CARDS.length;
-        const nextData = CP_CARDS[nextIdx];
-
-        const newCard = document.createElement('div');
-        newCard.className = 'cp-card';
-        newCard.innerHTML = `<img src="${nextData.bg}" alt="${nextData.title}">
-                             <div class="cp-info"><h3>${nextData.title}</h3><p>${nextData.desc}</p></div>`;
-        newCard.style.transform = `translateX(${2 * CP_STEP}px) scale(1)`;
-        newCard.style.zIndex = 1;
-        cpCarousel.appendChild(newCard);
-        cpVisible.push(newCard);
-
-        // update center content
-        const center = cpVisible[1];
-        if(center){
-          const imgSrc = center.querySelector('img').src;
-          const centerTitle = center.querySelector('h3').textContent;
-          cpSection.style.backgroundImage = `url('${imgSrc}')`;
-          cpTitle.textContent = centerTitle;
-          // use the same nextData.location/desc for right-side text to match previous logic
-          cpLocation.textContent = nextData.location;
-          cpDescription.textContent = nextData.desc;
-        }
-      }
-
-      // optional manual controls (advance)
-      let cpInterval = setInterval(cpSlideForward, 2500);
-      btnNext.addEventListener('click', ()=>{
-        clearInterval(cpInterval);
-        cpSlideForward();
-        cpInterval = setInterval(cpSlideForward, 2500);
-      });
-
-      // previous - simulate backwards slide
-      btnPrev.addEventListener('click', ()=>{
-        clearInterval(cpInterval);
-        // compute previous item index and prepend new card
-        const prevIndex = (cpIndex - 1 + CP_CARDS.length) % CP_CARDS.length;
-        const prevData = CP_CARDS[prevIndex];
-
-        // remove last card visually, then shift positions right
-        const last = cpVisible.pop();
-        if(last) cpCarousel.removeChild(last);
-
-        // create new card to insert at start (left)
-        const newLeft = document.createElement('div');
-        newLeft.className = 'cp-card';
-        newLeft.innerHTML = `<img src="${prevData.bg}" alt="${prevData.title}">
-                             <div class="cp-info"><h3>${prevData.title}</h3><p>${prevData.desc}</p></div>`;
-        // place it off-screen left
-        newLeft.style.transform = `translateX(${-1 * CP_STEP}px) scale(1)`;
-        newLeft.style.zIndex = 1;
-        cpCarousel.insertBefore(newLeft, cpCarousel.firstChild);
-        cpVisible.unshift(newLeft);
-
-        // animate all to the right
-        cpVisible.forEach((card,i)=>{
-          const newX = i * CP_STEP;
-          const scale = (i === 1) ? 1.2 : 1;
-          const z = (i === 1) ? 2 : 1;
-          // small timeout to ensure transition applies
-          requestAnimationFrame(()=> {
-            card.style.transform = `translateX(${newX}px) scale(${scale})`;
-            card.style.zIndex = z;
-          });
-        });
-
-        // update cpIndex backward
-        cpIndex = prevIndex;
-        // update center content after a short delay to allow animation
-        setTimeout(()=>{
-          const center = cpVisible[1];
-          if(center){
-            const imgSrc = center.querySelector('img').src;
-            const centerTitle = center.querySelector('h3').textContent;
-            cpSection.style.backgroundImage = `url('${imgSrc}')`;
-            cpTitle.textContent = centerTitle;
-            cpLocation.textContent = prevData.location;
-            cpDescription.textContent = prevData.desc;
-          }
-        }, 320);
-
-        cpInterval = setInterval(cpSlideForward, 2500);
-      });
-
-      // expose nothing (self-contained)
-    })();
-  </script>
-</section>
-<!--COMMERCIAL AUTOMATION END-->
-
-
-<!-- HOSPITAL AUTOMATION STARTS-->
-
-<section class="hapro-minimal-section">
-
-  <style>
-    /* ===== Base Styles ===== */
-    .hapro-minimal-section {
-      width: 100%;
-      background: #f9f9f9;
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
-      padding: 60px 80px;
-      display: flex;
-      justify-content: space-between;
-      align-items: stretch;
-    }
-
-    /* ===== Left Panel ===== */
-    .hapro-left-panel {
-      flex: 0 0 35%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 40px;
-      border-right: 1px solid #ddd;
-      position: relative;
-    }
-
-    .hapro-vertical-text {
-      font-family: 'Cinzel', serif;
-      font-weight: 700;
-      font-size: 3.2rem;
-      color: #000;
-      letter-spacing: 2px;
-      writing-mode: vertical-rl;
-      text-transform: uppercase;
-      line-height: 1.1;
-      margin: 0;
-      opacity: 0;
-      transform-origin: top left;
-      animation: hapro-slideFadeIn 1.2s ease forwards;
-      animation-delay: 0.3s;
-      align-self: flex-start;
-    }
-
-    @keyframes hapro-slideFadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-60px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .hapro-meta {
-      font-size: 0.9rem;
-      line-height: 1.6;
-      color: #444;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: hapro-fadeInMeta 1.5s ease forwards;
-      animation-delay: 1s;
-      width: 100%;
-      text-align: left;
-    }
-
-    @keyframes hapro-fadeInMeta {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .hapro-meta strong { display: block; font-weight: 600; color: #000; margin-bottom: 4px; }
-    .hapro-meta small { display: block; margin-bottom: 10px; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.5px; }
-
-    /* ===== Right Panel ===== */
-    .hapro-right-panel {
-      flex: 0 0 65%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 50px;
-      padding: 40px 20px;
-    }
-
-    .hapro-photo {
-      width: 70%;
-      aspect-ratio: 4/3;
-      background-size: cover;
-      background-position: center;
-      filter: grayscale(100%);
-      transition: transform 0.8s ease, filter 0.8s ease, opacity 1s ease;
-      opacity: 0;
-      transform: translateY(80px);
-    }
-
-    .hapro-photo.hapro-fade-in {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .hapro-photo:hover {
-      transform: scale(1.02);
-      filter: grayscale(0%);
-    }
-
-    /* ===== Responsive ===== */
-    @media (max-width: 992px) {
-      .hapro-minimal-section {
-        flex-direction: column;
-        padding: 30px;
-      }
-
-      .hapro-left-panel {
-        border: none;
-        align-items: center;
-        justify-content: flex-start;
-      }
-
-      .hapro-vertical-text {
-        writing-mode: horizontal-tb;
-        transform: none;
-        text-align: center;
-        font-size: 2.2rem;
-        margin-bottom: 30px;
-      }
-
-      .hapro-meta { text-align: center; }
-      .hapro-photo { width: 90%; }
-    }
-  </style>
-
-  <!-- LEFT PANEL -->
-  <div class="hapro-left-panel">
-    <div class="hapro-vertical-text">Hospital Automation</div>
-
-    <div class="hapro-meta">
-      <small>Automated Healthcare Systems</small>
-      <strong>Innovative Solutions</strong>
-      <p>2025.10.25</p>
-      <p>Transforming hospitals with smart workflows,<br>enhanced patient care, and real-time monitoring.</p>
-      <p><strong>@haprotech</strong><br>Global Headquarters, India</p>
-    </div>
-  </div>
-
-  <!-- RIGHT PANEL -->
-  <div class="hapro-right-panel">
-    <div class="hapro-photo" style="background-image:url('img/lighting/industriallighting.png');"></div>
-    <div class="hapro-photo" style="background-image:url('img/lighting/facadelighting.webp');"></div>
-    <div class="hapro-photo" style="background-image:url('img/lighting/officelighting.png');"></div>
-  </div>
-
-  <script>
-    const haproPhotos = document.querySelectorAll('.hapro-photo');
-    const haproObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('hapro-fade-in');
-          haproObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    haproPhotos.forEach(el => haproObserver.observe(el));
-  </script>
-
-</section>
-
-<!-- HOSPITAL AUTOMATION ENDS-->
-
-
-
-
-
-
-
-      
-
-
-      
-      <!-- Footer Start -->
-      <div class="container-fluid footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
-        <div class="container py-5">
-          <div class="row g-5 mb-5 align-items-center">
-
-
-          </div>
-          <div class="row g-5">
-
-            <div class="col-md-6 col-lg-6 col-xl-3">
-              <div class="footer-item d-flex flex-column">
-                <h4 class="text-white mb-4">Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="about.html">About us</a>
-                <a href="solution.html">Solutions</a>
-                <a href="applications.html">Applications</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="smart-pole.html">R & D</a>
-                <a href="contact.html">Contact</a>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-6 col-xl-3">
-              <div class="footer-item d-flex flex-column">
-                <h4 class="text-white mb-4">Services</h4>
-                <a href="#"> Energy</a>
-                <a href="#"> Power</a>
-                <a href="#"> Lighting</a>
-                <a href="#"> Automation</a>
-                <a href="#"> Smart City</a>
-                <a href="#"> R & D</a>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-6 col-xl-3">
-              <div class="footer-item d-flex flex-column">
-                <h4 class="text-white mb-4">Applications</h4>
-                <a href="applications.html">Energy Generation</a>
-                <a href="applications.html"> Power</a>
-                <a href="applications.html"> Lighting</a>
-                <a href="applications.html"> Indoor Lighting</a>
-                <a href="applications.html"> Automation</a>
-                <a href="applications.html"> Smart City</a>
-                <a href="applications.html"> R & D</a>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3">
-              <div class="footer-item d-flex flex-column">
-                <h4 class="text-white mb-4">Contact Info</h4>
-                <a href="#"><i class="fa fa-map-marker-alt text-secondary me-2"></i> Apurupa Towers, Road No:36,
-                  JubileeHills, Hyderabad, Telangana-500033 </a>
-                <a href="mailto:info@arcotindia.in"><i
-                    class="fas fa-envelope text-secondary me-2"></i>info@arcotindia.com </a>
-
-                <a href="tel:+91 98481 89899"><i class="fas fa-phone text-secondary me-2"></i> +919848189899</a>
-
-              </div>
-            </div>
-
-
-            <div class="col-lg-12 mt-4">
-              <div class="d-flex flex-wrap justify-content-start gap-3 social-footer-icons">
-                <a class="btn btn-light btn-md-square" href="https://www.facebook.com/profile.php?id=61575125369342"
-                  target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-light btn-md-square" href="https://x.com/Arcotluminaries" target="_blank"><i
-                    class="fab fa-twitter"></i></a>
-                <a class="btn btn-light btn-md-square" href="https://www.instagram.com/arcotindia/" target="_blank"><i
-                    class="fab fa-instagram"></i></a>
-                <a class="btn btn-light btn-md-square" href="https://www.linkedin.com/in/arcot-luminaries-b4245935b/"
-                  target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-light btn-md-square" href="https://www.youtube.com/@Arcotluminaries"
-                  target="_blank"><i class="fab fa-youtube"></i></a>
-                <a class="btn btn-light btn-md-square" href="https://in.pinterest.com/arcotsocialmedia/"
-                  target="_blank"><i class="fab fa-pinterest-p"></i></a>
-                <a class="btn btn-light btn-md-square" href="https://wa.me/919848189899"><i
-                    class="fab fa-whatsapp"></i></a>
-                <a class="btn btn-light btn-md-square" href="#"><i class="fab fa-telegram-plane"></i></a>
-                <a class="btn btn-light btn-md-square" href="https://www.reddit.com/user/Arcotluminaries/"
-                  target="_blank"><i class="fab fa-reddit-alien"></i></a>
-                <a class="btn btn-light btn-md-square" href="https://www.threads.com/@arcotindia"><i
-                    class="fab fa-threads"></i></a>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      <!-- Footer End -->
-
-
-<!-- Copyright Start -->
-      <div class="container-fluid copyright py-4 bg-dark">
-        <div class="container">
-          <div class="row g-4 align-items-center">
-            <div class="col-md-6 text-center text-md-start mb-md-0">
-              <span class="text-body"><a href="https://arcotindia.com/" class="border-bottom text-white"><i
-                    class="fas fa-copyright text-light me-2"></i>ARCOT </a>, All Right Reserved.</span>
-            </div>
-            <div class="col-md-6 text-center text-md-end text-body">
-
-              Designed By <a class="border-bottom text-white" href="https://arcotindia.com/">ARCOT </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Copyright End -->
-
-
-      <!-- Back to Top -->
-      <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
-
-
-      <!-- JavaScript Libraries -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="lib/wow/wow.min.js"></script>
-      <script src="lib/easing/easing.min.js"></script>
-      <script src="lib/waypoints/waypoints.min.js"></script>
-      <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-
-      <!-- Template Javascript -->
-      <script src="js/main.js"></script>
-
-      </body>
+</body>
 </html>
