@@ -144,25 +144,143 @@
 
 
         <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h1 class="text-white display-6 mb-4 wow fadeInDown" data-wow-delay="0.1s">Residential Lighting</h1>
-                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> -->
-                  
-                </ol>    
-            </div>
-        </div>
+    <!-- Banner Section -->
+<div class="banner-section">
+  <div class="banner-overlay"></div>
+  <div class="banner-content text-center">
+    <h2 class="banner-title wow fadeInDown" data-wow-delay="0.1s">Living Room</h2>
+    <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+      <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active">Residential Lighting</li> -->
+    </ol>
+  </div>
+</div>
+<style>
+  /* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Banner Section */
+.banner-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('img/lighting/lightingsectwo/sdf.png') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(0, 0, 0, 0.55); */
+  z-index: 1;
+}
+
+/* Content Styling */
+.banner-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+ 
+}
+
+.banner-title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: inline-flex;
+  background: transparent;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumb-item {
+  color: #ddd;
+  font-size: 1rem;
+}
+
+.breadcrumb-item a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+  color: #ffd700;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "›";
+  padding: 0 10px;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .banner-section {
+    height: 70vh;
+  }
+  .banner-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-section {
+    height: 60vh;
+  }
+  .banner-title {
+    font-size: 2rem;
+  }
+  .breadcrumb-item {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .banner-section {
+    height: 50vh;
+  }
+  .banner-title {
+    font-size: 1.6rem;
+  }
+  .breadcrumb-item {
+    font-size: 0.8rem;
+  }
+}
+
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+  new WOW().init();
+</script>
+
         <!-- Header End -->
 
 
          <style>
-     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #111;
-    }
+  
     .section {
       max-width: 1000px; /* page middle lo compact */
       margin: 40px auto;
@@ -413,7 +531,7 @@
 
     .main-nav a {
       text-decoration: none;
-      color: #111;
+      color: #4f4c4c;
       /* font-weight: 600; */
       font-size: 15px;
       text-transform: uppercase;
@@ -1038,7 +1156,7 @@
   background: #1e2226;
   color: #ccc;
   font-size: 15px;
-  font-family: 'Six Caps', sans-serif;
+font-family: 'Poppins', sans-serif !important;
   font-weight: 300; /* light weight */
   letter-spacing: 1px;
  
@@ -1083,7 +1201,7 @@
   color: #8f8c8c;
   font-size: 13px;
   transition: 0.3s;
-  font-family: 'Six Caps', sans-serif;
+ font-family: 'Poppins', sans-serif !important;
   font-weight: 300;
 }
 .tricky-social-icons .tricky-social-btn:hover {
@@ -1097,7 +1215,7 @@
   border-top: 1px solid #333;
   color: #aaa;
   font-size: 14px;
-  font-family: 'Six Caps', sans-serif;
+font-family: 'Poppins', sans-serif !important;
   font-weight: 300;
   letter-spacing: 1px;
 }
