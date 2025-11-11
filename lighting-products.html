@@ -163,406 +163,546 @@
 
 
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h1 class="text-white display-6 mb-4 wow fadeInDown" data-wow-delay="0.1s">WHO WE ARE ?</h1>
-                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> -->
-                  
-                </ol>    
-            </div>
+  
+
+
+
+
+
+
+
+
+
+<!-- ===== Lighting Section (Place this between your Navbar & Footer) ===== -->
+<section class="lighting-wrapper">
+
+  <!-- ===== Top Filter Table ===== -->
+  <div class="top-filter-table">
+    <div class="filter-col">
+      <div class="filter-heading">Type</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('type','indoor')">Indoor</span>
+        <span onclick="filterAttribute('type','outdoor')">Outdoor</span>
+      </div>
+    </div>
+
+    <div class="filter-col">
+      <div class="filter-heading">Mounting</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('mount','ceiling')">Ceiling</span>
+        <span onclick="filterAttribute('mount','wall')">Wall</span>
+      </div>
+    </div>
+
+    <div class="filter-col">
+      <div class="filter-heading">IP Rating</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('ip','ip20')">IP20</span>
+        <span onclick="filterAttribute('ip','ip65')">IP65</span>
+      </div>
+    </div>
+
+    <div class="filter-col">
+      <div class="filter-heading">Wattage</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('watt','10w')">10W</span>
+        <span onclick="filterAttribute('watt','20w')">20W</span>
+      </div>
+    </div>
+
+    <div class="filter-col">
+      <div class="filter-heading">Control</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('control','dali')">DALI</span>
+        <span onclick="filterAttribute('control','onoff')">On/Off</span>
+      </div>
+    </div>
+
+    <div class="filter-col">
+      <div class="filter-heading">Application</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('app','residential')">Residential</span>
+        <span onclick="filterAttribute('app','commercial')">Commercial</span>
+      </div>
+    </div>
+
+    <div class="filter-col">
+      <div class="filter-heading">Body Color</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('color','white')">White</span>
+        <span onclick="filterAttribute('color','black')">Black</span>
+      </div>
+    </div>
+
+    <div class="filter-col text-center">
+      <button class="reset-btn" onclick="resetFilters()">Reset</button>
+    </div>
+  </div>
+
+ <div class="lighting-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Lighting</h2>
+      <h2 class="mobile-toggle" onclick="toggleSidebar()">Lighting ☰</h2>
+      <ul class="category">
+        <li><button onclick="toggleMenu(this, 'all')">All</button></li>
+        <li>
+          <button onclick="toggleMenu(this, 'cob')">COB Lights</button>
+          <ul class="submenu">
+            <li><a href="#">COB Downlight</a></li>
+            <li><a href="#">COB Surface</a></li>
+            <li><a href="#">COB Zoom</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleMenu(this, 'surface')">Surface Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Surface Round</a></li>
+            <li><a href="#">Surface Square</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleMenu(this, 'track')">Track Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleMenu(this, 'magnetic')">Magnetic Track Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Magnetic Type 1</a></li>
+            <li><a href="#">Magnetic Type 2</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleMenu(this, 'slimtrack')">Slim Track Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Slim Type 1</a></li>
+            <li><a href="#">Slim Type 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Products -->
+    <div class="product-section">
+
+
+      <div class="product-grid" id="productGrid">
+        <div class="product-card" data-category="track" data-type="indoor">
+          <img src="img/productsimgs/5.png" alt="Track Type 1">
+          <h3>Track Type 1</h3>
         </div>
-        <!-- Header End -->
+        <div class="product-card" data-category="magnetic" data-type="outdoor">
+          <img src="img/productsimgs/magnetic1.png" alt="Magnetic Track 1">
+          <h3>Magnetic Track 1</h3>
+        </div>
+        <div class="product-card" data-category="slimtrack" data-type="indoor">
+          <img src="img/productsimgs/slimtrack1.png" alt="Slim Track 1">
+          <h3>Slim Track 1</h3>
+        </div>
+        <div class="product-card" data-category="cob" data-type="indoor">
+          <img src="img/productsimgs/1.png" alt="COB Downlight">
+          <h3>COB Downlight</h3>
+        </div>
+                <div class="product-card" data-category="cob" data-type="indoor">
+          <img src="img/productsimgs/1.png" alt="COB Downlight">
+          <h3>COB Downlight</h3>
+        </div>
+                <div class="product-card" data-category="cob" data-type="indoor">
+          <img src="img/productsimgs/1.png" alt="COB Downlight">
+          <h3>COB Downlight</h3>
+        </div>
+                <div class="product-card" data-category="cob" data-type="indoor">
+          <img src="img/productsimgs/1.png" alt="COB Downlight">
+          <h3>COB Downlight</h3>
+        </div>
+        <div class="product-card" data-category="surface" data-type="outdoor">
+          <img src="img/productsimgs/3.png" alt="Surface Round">
+          <h3>Surface Round</h3>
+        </div>
+      </div>
+    </div>
 
-<section >
-
-        <!-- ===== FILTER SECTION ===== -->
-<div class="filters ">
-  <div class="filter-box">
-    <h4>Indoor</h4>
-    <ul>
-      <li><a href="#" onclick="showProducts('recessed')">Ceiling</a></li>
-      <li><a href="#" onclick="showProducts('ceiling')">Surface Mounted</a></li>
-      <li><a href="#" onclick="showProducts('pendant')">Wall Lights</a></li>
-      <li><a href="#" onclick="showProducts('wall')">Suspend Lights</a></li>
-      <li><a href="#" onclick="showProducts('table')">Magnetic Track</a></li>
-    </ul>
   </div>
-
-  <div class="filter-box">
-    <h4>Outdoor</h4>
-    <ul>
-      <li><a href="#" onclick="showProducts('bollard')">Bollard</a></li>
-      <li><a href="#" onclick="showProducts('pole')">Pole</a></li>
-      <li><a href="#" onclick="showProducts('extceiling')">Ceiling</a></li>
-    </ul>
-  </div>
-
-  <div class="filter-box">
-    <h4>Facade</h4>
-    <ul>
-      <li><a href="#" onclick="showProducts('office')">Office & Education</a></li>
-      <li><a href="#" onclick="showProducts('healthcare')">Healthcare</a></li>
-      <li><a href="#" onclick="showProducts('hospitality')">Hospitality</a></li>
-      <li><a href="#" onclick="showProducts('street')">Street & Pathways</a></li>
-    </ul>
-  </div>
-
-  <div class="filter-box">
-    <h4>All</h4>
-    <ul>
-      <li><a href="#" onclick="showAllProducts()">All Products</a></li>
-    </ul>
-  </div>
-</div>
-
-<!-- ===== PRODUCT GRID ===== -->
-<div class=" product-grid" id="productGrid"></div>
-
-
 </section>
 
-
+<!-- ===== CSS ===== -->
 <style>
-section {
+.lighting-wrapper {
+  background: #f8f8f8;
+  padding: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #fff;
-  margin: 0;
-  padding: 40px;
+  color: #333;
+}
+
+/* === Top Filter Bar === */
+.top-filter-table {
+  display: table;
+  width: 100%;
+  background: #fff;
+  border-collapse: collapse;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  margin-top: 60px;
+}
+
+.top-filter-table .filter-col {
+  display: table-cell;
+  vertical-align: top;
+  padding: 10px 15px;
+  border-right: 1px solid #ddd;
+}
+
+.top-filter-table .filter-col:last-child {
+  border-right: none;
+  text-align: center;
+}
+
+.filter-heading {
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
   color: #111;
 }
 
-/* --- FILTER SECTION --- */
-.filters {
+.filter-options {
   display: flex;
-  justify-content: space-between;
-  border: 1px solid #ddd;
-  padding: 30px 20px;
-  margin-bottom: 50px;
+  flex-direction: column;
+  gap: 3px;
 }
 
-.filter-box {
-  flex: 1;
-  padding: 0 30px;
-  border-right: 1px solid #eee;
-}
-.filter-box:last-child {
-  border-right: none;
-}
-
-.filter-box h4 {
-  font-size: 14px;
-  font-weight: 600;
-  color: #777;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-}
-
-.filter-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.filter-box ul li {
-  margin-bottom: 8px;
-}
-
-.filter-box ul li a {
-  position: relative;
-  text-decoration: none;
-  color: #000;
-  font-weight: 600;
+.filter-options span {
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
   transition: color 0.3s ease;
 }
 
-.filter-box ul li a::after {
-  content: "";
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: #000;
-  transition: width 0.3s ease;
-}
-.filter-box ul li a:hover::after {
-  width: 100%;
+.filter-options span:hover,
+.filter-options span.active {
+  color: #000;
+  font-weight: 600;
+  text-decoration: underline;
 }
 
-/* --- PRODUCT GRID --- */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-}
-
-.product-card {
-  background: #d9d9d9;
+.reset-btn {
+  background: none;
+  border: 1px solid #999;
+  padding: 5px 12px;
   border-radius: 4px;
-  overflow: hidden;
-  text-align: center;
-  position: relative;
+  font-size: 13px;
+  color: #333;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: #f8f8f8;
+    }
+
+    .lighting-container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: #fff;
+      border-right: 1px solid #ddd;
+      padding: 25px 15px;
+      box-sizing: border-box;
+    }
+
+    .sidebar h2 {
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .submenu {
+  list-style: none;
+  margin-left: 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.submenu.show {
+  display: block;
+}
+
+    .sidebar h2.mobile-toggle {
+      display: none;
+      cursor: pointer;
+    }
+
+    .category {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .category li {
+      margin-bottom: 8px;
+    }
+
+    .category button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: 15px;
+      color: #333;
+      padding: 10px 12px;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .category button::after {
+      content: "→";
+      color: #999;
+      margin-left: auto;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .category button.active::after {
+      color: #000;
+      transform: translateX(3px);
+    }
+
+    .category button:hover {
+      background: #eaeaea;
+      color: #000;
+    }
+
+    .submenu {
+      list-style: none;
+      margin-left: 15px;
+      display: none;
+    }
+
+    .submenu.show {
+      display: block;
+    }
+
+    .submenu li a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .submenu li a:hover {
+      color: #000;
+    }
+
+    /* Products */
+    .product-section {
+      flex: 1;
+      padding: 40px 20px;
+      /* display: flex; */
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    /* Horizontal filters */
+    .product-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 15px;
+      margin-bottom: 20px;
+    }
+
+    .product-filters .filter-group label {
+      font-weight: 600;
+      margin-right: 5px;
+    }
+
+    .product-filters .filter-group button {
+      border: 1px solid #ddd;
+      background: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 13px;
+    }
+
+    .product-filters .filter-group button.active {
+      background: #00bcd4;
+      color: #fff;
+      border-color: #00bcd4;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 35px;
+      width: 100%;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    .product-card {
+      position: relative;
+      background: #e6e6e6;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card img {
+      width: 230px;
+      transition: transform 0.4s ease;
+      margin-top: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .product-card h3 {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #111;
+      text-align: center;
+      z-index: 3;
+      position: relative;
+    }
+
+    .product-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #e6e6e6;
+      z-index: 1;
+      transition: all 0.8s ease;
+    }
+
+    .product-card:hover::before {
+      background: linear-gradient(140deg, #ffffff 55%, #e6e6e6 45%);
+    }
+
+    @media (max-width: 1024px) {
+      .product-card img {
+        width: 180px;
+      }
+    }
+
+    @media (max-width: 768px) {
+       .top-filter-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .top-filter-table .filter-col {
+    display: inline-block;
+    vertical-align: top;
+    border-right: 1px solid #ddd;
+  }
+      .lighting-container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .sidebar h2 {
+        display: none;
+      }
+
+      .sidebar h2.mobile-toggle {
+        display: block;
+      }
+
+      .category {
+        display: none;
+      }
+
+      .category.show {
+        display: block;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    /* --- Fix product grid spacing consistency --- */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 20px; /* consistent spacing under filter bar */
+  min-height: 200px; /* prevents extra white gap */
+}
+
+/* --- Smooth submenu animation + arrow rotation --- */
+.submenu {
+  list-style: none;
+  margin-left: 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.submenu.show {
+  display: block;
+}
+
+/* --- Arrow style --- */
+.category > li > button {
+  position: relative;
+  background: none;
+  border: none;
+  color: #333;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.category > li > button::after {
+  content: "→"; /* right arrow */
+  position: absolute;
+  right: 10px;
   transition: transform 0.3s ease;
 }
 
-.product-card:hover {
-  transform: translateY(-4px);
+.category > li > button.active::after,
+.category > li > button.open::after {
+  transform: rotate(90deg); /* rotate to down arrow */
 }
 
-.product-card img {
-  width: 100%;
-  height: 340px;
-  object-fit: contain;
-  background: #d9d9d9;
-  transition: opacity 0.3s ease;
-}
-
-.product-info {
-  padding: 25px 10px;
-}
-
-.product-info h3 {
-  font-size: 15px;
-  font-weight: 700;
-  margin: 0;
-}
-
-.product-info .type {
-  font-size: 14px;
-  color: #333;
-  margin-top: 4px;
-}
-
-.product-info .designer {
-  font-size: 13px;
-  color: #888;
-  margin-top: 8px;
-  transition: opacity 0.3s ease;
-}
-
-.color-options {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 12px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.product-card:hover .designer {
-  opacity: 0;
-}
-
-.product-card:hover .color-options {
-  opacity: 1;
-  pointer-events: all;
-}
-
-/* --- COLOR DOTS --- */
-.color-dot {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  display: inline-block;
-  border: 1px solid #777;
-  transition: transform 0.2s ease;
-}
-.color-dot:hover {
-  transform: scale(1.2);
-}
-.color-dot.black {
-  background: #000;
-}
-.color-dot.white {
-  background: #fff;
-  border: 1px solid #999;
-}
-.color-dot.bronze {
-  background: #a97142;
-}
-.color-dot.silver {
-  background: #c0c0c0;
-}
-</style>
-
-<script>
-/* --- PRODUCT DATA (same as your original) --- */
-const allProducts = {
-  recessed: [
-    {
-      name: "Downlights ",type: "Recessed", designer: "Olle Lundberg",images: {
-        black: "img/lighting product images/recessed/recessed-b-cob.png",
-        bronze: "img/lighting product images/recessed/recessed-g-cob.png",
-        white: "img/lighting product images/recessed/recessed-w-cob.png",
-        silver: "img/lighting product images/recessed/recessed-s-cob.png",
-      },
-    },
-    {
-      name: "Spotlights",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
-
-    },
-
-    {
-      name: "COB Lights",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
-
-    },
-
-    {
-      name: "Linear Recessed Profiles",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
-
-    },
-
-        {
-      name: "Panel Lights",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
-
-    },
-
-   {
-      name: "Trimless Recessed Lights",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
-
-    },
-
-       {
-      name: "Adjustable Recessed Fixtures",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
-
-    },
-
-           {
-      name: "Anti-glare Downlights",
-      type: "Recessed",
-      designer: "Olle Lundberg",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=BLAZE+DEEP+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=BLAZE+DEEP+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=BLAZE+DEEP+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=BLAZE+DEEP+SILVER",
-      },
-
-    },
-
-    
-  ],
-  ceiling: [
-    {
-      name: "COB Lights",
-      type: "Ceiling",
-      designer: "John Doe",
-      images: {
-        black: "https://via.placeholder.com/600x500/000000/FFFFFF?text=LUMINA+FLAT+BLACK",
-        bronze: "https://via.placeholder.com/600x500/8B4513/FFFFFF?text=LUMINA+FLAT+BRONZE",
-        white: "https://via.placeholder.com/600x500/FFFFFF/000000?text=LUMINA+FLAT+WHITE",
-        silver: "https://via.placeholder.com/600x500/C0C0C0/000000?text=LUMINA+FLAT+SILVER",
-      },
-    },
-  ],
-  pendant: [],
-  wall: [],
-  table: [],
-  bollard: [],
-  pole: [],
-  extceiling: [],
-  office: [],
-};
-
-/* --- SHOW PRODUCTS --- */
-function showProducts(category) {
-  const grid = document.getElementById("productGrid");
-  grid.innerHTML = "";
-  const items = allProducts[category] || [];
-  renderProducts(items);
-}
-
-/* --- SHOW ALL PRODUCTS --- */
-function showAllProducts() {
-  const grid = document.getElementById("productGrid");
-  grid.innerHTML = "";
-  const items = Object.values(allProducts).flat();
-  renderProducts(items);
-}
-
-/* --- RENDER FUNCTION --- */
-function renderProducts(items) {
-  const grid = document.getElementById("productGrid");
-  items.forEach((p) => {
-    const card = document.createElement("div");
-    card.className = "product-card";
-    const defaultColor = "black";
-    card.innerHTML = `
-      <img src="${p.images[defaultColor]}" alt="${p.name}" />
-      <div class="product-info">
-        <h3>${p.name}</h3>
-        <div class="type">${p.type}</div>
-        <div class="designer">${p.designer}</div>
-        <div class="color-options">
-          ${Object.keys(p.images)
-            .map(
-              (color) =>
-                `<span class="color-dot ${color}" onmouseover="this.closest('.product-card').querySelector('img').src='${p.images[color]}'"></span>`
-            )
-            .join("")}
-        </div>
-      </div>
-    `;
-    grid.appendChild(card);
-  });
-}
-
-/* --- INITIAL LOAD --- */
-showAllProducts();
-</script>
+  </style>
 
 
 
@@ -728,8 +868,8 @@ showAllProducts();
       <div class="col-md-6 text-center text-md-start mb-md-0">
         <span class="text-body">
           <a href="https://arcotindia.com/" class="border-bottom text-white">
-            <i class="fas fa-copyright text-light me-2"></i>ARCOT
-          </a>, All Rights Reserved.
+            <i class="fas fa-copyright text-light me-2"></i>ARCOT , All Rights Reserved.
+          </a>
         </span>
       </div>
       <!-- <div class="col-md-6 text-center text-md-end text-body">
@@ -763,6 +903,106 @@ showAllProducts();
 
 
 
+        <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll(".number-value");
+
+    const options = {
+      threshold: 0.4
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          let count = 0;
+          const target = parseInt(el.dataset.target);
+          const speed = 3;
+
+          const updateCount = () => {
+            count++;
+            el.innerText = count + "+";
+            if (count < target) {
+              setTimeout(updateCount, speed * 10);
+            }
+          };
+          updateCount();
+          observer.unobserve(el);
+        }
+      });
+    }, options);
+
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  });
+</script>
+
+
+<script>
+let activeFilters = {};
+let activeCategory = "all";
+
+function toggleMenu(btn, category) {
+  const submenu = btn.parentElement.querySelector(".submenu");
+
+  // Close other submenus
+  document.querySelectorAll(".sidebar .submenu").forEach(menu => {
+    if (menu !== submenu) {
+      menu.classList.remove("show");
+      menu.style.maxHeight = null;
+    }
+  });
+
+  // Reset arrow rotations
+  document.querySelectorAll(".category > li > button").forEach(b => b.classList.remove("open"));
+
+  // Toggle current submenu
+  if (submenu) {
+    if (submenu.classList.contains("show")) {
+      submenu.classList.remove("show");
+      submenu.style.maxHeight = null;
+    } else {
+      submenu.classList.add("show");
+      submenu.style.maxHeight = submenu.scrollHeight + "px";
+      btn.classList.add("open");
+    }
+  }
+
+  // Highlight active main category button
+  document.querySelectorAll(".category > li > button").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+
+  // Filter products
+  filterProducts(category);
+}
+
+function filterProducts(category) {
+  activeCategory = category;
+  const cards = document.querySelectorAll(".product-card");
+
+  cards.forEach(c => {
+    let show = category === "all" || c.dataset.category === category;
+    for (let key in activeFilters)
+      if (c.dataset[key] !== activeFilters[key]) show = false;
+    c.style.display = show ? "flex" : "none";
+  });
+
+  // ✅ fix spacing bug by resetting top alignment
+  const productContainer = document.querySelector(".products");
+  if (productContainer) productContainer.style.marginTop = "20px";
+}
+
+function filterAttribute(attr, value) {
+  if (activeFilters[attr] === value) delete activeFilters[attr];
+  else activeFilters[attr] = value;
+  filterProducts(activeCategory);
+}
+
+function toggleSidebar() {
+  document.querySelector(".category").classList.toggle("show");
+}
+</script>
 
 
     </body>

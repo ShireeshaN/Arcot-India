@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <title>Arcot Industries Private Limited</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta name="keywords" content="About Arcot Industries, Engineering Company India, Smart City Solutions, Power Solutions, Energy Solutions, Lighting Systems, Automation Systems, R&D in Technology, Sustainable Infrastructure, Hyderabad Engineering Company">
-        <meta name="description" content="Learn about Arcot Industries — a pioneering engineering company offering sustainable and innovative solutions in Power, Energy, Lighting, Automation, Smart City Infrastructure, and R&D. Driven by innovation, powered by excellence.">
-       <link rel="icon" href="img/fevi.png" type="image/x-icon">
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <title>Arcot Industries Private Limited</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Arcot Industries Hyderabad, Industrial Power Solutions, Smart City India, Automation Systems, Lighting Company India, Solar Power, Engineering Solutions Hyderabad">
+  <meta name="description" content="Arcot Industries delivers cutting-edge solutions in Power, Energy, Lighting, Automation, Smart City Infrastructure, and R&D across India.">
+  <link rel="icon" href="img/fevi.png" type="image/x-icon">
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"> -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Performance-optimized Libraries -->
+  <link rel="stylesheet" href="lib/animate/animate.min.css" media="print" onload="this.media='all'">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
 
-        <!-- Libraries Stylesheet -->
-        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <!-- Font Awesome (latest) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Bootstrap CSS (latest) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Custom CSS -->
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="css/segments.css" rel="stylesheet">
 
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-           <link href="css/segments.css" rel="stylesheet">
-    </head>
 
     <body>
 
@@ -44,7 +51,7 @@
         
 
     
-<header>
+<header class="main-header">
   <div class="header-wrap position-relative">
     <a href="index.html"><img src="img/logos.webp" alt="Logo" class="logo" loading="lazy"></a>
     <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
@@ -55,7 +62,28 @@
         <li>
           <a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a>
         </li>
-        <li><a href="solution.html">Solutions</a></li>
+        <li class="dropdown">
+  <a href="#" onclick="toggleDropdown(event)">Products <i class="bi bi-chevron-down ms-1"></i></a>
+  <ul class="dropdown-menu">
+    <li><a href="smart-pole.html">Energy Generation</a></li>
+    <li><a href="#">Power</a></li>
+    <li><a href="#">Lighting</a></li>
+    <li><a href="#">Automation</a></li>
+    
+  </ul>
+</li>
+       <li><a href="solution.html">Solutions</a></li>
+
+<li class="dropdown">
+  <a href="#" onclick="toggleDropdown(event)">R&D <i class="bi bi-chevron-down ms-1"></i></a>
+  <ul class="dropdown-menu">
+    <li><a href="smart-pole.html">Smart Pole</a></li>
+    <li><a href="#">Smart Bollard</a></li>
+    <li><a href="#">Smart Conference Table</a></li>
+    <li><a href="#">Smart Window Leaf AC</a></li>
+    <li><a href="#">Smart Bar Counter</a></li>
+  </ul>
+</li>
     <li><a href="applications.html">Applications</a></li>
    <li><a href="gallery.html" >Gallery</a></li>
            <li><a href="contact.html">Contact</a></li>
@@ -114,7 +142,7 @@
     </ul>
   </div>
   <div class="service-group">
-    <h6>Smart City</h6>
+   <h6>R&D</h6>
     <ul>
       <li><a href="smart-pole.html">Smart Pole</a></li>
       <li><a href="#">Smart Conference Hall</a></li>
@@ -124,12 +152,7 @@
     </ul>
   </div>
 
-   <div class="service-group">
-    <h6>R & D</h6>
-    <ul>
-      <li><a href="smart-pole.html">Smart Pole</a></li>
-    </ul>
-  </div>
+  
 
    
 </div>
@@ -140,962 +163,727 @@
 
 
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h1 class="text-white display-6 mb-4 wow fadeInDown" data-wow-delay="0.1s">WHO WE ARE ?</h1>
-                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> -->
-                  
-                </ol>    
-            </div>
+  
+
+
+
+
+
+
+
+
+
+<!-- ===== Lighting Section (Place this between your Navbar & Footer) ===== -->
+<section class="lighting-wrapper">
+
+  <!-- ===== Top Filter Table ===== -->
+  <div class="top-filter-table">
+    <div class="filter-col">
+      <div class="filter-heading">Type</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('type','indoor')">Indoor</span>
+        <span onclick="filterAttribute('type','outdoor')">Outdoor</span>
+      </div>
+    </div>
+
+    <div class="filter-col">
+      <div class="filter-heading">Mounting</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('mount','ceiling')">Ceiling</span>
+        <span onclick="filterAttribute('mount','wall')">Wall</span>
+      </div>
+    </div>
+
+    <div class="filter-col">
+      <div class="filter-heading">IP Rating</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('ip','ip20')">IP20</span>
+        <span onclick="filterAttribute('ip','ip65')">IP65</span>
+      </div>
+    </div>
+
+    <div class="filter-col">
+      <div class="filter-heading">Wattage</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('watt','10w')">10W</span>
+        <span onclick="filterAttribute('watt','20w')">20W</span>
+      </div>
+    </div>
+
+    <div class="filter-col">
+      <div class="filter-heading">Control</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('control','dali')">DALI</span>
+        <span onclick="filterAttribute('control','onoff')">On/Off</span>
+      </div>
+    </div>
+
+    <div class="filter-col">
+      <div class="filter-heading">Application</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('app','residential')">Residential</span>
+        <span onclick="filterAttribute('app','commercial')">Commercial</span>
+      </div>
+    </div>
+
+    <div class="filter-col">
+      <div class="filter-heading">Body Color</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('color','white')">White</span>
+        <span onclick="filterAttribute('color','black')">Black</span>
+      </div>
+    </div>
+
+    <div class="filter-col text-center">
+      <button class="reset-btn" onclick="resetFilters()">Reset</button>
+    </div>
+  </div>
+
+ <div class="lighting-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Lighting</h2>
+      <h2 class="mobile-toggle" onclick="toggleSidebar()">Lighting ☰</h2>
+      <ul class="category">
+        <li><button onclick="toggleMenu(this, 'all')">All</button></li>
+        <li>
+          <button onclick="toggleMenu(this, 'cob')">COB Lights</button>
+          <ul class="submenu">
+            <li><a href="#">COB Downlight</a></li>
+            <li><a href="#">COB Surface</a></li>
+            <li><a href="#">COB Zoom</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleMenu(this, 'surface')">Surface Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Surface Round</a></li>
+            <li><a href="#">Surface Square</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleMenu(this, 'track')">Track Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Track Type 1</a></li>
+            <li><a href="#">Track Type 2</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleMenu(this, 'magnetic')">Magnetic Track Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Magnetic Type 1</a></li>
+            <li><a href="#">Magnetic Type 2</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleMenu(this, 'slimtrack')">Slim Track Lights</button>
+          <ul class="submenu">
+            <li><a href="#">Slim Type 1</a></li>
+            <li><a href="#">Slim Type 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Products -->
+    <div class="product-section">
+
+
+      <div class="product-grid" id="productGrid">
+        <div class="product-card" data-category="track" data-type="indoor">
+          <img src="img/productsimgs/5.png" alt="Track Type 1">
+          <h3>Track Type 1</h3>
         </div>
-        <!-- Header End -->
+        <div class="product-card" data-category="magnetic" data-type="outdoor">
+          <img src="img/productsimgs/magnetic1.png" alt="Magnetic Track 1">
+          <h3>Magnetic Track 1</h3>
+        </div>
+        <div class="product-card" data-category="slimtrack" data-type="indoor">
+          <img src="img/productsimgs/slimtrack1.png" alt="Slim Track 1">
+          <h3>Slim Track 1</h3>
+        </div>
+        <div class="product-card" data-category="cob" data-type="indoor">
+          <img src="img/productsimgs/1.png" alt="COB Downlight">
+          <h3>COB Downlight</h3>
+        </div>
+                <div class="product-card" data-category="cob" data-type="indoor">
+          <img src="img/productsimgs/1.png" alt="COB Downlight">
+          <h3>COB Downlight</h3>
+        </div>
+                <div class="product-card" data-category="cob" data-type="indoor">
+          <img src="img/productsimgs/1.png" alt="COB Downlight">
+          <h3>COB Downlight</h3>
+        </div>
+                <div class="product-card" data-category="cob" data-type="indoor">
+          <img src="img/productsimgs/1.png" alt="COB Downlight">
+          <h3>COB Downlight</h3>
+        </div>
+        <div class="product-card" data-category="surface" data-type="outdoor">
+          <img src="img/productsimgs/3.png" alt="Surface Round">
+          <h3>Surface Round</h3>
+        </div>
+      </div>
+    </div>
 
+  </div>
+</section>
 
-
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
- body { font-family: 'Jost', sans-serif; background: #fff; color: #333; }
-
-  /* Main section structure */
-.concept-section {
-  position: relative;
-  background: #f2f2f2;
-  text-align: center;
-  overflow: hidden;
-}
-
-.concept-heading h2 {
-  font-size: 2rem;
-  font-weight: 500;
-  padding: 60px 0 10px;
-  letter-spacing: 2px;
-  color: #fff important!;
-  position: relative;
-}
-.concept-heading::after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 40px;
-  /* background-color: #555; */
-  margin: 10px auto 0;
-}
-
-.concept-image-container {
-  position: relative;
-  background: url('img/Untitled design.png') center/cover no-repeat;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: zoomIn 1.2s ease-out forwards;
-  transition: transform 0.6s ease;
-  will-change: transform;
-}
-
-/* 👇 Hover effect to zoom the background image */
-.concept-image-container:hover {
-  transform: scale(1.03);
-}
-/* Text box */
-.concept-text-box {
-  color: #fff;
-  max-width: 700px;
-  text-align: center;
-  padding: 20px 40px;
-  border-radius: 8px;
-  animation: fadeUp 1.4s ease-out forwards;
-}
-
-/* Optional hover glow effect */
-.concept-text-box:hover {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  transition: text-shadow 0.3s ease-in-out;
-}
-
-/* Headings */
-.concept-text-box h3 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  font-weight: 500;
-}
-.concept-text-box p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-  @media (max-width: 768px) {
-      .concept-heading {
-        font-size: 1.6rem;
-      }
-      .concept-image-container {
-        height: 420px;
-        padding: 0 20px;
-      }
-      .concept-text-box h3 {
-        font-size: 1.5rem;
-      }
-      .concept-text-box p {
-        font-size: 0.95rem;
-      }
-    }
-
-/* Animations */
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes zoomIn {
-  0% {
-    transform: scale(1.05);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* Reuse class if needed */
-.animate-fade-up {
-  animation: fadeUp 1.2s ease-out forwards;
-}
-.animate-zoom-in {
-  animation: zoomIn 1s ease-out forwards;
-}
-
-      .section-brand {
-      padding: 60px 20px;
-      background: #e6e6e6;
-      text-align: center;
-    }
-
-    .section-brand h2 {
-      font-size: 2rem;
-      font-weight: 500;
-      letter-spacing: 2px;
-      color: #222;
-      position: relative;
-      margin-bottom: 30px;
-    }
-
-    .section-brand h2::after {
-      content: "";
-      display: block;
-      width: 1px;
-      height: 40px;
-      background-color: #555;
-      margin: 10px auto 0;
-    }
-
-.brand-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
-  padding: 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.08);
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-.brand-logo {
-  flex: 1 1 48%;
-  min-width: 300px;
-  text-align: center;
-}
-
-.brand-logo img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.5s ease;
-}
-
-.brand-logo:hover img {
-  transform: scale(1.05);
-}
-
-.brand-text {
-  flex: 1 1 48%;
-  min-width: 300px;
-  text-align: left;
-  opacity: 0;
-  animation: fadeRight 1.2s ease forwards;
-  animation-delay: 0.3s;
-}
-
-.brand-text p {
-  line-height: 1.8;
-  margin-bottom: 20px;
-  font-size: 16px;
+<!-- ===== CSS ===== -->
+<style>
+.lighting-wrapper {
+  background: #f8f8f8;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
   color: #333;
 }
 
-.animate-left {
-  opacity: 0;
-  animation: fadeLeft 1.2s ease forwards;
-}
-
-.animate-right {
-  opacity: 0;
-  animation: fadeRight 1.2s ease forwards;
-}
-
-@keyframes fadeLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeRight {
-  0% {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-   @media (max-width: 768px) {
-      .brand-container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .brand-text {
-        text-align: center;
-      }
-    }
-
-
-    .feature-section {
-      padding: 60px 0;
-    }
-
-    .section-heading {
-      text-align: center;
-      font-size: 36px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      color: #333;
-      margin-bottom: 0;
-    }
-
-    .divider {
-      width: 1px;
-      height: 40px;
-      background-color: #333;
-      margin: 20px auto 50px;
-    }
-
-    .feature-row {
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      margin: 0;
-    }
-
-    .feature-row.reverse {
-      flex-direction: row-reverse;
-    }
-
-    .feature-text {
-      flex: 0 0 40%;
-      background-color: transparent;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 60px;
-      box-sizing: border-box;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeInUp 1s ease-out forwards;
-    }
-
-    .feature-row:nth-child(3) .feature-text {
-      animation-delay: 0.2s;
-    }
-
-    .feature-image {
-      flex: 0 0 60%;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeInUp 1s ease-out forwards;
-    }
-
-    .feature-row:nth-child(2) .feature-image {
-      animation-delay: 0.2s;
-    }
-
-    .feature-image img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      display: block;
-    }
-
-    .feature-number {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    .feature-number .label {
-      font-size: 14px;
-      display: block;
-      color: #888;
-      letter-spacing: 1px;
-    }
-
-    .feature-number .number {
-      font-size: 56px;
-      border-bottom: 2px solid #333;
-      display: inline-block;
-    }
-
-    .feature-title {
-      font-size: 28px;
-      line-height: 1.4;
-      color: #333;
-      margin: 30px 0 20px;
-    }
-
-    .feature-description {
-      font-size: 18px;
-      color: #444;
-      line-height: 1.8;
-    }
-
-    @media (max-width: 768px) {
-      .feature-row, .feature-row.reverse {
-        flex-direction: column;
-      }
-
-      .feature-text, .feature-image {
-        flex: 1 1 100%;
-        padding: 30px;
-      }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-   
-
-      .why-section {
-      background: #e5e6e6;
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    .why-section h2 {
-      font-size: 36px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-    }
-
-    .why-section h2::after {
-      content: "";
-      display: block;
-      width: 1px;
-      height: 40px;
-      background-color: #333;
-      margin: 15px auto 40px;
-    }
-
-    .number-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 60px;
-      max-width: 1200px;
-      margin: 0 auto 60px;
-    }
-
-    .number-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 160px;
-    }
-
-    .number-value {
-      font-size: 48px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 12px;
-    }
-
-    .number-label {
-      font-size: 16px;
-      font-weight: 500;
-      color: #333;
-      max-width: 160px;
-    }
-
-    @media (max-width: 768px) {
-      .number-box {
-        width: 130px;
-      }
-      .number-value {
-        font-size: 36px;
-      }
-      .number-label {
-        font-size: 14px;
-      }
-    }
-
-
-
-
-    .services-section {
-  background-color: #e5e6e6;
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.services-heading {
-  font-size: 36px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  color: #222;
-  margin-bottom: 0;
-}
-
-.divider-line {
-  width: 1px;
-  height: 40px;
-  background-color: #333;
-  margin: 15px auto 50px;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1200px;
+/* === Top Filter Bar === */
+.top-filter-table {
+  display: table;
+  width: 100%;
+  background: #fff;
+  border-collapse: collapse;
   margin: 0 auto;
+  border: 1px solid #ddd;
+  margin-top: 60px;
 }
 
-.service-card {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 30px;
+.top-filter-table .filter-col {
+  display: table-cell;
+  vertical-align: top;
+  padding: 10px 15px;
+  border-right: 1px solid #ddd;
+}
+
+.top-filter-table .filter-col:last-child {
+  border-right: none;
   text-align: center;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+.filter-heading {
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: #111;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.filter-options span {
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.filter-options span:hover,
+.filter-options span.active {
+  color: #000;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.reset-btn {
+  background: none;
+  border: 1px solid #999;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 25px #fff;
+.reset-btn:hover {
+  background: #333;
+  color: #fff;
 }
 
-.service-card .icon {
-  font-size: 40px;
-  color: #000;
-  margin-bottom: 18px;
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: #f8f8f8;
+    }
+
+    .lighting-container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: #fff;
+      border-right: 1px solid #ddd;
+      padding: 25px 15px;
+      box-sizing: border-box;
+    }
+
+    .sidebar h2 {
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .submenu {
+  list-style: none;
+  margin-left: 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.submenu.show {
+  display: block;
 }
 
-.service-card h5 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #222;
-  margin-bottom: 12px;
-}
+    .sidebar h2.mobile-toggle {
+      display: none;
+      cursor: pointer;
+    }
 
-.service-card p {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #444;
-}
+    .category {
+      list-style: none;
+      padding-left: 0;
+    }
 
-/* Tablet (2 per row) */
-@media (max-width: 992px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
+    .category li {
+      margin-bottom: 8px;
+    }
+
+    .category button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: 15px;
+      color: #333;
+      padding: 10px 12px;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .category button::after {
+      content: "→";
+      color: #999;
+      margin-left: auto;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .category button.active::after {
+      color: #000;
+      transform: translateX(3px);
+    }
+
+    .category button:hover {
+      background: #eaeaea;
+      color: #000;
+    }
+
+    .submenu {
+      list-style: none;
+      margin-left: 15px;
+      display: none;
+    }
+
+    .submenu.show {
+      display: block;
+    }
+
+    .submenu li a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .submenu li a:hover {
+      color: #000;
+    }
+
+    /* Products */
+    .product-section {
+      flex: 1;
+      padding: 40px 20px;
+      /* display: flex; */
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    /* Horizontal filters */
+    .product-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 15px;
+      margin-bottom: 20px;
+    }
+
+    .product-filters .filter-group label {
+      font-weight: 600;
+      margin-right: 5px;
+    }
+
+    .product-filters .filter-group button {
+      border: 1px solid #ddd;
+      background: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 13px;
+    }
+
+    .product-filters .filter-group button.active {
+      background: #00bcd4;
+      color: #fff;
+      border-color: #00bcd4;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 35px;
+      width: 100%;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    .product-card {
+      position: relative;
+      background: #e6e6e6;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card img {
+      width: 230px;
+      transition: transform 0.4s ease;
+      margin-top: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .product-card h3 {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #111;
+      text-align: center;
+      z-index: 3;
+      position: relative;
+    }
+
+    .product-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #e6e6e6;
+      z-index: 1;
+      transition: all 0.8s ease;
+    }
+
+    .product-card:hover::before {
+      background: linear-gradient(140deg, #ffffff 55%, #e6e6e6 45%);
+    }
+
+    @media (max-width: 1024px) {
+      .product-card img {
+        width: 180px;
+      }
+    }
+
+    @media (max-width: 768px) {
+       .top-filter-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
   }
-}
-
-/* Mobile (1 per row) */
-@media (max-width: 600px) {
-  .services-grid {
-    grid-template-columns: 1fr;
+  .top-filter-table .filter-col {
+    display: inline-block;
+    vertical-align: top;
+    border-right: 1px solid #ddd;
   }
+      .lighting-container {
+        flex-direction: column;
+      }
 
-  .services-heading {
-    font-size: 28px;
-  }
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+      }
 
-  .divider-line {
-    height: 30px;
-  }
-}
+      .sidebar h2 {
+        display: none;
+      }
 
+      .sidebar h2.mobile-toggle {
+        display: block;
+      }
 
+      .category {
+        display: none;
+      }
 
-.vision-mission-section {
-  background-color: #e5e6e6;
-  padding: 80px 20px;
-  text-align: center;
-}
+      .category.show {
+        display: block;
+      }
 
-.vision-heading {
-  font-size: 36px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  color: #222;
-  margin-bottom: 0;
-}
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
 
-.vision-divider {
-  width: 1px;
-  height: 40px;
-  background-color: #333;
-  margin: 15px auto 50px;
-}
-
-.vision-container {
+    /* --- Fix product grid spacing consistency --- */
+.products {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 60px;
-  max-width: 1100px;
-  margin: 0 auto;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 20px; /* consistent spacing under filter bar */
+  min-height: 200px; /* prevents extra white gap */
 }
 
-.vision-card {
-  background: #fff;
-  padding: 40px 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.08);
-  max-width: 480px;
-  flex: 1 1 400px;
+/* --- Smooth submenu animation + arrow rotation --- */
+.submenu {
+  list-style: none;
+  margin-left: 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.submenu.show {
+  display: block;
+}
+
+/* --- Arrow style --- */
+.category > li > button {
+  position: relative;
+  background: none;
+  border: none;
+  color: #333;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.category > li > button::after {
+  content: "→"; /* right arrow */
+  position: absolute;
+  right: 10px;
   transition: transform 0.3s ease;
-  text-align: center;
 }
 
-.vision-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+.category > li > button.active::after,
+.category > li > button.open::after {
+  transform: rotate(90deg); /* rotate to down arrow */
 }
 
-.vision-icon {
-  font-size: 36px;
-  color: #000;
-  margin-bottom: 20px;
-}
-
-.vision-card h4 {
-  font-size: 24px;
-  font-weight: 600;
-  color: #111;
-  margin-bottom: 15px;
-}
-
-.vision-card p {
-  font-size: 16px;
-  color: #444;
-  line-height: 1.7;
-}
-
-/* Animations (if used) */
-.animate-left {
-  animation: fadeLeft 1.2s ease forwards;
-}
-.animate-right {
-  animation: fadeRight 1.2s ease forwards;
-}
-@keyframes fadeLeft {
-  0% { opacity: 0; transform: translateX(-40px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-@keyframes fadeRight {
-  0% { opacity: 0; transform: translateX(40px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .vision-container {
-    flex-direction: column;
-    gap: 40px;
-  }
-}
-
-
-
- 
-
-  
   </style>
 
 
-<!-- VISION & MISSION SECTION -->
-<section class="vision-mission-section">
-  <h2 class="vision-heading">VISION & MISSION</h2>
-  <div class="vision-divider"></div>
-
-  <div class="vision-container">
-    <!-- VISION -->
-    <div class="vision-card animate-left">
-      <div class="vision-icon"><i class="fas fa-eye"></i></div>
-      <h4>Our Vision</h4>
-      <p>To be a global leader in engineering innovation, delivering smart, sustainable, and scalable infrastructure solutions that transform industries and empower cities.</p>
-    </div>
-
-    <!-- MISSION -->
-    <div class="vision-card animate-right">
-      <div class="vision-icon"><i class="fas fa-bullseye"></i></div>
-      <h4>Our Mission</h4>
-      <p>To innovate and deliver integrated solutions in power, energy, lighting, automation, and smart city technologies through continuous R&D and exceptional service excellence.</p>
-    </div>
-  </div>
-</section>
 
 
+   <!-- Footer Start -->
+<div class="tricky-footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
+  <div class="container py-5">
+    <div class="row g-5">
 
-
-
-
- <!-- Concept Section -->
-<section class="concept-section section-brand">
-  <h2 class="concept-heading ">CONCEPT</h2>
-  <div class="concept-image-container animate-zoom-in">
-    <div class="concept-text-box animate-fade-up">
-      <h3 class="text-white">Innovation-Driven Engineering Excellence</h3>
-      <p>
-        At Arcot Industries,<br>
-        we believe innovation is the foundation of
-         sustainable progress.<br><br>
-        With a focus on smart lighting, intelligent infrastructure,<br>
-        and automation, we deliver cutting-edge engineering solutions that redefine 
-          the future of energy,
-        power, and smart cities.
-           
-      </p>
-    </div>
-  </div>
-</section>
-
-
-<section class="why-section">
-  <h2>WHY CHOOSE ARCOT</h2>
-  <div class="number-wrapper">
-    <div class="number-box">
-      <div class="number-value" data-target="20">0+</div>
-      <div class="number-label">Founded Years</div>
-    </div>
-    <div class="number-box">
-      <div class="number-value" data-target="50">0+</div>
-      <div class="number-label">Product Sales Countries</div>
-    </div>
-    <div class="number-box">
-      <div class="number-value" data-target="100">0+</div>
-      <div class="number-label">Service Outdoor Projects</div>
-    </div>
-    <div class="number-box">
-      <div class="number-value" data-target="50">0+</div>
-      <div class="number-label">Production Base</div>
-    </div>
-    <div class="number-box">
-      <div class="number-value" data-target="100">0+</div>
-      <div class="number-label">R&D Products</div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-<!-- BRAND SECTION -->
-<section class="section-brand brand-section">
-  <h2>Powered by Precision. Driven by Purpose.</h2>
-  <div class="brand-container">
-    <div class="brand-logo animate-left">
-      <img src="img/pr7.webp" alt="Arcot Lighting Logo">
-    </div>
-    <div class="brand-text animate-right">
-      <p>
-        Arcot Industries is built on a legacy of precision engineering and visionary innovation. Our brand reflects a deep commitment to quality, functionality, and future-ready technology across lighting, power, and automation domains.
-      </p>
-      <p>
-        We combine advanced materials, wireless systems, and intelligent controls to create products that are not only smart, but also sustainable. From custom embedded solutions to city-scale infrastructure, Arcot is shaping the future—one breakthrough at a time.
-
-
-      </p>
-    </div>
-  </div>
-</section>
-
-
-<!-- OUR SERVICES SECTION -->
-<section class="services-section">
-  <h2 class="services-heading">OUR SERVICES</h2>
-  <div class="divider-line"></div>
-
-  <div class="services-grid">
-    <!-- Card 1 -->
-    <div class="service-card">
-      <div class="icon"><i class="fas fa-bolt"></i></div>
-      <h5>Power Solutions</h5>
-      <p>Advanced T&D, HT/LT Panel Boards, Substations, Power Audits.</p>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="service-card">
-      <div class="icon"><i class="fas fa-solar-panel"></i></div>
-      <h5>Energy Solutions</h5>
-      <p>Solar, Wind, Biomass, BESS, Hybrid & Smart Grid Integration.</p>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="service-card">
-      <div class="icon"><i class="fas fa-lightbulb"></i></div>
-      <h5>Lighting Solutions</h5>
-      <p>Facade, Stadium, Commercial & Industrial Lighting Design.</p>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="service-card">
-      <div class="icon"><i class="fas fa-home"></i></div>
-      <h5>Automation</h5>
-      <p>Smart Home, Industrial, IoT-based Monitoring & Controls.</p>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="service-card">
-      <div class="icon"><i class="fas fa-city"></i></div>
-      <h5>Smart City</h5>
-      <p>Smart Poles, Counters, Environment Monitoring, AI Integration.</p>
-    </div>
-
-    <!-- Card 6 -->
-    <div class="service-card">
-      <div class="icon"><i class="fas fa-brain"></i></div>
-      <h5>R&D</h5>
-      <p>Custom Embedded Devices, IoT & AI Prototyping, Innovation Labs.</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- Features SECTION -->
-<section class="feature-section" style="background-color: #E6E6E6;">
-  <h2 class="section-heading">HISTORY OF INNOVATION</h2>
-  <div class="divider"></div>
-
-  <!-- Feature 1 -->
-  <div class="feature-row">
-    <div class="feature-text">
-      <div class="feature-number">
-        <span class="label">Milestone</span>
-        <span class="number">01</span>
-      </div>
-      <h3 class="feature-title"> Founded with a <br>Vision to <br>Engineer Excellence</h3>
-      <p class="feature-description">
-        Established in 2008, Arcot Industries began as a precision engineering company.<br>
-        focused on delivering custom power and lighting solutions. <br>
-        Our mission: to bring world-class innovation into India’s energy landscape.
-      </p>
-    </div>
-    
-    
-    
-    <div class="feature-image">
-      <img src="img/carousel-1.webp" alt="Feature 01" />
-    </div>
-  </div>
-
-  <!-- Feature 2 -->
-  <div class="feature-row reverse">
-    <div class="feature-text">
-      <div class="feature-number">
-        <span class="label">Milestone</span>
-        <span class="number">02</span>
-      </div>
-      <h3 class="feature-title">From Local <br>Projects <br>to Global Partnerships</h3>
-      <p class="feature-description"> 
-        What started with regional infrastructure deployments quickly expanded.<br>
-        to nationwide collaborations and exports to 50+ countries.<br>
-        power smart cities, commercial spaces, and industrial hubs worldwide.<br>
-    
-      </p>
-    </div>
-
-    <div class="feature-image">
-      <img src="img/carousel-1.webp" alt="Feature 02" />
-    </div>
-  </div>
-
-
-   <!-- Feature 3 -->
-  <div class="feature-row">
-    <div class="feature-text">
-      <div class="feature-number">
-        <span class="label">Milestone</span>
-        <span class="number">03</span>
-      </div>  
-      <h3 class="feature-title">Investing <br>in Innovation,<br>Leading the Change</h3>
-      <p class="feature-description">
-        With dedicated R&D facilities and in-house design teams, <br>
-        Arcot continues to push boundaries in IoT, automation, and sustainable energy.<br>
-        Our commitment to innovation drives our product excellence and market leadership.
-      </p>
-    </div>
-    <div class="feature-image">
-      <img src="img/carousel-1.webp" alt="Feature 01" />
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- Footer Start -->
-        <div class="container-fluid footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
-            <div class="container py-5">
-                <div class="row g-5 mb-5 align-items-center">
-                 
-                   
-                </div>
-                <div class="row g-5">
-                   
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Quick Links</h4>
-                            <a href="index.html">Home</a>
-                            <a href="about.html">About us</a>
-                            <a href="solution.html">Solutions</a>
-                            <a href="applications.html">Applications</a>
-                            <a href="gallery.html">Gallery</a>
-                            <a href="smart-pole.html">R & D</a>
-                            <a href="contact.html">Contact</a>
-                        </div>
-                    </div>
-
-                      <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Services</h4>
-                            <a href="#"> Energy</a>
-                            <a href="#"> Power</a>
-                            <a href="#"> Lighting</a>
-                            <a href="#"> Automation</a>
-                            <a href="#"> Smart City</a>
-                             <a href="#"> R & D</a>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Applications</h4>
-                            <a href="applications.html">Energy Generation</a>
-                            <a href="applications.html"> Power</a>
-                            <a href="applications.html"> Lighting</a>
-                            <a href="applications.html"> Indoor Lighting</a>
-                            <a href="applications.html"> Automation</a>
-                              <a href="applications.html"> Smart City</a>
-                               <a href="applications.html"> R & D</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Contact Info</h4>
-                            <a href="#"><i class="fa fa-map-marker-alt text-primary me-2"></i> Apurupa Towers, Road No:36, JubileeHills, Hyderabad, Telangana-500033 </a>
-                            <a href="mailto:info@arcotindia.in"><i class="fas fa-envelope text-primary me-2"></i>info@arcotindia.in </a>
-        
-                            <a href="tel:+91 98481 89899"><i class="fas fa-phone text-primary me-2"></i> +919848189899</a>
-                         
-                        </div>
-                    </div>
-
-
-                     <div class="col-lg-5">
-                        <div class="d-flex align-items-center justify-content-center justify-content-lg-end pl-5">
-                            <a class="btn btn-light btn-md-square me-3" href="https://www.facebook.com/profile.php?id=61575125369342" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-light btn-md-square me-3" href="https://x.com/Arcotluminaries" target="_blank"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-light btn-md-square me-3" href="https://www.instagram.com/arcotindia/" target="_blank"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-light btn-md-square me-3" href="https://www.linkedin.com/in/arcot-luminaries-b4245935b/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                             <a class="btn btn-light btn-md-square me-3" href="https://www.youtube.com/@Arcotluminaries" target="_blank"><i class="fab fa-youtube"></i></a>
-                             <a class="btn btn-light btn-md-square me-3" href="https://in.pinterest.com/arcotsocialmedia/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-                              <a class="btn btn-light btn-md-square me-3" href="https://wa.me/919848189899"><i class="fab fa-whatsapp"></i></a>
-                              <a class="btn btn-light btn-md-square me-3" href="#"><i class="fab fa-telegram-plane"></i></a>
-                              <a class="btn btn-light btn-md-square me-3" href="https://www.reddit.com/user/Arcotluminaries/"><i class="fab fa-reddit-alien"></i></a>
-                              <a class="btn btn-light btn-md-square me-3" href="https://www.threads.com/@arcotindia">
-  <img src="img/icons/threads.svg" alt="Threads" style="width: 20px; height: 20px;" loading="lazy">
-</a>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <!-- Column 1: Quick Links -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About us</a>
+          <a href="solution.html">Solutions</a>
+          <a href="applications.html">Applications</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="smart-pole.html">R & D</a>
+          <a href="contact.html">Contact</a>
         </div>
-        <!-- Footer End -->
+      </div>
 
-
-       <!-- Copyright Start -->
-        <div class="container-fluid copyright py-4 bg-dark">
-            <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-body"><a href="https://arcotindia.com/" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>ARCOT </a>, All Right Reserved.</span>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end text-body">
-                     
-                        Designed By <a class="border-bottom text-white" href="https://arcotindia.com/">ARCOT </a>
-                    </div>
-                </div>
-            </div>
+      <!-- Column 2: Services -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Services</h4>
+          <a href="#">Energy</a>
+          <a href="#">Power</a>
+          <a href="#">Lighting</a>
+          <a href="#">Automation</a>
+          <a href="#">Smart City</a>
+          <a href="#">R & D</a>
         </div>
-        <!-- Copyright End -->
+      </div>
+
+      <!-- Column 3: Applications -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Applications</h4>
+          <a href="#">Energy Generation</a>
+          <a href="#">Power</a>
+          <a href="#">Lighting</a>
+          <a href="#">Indoor Lighting</a>
+          <a href="#">Automation</a>
+          <a href="#">Smart City</a>
+          <a href="#">R & D</a>
+        </div>
+      </div>
+
+      <!-- Column 4: Contact Info -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Contact Info</h4>
+          <a href="#"><i class="fa fa-map-marker-alt text-secondary me-2"></i> Apurupa Towers, Road No:36, Jubilee Hills, Hyderabad, Telangana-500033</a>
+          <a href="mailto:info@arcotindia.com"><i class="fas fa-envelope text-secondary me-2"></i> info@arcotindia.com</a>
+          <a href="tel:+919848189899"><i class="fas fa-phone text-secondary me-2"></i> +91 98481 89899</a>
+        </div>
+      </div>
+
+      <!-- Social Media -->
+      <div class="col-lg-12 mt-4">
+        <div class="tricky-social-icons d-flex flex-wrap justify-content-start gap-3">
+          <a class="tricky-social-btn" href="#"><i class="fab fa-facebook-f"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-instagram"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-youtube"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-pinterest-p"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-whatsapp"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-telegram-plane"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-reddit-alien"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-threads"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+ /* Footer Wrapper */
+.tricky-footer {
+  background: #1e2226;
+  color: #ccc;
+  font-size: 15px;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 300; /* light weight */
+  letter-spacing: 1px;
+  
+}
+
+/* Footer Headings */
+.tricky-footer-item h4,
+.tricky-footer-item h5 {
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+/* Footer Links */
+.tricky-footer-item a {
+  color: #bbb;
+  margin-bottom: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  font-weight: 300;
+  font-size: 12px;
+}
+.tricky-footer-item a:hover {
+  color: #00bcd4;
+  padding-left: 5px;
+}
+
+/* Social Media Icons */
+.tricky-social-icons .tricky-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  color: #8f8c8c;
+  font-size: 13px;
+  transition: 0.3s;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 300;
+}
+.tricky-social-icons .tricky-social-btn:hover {
+  background: #434444;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Copyright Section */
+.tricky-footer-bottom {
+  border-top: 1px solid #333;
+  color: #aaa;
+  font-size: 14px;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.tricky-footer-bottom a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+}
+.tricky-footer-bottom a:hover {
+  color: #00bcd4;
+}
+</style>
+<!-- Footer End -->
+
+<!-- Copyright Start -->
+<div class="tricky-footer-bottom py-4 bg-dark">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-6 text-center text-md-start mb-md-0">
+        <span class="text-body">
+          <a href="https://arcotindia.com/" class="border-bottom text-white">
+            <i class="fas fa-copyright text-light me-2"></i>ARCOT
+          </a>, All Rights Reserved.
+        </span>
+      </div>
+      <!-- <div class="col-md-6 text-center text-md-end text-body">
+        Designed By <a class="border-bottom text-white" href="https://arcotindia.com/">ARCOT</a>
+      </div> -->
+    </div>
+  </div>
+</div>
+<!-- Copyright End -->
+
          
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+        <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>    
 
         
         <!-- JavaScript Libraries -->
@@ -1149,6 +937,73 @@
     });
   });
 </script>
+
+
+<script>
+let activeFilters = {};
+let activeCategory = "all";
+
+function toggleMenu(btn, category) {
+  const submenu = btn.parentElement.querySelector(".submenu");
+
+  // Close other submenus
+  document.querySelectorAll(".sidebar .submenu").forEach(menu => {
+    if (menu !== submenu) {
+      menu.classList.remove("show");
+      menu.style.maxHeight = null;
+    }
+  });
+
+  // Reset arrow rotations
+  document.querySelectorAll(".category > li > button").forEach(b => b.classList.remove("open"));
+
+  // Toggle current submenu
+  if (submenu) {
+    if (submenu.classList.contains("show")) {
+      submenu.classList.remove("show");
+      submenu.style.maxHeight = null;
+    } else {
+      submenu.classList.add("show");
+      submenu.style.maxHeight = submenu.scrollHeight + "px";
+      btn.classList.add("open");
+    }
+  }
+
+  // Highlight active main category button
+  document.querySelectorAll(".category > li > button").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+
+  // Filter products
+  filterProducts(category);
+}
+
+function filterProducts(category) {
+  activeCategory = category;
+  const cards = document.querySelectorAll(".product-card");
+
+  cards.forEach(c => {
+    let show = category === "all" || c.dataset.category === category;
+    for (let key in activeFilters)
+      if (c.dataset[key] !== activeFilters[key]) show = false;
+    c.style.display = show ? "flex" : "none";
+  });
+
+  // ✅ fix spacing bug by resetting top alignment
+  const productContainer = document.querySelector(".products");
+  if (productContainer) productContainer.style.marginTop = "20px";
+}
+
+function filterAttribute(attr, value) {
+  if (activeFilters[attr] === value) delete activeFilters[attr];
+  else activeFilters[attr] = value;
+  filterProducts(activeCategory);
+}
+
+function toggleSidebar() {
+  document.querySelector(".category").classList.toggle("show");
+}
+</script>
+
 
     </body>
 
