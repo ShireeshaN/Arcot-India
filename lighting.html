@@ -757,31 +757,30 @@
 
 
 <!-- ⚡ Voltage Section -->
-<div class="voltagesec">
-  <div class="voltagesec-container">
-    <!-- Voltage bar -->
-    <div class="voltagesec-bar" id="voltBar">
-      <div class="voltagesec-fill" id="voltFill"></div>
-      <div class="voltagesec-labels">
-        <span>690V</span>
-        <span>550V</span>
-        <span>415V</span>
-        <span>280V</span>
-        <span>210V</span>
-        <span>160V</span>
-        <span>110V</span>
+<div class="kelvinsec">
+  <div class="kelvinsec-container">
+    <!-- Kelvin bar -->
+    <div class="kelvinsec-bar" id="kelvBar">
+      <div class="kelvinsec-fill" id="kelvFill"></div>
+      <div class="kelvinsec-labels">
+        <span>6500K</span>
+        <span>5200K</span>
+        <span>4000K</span>
+        <span>3000K</span>
+        <span>2700K</span>
+        <span>1800K</span>
       </div>
-      <div class="voltagesec-knob" id="voltKnob"></div>
-      <div class="voltagesec-category" id="voltCategory">Residential</div>
+      <div class="kelvinsec-knob" id="kelvKnob"></div>
+      <div class="kelvinsec-value" id="kelvValue">1800K</div>
     </div>
 
     <!-- Image box -->
-    <div class="voltagesec-image" id="voltImage" style="background-image: url('img/lighting/lightingsectwo/0.png');"></div>
+    <div class="kelvinsec-image" id="kelvImage" style="background-image: url('img/lighting/kelvin/1800.png');"></div>
   </div>
 </div>
 
 <style>
-  .voltagesec {
+  .kelvinsec {
     width: 100%;
     height: 100vh;
     background: linear-gradient(to right, #0d0d0d, #3f3f3f);
@@ -791,7 +790,7 @@
     overflow: hidden;
   }
 
-  .voltagesec-container {
+  .kelvinsec-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -800,8 +799,8 @@
     width: 100%;
   }
 
-  /* Voltage bar */
-  .voltagesec-bar {
+  /* Kelvin bar */
+  .kelvinsec-bar {
     position: relative;
     width: 6px;
     height: 520px;
@@ -810,18 +809,18 @@
     flex-shrink: 0;
   }
 
-  .voltagesec-fill {
+  .kelvinsec-fill {
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 0%;
-    background: linear-gradient(180deg, #9b9b9b, #c4c8cc);
+    background: linear-gradient(180deg, #ffb347, #c4c8cc);
     border-radius: 10px;
     transition: height 0.3s ease;
   }
 
   /* Knob */
-  .voltagesec-knob {
+  .kelvinsec-knob {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 50%);
@@ -835,15 +834,15 @@
     z-index: 5;
   }
 
-  .voltagesec-knob:active {
+  .kelvinsec-knob:active {
     cursor: grabbing;
     box-shadow: 0 0 15px #babcbc;
   }
 
-  /* Voltage labels */
-  .voltagesec-labels {
+  /* Kelvin labels */
+  .kelvinsec-labels {
     position: absolute;
-    left: -80px;
+    left: -70px;
     top: 0;
     height: 100%;
     display: flex;
@@ -854,8 +853,8 @@
     text-align: right;
   }
 
-  /* Category name beside line */
-  .voltagesec-category {
+  /* Kelvin value beside line */
+  .kelvinsec-value {
     position: absolute;
     left: 40px;
     font-weight: 600;
@@ -866,33 +865,33 @@
   }
 
   /* Right side image box */
-  .voltagesec-image {
+  .kelvinsec-image {
     width: 750px;
     height: 500px;
     background-size: cover;
     background-position: center;
-    border-radius: 10px;
+ 
     transition: background-image 0.4s ease-in-out;
   }
 
   /* ----------- MOBILE VIEW ----------- */
   @media (max-width: 768px) {
-    .voltagesec {
+    .kelvinsec {
       height: auto;
       flex-direction: column;
       justify-content: flex-start;
       padding: 20px 10px;
     }
 
-    .voltagesec-container {
+    .kelvinsec-container {
       flex-direction: column;
       gap: 60px;
       width: 100%;
       align-items: center;
     }
 
-    /* horizontal voltage bar */
-    .voltagesec-bar {
+    /* horizontal kelvin bar */
+    .kelvinsec-bar {
       width: 80%;
       height: 8px;
       background: #333;
@@ -900,15 +899,15 @@
       position: relative;
     }
 
-    .voltagesec-fill {
+    .kelvinsec-fill {
       width: 0%;
       height: 100%;
-      background: linear-gradient(to right, #9b9b9b, #c4c8cc);
+      background: linear-gradient(to right, #ffb347, #c4c8cc);
       transition: width 0.3s ease;
     }
 
     /* labels horizontal */
-    .voltagesec-labels {
+    .kelvinsec-labels {
       position: absolute;
       top: -25px;
       left: 0;
@@ -920,14 +919,14 @@
       text-align: center;
     }
 
-    .voltagesec-knob {
+    .kelvinsec-knob {
       top: 50%;
       transform: translate(-50%, -50%);
       width: 26px;
       height: 26px;
     }
 
-    .voltagesec-category {
+    .kelvinsec-value {
       top: -45px;
       left: 50%;
       transform: translateX(-50%);
@@ -935,7 +934,7 @@
       text-align: center;
     }
 
-    .voltagesec-image {
+    .kelvinsec-image {
       width: 95%;
       height: 220px;
       border-radius: 8px;
@@ -944,36 +943,36 @@
 </style>
 
 <script>
-  const voltKnob = document.getElementById("voltKnob");
-  const voltBar = document.getElementById("voltBar");
-  const voltFill = document.getElementById("voltFill");
-  const voltImage = document.getElementById("voltImage");
-  const voltCategory = document.getElementById("voltCategory");
+  const kelvKnob = document.getElementById("kelvKnob");
+  const kelvBar = document.getElementById("kelvBar");
+  const kelvFill = document.getElementById("kelvFill");
+  const kelvImage = document.getElementById("kelvImage");
+  const kelvValue = document.getElementById("kelvValue");
 
-  const ranges = [
-    { min: 110, max: 160, name: "Residential", image: "img/lighting/lightingsectwo/0.png" },
-    { min: 161, max: 210, name: "Hospitality", image: "img/lighting/lightingsectwo/1.png" },
-    { min: 211, max: 280, name: "Facade", image: "img/lighting/lightingsectwo/2.png" },
-    { min: 281, max: 415, name: "Commercial", image: "img/lighting/lightingsectwo/3.png" },
-    { min: 416, max: 550, name: "Outdoor", image: "img/lighting/lightingsectwo/5.png" },
-    { min: 551, max: 690, name: "Industrial", image: "img/lighting/lightingsectwo/1.png" }
+  const kelvinRanges = [
+    { min: 1800, max: 2699, image: "img/lighting/1800k.png" },
+    { min: 2700, max: 2999, image: "img/lighting/2700k.png" },
+    { min: 3000, max: 3999, image: "img/lighting/3000k.png" },
+    { min: 4000, max: 5199, image: "img/lighting/4000k.png" },
+    { min: 5200, max: 6499, image: "img/lighting/5200k.png" },
+    { min: 6500, max: 7000, image: "img/lighting/6500k.png" }
   ];
 
   let isDragging = false;
-  const minVolt = 110;
-  const maxVolt = 690;
+  const minK = 1800;
+  const maxK = 6500;
 
-  voltKnob.style.bottom = "0px";
-  updateVoltage(minVolt);
+  kelvKnob.style.bottom = "0px";
+  updateKelvin(minK);
 
-  voltKnob.addEventListener("mousedown", () => isDragging = true);
+  kelvKnob.addEventListener("mousedown", () => isDragging = true);
   document.addEventListener("mouseup", () => isDragging = false);
   document.addEventListener("mousemove", (e) => {
     if (!isDragging) return;
     handleDrag(e.clientX, e.clientY);
   });
 
-  voltKnob.addEventListener("touchstart", () => isDragging = true);
+  kelvKnob.addEventListener("touchstart", () => isDragging = true);
   document.addEventListener("touchend", () => isDragging = false);
   document.addEventListener("touchmove", (e) => {
     if (!isDragging) return;
@@ -982,44 +981,45 @@
   });
 
   function handleDrag(clientX, clientY) {
-    const rect = voltBar.getBoundingClientRect();
+    const rect = kelvBar.getBoundingClientRect();
 
     if (window.innerWidth > 768) {
       // Desktop (Vertical)
       const y = Math.min(Math.max(clientY - rect.top, 0), rect.height);
       const percent = 1 - y / rect.height;
-      const voltage = Math.round(minVolt + percent * (maxVolt - minVolt));
+      const kelvin = Math.round(minK + percent * (maxK - minK));
 
-      voltKnob.style.bottom = `${rect.height - y - 14}px`;
-      voltFill.style.height = `${percent * 100}%`;
-      updateVoltage(voltage);
+      kelvKnob.style.bottom = `${rect.height - y - 14}px`;
+      kelvFill.style.height = `${percent * 100}%`;
+      updateKelvin(kelvin);
     } else {
       // Mobile (Horizontal)
       const x = Math.min(Math.max(clientX - rect.left, 0), rect.width);
       const percent = x / rect.width;
-      const voltage = Math.round(minVolt + percent * (maxVolt - minVolt));
+      const kelvin = Math.round(minK + percent * (maxK - minK));
 
-      voltKnob.style.left = `${percent * 100}%`;
-      voltFill.style.width = `${percent * 100}%`;
-      updateVoltage(voltage);
+      kelvKnob.style.left = `${percent * 100}%`;
+      kelvFill.style.width = `${percent * 100}%`;
+      updateKelvin(kelvin);
     }
   }
 
-  function updateVoltage(voltage) {
-    const range = ranges.find(r => voltage >= r.min && voltage <= r.max);
+  function updateKelvin(kelvin) {
+    kelvValue.textContent = `${kelvin}K`;
+
+    const range = kelvinRanges.find(r => kelvin >= r.min && kelvin <= r.max);
     if (range) {
-      voltCategory.textContent = `${voltage}V — ${range.name}`;
-      voltImage.style.backgroundImage = `url('${range.image}')`;
+      kelvImage.style.backgroundImage = `url('${range.image}')`;
     }
   }
 </script>
 
 
 
-<!-- animinew  start-->
-<!-- LIGHT SOLUTIONS SLIDER START -->
-<div class="lightsanimi-section">
-  <!-- Background images -->
+
+
+<!-- <div class="lightsanimi-section">
+
   <div class="lightsanimi-bg active" style="background-image: url('img/wd.png');"></div>
   <div class="lightsanimi-bg" style="background-image: url('img/wd.png');"></div>
   <div class="lightsanimi-bg" style="background-image: url('img/wd.png');"></div>
@@ -1027,10 +1027,9 @@
   <div class="lightsanimi-bg" style="background-image: url('img/wd.png);"></div>
   <div class="lightsanimi-bg" style="background-image: url('img/wd.png');"></div>
 
-  <!-- Gradient overlay -->
+ 
   <div class="lightsanimi-overlay"></div>
 
-  <!-- Menu -->
   <div class="lightsanimi-menu">
     <ul>
       <li class="active" data-index="0">Indoor</li>
@@ -1044,7 +1043,7 @@
 </div>
 
 <style>
-  /* NAMESPACE: lightsanimi */
+
   .lightsanimi-section {
     position: relative;
     width: 100%;
@@ -1174,12 +1173,12 @@
       startAutoPlay();
     }
 
-    // Init
+   
     showSlide(0);
     startAutoPlay();
   })();
-</script>
-<!-- LIGHT SOLUTIONS SLIDER END -->
+</script> -->
+
 
 
 <!-- illumis start -->
@@ -1194,7 +1193,7 @@
   .illumis {
     height: 100vh;
     width: 100%;
-    background: url("img/BlackGray.png") no-repeat right center;
+    background: url("img/lighting/lightingsectwo/3.1.png") no-repeat right center;
     background-size: cover;
     position: relative;
     display: flex;
