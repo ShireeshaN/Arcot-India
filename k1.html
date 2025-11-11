@@ -1,26 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <title>Arcot Industries Lighting Products</title>
+  <meta charset="utf-8">
+  <title>Arcot Industries Private Limited</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Arcot Industries Hyderabad, Industrial Power Solutions, Smart City India, Automation Systems, Lighting Company India, Solar Power, Engineering Solutions Hyderabad">
+  <meta name="description" content="Arcot Industries delivers cutting-edge solutions in Power, Energy, Lighting, Automation, Smart City Infrastructure, and R&D across India.">
+  <link rel="icon" href="img/fevi.png" type="image/x-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome (latest) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Bootstrap CSS (latest) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons (latest) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Custom CSS -->
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="css/segments.css" rel="stylesheet">
+
+  <!-- Performance-optimized Libraries -->
+  <link rel="stylesheet" href="lib/animate/animate.min.css" media="print" onload="this.media='all'">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+</head>
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+           
+ 
+<!-- HEADER START -->
+
+<header class="main-header">
+  <div class="header-wrap position-relative">
+    <a href="index.html">
+      <img src="img/logos.webp" alt="Logo" class="logo" loading="lazy">
+    </a>
+    <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
+    <nav class="navmenu" id="mainNav">
+      <ul class="mb-0">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a></li>
+        <li><a href="solution.html">Solutions</a></li>
+<li class="dropdown">
+  <a href="#" onclick="toggleDropdown(event)">R&D <i class="bi bi-chevron-down ms-1"></i></a>
+  <ul class="dropdown-menu">
+    <li><a href="smart-pole.html">Smart Pole</a></li>
+    <li><a href="#">Smart Bollard</a></li>
+    <li><a href="#">Smart Conference Table</a></li>
+    <li><a href="#">Smart Window Leaf AC</a></li>
+    <li><a href="#">Smart Bar Counter</a></li>
+  </ul>
+</li>
+
+        <li><a href="applications.html">Applications</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Mega Menu -->
+  <div id="megaMenu" class="mega-menu">
+    <div class="row">
+      <div class="underline"></div>
+      <div class="service-submenus d-flex flex-wrap">
+        <div class="service-group">
+          <h6>Energy</h6>
+          <ul>
+            <li><a href="#">Solar</a></li>
+            <li><a href="#">Wind</a></li>
+            <li><a href="#">Biomass</a></li>
+            <li><a href="#">Hydel Power</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>Residential</h6>
+          <ul>
+            <li><a href="transmission.html">Transmission</a></li>
+            <li><a href="#">Distribution</a></li>
+            <li><a href="#">Low Tension</a></li>
+            <li><a href="#">High Tension</a></li>
+            <li><a href="#">Panel Boards</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6><a href="lighting.html">Lighting</a></h6>
+          <ul>
+            <li><a href="residential-lighting.html">Residential</a></li>
+            <li><a href="facade-lighting.html">Facade</a></li>
+            <li><a href="commercial-lighting.html">Commercial</a></li>
+            <li><a href="industrial-lighting.html">Industrial</a></li>
+            <li><a href="#">Street</a></li>
+            <li><a href="#">Park</a></li>
+            <li><a href="#">Stadium</a></li>
+            <li><a href="#">Hospital</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>Automation</h6>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Commercial</a></li>
+            <li><a href="#">Industrial</a></li>
+            <li><a href="#">Hospital</a></li>
+            <li><a href="#">IoT Based Automation</a></li>
+            <li><a href="#">Hotel</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>R & D</h6>
+          <ul>
+            <li><a href="smart-pole.html">Smart Pole</a></li>
+            <li><a href="#">Smart Conference Hall</a></li>
+            <li><a href="#">Smart Bollards</a></li>
+            <li><a href="#">Smart Bar Counter</a></li>
+            <li><a href="#">Smart Window Leaf AC</a></li>
+          </ul>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</header>
+<!-- HEADER END -->
+
+
+<body>
   <style>
     body {
       font-family: "Poppins", sans-serif;
       margin: 0;
       background: #f8f8f8;
+      color: #333;
     }
 
+    /* ===== Horizontal Filter Table ===== */
+    .top-filter-table {
+      width: 100%;
+      display: table;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid #ddd;
+      margin-top: 60px;
+    }
+
+    .top-filter-table .filter-col {
+      display: table-cell;
+      border-right: 1px solid #ddd;
+      vertical-align: top;
+      padding: 10px 15px;
+      text-align: left;
+    }
+
+    .top-filter-table .filter-col:last-child {
+      border-right: none;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .filter-heading {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      color: #111;
+    }
+
+    .filter-options {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .filter-options span {
+      font-size: 13px;
+      color: #333;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .filter-options span:hover,
+    .filter-options span.active {
+      color: #000;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .reset-btn {
+      background: none;
+      border: 1px solid #999;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 13px;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .reset-btn:hover {
+      background: #333;
+      color: #fff;
+    }
+
+    /* ===== Layout ===== */
     .lighting-container {
       display: flex;
       min-height: 100vh;
     }
 
-    /* Sidebar */
     .sidebar {
       width: 260px;
       background: #fff;
@@ -39,10 +245,6 @@
     .category {
       list-style: none;
       padding-left: 0;
-    }
-
-    .category li {
-      margin-bottom: 8px;
     }
 
     .category button {
@@ -84,7 +286,16 @@
       display: none;
     }
 
-    /* Product Section */
+    .submenu li a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .submenu li a:hover {
+      color: #000;
+    }
+
     .product-section {
       flex: 1;
       padding: 40px 20px;
@@ -93,66 +304,13 @@
       box-sizing: border-box;
     }
 
-    /* FILTER BOXES */
-    .filters-row {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 15px;
-      overflow-x: auto;
-      padding-bottom: 10px;
-      margin-bottom: 25px;
-    }
-
-    .filter-box {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      min-width: 150px;
-      flex-shrink: 0;
-      padding: 15px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
-
-    .filter-box h4 {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: #222;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 5px;
-    }
-
-    .filter-box button {
-      display: block;
-      width: 100%;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      padding: 5px;
-      font-size: 13px;
-      margin-bottom: 5px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .filter-box button:hover {
-      background: #f2f2f2;
-    }
-
-    .filter-box button.active {
-      background: #00bcd4;
-      color: #fff;
-      border-color: #00bcd4;
-    }
-
-    /* PRODUCT GRID */
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 35px;
       width: 100%;
       max-width: 1300px;
-      margin: auto;
+      margin: 0;
     }
 
     .product-card {
@@ -203,170 +361,378 @@
       background: linear-gradient(140deg, #ffffff 55%, #e6e6e6 45%);
     }
 
-    @media (max-width: 768px) {
-      .filters-row {
-        flex-wrap: nowrap;
+    @media (max-width: 1024px) {
+      .top-filter-table {
+        display: block;
         overflow-x: auto;
+        white-space: nowrap;
+      }
+      .top-filter-table .filter-col {
+        display: inline-block;
+        vertical-align: top;
+        border-right: 1px solid #ddd;
+      }
+      .sidebar {
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+      }
+      .lighting-container {
+        flex-direction: column;
       }
     }
   </style>
-</head>
 
-<body>
+  <!-- ===== Top Filter Bar ===== -->
+  <div class="top-filter-table">
+    <div class="filter-col">
+      <div class="filter-heading">Type</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('type','indoor')">Indoor</span>
+        <span onclick="filterAttribute('type','outdoor')">Outdoor</span>
+      </div>
+    </div>
+    <div class="filter-col">
+      <div class="filter-heading">Mounting</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('mount','ceiling')">Ceiling</span>
+        <span onclick="filterAttribute('mount','wall')">Wall</span>
+      </div>
+    </div>
+    <div class="filter-col">
+      <div class="filter-heading">IP Rating</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('ip','ip20')">IP20</span>
+        <span onclick="filterAttribute('ip','ip65')">IP65</span>
+      </div>
+    </div>
+    <div class="filter-col">
+      <div class="filter-heading">Wattage</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('watt','10w')">10W</span>
+        <span onclick="filterAttribute('watt','20w')">20W</span>
+      </div>
+    </div>
+    <div class="filter-col">
+      <div class="filter-heading">Control</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('control','dali')">DALI</span>
+        <span onclick="filterAttribute('control','onoff')">On/Off</span>
+      </div>
+    </div>
+    <div class="filter-col">
+      <div class="filter-heading">Application</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('app','residential')">Residential</span>
+        <span onclick="filterAttribute('app','commercial')">Commercial</span>
+      </div>
+    </div>
+    <div class="filter-col">
+      <div class="filter-heading">Body Color</div>
+      <div class="filter-options">
+        <span onclick="filterAttribute('color','white')">White</span>
+        <span onclick="filterAttribute('color','black')">Black</span>
+      </div>
+    </div>
+    <div class="filter-col">
+      <button class="reset-btn" onclick="resetFilters()">Reset</button>
+    </div>
+  </div>
 
+  <!-- ===== Sidebar + Products ===== -->
   <div class="lighting-container">
-
-    <!-- Sidebar -->
     <aside class="sidebar">
       <h2>Lighting</h2>
       <ul class="category">
         <li><button onclick="filterProducts('all', this)">All</button></li>
+        <li><button onclick="toggleMenu(this); filterProducts('cob', this)">COB Lights</button>
+          <ul class="submenu"><li><a href="#">COB Downlight</a></li><li><a href="#">COB Surface</a></li></ul>
+        </li>
+        <li><button onclick="toggleMenu(this); filterProducts('surface', this)">Surface Lights</button></li>
         <li><button onclick="toggleMenu(this); filterProducts('track', this)">Track Lights</button></li>
         <li><button onclick="toggleMenu(this); filterProducts('magnetic', this)">Magnetic Track Lights</button></li>
         <li><button onclick="toggleMenu(this); filterProducts('slimtrack', this)">Slim Track Lights</button></li>
-        <li><button onclick="toggleMenu(this); filterProducts('cob', this)">COB Lights</button></li>
-        <li><button onclick="toggleMenu(this); filterProducts('surface', this)">Surface Lights</button></li>
       </ul>
     </aside>
 
-    <!-- Product Section -->
     <div class="product-section">
-
-      <!-- FILTER BOXES -->
-      <div class="filters-row">
-
-        <div class="filter-box">
-          <h4>Type</h4>
-          <button onclick="filterAttribute('type','indoor')">Indoor</button>
-          <button onclick="filterAttribute('type','outdoor')">Outdoor</button>
+      <div class="product-grid" id="productGrid">
+        <div class="product-card" data-category="track" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="10w" data-control="dali" data-app="commercial" data-color="white">
+          <img src="img/productsimgs/5.png" alt="Track Type 1" /><h3>Track Type 1</h3>
         </div>
-
-        <div class="filter-box">
-          <h4>Mounting</h4>
-          <button onclick="filterAttribute('mount','ceiling')">Ceiling</button>
-          <button onclick="filterAttribute('mount','recessed')">Recessed</button>
-          <button onclick="filterAttribute('mount','surface')">Surface</button>
+        <div class="product-card" data-category="magnetic" data-type="outdoor" data-mount="wall" data-ip="ip65" data-watt="20w" data-control="onoff" data-app="residential" data-color="black">
+          <img src="img/productsimgs/magnetic1.png" alt="Magnetic Track 1" /><h3>Magnetic Track 1</h3>
         </div>
-
-        <div class="filter-box">
-          <h4>IP Rating</h4>
-          <button onclick="filterAttribute('ip','ip20')">IP20</button>
-          <button onclick="filterAttribute('ip','ip65')">IP65</button>
-        </div>
-
-        <div class="filter-box">
-          <h4>Wattage</h4>
-          <button onclick="filterAttribute('watt','10w')">10W</button>
-          <button onclick="filterAttribute('watt','20w')">20W</button>
-          <button onclick="filterAttribute('watt','30w')">30W</button>
-        </div>
-
-        <div class="filter-box">
-          <h4>Control / Protocol</h4>
-          <button onclick="filterAttribute('control','dali')">DALI</button>
-          <button onclick="filterAttribute('control','onoff')">On/Off</button>
-          <button onclick="filterAttribute('control','bluetooth')">Bluetooth</button>
-        </div>
-
-        <div class="filter-box">
-          <h4>Application</h4>
-          <button onclick="filterAttribute('app','residential')">Residential</button>
-          <button onclick="filterAttribute('app','commercial')">Commercial</button>
-          <button onclick="filterAttribute('app','industrial')">Industrial</button>
-        </div>
-
-        <div class="filter-box">
-          <h4>Body Color</h4>
-          <button onclick="filterAttribute('color','white')">White</button>
-          <button onclick="filterAttribute('color','black')">Black</button>
-          <button onclick="filterAttribute('color','silver')">Silver</button>
+        <div class="product-card" data-category="slimtrack" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="10w" data-control="dali" data-app="commercial" data-color="white">
+          <img src="img/productsimgs/slimtrack1.png" alt="Slim Track 1" /><h3>Slim Track 1</h3>
         </div>
       </div>
-
-      <!-- PRODUCT GRID -->
-      <div class="product-grid">
-        <div class="product-card" data-category="track" data-type="indoor" data-mount="ceiling" data-ip="ip20"
-          data-watt="10w" data-control="dali" data-app="commercial" data-color="white">
-          <img src="img/productsimgs/5.png" alt="Track Type 1">
-          <h3>Track Type 1</h3>
-        </div>
-
-        <div class="product-card" data-category="magnetic" data-type="outdoor" data-mount="surface" data-ip="ip65"
-          data-watt="20w" data-control="onoff" data-app="residential" data-color="black">
-          <img src="img/productsimgs/magnetic1.png" alt="Magnetic Track 1">
-          <h3>Magnetic Track 1</h3>
-        </div>
-
-        <div class="product-card" data-category="slimtrack" data-type="indoor" data-mount="recessed" data-ip="ip20"
-          data-watt="10w" data-control="dali" data-app="commercial" data-color="silver">
-          <img src="img/productsimgs/slimtrack1.png" alt="Slim Track 1">
-          <h3>Slim Track 1</h3>
-        </div>
-
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="surface" data-ip="ip20"
-          data-watt="20w" data-control="bluetooth" data-app="residential" data-color="white">
-          <img src="img/productsimgs/1.png" alt="COB Downlight">
-          <h3>COB Downlight</h3>
-        </div>
-
-        <div class="product-card" data-category="surface" data-type="outdoor" data-mount="ceiling" data-ip="ip65"
-          data-watt="30w" data-control="onoff" data-app="industrial" data-color="black">
-          <img src="img/productsimgs/3.png" alt="Surface Round">
-          <h3>Surface Round</h3>
-        </div>
-      </div>
-
     </div>
   </div>
 
   <script>
-    let activeFilters = {};
+    const activeFilters = {};
 
     function toggleMenu(btn) {
       const submenu = btn.nextElementSibling;
-      const allMenus = document.querySelectorAll(".submenu");
-      allMenus.forEach(m => { if (m !== submenu) m.style.display = "none"; });
-      if (submenu) submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+      document.querySelectorAll(".submenu").forEach(m => m !== submenu && (m.style.display = "none"));
+      submenu && (submenu.style.display = submenu.style.display === "block" ? "none" : "block");
     }
 
     function filterProducts(category, btn) {
       const cards = document.querySelectorAll(".product-card");
-      const buttons = document.querySelectorAll(".category > li > button");
-      buttons.forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".category > li > button").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
-
       cards.forEach(c => {
         let show = category === "all" || c.dataset.category === category;
-        for (let key in activeFilters) {
-          if (c.dataset[key] !== activeFilters[key]) show = false;
-        }
+        for (let key in activeFilters) if (c.dataset[key] !== activeFilters[key]) show = false;
         c.style.display = show ? "flex" : "none";
       });
     }
 
     function filterAttribute(attr, value) {
-      // toggle filter
       if (activeFilters[attr] === value) delete activeFilters[attr];
       else activeFilters[attr] = value;
-
-      const cards = document.querySelectorAll(".product-card");
       const activeCategoryBtn = document.querySelector(".category button.active");
       const activeCategory = activeCategoryBtn ? activeCategoryBtn.textContent.toLowerCase().replace(/ /g, '') : "all";
-
-      cards.forEach(card => {
-        let show = activeCategory === "all" || card.dataset.category.toLowerCase() === activeCategory;
-        for (let key in activeFilters) {
-          if (card.dataset[key] !== activeFilters[key]) show = false;
-        }
+      document.querySelectorAll(".product-card").forEach(card => {
+        let show = activeCategory === "all" || card.dataset.category === activeCategory;
+        for (let key in activeFilters) if (card.dataset[key] !== activeFilters[key]) show = false;
         card.style.display = show ? "flex" : "none";
       });
+      document.querySelectorAll(".filter-options span").forEach(s => s.classList.remove("active"));
+      Object.entries(activeFilters).forEach(([k,v]) => {
+        document.querySelectorAll(`.filter-options span[onclick="filterAttribute('${k}','${v}')"]`).forEach(s => s.classList.add("active"));
+      });
+    }
 
-      // highlight active buttons
-      document.querySelectorAll('.filter-box button').forEach(b => b.classList.remove('active'));
-      Object.entries(activeFilters).forEach(([k, v]) => {
-        document.querySelectorAll(`.filter-box button[onclick="filterAttribute('${k}','${v}')"]`).forEach(b => b.classList.add('active'));
+    function resetFilters() {
+      for (let key in activeFilters) delete activeFilters[key];
+      document.querySelectorAll(".filter-options span").forEach(s => s.classList.remove("active"));
+      const activeCategoryBtn = document.querySelector(".category button.active");
+      const activeCategory = activeCategoryBtn ? activeCategoryBtn.textContent.toLowerCase().replace(/ /g, '') : "all";
+      document.querySelectorAll(".product-card").forEach(card => {
+        let show = activeCategory === "all" || card.dataset.category === activeCategory;
+        card.style.display = show ? "flex" : "none";
       });
     }
   </script>
+
+  <script>
+function toggleMenu(btn) {
+  let submenu = btn.parentElement.querySelector(".submenu");
+  if (!submenu) return;
+
+  // Close other open submenus
+  document.querySelectorAll(".submenu").forEach(m => {
+    if (m !== submenu) m.style.display = "none";
+  });
+
+  // Toggle this one
+  submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+}
+</script>
+
+     <!-- Footer Start -->
+<div class="tricky-footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
+  <div class="container py-5">
+    <div class="row g-5">
+
+      <!-- Column 1: Quick Links -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About us</a>
+          <a href="solution.html">Solutions</a>
+          <a href="applications.html">Applications</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="smart-pole.html">R & D</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <!-- Column 2: Services -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Services</h4>
+          <a href="#">Energy</a>
+          <a href="#">Power</a>
+          <a href="#">Lighting</a>
+          <a href="#">Automation</a>
+          <a href="#">Smart City</a>
+          <a href="#">R & D</a>
+        </div>
+      </div>
+
+      <!-- Column 3: Applications -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Applications</h4>
+          <a href="#">Energy Generation</a>
+          <a href="#">Power</a>
+          <a href="#">Lighting</a>
+          <a href="#">Indoor Lighting</a>
+          <a href="#">Automation</a>
+          <a href="#">Smart City</a>
+          <a href="#">R & D</a>
+        </div>
+      </div>
+
+      <!-- Column 4: Contact Info -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Contact Info</h4>
+          <a href="#"><i class="fa fa-map-marker-alt text-secondary me-2"></i> Apurupa Towers, Road No:36, Jubilee Hills, Hyderabad, Telangana-500033</a>
+          <a href="mailto:info@arcotindia.com"><i class="fas fa-envelope text-secondary me-2"></i> info@arcotindia.com</a>
+          <a href="tel:+919848189899"><i class="fas fa-phone text-secondary me-2"></i> +91 98481 89899</a>
+        </div>
+      </div>
+
+      <!-- Social Media -->
+      <div class="col-lg-12 mt-4">
+        <div class="tricky-social-icons d-flex flex-wrap justify-content-start gap-3">
+          <a class="tricky-social-btn" href="#"><i class="fab fa-facebook-f"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-instagram"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-youtube"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-pinterest-p"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-whatsapp"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-telegram-plane"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-reddit-alien"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-threads"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+ /* Footer Wrapper */
+.tricky-footer {
+  background: #1e2226;
+  color: #ccc;
+  font-size: 15px;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 300; /* light weight */
+  letter-spacing: 1px;
+  
+}
+
+/* Footer Headings */
+.tricky-footer-item h4,
+.tricky-footer-item h5 {
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+/* Footer Links */
+.tricky-footer-item a {
+  color: #bbb;
+  margin-bottom: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  font-weight: 300;
+  font-size: 12px;
+}
+.tricky-footer-item a:hover {
+  color: #00bcd4;
+  padding-left: 5px;
+}
+
+/* Social Media Icons */
+.tricky-social-icons .tricky-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  color: #8f8c8c;
+  font-size: 13px;
+  transition: 0.3s;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 300;
+}
+.tricky-social-icons .tricky-social-btn:hover {
+  background: #434444;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Copyright Section */
+.tricky-footer-bottom {
+  border-top: 1px solid #333;
+  color: #aaa;
+  font-size: 14px;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.tricky-footer-bottom a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+}
+.tricky-footer-bottom a:hover {
+  color: #00bcd4;
+}
+</style>
+<!-- Footer End -->
+
+<!-- Copyright Start -->
+<div class="tricky-footer-bottom py-4 bg-dark">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-6 text-center text-md-start mb-md-0">
+        <span class="text-body">
+          <a href="https://arcotindia.com/" class="border-bottom text-white">
+            <i class="fas fa-copyright text-light me-2"></i>ARCOT All Rights Reserved.
+          </a>
+        </span>
+      </div>
+      <!-- <div class="col-md-6 text-center text-md-end text-body">
+        Designed By <a class="border-bottom text-white" href="https://arcotindia.com/">ARCOT</a>
+      </div> -->
+    </div>
+  </div>
+</div>
+<!-- Copyright End -->
+         
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>  
+
+        
+       <!-- jQuery - must load first -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<!-- Bootstrap & other libraries -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="lib/wow/wow.min.js" defer></script>
+<script src="lib/easing/easing.min.js" defer></script>
+<script src="lib/waypoints/waypoints.min.js" defer></script>
+<script src="lib/owlcarousel/owl.carousel.min.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<!-- AOS with defer-safe init -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    AOS.init();
+  });
+</script>
+
+ <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </body>
 </html>
