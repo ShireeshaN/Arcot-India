@@ -176,68 +176,85 @@
 <!-- ===== Lighting Section (Place this between your Navbar & Footer) ===== -->
 <section class="lighting-wrapper">
 
-  <!-- ===== Top Filter Table ===== -->
-  <div class="top-filter-table">
-    <div class="filter-col">
-      <div class="filter-heading">Type</div>
-      <div class="filter-options">
-        <span onclick="filterAttribute('type','indoor')">Indoor</span>
-        <span onclick="filterAttribute('type','outdoor')">Outdoor</span>
-      </div>
-    </div>
-
-    <div class="filter-col">
-      <div class="filter-heading">Mounting</div>
-      <div class="filter-options">
-        <span onclick="filterAttribute('mount','ceiling')">Ceiling</span>
-        <span onclick="filterAttribute('mount','wall')">Wall</span>
-      </div>
-    </div>
-
-    <div class="filter-col">
-      <div class="filter-heading">IP Rating</div>
-      <div class="filter-options">
-        <span onclick="filterAttribute('ip','ip20')">IP20</span>
-        <span onclick="filterAttribute('ip','ip65')">IP65</span>
-      </div>
-    </div>
-
-    <div class="filter-col">
-      <div class="filter-heading">Wattage</div>
-      <div class="filter-options">
-        <span onclick="filterAttribute('watt','10w')">10W</span>
-        <span onclick="filterAttribute('watt','20w')">20W</span>
-      </div>
-    </div>
-
-    <div class="filter-col">
-      <div class="filter-heading">Control</div>
-      <div class="filter-options">
-        <span onclick="filterAttribute('control','dali')">DALI</span>
-        <span onclick="filterAttribute('control','onoff')">On/Off</span>
-      </div>
-    </div>
-
-    <div class="filter-col">
-      <div class="filter-heading">Application</div>
-      <div class="filter-options">
-        <span onclick="filterAttribute('app','residential')">Residential</span>
-        <span onclick="filterAttribute('app','commercial')">Commercial</span>
-      </div>
-    </div>
-
-    <div class="filter-col">
-      <div class="filter-heading">Body Color</div>
-      <div class="filter-options">
-        <span onclick="filterAttribute('color','white')">White</span>
-        <span onclick="filterAttribute('color','black')">Black</span>
-      </div>
-    </div>
-
-    <div class="filter-col text-center">
-      <button class="reset-btn" onclick="resetFilters()">Reset</button>
-    </div>
+<!-- ===== Top Filter Dropdowns ===== -->
+<div class="top-filter-dropdowns">
+  <div class="filter-group">
+    <label for="typeFilter">Type</label>
+    <select id="typeFilter" onchange="filterDropdown('type', this.value)">
+      <option value="">All</option>
+      <option value="indoor">Indoor</option>
+      <option value="outdoor">Outdoor</option>
+    </select>
   </div>
+
+  <div class="filter-group">
+    <label for="mountFilter">Mounting</label>
+    <select id="mountFilter" onchange="filterDropdown('mount', this.value)">
+      <option value="">All</option>
+      <option value="ceiling"> Concealed</option>
+      <option value="wall">Surface</option>
+      <option value="pendant">Pendant</option>
+      <option value="track 2-line">Track 2-Line</option>
+      <option value="track 3-line">Track 3-Line</option>
+      <option value="magnetic48v">Magnetic 48V</option>
+      <option value="recessedground">Recessed Ground</option>
+      <option value="spikemount">Spike Mount</option>
+      <option value="bollard">Bollard</option>
+      <option value="underwater">Underwater</option>
+      <option value="flexiblesuspendedtrack">Flexible Suspended Track</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label for="ipFilter">IP Rating</label>
+    <select id="ipFilter" onchange="filterDropdown('ip', this.value)">
+      <option value="">All</option>
+      <option value="ip20">IP20</option>
+      <option value="ip65">IP65</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label for="wattFilter">Wattage</label>
+    <select id="wattFilter" onchange="filterDropdown('watt', this.value)">
+      <option value="">All</option>
+      <option value="10w">10W</option>
+      <option value="20w">20W</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label for="controlFilter">Control</label>
+    <select id="controlFilter" onchange="filterDropdown('control', this.value)">
+      <option value="">All</option>
+      <option value="dali">DALI</option>
+      <option value="onoff">On/Off</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label for="appFilter">Application</label>
+    <select id="appFilter" onchange="filterDropdown('app', this.value)">
+      <option value="">All</option>
+      <option value="residential">Residential</option>
+      <option value="commercial">Commercial</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label for="colorFilter">Body Color</label>
+    <select id="colorFilter" onchange="filterDropdown('color', this.value)">
+      <option value="">All</option>
+      <option value="white">White</option>
+      <option value="black">Black</option>
+    </select>
+  </div>
+
+  <div class="filter-group text-center">
+    <button class="reset-btn" onclick="resetFilters()">Reset</button>
+  </div>
+</div>
+
 
  <div class="lighting-container">
 
@@ -444,6 +461,55 @@
 
 <!-- ===== CSS ===== -->
 <style>
+
+  .top-filter-dropdowns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px 20px;
+  margin-top: 60px;
+  gap: 15px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 120px;
+}
+
+.filter-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+}
+
+.filter-group select {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  /* border-radius: 4px; */
+  font-size: 13px;
+  color: #333;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.filter-group select:hover,
+.filter-group select:focus {
+  border-color: #000;
+}
+
+@media (max-width: 768px) {
+  .top-filter-dropdowns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
 .lighting-wrapper {
   background: #f8f8f8;
   padding: 0;
@@ -504,9 +570,9 @@
 
 .reset-btn {
   background: none;
-  border: 1px solid #999;
+  border:  solid #999;
   padding: 5px 12px;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   font-size: 13px;
   color: #333;
   cursor: pointer;
@@ -581,7 +647,7 @@
       color: #333;
       padding: 10px 12px;
       cursor: pointer;
-      border-radius: 6px;
+      /* border-radius: 6px; */
       transition: all 0.3s ease;
     }
 
@@ -645,10 +711,10 @@
     }
 
     .product-filters .filter-group button {
-      border: 1px solid #ddd;
+      border: solid #ddd;
       background: #fff;
       padding: 5px 10px;
-      border-radius: 5px;
+      /* border-radius: 5px; */
       cursor: pointer;
       transition: 0.3s;
       font-size: 13px;
@@ -672,7 +738,7 @@
     .product-card {
       position: relative;
       background: #e6e6e6;
-      border-radius: 14px;
+      /* border-radius: 14px; */
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -1115,6 +1181,30 @@ function filterAttribute(attr, value) {
 function toggleSidebar() {
   document.querySelector(".category").classList.toggle("show");
 }
+
+function filterDropdown(attr, value) {
+  if (value === "") delete activeFilters[attr];
+  else activeFilters[attr] = value;
+  filterProducts(activeCategory);
+}
+
+function resetFilters() {
+  // Clear all active filters
+  activeFilters = {};
+
+  // Reset dropdown selections
+  document.querySelectorAll(".top-filter-dropdowns select").forEach(select => {
+    select.value = "";
+  });
+
+  // Reset category filter to "all"
+  activeCategory = "all";
+
+  // Show all products again
+  filterProducts("all");
+}
+
+
 </script>
 
 
