@@ -1,290 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lighting Products</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Inter", "Poppins", sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lighting Slider – Arcot Style</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+<style>
+  * {margin:0; padding:0; box-sizing:border-box;}
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #000;
+    overflow-x: hidden;
+  }
 
-    body {
-      display: flex;
-      height: 100vh;
-      background: #f4f4f4;
-      color: #111;
-    }
+  /* ===== SLIDER CONTAINER ===== */
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
 
-    /* Sidebar */
-    .sidebar {
-      width: 270px;
-      background: #fff;
-      border-right: 1px solid #ddd;
-      display: flex;
+  .slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: flex-start; /* Move text to top */
+    justify-content: flex-start;
+    padding: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+
+  .slide.active {
+    opacity: 1;
+  }
+
+  /* ===== LEFT VERTICAL HEADING ===== */
+  .vertical-heading {
+    position: absolute;
+    left: 20px;
+    bottom: 10%; /* Move to bottom left corner for design balance */
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: left top;
+    color: #a39f9f;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeSlideUp 1.8s ease forwards;
+    animation-delay: 0.5s;
+  }
+
+  /* ===== TEXT CONTENT ===== */
+  .text-content {
+    max-width: 450px;
+    color: #fff;
+    z-index: 2;
+    text-align: start;
+    margin-top: 100px; /* Padding from top */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 1.5s ease forwards;
+    animation-delay: 1s;
+  }
+
+  .text-content p {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: #cfcfcf;
+    letter-spacing: 1px;
+  }
+
+  /* ===== TEXT ANIMATION ===== */
+  @keyframes fadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .slider { height: 60vh; }
+    .slide {
       flex-direction: column;
-      padding: 40px 0;
-      align-items: flex-start;
-      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.03);
-      overflow-y: auto;
-    }
-
-    .sidebar h2 {
-      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 40px 20px;
       text-align: center;
-      font-size: 1.3rem;
-      letter-spacing: 1px;
-      color: #111;
-      margin-bottom: 30px;
-      font-weight: 600;
     }
-
-    .menu-item {
-      width: 100%;
-      padding: 14px 30px;
-      cursor: pointer;
-      position: relative;
-      font-size: 1rem;
-      letter-spacing: 0.3px;
-      color: #333;
-      transition: all 0.3s ease;
+    .vertical-heading {display: none;}
+    .text-content {
+      max-width: 90%;
+      margin: 80px auto 0;
+      text-align: center;
     }
-
-    .menu-item:hover {
-      background: #f2f2f2;
-    }
-
-    .menu-item::after {
-      content: "➜";
-      position: absolute;
-      right: 25px;
-      opacity: 0;
-      transform: translateX(-10px);
-      transition: all 0.3s ease;
-      color: #555;
-    }
-
-    .menu-item:hover::after,
-    .menu-item.active::after {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .menu-item.active {
-      background: #e9e9e9;
-      color: #000;
-      font-weight: 600;
-    }
-
-    /* Submenu */
-    .submenu {
-      width: 100%;
-      background: #fafafa;
-      display: none;
-      flex-direction: column;
-      padding-left: 50px;
-      border-left: 2px solid #e0e0e0;
-    }
-
-    .submenu.show {
-      display: flex;
-      animation: dropdown 0.3s ease;
-    }
-
-    @keyframes dropdown {
-      from { opacity: 0; transform: translateY(-5px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .submenu-item {
-      padding: 10px 0;
-      cursor: pointer;
-      color: #555;
-      font-size: 0.95rem;
-      transition: all 0.2s ease;
-    }
-
-    .submenu-item:hover {
-      color: #000;
-      text-decoration: underline;
-    }
-
-    /* Right side container */
-    .content {
-      flex: 1;
-      padding: 40px;
-      background: #f8f8f8;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      overflow-y: auto;
-    }
-
-    /* Grid layout for product boxes */
-    .lightsegproducts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 25px;
-      width: 100%;
-      max-width: 1600px;
-    }
-
-    .lightsegproducts-box {
-      position: relative;
-      background: #e2e2e2;
-      height: 350px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      border-radius: 10px;
-      transition: all 0.5s ease;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-
-    .lightsegproducts-box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Floating animation for the icon */
-    @keyframes floatIcon {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-
-    .lightsegproducts-icon {
-      width: 180px;
-      height: auto;
-      animation: floatIcon 3s ease-in-out infinite;
-      transition: transform 0.6s ease, opacity 0.6s ease;
-      z-index: 1;
-    }
-
-    .lightsegproducts-box:hover .lightsegproducts-icon {
-      transform: translateY(-20px) scale(1.05);
-      opacity: 0.7;
-    }
-
-    /* Overlay style (shows product name only) */
-    .lightsegproducts-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, #ffffff 50%, #f2f2f2 50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.6s ease;
-    }
-
-    .lightsegproducts-box:hover .lightsegproducts-overlay {
-      opacity: 1;
-    }
-
-    .lightsegproducts-overlay h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #111;
-      border-bottom: 2px solid #111;
-      padding-bottom: 4px;
-      letter-spacing: 0.5px;
-    }
-
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #ccc;
-      border-radius: 3px;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <div class="sidebar">
-    <h2>Lighting</h2>
 
-    <div class="menu-item active" onclick="showProducts('all', this)">All</div>
+<div class="slider">
 
-    <div class="menu-item" onclick="toggleSubmenu(this)">COB Lights</div>
-    <div class="submenu">
-      <div class="submenu-item" onclick="navigateTo('COB Panel Light')">Panel Light</div>
-      <div class="submenu-item" onclick="navigateTo('COB Downlight')">Downlight</div>
-      <div class="submenu-item" onclick="navigateTo('COB Spotlight')">Spotlight</div>
-    </div>
-
-    <div class="menu-item" onclick="toggleSubmenu(this)">Surface Lights</div>
-    <div class="submenu">
-      <div class="submenu-item" onclick="navigateTo('Surface Round Light')">Round</div>
-      <div class="submenu-item" onclick="navigateTo('Surface Square Light')">Square</div>
-    </div>
-
-    <div class="menu-item" onclick="toggleSubmenu(this)">Track Lights</div>
-    <div class="submenu">
-      <div class="submenu-item" onclick="navigateTo('Track Linear')">Linear</div>
-      <div class="submenu-item" onclick="navigateTo('Track Adjustable')">Adjustable</div>
+  <!-- Slide 1 -->
+  <div class="slide active" style="background-image: url('img/livingroomlights/pendentanimiation.png');">
+    <div class="vertical-heading">Elegance in Suspension</div>
+    <div class="text-content">
+      <p>Suspended lights that blend design and illumination — creating inspiring spaces with effortless style.</p>
     </div>
   </div>
 
-  <div class="content">
-    <div class="lightsegproducts-grid" id="productContainer"></div>
-  </div>
+</div>
 
-  <script>
-    const productContainer = document.getElementById("productContainer");
-
-    function toggleSubmenu(element) {
-      document.querySelectorAll(".menu-item").forEach(item => item.classList.remove("active"));
-      element.classList.add("active");
-
-      // Collapse others
-      document.querySelectorAll(".submenu").forEach(sub => sub.classList.remove("show"));
-
-      const nextSubmenu = element.nextElementSibling;
-      if (nextSubmenu && nextSubmenu.classList.contains("submenu")) {
-        nextSubmenu.classList.add("show");
-      }
-    }
-
-    function showProducts(type, element) {
-      document.querySelectorAll(".menu-item").forEach(item => item.classList.remove("active"));
-      element.classList.add("active");
-      document.querySelectorAll(".submenu").forEach(sub => sub.classList.remove("show"));
-      productContainer.innerHTML = "";
-
-      if (type === "all") {
-        const items = [
-          { name: "COB LIGHTS", img: "img/productsimgs/1.png" },
-          { name: "SURFACE LIGHTS", img: "https://via.placeholder.com/300x200?text=Surface+Light" },
-          { name: "TRACK LIGHTS", img: "https://via.placeholder.com/300x200?text=Track+Light" },
-          { name: "MAGNETIC TRACK", img: "https://via.placeholder.com/300x200?text=Magnetic+Track" },
-          { name: "LINEAR PROFILES", img: "https://via.placeholder.com/300x200?text=Linear+Profiles" },
-          { name: "NEON FLEX", img: "https://via.placeholder.com/300x200?text=Neon+Flex" }
-        ];
-        items.forEach(p => createProductBox(p.name, p.img));
-      }
-    }
-
-    function createProductBox(name, img) {
-      const box = document.createElement("div");
-      box.className = "lightsegproducts-box";
-      box.innerHTML = `
-        <img src="${img}" alt="${name}" class="lightsegproducts-icon" />
-        <div class="lightsegproducts-overlay"><h2>${name}</h2></div>
-      `;
-      productContainer.appendChild(box);
-    }
-
-    function navigateTo(name) {
-      window.location.href = `product.html?name=${encodeURIComponent(name)}`;
-    }
-
-    // Default load
-    showProducts("all", document.querySelector(".menu-item.active"));
-  </script>
 </body>
 </html>
