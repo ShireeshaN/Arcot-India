@@ -1,126 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lighting Slider – Arcot Style</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-<style>
-  * {margin:0; padding:0; box-sizing:border-box;}
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: #000;
-    overflow-x: hidden;
-  }
-
-  /* ===== SLIDER CONTAINER ===== */
-  .slider {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .slide {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    display: flex;
-    align-items: flex-start; /* Move text to top */
-    justify-content: flex-start;
-    padding: 60px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-  }
-
-  .slide.active {
-    opacity: 1;
-  }
-
-  /* ===== LEFT VERTICAL HEADING ===== */
-  .vertical-heading {
-    position: absolute;
-    left: 20px;
-    bottom: 10%; /* Move to bottom left corner for design balance */
-    transform: translateY(-50%) rotate(-90deg);
-    transform-origin: left top;
-    color: #a39f9f;
-    font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    opacity: 0;
-    animation: fadeSlideUp 1.8s ease forwards;
-    animation-delay: 0.5s;
-  }
-
-  /* ===== TEXT CONTENT ===== */
-  .text-content {
-    max-width: 450px;
-    color: #fff;
-    z-index: 2;
-    text-align: start;
-    margin-top: 100px; /* Padding from top */
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeSlideUp 1.5s ease forwards;
-    animation-delay: 1s;
-  }
-
-  .text-content p {
-    font-size: 0.8rem;
-    line-height: 1.7;
-    color: #cfcfcf;
-    letter-spacing: 1px;
-  }
-
-  /* ===== TEXT ANIMATION ===== */
-  @keyframes fadeSlideUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fur I – Works on Bodily Forms</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 768px) {
-    .slider { height: 60vh; }
-    .slide {
-      flex-direction: column;
-      justify-content: flex-start;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #000;
+      overflow-x: hidden;
+    }
+
+    .art-layout {
+      display: flex;
       align-items: center;
-      padding: 40px 20px;
-      text-align: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 100vh;
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
     }
-    .vertical-heading {display: none;}
-    .text-content {
-      max-width: 90%;
-      margin: 80px auto 0;
-      text-align: center;
+
+    /* Left section (30%) */
+    .text-side {
+      flex: 0 0 30%;
+      position: relative;
+      padding-left: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 2;
+      background: #fff;
     }
-  }
-</style>
+
+    .vertical-text {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: rotate(-90deg) translateY(-50%);
+      transform-origin: left top;
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: #333;
+    }
+
+    .main-text {
+      max-width: 400px;
+    }
+
+    .main-text h1 {
+      font-size: 70px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #000;
+    }
+
+    .main-text p {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.5em;
+      max-width: 280px;
+    }
+
+    /* Right section (70%) */
+    .image-side {
+      flex: 0 0 70%;
+      position: relative;
+      background: linear-gradient(to right, #f0f0f0 50%, #d9d9d9 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .image-box {
+      width: 100%;
+      height: 100%;
+      background: url('img/livingroomlights/3.png') center/cover no-repeat;
+      filter: grayscale(100%);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* ✅ Responsive for mobile */
+    @media (max-width: 768px) {
+      .art-layout {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .text-side {
+        order: 1;
+        flex: unset;
+        width: 100%;
+        padding: 40px 20px;
+        background: #fff;
+        text-align: center;
+      }
+
+      .vertical-text {
+        display: none;
+      }
+
+      .main-text {
+        max-width: 100%;
+      }
+
+      .main-text h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+      }
+
+      .main-text p {
+        font-size: 14px;
+        max-width: 90%;
+        margin: 0 auto;
+        line-height: 1.6em;
+      }
+
+      .image-side {
+        order: 2;
+        width: 100%;
+        height: auto;
+      }
+
+      .image-box {
+        width: 100%;
+        height: 50vh; /* ensures full screen height on mobile */
+        background: url('img/livingroomlights/3.png') center/cover no-repeat;
+        filter: grayscale(100%);
+        border-radius: 0;
+        box-shadow: none;
+        display: block;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .main-text h1 {
+        font-size: 32px;
+      }
+      .main-text p {
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-
-<div class="slider">
-
-  <!-- Slide 1 -->
-  <div class="slide active" style="background-image: url('img/livingroomlights/pendentanimiation.png');">
-    <div class="vertical-heading">Elegance in Suspension</div>
-    <div class="text-content">
-      <p>Suspended lights that blend design and illumination — creating inspiring spaces with effortless style.</p>
+  <div class="art-layout">
+    <div class="text-side">
+      <div class="vertical-text">Works on Bodily Forms</div>
+      <div class="main-text">
+        <h1>Fur I</h1>
+        <p>
+          Experiments on upper head.<br>
+          Fur and hair growth abnormally covering all the face.
+        </p>
+      </div>
+    </div>
+    <div class="image-side">
+      <div class="image-box"></div>
     </div>
   </div>
-
-</div>
-
 </body>
 </html>
