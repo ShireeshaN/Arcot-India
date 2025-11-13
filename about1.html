@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+   <head>
   <meta charset="utf-8">
   <title>Arcot Industries Private Limited</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,6 +36,7 @@
 
 
 </head>
+
     <body>
 
         <!-- Spinner Start -->
@@ -48,29 +50,20 @@
         
 
     
+<!-- HEADER START -->
+
 <header class="main-header">
   <div class="header-wrap position-relative">
-    <a href="index.html"><img src="img/logos.webp" alt="Logo" class="logo" loading="lazy"></a>
+    <a href="index.html">
+      <img src="img/logos.webp" alt="Logo" class="logo" loading="lazy">
+    </a>
     <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
     <nav class="navmenu" id="mainNav">
       <ul class="mb-0">
-         <li><a href="index.html" >Home</a></li>
-             <li><a href="about.html" class="active">About</a></li>
-        <li>
-          <a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a>
-        </li>
-        <li class="dropdown">
-  <a href="#" onclick="toggleDropdown(event)">Products <i class="bi bi-chevron-down ms-1"></i></a>
-  <ul class="dropdown-menu">
-    <li><a href="smart-pole.html">Energy Generation</a></li>
-    <li><a href="#">Power</a></li>
-    <li><a href="#">Lighting</a></li>
-    <li><a href="#">Automation</a></li>
-    
-  </ul>
-</li>
-       <li><a href="solution.html">Solutions</a></li>
-
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a></li>
+        <li><a href="solution.html">Solutions</a></li>
 <li class="dropdown">
   <a href="#" onclick="toggleDropdown(event)">R&D <i class="bi bi-chevron-down ms-1"></i></a>
   <ul class="dropdown-menu">
@@ -81,1035 +74,889 @@
     <li><a href="#">Smart Bar Counter</a></li>
   </ul>
 </li>
-    <li><a href="applications.html">Applications</a></li>
-   <li><a href="gallery.html" >Gallery</a></li>
-           <li><a href="contact.html">Contact</a></li>
-        <!-- <li><a href="#"><i class="bi bi-search"></i></a></li> -->
+
+        <li><a href="applications.html">Applications</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </div>
 
+  <!-- Mega Menu -->
   <div id="megaMenu" class="mega-menu">
     <div class="row">
-     
-<div class="underline"></div>
-<div class="service-submenus d-flex flex-wrap">
-  <div class="service-group">
-    <h6>Energy</h6>
-    <ul>
-      <li><a href="#">Solar</a></li>
-      <li><a href="#">Wind</a></li>
-      <li><a href="#">Biomass</a></li>
-          <li><a href="#">Hydel Power</a></li>
-    </ul>
-  </div>
-  <div class="service-group">
-    <h6>Power</h6>
-    <ul>
-      <li><a href="transmission.html">transmission</a></li>
-      <li><a href="#">distribution</a></li>
-      <li><a href="#">Low Tention</a></li>
-        <li><a href="#">High Tention</a></li>
-         <li><a href="#">Panel Boards</a></li>
-    </ul>
-  </div>
-  <div class="service-group">
-    <h6>Lighting</h6>
-    <ul>
-      <li><a href="#">Residential</a></li>
-      <li><a href="#">Facade</a></li>
-      <li><a href="#">Commercial</a></li>
-       <li><a href="#">Industrial</a></li>
-      <li><a href="#">Street</a></li>
-      <li><a href="#">Park</a></li>
-      <li><a href="#">Stadium</a></li>
-      <li><a href="#">Hospital</a></li>
-    </ul>
-  </div>
-  <div class="service-group">
-    <h6>Automation</h6>
-    <ul>
-   
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Commercial</a></li>
-         <li><a href="#">Industrial</a></li>
-           <li><a href="#">Hospital</a></li>
-      <li><a href="#">IOT Based Automation</a></li>
-         <li><a href="#">Hotel</a></li>
-    </ul>
-  </div>
-  <div class="service-group">
-   <h6>R&D</h6>
-    <ul>
-      <li><a href="smart-pole.html">Smart Pole</a></li>
-      <li><a href="#">Smart Conference Hall</a></li>
-       <li><a href="#">Smart Bollards</a></li>
-          <li><a href="#">Smart Bar Counter</a></li>
-              <li><a href="#">Smart Window Leaf AC</a></li>
-    </ul>
-  </div>
-
-  
-
-   
-</div>
-
+      <div class="underline"></div>
+      <div class="service-submenus d-flex flex-wrap">
+        <div class="service-group">
+          <h6>Energy</h6>
+          <ul>
+            <li><a href="#">Solar</a></li>
+            <li><a href="#">Wind</a></li>
+            <li><a href="#">Biomass</a></li>
+            <li><a href="#">Hydel Power</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>Power</h6>
+          <ul>
+            <li><a href="transmission.html">Transmission</a></li>
+            <li><a href="#">Distribution</a></li>
+            <li><a href="#">Low Tension</a></li>
+            <li><a href="#">High Tension</a></li>
+            <li><a href="#">Panel Boards</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>Lighting</h6>
+          <ul>
+            <li><a href="residential-lighting.html">Residential</a></li>
+            <li><a href="facade-lighting.html">Facade</a></li>
+            <li><a href="commercial-lighting.html">Commercial</a></li>
+            <li><a href="industrial-lighting.html">Industrial</a></li>
+            <li><a href="#">Street</a></li>
+            <li><a href="#">Park</a></li>
+            <li><a href="#">Stadium</a></li>
+            <li><a href="#">Hospital</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>Automation</h6>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Commercial</a></li>
+            <li><a href="#">Industrial</a></li>
+            <li><a href="#">Hospital</a></li>
+            <li><a href="#">IoT Based Automation</a></li>
+            <li><a href="#">Hotel</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>R & D</h6>
+          <ul>
+            <li><a href="smart-pole.html">Smart Pole</a></li>
+            <li><a href="#">Smart Conference Hall</a></li>
+            <li><a href="#">Smart Bollards</a></li>
+            <li><a href="#">Smart Bar Counter</a></li>
+            <li><a href="#">Smart Window Leaf AC</a></li>
+          </ul>
+        </div>
+       
+      </div>
     </div>
   </div>
 </header>
+<!-- HEADER END -->
 
-  <style>
-    * {
-      box-sizing: border-box;
+
+
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h1 class="text-white display-6 mb-4 wow fadeInDown" data-wow-delay="0.1s">Residential Lighting</h1>
+                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                    <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> -->
+                  
+                </ol>    
+            </div>
+        </div>
+        <!-- Header End -->
+
+
+         <style>
+     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-    }
-
-    body {
+      font-family: Arial, sans-serif;
       background: #fff;
       color: #111;
+    }
+    .section {
+      max-width: 1000px; /* page middle lo compact */
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .section h1 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 25px;
+      text-align: left; 
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px; /* tight gap */
+      align-items: start;
+    }
+    .col img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      
+    }
+    .col img:hover {
+  transform: scale(1.05); /* zoom in effect */
+}
+    .col1 img {
+      height: 420px; /* tall but reduced */
+    }
+    .col2 img,
+    .col3 img {
+      height: 280px; /* smaller images */
+    }
+    .content {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .title {
+      font-size: 30px;
+      font-weight: 800;
+      margin: 0 0 15px;
+      line-height: 1.2;
+    }
+    .desc {
+      font-size: 18px;
+      color: #333;
+      margin: 0;
+      line-height: 1.4;
+    }
+    .readmore {
+      display: inline-block;
+      margin-top: 25px;
+      font-weight: 600;
+      font-size: 15px;
+      color: #111;
+      text-decoration: none;
+      /* border-bottom: 1px solid ; */
+      padding: 10px;
+    }
+    .readmore:hover {
+      background-color: #b3b0b0;
+      padding: 10px;
+      
+    }
+ 
+
+    /* responsive */
+    @media(max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .col1 img {
+        height: 300px;
+      }
+      .col2 img,
+      .col3 img {
+        height: 200px;
+      }
+    }
+
+
+
+
+
+
+
+        .product-img {
+      width: 100%;
+      height: 300px;
+      transition: transform 0.4s ease-in-out;
+      overflow: hidden;
+    }
+    .product-img:hover {
+ transform: scale(1.1);       /* hand icon vastundi */
+}
+    .caption-btn {
+      background-color: #1a1b1a; /* darker grey button */
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      margin-top: 10px;
+      display: block;
+      text-transform: uppercase;
+    }
+    .text-block h2 {
+      font-weight: bold;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+    .text-block p {
+      font-size: 1rem;
       line-height: 1.6;
-      /* padding: 50px; */
     }
 
-    .container {
-      display: flex;
-      gap: 60px;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      margin-top: 150px;
-    
-    }
 
-    /* ---------- GALLERY ---------- */
-    .gallery {
-      flex: 1 1 500px;
-      display: flex;
-      gap: 20px;
+
+
+
+        .card-custom {
       position: relative;
-      align-items: center;
-    }
-
-    .thumbnail-wrapper {
+      overflow: hidden;
+      
+      height: 400px;
+      color: #fff;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      width: 100px;
-      position: relative;
+      justify-content: center;
+      text-align: center;
     }
-
-    .thumb-arrow {
-      background: none;
+    .card-custom img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .card-custom:hover img {
+      transform: scale(1.1); /* zoom effect */
+    }
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.35); /* dark overlay */
+    }
+    .card-content {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+    .card-content h3 {
+      font-weight: bold;
+      font-size: 1.6rem;
+    }
+    .card-content p {
+      margin: 5px 0 20px;
+      font-size: 1rem;
+    }
+    .btn-custom {
+      background: #fff;
+      color: #000;
+      font-weight: bold;
+      padding: 8px 18px;
       border: none;
+      
+      text-transform: uppercase;
+    }
+    .btn-custom:hover {
+      background: #000;
+      color: #fff;
+      transition: 0.3s ease;
+    }
+
+
+
+
+
+     .image-box img {
+      width: 100%;
+      max-width: 400px;
+      
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.5s ease;
+    }
+
+    .image-box img:hover {
+      transform: scale(1.03);
+    }
+    
+
+
+ 
+
+        .products-section {
+      padding: 50px 20px;
+    }
+
+    .products-section h2 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+
+    .product-card {
+      background: #f9f9f9;
+      border: none;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+       border-radius: 0px;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .product-card img {
+      width: 100%;
+     
+      
+    }
+
+    .product-title {
+      font-weight: bold;
+      font-size: 0.95rem;
+      padding: 10px;
+      text-transform: uppercase;
+    }
+
+ 
+
+
+
+
+        /* Main nav */
+    .main-nav {
+      background: #f2f2f2; /* ash grey */
+      display: flex;
+      gap: 25px;
+      padding: 12px 20px;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: #111;
+      /* font-weight: 600; */
+      font-size: 15px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .main-nav a:hover {
+      color: #555;
+      text-decoration: underline;
+    }
+
+    .main-nav a.active {
+      color: #555;
+      text-decoration: underline;
+    }
+
+    /* Submenu container (black bar) */
+    .submenu-container {
+      background: #222;
+      padding: 12px 20px;
+      display: none;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .submenu-container a {
+      color: #fff;
+      text-decoration: none;
+      /* font-weight: 600; */
+      font-size: 14px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .submenu-container a:hover {
+      color: #bbb;
+    }
+
+    /* Mobile */
+    .menu-toggle {
+      display: none;
+      background: #f2f2f2;
+      padding: 12px 20px;
+      border: none;
+      /* font-weight: bold; */
       font-size: 16px;
       cursor: pointer;
-      color: #555;
-      transition: transform 0.3s, color 0.3s;
-    }
-
-    .thumb-arrow:hover {
-      color: #000;
-      transform: scale(1.1);
-    }
-
-    .thumbnails {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin: 10px 0;
-      overflow: hidden;
-      max-height: 400px;
-    }
-
-    .thumbnails img {
       width: 100%;
-      /* border-radius: 6px; */
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: all 0.3s ease;
+      text-align: left;
     }
 
-    .thumbnails img.active {
-      border-color: #000;
-      transform: scale(1.05);
-    }
+    @media (max-width: 768px) {
+      .main-nav {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+      }
 
-    .main-image {
-      position: relative;
-      flex: 1;
-      background: #f7f7f7;
-      /* border-radius: 12px; */
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 600px;
-      transition: all 0.4s ease;
-    }
-
-    .main-image img {
-      width: 100%;
-      height: auto;
-      max-height: 600px;
-      object-fit: contain;
-      transition: opacity 0.4s ease;
-    }
-
-    .arrow {
-      position: absolute;
-      top: 50%;
-      /* transform: translateY(-50%); */
-      border: none;
-      background: none;
-      cursor: pointer;
-      font-size: 22px;
-      color: #111;
-      /* transition: transform 0.3s, color 0.3s; */
-      z-index: 2;
-    }
-
-    .arrow:hover {
-      color: #000;
-      transform: scale(1.1);
-    }
-
-    .arrow.left {
-      left: 10px;
-    }
-
-    .arrow.right {
-      right: 10px;
-    }
-
-    /* ---------- DETAILS ---------- */
-    .details {
-      flex: 1 1 400px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .details h1 {
-      font-size: 2.3rem;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-
-    .color-box {
-      width: 30px;
-      height: 30px;
-      background: #000;
-      /* border-radius: 4px; */
-      margin: 8px 0;
-    }
-
-    .availability {
-      color: #666;
-      font-weight: 500;
-      font-size: 1rem;
-      margin-bottom: 10px;
-    }
-
-    .description {
-      color: #333;
-      font-size: 1rem;
-      line-height: 1.7;
-      max-width: 550px;
-      margin-bottom: 25px;
-    }
-
-    .specs {
-      background: #f8f8f8;
-      padding: 18px 20px;
-      /* border-radius: 10px; */
-      font-size: 0.95rem;
-      margin-bottom: 30px;
-      transition: all 0.3s ease;
-    }
-
-    .specs:hover {
-      background: #000;
-      color: #fff;
-      transform: translateY(-3px);
-    }
-
-    .specs span {
-      display: inline-block;
-      margin-right: 15px;
-      font-weight: 500;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 14px 28px;
-      border: none;
-      /* border-radius: 8px; */
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-    }
-
-    .btn.primary {
-      background: #000;
-      color: #fff;
-    }
-
-    .btn.primary:hover {
-      background: #333;
-      transform: translateY(-3px);
-    }
-
-    .btn.secondary {
-      background: #fff;
-      color: #000;
-      border: solid #000;
-    }
-
-    .btn.secondary:hover {
-      background: #000;
-      color: #fff;
-      transform: translateY(-3px);
-    }
-
-    @media (max-width: 900px) {
-      .container {
+      .submenu-container {
         flex-direction: column;
       }
-      .gallery {
-        flex-direction: column;
-        align-items: center;
+
+      .menu-toggle {
+        display: block;
       }
-      .thumbnail-wrapper {
-        flex-direction: row;
-        width: auto;
-      }
-      .thumbnails {
-        flex-direction: row;
-        max-height: none;
-        overflow-x: auto;
+
+      .main-nav.show {
+        display: flex;
       }
     }
+
+   /* Segments Navbar */
+.segments-navbar {
+  position: sticky;
+  /* top: 100px;    */
+  z-index: 999;
+}
+    
+    
   </style>
+  <div class="segments-navbar">
 
-  <div class="container">
-    <!-- GALLERY -->
-    <div class="gallery">
-      <div class="thumbnail-wrapper">
-        <button class="thumb-arrow up">&#9650;</button>
-        <div class="thumbnails" id="thumbnails">
-          <img src="img/productsimgs/2.png" class="active" alt="">
-          <img src="img/productsimgs/3.png" alt="">
-          <img src="img/productsimgs/4.png" alt="">
-          <img src="img/productsimgs/5.png" alt="">
-          <img src="img/productsimgs/6.png" alt="">
-          <img src="img/productsimgs/1.png" alt="">
+  <!-- Mobile toggle -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+
+  <!-- Main Navigation -->
+  <nav class="main-nav sticky-header" id="mainNav">
+    <a href="#" data-submenu="cases">Cases</a>
+    <a href="#" class="active" data-submenu="home">Lighting for Home</a>
+    <a href="#" data-submenu="commercial">Commercial Lighting</a>
+    <a href="#" data-submenu="industrial">Industrial Lighting</a>
+    <a href="#" data-submenu="outdoor">Outdoor Lighting</a>
+    <a href="#" data-submenu="catalogues">Catalogues</a>
+  </nav>
+
+  <!-- Submenu Bar -->
+  <div class="submenu-container" id="submenu"></div>
+  </div>
+
+ <section class="section">
+    <h1>Lighting for the Living Room</h1>
+    <div class="grid">
+      
+      <!-- Column 1 -->
+      <div class="col col1">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800" alt="">
+      </div>
+      
+      <!-- Column 2 -->
+      <div class="col col2">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800" alt="">
+        <div class="content">
+          <h2 class="title">Enhance <br>Everyday living</h2>
+          <p class="desc">Residential lighting creates a warm, functional, and inviting atmosphere throughout your home!</p>
         </div>
-        <button class="thumb-arrow down">&#9660;</button>
+      </div>
+      
+      <!-- Column 3 -->
+      <div class="col col3">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800" alt="">
+        <div class="content">
+          <h2 class="title">Choose Residential lighting</h2>
+          <p class="desc">Here’s what makes a house <br>feel like home!...</p>
+          <a href="#" class="readmore">READ MORE</a>
+        </div>
       </div>
 
-      <div class="main-image">
-        <button class="arrow left">&#10094;</button>
-        <img id="mainImage" src="img/productsimgs/1.png" alt="Main Product Image">
-        <button class="arrow right">&#10095;</button>
-      </div>
     </div>
+  </section>
 
-    <!-- DETAILS -->
-    <div class="details">
-      <h1>Spot Light</h1>
-      <p>Color: <strong>Matt Black</strong></p>
-      <div class="color-box"></div>
-      <p class="availability">Stock expected soon</p>
-      <p class="description">
-        With a streamlined, modern profile, this spotlight combines a single adjustable beam with a flush finish for a clean, integrated appearance. It offers 90° tilt and 350° rotation, suitable for ceilings or walls.
-      </p>
-      <div class="specs">
-        <span>1 x 10W Max LED GU10</span> |
-        <span>IP20</span> |
-        <span>Lamp sold separately</span>
+
+ 
+   <div class="container-fluid py-5 " style="background-color: darkgrey;" >
+    <div class="row align-items-start">
+      
+      <!-- Left Image + Caption -->
+      <div class="col-md-3 text-center">
+        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
+        <div class="caption-btn">SPOTLIGHT GARDEN</div>
       </div>
-      <div class="buttons">
-        <button class="btn primary">Project Enquiry</button>
-        <button class="btn secondary">Where to Buy</button>
+
+      <!-- Text Block -->
+      <div class="col-md-3 text-block">
+        <h2>Create effectual garden lighting with spotlights</h2>
+        <p>
+          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
+          and trees, for example. You also use lighting to create different spaces in the garden or 
+          to illuminate the facade.
+        </p>
+        <p>
+          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
+          Available in different sizes and design with different light distribution. LED floodlights are 
+          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
+          install and require minimal maintenance, making them a practical choice for enhancing the 
+          aesthetics of your outdoor lighting.
+        </p>
       </div>
-    </div>
-  </div>
 
-  <script>
-    const mainImage = document.getElementById('mainImage');
-    const thumbnails = document.querySelectorAll('.thumbnails img');
-    const leftArrow = document.querySelector('.arrow.left');
-    const rightArrow = document.querySelector('.arrow.right');
-    const thumbContainer = document.getElementById('thumbnails');
-    const upArrow = document.querySelector('.thumb-arrow.up');
-    const downArrow = document.querySelector('.thumb-arrow.down');
-    let currentIndex = 0;
-
-    function updateMainImage(index) {
-      thumbnails.forEach((thumb, i) => {
-        thumb.classList.toggle('active', i === index);
-      });
-      mainImage.style.opacity = 0;
-      setTimeout(() => {
-        mainImage.src = thumbnails[index].src.replace('100x100', '600x600');
-        mainImage.style.opacity = 1;
-      }, 200);
-    }
-
-    thumbnails.forEach((thumb, index) => {
-      thumb.addEventListener('click', () => {
-        currentIndex = index;
-        updateMainImage(currentIndex);
-      });
-    });
-
-    leftArrow.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
-      updateMainImage(currentIndex);
-      thumbnails[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-
-    rightArrow.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % thumbnails.length;
-      updateMainImage(currentIndex);
-      thumbnails[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-
-    upArrow.addEventListener('click', () => {
-      thumbContainer.scrollBy({ top: -100, behavior: 'smooth' });
-    });
-
-    downArrow.addEventListener('click', () => {
-      thumbContainer.scrollBy({ top: 100, behavior: 'smooth' });
-    });
-  </script>
-
-<section class="product-specs-section ">
-  <div class="tabs">
-    <button class="tab active" data-tab="spec">Specification</button>
-    <button class="tab" data-tab="downloads">Downloads</button>
-    <button class="tab" data-tab="care">Care guide</button>
-  </div>
-
-  <!-- SPECIFICATION TAB -->
-  <div class="tab-content active" id="spec">
-    <div class="spec-wrapper">
-      <div class="spec-image">
-        <img src="img/productsimgs/1.png" alt="Technical drawing">
+      <!-- Right Images + Captions -->
+      <div class="col-md-3">
+        <div class="mb-4 text-start">
+          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
+          <div class="caption-btn">SPOT IT MULTI 1</div>
+        </div>
+        </div>
+        <div class="col-md-3">
+        <div class="text-start">
+          <img src="img/application/73.webp" alt="Spot It Multi 3" class="product-img">
+          <div class="caption-btn">SPOT IT MULTI 3</div>
+        </div>
       </div>
-      <div class="spec-details">
-        <table>
-          <tr><td><strong>Lamp Required:</strong></td><td>Yes</td></tr>
-          <tr><td><strong>Max Lamp Type & Wattage:</strong></td><td>1 x 10W Max LED GU10</td></tr>
-          <tr><td><strong>Maximum Lamp Length (mm):</strong></td><td>62</td></tr>
-          <tr><td><strong>Switched:</strong></td><td>No</td></tr>
-          <tr><td><strong>Dimmable:</strong></td><td>Yes (Lamp Dependent)</td></tr>
-          <tr><td><strong>Driver Required:</strong></td><td>No</td></tr>
-          <tr><td><strong>Class:</strong></td><td>Class I - Earthed</td></tr>
-          <tr><td><strong>Power Connection Type:</strong></td><td>Wired In</td></tr>
-          <tr><td><strong>IP Rating:</strong></td><td>IP20</td></tr>
-          <tr><td><strong>Bathroom Zone:</strong></td><td>Zone 3</td></tr>
-          <tr><td><strong>Direction Adjustable:</strong></td><td>Yes</td></tr>
-          <tr>
-            <td><strong>Installation Orientation:</strong></td>
-            <td>Ceiling Mount<br>Plaster board installation only. Not suitable for solid ceilings.</td>
-          </tr>
-          <tr><td><strong>Cutout Shape:</strong></td><td>Round</td></tr>
-          <tr><td><strong>Hole Saw Diameter:</strong></td><td>44mm / 1-3/4in</td></tr>
-        </table>
-      </div>
+
     </div>
   </div>
 
-  <!-- DOWNLOADS TAB -->
-  <div class="tab-content" id="downloads">
-    <div class="download-list">
-      <div class="download-row">
-        <span>Product Catalogue (PDF)</span>
-        <a href="#" class="download-link">Download</a>
+
+     <div class="container-fluid py-5 " style="background-color: rgb(247, 245, 245);" >
+    <div class="row align-items-start">
+
+              <!-- Text Block -->
+      <div class="col-md-3 text-block">
+        <h2>Create effectual garden lighting with spotlights</h2>
+        <p>
+          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
+          and trees, for example. You also use lighting to create different spaces in the garden or 
+          to illuminate the facade.
+        </p>
+        <p>
+          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
+          Available in different sizes and design with different light distribution. LED floodlights are 
+          developed and produced to withstand our Nordic climate. 
+        </p>
       </div>
-      <div class="download-row">
-        <span>Installation Guide (PDF)</span>
-        <a href="#" class="download-link">Download</a>
+      
+      <!-- Left Image + Caption -->
+      <div class="col-md-3 text-center">
+        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
+        <div class="caption-btn">SPOTLIGHT GARDEN</div>
       </div>
-      <div class="download-row">
-        <span>Lighting Datasheet</span>
-        <a href="#" class="download-link">Download</a>
+
+
+
+      <!-- Right Images + Captions -->
+      <div class="col-md-3">
+        <div class="mb-4 text-start">
+          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
+          <div class="caption-btn">SPOT IT MULTI 1</div>
+        </div>
+        </div>
+        <div class="col-md-3">
+        <div class="text-start">
+          <img src="img/application/73.webp" alt="Spot It Multi 3" class="product-img">
+          <div class="caption-btn">SPOT IT MULTI 3</div>
+        </div>
       </div>
+
     </div>
   </div>
 
-  <!-- CARE GUIDE TAB -->
-  <div class="tab-content" id="care">
-    <div class="care-guide">
-      <p>To maintain product appearance and performance, clean using a soft dry cloth. Avoid using chemical cleaners or abrasives.</p>
-      <ul>
-        <li>Ensure power is disconnected before cleaning.</li>
-        <li>Use only dry or slightly damp cloths.</li>
-        <li>Do not expose fitting to moisture or water.</li>
-        <li>Regularly check for loose fittings or wear.</li>
-      </ul>
+
+
+
+   <div class="container py-5">
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card-custom">
+          <img src="img/abouimg/aboutimg1 (2).webp" alt="Downlight 1">
+          <div class="overlay"></div>
+          <div class="card-content">
+            <h3>Larger downlight for eaves</h3>
+            <p>- A welcoming impression</p>
+            <button class="btn-custom">SOLO MINI G2</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card-custom">
+          <img src="img/abouimg/aboutimg1 (2).webp" alt="Downlight 2">
+          <div class="overlay"></div>
+          <div class="card-content">
+            <h3>Perfect downlights</h3>
+            <p>- Choose a light source based on your own preference and taste</p>
+            <button class="btn-custom">COMFORT QUICK OUTDOOR GU10</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card-custom">
+          <img src="img/abouimg/aboutimg1 (2).webp" alt="Facade Lighting">
+          <div class="overlay"></div>
+          <div class="card-content">
+            <h3>Choose the right facade lighting</h3>
+            <p>A clean conical design</p>
+            <button class="btn-custom">CONE</button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-</section>
 
-<style>
-/* BASE SECTION */
-.product-specs-section {
-  background-color: #f4f4f4;
-  padding: 100px 40px;
-  text-align: center;
-  width: 100%;
-  margin-top: 50px;
+
+
+
+     <div class="container-fluid py-5 " style="background-color: #f2f2f2;" >
+    <div class="row align-items-start">
+      
+      <!-- Left Image + Caption -->
+      <div class="col-md-3 text-center">
+        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
+        <div class="caption-btn">SPOTLIGHT GARDEN</div>
+      </div>
+
+      <!-- Text Block -->
+      <div class="col-md-3 text-block">
+        <h2>Create effectual garden lighting with spotlights</h2>
+        <p>
+          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
+          and trees, for example. You also use lighting to create different spaces in the garden or 
+          to illuminate the facade.
+        </p>
+        <p>
+          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
+          Available in different sizes and design with different light distribution. LED floodlights are 
+          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
+          install and require minimal maintenance, making them a practical choice for enhancing the 
+          aesthetics of your outdoor lighting.
+        </p>
+      </div>
+
+      <!-- Right Images + Captions -->
+      <div class="col-md-3">
+        <div class="mb-4 text-start">
+          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
+          <div class="caption-btn">SPOT IT MULTI 1</div>
+        </div>
+        </div>
+            <!-- Text Block -->
+      <div class="col-md-3 text-block">
+        <h2>Create effectual garden lighting with spotlights</h2>
+        <p>
+          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
+          and trees, for example. You also use lighting to create different spaces in the garden or 
+          to illuminate the facade.
+        </p>
+        <p>
+          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
+          Available in different sizes and design with different light distribution. LED floodlights are 
+          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
+          install and require minimal maintenance, making them a practical choice for enhancing the 
+          aesthetics of your outdoor lighting.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+
+       <div class="container-fluid py-5 " style="background-color: #f2f2f2;" >
+    <div class="row align-items-start">
+      
+   
+
+      <!-- Text Block -->
+      <div class="col-md-3 text-block">
+        <h2>Create effectual garden lighting with spotlights</h2>
+        <p>
+          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
+          and trees, for example. You also use lighting to create different spaces in the garden or 
+          to illuminate the facade.
+        </p>
+        <p>
+          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
+          Available in different sizes and design with different light distribution. LED floodlights are 
+          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
+          install and require minimal maintenance, making them a practical choice for enhancing the 
+          aesthetics of your outdoor lighting.
+        </p>
+      </div>
+
+         <!-- Left Image + Caption -->
+      <div class="col-md-3 text-center">
+        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
+        <div class="caption-btn">SPOTLIGHT GARDEN</div>
+      </div>
+
+      <!-- Right Images + Captions -->
+
+            <!-- Text Block -->
+      <div class="col-md-3 text-block">
+        <h2>Create effectual garden lighting with spotlights</h2>
+        <p>
+          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
+          and trees, for example. You also use lighting to create different spaces in the garden or 
+          to illuminate the facade.
+        </p>
+        <p>
+          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
+          Available in different sizes and design with different light distribution. LED floodlights are 
+          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
+          install and require minimal maintenance, making them a practical choice for enhancing the 
+          aesthetics of your outdoor lighting.
+        </p>
+      </div>
+
+            <div class="col-md-3">
+        <div class="mb-4 text-start">
+          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
+          <div class="caption-btn">SPOT IT MULTI 1</div>
+        </div>
+        </div>
+
+    </div>
+  </div>
   
-}
-
-/* TABS */
-.tabs {
-  display: flex;
-  justify-content: center;
-  gap: 80px;
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 50px;
-  flex-wrap: wrap;
-}
-
-.tab {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #333;
-  cursor: pointer;
-  position: relative;
-  padding-bottom: 12px;
-  transition: color 0.3s ease;
-}
-
-.tab:hover {
-  color: #000;
-}
-
-.tab.active {
-  color: #000;
-}
-
-.tab.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  width: 100%;
-  height: 2px;
-  background: #000;
-}
-
-/* TAB CONTENT */
-.tab-content {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.tab-content.active {
-  display: block;
-  opacity: 1;
-}
-
-/* SPECIFICATION LAYOUT */
-.spec-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 80px;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.spec-image img {
-  width: 420px;
-  height: auto;
-  transition: transform 0.3s ease;
-}
-
-.spec-image img:hover {
-  transform: scale(1.03);
-}
-
-.spec-details {
-  flex: 1;
-}
-
-.spec-details table {
-  border-collapse: collapse;
-  width: 100%;
-  font-size: 0.95rem;
-  word-break: break-word;
-}
-
-.spec-details td {
-  padding: 8px 10px;
-  vertical-align: top;
-  color: #333;
-}
-
-.spec-details td:first-child {
-  font-weight: 600;
-  color: #000;
-  width: 260px;
-}
-
-/* DOWNLOADS */
-.download-list {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.download-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 0;
-  border-bottom: 1px solid #ccc;
-  font-size: 1rem;
-}
-
-.download-link {
-  color: #000;
-  font-weight: 600;
-  text-decoration: none;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.download-link::after {
-  content: "";
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: #000;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-  transform-origin: left;
-}
-
-.download-link:hover::after {
-  transform: scaleX(1);
-}
-
-/* CARE GUIDE */
-.care-guide {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: left;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.care-guide ul {
-  margin-top: 15px;
-  padding-left: 20px;
-  list-style: disc;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 1024px) {
-  .spec-wrapper {
-    gap: 50px;
-  }
-}
-
-@media (max-width: 900px) {
-  .tabs {
-    gap: 40px;
-    font-size: 1rem;
-  }
-  .spec-wrapper {
-    flex-direction: column;
-    align-items: center;
-    text-align: start;
-    gap: 40px;
-    margin: 0;
-  }
-  .spec-details {
-    width: 100%;
-    max-width: 500px;
-  }
-  .spec-details table {
-    font-size: 0.9rem;
-  }
-  .spec-details td:first-child {
-    width: 160px;
-  }
-  .spec-image img {
-    width: 80%;
-    max-width: 360px;
-  }
-}
-
-@media (max-width: 600px) {
-  .tabs {
-    gap: 20px;
-    font-size: 0.95rem;
-  }
-  .product-specs-section {
-    padding: 60px 20px;
-  }
-  .spec-details table,
-  .care-guide,
-  .download-list {
-    font-size: 0.9rem;
-  }
-  .spec-wrapper {
-    gap: 30px;
-  }
-}
-</style>
-
-<script>
-const tabs = document.querySelectorAll('.tab');
-const contents = document.querySelectorAll('.tab-content');
-
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    contents.forEach(c => c.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById(tab.dataset.tab).classList.add('active');
-  });
-});
-</script>
 
 
-<section class="similar-products-section">
-  <div class="similar-header">
-    <h2>Browse similar products</h2>
-    <div class="similar-header-nav">
-      <button class="similar-nav-btn similar-prev">&#10094;</button>
-      <button class="similar-nav-btn similar-next">&#10095;</button>
+  <section class="container">
+    <div class="row align-items-center g-5">
+      <!-- Left text -->
+      <div class="col-md-6 fade-in-left">
+        <h2>Guiding light</h2>
+        <p>
+          Good decorative effects can be achieved by using accent lighting on staircases and decking or to mark out pathways. 
+          Light falling on different types of materials provides an interesting and varied visual experience.
+        </p>
+        <p>
+          Lights in the ground or decking for example can be used to highlight a plank or emphasise the shape of a patio. 
+          We sell recessed ground lighting kits, complete with luminaires and transformers for easy installation.
+        </p>
+        <!-- <button class="btn-custom">MILO PILLAR</button> -->
+      </div>
+
+      <!-- Right image -->
+      <div class="col-md-6 text-center fade-in-right">
+        <div class="image-box">
+          <img src="img/abouimg/aboutimg1 (3).webp" alt="Guiding light"> <!-- replace with your image -->
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="similar-slider-container">
-    <div class="similar-product-slider">
-      <!-- PRODUCT 1 -->
-      <div class="similar-product-card">
-        <div class="similar-product-image">
-          <img src="img/productsimgs/5.png" alt="Stage Single">
-          <div class="similar-overlay">
-            <h3>Stage Single</h3>
-            <p>Matt Black | 1491002</p>
-            <button>More details</button>
-          </div>
+    <section class="container">
+    <div class="row align-items-center g-5">
+        <!-- Right image -->
+      <div class="col-md-6 text-center fade-in-right">
+        <div class="image-box">
+          <img src="img/abouimg/aboutimg1 (3).webp" alt="Guiding light"> <!-- replace with your image -->
         </div>
-        <p class="similar-product-name">Stage Single</p>
-        <div class="similar-color-dot"></div>
+      </div>
+      <!-- Left text -->
+      <div class="col-md-6 fade-in-left">
+        <h2>Guiding light</h2>
+        <p>
+          Good decorative effects can be achieved by using accent lighting on staircases and decking or to mark out pathways. 
+          Light falling on different types of materials provides an interesting and varied visual experience.
+        </p>
+        <p>
+          Lights in the ground or decking for example can be used to highlight a plank or emphasise the shape of a patio. 
+          We sell recessed ground lighting kits, complete with luminaires and transformers for easy installation.
+        </p>
+        <!-- <button class="btn-custom">MILO PILLAR</button> -->
       </div>
 
-      <!-- PRODUCT 2 -->
-      <div class="similar-product-card">
-        <div class="similar-product-image">
-          <img src="img/productsimgs/6.png" alt="Koto Triple Round">
-          <div class="similar-overlay">
-            <h3>Koto Triple Round</h3>
-            <p>Matt Black | 1491003</p>
-            <button>More details</button>
-          </div>
-        </div>
-        <p class="similar-product-name">Koto Triple Round</p>
-        <div class="similar-color-dot"></div>
-      </div>
-
-      <!-- PRODUCT 3 -->
-      <div class="similar-product-card">
-        <div class="similar-product-image">
-          <img src="img/productsimgs/1.png" alt="Can 50 Recessed Fire-Rated">
-          <div class="similar-overlay">
-            <h3>Can 50 Recessed Fire-Rated</h3>
-            <p>Matt Black | 1491004</p>
-            <button>More details</button>
-          </div>
-        </div>
-        <p class="similar-product-name">Can 50 Recessed Fire-Rated</p>
-        <div class="similar-color-dot"></div>
-      </div>
-
-      <!-- PRODUCT 4 -->
-      <div class="similar-product-card">
-        <div class="similar-product-image">
-          <img src="img/productsimgs/2.png" alt="Koto Recessed">
-          <div class="similar-overlay">
-            <h3>Koto Recessed</h3>
-            <p>Matt Black | 1491005</p>
-            <button>More details</button>
-          </div>
-        </div>
-        <p class="similar-product-name">Koto Recessed</p>
-        <div class="similar-color-dot"></div>
-      </div>
-
-            <!-- PRODUCT 1 -->
-      <div class="similar-product-card">
-        <div class="similar-product-image">
-          <img src="img/productsimgs/3.png" alt="Stage Single">
-          <div class="similar-overlay">
-            <h3>Stage Single</h3>
-            <p>Matt Black | 1491002</p>
-            <button>More details</button>
-          </div>
-        </div>
-        <p class="similar-product-name">Stage Single</p>
-        <div class="similar-color-dot"></div>
-      </div>
-
-      <!-- PRODUCT 2 -->
-      <div class="similar-product-card">
-        <div class="similar-product-image">
-          <img src="img/productsimgs/4.png" alt="Koto Triple Round">
-          <div class="similar-overlay">
-            <h3>Koto Triple Round</h3>
-            <p>Matt Black | 1491003</p>
-            <button>More details</button>
-          </div>
-        </div>
-        <p class="similar-product-name">Koto Triple Round</p>
-        <div class="similar-color-dot"></div>
-      </div>
-
-      <!-- PRODUCT 3 -->
-      <div class="similar-product-card">
-        <div class="similar-product-image">
-          <img src="img/productsimgs/5.png" alt="Can 50 Recessed Fire-Rated">
-          <div class="similar-overlay">
-            <h3>Can 50 Recessed Fire-Rated</h3>
-            <p>Matt Black | 1491004</p>
-            <button>More details</button>
-          </div>
-        </div>
-        <p class="similar-product-name">Can 50 Recessed Fire-Rated</p>
-        <div class="similar-color-dot"></div>
-      </div>
-
-      <!-- PRODUCT 4 -->
-      <div class="similar-product-card">
-        <div class="similar-product-image">
-          <img src="img/productsimgs/6.png" alt="Koto Recessed">
-          <div class="similar-overlay">
-            <h3>Koto Recessed</h3>
-            <p>Matt Black | 1491005</p>
-            <button>More details</button>
-          </div>
-        </div>
-        <p class="similar-product-name">Koto Recessed</p>
-        <div class="similar-color-dot"></div>
-      </div>
-
+    
     </div>
-  </div>
-</section>
+  </section>
 
-<style>
-.similar-products-section {
-  padding: 70px 60px;
-  background-color: #fff;
-  overflow: hidden;
-}
 
-/* HEADER WITH BUTTONS */
-.similar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 35px;
-}
 
-.similar-header h2 {
-  font-size: 1.7rem;
-  font-weight: 600;
-  color: #000;
-}
+    <section class="products-section container">
+    <h2>Did you know that many of our downlights can also be installed outdoors!</h2>
 
-.similar-header-nav {
-  display: flex;
-  gap: 10px;
-}
+    <div class="row g-4">
+      <!-- Product 1 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="product-card card">
+          <img src="img/abouimg/aboutimg1 (6).webp" alt="Optic G2 Quick ISO 6 Pack">
+          <div class="product-title">OPTIC G2 QUICK ISO 6 PACK</div>
+          <!-- <div class="color-dots">
+            <div class="dot"></div>
+          </div> -->
+        </div>
+      </div>
 
-/* SLIDER */
-.similar-slider-container {
-  position: relative;
-}
+      <!-- Product 2 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="product-card card">
+          <img src="img/abouimg/aboutimg1 (6).webp" alt="Optic G2 Quick ISO DALI">
+          <div class="product-title">OPTIC G2 QUICK ISO DALI</div>
+          <!-- <div class="color-dots">
+            <div class="dot"></div>
+          </div> -->
+        </div>
+      </div>
 
-.similar-product-slider {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 25px;
-  padding-bottom: 10px;
-  scrollbar-width: none;
-}
-.similar-product-slider::-webkit-scrollbar {
-  display: none;
-}
+      <!-- Product 3 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="product-card card">
+          <img src="img/abouimg/aboutimg1 (6).webp" alt="Optic G2 Quick ISO">
+          <div class="product-title">OPTIC G2 QUICK ISO</div>
+          <!-- <div class="color-dots">
+            <div class="dot"></div>
+            <div class="dot active"></div>
+          </div> -->
+        </div>
+      </div>
 
-/* PRODUCT CARD */
-.similar-product-card {
-  min-width: 300px;
-  flex-shrink: 0;
-  text-align: left;
-}
+      <!-- Product 4 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="product-card card">
+          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort G4 Quick ISO Tilt 6 Pack">
+          <div class="product-title">COMFORT G4 QUICK ISO TILT 6 PACK</div>
+          <!-- <div class="color-dots">
+            <div class="dot"></div>
+          </div> -->
+        </div>
+      </div>
 
-.similar-product-image {
-  position: relative;
-  width: 100%;
-  height: 280px;
-  overflow: hidden;
-  /* border-radius: 6px; */
-  background: #f5f5f5;
-}
+      <!-- Product 5 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="product-card card">
+          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort G4 Quick ISO Tilt DALI">
+          <div class="product-title">COMFORT G4 QUICK ISO TILT DALI</div>
+          <!-- <div class="color-dots">
+            <div class="dot"></div>
+          </div> -->
+        </div>
+      </div>
 
-.similar-product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
+      <!-- Product 6 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="product-card card">
+          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort G4 Quick ISO">
+          <div class="product-title">COMFORT G4 QUICK ISO</div>
+          <!-- <div class="color-dots">
+            <div class="dot"></div>
+          </div> -->
+        </div>
+      </div>
 
-.similar-product-image:hover img {
-  transform: scale(1.05);
-}
+      <!-- Product 7 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="product-card card">
+          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort G4 Quick ISO Tilt">
+          <div class="product-title">COMFORT G4 QUICK ISO TILT</div>
+          <!-- <div class="color-dots">
+            <div class="dot"></div>
+          </div> -->
+        </div>
+      </div>
 
-/* HOVER OVERLAY */
-.similar-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  text-align: center;
-}
+      <!-- Product 8 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="product-card card">
+          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort Twist Quick ISO">
+          <div class="product-title">COMFORT TWIST QUICK ISO</div>
+          <!-- <div class="color-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
 
-.similar-product-image:hover .similar-overlay {
-  opacity: 1;
-}
 
-.similar-overlay h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
 
-.similar-overlay p {
-  font-size: 0.85rem;
-  margin-bottom: 12px;
-  opacity: 0.9;
-}
 
-.similar-overlay button {
-  background: #fff;
-  color: #000;
-  border: none;
-  padding: 6px 18px;
-  font-size: 0.9rem;
-  /* border-radius: 4px; */
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.similar-overlay button:hover {
-  background: #ddd;
-  transform: scale(1.05);
-}
-
-/* PRODUCT TEXT */
-.similar-product-name {
-  font-weight: 600;
-  font-size: 0.95rem;
-  margin-top: 12px;
-  color: #111;
-}
-
-.similar-color-dot {
-  width: 18px;
-  height: 18px;
-  background: #000;
-  /* border-radius: 50%; */
-  border: 1px solid #333;
-  margin-top: 6px;
-}
-
-/* BUTTONS */
-.similar-nav-btn {
-  background: #f5f5f5;
-  border: none;
-  color: #000;
-  font-size: 20px;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.similar-nav-btn:hover {
-  background: #000;
-  color: #fff;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .similar-products-section {
-    padding: 50px 20px;
-  }
-
-  .similar-header h2 {
-    font-size: 1.4rem;
-  }
-
-  .similar-product-card {
-    min-width: 200px;
-  }
-
-  .similar-product-image {
-    height: 180px;
-  }
-
-  .similar-nav-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 18px;
-  }
-}
-</style>
-
-<script>
-const similarSlider2 = document.querySelector('.similar-product-slider');
-const similarNext2 = document.querySelector('.similar-next');
-const similarPrev2 = document.querySelector('.similar-prev');
-
-similarNext2.addEventListener('click', () => {
-  similarSlider2.scrollBy({ left: 400, behavior: 'smooth' });
-});
-
-similarPrev2.addEventListener('click', () => {
-  similarSlider2.scrollBy({ left: -400, behavior: 'smooth' });
-});
-</script>
 
 
 
@@ -1285,11 +1132,10 @@ similarPrev2.addEventListener('click', () => {
   </div>
 </div>
 <!-- Copyright End -->
-
          
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>    
+        <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>  
 
         
         <!-- JavaScript Libraries -->
@@ -1309,7 +1155,176 @@ similarPrev2.addEventListener('click', () => {
 
 
 
+        <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll(".number-value");
+
+    const options = {
+      threshold: 0.4
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          let count = 0;
+          const target = parseInt(el.dataset.target);
+          const speed = 3;
+
+          const updateCount = () => {
+            count++;
+            el.innerText = count + "+";
+            if (count < target) {
+              setTimeout(updateCount, speed * 10);
+            }
+          };
+          updateCount();
+          observer.unobserve(el);
+        }
+      });
+    }, options);
+
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  });
+</script>
+
+  <script>
+    // Scroll animation
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    });
+
+    document.querySelectorAll('.fade-in-left, .fade-in-right')
+      .forEach(el => observer.observe(el));
+  </script>
+
+    <script>
+    // Submenu data
+    const submenus = {
+      home: [
+        { text: "Living Room Lighting", link: "livingroom-lighting.html" },
+        { text: "Kitchen Lighting", link: "kitchen-lighting.html" },
+        { text: "Bedroom Lighting", link: "bedroom-lighting.html" },
+        { text: "Bathroom Lighting", link: "bathroom-lighting.html" },
+        { text: "Entrance Lighting", link: "entrance-lighting.html" }
+      ],
+      industrial: [
+        { text: "Factory Lighting", link: "#" },
+        { text: "Warehouse Lighting", link: "#" },
+        { text: "Workshop Lighting", link: "#" },
+        { text: "Cold Storage Lighting", link: "#" },
+        { text: "Hazardous Area Lighting", link: "#" },
+        { text: "Parking & Utility Lighting", link: "#" },
+        { text: "Energy-Efficient LED", link: "#" }
+      ],
+      commercial: [
+        { text: "Office", link: "#" },
+        { text: "Retail & Showroom Lighting", link: "#" },
+        { text: "Healthcare Lighting", link: "#" },
+        { text: "Educational Lighting", link: "#" },
+        { text: "Entertainment & Theatres", link: "#" },
+        { text: "Airport & Transport Hubs", link: "#" },
+        { text: "Hotel Lighting", link: "#" }
+      ],
+      outdoor: [
+        { text: "Garden & Landscape", link: "#" },
+        { text: "Facade & Architectural", link: "#" },
+        { text: "Outdoor Home Lighting", link: "#" },
+        { text: "Parking Lot Lighting", link: "#" },
+        { text: "Campus & Institutional", link: "#" },
+        { text: "Resort & Hospitality", link: "#" },
+        { text: "Security & Flood Lighting", link: "#" },
+        { text: "Sports Ground Lighting", link: "#" }
+      ]
+    };
+
+    const mainLinks = document.querySelectorAll(".main-nav a");
+    const submenuContainer = document.getElementById("submenu");
+
+    const header = document.querySelector(".sticky-header"); // your main header
+const segmentsNavbar = document.querySelector(".segments-navbar");
+
+function updateStickyOffset() {
+  const headerHeight = header.offsetHeight;
+  segmentsNavbar.style.top = headerHeight + "px";
+}
+
+window.addEventListener("resize", updateStickyOffset);
+window.addEventListener("load", updateStickyOffset);
 
 
-</body>
+    let activeKey = "home"; // default active
+    let hoverKey = null;    // temporary hover key
+
+    // Function to render submenu
+    function renderSubmenu(items) {
+      submenuContainer.innerHTML = "";
+      if (!items) {
+        submenuContainer.style.display = "none";
+        return;
+      }
+      items.forEach(item => {
+        const a = document.createElement("a");
+        a.href = item.link;
+        a.textContent = item.text;
+        submenuContainer.appendChild(a);
+      });
+      submenuContainer.style.display = "flex";
+    }
+
+    // Show default (active) submenu
+    renderSubmenu(submenus[activeKey]);
+
+    // Hover effect
+    mainLinks.forEach(link => {
+      const key = link.dataset.submenu;
+
+      link.addEventListener("mouseenter", () => {
+        if (submenus[key]) {
+          hoverKey = key;
+          renderSubmenu(submenus[key]);
+        }
+      });
+
+      link.addEventListener("mouseleave", () => {
+        // If submenu itself is not hovered, restore active
+        setTimeout(() => {
+          if (!submenuContainer.matches(":hover")) {
+            hoverKey = null;
+            renderSubmenu(submenus[activeKey]);
+          }
+        }, 100);
+      });
+
+      // Click → set permanent active
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        mainLinks.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+        activeKey = key;
+        hoverKey = null;
+        renderSubmenu(submenus[activeKey]);
+      });
+    });
+
+    // When leaving submenu → restore active
+    submenuContainer.addEventListener("mouseleave", () => {
+      hoverKey = null;
+      renderSubmenu(submenus[activeKey]);
+    });
+
+    // Mobile menu toggle
+    function toggleMenu() {
+      document.getElementById("mainNav").classList.toggle("show");
+    }
+  </script>
+
+    </body>
+
 </html>

@@ -442,54 +442,7 @@
     </div>
   </div>
 
-  <script>
-    const mainImage = document.getElementById('mainImage');
-    const thumbnails = document.querySelectorAll('.thumbnails img');
-    const leftArrow = document.querySelector('.arrow.left');
-    const rightArrow = document.querySelector('.arrow.right');
-    const thumbContainer = document.getElementById('thumbnails');
-    const upArrow = document.querySelector('.thumb-arrow.up');
-    const downArrow = document.querySelector('.thumb-arrow.down');
-    let currentIndex = 0;
-
-    function updateMainImage(index) {
-      thumbnails.forEach((thumb, i) => {
-        thumb.classList.toggle('active', i === index);
-      });
-      mainImage.style.opacity = 0;
-      setTimeout(() => {
-        mainImage.src = thumbnails[index].src.replace('100x100', '600x600');
-        mainImage.style.opacity = 1;
-      }, 200);
-    }
-
-    thumbnails.forEach((thumb, index) => {
-      thumb.addEventListener('click', () => {
-        currentIndex = index;
-        updateMainImage(currentIndex);
-      });
-    });
-
-    leftArrow.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
-      updateMainImage(currentIndex);
-      thumbnails[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-
-    rightArrow.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % thumbnails.length;
-      updateMainImage(currentIndex);
-      thumbnails[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-
-    upArrow.addEventListener('click', () => {
-      thumbContainer.scrollBy({ top: -100, behavior: 'smooth' });
-    });
-
-    downArrow.addEventListener('click', () => {
-      thumbContainer.scrollBy({ top: 100, behavior: 'smooth' });
-    });
-  </script>
+ 
 
 <section class="product-specs-section ">
   <div class="tabs">
@@ -777,19 +730,7 @@
 }
 </style>
 
-<script>
-const tabs = document.querySelectorAll('.tab');
-const contents = document.querySelectorAll('.tab-content');
 
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    contents.forEach(c => c.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById(tab.dataset.tab).classList.add('active');
-  });
-});
-</script>
 
 
 <section class="similar-products-section">
@@ -1097,19 +1038,7 @@ tabs.forEach(tab => {
 }
 </style>
 
-<script>
-const similarSlider2 = document.querySelector('.similar-product-slider');
-const similarNext2 = document.querySelector('.similar-next');
-const similarPrev2 = document.querySelector('.similar-prev');
 
-similarNext2.addEventListener('click', () => {
-  similarSlider2.scrollBy({ left: 400, behavior: 'smooth' });
-});
-
-similarPrev2.addEventListener('click', () => {
-  similarSlider2.scrollBy({ left: -400, behavior: 'smooth' });
-});
-</script>
 
 
 
@@ -1306,6 +1235,84 @@ similarPrev2.addEventListener('click', () => {
 
        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
        <script>AOS.init();</script>
+
+       <script>
+const similarSlider2 = document.querySelector('.similar-product-slider');
+const similarNext2 = document.querySelector('.similar-next');
+const similarPrev2 = document.querySelector('.similar-prev');
+
+similarNext2.addEventListener('click', () => {
+  similarSlider2.scrollBy({ left: 400, behavior: 'smooth' });
+});
+
+similarPrev2.addEventListener('click', () => {
+  similarSlider2.scrollBy({ left: -400, behavior: 'smooth' });
+});
+</script>
+
+
+<script>
+const tabs = document.querySelectorAll('.tab');
+const contents = document.querySelectorAll('.tab-content');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    contents.forEach(c => c.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.tab).classList.add('active');
+  });
+});
+</script>
+
+ <script>
+    const mainImage = document.getElementById('mainImage');
+    const thumbnails = document.querySelectorAll('.thumbnails img');
+    const leftArrow = document.querySelector('.arrow.left');
+    const rightArrow = document.querySelector('.arrow.right');
+    const thumbContainer = document.getElementById('thumbnails');
+    const upArrow = document.querySelector('.thumb-arrow.up');
+    const downArrow = document.querySelector('.thumb-arrow.down');
+    let currentIndex = 0;
+
+    function updateMainImage(index) {
+      thumbnails.forEach((thumb, i) => {
+        thumb.classList.toggle('active', i === index);
+      });
+      mainImage.style.opacity = 0;
+      setTimeout(() => {
+        mainImage.src = thumbnails[index].src.replace('100x100', '600x600');
+        mainImage.style.opacity = 1;
+      }, 200);
+    }
+
+    thumbnails.forEach((thumb, index) => {
+      thumb.addEventListener('click', () => {
+        currentIndex = index;
+        updateMainImage(currentIndex);
+      });
+    });
+
+    leftArrow.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+      updateMainImage(currentIndex);
+      thumbnails[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    rightArrow.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % thumbnails.length;
+      updateMainImage(currentIndex);
+      thumbnails[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    upArrow.addEventListener('click', () => {
+      thumbContainer.scrollBy({ top: -100, behavior: 'smooth' });
+    });
+
+    downArrow.addEventListener('click', () => {
+      thumbContainer.scrollBy({ top: 100, behavior: 'smooth' });
+    });
+  </script>
 
 
 </body>
