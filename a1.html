@@ -1,761 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <title>Arcot Industries Private Limited</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content="Arcot Industries Hyderabad, Industrial Power Solutions, Smart City India, Automation Systems, Lighting Company India, Solar Power, Engineering Solutions Hyderabad">
-  <meta name="description" content="Arcot Industries delivers cutting-edge solutions in Power, Energy, Lighting, Automation, Smart City Infrastructure, and R&D across India.">
-  <link rel="icon" href="img/fevi.png" type="image/x-icon">
-
-  <!-- Fonts & Libraries -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <title>COB Products — Arcot Industries</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="css/style.css" rel="stylesheet">
+  <style>
+    /* Minimal styles to match your layout (kept same look & behavior) */
+    body { font-family: "Poppins", sans-serif; background:#f8f8f8; margin:0; }
+    .header { background:#fff; padding:16px 24px; border-bottom:1px solid #eee; display:flex; align-items:center; gap:16px; }
+    .logo { height:40px; }
+    .lighting-wrapper { padding:20px; }
+    .top-filter-dropdowns { display:flex; gap:12px; flex-wrap:wrap; align-items:center; background:#fff; padding:12px; border:1px solid #ddd; margin-bottom:16px; }
+    .filter-group { display:flex; flex-direction:column; gap:6px; min-width:120px; }
+    .filter-group select, .filter-group input { padding:6px 8px; font-size:14px; }
+    .lighting-container { display:flex; gap:20px; align-items:flex-start; }
+    .sidebar { width:260px; background:#fff; border-right:1px solid #ddd; padding:20px; box-sizing:border-box; }
+    .category { list-style:none; padding:0; margin:0; }
+    .category li { margin-bottom:8px; }
+    .category button { width:100%; display:flex; justify-content:space-between; align-items:center; border:none; background:none; padding:8px; text-align:left; cursor:pointer; font-weight:500; }
+    .category button.active { background:#f1f5f6; }
+    .submenu { margin-left:12px; padding-left:0; display:block; margin-top:6px; }
+    .submenu a { display:block; padding:6px 8px; color:#444; text-decoration:none; font-size:14px; }
+    .product-section { flex:1; padding:10px 0; }
+    .product-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:28px; }
+    .product-card { background:#fff; padding:14px; display:flex; flex-direction:column; align-items:center; border:1px solid #e7e7e7; min-height:220px; }
+    .product-card img { width:150px; height:150px; object-fit:contain; }
+    .product-card h3 { margin-top:10px; font-size:15px; text-align:center; }
+    .reset-btn { padding:7px 12px; border:1px solid #999; background:none; cursor:pointer; }
+    .search-input { width:280px; padding:8px 10px; border:1px solid #ccc; border-radius:4px; }
+    .top-right { margin-left:auto; display:flex; gap:8px; align-items:center; }
+    @media (max-width: 900px) { .lighting-container { flex-direction:column; } .sidebar { width:100%; } }
+  </style>
 </head>
-
 <body>
 
-<!-- HEADER START -->
-
-<header class="main-header">
-  <div class="header-wrap position-relative">
-    <a href="index.html">
-      <img src="img/logos.webp" alt="Logo" class="logo" loading="lazy">
-    </a>
-    <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
-    <nav class="navmenu" id="mainNav">
-      <ul class="mb-0">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1 "></i></a></li>
-        <li><a href="solution.html">Solutions</a></li>
-<li class="dropdown">
-  <a href="#" onclick="toggleDropdown(event)">R&D <i class="bi bi-chevron-down ms-1"></i></a>
-  <ul class="dropdown-menu">
-    <li><a href="smart-pole.html">Smart Pole</a></li>
-    <li><a href="#">Smart Bollard</a></li>
-    <li><a href="#">Smart Conference Table</a></li>
-    <li><a href="#">Smart Window Leaf AC</a></li>
-    <li><a href="#">Smart Bar Counter</a></li>
-  </ul>
-</li>
-
-        <li><a href="applications.html">Applications</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-
-  <!-- Mega Menu -->
-  <div id="megaMenu" class="mega-menu">
-    <div class="row">
-      <div class="underline"></div>
-      <div class="service-submenus d-flex flex-wrap">
-        <div class="service-group">
-          <h6>Energy</h6>
-          <ul>
-            <li><a href="#">Solar</a></li>
-            <li><a href="#">Wind</a></li>
-            <li><a href="#">Biomass</a></li>
-            <li><a href="#">Hydel Power</a></li>
-          </ul>
-        </div>
-        <div class="service-group">
-          <h6>Power</h6>
-          <ul>
-            <li><a href="transmission.html">Transmission</a></li>
-            <li><a href="#">Distribution</a></li>
-            <li><a href="#">Low Tension</a></li>
-            <li><a href="#">High Tension</a></li>
-            <li><a href="#">Panel Boards</a></li>
-          </ul>
-        </div>
-        <div class="service-group">
-          <h6>Lighting</h6>
-          <ul>
-            <li><a href="residential-lighting.html">Residential</a></li>
-            <li><a href="facade-lighting.html">Facade</a></li>
-            <li><a href="commercial-lighting.html">Commercial</a></li>
-            <li><a href="industrial-lighting.html">Industrial</a></li>
-            <li><a href="#">Street</a></li>
-            <li><a href="#">Park</a></li>
-            <li><a href="#">Stadium</a></li>
-            <li><a href="#">Hospital</a></li>
-          </ul>
-        </div>
-        <div class="service-group">
-          <h6>Automation</h6>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Commercial</a></li>
-            <li><a href="#">Industrial</a></li>
-            <li><a href="#">Hospital</a></li>
-            <li><a href="#">IoT Based Automation</a></li>
-            <li><a href="#">Hotel</a></li>
-          </ul>
-        </div>
-        <div class="service-group">
-          <h6>R & D</h6>
-          <ul>
-            <li><a href="smart-pole.html">Smart Pole</a></li>
-            <li><a href="#">Smart Conference Hall</a></li>
-            <li><a href="#">Smart Bollards</a></li>
-            <li><a href="#">Smart Bar Counter</a></li>
-            <li><a href="#">Smart Window Leaf AC</a></li>
-          </ul>
-        </div>
-       
-      </div>
+  <!-- Header -->
+  <div class="header">
+    <a href="index.html"><img class="logo" src="img/logos.webp" alt="Logo"></a>
+    <h4 style="margin:0">Lighting — COB Category</h4>
+    <div class="top-right">
+      <input id="searchBox" class="search-input" placeholder="Search products or models..." oninput="searchFilter(this.value)" />
+      <button class="reset-btn" onclick="resetFilters()">Reset</button>
     </div>
   </div>
-</header>
-<!-- HEADER END -->
 
-<!-- PRODUCTS SECTION START -->
-<section class="lighting-products pt-5">
-  <div class="lighting-container">
-    <!-- Sidebar -->
-    <aside class="sidebar pt-5">
-      <h2>Lighting</h2>
-      <h2 class="mobile-toggle" onclick="toggleSidebar()">Lighting ☰</h2>
+  <section class="lighting-wrapper container-fluid">
+    <!-- Top Filters -->
+    <div class="top-filter-dropdowns">
+      <div class="filter-group">
+        <label>Type</label>
+        <select onchange="filterDropdown('type', this.value)">
+          <option value="">All</option>
+          <option value="indoor">Indoor</option>
+          <option value="outdoor">Outdoor</option>
+        </select>
+      </div>
 
-      <ul class="category">
-        <li><button onclick="filterProducts('all')" class="active">All</button></li>
-        <li>
-          <button onclick="toggleMenu(this); filterProducts('cob')">COB Lights</button>
-          <ul class="submenu">
-            <li><a href="#">COB Downlight</a></li>
-            <li><a href="#">COB Surface</a></li>
-            <li><a href="#">COB Zoom</a></li>
-          </ul>
-        </li>
-        <li>
-          <button onclick="toggleMenu(this); filterProducts('surface')">Surface Lights</button>
-          <ul class="submenu">
-            <li><a href="#">Surface Round</a></li>
-            <li><a href="#">Surface Square</a></li>
-          </ul>
-        </li>
-      
-                <li>
-          <button onclick="toggleMenu(this); filterProducts('track')">Track Lights</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
-                <li>
-          <button onclick="toggleMenu(this); filterProducts('Magnetic')">Magnetic Track Lights</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
+      <div class="filter-group">
+        <label>Mounting</label>
+        <select onchange="filterDropdown('mount', this.value)">
+          <option value="">All</option>
+          <option value="concealed">Concealed</option>
+          <option value="surface">Surface</option>
+          <option value="pendant">Pendant</option>
+          <option value="track-2-line">Track 2-Line</option>
+          <option value="track-3-line">Track 3-Line</option>
+          <option value="magnetic-48v">Magnetic 48V</option>
+          <option value="recessed-ground">Recessed Ground</option>
+          <option value="spike-mount">Spike Mount</option>
+          <option value="bollard">Bollard</option>
+          <option value="underwater">Underwater</option>
+          <option value="flexible-suspended-track">Flexible Suspended Track</option>
+        </select>
+      </div>
 
+      <div class="filter-group">
+        <label>IP Rating</label>
+        <select onchange="filterDropdown('ip', this.value)">
+          <option value="">All</option>
+          <option value="ip20">IP20</option>
+          <option value="ip60">IP60</option>
+          <option value="ip65">IP65</option>
+        </select>
+      </div>
 
-                <li>
-          <button onclick="toggleMenu(this); filterProducts('slimtrack')">Slim Track Lights</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
+      <div class="filter-group">
+        <label>Wattage</label>
+        <select onchange="filterDropdown('watt', this.value)">
+          <option value="">All</option>
+          <option value="5w">5W</option>
+          <option value="10w">10W</option>
+          <option value="12w">12W</option>
+          <option value="18w">18W</option>
+          <option value="20w">20W</option>
+        </select>
+      </div>
 
+      <div class="filter-group">
+        <label>Control</label>
+        <select onchange="filterDropdown('control', this.value)">
+          <option value="">All</option>
+          <option value="dali">DALI</option>
+          <option value="onoff">On/Off</option>
+          <option value="0-10v">0-10V</option>
+          <option value="triac">Triac</option>
+        </select>
+      </div>
 
-                <li>
-          <button onclick="toggleMenu(this); filterProducts('laserblades')">Laser Blades</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
+      <div class="filter-group">
+        <label>Application</label>
+        <select onchange="filterDropdown('app', this.value)">
+          <option value="">All</option>
+          <option value="residential">Residential</option>
+          <option value="commercial">Commercial</option>
+          <option value="hospitality">Hospitality</option>
+          <option value="industrial">Industrial</option>
+        </select>
+      </div>
 
-                <li>
-          <button onclick="toggleMenu(this); filterProducts('linearprofiles')">Linear Profiles</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
+      <div class="filter-group">
+        <label>CCT</label>
+        <select onchange="filterDropdown('cct', this.value)">
+          <option value="">All</option>
+          <option value="2000k">2000K</option>
+          <option value="3000k">3000K</option>
+          <option value="3500k">3500K</option>
+          <option value="4000k">4000K</option>
+        </select>
+      </div>
 
-                <li>
-          <button onclick="toggleMenu(this); filterProducts('panellights')">Panel Lights</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
+      <div class="filter-group">
+        <label>Body Color</label>
+        <select onchange="filterDropdown('color', this.value)">
+          <option value="">All</option>
+          <option value="black">Black</option>
+          <option value="white">White</option>
+          <option value="gold">Gold</option>
+        </select>
+      </div>
+    </div>
 
-                <li>
-          <button onclick="toggleMenu(this); filterProducts('neon')">Neon Flex</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
+    <div class="lighting-container">
+      <!-- Sidebar (Categories) -->
+      <aside class="sidebar">
+        <h4 style="margin-top:0">Categories</h4>
+        <ul class="category">
+          <li><button onclick="goCategory('all')">All</button></li>
+          <li><button class="active" onclick="goCategory('cob')">COB Lights</button>
+            <!-- OPEN submenu for COB -->
+            <ul class="submenu">
+              <!-- These submenu items are the model groups; clicking a model could scroll/open details or filter by model name -->
+              <a href="#" onclick="filterAttribute('model','cob-surface-10w'); return false;">COB Surface 10W</a>
+              <a href="#" onclick="filterAttribute('model','cob-recessed-12w'); return false;">COB Recessed 12W</a>
+              <a href="#" onclick="filterAttribute('model','cob-zoom-18w'); return false;">COB Zoom 18W</a>
+              <a href="#" onclick="filterAttribute('model','cob-down-5w'); return false;">COB Downlight 5W</a>
+              <a href="#" onclick="filterAttribute('model','cob-surface-20w'); return false;">COB Surface 20W</a>
+            </ul>
+          </li>
 
-                <li>
-          <button onclick="toggleMenu(this); filterProducts('hibay')">Hi -Bay</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
+          <!-- Other main categories: link to their separate pages -->
+          <li><button onclick="location.href='track-product.html'">Normal Track</button></li>
+          <li><button onclick="location.href='magnetic-product.html'">Magnetic Track</button></li>
+          <li><button onclick="location.href='slimtrack-product.html'">Slim Track</button></li>
+          <li><button onclick="location.href='laserblades-product.html'">Laser Blades</button></li>
+          <li><button onclick="location.href='panel-product.html'">Panel Lights</button></li>
+          <li><button onclick="location.href='neonflex-product.html'">Neon Flex</button></li>
+          <li><button onclick="location.href='hibay-product.html'">Hi-Bay</button></li>
+          <li><button onclick="location.href='flood-product.html'">Flood Lights</button></li>
+          <!-- add other links similarly -->
+        </ul>
+      </aside>
 
-                <li>
-          <button onclick="toggleMenu(this); filterProducts('flood')">Flood Lights</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
+      <!-- Products -->
+      <div class="product-section">
+        <div class="product-grid" id="productGrid">
 
-                <li>
-          <button onclick="toggleMenu(this); filterProducts('street')">Street Lights</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
+          <!-- NOTE: every product-card includes full data-* attributes used by filters -->
+          <!-- Sample COB products (add more following same structure) -->
+          <div class="product-card"
+               data-category="cob"
+               data-type="indoor"
+               data-mount="surface"
+               data-ip="ip20"
+               data-watt="10w"
+               data-control="onoff"
+               data-app="residential"
+               data-cct="3000k"
+               data-color="black"
+               data-model="cob-surface-10w"
+               data-name="COB Surface 10W">
+            <img src="img/productsimgs/1.png" alt="COB Surface 10W">
+            <h3>COB Surface 10W</h3>
+          </div>
 
-                <li>
-          <button onclick="toggleMenu(this); filterProducts('ground')">Recessed Inground Lights</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
+          <div class="product-card"
+               data-category="cob"
+               data-type="indoor"
+               data-mount="recessed-ground"
+               data-ip="ip20"
+               data-watt="12w"
+               data-control="dali"
+               data-app="commercial"
+               data-cct="4000k"
+               data-color="white"
+               data-model="cob-recessed-12w"
+               data-name="COB Recessed 12W">
+            <img src="img/productsimgs/1.png" alt="COB Recessed 12W">
+            <h3>COB Recessed 12W</h3>
+          </div>
 
-        <li>
-          <button onclick="toggleMenu(this); filterProducts('track')">Wall Washers</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
+          <div class="product-card"
+               data-category="cob"
+               data-type="indoor"
+               data-mount="ceiling"
+               data-ip="ip20"
+               data-watt="18w"
+               data-control="0-10v"
+               data-app="hospitality"
+               data-cct="3500k"
+               data-color="white"
+               data-model="cob-zoom-18w"
+               data-name="COB Zoom 18W">
+            <img src="img/productsimgs/1.png" alt="COB Zoom 18W">
+            <h3>COB Zoom 18W</h3>
+          </div>
 
-                <li>
-          <button onclick="toggleMenu(this); filterProducts('wallwasher')">Wall Washers</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
+          <div class="product-card"
+               data-category="cob"
+               data-type="indoor"
+               data-mount="ceiling"
+               data-ip="ip20"
+               data-watt="5w"
+               data-control="onoff"
+               data-app="residential"
+               data-cct="3000k"
+               data-color="gold"
+               data-model="cob-down-5w"
+               data-name="COB Downlight 5W">
+            <img src="img/productsimgs/1.png" alt="COB Downlight 5W">
+            <h3>COB Downlight 5W</h3>
+          </div>
 
-                <li>
-          <button onclick="toggleMenu(this); filterProducts('spikes')">Spikes</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
+          <div class="product-card"
+               data-category="cob"
+               data-type="indoor"
+               data-mount="surface"
+               data-ip="ip60"
+               data-watt="20w"
+               data-control="triac"
+               data-app="commercial"
+               data-cct="4000k"
+               data-color="black"
+               data-model="cob-surface-20w"
+               data-name="COB Surface 20W">
+            <img src="img/productsimgs/1.png" alt="COB Surface 20W">
+            <h3>COB Surface 20W</h3>
+          </div>
 
-                <li>
-          <button onclick="toggleMenu(this); filterProducts('bollards')">Bollards</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
+          <!-- Add more COB models as required (keep same data-* attributes format) -->
 
-                <li>
-          <button onclick="toggleMenu(this); filterProducts('twoway')">Two Way Lights</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
-
-        <li>
-          <button onclick="toggleMenu(this); filterProducts('track')">Sandliyer's Lights</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
-
-                <li>
-          <button onclick="toggleMenu(this); filterProducts('track')">Wall Lights</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
-
-                <li>
-          <button onclick="toggleMenu(this); filterProducts('track')">Pendant Lights</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
-                        <li>
-          <button onclick="toggleMenu(this); filterProducts('track')">Hanging Linear Lights</button>
-          <ul class="submenu">
-            <li><a href="#">Track Type 1</a></li>
-            <li><a href="#">Track Type 2</a></li>
-          </ul>
-        </li>
-      </ul>
-    </aside>
-
-    <!-- Product Grid -->
-    <div class="product-section">
-      <div class="product-grid" id="productGrid">
-        <div class="product-card" data-category="cob">
-          <img src="img/productsimgs/1.png" alt="COB Downlight" />
-          <h3>COB Downlight</h3>
-        </div>
-        <div class="product-card" data-category="cob">
-          <img src="img/productsimgs/2.png" alt="COB Surface" />
-          <h3>COB Surface</h3>
-        </div>
-        <div class="product-card" data-category="surface">
-          <img src="img/productsimgs/3.png" alt="Surface Round" />
-          <h3>Surface Round</h3>
-        </div>
-        <div class="product-card" data-category="surface">
-          <img src="img/productsimgs/4.png" alt="Surface Square" />
-          <h3>Surface Square</h3>
-        </div>
-        <div class="product-card" data-category="track">
-          <img src="img/productsimgs/5.png" alt="Track Type 1" />
-          <h3>Track Type 1</h3>
-        </div>
-        <div class="product-card" data-category="track">
-          <img src="img/productsimgs/6.png" alt="Track Type 2" />
-          <h3>Track Type 2</h3>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PRODUCTS SECTION END -->
+  <!-- Scripts -->
+  <script>
+    /********************************************************
+     * Filtering engine for category page (COB)
+     * - Works with data-* attributes on each .product-card
+     * - Search will redirect if result belongs to another category
+     ********************************************************/
 
+    // GLOBAL DATA: mapping of a few sample products to their category pages
+    // (used by search redirect) — extend this list for full site.
+    const GLOBAL_PRODUCT_INDEX = [
+      { name: "COB Surface 10W", category: "cob", page: "cobs-product.html" },
+      { name: "COB Recessed 12W", category: "cob", page: "cobs-product.html" },
+      { name: "COB Zoom 18W", category: "cob", page: "cobs-product.html" },
+      { name: "Normal Track 12W", category: "track", page: "track-product.html" },
+      { name: "Magnetic Track 20W", category: "magnetic", page: "magnetic-product.html" },
+      { name: "Slim Track 15W", category: "slimtrack", page: "slimtrack-product.html" }
+      // add all your catalog entries here for accurate cross-page search/redirect
+    ];
 
+    // Active filters & search state
+    let activeFilters = {};
+    let searchText = "";
+    const currentPageCategory = "cob"; // this page's category
 
-<!-- ================= STYLES ================= -->
-<style>
-.lighting-container {
-  display: flex;
-  flex-direction: row;
-  min-height: 100vh;
-  background: #f8f8f8;
-  color: #111;
-  font-family: "Poppins", sans-serif;
-}
+    // Called by selects
+    function filterDropdown(attr, value) {
+      if (!value || value === "") {
+        delete activeFilters[attr];
+      } else {
+        activeFilters[attr] = value.toLowerCase();
+      }
+      applyFilters();
+    }
 
-/* Sidebar */
-.sidebar {
-  width: 260px;
-  background: #fff;
-  border-right: 1px solid #ddd;
-  padding: 25px;
-  transition: all 0.4s ease;
-}
-.sidebar h2 {
-  font-size: 20px;
-  color: #111;
-  margin-bottom: 25px;
-  font-weight: 700;
-  text-align: center;
-}
-.sidebar h2.mobile-toggle {
-  display: none;
-  cursor: pointer;
-  text-align: left;
-}
-.category {
-  list-style: none;
-}
-.category li {
-  margin-bottom: 8px;
-}
-.category button {
-  width: 100%;
-  background: none;
-  border: none;
-  text-align: left;
-  font-size: 15px;
-  color: #333;
-  padding: 10px 8px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 0.3s ease;
-  border-radius: 6px;
-}
-.category button::after {
-  content: "→";
-  font-size: 16px;
-  color: #999;
-  transition: all 0.3s ease;
-}
-.category button:hover,
-.category button.active {
-  background: #eaeaea;
-  color: #000;
-}
-.category button:hover::after,
-.category button.active::after {
-  color: #000;
-  transform: translateX(3px);
-}
-.submenu {
-  list-style: none;
-  margin-left: 15px;
-  display: none;
-}
-.submenu li a {
-  text-decoration: none;
-  color: #555;
-  font-size: 14px;
-  transition: color 0.3s;
-}
-.submenu li a:hover {
-  color: #000;
-}
+    // Called by submenu model clicks
+    function filterAttribute(attr, value) {
+      if (activeFilters[attr] === value.toLowerCase()) {
+        delete activeFilters[attr];
+      } else {
+        activeFilters[attr] = value.toLowerCase();
+      }
+      applyFilters();
+    }
 
-/* Products */
-.product-section {
-  flex: 1;
-  padding: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 35px;
-  width: 100%;
-  max-width: 1300px;
-}
-.product-card {
-  position: relative;
-  background: #e6e6e6;
-  border-radius: 14px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 360px;
-  cursor: pointer;
-  transition: transform 0.4s ease;
-}
-.product-card:hover {
-  transform: translateY(-8px);
-}
-.product-card img {
-  width: 230px;
-  transition: transform 0.9s ease;
-  z-index: 2;
-  position: relative;
-}
-.product-card:hover img {
-  transform: translate(-20px, -45px) scale(1.18);
-}
-.product-card h3 {
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #111;
-  font-size: 1.1rem;
-  font-weight: 600;
-  opacity: 0;
-  transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
-  z-index: 3;
-}
-.product-card:hover h3 {
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
-.product-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: #e6e6e6;
-  z-index: 1;
-  transition: all 1s ease;
-}
-.product-card:hover::before {
-  background: linear-gradient(140deg, #ffffff 55%, #e6e6e6 45%);
-}
+    // Search behavior:
+    // - If search matches a product on current page -> filter locally
+    // - If search matches a product on another category -> redirect to that category page
+    function searchFilter(txt) {
+      searchText = txt.trim().toLowerCase();
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-  }
-  .product-card {
-    height: 300px;
-  }
-  .product-card img {
-    width: 190px;
-  }
-}
-@media (max-width: 768px) {
-  .lighting-container {
-    flex-direction: column;
-  }
-  .sidebar {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-  }
-  .sidebar h2 {
-    display: none;
-  }
-  .sidebar h2.mobile-toggle {
-    display: block;
-  }
-  .category {
-    display: none;
-  }
-  .category.show {
-    display: block;
-  }
-  .product-section {
-    padding: 20px;
-  }
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
+      if (searchText.length === 0) {
+        applyFilters();
+        return;
+      }
 
-<!-- ================= SCRIPT ================= -->
+      // try find exact or partial product match in GLOBAL_PRODUCT_INDEX
+      let match = GLOBAL_PRODUCT_INDEX.find(p => p.name.toLowerCase().includes(searchText));
+      if (match && match.page && match.category && match.category !== currentPageCategory) {
+        // Redirect to product page for that category
+        // NOTE: we use location.href so user moves to correct page
+        window.location.href = match.page + "?q=" + encodeURIComponent(searchText);
+        return;
+      }
 
+      // else apply local filtering (product cards)
+      applyFilters();
+    }
 
-   <!-- Footer Start -->
-<div class="tricky-footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
-  <div class="container py-5">
-    <div class="row g-5">
+    // Reset button
+    function resetFilters() {
+      activeFilters = {};
+      searchText = "";
+      // reset selects
+      document.querySelectorAll('.top-filter-dropdowns select').forEach(s => s.value = "");
+      document.getElementById('searchBox').value = "";
+      // reset submenu/active states (if any)
+      // show all
+      applyFilters();
+    }
 
-      <!-- Column 1: Quick Links -->
-      <div class="col-md-6 col-lg-6 col-xl-3">
-        <div class="tricky-footer-item d-flex flex-column">
-          <h4 class="text-white mb-4">Quick Links</h4>
-          <a href="index.html">Home</a>
-          <a href="about.html">About us</a>
-          <a href="solution.html">Solutions</a>
-          <a href="applications.html">Applications</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="smart-pole.html">R & D</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
+    // Apply combined filters + search to product cards
+    function applyFilters() {
+      const cards = document.querySelectorAll('.product-card');
 
-      <!-- Column 2: Services -->
-      <div class="col-md-6 col-lg-6 col-xl-3">
-        <div class="tricky-footer-item d-flex flex-column">
-          <h4 class="text-white mb-4">Services</h4>
-          <a href="#">Energy</a>
-          <a href="#">Power</a>
-          <a href="#">Lighting</a>
-          <a href="#">Automation</a>
-          <a href="#">Smart City</a>
-          <a href="#">R & D</a>
-        </div>
-      </div>
+      cards.forEach(card => {
+        let show = true;
 
-      <!-- Column 3: Applications -->
-      <div class="col-md-6 col-lg-6 col-xl-3">
-        <div class="tricky-footer-item d-flex flex-column">
-          <h4 class="text-white mb-4">Applications</h4>
-          <a href="#">Energy Generation</a>
-          <a href="#">Power</a>
-          <a href="#">Lighting</a>
-          <a href="#">Indoor Lighting</a>
-          <a href="#">Automation</a>
-          <a href="#">Smart City</a>
-          <a href="#">R & D</a>
-        </div>
-      </div>
+        // category check (this page is already COB so cards should be cob)
+        const cardCategory = (card.dataset.category || "").toLowerCase();
+        if (cardCategory !== currentPageCategory) {
+          show = false; // safety — but in this page all should be cob
+        }
 
-      <!-- Column 4: Contact Info -->
-      <div class="col-md-6 col-lg-6 col-xl-3">
-        <div class="tricky-footer-item d-flex flex-column">
-          <h4 class="text-white mb-4">Contact Info</h4>
-          <a href="#"><i class="fa fa-map-marker-alt text-secondary me-2"></i> Apurupa Towers, Road No:36, Jubilee Hills, Hyderabad, Telangana-500033</a>
-          <a href="mailto:info@arcotindia.com"><i class="fas fa-envelope text-secondary me-2"></i> info@arcotindia.com</a>
-          <a href="tel:+919848189899"><i class="fas fa-phone text-secondary me-2"></i> +91 98481 89899</a>
-        </div>
-      </div>
+        // attribute filters (AND across attributes)
+        for (let key in activeFilters) {
+          const fval = (activeFilters[key] || "").toLowerCase();
+          const cardVal = (card.dataset[key] || "").toLowerCase();
 
-      <!-- Social Media -->
-      <div class="col-lg-12 mt-4">
-        <div class="tricky-social-icons d-flex flex-wrap justify-content-start gap-3">
-          <a class="tricky-social-btn" href="#"><i class="fab fa-facebook-f"></i></a>
-          <a class="tricky-social-btn" href="#"><i class="fab fa-twitter"></i></a>
-          <a class="tricky-social-btn" href="#"><i class="fab fa-instagram"></i></a>
-          <a class="tricky-social-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a class="tricky-social-btn" href="#"><i class="fab fa-youtube"></i></a>
-          <a class="tricky-social-btn" href="#"><i class="fab fa-pinterest-p"></i></a>
-          <a class="tricky-social-btn" href="#"><i class="fab fa-whatsapp"></i></a>
-          <a class="tricky-social-btn" href="#"><i class="fab fa-telegram-plane"></i></a>
-          <a class="tricky-social-btn" href="#"><i class="fab fa-reddit-alien"></i></a>
-          <a class="tricky-social-btn" href="#"><i class="fab fa-threads"></i></a>
-        </div>
-      </div>
+          // If card has multiple values (comma separated) support OR semantics
+          const cardVals = cardVal.split(',').map(v => v.trim()).filter(Boolean);
 
-    </div>
-  </div>
-</div>
+          if (cardVals.length === 0) {
+            show = false; break;
+          }
 
-<style>
- /* Footer Wrapper */
-.tricky-footer {
-  background: #1e2226;
-  color: #ccc;
-  font-size: 15px;
-  font-family: 'Six Caps', sans-serif;
-  font-weight: 300; /* light weight */
-  letter-spacing: 1px;
-  
-}
+          if (!cardVals.includes(fval)) {
+            show = false; break;
+          }
+        }
 
-/* Footer Headings */
-.tricky-footer-item h4,
-.tricky-footer-item h5 {
-  font-weight: 400;
-  color: #fff;
-  margin-bottom: 15px;
-  font-size: 22px;
-  letter-spacing: 2px;
-}
+        // search text match: if searchText non-empty, require match in name/model/description
+        if (show && searchText) {
+          const hay = (card.dataset.name || "" + " " + card.innerText).toLowerCase();
+          if (!hay.includes(searchText)) show = false;
+        }
 
-/* Footer Links */
-.tricky-footer-item a {
-  color: #bbb;
-  margin-bottom: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  display: inline-block;
-  font-weight: 300;
-  font-size: 12px;
-}
-.tricky-footer-item a:hover {
-  color: #00bcd4;
-  padding-left: 5px;
-}
+        card.style.display = show ? "flex" : "none";
+      });
+    }
 
-/* Social Media Icons */
-.tricky-social-icons .tricky-social-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: transparent;
-  color: #8f8c8c;
-  font-size: 13px;
-  transition: 0.3s;
-  font-family: 'Six Caps', sans-serif;
-  font-weight: 300;
-}
-.tricky-social-icons .tricky-social-btn:hover {
-  background: #434444;
-  color: #fff;
-  transform: scale(1.1);
-}
+    // Quick navigation when clicking category button in sidebar
+    function goCategory(cat) {
+      if (cat === 'all') {
+        // if you have an 'all-products' page, navigate there; otherwise remove category filter
+        location.href = 'all-products.html';
+      } else {
+        // navigate to category page (e.g., cob -> cobs-product.html)
+        // mapping strategy: category-name + '-product.html'
+        const page = cat + '-product.html';
+        location.href = page;
+      }
+    }
 
-/* Copyright Section */
-.tricky-footer-bottom {
-  border-top: 1px solid #333;
-  color: #aaa;
-  font-size: 14px;
-  font-family: 'Six Caps', sans-serif;
-  font-weight: 300;
-  letter-spacing: 1px;
-}
-.tricky-footer-bottom a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 300;
-}
-.tricky-footer-bottom a:hover {
-  color: #00bcd4;
-}
-</style>
-<!-- Footer End -->
+    // On page load: open COB submenu and set active states
+    (function init() {
+      // ensure COB button is active in sidebar
+      document.querySelectorAll('.category > li > button').forEach(btn => {
+        if (btn.textContent.trim().toLowerCase().includes('cob')) {
+          btn.classList.add('active');
+        } else btn.classList.remove('active');
+      });
 
-<!-- Copyright Start -->
-<div class="tricky-footer-bottom py-4 bg-dark">
-  <div class="container">
-    <div class="row g-4 align-items-center">
-      <div class="col-md-6 text-center text-md-start mb-md-0">
-        <span class="text-body">
-          <a href="https://arcotindia.com/" class="border-bottom text-white">
-            <i class="fas fa-copyright text-light me-2"></i>ARCOT All Rights Reserved.
-          </a>
-        </span>
-      </div>
-      <!-- <div class="col-md-6 text-center text-md-end text-body">
-        Designed By <a class="border-bottom text-white" href="https://arcotindia.com/">ARCOT</a>
-      </div> -->
-    </div>
-  </div>
-</div>
-<!-- Copyright End -->
-         
+      // If the page URL has ?q=... (redirected search), inject search and filter
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get('q');
+      if (q) {
+        document.getElementById('searchBox').value = q;
+        searchText = q.toLowerCase();
+      }
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>  
+      // initial render
+      applyFilters();
+    })();
 
-
-                <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        
-
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-       <script>AOS.init();</script>
-<script>
-function toggleMenu(btn) {
-  const submenu = btn.nextElementSibling;
-  const allMenus = document.querySelectorAll(".submenu");
-  const allButtons = document.querySelectorAll(".category button");
-  allMenus.forEach((m) => { if (m !== submenu) m.style.display = "none"; });
-  allButtons.forEach((b) => b.classList.remove("active"));
-  if (submenu.style.display === "block") submenu.style.display = "none";
-  else { submenu.style.display = "block"; btn.classList.add("active"); }
-}
-function filterProducts(category) {
-  const cards = document.querySelectorAll(".product-card");
-  const buttons = document.querySelectorAll(".category button");
-  buttons.forEach((b) => b.classList.remove("active"));
-  buttons.forEach((b) => {
-    if (b.textContent.toLowerCase().includes(category) || category === "all") b.classList.add("active");
-  });
-  cards.forEach((c) => {
-    c.style.display = category === "all" || c.dataset.category === category ? "flex" : "none";
-  });
-}
-function toggleSidebar() {
-  document.querySelector(".category").classList.toggle("show");
-}
-</script>
-
+    // Optional: if you want counts or "no results" message, you can add here
+  </script>
 </body>
 </html>
