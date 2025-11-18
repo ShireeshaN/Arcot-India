@@ -1,462 +1,1564 @@
-<!-- FULL WORKING CODE WITH FUNCTIONALITY ONLY (NO LAYOUT CHANGE) -->
-<!-- NOTE: Copy–paste entire file. Layout preserved exactly as user provided. -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<<<<<<< HEAD
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Product Listing Page</title>
-<style>
-/* ORIGINAL CSS KEPT EXACTLY SAME – NO DESIGN CHANGES */
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-.container {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
-}
-.sidebar {
-    width: 260px;
-    background: #222;
-    color: white;
-    overflow-y: auto;
-    padding: 20px 0;
-}
-.sidebar h2 {
-    padding-left: 20px;
-    margin-bottom: 10px;
-}
-.category ul {
-    list-style: none;
-    padding-left: 0;
-}
-.category > ul > li {
-    border-bottom: 1px solid #444;
-}
-.category button {
-    width: 100%;
-    padding: 12px 20px;
-    background: none;
-    border: none;
-    color: white;
-    text-align: left;
-    font-size: 16px;
-    cursor: pointer;
-}
-.category button.open {
-    background: #333;
-}
-.category ul ul {
-    display: none;
-    background: #333;
-}
-.category ul ul.show {
-    display: block;
-}
-.category ul ul li a {
-    display: block;
-    padding: 10px 40px;
-    color: #ddd;
-    text-decoration: none;
-}
-.category ul ul li a:hover {
-    background: #444;
-}
-.main-content {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    background: #f4f4f4;
-}
-.product-listing {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-}
-.product-card {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.product-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-#noResults {
-    display: none;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 18px;
-}
-</style>
-=======
-  <meta charset="utf-8" />
-  <title>COB Products — Arcot Industries</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <title>Arcot Industries Private Limited</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Arcot Industries Hyderabad, Industrial Power Solutions, Smart City India, Automation Systems, Lighting Company India, Solar Power, Engineering Solutions Hyderabad">
+  <meta name="description" content="Arcot Industries delivers cutting-edge solutions in Power, Energy, Lighting, Automation, Smart City Infrastructure, and R&D across India.">
+  <link rel="icon" href="img/fevi.png" type="image/x-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Performance-optimized Libraries -->
+  <link rel="stylesheet" href="lib/animate/animate.min.css" media="print" onload="this.media='all'">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- Font Awesome (latest) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    /* Minimal styles to match your layout (kept same look & behavior) */
-    body {
-      font-family: "Poppins", sans-serif;
-      background: #f8f8f8;
-      margin: 0;
-    }
 
-    .header {
-      background: #fff;
-      padding: 16px 24px;
-      border-bottom: 1px solid #eee;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
+  <!-- Bootstrap CSS (latest) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    .logo {
-      height: 40px;
-    }
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-    .lighting-wrapper {
-      padding: 20px;
-    }
+  <!-- Custom CSS -->
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- <link href="css/segments.css" rel="stylesheet"> -->
 
-    .top-filter-dropdowns {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-      background: #fff;
-      padding: 12px;
-      border: 1px solid #ddd;
-      margin-bottom: 16px;
-    }
 
-    .filter-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      min-width: 120px;
-    }
-
-    .filter-group select,
-    .filter-group input {
-      padding: 6px 8px;
-      font-size: 14px;
-    }
-
-    .lighting-container {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-    }
-
-    .sidebar {
-      width: 260px;
-      background: #fff;
-      border-right: 1px solid #ddd;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .category {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .category li {
-      margin-bottom: 8px;
-    }
-
-    .category button {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border: none;
-      background: none;
-      padding: 8px;
-      text-align: left;
-      cursor: pointer;
-      font-weight: 500;
-    }
-
-    .category button.active {
-      background: #f1f5f6;
-    }
-
-    .submenu {
-      margin-left: 12px;
-      padding-left: 0;
-      display: block;
-      margin-top: 6px;
-    }
-
-    .submenu a {
-      display: block;
-      padding: 6px 8px;
-      color: #444;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .product-section {
-      flex: 1;
-      padding: 10px 0;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 28px;
-    }
-
-    .product-card {
-      background: #fff;
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border: 1px solid #e7e7e7;
-      min-height: 220px;
-    }
-
-    .product-card img {
-      width: 150px;
-      height: 150px;
-      object-fit: contain;
-    }
-
-    .product-card h3 {
-      margin-top: 10px;
-      font-size: 15px;
-      text-align: center;
-    }
-
-    .reset-btn {
-      padding: 7px 12px;
-      border: 1px solid #999;
-      background: none;
-      cursor: pointer;
-    }
-
-    .search-input {
-      width: 280px;
-      padding: 8px 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    .top-right {
-      margin-left: auto;
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    @media (max-width: 900px) {
-      .lighting-container {
-        flex-direction: column;
-      }
-
-      .sidebar {
-        width: 100%;
-      }
-    }
-  </style>
->>>>>>> 9c60a9bb35d2fd98a1d30176fe925bea1e2f6824
 </head>
 
-<body>
 
-<<<<<<< HEAD
-<div class="container">
-    <div class="sidebar">
-        <h2>Categories</h2>
-        <div class="category">
-            <ul>
-                <li>
-                    <button onclick="toggleMenu(this)" data-filter-key="category" data-filter-value="cob">COB Lights</button>
-                    <ul>
-                        <li><a href="#" onclick="filterSub('type','spot')">COB Spot Lights</a></li>
-                        <li><a href="#" onclick="filterSub('type','trimless')">Trimless COBs</a></li>
-                        <li><a href="#" onclick="filterSub('type','concealed')">Concealed COBs</a></li>
-                    </ul>
-                </li>
-=======
-  <!-- Header -->
-  <div class="header">
-    <a href="index.html"><img class="logo" src="img/logos.webp" alt="Logo"></a>
-    <h4 style="margin:0">Lighting — COB Category</h4>
-    <div class="top-right">
-      <input id="searchBox" class="search-input" placeholder="Search products or models..."
-        oninput="searchFilter(this.value)" />
-      <button class="reset-btn" onclick="resetFilters()">Reset</button>
-    </div>
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        
+
+    
+<header class="main-header">
+  <div class="header-wrap position-relative">
+    <a href="index.html"><img src="img/logos.webp" alt="Logo" class="logo" loading="lazy"></a>
+    <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
+    <nav class="navmenu" id="mainNav">
+      <ul class="mb-0">
+         <li><a href="index.html" >Home</a></li>
+             <li><a href="about.html" class="active">About</a></li>
+        <li>
+          <a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a>
+        </li>
+        <li class="dropdown">
+  <a href="#" onclick="toggleDropdown(event)">Products <i class="bi bi-chevron-down ms-1"></i></a>
+  <ul class="dropdown-menu">
+    <li><a href="smart-pole.html">Energy Generation</a></li>
+    <li><a href="#">Power</a></li>
+    <li><a href="#">Lighting</a></li>
+    <li><a href="#">Automation</a></li>
+    
+  </ul>
+</li>
+       <li><a href="solution.html">Solutions</a></li>
+
+<li class="dropdown">
+  <a href="#" onclick="toggleDropdown(event)">R&D <i class="bi bi-chevron-down ms-1"></i></a>
+  <ul class="dropdown-menu">
+    <li><a href="smart-pole.html">Smart Pole</a></li>
+    <li><a href="#">Smart Bollard</a></li>
+    <li><a href="#">Smart Conference Table</a></li>
+    <li><a href="#">Smart Window Leaf AC</a></li>
+    <li><a href="#">Smart Bar Counter</a></li>
+  </ul>
+</li>
+    <li><a href="applications.html">Applications</a></li>
+   <li><a href="gallery.html" >Gallery</a></li>
+           <li><a href="contact.html">Contact</a></li>
+        <!-- <li><a href="#"><i class="bi bi-search"></i></a></li> -->
+      </ul>
+    </nav>
   </div>
->>>>>>> 9c60a9bb35d2fd98a1d30176fe925bea1e2f6824
 
-                <li>
-                    <button onclick="toggleMenu(this)">Profile Lights</button>
-                    <ul>
-                        <li><a href="#">Slim Profiles</a></li>
-                        <li><a href="#">Deep Profiles</a></li>
-                    </ul>
-                </li>
+  <div id="megaMenu" class="mega-menu">
+    <div class="row">
+     
+<div class="underline"></div>
+<div class="service-submenus d-flex flex-wrap">
+  <div class="service-group">
+    <h6>Energy</h6>
+    <ul>
+      <li><a href="#">Solar</a></li>
+      <li><a href="#">Wind</a></li>
+      <li><a href="#">Biomass</a></li>
+          <li><a href="#">Hydel Power</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Power</h6>
+    <ul>
+      <li><a href="transmission.html">transmission</a></li>
+      <li><a href="#">distribution</a></li>
+      <li><a href="#">Low Tention</a></li>
+        <li><a href="#">High Tention</a></li>
+         <li><a href="#">Panel Boards</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Lighting</h6>
+    <ul>
+      <li><a href="#">Residential</a></li>
+      <li><a href="#">Facade</a></li>
+      <li><a href="#">Commercial</a></li>
+       <li><a href="#">Industrial</a></li>
+      <li><a href="#">Street</a></li>
+      <li><a href="#">Park</a></li>
+      <li><a href="#">Stadium</a></li>
+      <li><a href="#">Hospital</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Automation</h6>
+    <ul>
+   
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Commercial</a></li>
+         <li><a href="#">Industrial</a></li>
+           <li><a href="#">Hospital</a></li>
+      <li><a href="#">IOT Based Automation</a></li>
+         <li><a href="#">Hotel</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+   <h6>R&D</h6>
+    <ul>
+      <li><a href="smart-pole.html">Smart Pole</a></li>
+      <li><a href="#">Smart Conference Hall</a></li>
+       <li><a href="#">Smart Bollards</a></li>
+          <li><a href="#">Smart Bar Counter</a></li>
+              <li><a href="#">Smart Window Leaf AC
+              </a></li>
+    </ul>
+  </div>
 
-                <li>
-                    <button onclick="toggleMenu(this)">Led Strips</button>
-                    <ul>
-                        <li><a href="#">COB Strips</a></li>
-                        <li><a href="#">SMD Strips</a></li>
-                    </ul>
-                </li>
+  
 
-            </ul>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <div class="product-listing" id="productGrid">
-
-            <!-- COB PRODUCTS -->
-            <div class="product-card" data-category="cob" data-type="spot">
-                <img src="images/spot1.jpg">
-                <p>Spot COB – Model A</p>
-            </div>
-
-<<<<<<< HEAD
-            <div class="product-card" data-category="cob" data-type="trimless">
-                <img src="images/trimless1.jpg">
-                <p>Trimless COB – Model T1</p>
-            </div>
-
-            <div class="product-card" data-category="cob" data-type="concealed">
-                <img src="images/concealed1.jpg">
-                <p>Concealed COB – Model C1</p>
-            </div>
-
-            <div class="product-card" data-category="cob" data-type="trimless">
-                <img src="images/trimless2.jpg">
-                <p>Trimless COB – Model T2</p>
-            </div>
-=======
-          <!-- NOTE: every product-card includes full data-* attributes used by filters -->
-          <!-- Sample COB products (add more following same structure) -->
-          <div class="product-card" data-category="cob" data-type="indoor" data-mount="surface" data-ip="ip20"
-            data-watt="10w" data-control="onoff" data-app="residential" data-cct="3000k" data-color="black"
-            data-model="cob-surface-10w" data-name="COB Surface 10W">
-            <img src="img/lightingproducts/cobs/COB Spot Light/Adjustable _ Tiltable COB Spot Light.png" alt="COB Surface 10W">
-            <h3>COB Surface 10W</h3>
-          </div>
-
-          <div class="product-card" data-category="cob" data-type="indoor" data-mount="recessed-ground" data-ip="ip20"
-            data-watt="12w" data-control="dali" data-app="commercial" data-cct="4000k" data-color="white"
-            data-model="cob-recessed-12w" data-name="COB Recessed 12W">
-            <img src="img/lightingproducts/cobs/COB Spot Light/Adjustable _ Tiltable COB Spot Light.png" alt="COB Recessed 12W">
-            <h3>COB Recessed 12W</h3>
-          </div>
-
-          <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20"
-            data-watt="18w" data-control="0-10v" data-app="hospitality" data-cct="3500k" data-color="white"
-            data-model="cob-zoom-18w" data-name="COB Zoom 18W">
-            <img src="img/productsimgs/1.png" alt="COB Zoom 18W">
-            <h3>COB Zoom 18W</h3>
-          </div>
-
-          <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20"
-            data-watt="5w" data-control="onoff" data-app="residential" data-cct="3000k" data-color="gold"
-            data-model="cob-down-5w" data-name="COB Downlight 5W">
-            <img src="img/productsimgs/1.png" alt="COB Downlight 5W">
-            <h3>COB Downlight 5W</h3>
-          </div>
-
-          <div class="product-card" data-category="cob" data-type="indoor" data-mount="surface" data-ip="ip60"
-            data-watt="20w" data-control="triac" data-app="commercial" data-cct="4000k" data-color="black"
-            data-model="cob-surface-20w" data-name="COB Surface 20W">
-            <img src="img/productsimgs/1.png" alt="COB Surface 20W">
-            <h3>COB Surface 20W</h3>
-          </div>
-
-          <!-- Add more COB models as required (keep same data-* attributes format) -->
->>>>>>> 9c60a9bb35d2fd98a1d30176fe925bea1e2f6824
-
-        </div>
-
-        <p id="noResults">No products found</p>
-    </div>
+   
 </div>
 
+    </div>
+  </div>
+</header>
+
+
+
+
+
+
+
+<style>
+
+/* ----------------------------------
+   SUBMENU
+---------------------------------- */
+.submenu {
+  list-style: none;
+  margin-left: 8px !important;
+  padding-left: 8px !important;          
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+  display: block !important;
+}
+
+.submenu.show {
+  max-height: 2500px;
+}
+
+.submenu.level2 {
+  margin-left: px;         /* Reduced from 25px */
+}
+
+.submenu li a {
+  display: block;
+  padding: 4px 5px;          /* Reduced indent */
+  font-size: 14px;
+  color: #444;
+  text-decoration: none;
+}
+
+.submenu li a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* ----------------------------------
+   CATEGORY BUTTONS (Sidebar List)
+---------------------------------- */
+.category {
+  list-style: none;
+  padding-left: 0;
+}
+
+.category li {
+  margin-bottom: 6px;        /* smaller gap */
+  padding-left: 2px;         /* shifted left */
+}
+
+.category button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 15px;
+  color: #333;
+  padding: 6px 6px;          /* reduced left padding */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category button:hover {
+  background: #eaeaea;
+  color: #000;
+}
+
+.category button::after {
+  content: "→";
+  color: #999;
+  margin-left: auto;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.category button.active::after,
+.category button.open::after {
+  transform: rotate(90deg);
+  color: #000;
+}
+
+/* ----------------------------------
+   TOP FILTER
+---------------------------------- */
+.top-filter-dropdowns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border: solid #ddd;
+  padding: 15px 20px;
+  margin-top: 60px;
+  gap: 15px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 120px;
+}
+
+.filter-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+}
+
+.filter-group select {
+  border: solid #ccc;
+  padding: 6px 10px;
+  font-size: 13px;
+  color: #333;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* ----------------------------------
+   GENERAL LAYOUT
+---------------------------------- */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background: #f8f8f8;
+}
+
+.lighting-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background: #fff;
+  border-right: solid #ddd;
+  padding: 25px 15px;
+  box-sizing: border-box;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.sidebar h2.mobile-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+/* ----------------------------------
+   PRODUCT GRID
+---------------------------------- */
+.product-section {
+  flex: 1;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 35px;
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+} */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 22px;
+  padding: 20px;
+}
+
+
+.product-card {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 50%, #e1e1e1 50%);
+  border-radius: 18px;
+  padding: 25px 10px 15px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform .35s ease, box-shadow .35s ease;
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* .product-card {
+  position: relative;
+  background: #e6e6e6;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+} */
+
+/* .product-card img {
+  width: 230px;
+  transition: transform 0.4s ease;
+  margin-top: 20px;
+}
+
+.product-card:hover img {
+  transform: scale(1.1);
+} */
+
+.product-card img {
+  width: 85%;
+  height: 200px;
+  object-fit: contain;
+  margin: 0 auto;
+  transition: opacity .35s ease, transform .35s ease;
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  transform: translateX(-50%);
+}
+
+/* DEFAULT image always visible */
+.product-card img:first-child {
+  opacity: 1;
+  z-index: 1;
+}
+
+.product-card img.hover-img {
+  opacity: 0;
+  z-index: 2;
+}
+
+/* HOVER EFFECT */
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.20);
+}
+
+.product-card:hover img:first-child {
+  opacity: 0;
+  transform: translateX(-50%) scale(1.05);
+}
+
+.product-card:hover img.hover-img {
+  opacity: 1;
+  transform: translateX(-50%) scale(1.05);
+}
+
+
+
+
+/* .product-card h3 {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+} */
+
+.product-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 240px;
+  padding: 0 10px;
+}
+
+/* ----------------------------------
+   MOBILE RESPONSIVE
+---------------------------------- */
+@media (max-width: 768px) {
+
+  .lighting-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .sidebar h2 {
+    display: none;
+  }
+
+  .sidebar h2.mobile-toggle {
+    display: block;
+  }
+
+  .category {
+    display: none;
+  }
+
+  .category.show {
+    display: block;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+
+
+
+<!-- REPLACE FROM HERE: FULL COB SECTION (layout & CSS left intact) -->
+<section class="lighting-wrapper">
+
+  <!-- ===== FILTER BAR ===== -->
+  <div class="top-filter-dropdowns" style="padding-left:20px;">
+    <div class="filter-group search-group" style="flex:1; min-width:20px; position:relative;">
+      <label for="searchInput">Search</label>
+      <div style="position:relative; width:60%; height:40px;">
+        <input type="text" id="searchInput" placeholder="Search COB products..." style="padding-right:40px; height:40px; width:100%; box-sizing:border-box;" />
+        <span id="clearSearch" onclick="clearSearchBar()" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer; font-weight:bold; background:#fff; padding:0 6px; display:none; z-index:20; height:20px; line-height:20px; border-radius:4px;">✕</span>
+      </div>
+      <div id="suggestions" style="display:none; position:absolute; top:100%; left:0; width:100%; background:#fff; border:1px solid #ccc; z-index:999; max-height:200px; overflow-y:auto;"></div>
+    </div>
+
+    <div class="filter-group">
+      <label>Type</label>
+      <select onchange="filterDropdown('type', this.value)">
+        <option value="">All</option>
+        <option value="indoor">Indoor</option>
+        <option value="outdoor">Outdoor</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Mount</label>
+      <select onchange="filterDropdown('mount', this.value)">
+        <option value="">All</option>
+        <option value="ceiling">Concealed</option>
+        <option value="surface">Surface</option>
+        <option value="pendant">Pendant</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>IP Rating</label>
+      <select onchange="filterDropdown('ip', this.value)">
+        <option value="">All</option>
+        <option value="ip20">IP20</option>
+        <option value="ip65">IP65</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Watt</label>
+      <select onchange="filterDropdown('watt', this.value)">
+        <option value="">All</option>
+        <option value="7w">7W</option>
+        <option value="12w">12W</option>
+        <option value="18w">18W</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>CCT</label>
+      <select onchange="filterDropdown('cct', this.value)">
+        <option value="">All</option>
+        <option value="3000k">3000K</option>
+        <option value="4000k">4000K</option>
+        <option value="6500k">6500K</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Control</label>
+      <select onchange="filterDropdown('control', this.value)">
+        <option value="">All</option>
+        <option value="onoff">On/Off</option>
+        <option value="dali">DALI</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Color</label>
+      <select onchange="filterDropdown('color', this.value)">
+        <option value="">All</option>
+        <option value="white">White</option>
+        <option value="black">Black</option>
+      </select>
+    </div>
+
+    <div class="filter-group text-center">
+      <button onclick="resetFilters()">Reset</button>
+    </div>
+  </div>
+
+  <!-- MAIN LAYOUT -->
+  <div class="lighting-container">
+
+    <aside class="sidebar">
+      <h2>Lighting</h2>
+      <h2 class="mobile-toggle" onclick="toggleSidebar()">Lighting ☰</h2>
+
+      <ul class="category">
+
+        <!-- COB LIGHTS top item (open by default) -->
+        <li>
+          <button class="top-cob-btn">COB Lights</button>
+
+          <!-- LEVEL 1 SUBMENU: full list (26 categories) -->
+          <ul class="submenu level1">
+            <li>
+              <button class="sub-btn" data-sub="recessed-cob-spot-lights">Recessed Cob Spot Lights</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/recessed-cob-spot-lights-model-01.html" data-sub="recessed-cob-spot-lights" data-model="recessed-cob-spot-lights-model-01">Spot Model 01</a></li>
+                <li><a class="model-link" href="model-pages/recessed-cob-spot-lights-model-02.html" data-sub="recessed-cob-spot-lights" data-model="recessed-cob-spot-lights-model-02">Spot Model 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="recessed-trimless-cobs">Recessed Trimless Cobs</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/recessed-trimless-cobs-model-01.html" data-sub="recessed-trimless-cobs" data-model="recessed-trimless-cobs-model-01">Trimless Model 01</a></li>
+                <li><a class="model-link" href="model-pages/recessed-trimless-cobs-model-02.html" data-sub="recessed-trimless-cobs" data-model="recessed-trimless-cobs-model-02">Trimless Model 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="recessed-cob-pop-ups">Recessed Cob POP-UPS</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/recessed-cob-pop-ups-model-01.html" data-sub="recessed-cob-pop-ups" data-model="recessed-cob-pop-ups-model-01">Pop-Up Model 01</a></li>
+                <li><a class="model-link" href="model-pages/recessed-cob-pop-ups-model-02.html" data-sub="recessed-cob-pop-ups" data-model="recessed-cob-pop-ups-model-02">Pop-Up Model 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="recessed-cob-tiltable">Recessed Cob Tiltable</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/recessed-cob-tiltable-model-01.html" data-sub="recessed-cob-tiltable" data-model="recessed-cob-tiltable-model-01">Tiltable Model 01</a></li>
+                <li><a class="model-link" href="model-pages/recessed-cob-tiltable-model-02.html" data-sub="recessed-cob-tiltable" data-model="recessed-cob-tiltable-model-02">Tiltable Model 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="recessed-cob-movable">Recessed Cob Movable</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/recessed-cob-movable-model-01.html" data-sub="recessed-cob-movable" data-model="recessed-cob-movable-model-01">Movable Model 01</a></li>
+                <li><a class="model-link" href="model-pages/recessed-cob-movable-model-02.html" data-sub="recessed-cob-movable" data-model="recessed-cob-movable-model-02">Movable Model 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="recessed-cob-adjustable">Recessed Cob Adjustable</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/recessed-cob-adjustable-model-01.html" data-sub="recessed-cob-adjustable" data-model="recessed-cob-adjustable-model-01">Adjustable Model 01</a></li>
+                <li><a class="model-link" href="model-pages/recessed-cob-adjustable-model-02.html" data-sub="recessed-cob-adjustable" data-model="recessed-cob-adjustable-model-02">Adjustable Model 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="recessed-square-cobs">Recessed Square Cobs</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/recessed-square-cobs-model-01.html" data-sub="recessed-square-cobs" data-model="recessed-square-cobs-model-01">Square Model 01</a></li>
+                <li><a class="model-link" href="model-pages/recessed-square-cobs-model-02.html" data-sub="recessed-square-cobs" data-model="recessed-square-cobs-model-02">Square Model 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="recessed-gimbal-cob-downlights">Recessed Gimbal Cob Downlights</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/recessed-gimbal-cob-downlights-model-01.html" data-sub="recessed-gimbal-cob-downlights" data-model="recessed-gimbal-cob-downlights-model-01">Gimbal Model 01</a></li>
+                <li><a class="model-link" href="model-pages/recessed-gimbal-cob-downlights-model-02.html" data-sub="recessed-gimbal-cob-downlights" data-model="recessed-gimbal-cob-downlights-model-02">Gimbal Model 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="recessed-cob-projector-lamps">Recessed Cob Projector Lamps</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/recessed-cob-projector-lamps-model-01.html" data-sub="recessed-cob-projector-lamps" data-model="recessed-cob-projector-lamps-model-01">Projector Model 01</a></li>
+                <li><a class="model-link" href="model-pages/recessed-cob-projector-lamps-model-02.html" data-sub="recessed-cob-projector-lamps" data-model="recessed-cob-projector-lamps-model-02">Projector Model 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="recessed-deep-cobs">Recessed Deep Cobs</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/recessed-deep-cobs-model-01.html" data-sub="recessed-deep-cobs" data-model="recessed-deep-cobs-model-01">Deep Model 01</a></li>
+                <li><a class="model-link" href="model-pages/recessed-deep-cobs-model-02.html" data-sub="recessed-deep-cobs" data-model="recessed-deep-cobs-model-02">Deep Model 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="recessed-cob-pull-outs">Recessed Cob Pull-Outs</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/recessed-cob-pull-outs-model-01.html" data-sub="recessed-cob-pull-outs" data-model="recessed-cob-pull-outs-model-01">Pull-Out Model 01</a></li>
+                <li><a class="model-link" href="model-pages/recessed-cob-pull-outs-model-02.html" data-sub="recessed-cob-pull-outs" data-model="recessed-cob-pull-outs-model-02">Pull-Out Model 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="recessed-modular-cobs">Recessed Modular Cobs</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/recessed-modular-cobs-model-01.html" data-sub="recessed-modular-cobs" data-model="recessed-modular-cobs-model-01">Modular Model 01</a></li>
+                <li><a class="model-link" href="model-pages/recessed-modular-cobs-model-02.html" data-sub="recessed-modular-cobs" data-model="recessed-modular-cobs-model-02">Modular Model 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="recessed-narrow-beam-cobs">Recessed Narrow Beam Cobs</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/recessed-narrow-beam-cobs-model-01.html" data-sub="recessed-narrow-beam-cobs" data-model="recessed-narrow-beam-cobs-model-01">Narrow Model 01</a></li>
+                <li><a class="model-link" href="model-pages/recessed-narrow-beam-cobs-model-02.html" data-sub="recessed-narrow-beam-cobs" data-model="recessed-narrow-beam-cobs-model-02">Narrow Model 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="recessed-cob-wall-washers">Recessed Cob Wall Washers</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/recessed-cob-wall-washers-model-01.html" data-sub="recessed-cob-wall-washers" data-model="recessed-cob-wall-washers-model-01">Wall Washer 01</a></li>
+                <li><a class="model-link" href="model-pages/recessed-cob-wall-washers-model-02.html" data-sub="recessed-cob-wall-washers" data-model="recessed-cob-wall-washers-model-02">Wall Washer 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="surface-tiltable-cobs">Surface Tiltable Cobs</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/surface-tiltable-cobs-model-01.html" data-sub="surface-tiltable-cobs" data-model="surface-tiltable-cobs-model-01">Surface Tiltable 01</a></li>
+                <li><a class="model-link" href="model-pages/surface-tiltable-cobs-model-02.html" data-sub="surface-tiltable-cobs" data-model="surface-tiltable-cobs-model-02">Surface Tiltable 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="surface-movable-cobs">Surface Movable Cobs</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/surface-movable-cobs-model-01.html" data-sub="surface-movable-cobs" data-model="surface-movable-cobs-model-01">Surface Movable 01</a></li>
+                <li><a class="model-link" href="model-pages/surface-movable-cobs-model-02.html" data-sub="surface-movable-cobs" data-model="surface-movable-cobs-model-02">Surface Movable 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="surface-adjustable-cobs">Surface Adjustable Cobs</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/surface-adjustable-cobs-model-01.html" data-sub="surface-adjustable-cobs" data-model="surface-adjustable-cobs-model-01">Surface Adjustable 01</a></li>
+                <li><a class="model-link" href="model-pages/surface-adjustable-cobs-model-02.html" data-sub="surface-adjustable-cobs" data-model="surface-adjustable-cobs-model-02">Surface Adjustable 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="surface-cylinder-cobs">Surface Cylinder Cobs</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/surface-cylinder-cobs-model-01.html" data-sub="surface-cylinder-cobs" data-model="surface-cylinder-cobs-model-01">Surface Cylinder 01</a></li>
+                <li><a class="model-link" href="model-pages/surface-cylinder-cobs-model-02.html" data-sub="surface-cylinder-cobs" data-model="surface-cylinder-cobs-model-02">Surface Cylinder 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="surface-pull-outs">Surface Pull-Outs</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/surface-pull-outs-model-01.html" data-sub="surface-pull-outs" data-model="surface-pull-outs-model-01">Surface Pull-Out 01</a></li>
+                <li><a class="model-link" href="model-pages/surface-pull-outs-model-02.html" data-sub="surface-pull-outs" data-model="surface-pull-outs-model-02">Surface Pull-Out 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="surface-square-cobs">Surface Square Cobs</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/surface-square-cobs-model-01.html" data-sub="surface-square-cobs" data-model="surface-square-cobs-model-01">Surface Square 01</a></li>
+                <li><a class="model-link" href="model-pages/surface-square-cobs-model-02.html" data-sub="surface-square-cobs" data-model="surface-square-cobs-model-02">Surface Square 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="surface-spot-lights">Surface Spot Lights</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/surface-spot-lights-model-01.html" data-sub="surface-spot-lights" data-model="surface-spot-lights-model-01">Surface Spot 01</a></li>
+                <li><a class="model-link" href="model-pages/surface-spot-lights-model-02.html" data-sub="surface-spot-lights" data-model="surface-spot-lights-model-02">Surface Spot 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="surface-drum-cobs">Surface Drum Cobs</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/surface-drum-cobs-model-01.html" data-sub="surface-drum-cobs" data-model="surface-drum-cobs-model-01">Drum Model 01</a></li>
+                <li><a class="model-link" href="model-pages/surface-drum-cobs-model-02.html" data-sub="surface-drum-cobs" data-model="surface-drum-cobs-model-02">Drum Model 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="surface-wall-washers">Surface Wall Washers</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/surface-wall-washers-model-01.html" data-sub="surface-wall-washers" data-model="surface-wall-washers-model-01">Wall Washer 01</a></li>
+                <li><a class="model-link" href="model-pages/surface-wall-washers-model-02.html" data-sub="surface-wall-washers" data-model="surface-wall-washers-model-02">Wall Washer 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="surface-pinhole">Surface PinHole</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/surface-pinhole-model-01.html" data-sub="surface-pinhole" data-model="surface-pinhole-model-01">Pinhole 01</a></li>
+                <li><a class="model-link" href="model-pages/surface-pinhole-model-02.html" data-sub="surface-pinhole" data-model="surface-pinhole-model-02">Pinhole 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="surface-pop-ups">Surface Pop-ups</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/surface-pop-ups-model-01.html" data-sub="surface-pop-ups" data-model="surface-pop-ups-model-01">Surface Pop-Up 01</a></li>
+                <li><a class="model-link" href="model-pages/surface-pop-ups-model-02.html" data-sub="surface-pop-ups" data-model="surface-pop-ups-model-02">Surface Pop-Up 02</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="sub-btn" data-sub="designer-lights">Designer Lights</button>
+              <ul class="submenu level2">
+                <li><a class="model-link" href="model-pages/designer-lights-model-01.html" data-sub="designer-lights" data-model="designer-lights-model-01">Designer Model 01</a></li>
+                <li><a class="model-link" href="model-pages/designer-lights-model-02.html" data-sub="designer-lights" data-model="designer-lights-model-02">Designer Model 02</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Other main items that must navigate away -->
+        <li><button onclick="goToPage('surface.html')">Laser Blades</button></li>
+        <li><button onclick="goToPage('track.html')">Normal Track</button></li>
+        <li><button onclick="goToPage('magnetic.html')">Magnetic Track</button></li>
+        <li><button onclick="goToPage('slimtrack.html')">Slim Track</button></li>
+
+      </ul>
+    </aside>
+
+    <!-- PRODUCT GRID -->
+    <div class="product-section">
+      <div class="product-grid" id="productGrid">
+
+        <!-- REPRESENTATIVE CARDS (one per subcategory) - initial view shows these -->
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-spot-lights" data-rep="true">
+          <img src="img/productsimgs/1.png" alt="COB Spot representative">
+          <h3>Recessed Cob Spot Lights (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="recessed-trimless-cobs" data-rep="true">
+          <img src="img/productsimgs/2.png" alt="Trimless representative">
+          <h3>Recessed Trimless Cobs (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-pop-ups" data-rep="true">
+          <img src="img/productsimgs/cob3.png" alt="Pop-up representative">
+          <h3>Recessed Cob POP-UPS (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-tiltable" data-rep="true">
+          <img src="img/productsimgs/cob4.png" alt="Tiltable representative">
+          <h3>Recessed Cob Tiltable (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-movable" data-rep="true">
+          <img src="img/productsimgs/cob1.png" alt="Movable representative">
+          <h3>Recessed Cob Movable (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-adjustable" data-rep="true">
+          <img src="img/productsimgs/cob2.png" alt="Adjustable representative">
+          <h3>Recessed Cob Adjustable (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="recessed-square-cobs" data-rep="true">
+          <img src="img/productsimgs/cob3.png" alt="Square representative">
+          <h3>Recessed Square Cobs (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="recessed-gimbal-cob-downlights" data-rep="true">
+          <img src="img/productsimgs/cob4.png" alt="Gimbal representative">
+          <h3>Recessed Gimbal Cob Downlights (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-projector-lamps" data-rep="true">
+          <img src="img/productsimgs/cob1.png" alt="Projector representative">
+          <h3>Recessed Cob Projector Lamps (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="recessed-deep-cobs" data-rep="true">
+          <img src="img/productsimgs/cob2.png" alt="Deep representative">
+          <h3>Recessed Deep Cobs (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-pull-outs" data-rep="true">
+          <img src="img/productsimgs/cob3.png" alt="Pull-Out representative">
+          <h3>Recessed Cob Pull-Outs (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="recessed-modular-cobs" data-rep="true">
+          <img src="img/productsimgs/cob4.png" alt="Modular representative">
+          <h3>Recessed Modular Cobs (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="recessed-narrow-beam-cobs" data-rep="true">
+          <img src="img/productsimgs/cob1.png" alt="Narrow Beam representative">
+          <h3>Recessed Narrow Beam Cobs (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-wall-washers" data-rep="true">
+          <img src="img/productsimgs/cob2.png" alt="Wall Washer representative">
+          <h3>Recessed Cob Wall Washers (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="surface-tiltable-cobs" data-rep="true">
+          <img src="img/productsimgs/cob3.png" alt="Surface Tiltable representative">
+          <h3>Surface Tiltable Cobs (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="surface-movable-cobs" data-rep="true">
+          <img src="img/productsimgs/cob4.png" alt="Surface Movable representative">
+          <h3>Surface Movable Cobs (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="surface-adjustable-cobs" data-rep="true">
+          <img src="img/productsimgs/cob1.png" alt="Surface Adjustable representative">
+          <h3>Surface Adjustable Cobs (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="surface-cylinder-cobs" data-rep="true">
+          <img src="img/productsimgs/cob2.png" alt="Surface Cylinder representative">
+          <h3>Surface Cylinder Cobs (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="surface-pull-outs" data-rep="true">
+          <img src="img/productsimgs/cob3.png" alt="Surface Pull-Out representative">
+          <h3>Surface Pull-Outs (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="surface-square-cobs" data-rep="true">
+          <img src="img/productsimgs/cob4.png" alt="Surface Square representative">
+          <h3>Surface Square Cobs (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="surface-spot-lights" data-rep="true">
+          <img src="img/productsimgs/cob1.png" alt="Surface Spot representative">
+          <h3>Surface Spot Lights (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="surface-drum-cobs" data-rep="true">
+          <img src="img/productsimgs/cob2.png" alt="Surface Drum representative">
+          <h3>Surface Drum Cobs (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="surface-wall-washers" data-rep="true">
+          <img src="img/productsimgs/cob3.png" alt="Surface Wall Washer representative">
+          <h3>Surface Wall Washers (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="surface-pinhole" data-rep="true">
+          <img src="img/productsimgs/cob4.png" alt="Surface Pinhole representative">
+          <h3>Surface PinHole (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="surface-pop-ups" data-rep="true">
+          <img src="img/productsimgs/cob1.png" alt="Surface Pop-up representative">
+          <h3>Surface Pop-ups (Representative)</h3>
+        </div>
+
+        <div class="product-card" data-category="cob" data-sub="designer-lights" data-rep="true">
+          <img src="img/productsimgs/cob2.png" alt="Designer representative">
+          <h3>Designer Lights (Representative)</h3>
+        </div>
+
+        <!-- MODEL CARDS (2 per category) - hidden initially by CSS display handled by JS -->
+        <!-- Examples: Spot models (these will show when 'recessed-cob-spot-lights' selected) -->
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-spot-lights" data-model="recessed-cob-spot-lights-model-01">
+          <img src="img/productsimgs/spot01.png" alt="Spot Model 01">
+          <h3>Spot Model 01</h3>
+        </div>
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-spot-lights" data-model="recessed-cob-spot-lights-model-02">
+          <img src="img/productsimgs/spot02.png" alt="Spot Model 02">
+          <h3>Spot Model 02</h3>
+        </div>
+
+        <!-- Trimless models -->
+        <div class="product-card" data-category="cob" data-sub="recessed-trimless-cobs" data-model="recessed-trimless-cobs-model-01">
+          <img src="img/productsimgs/trim01.png" alt="Trimless Model 01">
+          <h3>Trimless Model 01</h3>
+        </div>
+        <div class="product-card" data-category="cob" data-sub="recessed-trimless-cobs" data-model="recessed-trimless-cobs-model-02">
+          <img src="img/productsimgs/trim02.png" alt="Trimless Model 02">
+          <h3>Trimless Model 02</h3>
+        </div>
+
+        <!-- Pop-ups models -->
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-pop-ups" data-model="recessed-cob-pop-ups-model-01">
+          <img src="img/productsimgs/popup01.png" alt="Pop-Up 01">
+          <h3>Pop-Up Model 01</h3>
+        </div>
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-pop-ups" data-model="recessed-cob-pop-ups-model-02">
+          <img src="img/productsimgs/popup02.png" alt="Pop-Up 02">
+          <h3>Pop-Up Model 02</h3>
+        </div>
+
+        <!-- Tiltable -->
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-tiltable" data-model="recessed-cob-tiltable-model-01">
+          <img src="img/productsimgs/tilt01.png" alt="Tiltable 01">
+          <h3>Tiltable Model 01</h3>
+        </div>
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-tiltable" data-model="recessed-cob-tiltable-model-02">
+          <img src="img/productsimgs/tilt02.png" alt="Tiltable 02">
+          <h3>Tiltable Model 02</h3>
+        </div>
+
+        <!-- Movable -->
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-movable" data-model="recessed-cob-movable-model-01">
+          <img src="img/productsimgs/mov01.png" alt="Movable 01">
+          <h3>Movable Model 01</h3>
+        </div>
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-movable" data-model="recessed-cob-movable-model-02">
+          <img src="img/productsimgs/mov02.png" alt="Movable 02">
+          <h3>Movable Model 02</h3>
+        </div>
+
+        <!-- Adjustable -->
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-adjustable" data-model="recessed-cob-adjustable-model-01">
+          <img src="img/productsimgs/adj01.png" alt="Adjustable 01">
+          <h3>Adjustable Model 01</h3>
+        </div>
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-adjustable" data-model="recessed-cob-adjustable-model-02">
+          <img src="img/productsimgs/adj02.png" alt="Adjustable 02">
+          <h3>Adjustable Model 02</h3>
+        </div>
+
+        <!-- Square -->
+        <div class="product-card" data-category="cob" data-sub="recessed-square-cobs" data-model="recessed-square-cobs-model-01">
+          <img src="img/productsimgs/sq01.png" alt="Square 01">
+          <h3>Square Model 01</h3>
+        </div>
+        <div class="product-card" data-category="cob" data-sub="recessed-square-cobs" data-model="recessed-square-cobs-model-02">
+          <img src="img/productsimgs/sq02.png" alt="Square 02">
+          <h3>Square Model 02</h3>
+        </div>
+
+        <!-- Gimbal -->
+        <div class="product-card" data-category="cob" data-sub="recessed-gimbal-cob-downlights" data-model="recessed-gimbal-cob-downlights-model-01">
+          <img src="img/productsimgs/gim01.png" alt="Gimbal 01">
+          <h3>Gimbal Model 01</h3>
+        </div>
+        <div class="product-card" data-category="cob" data-sub="recessed-gimbal-cob-downlights" data-model="recessed-gimbal-cob-downlights-model-02">
+          <img src="img/productsimgs/gim02.png" alt="Gimbal 02">
+          <h3>Gimbal Model 02</h3>
+        </div>
+
+        <!-- Projector -->
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-projector-lamps" data-model="recessed-cob-projector-lamps-model-01">
+          <img src="img/productsimgs/proj01.png" alt="Projector 01">
+          <h3>Projector Model 01</h3>
+        </div>
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-projector-lamps" data-model="recessed-cob-projector-lamps-model-02">
+          <img src="img/productsimgs/proj02.png" alt="Projector 02">
+          <h3>Projector Model 02</h3>
+        </div>
+
+        <!-- Deep -->
+        <div class="product-card" data-category="cob" data-sub="recessed-deep-cobs" data-model="recessed-deep-cobs-model-01">
+          <img src="img/productsimgs/deep01.png" alt="Deep 01">
+          <h3>Deep Model 01</h3>
+        </div>
+        <div class="product-card" data-category="cob" data-sub="recessed-deep-cobs" data-model="recessed-deep-cobs-model-02">
+          <img src="img/productsimgs/deep02.png" alt="Deep 02">
+          <h3>Deep Model 02</h3>
+        </div>
+
+        <!-- Pull-outs -->
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-pull-outs" data-model="recessed-cob-pull-outs-model-01">
+          <img src="img/productsimgs/pull01.png" alt="Pull 01">
+          <h3>Pull-Out Model 01</h3>
+        </div>
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-pull-outs" data-model="recessed-cob-pull-outs-model-02">
+          <img src="img/productsimgs/pull02.png" alt="Pull 02">
+          <h3>Pull-Out Model 02</h3>
+        </div>
+
+        <!-- Modular -->
+        <div class="product-card" data-category="cob" data-sub="recessed-modular-cobs" data-model="recessed-modular-cobs-model-01">
+          <img src="img/productsimgs/mod01.png" alt="Modular 01">
+          <h3>Modular Model 01</h3>
+        </div>
+        <div class="product-card" data-category="cob" data-sub="recessed-modular-cobs" data-model="recessed-modular-cobs-model-02">
+          <img src="img/productsimgs/mod02.png" alt="Modular 02">
+          <h3>Modular Model 02</h3>
+        </div>
+
+        <!-- Narrow beam -->
+        <div class="product-card" data-category="cob" data-sub="recessed-narrow-beam-cobs" data-model="recessed-narrow-beam-cobs-model-01">
+          <img src="img/productsimgs/nar01.png" alt="Narrow 01">
+          <h3>Narrow Model 01</h3>
+        </div>
+        <div class="product-card" data-category="cob" data-sub="recessed-narrow-beam-cobs" data-model="recessed-narrow-beam-cobs-model-02">
+          <img src="img/productsimgs/nar02.png" alt="Narrow 02">
+          <h3>Narrow Model 02</h3>
+        </div>
+
+        <!-- Wall washers -->
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-wall-washers" data-model="recessed-cob-wall-washers-model-01">
+          <img src="img/productsimgs/ww01.png" alt="WW 01">
+          <h3>Wall Washer 01</h3>
+        </div>
+        <div class="product-card" data-category="cob" data-sub="recessed-cob-wall-washers" data-model="recessed-cob-wall-washers-model-02">
+          <img src="img/productsimgs/ww02.png" alt="WW 02">
+          <h3>Wall Washer 02</h3>
+        </div>
+
+        <!-- Surface models continue similarly... (we added many above already) -->
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- Footer Start -->
+<div class="tricky-footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
+  <div class="container py-5">
+    <div class="row g-5">
+
+      <!-- Column 1: Quick Links -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About us</a>
+          <a href="solution.html">Solutions</a>
+          <a href="applications.html">Applications</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="smart-pole.html">R & D</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <!-- Column 2: Services -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Services</h4>
+          <a href="#">Energy</a>
+          <a href="#">Power</a>
+          <a href="lighting.html">Lighting</a>
+          <a href="#">Automation</a>
+          <a href="#">Smart City</a>
+          <a href="#">R & D</a>
+        </div>
+      </div>
+
+      <!-- Column 3: Applications -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Applications</h4>
+          <a href="#">Energy Generation</a>
+          <a href="#">Power</a>
+          <a href="lighting.html">Lighting</a>
+          <a href="#">Indoor Lighting</a>
+          <a href="#">Automation</a>
+          <a href="#">Smart City</a>
+          <a href="#">R & D</a>
+        </div>
+      </div>
+
+      <!-- Column 4: Contact Info -->
+      <div class="col-md-6 col-lg-6 col-xl-3">
+        <div class="tricky-footer-item d-flex flex-column">
+          <h4 class="text-white mb-4">Contact Info</h4>
+          <a href="#"><i class="fa fa-map-marker-alt text-secondary me-2"></i> Apurupa Towers, Road No:36, Jubilee Hills, Hyderabad, Telangana-500033</a>
+          <a href="mailto:info@arcotindia.com"><i class="fas fa-envelope text-secondary me-2"></i> info@arcotindia.com</a>
+          <a href="tel:+919848189899"><i class="fas fa-phone text-secondary me-2"></i> +91 98481 89899</a>
+        </div>
+      </div>
+
+      <!-- Social Media -->
+      <div class="col-lg-12 mt-4">
+        <div class="tricky-social-icons d-flex flex-wrap justify-content-start gap-3">
+          <a class="tricky-social-btn" href="#"><i class="fab fa-facebook-f"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-instagram"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-youtube"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-pinterest-p"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-whatsapp"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-telegram-plane"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-reddit-alien"></i></a>
+          <a class="tricky-social-btn" href="#"><i class="fab fa-threads"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+ /* Footer Wrapper */
+.tricky-footer {
+  background: #1e2226;
+  color: #ccc;
+  font-size: 15px;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 300; /* light weight */
+  letter-spacing: 1px;
+  
+}
+
+/* Footer Headings */
+.tricky-footer-item h4,
+.tricky-footer-item h5 {
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+/* Footer Links */
+.tricky-footer-item a {
+  color: #bbb;
+  margin-bottom: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  font-weight: 300;
+  font-size: 12px;
+}
+.tricky-footer-item a:hover {
+  color: #fff;
+  padding-left: 5px;
+}
+
+/* Social Media Icons */
+.tricky-social-icons .tricky-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  color: #8f8c8c;
+  font-size: 13px;
+  transition: 0.3s;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 300;
+}
+.tricky-social-icons .tricky-social-btn:hover {
+  background: #434444;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Copyright Section */
+.tricky-footer-bottom {
+  border-top: 1px solid #333;
+  color: #aaa;
+  font-size: 14px;
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.tricky-footer-bottom a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+}
+.tricky-footer-bottom a:hover {
+  color: #fff;
+}
+</style>
+<!-- Footer End -->
+
+<!-- Copyright Start -->
+<div class="tricky-footer-bottom py-4 bg-dark">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-6 text-center text-md-start mb-md-0">
+        <span class="text-body">
+          <a href="https://arcotindia.com/" class="border-bottom text-white">
+            <i class="fas fa-copyright text-light me-2"></i>ARCOT , All Rights Reserved.
+          </a>
+        </span>
+      </div>
+      <!-- <div class="col-md-6 text-center text-md-end text-body">
+        Designed By <a class="border-bottom text-white" href="https://arcotindia.com/">ARCOT</a>
+      </div> -->
+    </div>
+  </div>
+</div>
+<!-- Copyright End -->
+
+         
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>    
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+       <script>AOS.init();</script>
+
+
+
+
+
+
+
+
+<!-- ===== JS: full functional code (replace prior menu script) ===== -->
 <script>
-// CLOSE OTHERS + OPEN SELECTED MENU
-function toggleMenu(btn) {
-    const buttons = document.querySelectorAll('.category > ul > li > button');
+/* ===== State ===== */
+let activeFilters = {};
+let menuFilter = { kind: 'category', value: 'cob' };
+let isolatedCard = null;
+let searchText = '';
 
-    buttons.forEach(b => {
-        if (b !== btn) {
-            b.classList.remove('open');
-            const s = b.nextElementSibling;
-            if (s) s.classList.remove('show');
-        }
+/* ===== Utilities ===== */
+function getAllCards(){ return Array.from(document.querySelectorAll('.product-card')); }
+function qAll(sel){ return Array.from(document.querySelectorAll(sel)); }
+
+/* ===== Update visibility ===== */
+function updateVisibility(){
+  const cards = getAllCards();
+  let visible = 0;
+
+  cards.forEach(card=>{
+    let show = true;
+
+    // apply dropdown filters (exact match)
+    for(const k in activeFilters){
+      if(!activeFilters[k]) continue;
+      const v = (card.dataset[k] || '').toLowerCase();
+      if(v !== activeFilters[k].toLowerCase()){ show = false; break; }
+    }
+    if(!show){ card.style.display='none'; return; }
+
+    // menu filter logic
+    if(menuFilter){
+      if(menuFilter.kind === 'category'){
+        // show only representatives for initial category view
+        const isCob = ((card.dataset.category||'').toLowerCase() === 'cob');
+        const isRep = card.dataset.rep === 'true';
+        if(!(isCob && isRep)) show = false;
+      } else if(menuFilter.kind === 'sub'){
+        const sub = (card.dataset.sub || '').toLowerCase();
+        if(sub !== menuFilter.value.toLowerCase()) show = false;
+      }
+    }
+
+    if(!show){ card.style.display='none'; return; }
+
+    // search filter
+    if(searchText && searchText.trim().length){
+      const title = (card.querySelector('h3')?.innerText||'').toLowerCase();
+      if(!title.includes(searchText.toLowerCase())) show = false;
+    }
+    if(!show){ card.style.display='none'; return; }
+
+    // isolated card (if set)
+    if(isolatedCard){
+      if(card !== isolatedCard){ card.style.display='none'; return; }
+    }
+
+    card.style.display = show ? 'flex' : 'none';
+    if(show) visible++;
+  });
+
+  const noResults = document.getElementById('noResults');
+  if(noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
+}
+
+/* ===== Submenu open/close behaviors ===== */
+function closeAllLevel2(){
+  qAll('.submenu.level2').forEach(ul => ul.classList.remove('show'));
+  qAll('.sub-btn').forEach(b => b.classList.remove('active-sub'));
+}
+
+function onSubBtnClick(btn){
+  const subKey = btn.dataset.sub;
+  if(!subKey) return;
+
+  // close others, open this
+  closeAllLevel2();
+  btn.classList.add('active-sub');
+  const parentLi = btn.parentElement;
+  const level2 = parentLi ? parentLi.querySelector('.submenu.level2') : null;
+  if(level2) level2.classList.add('show');
+
+  // set filter to show all model cards for this sub
+  menuFilter = { kind: 'sub', value: subKey };
+  isolatedCard = null;
+  searchText = '';
+  const inpt = document.getElementById('searchInput'); if(inpt) inpt.value = '';
+  updateVisibility();
+}
+
+/* Top COB button toggling (keeps open by default) */
+function setupTopCob(){
+  const topCobBtn = document.querySelector('.top-cob-btn');
+  const lvl1 = document.querySelector('.submenu.level1');
+  if(!topCobBtn || !lvl1) return;
+
+  topCobBtn.addEventListener('click', () => {
+    const opening = !lvl1.classList.contains('show');
+    if(opening){
+      // close other top-levels if needed (preserve others)
+      lvl1.classList.add('show');
+      topCobBtn.classList.add('open');
+      menuFilter = { kind:'category', value:'cob' };
+    } else {
+      lvl1.classList.remove('show');
+      topCobBtn.classList.remove('open');
+      menuFilter = null;
+    }
+    isolatedCard = null;
+    updateVisibility();
+  });
+
+  // open by default
+  window.addEventListener('DOMContentLoaded', () => {
+    lvl1.classList.add('show');
+    topCobBtn.classList.add('open');
+    menuFilter = { kind:'category', value:'cob' };
+    updateVisibility();
+  });
+}
+
+/* ===== Attach handlers ===== */
+document.addEventListener('DOMContentLoaded', ()=>{
+  // sub buttons
+  qAll('.sub-btn').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      onSubBtnClick(btn);
     });
+  });
 
-    btn.classList.toggle('open');
-    const submenu = btn.nextElementSibling;
-    if (submenu) submenu.classList.toggle('show');
-
-    // Filter logic
-    const key = btn.dataset.filterKey;
-    const val = btn.dataset.filterValue;
-
-    if (key && val) filterProducts(key, val);
-}
-
-// MAIN FILTER FUNCTION
-function filterProducts(key, value) {
-    let cards = document.querySelectorAll('.product-card');
-    let count = 0;
-
-    cards.forEach(c => {
-        const cardVal = c.dataset[key] || "";
-        const match = cardVal.toLowerCase() === value.toLowerCase();
-        c.style.display = match ? "flex" : "none";
-        if (match) count++;
+  // product card isolate behavior
+  getAllCards().forEach(card=>{
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', ()=>{
+      // toggle isolate - only on visible cards
+      if(card.style.display === 'none') return;
+      if(isolatedCard === card) isolatedCard = null;
+      else isolatedCard = card;
+      updateVisibility();
     });
+  });
 
-    document.getElementById('noResults').style.display = count ? 'none':'block';
+  // model links default to navigate; we leave anchor behavior intact.
+  // Top COB setup & default open
+  setupTopCob();
+
+  // ensure representative view at load
+  menuFilter = { kind:'category', value:'cob' };
+  isolatedCard = null;
+  searchText = '';
+  updateVisibility();
+});
+
+/* ===== Search suggestions (kept UX) ===== */
+let suggestionBox = document.getElementById('suggestions');
+if(!suggestionBox){
+  suggestionBox = document.createElement('div');
+  suggestionBox.id = 'suggestions';
+  document.querySelector('.search-group').appendChild(suggestionBox);
+}
+suggestionBox.style.display = 'none';
+
+function clearSearchBar(){
+  const input = document.getElementById('searchInput');
+  if(input) input.value = '';
+  searchText = '';
+  const clearBtn = document.getElementById('clearSearch'); if(clearBtn) clearBtn.style.display = 'none';
+  suggestionBox.style.display = 'none';
+  isolatedCard = null;
+  updateVisibility();
 }
 
-// SUBCATEGORY FILTER
-function filterSub(key, val) {
-    filterProducts(key, val);
+const searchInput = document.getElementById('searchInput');
+if(searchInput){
+  searchInput.addEventListener('input', function(){
+    const clearBtn = document.getElementById('clearSearch');
+    if(clearBtn) clearBtn.style.display = this.value.length > 0 ? 'block' : 'none';
+    handleLiveSearch(this.value);
+  });
+
+  searchInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){
+      const text = this.value.toLowerCase().trim();
+      const cobKeywords = ["cob","downlight","surface","zoom","focus","spotlight"];
+      const isCOB = cobKeywords.some(k => text.includes(k));
+      if(text !== '' && !isCOB){
+        window.location.href = 'lighting.html?search=' + encodeURIComponent(text);
+        return;
+      }
+      searchText = text;
+      suggestionBox.style.display = 'none';
+      isolatedCard = null;
+      updateVisibility();
+    }
+  });
 }
 
-// DEFAULT OPEN: COB LIGHTS
-window.onload = () => {
-    const cobButton = document.querySelector('button[data-filter-value="cob"]');
-    cobButton.classList.add('open');
-    cobButton.nextElementSibling.classList.add('show');
-    filterProducts('category','cob');
+function handleLiveSearch(text){
+  text = text.toLowerCase().trim();
+  const cards = getAllCards();
+  suggestionBox.innerHTML = '';
+  if(text.length > 0){
+    cards.forEach(card=>{
+      const name = (card.querySelector('h3')?.innerText||'').toLowerCase();
+      if(name.includes(text)){
+        const item = document.createElement('div');
+        item.innerText = card.querySelector('h3').innerText;
+        item.style.padding = '6px';
+        item.style.cursor = 'pointer';
+        item.addEventListener('click', ()=>{
+          document.getElementById('searchInput').value = card.querySelector('h3').innerText;
+          searchText = card.querySelector('h3').innerText.toLowerCase();
+          suggestionBox.style.display = 'none';
+          isolatedCard = null;
+          updateVisibility();
+        });
+        suggestionBox.appendChild(item);
+      }
+    });
+    suggestionBox.style.display = suggestionBox.innerHTML ? 'block' : 'none';
+  } else suggestionBox.style.display = 'none';
 }
+
+/* ===== Dropdown filters compatibility functions ===== */
+function filterDropdown(attr, value){
+  if(value === '') delete activeFilters[attr];
+  else activeFilters[attr] = value;
+  isolatedCard = null;
+  updateVisibility();
+}
+
+function resetFilters(){
+  activeFilters = {};
+  qAll('.top-filter-dropdowns select').forEach(s => s.value = '');
+  menuFilter = { kind:'category', value:'cob' };
+  isolatedCard = null;
+  searchText = '';
+  const inpt = document.getElementById('searchInput'); if(inpt) inpt.value = '';
+  const clearBtn = document.getElementById('clearSearch'); if(clearBtn) clearBtn.style.display = 'none';
+  updateVisibility();
+}
+
+/* ===== Navigation helper ===== */
+function goToPage(p){ window.location.href = p; }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const mobileToggle = document.querySelector(".mobile-toggle");
+    const categoryMenu = document.querySelector(".category");
+
+    if (mobileToggle && categoryMenu) {
+        mobileToggle.addEventListener("click", () => {
+            categoryMenu.classList.toggle("show");
+        });
+    }
+});
+
 </script>
 
-</body>
-<<<<<<< HEAD
-=======
 
->>>>>>> 9c60a9bb35d2fd98a1d30176fe925bea1e2f6824
+
+
+    </body>
+
 </html>
