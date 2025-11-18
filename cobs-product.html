@@ -32,7 +32,7 @@
   <!-- Custom CSS -->
   <link rel="preload" href="css/style.css" as="style">
   <link rel="stylesheet" href="css/style.css">
-  <link href="css/segments.css" rel="stylesheet">
+  <!-- <link href="css/segments.css" rel="stylesheet"> -->
 
 
 </head>
@@ -162,359 +162,401 @@
 </header>
 
 
+<!-- =============== SIDEBAR MENU =============== -->
+<div class="sidebar">
+  <ul class="category">
+    <li>
+      <button class="top-btn">COB Lights</button>
+      <ul class="submenu level1">
 
-<!-- FULL NEW COB PAGE WITH WORKING FILTERS + CCT + CONTROL + SEARCH -->
-
-<section class="lighting-wrapper">
-
-  <!-- ===== FILTER BAR ===== -->
-  <div class="top-filter-dropdowns" style="padding-left:20px;">
-
-    <!-- Search Bar -->
-    <div class="filter-group search-group" style="flex:1; min-width:20px; position:relative;">
-      <label for="searchInput">Search</label>
-      <div style="position:relative; width:60%; height:40px;">
-  <input type="text" id="searchInput" placeholder="Search COB products..." style="padding-right:40px; height:40px; width:100%; box-sizing:border-box;" />
-  <span id="clearSearch" onclick="clearSearchBar()" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer; font-weight:bold; background:#fff; padding:0 6px; display:none; z-index:20; height:20px; line-height:20px; border-radius:4px;">✕</span>
-</div>
-      <div id="suggestions" style="display:none; position:absolute; top:100%; left:0; width:100%; background:#fff; border:1px solid #ccc; z-index:999; max-height:200px; overflow-y:auto;"></div>
-    </div>
-
-    <div class="filter-group">
-      <label>Type</label>
-      <select onchange="filterDropdown('type', this.value)">
-        <option value="">All</option>
-        <option value="indoor">Indoor</option>
-        <option value="outdoor">Outdoor</option>
-      </select>
-    </div>
-
-    <div class="filter-group">
-      <label>Mount</label>
-      <select onchange="filterDropdown('mount', this.value)">
-        <option value="">All</option>
-        <option value="ceiling">Concealed</option>
-        <option value="surface">Surface</option>
-        <option value="pendant">Pendant</option>
-      </select>
-    </div>
-
-    <div class="filter-group">
-      <label>IP Rating</label>
-      <select onchange="filterDropdown('ip', this.value)">
-        <option value="">All</option>
-        <option value="ip20">IP20</option>
-        <option value="ip65">IP65</option>
-      </select>
-    </div>
-
-    <div class="filter-group">
-      <label>Watt</label>
-      <select onchange="filterDropdown('watt', this.value)">
-        <option value="">All</option>
-        <option value="7w">7W</option>
-        <option value="12w">12W</option>
-        <option value="18w">18W</option>
-      </select>
-    </div>
-
-    <div class="filter-group">
-      <label>CCT</label>
-      <select onchange="filterDropdown('cct', this.value)">
-        <option value="">All</option>
-        <option value="3000k">3000K</option>
-        <option value="4000k">4000K</option>
-        <option value="6500k">6500K</option>
-      </select>
-    </div>
-
-    <div class="filter-group">
-      <label>Control</label>
-      <select onchange="filterDropdown('control', this.value)">
-        <option value="">All</option>
-        <option value="onoff">On/Off</option>
-        <option value="dali">DALI</option>
-      </select>
-    </div>
-
-    <div class="filter-group">
-      <label>Color</label>
-      <select onchange="filterDropdown('color', this.value)">
-        <option value="">All</option>
-        <option value="white">White</option>
-        <option value="black">Black</option>
-      </select>
-    </div>
-
-    <div class="filter-group text-center">
-      <button onclick="resetFilters()">Reset</button>
-    </div>
-  </div>
-
-  <!-- MAIN LAYOUT -->
-  <div class="lighting-container">
-
-    <aside class="sidebar">
-      <h2>Lighting</h2>
-      <h2 class="mobile-toggle" onclick="toggleSidebar()">Lighting ☰</h2>
-
-      <ul class="category">
-        <li><button onclick="goToPage('lighting.html')">All</button></li>
-
+        <!-- SPOT LIGHTS -->
         <li>
-          <button class="active">COB Lights</button>
-          <ul class="submenu show" style="max-height:500px;">
-            <li><a href="cob.html">COB Downlight</a></li>
-            <li><a href="cob.html">COB Surface</a></li>
-            <li><a href="cob.html">COB Zoom</a></li>
+          <button class="sub-btn">Recessed Spot Lights</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Spot Model 01</button></li>
+            <li><button class="model-btn">Spot Model 02</button></li>
           </ul>
         </li>
 
-        <li><button onclick="goToPage('surface.html')">Surface Lights</button></li>
-        <li><button onclick="goToPage('track.html')">Track Lights</button></li>
-        <li><button onclick="goToPage('magnetic.html')">Magnetic Track</button></li>
-        <li><button onclick="goToPage('slimtrack.html')">Slim Track</button></li>
+        <!-- TRIMLESS -->
+        <li>
+          <button class="sub-btn">Recessed Trimless Cobs</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Trimless Model 01</button></li>
+            <li><button class="model-btn">Trimless Model 02</button></li>
+          </ul>
+        </li>
+
+        <!-- POP UPS -->
+        <li>
+          <button class="sub-btn">Recessed COB POP-UPS</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Pop-Up Model 01</button></li>
+            <li><button class="model-btn">Pop-Up Model 02</button></li>
+          </ul>
+        </li>
+
+        <!-- TILTABLE -->
+        <li>
+          <button class="sub-btn">Recessed COB Tiltable</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Tiltable Model 01</button></li>
+            <li><button class="model-btn">Tiltable Model 02</button></li>
+          </ul>
+        </li>
+
+        <!-- MOVABLE -->
+        <li>
+          <button class="sub-btn">Recessed COB Movable</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Movable Model 01</button></li>
+            <li><button class="model-btn">Movable Model 02</button></li>
+          </ul>
+        </li>
+
+        <!-- ADJUSTABLE -->
+        <li>
+          <button class="sub-btn">Recessed COB Adjustable</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Adjustable Model 01</button></li>
+            <li><button class="model-btn">Adjustable Model 02</button></li>
+          </ul>
+        </li>
+
+        <!-- SQUARE -->
+        <li>
+          <button class="sub-btn">Recessed Square Cobs</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Square Model 01</button></li>
+            <li><button class="model-btn">Square Model 02</button></li>
+          </ul>
+        </li>
+
+        <!-- GIMBOL -->
+        <li>
+          <button class="sub-btn">Recessed Gimbol COB Downlights</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Gimbol Model 01</button></li>
+            <li><button class="model-btn">Gimbol Model 02</button></li>
+          </ul>
+        </li>
+
+        <!-- PROJECTOR -->
+        <li>
+          <button class="sub-btn">Recessed COB Projector Lamps</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Projector Model 01</button></li>
+            <li><button class="model-btn">Projector Model 02</button></li>
+          </ul>
+        </li>
+
+        <!-- DEEP -->
+        <li>
+          <button class="sub-btn">Recessed Deep Cobs</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Deep Model 01</button></li>
+            <li><button class="model-btn">Deep Model 02</button></li>
+          </ul>
+        </li>
+
+        <!-- PULL OUTS -->
+        <li>
+          <button class="sub-btn">Recessed COB Pull-Outs</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Pull-Out Model 01</button></li>
+            <li><button class="model-btn">Pull-Out Model 02</button></li>
+          </ul>
+        </li>
+
+        <!-- MODULAR -->
+        <li>
+          <button class="sub-btn">Recessed Modular Cobs</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Modular Model 01</button></li>
+            <li><button class="model-btn">Modular Model 02</button></li>
+          </ul>
+        </li>
+
+        <!-- NARROW BEAM -->
+        <li>
+          <button class="sub-btn">Recessed Narrow Beam Cobs</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Narrow Model 01</button></li>
+            <li><button class="model-btn">Narrow Model 02</button></li>
+          </ul>
+        </li>
+
+        <!-- WALL WASHERS -->
+        <li>
+          <button class="sub-btn">Recessed COB Wall Washers</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Wall Washer 01</button></li>
+            <li><button class="model-btn">Wall Washer 02</button></li>
+          </ul>
+        </li>
+
+        <!-- SURFACE -->
+        <li>
+          <button class="sub-btn">Surface Tiltable Cobs</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Surface Tiltable 01</button></li>
+            <li><button class="model-btn">Surface Tiltable 02</button></li>
+          </ul>
+        </li>
+
+        <li>
+          <button class="sub-btn">Surface Movable Cobs</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Surface Movable 01</button></li>
+            <li><button class="model-btn">Surface Movable 02</button></li>
+          </ul>
+        </li>
+
+        <li>
+          <button class="sub-btn">Surface Adjustable Cobs</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Surface Adjustable 01</button></li>
+            <li><button class="model-btn">Surface Adjustable 02</button></li>
+          </ul>
+        </li>
+
+        <li>
+          <button class="sub-btn">Surface Cylinder Cobs</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Surface Cylinder 01</button></li>
+            <li><button class="model-btn">Surface Cylinder 02</button></li>
+          </ul>
+        </li>
+
+        <li>
+          <button class="sub-btn">Surface Pull-Outs</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Surface Pull-Out 01</button></li>
+            <li><button class="model-btn">Surface Pull-Out 02</button></li>
+          </ul>
+        </li>
+
+        <li>
+          <button class="sub-btn">Surface Square Cobs</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Surface Square 01</button></li>
+            <li><button class="model-btn">Surface Square 02</button></li>
+          </ul>
+        </li>
+
+        <li>
+          <button class="sub-btn">Surface Spot Lights</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Surface Spot 01</button></li>
+            <li><button class="model-btn">Surface Spot 02</button></li>
+          </ul>
+        </li>
+
+        <li>
+          <button class="sub-btn">Surface Drum Cobs</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Surface Drum 01</button></li>
+            <li><button class="model-btn">Surface Drum 02</button></li>
+          </ul>
+        </li>
+
+        <li>
+          <button class="sub-btn">Surface Wall Washers</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Surface Washer 01</button></li>
+            <li><button class="model-btn">Surface Washer 02</button></li>
+          </ul>
+        </li>
+
+        <li>
+          <button class="sub-btn">Surface Pinhole</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Pinhole Model 01</button></li>
+            <li><button class="model-btn">Pinhole Model 02</button></li>
+          </ul>
+        </li>
+
+        <li>
+          <button class="sub-btn">Designer Lights</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Designer Model 01</button></li>
+            <li><button class="model-btn">Designer Model 02</button></li>
+          </ul>
+        </li>
+
       </ul>
-    </aside>
+        </li>
 
+        <!-- TRIMLESS -->
+        <li>
+          <button class="sub-btn">Recessed Trimless Cobs</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Trimless Model A</button></li>
+            <li><button class="model-btn">Trimless Model B</button></li>
+          </ul>
+        </li>
 
-    <!-- PRODUCT GRID -->
-    <div class="product-section">
-      <div class="product-grid" id="productGrid">
+        <!-- POP UPS -->
+        <li>
+          <button class="sub-btn">Recessed COB POP-UPS</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">POP-UP Model A</button></li>
+            <li><button class="model-btn">POP-UP Model B</button></li>
+          </ul>
+        </li>
 
-        <!-- Product 1 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="concealed" data-ip="ip20" data-watt="7w" data-control="onoff" data-color="white" data-cct="3000k">
-          <img src="img/productsimgs/cob1.png" alt="COB Downlight 7W">
-          <h3>Cob Spotlights</h3>
-        </div>
+        <!-- TILTABLE -->
+        <li>
+          <button class="sub-btn">Recessed COB Tiltable</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Tiltable Model A</button></li>
+            <li><button class="model-btn">Tiltable Model B</button></li>
+          </ul>
+        </li>
 
-        <!-- Product 2 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="black" data-cct="4000k">
-          <img src="img/productsimgs/cob2.png" alt="COB Downlight 12W">
-          <h3>COB Downlight 12W</h3>
-        </div>
+        <!-- MOVABLE -->
+        <li>
+          <button class="sub-btn">Recessed COB Movable</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Movable Model A</button></li>
+            <li><button class="model-btn">Movable Model B</button></li>
+          </ul>
+        </li>
 
-        <!-- Product 3 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="surface" data-ip="ip65" data-watt="18w" data-control="dali" data-color="white" data-cct="6500k">
-          <img src="img/productsimgs/cob3.png" alt="COB Surface 18W">
-          <h3>COB Surface 18W</h3>
-        </div>
+        <!-- ADJUSTABLE -->
+        <li>
+          <button class="sub-btn">Recessed COB Adjustable</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Adjustable Model A</button></li>
+            <li><button class="model-btn">Adjustable Model B</button></li>
+          </ul>
+        </li>
 
-        <!-- Product 4 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="white" data-cct="3000k">
-          <img src="img/productsimgs/cob4.png" alt="COB Zoom Light">
-          <h3>COB Zoom Focus</h3>
-        </div>
+        <!-- SQUARE -->
+        <li>
+          <button class="sub-btn">Recessed Square Cobs</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Square COB A</button></li>
+            <li><button class="model-btn">Square COB B</button></li>
+          </ul>
+        </li>
 
-                <!-- Product 1 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="7w" data-control="onoff" data-color="white" data-cct="3000k">
-          <img src="img/productsimgs/cob1.png" alt="COB Downlight 7W">
-          <h3>COB Downlight 7W</h3>
-        </div>
+        <!-- GIMBOL -->
+        <li>
+          <button class="sub-btn">Recessed Gimbol COB Downlights</button>
+          <ul class="submenu level2">
+            <li><button class="model-btn">Gimbol Model A</button></li>
+            <li><button class="model-btn">Gimbol Model B</button></li>
+          </ul>
+        </li>
 
-        <!-- Product 2 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="black" data-cct="4000k">
-          <img src="img/productsimgs/cob2.png" alt="COB Downlight 12W">
-          <h3>COB Downlight 12W</h3>
-        </div>
+        <!-- OTHER ITEMS (placeholders only) -->
+        <li><button class="sub-btn">Recessed COB Projector Lamps</button></li>
+        <li><button class="sub-btn">Recessed Deep Cobs</button></li>
+        <li><button class="sub-btn">Recessed COB Pull-Outs</button></li>
+        <li><button class="sub-btn">Recessed Modular Cobs</button></li>
+        <li><button class="sub-btn">Recessed Narrow Beam Cobs</button></li>
+        <li><button class="sub-btn">Recessed COB Wall Washers</button></li>
 
-        <!-- Product 3 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="surface" data-ip="ip65" data-watt="18w" data-control="dali" data-color="white" data-cct="6500k">
-          <img src="img/productsimgs/cob3.png" alt="COB Surface 18W">
-          <h3>COB Surface 18W</h3>
-        </div>
+        <!-- SURFACE -->
+        <li><button class="sub-btn">Surface Tiltable Cobs</button></li>
+        <li><button class="sub-btn">Surface Movable Cobs</button></li>
+        <li><button class="sub-btn">Surface Adjustable Cobs</button></li>
+        <li><button class="sub-btn">Surface Cylinder Cobs</button></li>
+        <li><button class="sub-btn">Surface Pull-Outs</button></li>
+        <li><button class="sub-btn">Surface Square Cobs</button></li>
+        <li><button class="sub-btn">Surface Spot Lights</button></li>
+        <li><button class="sub-btn">Surface Drum Cobs</button></li>
+        <li><button class="sub-btn">Surface Wall Washers</button></li>
 
-        <!-- Product 4 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="white" data-cct="3000k">
-          <img src="img/productsimgs/cob4.png" alt="COB Zoom Light">
-          <h3>COB Zoom Focus</h3>
-        </div>
+        <li><button class="sub-btn">Surface Pinhole</button></li>
+        <li><button class="sub-btn">Designer Lights</button></li>
+      </ul>
+    </li>
 
+    <li>
+      <button onclick="goToPage('laser.html')">Laser Blades</button>
+    </li>
+    <li>
+      <button onclick="goToPage('tracklights.html')">Track Lights</button>
+    </li>
+  </ul>
+</div>
 
-                <!-- Product 1 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="7w" data-control="onoff" data-color="white" data-cct="3000k">
-          <img src="img/productsimgs/cob1.png" alt="COB Downlight 7W">
-          <h3>COB Downlight 7W</h3>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="black" data-cct="4000k">
-          <img src="img/productsimgs/cob2.png" alt="COB Downlight 12W">
-          <h3>COB Downlight 12W</h3>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="surface" data-ip="ip65" data-watt="18w" data-control="dali" data-color="white" data-cct="6500k">
-          <img src="img/productsimgs/cob3.png" alt="COB Surface 18W">
-          <h3>COB Surface 18W</h3>
-        </div>
-
-        <!-- Product 4 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="white" data-cct="3000k">
-          <img src="img/productsimgs/cob4.png" alt="COB Zoom Light">
-          <h3>COB Zoom Focus</h3>
-        </div>
-
-
-                <!-- Product 1 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="7w" data-control="onoff" data-color="white" data-cct="3000k">
-          <img src="img/productsimgs/cob1.png" alt="COB Downlight 7W">
-          <h3>COB Downlight 7W</h3>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="black" data-cct="4000k">
-          <img src="img/productsimgs/cob2.png" alt="COB Downlight 12W">
-          <h3>COB Downlight 12W</h3>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="surface" data-ip="ip65" data-watt="18w" data-control="dali" data-color="white" data-cct="6500k">
-          <img src="img/productsimgs/cob3.png" alt="COB Surface 18W">
-          <h3>COB Surface 18W</h3>
-        </div>
-
-        <!-- Product 4 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="white" data-cct="3000k">
-          <img src="img/productsimgs/cob4.png" alt="COB Zoom Light">
-          <h3>COB Zoom Focus</h3>
-        </div>
-
-
-
-                <!-- Product 1 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="7w" data-control="onoff" data-color="white" data-cct="3000k">
-          <img src="img/productsimgs/cob1.png" alt="COB Downlight 7W">
-          <h3>COB Downlight 7W</h3>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="black" data-cct="4000k">
-          <img src="img/productsimgs/cob2.png" alt="COB Downlight 12W">
-          <h3>COB Downlight 12W</h3>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="surface" data-ip="ip65" data-watt="18w" data-control="dali" data-color="white" data-cct="6500k">
-          <img src="img/productsimgs/cob3.png" alt="COB Surface 18W">
-          <h3>COB Surface 18W</h3>
-        </div>
-
-        <!-- Product 4 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="white" data-cct="3000k">
-          <img src="img/productsimgs/cob4.png" alt="COB Zoom Light">
-          <h3>COB Zoom Focus</h3>
-        </div>
-
-                <!-- Product 1 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="7w" data-control="onoff" data-color="white" data-cct="3000k">
-          <img src="img/productsimgs/cob1.png" alt="COB Downlight 7W">
-          <h3>COB Downlight 7W</h3>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="black" data-cct="4000k">
-          <img src="img/productsimgs/cob2.png" alt="COB Downlight 12W">
-          <h3>COB Downlight 12W</h3>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="surface" data-ip="ip65" data-watt="18w" data-control="dali" data-color="white" data-cct="6500k">
-          <img src="img/productsimgs/cob3.png" alt="COB Surface 18W">
-          <h3>COB Surface 18W</h3>
-        </div>
-
-        <!-- Product 4 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="white" data-cct="3000k">
-          <img src="img/productsimgs/cob4.png" alt="COB Zoom Light">
-          <h3>COB Zoom Focus</h3>
-        </div>
-
-                <!-- Product 1 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="7w" data-control="onoff" data-color="white" data-cct="3000k">
-          <img src="img/productsimgs/cob1.png" alt="COB Downlight 7W">
-          <h3>COB Downlight 7W</h3>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="black" data-cct="4000k">
-          <img src="img/productsimgs/cob2.png" alt="COB Downlight 12W">
-          <h3>COB Downlight 12W</h3>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="surface" data-ip="ip65" data-watt="18w" data-control="dali" data-color="white" data-cct="6500k">
-          <img src="img/productsimgs/cob3.png" alt="COB Surface 18W">
-          <h3>COB Surface 18W</h3>
-        </div>
-
-        <!-- Product 4 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="white" data-cct="3000k">
-          <img src="img/productsimgs/cob4.png" alt="COB Zoom Light">
-          <h3>COB Zoom Focus</h3>
-        </div>
-
-
-                <!-- Product 1 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="7w" data-control="onoff" data-color="white" data-cct="3000k">
-          <img src="img/productsimgs/cob1.png" alt="COB Downlight 7W">
-          <h3>COB Downlight 7W</h3>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="black" data-cct="4000k">
-          <img src="img/productsimgs/cob2.png" alt="COB Downlight 12W">
-          <h3>COB Downlight 12W</h3>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="surface" data-ip="ip65" data-watt="18w" data-control="dali" data-color="white" data-cct="6500k">
-          <img src="img/productsimgs/cob3.png" alt="COB Surface 18W">
-          <h3>COB Surface 18W</h3>
-        </div>
-
-        <!-- Product 4 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="white" data-cct="3000k">
-          <img src="img/productsimgs/cob4.png" alt="COB Zoom Light">
-          <h3>COB Zoom Focus</h3>
-        </div>
-
-                <!-- Product 1 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="7w" data-control="onoff" data-color="white" data-cct="3000k">
-          <img src="img/productsimgs/cob1.png" alt="COB Downlight 7W">
-          <h3>COB Downlight 7W</h3>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="black" data-cct="4000k">
-          <img src="img/productsimgs/cob2.png" alt="COB Downlight 12W">
-          <h3>COB Downlight 12W</h3>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="surface" data-ip="ip65" data-watt="18w" data-control="dali" data-color="white" data-cct="6500k">
-          <img src="img/productsimgs/cob3.png" alt="COB Surface 18W">
-          <h3>COB Surface 18W</h3>
-        </div>
-
-        <!-- Product 4 -->
-        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="white" data-cct="3000k">
-          <img src="img/productsimgs/cob4.png" alt="COB Zoom Light">
-          <h3>COB Zoom Focus</h3>
-        </div>
-
-      </div>
-    </div>
+<!-- =============== PRODUCT GRID =============== -->
+<div id="productGrid" class="product-grid">
+  <!-- EXAMPLE PRODUCT CARDS → You will replace with real ones -->
+  <div class="product-card" data-category="cob" data-type="spot">
+    <h3>COB Spot Light Model A</h3>
   </div>
-</section>
+  <div class="product-card" data-category="cob" data-type="trimless">
+    <h3>Trimless COB Model B</h3>
+  </div>
+  <div class="product-card" data-category="cob" data-type="tiltable">
+    <h3>Tiltable COB Model C</h3>
+  </div>
 
+  <!-- Add all your real product cards here (unchanged layout) -->
+</div>
 
+<div id="noResults" style="display:none;text-align:center;font-weight:bold;padding:10px;">No Results Found</div>
 
-
+<!-- =============== FULL JS FIXED (WORKING VERSION) =============== -->
 
   
 <!-- ===== CSS ===== -->
 <style>
+
+  .submenu {
+  list-style: none;
+  margin-left: 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.submenu.show {
+  max-height: 500px;
+}
+
+.submenu.level2 {
+  margin-left: 25px;
+}
+
+.submenu li a {
+  display: block;
+  padding: 6px 5px;
+  font-size: 14px;
+  color: #444;
+  text-decoration: none;
+}
+
+.submenu li a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.category button {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 8px 5px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.category button::after {
+  content: "▶";
+  float: right;
+  transition: 0.3s;
+}
+
+.category button.open::after {
+  transform: rotate(90deg);
+}
+
 
   .top-filter-dropdowns {
   display: flex;
@@ -522,7 +564,7 @@
   align-items: center;
   justify-content: space-between;
   background: #fff;
-  border: 1px solid #ddd;
+  border:  solid #ddd;
   padding: 15px 20px;
   margin-top: 60px;
   gap: 15px;
@@ -542,7 +584,7 @@
 }
 
 .filter-group select {
-  border: 1px solid #ccc;
+  border: solid #ccc;
   padding: 6px 10px;
   /* border-radius: 4px; */
   font-size: 13px;
@@ -578,7 +620,7 @@
   background: #fff;
   border-collapse: collapse;
   margin: 0 auto;
-  border: 1px solid #ddd;
+  border: solid #ddd;
   margin-top: 60px;
 }
 
@@ -586,7 +628,7 @@
   display: table-cell;
   vertical-align: top;
   padding: 10px 15px;
-  border-right: 1px solid #ddd;
+  border-right:  solid #ddd;
 }
 
 .top-filter-table .filter-col:last-child {
@@ -653,7 +695,7 @@
     .sidebar {
       width: 260px;
       background: #fff;
-      border-right: 1px solid #ddd;
+      border-right:  solid #ddd;
       padding: 25px 15px;
       box-sizing: border-box;
     }
@@ -852,7 +894,7 @@
   .top-filter-table .filter-col {
     display: inline-block;
     vertical-align: top;
-    border-right: 1px solid #ddd;
+    border-right:  solid #ddd;
   }
       .lighting-container {
         flex-direction: column;
@@ -936,6 +978,7 @@
 }
 
   </style>
+
 
 
 
@@ -1148,155 +1191,106 @@
 
 
 
-<script>
-function goToPage(page){ window.location.href = page; }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+let menuFilter = { kind: 'category', value: 'cob' };
+let isolatedCard = null;
+let searchText = '';
 let activeFilters = {};
 
-function filterProducts() {
-  const cards = document.querySelectorAll('.product-card');
+function getAllCards() {
+  return Array.from(document.querySelectorAll('.product-card'));
+}
+
+function updateVisibility() {
+  const cards = getAllCards();
+  let visible = 0;
 
   cards.forEach(card => {
-    let show = true;
-    for (let key in activeFilters) {
-      if (card.dataset[key] !== activeFilters[key]) show = false;
+    let ok = true;
+
+    // CATEGORY FILTER
+    if (menuFilter && menuFilter.kind === 'category') {
+      if ((card.dataset.category || '').toLowerCase() !== 'cob') ok = false;
     }
-    card.style.display = show ? 'flex' : 'none';
-  });
-}
 
-function filterDropdown(attr, value){
-  if (value === '') delete activeFilters[attr];
-  else activeFilters[attr] = value;
-  filterProducts();
-}
+    // SUB FILTER
+    if (menuFilter && menuFilter.kind === 'sub') {
+      const type = (card.dataset.type || '').toLowerCase();
+      if (!type.includes(menuFilter.value)) ok = false;
+    }
 
-function resetFilters(){
-  activeFilters = {};
-  document.querySelectorAll('.top-filter-dropdowns select').forEach(s => s.value = '');
-  filterProducts();
-}
-
-// SEARCH FUNCTION + Suggestions + No Results
-
-// Add No Results box
-let noResultsBox = document.createElement('div');
-noResultsBox.id = 'noResults';
-noResultsBox.style.display = 'none';
-noResultsBox.style.padding = '10px';
-noResultsBox.style.textAlign = 'center';
-noResultsBox.style.fontWeight = 'bold';
-document.getElementById('productGrid').after(noResultsBox);
-
-// Add Suggestions dropdown
-let suggestionBox = document.getElementById('suggestions');
-suggestionBox.id = 'suggestions';
-suggestionBox.style.display = 'none';
-suggestionBox.style.position = 'absolute';
-suggestionBox.style.background = '#fff';
-suggestionBox.style.width = '100%';
-suggestionBox.style.border = '1px solid #ccc';
-suggestionBox.style.zIndex = '999';
-document.querySelector('.search-group').appendChild(suggestionBox);
-
-function clearSearchBar(){
-  const input = document.getElementById('searchInput');
-  input.value = '';
-  handleSearch('');
-  document.getElementById('clearSearch').style.display = 'none';
-  suggestionBox.style.display = 'none';
-}
-
-function handleSearch(text){
-  text = text.toLowerCase().trim();
-  const cards = document.querySelectorAll('.product-card');
-  let matches = 0;
-  suggestionBox.innerHTML = '';
-
-  // Live Suggestions
-  if(text.length > 0){
-    cards.forEach(card => {
+    // SEARCH
+    if (searchText) {
       const name = card.querySelector('h3').innerText.toLowerCase();
-      if(name.includes(text)){
-        let item = document.createElement('div');
-        item.innerText = card.querySelector('h3').innerText;
-        item.style.padding = '6px';
-        item.style.cursor = 'pointer';
-        item.onclick = ()=>{
-          document.getElementById('searchInput').value = card.querySelector('h3').innerText;
-          filterByName(card.querySelector('h3').innerText.toLowerCase());
-          suggestionBox.style.display = 'none';
-        }
-        suggestionBox.appendChild(item);
-      }
-    });
-    suggestionBox.style.display = suggestionBox.innerHTML ? 'block' : 'none';
-  } else {
-    suggestionBox.style.display = 'none';
-  }
-
-  // Live filtering
-  cards.forEach(card => {
-    const name = card.querySelector('h3').innerText.toLowerCase();
-    const show = name.includes(text);
-    card.style.display = show ? 'flex' : 'none';
-    if(show) matches++;
-  });
-
-  // No results message
-  if(matches === 0){
-    noResultsBox.innerText = 'No results found';
-    noResultsBox.style.display = 'block';
-  } else {
-    noResultsBox.style.display = 'none';
-  }
-}
-
-// ENTER Search (Redirect for non-COB)
-const searchInput = document.getElementById('searchInput');
-
-// Show/Hide clear (✕) when typing
-searchInput.addEventListener('input', function(){
-  const clearBtn = document.getElementById('clearSearch');
-  clearBtn.style.display = this.value.length > 0 ? 'block' : 'none';
-});
-searchInput.addEventListener('keydown', function(e){
-  if (e.key === 'Enter'){
-    const text = this.value.toLowerCase().trim();
-
-    const cobKeywords = ["cob", "downlight", "surface", "zoom", "focus", "spotlight"]; 
-    const isCOB = cobKeywords.some(k => text.includes(k));
-
-    if (text !== '' && !isCOB){
-      window.location.href = 'lighting.html?search=' + encodeURIComponent(text);
-      return;
+      if (!name.includes(searchText)) ok = false;
     }
 
-    filterByName(text);
-    suggestionBox.style.display = 'none';
-  }
-});
+    // ISOLATED CARD
+    if (isolatedCard && card !== isolatedCard) ok = false;
 
-function filterByName(text){
-  const cards = document.querySelectorAll('.product-card');
-  let matches = 0;
-
-  cards.forEach(card => {
-    const name = card.querySelector('h3').innerText.toLowerCase();
-    const show = name.includes(text);
-    card.style.display = show ? 'flex' : 'none';
-    if(show) matches++;
+    card.style.display = ok ? 'flex' : 'none';
+    if (ok) visible++;
   });
 
-  noResultsBox.style.display = matches === 0 ? 'block' : 'none';
+  document.getElementById('noResults').style.display = visible ? 'none' : 'block';
 }
 
-function toggleSidebar(){
-  document.querySelector('.category').classList.toggle('show');
-}
+// ==================== MENU BEHAVIOR ====================
+const topBtn = document.querySelector('.top-btn');
+const submenu = document.querySelector('.level1');
+
+// open COB Lights by default
+window.addEventListener('DOMContentLoaded', () => {
+  topBtn.classList.add('open');
+  submenu.classList.add('show');
+  updateVisibility();
+});
+
+// toggle top-level
+topBtn.addEventListener('click', () => {
+  const show = !submenu.classList.contains('show');
+  submenu.classList.toggle('show');
+  topBtn.classList.toggle('open');
+  menuFilter = { kind: 'category', value: 'cob' };
+  isolatedCard = null;
+  updateVisibility();
+});
+
+// sub buttons
+const subBtns = document.querySelectorAll('.sub-btn');
+
+subBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // make only this sub open style
+    subBtns.forEach(b => b.classList.remove('active-sub'));
+    btn.classList.add('active-sub');
+
+    // apply filter
+    menuFilter = { kind: 'sub', value: btn.innerText.toLowerCase().trim() };
+    isolatedCard = null;
+    updateVisibility();
+  });
+});
+
+// PAGE NAV
+function goToPage(page){ window.location.href = page; }
 </script>
-
-
 
 
 

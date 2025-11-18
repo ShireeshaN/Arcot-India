@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-   <head>
+<head>
   <meta charset="utf-8">
   <title>Arcot Industries Private Limited</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,10 +32,11 @@
   <!-- Custom CSS -->
   <link rel="preload" href="css/style.css" as="style">
   <link rel="stylesheet" href="css/style.css">
-  <link href="css/segments.css" rel="stylesheet">
+  <!-- <link href="css/segments.css" rel="stylesheet"> -->
 
 
 </head>
+
 
     <body>
 
@@ -50,20 +51,29 @@
         
 
     
-<!-- HEADER START -->
-
 <header class="main-header">
   <div class="header-wrap position-relative">
-    <a href="index.html">
-      <img src="img/logos.webp" alt="Logo" class="logo" loading="lazy">
-    </a>
+    <a href="index.html"><img src="img/logos.webp" alt="Logo" class="logo" loading="lazy"></a>
     <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
     <nav class="navmenu" id="mainNav">
       <ul class="mb-0">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a></li>
-        <li><a href="solution.html">Solutions</a></li>
+         <li><a href="index.html" >Home</a></li>
+             <li><a href="about.html" class="active">About</a></li>
+        <li>
+          <a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a>
+        </li>
+        <li class="dropdown">
+  <a href="#" onclick="toggleDropdown(event)">Products <i class="bi bi-chevron-down ms-1"></i></a>
+  <ul class="dropdown-menu">
+    <li><a href="smart-pole.html">Energy Generation</a></li>
+    <li><a href="#">Power</a></li>
+    <li><a href="#">Lighting</a></li>
+    <li><a href="#">Automation</a></li>
+    
+  </ul>
+</li>
+       <li><a href="solution.html">Solutions</a></li>
+
 <li class="dropdown">
   <a href="#" onclick="toggleDropdown(event)">R&D <i class="bi bi-chevron-down ms-1"></i></a>
   <ul class="dropdown-menu">
@@ -74,885 +84,814 @@
     <li><a href="#">Smart Bar Counter</a></li>
   </ul>
 </li>
-
-        <li><a href="applications.html">Applications</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
+    <li><a href="applications.html">Applications</a></li>
+   <li><a href="gallery.html" >Gallery</a></li>
+           <li><a href="contact.html">Contact</a></li>
+        <!-- <li><a href="#"><i class="bi bi-search"></i></a></li> -->
       </ul>
     </nav>
   </div>
 
-  <!-- Mega Menu -->
   <div id="megaMenu" class="mega-menu">
     <div class="row">
-      <div class="underline"></div>
-      <div class="service-submenus d-flex flex-wrap">
-        <div class="service-group">
-          <h6>Energy</h6>
-          <ul>
-            <li><a href="#">Solar</a></li>
-            <li><a href="#">Wind</a></li>
-            <li><a href="#">Biomass</a></li>
-            <li><a href="#">Hydel Power</a></li>
-          </ul>
-        </div>
-        <div class="service-group">
-          <h6>Power</h6>
-          <ul>
-            <li><a href="transmission.html">Transmission</a></li>
-            <li><a href="#">Distribution</a></li>
-            <li><a href="#">Low Tension</a></li>
-            <li><a href="#">High Tension</a></li>
-            <li><a href="#">Panel Boards</a></li>
-          </ul>
-        </div>
-        <div class="service-group">
-          <h6>Lighting</h6>
-          <ul>
-            <li><a href="residential-lighting.html">Residential</a></li>
-            <li><a href="facade-lighting.html">Facade</a></li>
-            <li><a href="commercial-lighting.html">Commercial</a></li>
-            <li><a href="industrial-lighting.html">Industrial</a></li>
-            <li><a href="#">Street</a></li>
-            <li><a href="#">Park</a></li>
-            <li><a href="#">Stadium</a></li>
-            <li><a href="#">Hospital</a></li>
-          </ul>
-        </div>
-        <div class="service-group">
-          <h6>Automation</h6>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Commercial</a></li>
-            <li><a href="#">Industrial</a></li>
-            <li><a href="#">Hospital</a></li>
-            <li><a href="#">IoT Based Automation</a></li>
-            <li><a href="#">Hotel</a></li>
-          </ul>
-        </div>
-        <div class="service-group">
-          <h6>R & D</h6>
-          <ul>
-            <li><a href="smart-pole.html">Smart Pole</a></li>
-            <li><a href="#">Smart Conference Hall</a></li>
-            <li><a href="#">Smart Bollards</a></li>
-            <li><a href="#">Smart Bar Counter</a></li>
-            <li><a href="#">Smart Window Leaf AC</a></li>
-          </ul>
-        </div>
-       
-      </div>
+     
+<div class="underline"></div>
+<div class="service-submenus d-flex flex-wrap">
+  <div class="service-group">
+    <h6>Energy</h6>
+    <ul>
+      <li><a href="#">Solar</a></li>
+      <li><a href="#">Wind</a></li>
+      <li><a href="#">Biomass</a></li>
+          <li><a href="#">Hydel Power</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Power</h6>
+    <ul>
+      <li><a href="transmission.html">transmission</a></li>
+      <li><a href="#">distribution</a></li>
+      <li><a href="#">Low Tention</a></li>
+        <li><a href="#">High Tention</a></li>
+         <li><a href="#">Panel Boards</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Lighting</h6>
+    <ul>
+      <li><a href="#">Residential</a></li>
+      <li><a href="#">Facade</a></li>
+      <li><a href="#">Commercial</a></li>
+       <li><a href="#">Industrial</a></li>
+      <li><a href="#">Street</a></li>
+      <li><a href="#">Park</a></li>
+      <li><a href="#">Stadium</a></li>
+      <li><a href="#">Hospital</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+    <h6>Automation</h6>
+    <ul>
+   
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Commercial</a></li>
+         <li><a href="#">Industrial</a></li>
+           <li><a href="#">Hospital</a></li>
+      <li><a href="#">IOT Based Automation</a></li>
+         <li><a href="#">Hotel</a></li>
+    </ul>
+  </div>
+  <div class="service-group">
+   <h6>R&D</h6>
+    <ul>
+      <li><a href="smart-pole.html">Smart Pole</a></li>
+      <li><a href="#">Smart Conference Hall</a></li>
+       <li><a href="#">Smart Bollards</a></li>
+          <li><a href="#">Smart Bar Counter</a></li>
+              <li><a href="#">Smart Window Leaf AC</a></li>
+    </ul>
+  </div>
+
+  
+
+   
+</div>
+
     </div>
   </div>
 </header>
-<!-- HEADER END -->
 
 
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h1 class="text-white display-6 mb-4 wow fadeInDown" data-wow-delay="0.1s">Residential Lighting</h1>
-                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> -->
-                  
-                </ol>    
-            </div>
+<!-- FULL NEW COB PAGE WITH WORKING FILTERS + CCT + CONTROL + SEARCH -->
+
+<section class="lighting-wrapper">
+
+  <!-- ===== FILTER BAR ===== -->
+  <div class="top-filter-dropdowns" style="padding-left:20px;">
+
+    <!-- Search Bar -->
+    <div class="filter-group search-group" style="flex:1; min-width:20px; position:relative;">
+      <label for="searchInput">Search</label>
+      <div style="position:relative; width:60%; height:40px;">
+  <input type="text" id="searchInput" placeholder="Search COB products..." style="padding-right:40px; height:40px; width:100%; box-sizing:border-box;" />
+  <span id="clearSearch" onclick="clearSearchBar()" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer; font-weight:bold; background:#fff; padding:0 6px; display:none; z-index:20; height:20px; line-height:20px; border-radius:4px;">✕</span>
+</div>
+      <div id="suggestions" style="display:none; position:absolute; top:100%; left:0; width:100%; background:#fff; border:1px solid #ccc; z-index:999; max-height:200px; overflow-y:auto;"></div>
+    </div>
+
+    <div class="filter-group">
+      <label>Type</label>
+      <select onchange="filterDropdown('type', this.value)">
+        <option value="">All</option>
+        <option value="indoor">Indoor</option>
+        <option value="outdoor">Outdoor</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Mount</label>
+      <select onchange="filterDropdown('mount', this.value)">
+        <option value="">All</option>
+        <option value="ceiling">Concealed</option>
+        <option value="surface">Surface</option>
+        <option value="pendant">Pendant</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>IP Rating</label>
+      <select onchange="filterDropdown('ip', this.value)">
+        <option value="">All</option>
+        <option value="ip20">IP20</option>
+        <option value="ip65">IP65</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Watt</label>
+      <select onchange="filterDropdown('watt', this.value)">
+        <option value="">All</option>
+        <option value="7w">7W</option>
+        <option value="12w">12W</option>
+        <option value="18w">18W</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>CCT</label>
+      <select onchange="filterDropdown('cct', this.value)">
+        <option value="">All</option>
+        <option value="3000k">3000K</option>
+        <option value="4000k">4000K</option>
+        <option value="6500k">6500K</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Control</label>
+      <select onchange="filterDropdown('control', this.value)">
+        <option value="">All</option>
+        <option value="onoff">On/Off</option>
+        <option value="dali">DALI</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Color</label>
+      <select onchange="filterDropdown('color', this.value)">
+        <option value="">All</option>
+        <option value="white">White</option>
+        <option value="black">Black</option>
+      </select>
+    </div>
+
+    <div class="filter-group text-center">
+      <button onclick="resetFilters()">Reset</button>
+    </div>
+  </div>
+
+  <!-- MAIN LAYOUT -->
+  <div class="lighting-container">
+
+<aside class="sidebar">
+  <h2>Lighting</h2>
+  <h2 class="mobile-toggle" onclick="toggleSidebar()">Lighting ☰</h2>
+
+  <ul class="category">
+
+    <li>
+      <button onclick="toggleMenu(this)">COB Lights</button>
+      <ul class="submenu">
+
+        <li>
+          <button onclick="toggleMenu(this)">COB Spot Lights</button>
+          <ul class="submenu level2">
+            <li><a href="specs/downlight7w.html">7W Model</a></li>
+            <li><a href="specs/downlight12w.html">12W Model</a></li>
+            <li><a href="specs/downlight18w.html">18W Model</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <button onclick="toggleMenu(this)">Trimless Cobs</button>
+          <ul class="submenu level2">
+            <li><a href="specs/surface7w.html">7W Surface</a></li>
+            <li><a href="specs/surface12w.html">12W Surface</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <button onclick="toggleMenu(this)">Concealed cobs</button>
+          <ul class="submenu level2">
+            <li><a href="specs/zoomFocus.html">Zoom Focus</a></li>
+            <li><a href="specs/zoomAdjust.html">Adjustable Zoom</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </li>
+
+    <li><button onclick="goToPage('surface.html')">Cob Pop-ups</button></li>
+    <li><button onclick="goToPage('track.html')">Cob Tiltable</button></li>
+    <li><button onclick="goToPage('magnetic.html')">Magnetic Track</button></li>
+    <li><button onclick="goToPage('slimtrack.html')">Slim Track</button></li>
+
+  </ul>
+</aside>
+
+
+
+    <!-- PRODUCT GRID -->
+    <div class="product-section">
+      <div class="product-grid" id="productGrid">
+
+        <!-- Product 1 -->
+        <div class="product-card" data-category="cob" data-type="indoor" data-mount="concealed" data-ip="ip20" data-watt="7w" data-control="onoff" data-color="white" data-cct="3000k">
+          <img src="img/productsimgs/cob1.png" alt="COB Downlight 7W">
+          <h3>Cob Spotlights</h3>
         </div>
-        <!-- Header End -->
+
+        <!-- Product 2 -->
+        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="black" data-cct="4000k">
+          <img src="img/productsimgs/cob2.png" alt="COB Downlight 12W">
+          <h3>COB Downlight 12W</h3>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card" data-category="cob" data-type="indoor" data-mount="surface" data-ip="ip65" data-watt="18w" data-control="dali" data-color="white" data-cct="6500k">
+          <img src="img/productsimgs/cob3.png" alt="COB Surface 18W">
+          <h3>COB Surface 18W</h3>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="white" data-cct="3000k">
+          <img src="img/productsimgs/cob4.png" alt="COB Zoom Light">
+          <h3>COB Zoom Focus</h3>
+        </div>
+
+                <!-- Product 1 -->
+        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="7w" data-control="onoff" data-color="white" data-cct="3000k">
+          <img src="img/productsimgs/cob1.png" alt="COB Downlight 7W">
+          <h3>COB Downlight 7W</h3>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="black" data-cct="4000k">
+          <img src="img/productsimgs/cob2.png" alt="COB Downlight 12W">
+          <h3>COB Downlight 12W</h3>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card" data-category="cob" data-type="indoor" data-mount="surface" data-ip="ip65" data-watt="18w" data-control="dali" data-color="white" data-cct="6500k">
+          <img src="img/productsimgs/cob3.png" alt="COB Surface 18W">
+          <h3>COB Surface 18W</h3>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="white" data-cct="3000k">
+          <img src="img/productsimgs/cob4.png" alt="COB Zoom Light">
+          <h3>COB Zoom Focus</h3>
+        </div>
 
 
-         <style>
-     body {
+                <!-- Product 1 -->
+        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="7w" data-control="onoff" data-color="white" data-cct="3000k">
+          <img src="img/productsimgs/cob1.png" alt="COB Downlight 7W">
+          <h3>COB Downlight 7W</h3>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="black" data-cct="4000k">
+          <img src="img/productsimgs/cob2.png" alt="COB Downlight 12W">
+          <h3>COB Downlight 12W</h3>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card" data-category="cob" data-type="indoor" data-mount="surface" data-ip="ip65" data-watt="18w" data-control="dali" data-color="white" data-cct="6500k">
+          <img src="img/productsimgs/cob3.png" alt="COB Surface 18W">
+          <h3>COB Surface 18W</h3>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="white" data-cct="3000k">
+          <img src="img/productsimgs/cob4.png" alt="COB Zoom Light">
+          <h3>COB Zoom Focus</h3>
+        </div>
+
+
+                <!-- Product 1 -->
+        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="7w" data-control="onoff" data-color="white" data-cct="3000k">
+          <img src="img/productsimgs/cob1.png" alt="COB Downlight 7W">
+          <h3>COB Downlight 7W</h3>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="black" data-cct="4000k">
+          <img src="img/productsimgs/cob2.png" alt="COB Downlight 12W">
+          <h3>COB Downlight 12W</h3>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card" data-category="cob" data-type="indoor" data-mount="surface" data-ip="ip65" data-watt="18w" data-control="dali" data-color="white" data-cct="6500k">
+          <img src="img/productsimgs/cob3.png" alt="COB Surface 18W">
+          <h3>COB Surface 18W</h3>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card" data-category="cob" data-type="indoor" data-mount="ceiling" data-ip="ip20" data-watt="12w" data-control="onoff" data-color="white" data-cct="3000k">
+          <img src="img/productsimgs/cob4.png" alt="COB Zoom Light">
+          <h3>COB Zoom Focus</h3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+<!-- ===== CSS ===== -->
+<style>
+
+  .submenu {
+  list-style: none;
+  margin-left: 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.submenu.show {
+  max-height: 500px;
+}
+
+.submenu.level2 {
+  margin-left: 25px;
+}
+
+.submenu li a {
+  display: block;
+  padding: 6px 5px;
+  font-size: 14px;
+  color: #444;
+  text-decoration: none;
+}
+
+.submenu li a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.category button {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 8px 5px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.category button::after {
+  content: "▶";
+  float: right;
+  transition: 0.3s;
+}
+
+.category button.open::after {
+  transform: rotate(90deg);
+}
+
+
+  .top-filter-dropdowns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border:  solid #ddd;
+  padding: 15px 20px;
+  margin-top: 60px;
+  gap: 15px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 120px;
+}
+
+.filter-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+}
+
+.filter-group select {
+  border: solid #ccc;
+  padding: 6px 10px;
+  /* border-radius: 4px; */
+  font-size: 13px;
+  color: #333;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.filter-group select:hover,
+.filter-group select:focus {
+  border-color: #000;
+}
+
+@media (max-width: 768px) {
+  .top-filter-dropdowns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.lighting-wrapper {
+  background: #f8f8f8;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+/* === Top Filter Bar === */
+.top-filter-table {
+  display: table;
+  width: 100%;
+  background: #fff;
+  border-collapse: collapse;
+  margin: 0 auto;
+  border: solid #ddd;
+  margin-top: 60px;
+}
+
+.top-filter-table .filter-col {
+  display: table-cell;
+  vertical-align: top;
+  padding: 10px 15px;
+  border-right:  solid #ddd;
+}
+
+.top-filter-table .filter-col:last-child {
+  border-right: none;
+  text-align: center;
+}
+
+.filter-heading {
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: #111;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.filter-options span {
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.filter-options span:hover,
+.filter-options span.active {
+  color: #000;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.reset-btn {
+  background: none;
+  border:  solid #999;
+  padding: 5px 12px;
+  /* border-radius: 4px; */
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+    body {
+      font-family: "Poppins", sans-serif;
       margin: 0;
-      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+    }
+
+    .lighting-container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
       background: #fff;
-      color: #111;
+      border-right:  solid #ddd;
+      padding: 25px 15px;
+      box-sizing: border-box;
     }
-    .section {
-      max-width: 1000px; /* page middle lo compact */
-      margin: 40px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-    .section h1 {
-      font-size: 28px;
-      font-weight: 800;
+
+    .sidebar h2 {
+      font-size: 20px;
+      font-weight: 500;
+      text-align: left;
       margin-bottom: 25px;
-      text-align: left; 
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px; /* tight gap */
-      align-items: start;
-    }
-    .col img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-      
-    }
-    .col img:hover {
-  transform: scale(1.05); /* zoom in effect */
+    .submenu {
+  list-style: none;
+  margin-left: 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
 }
-    .col1 img {
-      height: 420px; /* tall but reduced */
+.submenu.show {
+  display: block;
+}
+
+    .sidebar h2.mobile-toggle {
+      display: none;
+      cursor: pointer;
     }
-    .col2 img,
-    .col3 img {
-      height: 280px; /* smaller images */
+
+    .category {
+      list-style: none;
+      padding-left: 0;
     }
-    .content {
-      text-align: center;
-      margin-top: 40px;
+
+    .category li {
+      margin-bottom: 8px;
     }
-    .title {
-      font-size: 30px;
-      font-weight: 800;
-      margin: 0 0 15px;
-      line-height: 1.2;
-    }
-    .desc {
-      font-size: 18px;
-      color: #333;
-      margin: 0;
-      line-height: 1.4;
-    }
-    .readmore {
-      display: inline-block;
-      margin-top: 25px;
-      font-weight: 600;
+
+    .category button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
       font-size: 15px;
-      color: #111;
-      text-decoration: none;
-      /* border-bottom: 1px solid ; */
-      padding: 10px;
-    }
-    .readmore:hover {
-      background-color: #b3b0b0;
-      padding: 10px;
-      
-    }
- 
-
-    /* responsive */
-    @media(max-width: 900px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-      .col1 img {
-        height: 300px;
-      }
-      .col2 img,
-      .col3 img {
-        height: 200px;
-      }
+      color: #333;
+      padding: 10px 12px;
+      cursor: pointer;
+      /* border-radius: 6px; */
+      transition: all 0.3s ease;
     }
 
-
-
-
-
-
-
-        .product-img {
-      width: 100%;
-      height: 300px;
-      transition: transform 0.4s ease-in-out;
-      overflow: hidden;
+    .category button::after {
+      content: "→";
+      color: #999;
+      margin-left: auto;
+      transition: transform 0.3s ease, color 0.3s ease;
     }
-    .product-img:hover {
- transform: scale(1.1);       /* hand icon vastundi */
-}
-    .caption-btn {
-      background-color: #1a1b1a; /* darker grey button */
-      color: #fff;
-      font-weight: bold;
-      text-align: center;
-      padding: 10px;
-      margin-top: 10px;
+
+    .category button.active::after {
+      color: #000;
+      transform: translateX(3px);
+    }
+
+    .category button:hover {
+      background: #eaeaea;
+      color: #000;
+    }
+
+    .submenu {
+      list-style: none;
+      margin-left: 15px;
+      display: none;
+    }
+
+    .submenu.show {
       display: block;
-      text-transform: uppercase;
     }
-    .text-block h2 {
-      font-weight: bold;
-      font-size: 1.6rem;
+
+    .submenu li a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .submenu li a:hover {
+      color: #000;
+    }
+
+    /* Products */
+    .product-section {
+      flex: 1;
+      padding: 40px 20px;
+      /* display: flex; */
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    /* Horizontal filters */
+    .product-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 15px;
       margin-bottom: 20px;
     }
-    .text-block p {
-      font-size: 1rem;
-      line-height: 1.6;
+
+    .product-filters .filter-group label {
+      font-weight: 600;
+      margin-right: 5px;
     }
 
-
-
-
-
-        .card-custom {
-      position: relative;
-      overflow: hidden;
-      
-      height: 400px;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .card-custom img {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-    .card-custom:hover img {
-      transform: scale(1.1); /* zoom effect */
-    }
-    .overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.35); /* dark overlay */
-    }
-    .card-content {
-      position: relative;
-      z-index: 2;
-      padding: 20px;
-    }
-    .card-content h3 {
-      font-weight: bold;
-      font-size: 1.6rem;
-    }
-    .card-content p {
-      margin: 5px 0 20px;
-      font-size: 1rem;
-    }
-    .btn-custom {
+    .product-filters .filter-group button {
+      border: solid #ddd;
       background: #fff;
-      color: #000;
-      font-weight: bold;
-      padding: 8px 18px;
-      border: none;
-      
-      text-transform: uppercase;
+      padding: 5px 10px;
+      /* border-radius: 5px; */
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 13px;
     }
-    .btn-custom:hover {
-      background: #000;
+
+    .product-filters .filter-group button.active {
+      background: #00bcd4;
       color: #fff;
-      transition: 0.3s ease;
+      border-color: #00bcd4;
     }
 
-
-
-
-
-     .image-box img {
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 35px;
       width: 100%;
-      max-width: 400px;
-      
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: transform 0.5s ease;
-    }
-
-    .image-box img:hover {
-      transform: scale(1.03);
-    }
-    
-
-
- 
-
-        .products-section {
-      padding: 50px 20px;
-    }
-
-    .products-section h2 {
-      font-weight: 700;
-      font-size: 1.5rem;
-      margin-bottom: 30px;
+      max-width: 1300px;
+      margin: auto;
     }
 
     .product-card {
-      background: #f9f9f9;
-      border: none;
-      text-align: left;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-       border-radius: 0px;
-    }
-
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      position: relative;
+      background: #e6e6e6;
+      /* border-radius: 14px; */
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.4s ease;
     }
 
     .product-card img {
-      width: 100%;
-     
-      
+      width: 230px;
+      transition: transform 0.4s ease;
+      margin-top: 20px;
+      position: relative;
+      z-index: 2;
     }
 
-    .product-title {
-      font-weight: bold;
-      font-size: 0.95rem;
-      padding: 10px;
-      text-transform: uppercase;
+    .product-card:hover img {
+      transform: scale(1.1);
     }
 
- 
-
-
-
-
-        /* Main nav */
-    .main-nav {
-      background: #f2f2f2; /* ash grey */
-      display: flex;
-      gap: 25px;
-      padding: 12px 20px;
-      flex-wrap: wrap;
-    }
-
-    .main-nav a {
-      text-decoration: none;
+    .product-card h3 {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      font-weight: 600;
       color: #111;
-      /* font-weight: 600; */
-      font-size: 15px;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-      cursor: pointer;
+      text-align: center;
+      z-index: 3;
+      position: relative;
     }
 
-    .main-nav a:hover {
-      color: #555;
-      text-decoration: underline;
+    .product-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #e6e6e6;
+      z-index: 1;
+      transition: all 0.8s ease;
     }
 
-    .main-nav a.active {
-      color: #555;
-      text-decoration: underline;
+    .product-card:hover::before {
+      background: linear-gradient(140deg, #ffffff 55%, #e6e6e6 45%);
     }
 
-    /* Submenu container (black bar) */
-    .submenu-container {
-      background: #222;
-      padding: 12px 20px;
-      display: none;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-
-    .submenu-container a {
-      color: #fff;
-      text-decoration: none;
-      /* font-weight: 600; */
-      font-size: 14px;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-    }
-
-    .submenu-container a:hover {
-      color: #bbb;
-    }
-
-    /* Mobile */
-    .menu-toggle {
-      display: none;
-      background: #f2f2f2;
-      padding: 12px 20px;
-      border: none;
-      /* font-weight: bold; */
-      font-size: 16px;
-      cursor: pointer;
-      width: 100%;
-      text-align: left;
+    @media (max-width: 1024px) {
+      .product-card img {
+        width: 180px;
+      }
     }
 
     @media (max-width: 768px) {
-      .main-nav {
+       .top-filter-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .top-filter-table .filter-col {
+    display: inline-block;
+    vertical-align: top;
+    border-right:  solid #ddd;
+  }
+      .lighting-container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .sidebar h2 {
         display: none;
-        flex-direction: column;
-        gap: 15px;
       }
 
-      .submenu-container {
-        flex-direction: column;
-      }
-
-      .menu-toggle {
+      .sidebar h2.mobile-toggle {
         display: block;
       }
 
-      .main-nav.show {
-        display: flex;
+      .category {
+        display: none;
+      }
+
+      .category.show {
+        display: block;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
     }
 
-   /* Segments Navbar */
-.segments-navbar {
-  position: sticky;
-  /* top: 100px;    */
-  z-index: 999;
+    /* --- Fix product grid spacing consistency --- */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 20px; /* consistent spacing under filter bar */
+  min-height: 200px; /* prevents extra white gap */
 }
-    
-    
+
+/* --- Smooth submenu animation + arrow rotation --- */
+.submenu {
+  list-style: none;
+  margin-left: 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.submenu.show {
+  display: block;
+}
+
+/* --- Arrow style --- */
+.category > li > button {
+  position: relative;
+  background: none;
+  border: none;
+  color: #333;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.category > li > button::after {
+  content: "→"; /* right arrow */
+  position: absolute;
+  right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.category > li > button.active::after,
+.category > li > button.open::after {
+  transform: rotate(90deg); /* rotate to down arrow */
+}
+
   </style>
-  <div class="segments-navbar">
-
-  <!-- Mobile toggle -->
-  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
-
-  <!-- Main Navigation -->
-  <nav class="main-nav sticky-header" id="mainNav">
-    <a href="#" data-submenu="cases">Cases</a>
-    <a href="#" class="active" data-submenu="home">Lighting for Home</a>
-    <a href="#" data-submenu="commercial">Commercial Lighting</a>
-    <a href="#" data-submenu="industrial">Industrial Lighting</a>
-    <a href="#" data-submenu="outdoor">Outdoor Lighting</a>
-    <a href="#" data-submenu="catalogues">Catalogues</a>
-  </nav>
-
-  <!-- Submenu Bar -->
-  <div class="submenu-container" id="submenu"></div>
-  </div>
-
- <section class="section">
-    <h1>Lighting for the Living Room</h1>
-    <div class="grid">
-      
-      <!-- Column 1 -->
-      <div class="col col1">
-        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800" alt="">
-      </div>
-      
-      <!-- Column 2 -->
-      <div class="col col2">
-        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800" alt="">
-        <div class="content">
-          <h2 class="title">Enhance <br>Everyday living</h2>
-          <p class="desc">Residential lighting creates a warm, functional, and inviting atmosphere throughout your home!</p>
-        </div>
-      </div>
-      
-      <!-- Column 3 -->
-      <div class="col col3">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800" alt="">
-        <div class="content">
-          <h2 class="title">Choose Residential lighting</h2>
-          <p class="desc">Here’s what makes a house <br>feel like home!...</p>
-          <a href="#" class="readmore">READ MORE</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
- 
-   <div class="container-fluid py-5 " style="background-color: darkgrey;" >
-    <div class="row align-items-start">
-      
-      <!-- Left Image + Caption -->
-      <div class="col-md-3 text-center">
-        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
-        <div class="caption-btn">SPOTLIGHT GARDEN</div>
-      </div>
-
-      <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
-          install and require minimal maintenance, making them a practical choice for enhancing the 
-          aesthetics of your outdoor lighting.
-        </p>
-      </div>
-
-      <!-- Right Images + Captions -->
-      <div class="col-md-3">
-        <div class="mb-4 text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 1</div>
-        </div>
-        </div>
-        <div class="col-md-3">
-        <div class="text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 3" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 3</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-     <div class="container-fluid py-5 " style="background-color: rgb(247, 245, 245);" >
-    <div class="row align-items-start">
-
-              <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. 
-        </p>
-      </div>
-      
-      <!-- Left Image + Caption -->
-      <div class="col-md-3 text-center">
-        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
-        <div class="caption-btn">SPOTLIGHT GARDEN</div>
-      </div>
-
-
-
-      <!-- Right Images + Captions -->
-      <div class="col-md-3">
-        <div class="mb-4 text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 1</div>
-        </div>
-        </div>
-        <div class="col-md-3">
-        <div class="text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 3" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 3</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
 
 
 
 
-   <div class="container py-5">
-    <div class="row g-4">
-
-      <!-- Card 1 -->
-      <div class="col-md-4">
-        <div class="card-custom">
-          <img src="img/abouimg/aboutimg1 (2).webp" alt="Downlight 1">
-          <div class="overlay"></div>
-          <div class="card-content">
-            <h3>Larger downlight for eaves</h3>
-            <p>- A welcoming impression</p>
-            <button class="btn-custom">SOLO MINI G2</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="col-md-4">
-        <div class="card-custom">
-          <img src="img/abouimg/aboutimg1 (2).webp" alt="Downlight 2">
-          <div class="overlay"></div>
-          <div class="card-content">
-            <h3>Perfect downlights</h3>
-            <p>- Choose a light source based on your own preference and taste</p>
-            <button class="btn-custom">COMFORT QUICK OUTDOOR GU10</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="col-md-4">
-        <div class="card-custom">
-          <img src="img/abouimg/aboutimg1 (2).webp" alt="Facade Lighting">
-          <div class="overlay"></div>
-          <div class="card-content">
-            <h3>Choose the right facade lighting</h3>
-            <p>A clean conical design</p>
-            <button class="btn-custom">CONE</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
 
 
 
 
-     <div class="container-fluid py-5 " style="background-color: #f2f2f2;" >
-    <div class="row align-items-start">
-      
-      <!-- Left Image + Caption -->
-      <div class="col-md-3 text-center">
-        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
-        <div class="caption-btn">SPOTLIGHT GARDEN</div>
-      </div>
-
-      <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
-          install and require minimal maintenance, making them a practical choice for enhancing the 
-          aesthetics of your outdoor lighting.
-        </p>
-      </div>
-
-      <!-- Right Images + Captions -->
-      <div class="col-md-3">
-        <div class="mb-4 text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 1</div>
-        </div>
-        </div>
-            <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
-          install and require minimal maintenance, making them a practical choice for enhancing the 
-          aesthetics of your outdoor lighting.
-        </p>
-      </div>
-
-    </div>
-  </div>
-
-
-       <div class="container-fluid py-5 " style="background-color: #f2f2f2;" >
-    <div class="row align-items-start">
-      
-   
-
-      <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
-          install and require minimal maintenance, making them a practical choice for enhancing the 
-          aesthetics of your outdoor lighting.
-        </p>
-      </div>
-
-         <!-- Left Image + Caption -->
-      <div class="col-md-3 text-center">
-        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
-        <div class="caption-btn">SPOTLIGHT GARDEN</div>
-      </div>
-
-      <!-- Right Images + Captions -->
-
-            <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
-          install and require minimal maintenance, making them a practical choice for enhancing the 
-          aesthetics of your outdoor lighting.
-        </p>
-      </div>
-
-            <div class="col-md-3">
-        <div class="mb-4 text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 1</div>
-        </div>
-        </div>
-
-    </div>
-  </div>
-  
-
-
-  <section class="container">
-    <div class="row align-items-center g-5">
-      <!-- Left text -->
-      <div class="col-md-6 fade-in-left">
-        <h2>Guiding light</h2>
-        <p>
-          Good decorative effects can be achieved by using accent lighting on staircases and decking or to mark out pathways. 
-          Light falling on different types of materials provides an interesting and varied visual experience.
-        </p>
-        <p>
-          Lights in the ground or decking for example can be used to highlight a plank or emphasise the shape of a patio. 
-          We sell recessed ground lighting kits, complete with luminaires and transformers for easy installation.
-        </p>
-        <!-- <button class="btn-custom">MILO PILLAR</button> -->
-      </div>
-
-      <!-- Right image -->
-      <div class="col-md-6 text-center fade-in-right">
-        <div class="image-box">
-          <img src="img/abouimg/aboutimg1 (3).webp" alt="Guiding light"> <!-- replace with your image -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <section class="container">
-    <div class="row align-items-center g-5">
-        <!-- Right image -->
-      <div class="col-md-6 text-center fade-in-right">
-        <div class="image-box">
-          <img src="img/abouimg/aboutimg1 (3).webp" alt="Guiding light"> <!-- replace with your image -->
-        </div>
-      </div>
-      <!-- Left text -->
-      <div class="col-md-6 fade-in-left">
-        <h2>Guiding light</h2>
-        <p>
-          Good decorative effects can be achieved by using accent lighting on staircases and decking or to mark out pathways. 
-          Light falling on different types of materials provides an interesting and varied visual experience.
-        </p>
-        <p>
-          Lights in the ground or decking for example can be used to highlight a plank or emphasise the shape of a patio. 
-          We sell recessed ground lighting kits, complete with luminaires and transformers for easy installation.
-        </p>
-        <!-- <button class="btn-custom">MILO PILLAR</button> -->
-      </div>
-
-    
-    </div>
-  </section>
-
-
-
-    <section class="products-section container">
-    <h2>Did you know that many of our downlights can also be installed outdoors!</h2>
-
-    <div class="row g-4">
-      <!-- Product 1 -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Optic G2 Quick ISO 6 Pack">
-          <div class="product-title">OPTIC G2 QUICK ISO 6 PACK</div>
-          <!-- <div class="color-dots">
-            <div class="dot"></div>
-          </div> -->
-        </div>
-      </div>
-
-      <!-- Product 2 -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Optic G2 Quick ISO DALI">
-          <div class="product-title">OPTIC G2 QUICK ISO DALI</div>
-          <!-- <div class="color-dots">
-            <div class="dot"></div>
-          </div> -->
-        </div>
-      </div>
-
-      <!-- Product 3 -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Optic G2 Quick ISO">
-          <div class="product-title">OPTIC G2 QUICK ISO</div>
-          <!-- <div class="color-dots">
-            <div class="dot"></div>
-            <div class="dot active"></div>
-          </div> -->
-        </div>
-      </div>
-
-      <!-- Product 4 -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort G4 Quick ISO Tilt 6 Pack">
-          <div class="product-title">COMFORT G4 QUICK ISO TILT 6 PACK</div>
-          <!-- <div class="color-dots">
-            <div class="dot"></div>
-          </div> -->
-        </div>
-      </div>
-
-      <!-- Product 5 -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort G4 Quick ISO Tilt DALI">
-          <div class="product-title">COMFORT G4 QUICK ISO TILT DALI</div>
-          <!-- <div class="color-dots">
-            <div class="dot"></div>
-          </div> -->
-        </div>
-      </div>
-
-      <!-- Product 6 -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort G4 Quick ISO">
-          <div class="product-title">COMFORT G4 QUICK ISO</div>
-          <!-- <div class="color-dots">
-            <div class="dot"></div>
-          </div> -->
-        </div>
-      </div>
-
-      <!-- Product 7 -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort G4 Quick ISO Tilt">
-          <div class="product-title">COMFORT G4 QUICK ISO TILT</div>
-          <!-- <div class="color-dots">
-            <div class="dot"></div>
-          </div> -->
-        </div>
-      </div>
-
-      <!-- Product 8 -->
-      <div class="col-12 col-sm-6 col-md-3">
-        <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort Twist Quick ISO">
-          <div class="product-title">COMFORT TWIST QUICK ISO</div>
-          <!-- <div class="color-dots">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div> -->
-        </div>
-      </div>
-    </div>
-  </section>
 
 
 
@@ -985,7 +924,7 @@
           <h4 class="text-white mb-4">Services</h4>
           <a href="#">Energy</a>
           <a href="#">Power</a>
-          <a href="#">Lighting</a>
+          <a href="lighting.html">Lighting</a>
           <a href="#">Automation</a>
           <a href="#">Smart City</a>
           <a href="#">R & D</a>
@@ -998,7 +937,7 @@
           <h4 class="text-white mb-4">Applications</h4>
           <a href="#">Energy Generation</a>
           <a href="#">Power</a>
-          <a href="#">Lighting</a>
+          <a href="lighting.html">Lighting</a>
           <a href="#">Indoor Lighting</a>
           <a href="#">Automation</a>
           <a href="#">Smart City</a>
@@ -1069,7 +1008,7 @@
   font-size: 12px;
 }
 .tricky-footer-item a:hover {
-  color: #00bcd4;
+  color: #fff;
   padding-left: 5px;
 }
 
@@ -1109,7 +1048,7 @@
   font-weight: 300;
 }
 .tricky-footer-bottom a:hover {
-  color: #00bcd4;
+  color: #fff;
 }
 </style>
 <!-- Footer End -->
@@ -1121,8 +1060,8 @@
       <div class="col-md-6 text-center text-md-start mb-md-0">
         <span class="text-body">
           <a href="https://arcotindia.com/" class="border-bottom text-white">
-            <i class="fas fa-copyright text-light me-2"></i>ARCOT
-          </a>, All Rights Reserved.
+            <i class="fas fa-copyright text-light me-2"></i>ARCOT , All Rights Reserved.
+          </a>
         </span>
       </div>
       <!-- <div class="col-md-6 text-center text-md-end text-body">
@@ -1132,10 +1071,11 @@
   </div>
 </div>
 <!-- Copyright End -->
+
          
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>  
+        <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>    
 
         
         <!-- JavaScript Libraries -->
@@ -1155,175 +1095,437 @@
 
 
 
-        <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const counters = document.querySelectorAll(".number-value");
 
-    const options = {
-      threshold: 0.4
-    };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          let count = 0;
-          const target = parseInt(el.dataset.target);
-          const speed = 3;
 
-          const updateCount = () => {
-            count++;
-            el.innerText = count + "+";
-            if (count < target) {
-              setTimeout(updateCount, speed * 10);
-            }
-          };
-          updateCount();
-          observer.unobserve(el);
-        }
-      });
-    }, options);
 
-    counters.forEach(counter => {
-      observer.observe(counter);
-    });
-  });
-</script>
+<script>
+/* -------------------------------
+   ENHANCED JS — functionality only
+   (No layout / CSS changes)
+   ------------------------------- */
 
-  <script>
-    // Scroll animation
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    });
+/* Global state */
+let activeFilters = {};          // dropdown filters
+let menuFilter = null;           // { kind: 'category'|'sub', value: string }
+let isolatedCard = null;         // product-card element when user clicks a product to isolate
+let searchText = '';             // current search text
 
-    document.querySelectorAll('.fade-in-left, .fade-in-right')
-      .forEach(el => observer.observe(el));
-  </script>
-
-    <script>
-    // Submenu data
-    const submenus = {
-      home: [
-        { text: "Living Room Lighting", link: "livingroom-lighting.html" },
-        { text: "Kitchen Lighting", link: "kitchen-lighting.html" },
-        { text: "Bedroom Lighting", link: "bedroom-lighting.html" },
-        { text: "Bathroom Lighting", link: "bathroom-lighting.html" },
-        { text: "Entrance Lighting", link: "entrance-lighting.html" }
-      ],
-      industrial: [
-        { text: "Factory Lighting", link: "#" },
-        { text: "Warehouse Lighting", link: "#" },
-        { text: "Workshop Lighting", link: "#" },
-        { text: "Cold Storage Lighting", link: "#" },
-        { text: "Hazardous Area Lighting", link: "#" },
-        { text: "Parking & Utility Lighting", link: "#" },
-        { text: "Energy-Efficient LED", link: "#" }
-      ],
-      commercial: [
-        { text: "Office", link: "#" },
-        { text: "Retail & Showroom Lighting", link: "#" },
-        { text: "Healthcare Lighting", link: "#" },
-        { text: "Educational Lighting", link: "#" },
-        { text: "Entertainment & Theatres", link: "#" },
-        { text: "Airport & Transport Hubs", link: "#" },
-        { text: "Hotel Lighting", link: "#" }
-      ],
-      outdoor: [
-        { text: "Garden & Landscape", link: "#" },
-        { text: "Facade & Architectural", link: "#" },
-        { text: "Outdoor Home Lighting", link: "#" },
-        { text: "Parking Lot Lighting", link: "#" },
-        { text: "Campus & Institutional", link: "#" },
-        { text: "Resort & Hospitality", link: "#" },
-        { text: "Security & Flood Lighting", link: "#" },
-        { text: "Sports Ground Lighting", link: "#" }
-      ]
-    };
-
-    const mainLinks = document.querySelectorAll(".main-nav a");
-    const submenuContainer = document.getElementById("submenu");
-
-    const header = document.querySelector(".sticky-header"); // your main header
-const segmentsNavbar = document.querySelector(".segments-navbar");
-
-function updateStickyOffset() {
-  const headerHeight = header.offsetHeight;
-  segmentsNavbar.style.top = headerHeight + "px";
+/* Utility: get all product cards */
+function getAllCards() {
+  return Array.from(document.querySelectorAll('.product-card'));
 }
 
-window.addEventListener("resize", updateStickyOffset);
-window.addEventListener("load", updateStickyOffset);
+/* Update visibility of product cards based on:
+   - activeFilters (dropdowns)
+   - menuFilter (sidebar menu/submenu)
+   - searchText
+   - isolatedCard
+*/
+function updateVisibility() {
+  const cards = getAllCards();
+  let visibleCount = 0;
 
+  cards.forEach(card => {
+    // Start visible, then apply rules
+    let ok = true;
 
-    let activeKey = "home"; // default active
-    let hoverKey = null;    // temporary hover key
+    // 1) Dropdown filters (activeFilters is an object of attr->value)
+    for (const key in activeFilters) {
+      if (!activeFilters[key]) continue; // skip empty
+      const v = card.dataset[key] || '';
+      if (v.toLowerCase() !== activeFilters[key].toLowerCase()) {
+        ok = false;
+        break;
+      }
+    }
+    if (!ok) { card.style.display = 'none'; return; }
 
-    // Function to render submenu
-    function renderSubmenu(items) {
-      submenuContainer.innerHTML = "";
-      if (!items) {
-        submenuContainer.style.display = "none";
+    // 2) Menu filter (if set)
+    if (menuFilter) {
+      if (menuFilter.kind === 'category') {
+        const cat = (card.dataset.category || '').toLowerCase();
+        if (cat !== menuFilter.value.toLowerCase()) ok = false;
+      } else if (menuFilter.kind === 'sub') {
+        // sub filter uses a matching function (see mapping below)
+        const fn = getSubFilterFunction(menuFilter.value);
+        if (!fn(card)) ok = false;
+      }
+      if (!ok) { card.style.display = 'none'; return; }
+    }
+
+    // 3) search text (if present)
+    if (searchText && searchText.length > 0) {
+      const title = (card.querySelector('h3')?.innerText || '').toLowerCase();
+      if (!title.includes(searchText.toLowerCase())) {
+        ok = false;
+      }
+      if (!ok) { card.style.display = 'none'; return; }
+    }
+
+    // 4) isolated card (if user clicked a product to isolate)
+    if (isolatedCard) {
+      if (card !== isolatedCard) {
+        ok = false;
+        card.style.display = 'none';
         return;
       }
-      items.forEach(item => {
-        const a = document.createElement("a");
-        a.href = item.link;
-        a.textContent = item.text;
-        submenuContainer.appendChild(a);
-      });
-      submenuContainer.style.display = "flex";
     }
 
-    // Show default (active) submenu
-    renderSubmenu(submenus[activeKey]);
+    // If passed all tests
+    card.style.display = ok ? 'flex' : 'none';
+    if (ok) visibleCount++;
+  });
 
-    // Hover effect
-    mainLinks.forEach(link => {
-      const key = link.dataset.submenu;
+  // show/hide noResults
+  const noResultsBox = document.getElementById('noResults');
+  if (noResultsBox) noResultsBox.style.display = visibleCount === 0 ? 'block' : 'none';
+}
 
-      link.addEventListener("mouseenter", () => {
-        if (submenus[key]) {
-          hoverKey = key;
-          renderSubmenu(submenus[key]);
+/* Filtering helper used by submenu: returns a function that tests a card */
+function getSubFilterFunction(subName) {
+  // normalize
+  const s = (subName || '').toLowerCase().trim();
+
+  // Spotlights: match 'spot', 'downlight' or mount 'ceiling' or h3 contains 'downlight' or 'spot'
+  if (s.includes('spot')) {
+    return (card) => {
+      const title = (card.querySelector('h3')?.innerText || '').toLowerCase();
+      const mount = (card.dataset.mount || '').toLowerCase();
+      return title.includes('spot') || title.includes('downlight') || mount === 'ceiling' || mount === 'concealed';
+    };
+  }
+
+  // Trimless: match 'trimless' or 'surface' or title contains 'trimless' or 'surface'
+  if (s.includes('trimless') || s.includes('surface')) {
+    return (card) => {
+      const title = (card.querySelector('h3')?.innerText || '').toLowerCase();
+      const mount = (card.dataset.mount || '').toLowerCase();
+      return title.includes('trimless') || title.includes('surface') || mount === 'surface';
+    };
+  }
+
+  // Concealed: match 'concealed' or 'zoom' or 'focus'
+  if (s.includes('concealed') || s.includes('zoom') || s.includes('conceal')) {
+    return (card) => {
+      const title = (card.querySelector('h3')?.innerText || '').toLowerCase();
+      const mount = (card.dataset.mount || '').toLowerCase();
+      return title.includes('zoom') || title.includes('conceal') || mount === 'concealed' || title.includes('focus');
+    };
+  }
+
+  // Default fallback: match by title containing subName
+  return (card) => {
+    const title = (card.querySelector('h3')?.innerText || '').toLowerCase();
+    return title.includes(s);
+  };
+}
+
+/* ---------- Dropdown filter functions (existing behavior kept) ---------- */
+function filterProducts() {
+  // keep backward compat: recompute activeFilters-driven visibility
+  updateVisibility();
+}
+
+function filterDropdown(attr, value){
+  if (value === '') delete activeFilters[attr];
+  else activeFilters[attr] = value;
+  // clear isolated product when dropdowns change
+  isolatedCard = null;
+  updateVisibility();
+}
+
+function resetFilters(){
+  activeFilters = {};
+  document.querySelectorAll('.top-filter-dropdowns select').forEach(s => s.value = '');
+  // reset menu filter to default COB
+  menuFilter = { kind: 'category', value: 'cob' };
+  isolatedCard = null;
+  searchText = '';
+  document.getElementById('searchInput').value = '';
+  document.getElementById('clearSearch').style.display = 'none';
+  updateVisibility();
+}
+
+/* ---------- Search functions (enhanced, keep original UX) ---------- */
+let noResultsBox = document.createElement('div');
+noResultsBox.id = 'noResults';
+noResultsBox.style.display = 'none';
+noResultsBox.style.padding = '10px';
+noResultsBox.style.textAlign = 'center';
+noResultsBox.style.fontWeight = 'bold';
+noResultsBox.innerText = 'No results found';
+document.getElementById('productGrid').after(noResultsBox);
+
+// Suggestions box
+let suggestionBox = document.getElementById('suggestions');
+suggestionBox.id = 'suggestions';
+suggestionBox.style.display = 'none';
+suggestionBox.style.position = 'absolute';
+suggestionBox.style.background = '#fff';
+suggestionBox.style.width = '100%';
+suggestionBox.style.border = '1px solid #ccc';
+suggestionBox.style.zIndex = '999';
+document.querySelector('.search-group').appendChild(suggestionBox);
+
+function clearSearchBar(){
+  const input = document.getElementById('searchInput');
+  input.value = '';
+  searchText = '';
+  document.getElementById('clearSearch').style.display = 'none';
+  suggestionBox.style.display = 'none';
+  isolatedCard = null;
+  updateVisibility();
+}
+
+function handleSearch(text){
+  text = text.toLowerCase().trim();
+  const cards = getAllCards();
+  let matches = 0;
+  suggestionBox.innerHTML = '';
+
+  // Live Suggestions (based on visible cards before search)
+  if(text.length > 0){
+    cards.forEach(card => {
+      const name = card.querySelector('h3').innerText.toLowerCase();
+      if(name.includes(text)){
+        let item = document.createElement('div');
+        item.innerText = card.querySelector('h3').innerText;
+        item.style.padding = '6px';
+        item.style.cursor = 'pointer';
+        item.onclick = ()=>{
+          document.getElementById('searchInput').value = card.querySelector('h3').innerText;
+          // set search and filter
+          searchText = card.querySelector('h3').innerText.toLowerCase();
+          suggestionBox.style.display = 'none';
+          isolatedCard = null;
+          updateVisibility();
         }
-      });
-
-      link.addEventListener("mouseleave", () => {
-        // If submenu itself is not hovered, restore active
-        setTimeout(() => {
-          if (!submenuContainer.matches(":hover")) {
-            hoverKey = null;
-            renderSubmenu(submenus[activeKey]);
-          }
-        }, 100);
-      });
-
-      // Click → set permanent active
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        mainLinks.forEach(l => l.classList.remove("active"));
-        link.classList.add("active");
-        activeKey = key;
-        hoverKey = null;
-        renderSubmenu(submenus[activeKey]);
-      });
+        suggestionBox.appendChild(item);
+      }
     });
+    suggestionBox.style.display = suggestionBox.innerHTML ? 'block' : 'none';
+  } else {
+    suggestionBox.style.display = 'none';
+  }
 
-    // When leaving submenu → restore active
-    submenuContainer.addEventListener("mouseleave", () => {
-      hoverKey = null;
-      renderSubmenu(submenus[activeKey]);
-    });
+  // Apply searchText and update visibility
+  searchText = text;
+  isolatedCard = null;
+  updateVisibility();
+}
 
-    // Mobile menu toggle
-    function toggleMenu() {
-      document.getElementById("mainNav").classList.toggle("show");
+// ENTER Search (Redirect for non-COB)
+const searchInput = document.getElementById('searchInput');
+
+searchInput.addEventListener('input', function(){
+  const clearBtn = document.getElementById('clearSearch');
+  clearBtn.style.display = this.value.length > 0 ? 'block' : 'none';
+  handleSearch(this.value);
+});
+searchInput.addEventListener('keydown', function(e){
+  if (e.key === 'Enter'){
+    const text = this.value.toLowerCase().trim();
+
+    const cobKeywords = ["cob", "downlight", "surface", "zoom", "focus", "spotlight"]; 
+    const isCOB = cobKeywords.some(k => text.includes(k));
+
+    if (text !== '' && !isCOB){
+      window.location.href = 'lighting.html?search=' + encodeURIComponent(text);
+      return;
     }
-  </script>
+
+    // otherwise, keep search
+    searchText = text;
+    suggestionBox.style.display = 'none';
+    isolatedCard = null;
+    updateVisibility();
+  }
+});
+
+function filterByName(text){
+  searchText = text;
+  isolatedCard = null;
+  updateVisibility();
+}
+
+/* ---------- Sidebar / Menu logic ---------- */
+
+/* Close other top-level and sub menus except the one passed */
+function closeOtherMenus(exceptBtn = null) {
+  // close all category-level buttons
+  document.querySelectorAll('.category > li > button').forEach(btn => {
+    if (btn !== exceptBtn) {
+      btn.classList.remove('open');
+      const sb = btn.nextElementSibling;
+      if (sb) sb.classList.remove('show');
+      // Also close nested submenu items inside
+      if (sb) sb.querySelectorAll('.submenu').forEach(s => s.classList.remove('show'));
+    }
+  });
+
+  // close sibling submenus under same parent
+  document.querySelectorAll('.category .submenu').forEach(s => {
+    if (exceptBtn && exceptBtn.nextElementSibling !== s) {
+      // leave alone if it's the submenu for exceptBtn
+    }
+  });
+}
+
+/* Toggle a menu button (category or subcategory).
+   Behavior:
+   - close other same-level menus
+   - toggle this one open/close
+   - set menuFilter (category or sub) appropriately
+   - update product grid
+*/
+function toggleMenu(btn) {
+  // Determine if this is a top-level category button (parent is .category > li)
+  const parentLi = btn.parentElement;
+  const isTopLevel = parentLi && parentLi.parentElement && parentLi.parentElement.classList.contains('category');
+
+  // Close other menus
+  closeOtherMenus(btn);
+
+  // Toggle the clicked button
+  btn.classList.toggle('open');
+  const submenu = btn.nextElementSibling;
+  if (submenu) submenu.classList.toggle('show');
+
+  // Reset isolated product when interacting with menus
+  isolatedCard = null;
+
+  // Menu logic:
+  const label = (btn.innerText || '').toLowerCase().trim();
+
+  if (isTopLevel) {
+    // Top-level category clicked
+    if (label.includes('cob')) {
+      // open COB category -> show all cob products
+      menuFilter = { kind: 'category', value: 'cob' };
+    } else {
+      // other categories -> clear menu filter (or could set category)
+      menuFilter = null;
+    }
+
+    // close any open nested submenu under this top-level (we only want one top open)
+    // (already handled by closeOtherMenus)
+  } else {
+    // Subcategory clicked ( e.g. "COB Spot Lights", "Trimless Cobs", "Concealed cobs" )
+    // Set menuFilter.kind = 'sub' and menuFilter.value = label
+    menuFilter = { kind: 'sub', value: label };
+    // Also ensure top-level COB is marked open (if sub under COB)
+    const topBtn = findAncestorTopButton(btn);
+    if (topBtn && (topBtn.innerText || '').toLowerCase().includes('cob')) {
+      topBtn.classList.add('open');
+      if (topBtn.nextElementSibling) topBtn.nextElementSibling.classList.add('show');
+    }
+  }
+
+  // Apply new visibility rules
+  updateVisibility();
+}
+
+/* find the top-level category button ancestor for a sub button */
+function findAncestorTopButton(btn) {
+  let el = btn.parentElement;
+  while (el && !el.classList.contains('category')) {
+    if (el.previousElementSibling && el.previousElementSibling.tagName === 'BUTTON') {
+      // might be direct
+    }
+    el = el.parentElement;
+  }
+  // walk up to top li > button
+  // safer approach: search upwards for .category > li > button that contains 'COB Lights' text
+  const topButtons = document.querySelectorAll('.category > li > button');
+  for (const b of topButtons) {
+    const ul = b.nextElementSibling;
+    if (!ul) continue;
+    if (ul.contains(btn)) return b;
+  }
+  return null;
+}
+
+/* When a product card is clicked:
+   - If already isolated, clicking it again resets to showing category (toggle behavior)
+   - Otherwise isolate (show only that product)
+*/
+function onProductCardClick(card) {
+  // If clicking same card twice -> un-isolate
+  if (isolatedCard === card) {
+    isolatedCard = null;
+    // restore menuFilter to show its category (keep previous menuFilter)
+    updateVisibility();
+    return;
+  }
+
+  // Isolate this card
+  isolatedCard = card;
+  // Also clear search so isolate isn't affected by search
+  searchText = '';
+  document.getElementById('searchInput').value = '';
+  document.getElementById('clearSearch').style.display = 'none';
+  updateVisibility();
+}
+
+/* Attach click handlers to product cards (and set pointer cursor) */
+function attachProductCardHandlers() {
+  const cards = getAllCards();
+  cards.forEach(card => {
+    card.style.cursor = 'pointer';
+    card.onclick = function(e) {
+      // If click target is an anchor (shouldn't be inside card), let it pass
+      onProductCardClick(card);
+    };
+  });
+}
+
+/* ---------- Initialization ---------- */
+document.addEventListener('DOMContentLoaded', function() {
+  // Attach product click handlers
+  attachProductCardHandlers();
+
+  // Attach click binding for sidebar buttons (preserve existing onclick usage if present)
+  document.querySelectorAll('.category button').forEach(btn => {
+    // replace inline onclick with our handler to ensure consistent behavior
+    btn.onclick = function(e) {
+      // If this button's next element is a .submenu.level2 and the developer intended clicking nested items vs toggling,
+      // our toggleMenu will handle both cases.
+      toggleMenu(btn);
+      e.stopPropagation();
+    };
+  });
+
+  // Default: open COB Lights and show all cob products
+  const cobBtn = Array.from(document.querySelectorAll('.category > li > button')).find(b => {
+    return (b.innerText || '').toLowerCase().includes('cob lights') || (b.innerText || '').toLowerCase().includes('cob');
+  });
+
+  if (cobBtn) {
+    cobBtn.classList.add('open');
+    const sb = cobBtn.nextElementSibling;
+    if (sb) sb.classList.add('show');
+    menuFilter = { kind: 'category', value: 'cob' };
+  } else {
+    menuFilter = null;
+  }
+
+  // Keep original filters/search initial state
+  activeFilters = {};
+  isolatedCard = null;
+  searchText = '';
+
+  // Ensure the noResults box exists (we added one earlier)
+  updateVisibility();
+});
+
+/* Utility: navigate to page */
+function goToPage(page){ window.location.href = page; }
+</script>
+
+
+
+
 
     </body>
 
