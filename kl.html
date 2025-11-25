@@ -1,0 +1,301 @@
+<div class="lighting-wrapper">
+
+<style>
+.lighting-wrapper * {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Variables */
+.lighting-wrapper {
+  --lw-sidebar-width: 260px;
+  --lw-gap: 20px;
+  --lw-bg: #f8f8f8;
+  --lw-muted: #666;
+  --lw-card-bg: #e6e6e6;
+  background: var(--lw-bg);
+  padding: 10px;
+}
+
+/* Layout */
+.lw-wrap { max-width: 1400px; margin: auto; }
+.lw-layout { display: flex; gap: 20px; }
+
+/* Sidebar */
+.lw-sidebar {
+  width: var(--lw-sidebar-width);
+  background: #fff;
+  border-right: 1px solid #ddd;
+  padding: 16px;
+}
+.lw-sidebar h2 { font-size: 20px; margin: 0 0 14px; }
+.lw-category, .lw-submenu { list-style: none; margin: 0; padding: 0; }
+
+.lw-btn {
+  width: 100%;
+  background: none;
+  border: 0;
+  padding: 10px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 15px;
+}
+.lw-btn:hover { background: #f0f0f0; }
+.lw-arrow { transition: .3s; }
+.lw-btn.open .lw-arrow { transform: rotate(90deg); }
+
+.lw-submenu { 
+  max-height: 0; 
+  overflow: hidden; 
+  padding-left: 15px; 
+  transition: max-height .35s ease; 
+}
+.lw-submenu.open { max-height: 800px; }
+
+.lw-submenu a { 
+  padding: 5px 0; 
+  display: block; 
+  font-size: 14px; 
+  text-decoration: none; 
+  color: #555; 
+}
+
+/* Filters */
+.lw-filters {
+  background: #fff;
+  padding: 14px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.lw-group { display: flex; flex-direction: column; min-width: 150px; }
+.lw-group select,
+.lw-group input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* RESET BUTTON */
+#lw-reset {
+  margin-top: 20px;
+  padding: 10px 16px;
+  background: #d9534f;
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+#lw-reset:hover { background: #c9302c; }
+
+/* Product Grid */
+.lw-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 24px;
+}
+.lw-card {
+  background: var(--lw-card-bg);
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+}
+.lw-card img { width: 200px; transition: .3s; }
+.lw-card:hover img { transform: scale(1.08); }
+</style>
+
+
+
+<div class="lw-wrap">
+  <h1 style="font-size:24px; margin-bottom:16px;">Lighting – Filter System</h1>
+
+  <!-- FILTERS -->
+  <div class="lw-filters" id="lw-flt">
+    <div class="lw-group" style="flex:1">
+      <label>Search</label>
+      <input id="lw-search">
+    </div>
+
+    <div class="lw-group"><label>Type</label>
+      <select id="lw-type">
+        <option value="">All</option><option>indoor</option><option>outdoor</option>
+      </select>
+    </div>
+
+    <div class="lw-group"><label>Mount</label>
+      <select id="lw-mount">
+        <option value="">All</option><option value="concealed">Concealed</option><option value="surface">Surface</option>
+      </select>
+    </div>
+
+    <div class="lw-group"><label>IP</label>
+      <select id="lw-ip">
+        <option value="">All</option><option>ip20</option><option>ip65</option>
+      </select>
+    </div>
+
+    <div class="lw-group"><label>Watt</label>
+      <select id="lw-watt">
+        <option value="">All</option><option>7w</option><option>12w</option><option>18w</option>
+      </select>
+    </div>
+
+    <div class="lw-group"><label>CCT</label>
+      <select id="lw-cct">
+        <option value="">All</option><option>3000k</option><option>4000k</option><option>6500k</option>
+      </select>
+    </div>
+
+    <div class="lw-group"><label>Control</label>
+      <select id="lw-control">
+        <option value="">All</option><option>onoff</option><option>dali</option>
+      </select>
+    </div>
+
+    <div class="lw-group"><label>Color</label>
+      <select id="lw-color">
+        <option value="">All</option><option>white</option><option>black</option>
+      </select>
+    </div>
+
+    <!-- RESET BUTTON -->
+    <button id="lw-reset">Reset Filters</button>
+
+  </div>
+
+  <div class="lw-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="lw-sidebar">
+      <h2>Lighting</h2>
+      <ul class="lw-category">
+
+        <li>
+          <button class="lw-btn"><span>COB Lights</span><span class="lw-arrow">›</span></button>
+          <ul class="lw-submenu">
+
+            <li>
+              <button class="lw-btn"><span>COB Spot Lights</span><span class="lw-arrow">›</span></button>
+              <ul class="lw-submenu">
+                <li><a href="#">7W Model</a></li>
+                <li><a href="#">12W Model</a></li>
+                <li><a href="#">18W Model</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="lw-btn"><span>Trimless COBs</span><span class="lw-arrow">›</span></button>
+              <ul class="lw-submenu">
+                <li><a href="#">7W Surface</a></li>
+                <li><a href="#">12W Surface</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <button class="lw-btn"><span>Concealed COBs A</span><span class="lw-arrow">›</span></button>
+              <ul class="lw-submenu">
+                <li><a href="#">Zoom Focus</a></li>
+                <li><a href="#">Adjustable Zoom</a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </li>
+
+      </ul>
+    </aside>
+
+
+    <!-- PRODUCT GRID -->
+    <main class="lw-grid" id="lw-grid">
+
+      <div class="lw-card"
+        data-type="indoor" data-mount="concealed" data-ip="ip20"
+        data-watt="7w" data-control="onoff" data-color="white" data-cct="3000k">
+        <img src="img/12.png">
+        <h3>COB Downlight 7W</h3>
+      </div>
+
+      <div class="lw-card"
+        data-type="indoor" data-mount="ceiling" data-ip="ip20"
+        data-watt="12w" data-control="onoff" data-color="black" data-cct="4000k">
+        <img src="img/12.png">
+        <h3>COB Downlight 12W</h3>
+      </div>
+
+      <div class="lw-card"
+        data-type="indoor" data-mount="surface" data-ip="ip65"
+        data-watt="18w" data-control="dali" data-color="white" data-cct="6500k">
+        <img src="img/12.png">
+        <h3>COB Surface 18W</h3>
+      </div>
+
+    </main>
+
+  </div>
+</div>
+
+
+
+<script>
+/* SIDEBAR */
+document.querySelectorAll(".lighting-wrapper .lw-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const sub = btn.nextElementSibling;
+    if (sub && sub.classList.contains("lw-submenu")) {
+      btn.classList.toggle("open");
+      sub.classList.toggle("open");
+    }
+  });
+});
+
+/* FILTERS */
+const lwGrid = document.getElementById("lw-grid");
+const lwCards = [...lwGrid.children];
+
+function lwApply() {
+  const f = {
+    search: document.getElementById("lw-search").value.toLowerCase(),
+    type: document.getElementById("lw-type").value,
+    mount: document.getElementById("lw-mount").value,
+    ip: document.getElementById("lw-ip").value,
+    watt: document.getElementById("lw-watt").value,
+    cct: document.getElementById("lw-cct").value,
+    control: document.getElementById("lw-control").value,
+    color: document.getElementById("lw-color").value
+  };
+
+  lwCards.forEach(c => {
+    let ok = true;
+    const d = c.dataset;
+
+    if (f.search && !c.innerText.toLowerCase().includes(f.search)) ok = false;
+
+    for (const k in f) {
+      if (k !== "search" && f[k] && d[k] !== f[k]) ok = false;
+    }
+
+    c.style.display = ok ? "block" : "none";
+  });
+}
+
+document
+  .querySelectorAll("#lw-flt select, #lw-search")
+  .forEach(el => el.addEventListener("input", lwApply));
+
+/* RESET BUTTON */
+document.getElementById("lw-reset").addEventListener("click", () => {
+  document.querySelectorAll("#lw-flt select").forEach(s => (s.value = ""));
+  document.getElementById("lw-search").value = "";
+  lwApply();
+});
+</script>
+
+</div>
