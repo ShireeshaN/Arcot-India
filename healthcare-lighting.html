@@ -144,36 +144,155 @@
 
 
         <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h1 class="text-white display-6 mb-4 wow fadeInDown" data-wow-delay="0.1s">Residential Lighting</h1>
-                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> -->
-                  
-                </ol>    
-            </div>
-        </div>
-        <!-- Header End -->
+    <!-- Banner Section -->
+<div class="banner-section">
+  <div class="banner-overlay"></div>
+  <div class="banner-content text-center">
+    <h2 class="banner-title wow fadeInDown" data-wow-delay="0.1s">Healthcare Lighting</h2>
+    <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+      <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active">Residential Lighting</li> -->
+    </ol>
+  </div>
+</div>
+<style>
+  /* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Banner Section */
+.banner-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('img/healthcare/157.png') center center/cover no-repeat;
+  display: flex;
+  align-items: start;
+  justify-content: end;
+  overflow: hidden;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(0, 0, 0, 0.55); */
+  z-index: 1;
+}
+
+/* Content Styling */
+.banner-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+ 
+}
+
+.banner-title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: inline-flex;
+  background: transparent;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumb-item {
+  color: #ddd;
+  font-size: 1rem;
+}
+
+.breadcrumb-item a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+  color: #ffd700;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "›";
+  padding: 0 10px;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .banner-section {
+    height: 70vh;
+  }
+  .banner-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-section {
+    height: 60vh;
+  }
+  .banner-title {
+    font-size: 2rem;
+  }
+  .breadcrumb-item {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .banner-section {
+    height: 50vh;
+  }
+  .banner-title {
+    font-size: 1.6rem;
+  }
+  .breadcrumb-item {
+    font-size: 0.8rem;
+  }
+}
+
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+  new WOW().init();
+</script>
+
+<!-- Header End -->
 
 
-         <style>
-     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #111;
-    }
+  <style>
+  
     .section {
       max-width: 1000px; /* page middle lo compact */
       margin: 40px auto;
       padding: 0 20px;
       text-align: center;
     }
-    .section h1 {
-      font-size: 28px;
-      font-weight: 800;
+    .section h2 {
+      font-size: 14px;
+      font-weight: 400;
       margin-bottom: 25px;
-      text-align: left; 
+      text-align: left;
+    
     }
     .grid {
       display: grid;
@@ -189,14 +308,14 @@
       
     }
     .col img:hover {
-  transform: scale(1.05); 
+  transform: scale(1.05); /* zoom in effect */
 }
     .col1 img {
-      height: 420px; 
+      height: 420px; /* tall but reduced */
     }
     .col2 img,
     .col3 img {
-      height: 280px; 
+      height: 280px; /* smaller images */
     }
     .content {
       text-align: center;
@@ -413,12 +532,13 @@
 
     .main-nav a {
       text-decoration: none;
-      color: #111;
+      color: #4f4c4c;
       /* font-weight: 600; */
-      font-size: 15px;
+      font-size: 11px;
       text-transform: uppercase;
       transition: color 0.3s ease;
       cursor: pointer;
+      letter-spacing: 2px;
     }
 
     .main-nav a:hover {
@@ -433,7 +553,7 @@
 
     /* Submenu container (black bar) */
     .submenu-container {
-      background: #222;
+      background: #dbdbde;
       padding: 12px 20px;
       display: none;
       gap: 30px;
@@ -441,16 +561,17 @@
     }
 
     .submenu-container a {
-      color: #fff;
+      color: #535050;
       text-decoration: none;
       /* font-weight: 600; */
-      font-size: 14px;
-      text-transform: uppercase;
+      font-size: 11px;
+      
       transition: color 0.3s ease;
+      letter-spacing: 2px;
     }
 
     .submenu-container a:hover {
-      color: #bbb;
+      color: #000000;
     }
 
     /* Mobile */
@@ -489,7 +610,7 @@
    /* Segments Navbar */
 .segments-navbar {
   position: sticky;
-  /* top: 100px;   */
+  top: 100px;   /* equal to header height */
   z-index: 999;
 }
     
@@ -503,9 +624,9 @@
   <!-- Main Navigation -->
   <nav class="main-nav sticky-header" id="mainNav">
     <a href="#" data-submenu="cases">Cases</a>
-    <a href="#" class="active" data-submenu="home">Lighting for Home</a>
+    <a href="#" data-submenu="home">Lighting for Home</a>
+    <a href="#" class="active" data-submenu="commercial">Commercial Lighting</a>
     <a href="#" data-submenu="industrial">Industrial Lighting</a>
-    <a href="#" data-submenu="commercial">Commercial Lighting</a>
     <a href="#" data-submenu="outdoor">Outdoor Lighting</a>
     <a href="#" data-submenu="catalogues">Catalogues</a>
   </nav>
@@ -515,30 +636,28 @@
   </div>
 
  <section class="section">
-    <h1>Lighting for the Living Room</h1>
+    <h2>Lighting for the Living Room</h2>
     <div class="grid">
       
       <!-- Column 1 -->
       <div class="col col1">
-        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800" alt="">
+        <img src="img/healthcare/155.png" alt="">
       </div>
       
       <!-- Column 2 -->
       <div class="col col2">
-        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800" alt="">
+        <img src="img/healthcare/156.png" alt="">
         <div class="content">
           <h2 class="title">Enhance <br>Everyday living</h2>
-          <p class="desc">Residential lighting creates a warm, functional, and inviting atmosphere throughout your home!</p>
-        </div>
+             </div>
       </div>
       
       <!-- Column 3 -->
       <div class="col col3">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800" alt="">
+        <img src="img/healthcare/158.png" alt="">
         <div class="content">
           <h2 class="title">Choose Residential lighting</h2>
-          <p class="desc">Here’s what makes a house <br>feel like home!...</p>
-          <a href="#" class="readmore">READ MORE</a>
+        
         </div>
       </div>
 
@@ -546,93 +665,103 @@
   </section>
 
 
- 
-   <div class="container-fluid py-5 " style="background-color: darkgrey;" >
-    <div class="row align-items-start">
-      
-      <!-- Left Image + Caption -->
-      <div class="col-md-3 text-center">
-        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
-        <div class="caption-btn">SPOTLIGHT GARDEN</div>
-      </div>
-
-      <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
-          install and require minimal maintenance, making them a practical choice for enhancing the 
-          aesthetics of your outdoor lighting.
-        </p>
-      </div>
-
-      <!-- Right Images + Captions -->
-      <div class="col-md-3">
-        <div class="mb-4 text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 1</div>
-        </div>
-        </div>
-        <div class="col-md-3">
-        <div class="text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 3" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 3</div>
-        </div>
-      </div>
-
+<!-- suspend start -->
+<!-- ===== Suspended Light Section ===== -->
+<div class="suspendlight">
+  <div class="slide" style="background-image: url('img/healthcare/154.png');">
+    <div class="vertical-heading">Elegance in Suspension</div>
+    <div class="text-content">
+      <p>Suspended lights that blend design andth effortless style.</p>
     </div>
   </div>
+</div>
+
+<style>
+  .suspendlight {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .suspendlight .slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 1;
+  }
+
+  .suspendlight .vertical-heading {
+    position: absolute;
+    left: 20px;
+    bottom: 10%;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: left top;
+    color: #a39f9f;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeSlideUp 1.8s ease forwards;
+    animation-delay: 0.5s;
+  }
+
+  .suspendlight .text-content {
+    max-width: 450px;
+    color: #fff;
+    z-index: 2;
+    text-align: start;
+    margin-top: 100px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 1.5s ease forwards;
+    animation-delay: 1s;
+  }
+
+  .suspendlight .text-content p {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: #cfcfcf;
+    letter-spacing: 1px;
+  }
+
+  @keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .suspendlight { height: 70vh; }
+    .suspendlight .slide {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .suspendlight .vertical-heading {display: none;}
+    .suspendlight .text-content p {display: none;} /* hide paragraph on mobile */
+    .suspendlight .text-content {
+      max-width: 90%;
+      margin: 80px auto 0;
+      text-align: center;
+    }
+  }
+</style>
+
+<!-- suspend end -->
 
 
-     <div class="container-fluid py-5 " style="background-color: rgb(247, 245, 245);" >
-    <div class="row align-items-start">
-
-              <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. 
-        </p>
-      </div>
-      
-      <!-- Left Image + Caption -->
-      <div class="col-md-3 text-center">
-        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
-        <div class="caption-btn">SPOTLIGHT GARDEN</div>
-      </div>
-
-
-
-      <!-- Right Images + Captions -->
-      <div class="col-md-3">
-        <div class="mb-4 text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 1</div>
-        </div>
-        </div>
-        <div class="col-md-3">
-        <div class="text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 3" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 3</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
 
 
 
@@ -643,12 +772,12 @@
       <!-- Card 1 -->
       <div class="col-md-4">
         <div class="card-custom">
-          <img src="img/abouimg/aboutimg1 (2).webp" alt="Downlight 1">
+          <img src="img/healthcare/160.png" alt="Downlight 1">
           <div class="overlay"></div>
           <div class="card-content">
-            <h3>Larger downlight for eaves</h3>
-            <p>- A welcoming impression</p>
-            <button class="btn-custom">SOLO MINI G2</button>
+            <h5>Larger downlight for eaves</h5>
+            <!-- <p>- A welcoming impression</p> -->
+            <!-- <button class="btn-custom">SOLO MINI G2</button> -->
           </div>
         </div>
       </div>
@@ -656,12 +785,12 @@
       <!-- Card 2 -->
       <div class="col-md-4">
         <div class="card-custom">
-          <img src="img/abouimg/aboutimg1 (2).webp" alt="Downlight 2">
+          <img src="img/healthcare/161.png" alt="Downlight 2">
           <div class="overlay"></div>
           <div class="card-content">
-            <h3>Perfect downlights</h3>
-            <p>- Choose a light source based on your own preference and taste</p>
-            <button class="btn-custom">COMFORT QUICK OUTDOOR GU10</button>
+            <h5>Perfect downlights</h5>
+            <!-- <p>- Choose a light source based on your own preference and taste</p> -->
+            <!-- <button class="btn-custom">COMFORT QUICK OUTDOOR GU10</button> -->
           </div>
         </div>
       </div>
@@ -669,196 +798,195 @@
       <!-- Card 3 -->
       <div class="col-md-4">
         <div class="card-custom">
-          <img src="img/abouimg/aboutimg1 (2).webp" alt="Facade Lighting">
+          <img src="img/healthcare/162.png" alt="Facade Lighting">
           <div class="overlay"></div>
           <div class="card-content">
-            <h3>Choose the right facade lighting</h3>
-            <p>A clean conical design</p>
-            <button class="btn-custom">CONE</button>
+            <h5>Choose the right facade lighting</h5>
+            <!-- <p>A clean conical design</p> -->
+            <!-- <button class="btn-custom">CONE</button> -->
           </div>
         </div>
       </div>
 
-    </div>
-  </div>
-
-
-
-
-     <div class="container-fluid py-5 " style="background-color: #f2f2f2;" >
-    <div class="row align-items-start">
       
-      <!-- Left Image + Caption -->
-      <div class="col-md-3 text-center">
-        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
-        <div class="caption-btn">SPOTLIGHT GARDEN</div>
-      </div>
-
-      <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
-          install and require minimal maintenance, making them a practical choice for enhancing the 
-          aesthetics of your outdoor lighting.
-        </p>
-      </div>
-
-      <!-- Right Images + Captions -->
-      <div class="col-md-3">
-        <div class="mb-4 text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 1</div>
-        </div>
-        </div>
-            <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
-          install and require minimal maintenance, making them a practical choice for enhancing the 
-          aesthetics of your outdoor lighting.
-        </p>
-      </div>
 
     </div>
   </div>
 
 
-       <div class="container-fluid py-5 " style="background-color: #f2f2f2;" >
-    <div class="row align-items-start">
-      
-   
 
-      <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
-          install and require minimal maintenance, making them a practical choice for enhancing the 
-          aesthetics of your outdoor lighting.
-        </p>
-      </div>
 
-         <!-- Left Image + Caption -->
-      <div class="col-md-3 text-center">
-        <img src="img/application/73.webp" alt="Spotlight Garden" class="product-img">
-        <div class="caption-btn">SPOTLIGHT GARDEN</div>
-      </div>
-
-      <!-- Right Images + Captions -->
-
-            <!-- Text Block -->
-      <div class="col-md-3 text-block">
-        <h2>Create effectual garden lighting with spotlights</h2>
-        <p>
-          Our energy-efficient LED floodlights in IP65 design are perfectly suited to light bushes 
-          and trees, for example. You also use lighting to create different spaces in the garden or 
-          to illuminate the facade.
-        </p>
-        <p>
-          Our floodlights can be mounted on walls, ceilings or ground, in private or public environments. 
-          Available in different sizes and design with different light distribution. LED floodlights are 
-          developed and produced to withstand our Nordic climate. In addition, LED spotlights are easy to 
-          install and require minimal maintenance, making them a practical choice for enhancing the 
-          aesthetics of your outdoor lighting.
-        </p>
-      </div>
-
-            <div class="col-md-3">
-        <div class="mb-4 text-start">
-          <img src="img/application/73.webp" alt="Spot It Multi 1" class="product-img">
-          <div class="caption-btn">SPOT IT MULTI 1</div>
-        </div>
-        </div>
-
+<div class="livingsanimione-layout">
+  <div class="livingsanimione-text-side">
+    <div class="livingsanimione-vertical-text">Pure light, perfected</div>
+    <div class="livingsanimione-main-text">
+      <h1>Premium lumen </h1>
+      <p>
+      Bright. Clean. Powerful.<br>
+       Compact design with powerful lumen output.
+      </p>
     </div>
   </div>
-  
+  <div class="livingsanimione-image-side">
+    <div class="livingsanimione-image-box"></div>
+  </div>
+</div>
+
+<style>
+  .livingsanimione-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    animation: livingsanimione-fadeIn 1s ease forwards;
+    opacity: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: #000;
+    overflow-x: hidden;
+    padding-top: 30px;
+  }
+
+  /* Left section */
+  .livingsanimione-text-side {
+    flex: 0 0 30%;
+    position: relative;
+    padding-left: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+    background: #fff;
+  }
+
+  .livingsanimione-vertical-text {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: rotate(-90deg) translateY(-50%);
+    transform-origin: left top;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #333;
+  }
+
+  .livingsanimione-main-text {
+    max-width: 400px;
+  }
+
+  .livingsanimione-main-text h1 {
+    font-size: 70px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #000;
+  }
+
+  .livingsanimione-main-text p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5em;
+    max-width: 280px;
+  }
+
+  /* Right section */
+  .livingsanimione-image-side {
+    flex: 0 0 70%;
+    position: relative;
+    background: linear-gradient(to right, #f0f0f0 50%, #d9d9d9 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .livingsanimione-image-box {
+    width: 100%;
+    height: 100%;
+    background: url('img/healthcare/159.png') center/cover no-repeat;
+    filter: grayscale(100%);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Fade animation */
+  @keyframes livingsanimione-fadeIn {
+    to { opacity: 1; }
+  }
+
+  /* ✅ Responsive */
+  @media (max-width: 768px) {
+    .livingsanimione-layout {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .livingsanimione-text-side {
+      order: 1;
+      flex: unset;
+      width: 100%;
+      padding: 40px 20px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .livingsanimione-vertical-text {
+      display: none;
+    }
+
+    .livingsanimione-main-text {
+      max-width: 100%;
+    }
+
+    .livingsanimione-main-text h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .livingsanimione-main-text p {
+      font-size: 14px;
+      max-width: 90%;
+      margin: 0 auto;
+      line-height: 1.6em;
+    }
+
+    .livingsanimione-image-side {
+      order: 2;
+      width: 100%;
+      height: auto;
+    }
+
+    .livingsanimione-image-box {
+      width: 100%;
+      height: 50vh;
+      background: url('img/healthcare/159.png') center/cover no-repeat;
+      filter: grayscale(100%);
+      border-radius: 0;
+      box-shadow: none;
+      display: block;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .livingsanimione-main-text h1 {
+      font-size: 32px;
+    }
+
+    .livingsanimione-main-text p {
+      font-size: 13px;
+    }
+  }
+</style>
 
 
-  <section class="container">
-    <div class="row align-items-center g-5">
-      <!-- Left text -->
-      <div class="col-md-6 fade-in-left">
-        <h2>Guiding light</h2>
-        <p>
-          Good decorative effects can be achieved by using accent lighting on staircases and decking or to mark out pathways. 
-          Light falling on different types of materials provides an interesting and varied visual experience.
-        </p>
-        <p>
-          Lights in the ground or decking for example can be used to highlight a plank or emphasise the shape of a patio. 
-          We sell recessed ground lighting kits, complete with luminaires and transformers for easy installation.
-        </p>
-        <!-- <button class="btn-custom">MILO PILLAR</button> -->
-      </div>
 
-      <!-- Right image -->
-      <div class="col-md-6 text-center fade-in-right">
-        <div class="image-box">
-          <img src="img/abouimg/aboutimg1 (3).webp" alt="Guiding light"> <!-- replace with your image -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <section class="container">
-    <div class="row align-items-center g-5">
-        <!-- Right image -->
-      <div class="col-md-6 text-center fade-in-right">
-        <div class="image-box">
-          <img src="img/abouimg/aboutimg1 (3).webp" alt="Guiding light"> <!-- replace with your image -->
-        </div>
-      </div>
-      <!-- Left text -->
-      <div class="col-md-6 fade-in-left">
-        <h2>Guiding light</h2>
-        <p>
-          Good decorative effects can be achieved by using accent lighting on staircases and decking or to mark out pathways. 
-          Light falling on different types of materials provides an interesting and varied visual experience.
-        </p>
-        <p>
-          Lights in the ground or decking for example can be used to highlight a plank or emphasise the shape of a patio. 
-          We sell recessed ground lighting kits, complete with luminaires and transformers for easy installation.
-        </p>
-        <!-- <button class="btn-custom">MILO PILLAR</button> -->
-      </div>
-
-    
-    </div>
-  </section>
-
-
-
-    <section class="products-section container">
+    <section class="products-section  bg-light">
     <h2>Did you know that many of our downlights can also be installed outdoors!</h2>
 
     <div class="row g-4">
       <!-- Product 1 -->
       <div class="col-12 col-sm-6 col-md-3">
         <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Optic G2 Quick ISO 6 Pack">
+          <img src="img/livingroomlights/1.png" alt="Optic G2 Quick ISO 6 Pack">
           <div class="product-title">OPTIC G2 QUICK ISO 6 PACK</div>
           <!-- <div class="color-dots">
             <div class="dot"></div>
@@ -869,7 +997,7 @@
       <!-- Product 2 -->
       <div class="col-12 col-sm-6 col-md-3">
         <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Optic G2 Quick ISO DALI">
+          <img src="img/livingroomlights/2.png" alt="Optic G2 Quick ISO DALI">
           <div class="product-title">OPTIC G2 QUICK ISO DALI</div>
           <!-- <div class="color-dots">
             <div class="dot"></div>
@@ -880,7 +1008,7 @@
       <!-- Product 3 -->
       <div class="col-12 col-sm-6 col-md-3">
         <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Optic G2 Quick ISO">
+          <img src="img/livingroomlights/3.png" alt="Optic G2 Quick ISO">
           <div class="product-title">OPTIC G2 QUICK ISO</div>
           <!-- <div class="color-dots">
             <div class="dot"></div>
@@ -892,7 +1020,7 @@
       <!-- Product 4 -->
       <div class="col-12 col-sm-6 col-md-3">
         <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort G4 Quick ISO Tilt 6 Pack">
+          <img src="img/livingroomlights/4.png" alt="Comfort G4 Quick ISO Tilt 6 Pack">
           <div class="product-title">COMFORT G4 QUICK ISO TILT 6 PACK</div>
           <!-- <div class="color-dots">
             <div class="dot"></div>
@@ -903,7 +1031,7 @@
       <!-- Product 5 -->
       <div class="col-12 col-sm-6 col-md-3">
         <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort G4 Quick ISO Tilt DALI">
+          <img src="img/livingroomlights/5.png" alt="Comfort G4 Quick ISO Tilt DALI">
           <div class="product-title">COMFORT G4 QUICK ISO TILT DALI</div>
           <!-- <div class="color-dots">
             <div class="dot"></div>
@@ -914,7 +1042,7 @@
       <!-- Product 6 -->
       <div class="col-12 col-sm-6 col-md-3">
         <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort G4 Quick ISO">
+          <img src="img/livingroomlights/6.png" alt="Comfort G4 Quick ISO">
           <div class="product-title">COMFORT G4 QUICK ISO</div>
           <!-- <div class="color-dots">
             <div class="dot"></div>
@@ -925,7 +1053,7 @@
       <!-- Product 7 -->
       <div class="col-12 col-sm-6 col-md-3">
         <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort G4 Quick ISO Tilt">
+          <img src="img/livingroomlights/7.png" alt="Comfort G4 Quick ISO Tilt">
           <div class="product-title">COMFORT G4 QUICK ISO TILT</div>
           <!-- <div class="color-dots">
             <div class="dot"></div>
@@ -936,7 +1064,7 @@
       <!-- Product 8 -->
       <div class="col-12 col-sm-6 col-md-3">
         <div class="product-card card">
-          <img src="img/abouimg/aboutimg1 (6).webp" alt="Comfort Twist Quick ISO">
+          <img src="img/livingroomlights/8.png" alt="Comfort Twist Quick ISO">
           <div class="product-title">COMFORT TWIST QUICK ISO</div>
           <!-- <div class="color-dots">
             <div class="dot"></div>
@@ -1037,11 +1165,13 @@
   background: #1e2226;
   color: #ccc;
   font-size: 15px;
-  font-family: 'Six Caps', sans-serif;
+font-family: 'Poppins', sans-serif !important;
   font-weight: 300; /* light weight */
   letter-spacing: 1px;
+ 
   
 }
+
 
 /* Footer Headings */
 .tricky-footer-item h4,
@@ -1080,7 +1210,7 @@
   color: #8f8c8c;
   font-size: 13px;
   transition: 0.3s;
-  font-family: 'Six Caps', sans-serif;
+ font-family: 'Poppins', sans-serif !important;
   font-weight: 300;
 }
 .tricky-social-icons .tricky-social-btn:hover {
@@ -1094,7 +1224,7 @@
   border-top: 1px solid #333;
   color: #aaa;
   font-size: 14px;
-  font-family: 'Six Caps', sans-serif;
+font-family: 'Poppins', sans-serif !important;
   font-weight: 300;
   letter-spacing: 1px;
 }
@@ -1127,10 +1257,9 @@
   </div>
 </div>
 <!-- Copyright End -->
-         
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>    
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>  
 
         
         <!-- JavaScript Libraries -->
@@ -1199,9 +1328,9 @@
       .forEach(el => observer.observe(el));
   </script>
 
-    <script>
+     <script>
     // Submenu data
-    const submenus = {
+   const submenus = {
       home: [
         { text: "Living Room Lighting", link: "livingroom-lighting.html" },
         { text: "Kitchen Lighting", link: "kitchen-lighting.html" },
