@@ -94,7 +94,7 @@
           </ul>
         </div>
         <div class="service-group">
-          <h6>Residential</h6>
+          <h6>Power</h6>
           <ul>
             <li><a href="transmission.html">Transmission</a></li>
             <li><a href="#">Distribution</a></li>
@@ -123,7 +123,7 @@
             <li><a href="#">Commercial</a></li>
             <li><a href="#">Industrial</a></li>
             <li><a href="#">Hospital</a></li>
-            <li><a href="#">IoT Based Automation</a></li>
+            <!-- <li><a href="#">IoT Based Automation</a></li> -->
             <li><a href="#">Hotel</a></li>
           </ul>
         </div>
@@ -522,206 +522,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-<!-- ⚡ PREMIUM POWER SECTION -->
-<section class="power-premium">
-  <div class="power-header" data-aos="fade-up">
-    <h2>Power</h2>
-    <p>Reliable transmission & distribution with advanced LT and HT solutions</p>
-  </div>
-
-  <div class="power-gallery">
-    <div class="power-images">
-      <img src="img/transmission-lines/transmission-lines-2.jpeg" class="show" data-key="transmission" alt="Transmission">
-      <img src="img/transmission-lines/distribution-lines.png" data-key="distribution" alt="Distribution">
-      <img src="img/transmission-lines/ltandht panels.jpg" data-key="htlt" alt="HT & LT Panels">
-      <img src="img/powerimg/controlpanels.png" data-key="control" alt="Control Panels">
-    </div>
-
-    <div class="power-menu">
-      <ul>
-        <li class="active" data-key="transmission">Transmission</li>
-        <li data-key="distribution">Distribution</li>
-        <li data-key="htlt">HT & LT Panels</li>
-        <li data-key="control">Control Panels</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<style>
-/* === PREMIUM WHITE + BLACK OVERLAY DESIGN === */
-.power-premium {
-  position: relative;
-  background: #fff;
-  /* font-family: 'Inter', sans-serif; */
-  color: #fff;
-  overflow: hidden;
-}
-
-/* --- Header Section --- */
-.power-header {
-  text-align: left;
-  padding-top: 20px; /* ⬅ reduced left padding for alignment */
-  z-index: 5;
-  position: relative;
-  margin-left: 20px; /* ensures alignment with image edge */
-  /* font-family: "Switzer"; */
-}
-
-.power-header h2 {
-  font-size: 3rem;
- font-family: "Poppins", sans-serif;
-  /* font-weight: 600; */
-  color: #111;
-  letter-spacing: 0.5px;
-  margin-bottom: 10px;
-}
-
-.power-header p {
-  color: #444;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  max-width: 480px;
-  font-family: "Roboto";
-}
-
-/* --- Gallery --- */
-.power-gallery {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  height: 100vh;
-  padding-left: 4%; /* ⬅ match header padding for perfect alignment */
-}
-
-.power-images {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-.power-images img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease, transform 6s ease;
-  transform: scale(1.05);
-}
-
-.power-images img.show {
-  opacity: 1;
-  transform: scale(1.02);
-}
-
-/* --- Black Overlay for Depth --- */
-.power-gallery::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.1) 100%);
-  z-index: 1;
-}
-
-/* --- Menu Text on Top of Image --- */
-.power-menu {
-  position: relative;
-  z-index: 2;
-}
-
-.power-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.power-menu li {
-  cursor: pointer;
-  color: rgba(255,255,255,0.6);
-  font-size: clamp(2rem, 2.5rem + 1vw, 4rem);
-  font-weight: 500;
-  letter-spacing: 1px;
-  margin: 14px 0;
-  transition: all 0.4s ease;
-  font-family: "Outfit Placeholder" , sans-serif ;
-}
-
-.power-menu li.active {
-  color: #fff;
-  transform: translateX(10px);
-  text-shadow: 0 3px 10px rgba(0,0,0,0.5);
-}
-
-.power-menu li:hover {
-  color: rgba(255,255,255,0.85);
-}
-
-/* --- Responsive --- */
-@media (max-width: 992px) {
-  .power-header {
-    padding: 60px 20px 30px;
-  }
-  .power-gallery {
-    flex-direction: column;
-    height: 50vh;
-    padding-left: 20px;
-  }
-  .power-menu li {
-    font-size: 1.8rem;
-    text-align: left;
-  }
-  .power-menu ul{
-    text-align: left;
-  }
-}
-</style>
-
-<script>
-(() => {
-  const imgs = document.querySelectorAll('.power-images img');
-  const menuItems = document.querySelectorAll('.power-menu li');
-  let current = 0;
-  let autoSwitch;
-
-  function showImage(i) {
-    imgs.forEach((img, idx) => img.classList.toggle('show', idx === i));
-    menuItems.forEach((li, idx) => li.classList.toggle('active', idx === i));
-    current = i;
-  }
-
-  function nextImage() {
-    current = (current + 1) % imgs.length;
-    showImage(current);
-  }
-
-  function startAuto() {
-    autoSwitch = setInterval(nextImage, 5000);
-  }
-
-  function resetAuto() {
-    clearInterval(autoSwitch);
-    startAuto();
-  }
-
-  menuItems.forEach((li, i) => {
-    li.addEventListener('mouseenter', () => {
-      showImage(i);
-      resetAuto();
-    });
-    li.addEventListener('click', () => {
-      showImage(i);
-      resetAuto();
-    });
-  });
-
-  startAuto();
-})();
-</script>
-
-
 <!-- ⚡ ENERGY GENERATION (Integrated Header + Interactive Gallery) -->
 <section class="energyx-section">
   <div class="energyx-header" data-aos="fade-up" data-aos-duration="1000">
@@ -1008,6 +808,210 @@ items.forEach((item,index)=>{
 activateItem(currentIndex);
 goNext();
 </script>
+
+
+
+<!-- ⚡ PREMIUM POWER SECTION -->
+<section class="power-premium">
+  <div class="power-header" data-aos="fade-up">
+    <h2>Power</h2>
+    <p>Reliable transmission & distribution with advanced LT and HT solutions</p>
+  </div>
+
+  <div class="power-gallery">
+    <div class="power-images">
+      <img src="img/transmission-lines/transmission-lines-2.jpeg" class="show" data-key="transmission" alt="Transmission">
+      <img src="img/transmission-lines/distribution-lines.png" data-key="distribution" alt="Distribution">
+      <img src="img/transmission-lines/ltandht panels.jpg" data-key="htlt" alt="HT & LT Panels">
+      <img src="img/powerimg/controlpanels.png" data-key="control" alt="Control Panels">
+    </div>
+
+    <div class="power-menu">
+      <ul>
+        <li class="active" data-key="transmission">Transmission</li>
+        <li data-key="distribution">Distribution</li>
+        <li data-key="htlt">HT & LT Panels</li>
+        <li data-key="control">Control Panels</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+/* === PREMIUM WHITE + BLACK OVERLAY DESIGN === */
+.power-premium {
+  position: relative;
+  background: #fff;
+  /* font-family: 'Inter', sans-serif; */
+  color: #fff;
+  overflow: hidden;
+}
+
+/* --- Header Section --- */
+.power-header {
+  text-align: left;
+  padding-top: 20px; /* ⬅ reduced left padding for alignment */
+  z-index: 5;
+  position: relative;
+  margin-left: 20px; /* ensures alignment with image edge */
+  /* font-family: "Switzer"; */
+}
+
+.power-header h2 {
+  font-size: 3rem;
+ font-family: "Poppins", sans-serif;
+  /* font-weight: 600; */
+  color: #111;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.power-header p {
+  color: #444;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 480px;
+  font-family: "Roboto";
+}
+
+/* --- Gallery --- */
+.power-gallery {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding-left: 4%; /* ⬅ match header padding for perfect alignment */
+}
+
+.power-images {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.power-images img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease, transform 6s ease;
+  transform: scale(1.05);
+}
+
+.power-images img.show {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+/* --- Black Overlay for Depth --- */
+.power-gallery::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.1) 100%);
+  z-index: 1;
+}
+
+/* --- Menu Text on Top of Image --- */
+.power-menu {
+  position: relative;
+  z-index: 2;
+}
+
+.power-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.power-menu li {
+  cursor: pointer;
+  color: rgba(255,255,255,0.6);
+  font-size: clamp(2rem, 2.5rem + 1vw, 4rem);
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: 14px 0;
+  transition: all 0.4s ease;
+  font-family: "Outfit Placeholder" , sans-serif ;
+}
+
+.power-menu li.active {
+  color: #fff;
+  transform: translateX(10px);
+  text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+}
+
+.power-menu li:hover {
+  color: rgba(255,255,255,0.85);
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .power-header {
+    padding: 60px 20px 30px;
+  }
+  .power-gallery {
+    flex-direction: column;
+    height: 50vh;
+    padding-left: 20px;
+  }
+  .power-menu li {
+    font-size: 1.8rem;
+    text-align: left;
+  }
+  .power-menu ul{
+    text-align: left;
+  }
+}
+</style>
+
+<script>
+(() => {
+  const imgs = document.querySelectorAll('.power-images img');
+  const menuItems = document.querySelectorAll('.power-menu li');
+  let current = 0;
+  let autoSwitch;
+
+  function showImage(i) {
+    imgs.forEach((img, idx) => img.classList.toggle('show', idx === i));
+    menuItems.forEach((li, idx) => li.classList.toggle('active', idx === i));
+    current = i;
+  }
+
+  function nextImage() {
+    current = (current + 1) % imgs.length;
+    showImage(current);
+  }
+
+  function startAuto() {
+    autoSwitch = setInterval(nextImage, 5000);
+  }
+
+  function resetAuto() {
+    clearInterval(autoSwitch);
+    startAuto();
+  }
+
+  menuItems.forEach((li, i) => {
+    li.addEventListener('mouseenter', () => {
+      showImage(i);
+      resetAuto();
+    });
+    li.addEventListener('click', () => {
+      showImage(i);
+      resetAuto();
+    });
+  });
+
+  startAuto();
+})();
+</script>
+
+
+
 
 
 
@@ -1536,221 +1540,242 @@ goNext();
 
     <!-- Product 1 -->
     <div class="lightsegproducts-box">
-      <img src="img/productsimgs/1.png" class="lightsegproducts-icon" alt="COB Light" />
+      <a href="cobs-product.html">
+      <img src="img/productsimgs/cobs/eco/66.png" class="lightsegproducts-icon" alt="COB Light" />
         <div class="lightsegproducts-overlay">
         <h2>COB LIGHTS</h2>
         <div class="lightsegproducts-gallery">
           <div class="lightsegproducts-item">
-            <img src="img/productsimgs/4.png" alt="PANEL LIGHTS" />
-            <p>PANEL LIGHTS</p>
+            <img src="img/productsimgs/cobs/spaa/164.png" alt="PANEL LIGHTS" />
+            <p>COB 1</p>
           </div>
           <div class="lightsegproducts-item">
-            <img src="img/productsimgs/5.png" alt="DOWNLIGHTS" />
-            <p>DOWNLIGHTS</p>
+            <img src="img/productsimgs/cobs/xrs/205.png" alt="DOWNLIGHTS" />
+            <p>COB 2</p>
           </div>
           <div class="lightsegproducts-item">
-            <img src="img/productsimgs/6.png" alt="SPOTLIGHTS" />
-            <p>SPOTLIGHTS</p>
+            <img src="img/productsimgs/cobs/zhongshan yiwei lighting/7.png" alt="SPOTLIGHTS" />
+            <p>COB 3</p>
           </div>
         </div>
       </div>
+      </a>
     </div>
 
     <!-- Product 2 -->
     <div class="lightsegproducts-box">
-      <img src="img/productsimgs/4.png" class="lightsegproducts-icon" alt="Laser Blade" />
+       <a href="normal-track-products.html">
+      <img src="img/productsimgs/Normal Track/115.png" class="lightsegproducts-icon" alt="Laser Blade" />
       <div class="lightsegproducts-overlay">
-        <h2>SURFACE LIGHTS</h2>
+        <h2>TRACK </h2>
         <div class="lightsegproducts-gallery">
           <div class="lightsegproducts-item">
-            <img src="img/productsimgs/4.png" alt="PANEL LIGHTS" />
-            <p>PANEL LIGHTS</p>
+            <img src="img/productsimgs/Normal Track/ECO25-26/211.png" alt="PANEL LIGHTS" />
+            <p>TRACK 1</p>
           </div>
           <div class="lightsegproducts-item">
-            <img src="img/productsimgs/5.png" alt="DOWNLIGHTS" />
-            <p>DOWNLIGHTS</p>
+            <img src="img/productsimgs/Normal Track/ECO25-26/218.png" alt="DOWNLIGHTS" />
+            <p>TRACK 2</p>
           </div>
           <div class="lightsegproducts-item">
-            <img src="img/productsimgs/6.png" alt="SPOTLIGHTS" />
-            <p>SPOTLIGHTS</p>
+            <img src="img/productsimgs/Normal Track/ECO25-26/221.png" alt="SPOTLIGHTS" />
+            <p>TRACK 3</p>
           </div>
         </div>
       </div>
+      </a>
     </div>
       <div class="lightsegproducts-box">
-        <img src="img/productsimgs/4.png" class="lightsegproducts-icon" alt="Light Icon" />
+        <a href="magnetic-track-products.html">
+        <img src="img/productsimgs/magnetic track/masterseriesspa/319.png" class="lightsegproducts-icon" alt="Light Icon" />
         <div class="lightsegproducts-overlay">
-          <h2>LASER BLADES</h2>
+          <h2>MAGNETIC TRACK</h2>
           <div class="lightsegproducts-gallery">
             <div class="lightsegproducts-item">
-              <img src="img/productsimgs/4.png" alt="PANEL LIGHTS" />
-              <p>PANEL LIGHTS</p>
+              <img src="img/productsimgs/magnetic track/mtmasterseries-spa6mm/254.png" alt="PANEL LIGHTS" />
+              <p>M TRACK 1</p>
             </div>
             <div class="lightsegproducts-item">
-              <img src="img/productsimgs/5.png" alt="SURFACE LIGHTS" />
-              <p>SURFACE LIGHTS</p>
+              <img src="img/productsimgs/magnetic track/mtmasterseries-spa6mmpro/277.png" alt="SURFACE LIGHTS" />
+              <p>M TRACK 2</p>
             </div>
             <div class="lightsegproducts-item">
-              <img src="img/productsimgs/6.png" alt="DOWNLIGHTS" />
-              <p>DOWNLIGHTS</p>
+              <img src="img/productsimgs/magnetic track/mtmasterseries-spa20-26-36mm/300.png" alt="DOWNLIGHTS" />
+              <p>M TRACK 3</p>
             </div>
          
           </div>
         </div>
+        </a>
       </div>
 
     <!-- Product 3 -->
     <div class="lightsegproducts-box">
-      <img src="icon3.png" class="lightsegproducts-icon" alt="Surface Light" />
+      <a href="slim-track-products.html">
+      <img src="img/productsimgs/slim track/71.png" class="lightsegproducts-icon" alt="Surface Light" />
       <div class="lightsegproducts-overlay">
-        <h2>TRACK LIGHTS</h2>
+        <h2>SLIM TRACK</h2>
         <div class="lightsegproducts-gallery">
           <div class="lightsegproducts-item">
-            <img src="track1.png" alt="LINEAR TRACK" />
-            <p>LINEAR TRACK</p>
+            <img src="img/productsimgs/slim track/slim-sunray/40.png" alt="LINEAR TRACK" />
+            <p>SLIM TRACK 1</p>
           </div>
           <div class="lightsegproducts-item">
-            <img src="track2.png" alt="SPOT TRACK" />
-            <p>SPOT TRACK</p>
+            <img src="img/productsimgs/slim track/slim-sunray/31.png" alt="SPOT TRACK" />
+            <p>SLIM TRACK 2</p>
           </div>
           <div class="lightsegproducts-item">
-            <img src="track3.png" alt="ADJUSTABLE" />
-            <p>ADJUSTABLE</p>
+            <img src="img/productsimgs/slim track/slim-sunray/17.png" alt="ADJUSTABLE" />
+            <p>SLIM TRACK 3</p>
           </div>
         </div>
       </div>
+      </a>
     </div>
 
     <!-- Product 4 -->
     <div class="lightsegproducts-box">
-      <img src="icon4.png" class="lightsegproducts-icon" alt="Profile Light" />
+      <a href="laser-blades-products.html">
+      <img src="img/productsimgs/Laserblades/Laser Blades-true/5.png" class="lightsegproducts-icon" alt="Profile Light" />
       <div class="lightsegproducts-overlay">
-        <h2>MAGNETIC TRACK LIGHTS</h2>
+        <h2>LASER BLADES</h2>
         <div class="lightsegproducts-gallery">
           <div class="lightsegproducts-item">
-            <img src="mag1.png" alt="LINEAR MODULE" />
-            <p>LINEAR MODULE</p>
+            <img src="img/productsimgs/Laserblades/Laser Blades-true/8.png" alt="LINEAR MODULE" />
+            <p>LASER BLADE 1</p>
           </div>
           <div class="lightsegproducts-item">
-            <img src="mag2.png" alt="SPOT MODULE" />
-            <p>SPOT MODULE</p>
+            <img src="img/productsimgs/Laserblades/Laser Blades-true/36.png" alt="SPOT MODULE" />
+            <p>LASER BLADE 2</p>
           </div>
           <div class="lightsegproducts-item">
-            <img src="mag3.png" alt="WALL WASHER" />
-            <p>WALL WASHER</p>
+            <img src="img/productsimgs/Laserblades/23.png" alt="WALL WASHER" />
+            <p>LASER BLADE 3</p>
           </div>
         </div>
       </div>
+      </a>
     </div>
 
     <!-- Product 5 -->
     <div class="lightsegproducts-box">
-      <img src="icon5.png" class="lightsegproducts-icon" alt="M Track" />
-      <div class="lightsegproducts-overlay">
-        <h2>SLIM TRACK LIGHTS</h2>
-        <div class="lightsegproducts-gallery">
-          <div class="lightsegproducts-item">
-            <img src="pro1.png" alt="SURFACE PROFILE" />
-            <p>SURFACE PROFILE</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="pro2.png" alt="SUSPENDED PROFILE" />
-            <p>SUSPENDED PROFILE</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="pro3.png" alt="RECESSED PROFILE" />
-            <p>RECESSED PROFILE</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-        <!-- Product 1 -->
-    <div class="lightsegproducts-box">
-      <img src="img/productsimgs/1.png" class="lightsegproducts-icon" alt="COB Light" />
-        <div class="lightsegproducts-overlay">
-        <h2>LASER BLADES LIGHTS</h2>
-        <div class="lightsegproducts-gallery">
-          <div class="lightsegproducts-item">
-            <img src="img/productsimgs/4.png" alt="PANEL LIGHTS" />
-            <p>PANEL LIGHTS</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="img/productsimgs/5.png" alt="DOWNLIGHTS" />
-            <p>DOWNLIGHTS</p>
-          </div>
-          <div class="lightsegproducts-item">
-            <img src="img/productsimgs/6.png" alt="SPOTLIGHTS" />
-            <p>SPOTLIGHTS</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Product 2 -->
-    <div class="lightsegproducts-box">
-      <img src="img/productsimgs/4.png" class="lightsegproducts-icon" alt="Laser Blade" />
+      <a href="linear-profile-products.html">
+      <img src="img/productsimgs/linear profiles/127.png" class="lightsegproducts-icon" alt="M Track" />
       <div class="lightsegproducts-overlay">
         <h2>LINEAR PROFILES</h2>
         <div class="lightsegproducts-gallery">
           <div class="lightsegproducts-item">
-            <img src="img/productsimgs/4.png" alt="PANEL LIGHTS" />
-            <p>PANEL LIGHTS</p>
+            <img src="img/productsimgs/linear profiles/133.png" alt="SURFACE PROFILE" />
+            <p>LINEAR PROFILE 1</p>
           </div>
           <div class="lightsegproducts-item">
-            <img src="img/productsimgs/5.png" alt="DOWNLIGHTS" />
-            <p>DOWNLIGHTS</p>
+            <img src="img/productsimgs/linear profiles/142.png" alt="SUSPENDED PROFILE" />
+            <p>LINEAR PROFILE 2</p>
           </div>
           <div class="lightsegproducts-item">
-            <img src="img/productsimgs/6.png" alt="SPOTLIGHTS" />
-            <p>SPOTLIGHTS</p>
+            <img src="img/productsimgs/linear profiles/152.png" alt="RECESSED PROFILE" />
+            <p>LINEAR PROFILE 3</p>
           </div>
         </div>
       </div>
+      </a>
+    </div>
+
+        <!-- Product 1 -->
+    <div class="lightsegproducts-box">
+      <a href="flood-light-products.html">
+      <img src="img/productsimgs/flood lights/5.png" class="lightsegproducts-icon" alt="COB Light" />
+        <div class="lightsegproducts-overlay">
+        <h2>FLOOD LIGHTS</h2>
+        <div class="lightsegproducts-gallery">
+          <div class="lightsegproducts-item">
+            <img src="img/productsimgs/flood lights/7.png" alt="PANEL LIGHTS" />
+            <p>FLOOD LIGHT 1</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="img/productsimgs/flood lights/26.png" alt="DOWNLIGHTS" />
+            <p>FLOOD LIGHT 2</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="img/productsimgs/flood lights/146.png" alt="SPOTLIGHTS" />
+            <p>FLOOD LIGHT 3</p>
+          </div>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="lightsegproducts-box">
+       <a href="hi-bay-lights-products.html">
+      <img src="img/productsimgs/hi bay lights/2024 commercial lighting/18.png" class="lightsegproducts-icon" alt="Laser Blade" />
+      <div class="lightsegproducts-overlay">
+        <h2>HI-BAY</h2>
+        <div class="lightsegproducts-gallery">
+          <div class="lightsegproducts-item">
+            <img src="img/productsimgs/hi bay lights/2024 outdoor Lighting/13.png" alt="PANEL LIGHTS" />
+            <p>HI-BAY 1</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="img/productsimgs/hi bay lights/119.png" alt="DOWNLIGHTS" />
+            <p>HI-BAY 2</p>
+          </div>
+          <div class="lightsegproducts-item">
+            <img src="img/productsimgs/hi bay lights/LED HIGH BAY LIGHT (5).png" alt="SPOTLIGHTS" />
+            <p>HI-BAY 3</p>
+          </div>
+        </div>
+      </div>
+      </a>
     </div>
 
     <!-- Product 3 -->
     <div class="lightsegproducts-box">
-      <img src="icon3.png" class="lightsegproducts-icon" alt="Surface Light" />
+       <a href="wall-light-products.html">
+      <img src="img/productsimgs/wall lights/52.png" class="lightsegproducts-icon" alt="Surface Light" />
       <div class="lightsegproducts-overlay">
-        <h2>PANEL LIGHTS</h2>
+        <h2>WALL LIGHTS</h2>
         <div class="lightsegproducts-gallery">
           <div class="lightsegproducts-item">
-            <img src="track1.png" alt="LINEAR TRACK" />
-            <p>LINEAR TRACK</p>
+            <img src="img/productsimgs/wall lights/58.png" alt="LINEAR TRACK" />
+            <p>WALL LIGHT 1</p>
           </div>
           <div class="lightsegproducts-item">
-            <img src="track2.png" alt="SPOT TRACK" />
-            <p>SPOT TRACK</p>
+            <img src="img/productsimgs/wall lights/118.png" alt="SPOT TRACK" />
+            <p>WALL LIGHT 2</p>
           </div>
           <div class="lightsegproducts-item">
-            <img src="track3.png" alt="ADJUSTABLE" />
-            <p>ADJUSTABLE</p>
+            <img src="img/productsimgs/wall lights/130.png" alt="ADJUSTABLE" />
+            <p>WALL LIGHT 3</p>
           </div>
         </div>
       </div>
+      </a>
     </div>
 
     <!-- Product 4 -->
     <div class="lightsegproducts-box">
-      <img src="icon4.png" class="lightsegproducts-icon" alt="Profile Light" />
+      <a href="wallwasher-products.html">
+      <img src="img/productsimgs/wallwashers/facade-mecanav/163.png" class="lightsegproducts-icon" alt="Profile Light" />
       <div class="lightsegproducts-overlay">
-        <h2>NEON FLEX</h2>
+        <h2>WALL WASHERS</h2>
         <div class="lightsegproducts-gallery">
           <div class="lightsegproducts-item">
-            <img src="mag1.png" alt="LINEAR MODULE" />
-            <p>LINEAR MODULE</p>
+            <img src="img/productsimgs/wallwashers/facade-mecanav/171.png" alt="LINEAR MODULE" />
+            <p>WALL WASHER</p>
           </div>
           <div class="lightsegproducts-item">
-            <img src="mag2.png" alt="SPOT MODULE" />
-            <p>SPOT MODULE</p>
+            <img src="img/productsimgs/wallwashers/facade-mecanav/176.png" alt="SPOT MODULE" />
+            <p>WALL WASHER</p>
           </div>
           <div class="lightsegproducts-item">
-            <img src="mag3.png" alt="WALL WASHER" />
+            <img src="img/productsimgs/wallwashers/facade-mecanav/168.png" alt="WALL WASHER" />
             <p>WALL WASHER</p>
           </div>
         </div>
+
       </div>
+      </a>
     </div>
 
  
@@ -1760,9 +1785,18 @@ goNext();
 
   </div>
 </div>
+
+<p class="text-end card-link"><a href="lighting-products.html">→ See More Products</a></p>
 <!-- Lightseg Products Section end -->
 
-
+<style>
+      .card-link {
+    
+    
+    text-decoration: none;
+    color: inherit;
+}
+</style>
 
 <!-- ⚡ r&d SECTION (Integrated & Premium Layout) -->
 <section class="lighting-premium">
