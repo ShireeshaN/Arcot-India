@@ -1057,6 +1057,52 @@ html , body {
       border: none;
     }
 
+    /* Parent for nested submenu */
+.submenu-parent {
+  position: relative;
+}
+
+/* Item which has side menu */
+.has-submenu {
+  position: relative;
+}
+
+/* Right-side submenu */
+.side-submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: #000;
+  min-width: 200px;
+  padding: 10px 0;
+  display: none;
+  border-left: 1px solid #222;
+  z-index: 999;
+}
+
+/* Show on hover */
+.has-submenu:hover .side-submenu {
+  display: block;
+}
+
+/* Side submenu links */
+.side-submenu li a {
+  padding: 8px 16px;
+  display: block;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.side-submenu li a:hover {
+  background: #111;
+  letter-spacing: 2px;
+  color: rgb(202, 207, 207);
+}
+
+
     /* Mobile View */
     @media (max-width: 768px) {
       .header-wrap {
@@ -1113,6 +1159,8 @@ html , body {
         margin: 5px 0;
       }
     }
+
+    
 
 
     /* iPad Mini & iPad Air (portrait 768px–1024px) */
