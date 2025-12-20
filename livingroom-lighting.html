@@ -63,7 +63,17 @@
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a></li>
-        <li><a href="solution.html">Solutions</a></li>
+                <li class="dropdown">
+  <a href="#" onclick="toggleDropdown(event)">Products <i class="bi bi-chevron-down ms-1"></i></a>
+  <ul class="dropdown-menu">
+    <li><a href="#">Energy Generation</a></li>
+    <li><a href="#">Power</a></li>
+    <li><a href="lighting-products.html">Lighting</a></li>
+    <li><a href="#">Automation</a></li>
+    
+  </ul>
+</li>
+       
 <li class="dropdown">
   <a href="#" onclick="toggleDropdown(event)">R&D <i class="bi bi-chevron-down ms-1"></i></a>
   <ul class="dropdown-menu">
@@ -75,12 +85,152 @@
   </ul>
 </li>
 
-        <li><a href="applications.html">Applications</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+ <li><a href="solution.html">Solutions</a></li>
+
+        <li>
+  <a href="#" onclick="toggleApplicationsMenu(event)">
+    Applications <i class="bi bi-chevron-down ms-1"></i>
+  </a>
+</li>
+
+        <!-- <li><a href="gallery.html">Gallery</a></li> -->
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </div>
+
+
+  <!-- Applications Mega Menu -->
+<div id="applicationsMegaMenu" class="mega-menu">
+  <div class="row">
+    <div class="underline"></div>
+
+    <div class="service-submenus d-flex flex-wrap">
+
+      <div class="service-group">
+        <h6>Energy</h6>
+        <ul>
+          <li><a href="#">Solar</a></li>
+          <li><a href="#">Wind</a></li>
+          <li><a href="#">Biomass</a></li>
+          <li><a href="#">Hydel </a></li>
+        </ul>
+      </div>
+
+      <div class="service-group">
+        <h6>Power</h6>
+        <ul>
+          <li><a href="#">Transimission</a></li>
+          <li><a href="#">Distribution</a></li>
+          <li><a href="#">HT and LT Panels</a></li>
+          <li><a href="#">Control Panels</a></li>
+        </ul>
+      </div>
+
+<div class="service-group">
+  <h6><a href="lighting.html">Lighting</a></h6>
+  <ul class="submenu-parent">
+
+    <!-- Residential -->
+    <li class="has-submenu">
+      <a href="#.html">
+        Residential <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="kitchen-lighting.html">Kitchen </a></li>
+        <li><a href="livingroom-lighting.html">Living Room</a></li>
+        <li><a href="bedroom-lighting.html">Bedroom</a></li>
+        <li><a href="bathroom-lighting.html">Bathroom</a></li>
+        <li><a href="entrance-lighting.html">Entrance Lighting</a></li>
+      </ul>
+    </li>
+
+    <!-- Commercial -->
+    <li class="has-submenu">
+      <a href="#">
+        Commercial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="office-lighting.html">Office</a></li>
+        <li><a href="retail-showroom-lighting.html">Retail & Showroom Lighting</a></li>
+        <li><a href="healthcare-lighting.html">Healthcare Lighting</a></li>
+        <li><a href="education-lighting.html">Educational Lighting</a></li>
+        <li><a href="entertainments-and-theaters-lighting.html">Entertainment & Theatres</a></li>
+        <li><a href="airport-transport-lighting.html">Airport & Transport Hubs</a></li>
+        <li><a href="hotel-lighting.html">Hotel Lighting</a></li>
+      </ul>
+    </li>
+
+
+        <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Industrial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="factorylighting.html">Factory Lighting</a></li>
+        <li><a href="warehouselighting.html">WarehouseLighting</a></li>
+        <li><a href="workshoplighting.html">Workshop Lighting</a></li>
+        <li><a href="coldstoragelighting.html">Cold Storage Lighting</a></li>
+        <li><a href="parkingutilitylighting.html">Parking & Utility Lighting</a></li>
+        
+      </ul>
+    </li>
+
+
+            <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Outdoor Lighting <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="gardenandlandscapelighting.html">Garden & Landscape Lighting</a></li>
+        <li><a href="facadeandarchitecturallighting.html">Facade & Architectural Lighting</a></li>
+        <li><a href="outdoorhomelighting.html">Outdoor Home Lighting</a></li>
+        <li><a href="parkinglotlighting.html">Parking Lot Lighting</a></li>
+        <li><a href="campusandinstitutionallighting.html">Campus & Institutional Lighting</a></li>
+        <li><a href="resortandhospitalitylighting.html">Resort & Hospitality</a></li>
+        <li><a href="securityandfloodlighting.html">Street and Security Lighting</a></li>
+        <li><a href="sportsgroundlighting.html">Sports Ground Lighting</a></li>
+        
+      </ul>
+    </li>
+
+   
+
+  </ul>
+</div>
+
+      <div class="service-group">
+        <h6>Automation</h6>
+        <ul>
+          <li><a href="#">Residential</a></li>
+          <li><a href="#">Commercial</a></li>
+          <li><a href="#">Industrial</a></li>
+          <li><a href="#">Hospital</a></li>
+          <li><a href="#">Hotel</a></li>
+        </ul>
+      </div>
+
+       <div class="service-group">
+        <h6>R&D</h6>
+        <ul>
+          <li><a href="#">Smartpole</a></li>
+          <li><a href="#">Smart Bollard</a></li>
+          <li><a href="#">Smart Conference Table</a></li>
+          <li><a href="#">Smart Bar Counter</a></li>
+          <li><a href="#">Smart Window leaf AC</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
   <!-- Mega Menu -->
   <div id="megaMenu" class="mega-menu">
@@ -106,19 +256,84 @@
             <li><a href="#">Panel Boards</a></li>
           </ul>
         </div>
-        <div class="service-group">
-          <h6>Lighting</h6>
-          <ul>
-            <li><a href="residential-lighting.html">Residential</a></li>
-            <li><a href="facade-lighting.html">Facade</a></li>
-            <li><a href="commercial-lighting.html">Commercial</a></li>
-            <li><a href="industrial-lighting.html">Industrial</a></li>
-            <li><a href="#">Street</a></li>
-            <li><a href="#">Park</a></li>
-            <li><a href="#">Stadium</a></li>
-            <li><a href="#">Hospital</a></li>
-          </ul>
-        </div>
+<div class="service-group">
+  <h6><a href="lighting.html">Lighting</a></h6>
+  <ul class="submenu-parent">
+
+    <!-- Residential -->
+    <li class="has-submenu">
+      <a href="#">
+        Residential <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="kitchen-lighting.html">Kitchen </a></li>
+        <li><a href="livingroom-lighting.html">Living Room</a></li>
+        <li><a href="bedroom-lighting.html">Bedroom</a></li>
+        <li><a href="bathroom-lighting.html">Bathroom</a></li>
+        <li><a href="entrance-lighting.html">Entrance Lighting</a></li>
+      </ul>
+    </li>
+
+    <!-- Commercial -->
+    <li class="has-submenu">
+      <a href="#">
+        Commercial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="office-lighting.html">Office</a></li>
+        <li><a href="retail-showroom-lighting.html">Retail & Showroom Lighting</a></li>
+        <li><a href="healthcare-lighting.html">Healthcare Lighting</a></li>
+        <li><a href="education-lighting.html">Educational Lighting</a></li>
+        <li><a href="entertainments-and-theaters-lighting.html">Entertainment & Theatres</a></li>
+        <li><a href="airport-transport-lighting.html">Airport & Transport Hubs</a></li>
+        <li><a href="hotel-lighting.html">Hotel Lighting</a></li>
+      </ul>
+    </li>
+
+
+        <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Industrial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="factorylighting.html">Factory Lighting</a></li>
+        <li><a href="warehouselighting.html">WarehouseLighting</a></li>
+        <li><a href="workshoplighting.html">Workshop Lighting</a></li>
+        <li><a href="coldstoragelighting.html">Cold Storage Lighting</a></li>
+        <li><a href="parkingutilitylighting.html">Parking & Utility Lighting</a></li>
+        
+      </ul>
+    </li>
+
+
+            <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Outdoor Lighting <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="gardenandlandscapelighting.html">Garden & Landscape Lighting</a></li>
+        <li><a href="facadeandarchitecturallighting.html">Facade & Architectural Lighting</a></li>
+        <li><a href="outdoorhomelighting.html">Outdoor Home Lighting</a></li>
+        <li><a href="parkinglotlighting.html">Parking Lot Lighting</a></li>
+        <li><a href="campusandinstitutionallighting.html">Campus & Institutional Lighting</a></li>
+        <li><a href="resortandhospitalitylighting.html">Resort & Hospitality</a></li>
+        <li><a href="securityandfloodlighting.html">Street and Security Lighting</a></li>
+        <li><a href="sportsgroundlighting.html">Sports Ground Lighting</a></li>
+        
+      </ul>
+    </li>
+
+   
+
+  </ul>
+</div>
+
         <div class="service-group">
           <h6>Automation</h6>
           <ul>
@@ -126,7 +341,7 @@
             <li><a href="#">Commercial</a></li>
             <li><a href="#">Industrial</a></li>
             <li><a href="#">Hospital</a></li>
-            <li><a href="#">IoT Based Automation</a></li>
+            <!-- <li><a href="#">IoT Based Automation</a></li> -->
             <li><a href="#">Hotel</a></li>
           </ul>
         </div>
@@ -149,7 +364,7 @@
 
 
 
-        <!-- Header Start -->
+        
     <!-- Banner Section -->
 <div class="banner-section">
   <div class="banner-overlay"></div>
@@ -360,6 +575,39 @@ html, body {
       padding: 10px;
       
     }
+
+ .segments-toggle {
+  display: none;
+  background: transparent !important;
+  border: none;
+  font-size: 26px;
+  color: #000;
+  padding: 6px 10px;
+  width: auto;          /* IMPORTANT */
+}
+
+@media (max-width: 768px) {
+  .menu-toggle,
+  .segments-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .segments-navbar {
+    background: transparent !important;
+    padding: 0 !important;
+  }
+
+  .main-nav {
+    background: #f2f2f2;   /* menu open ayinappudu matrame */
+    width: 100%;
+  }
+}
+
+
  
 
     /* responsive */
@@ -559,9 +807,19 @@ html, body {
     }
 
     .main-nav a.active {
-      color: #555;
-      text-decoration: underline;
+    background: #000;          /* dark background */
+  color: #fff !important;    /* white text */
+  padding: 6px 14px;
+  /* border-radius: 20px; */
+  text-decoration: none;
+  font-weight: 600;
     }
+
+    /* Hover (non-active) */
+.main-nav a:not(.active):hover {
+  background: #d0d0d0;
+  border-radius: 20px;
+}
 
     /* Submenu container (black bar) */
     .submenu-container {
@@ -586,18 +844,35 @@ html, body {
       color: #000000;
     }
 
+    /* SUBMENU ACTIVE */
+.submenu-container a.active {
+  color: #000;
+  font-weight: 600;
+  /* text-decoration: underline; */
+}
+
+/* Submenu hover */
+.submenu-container a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+
+
+
     /* Mobile */
-    .menu-toggle {
-      display: none;
-      background: #f2f2f2;
-      padding: 12px 20px;
-      border: none;
-      /* font-weight: bold; */
-      font-size: 16px;
-      cursor: pointer;
-      width: 100%;
-      text-align: left;
-    }
+   .menu-toggle {
+  background: transparent !important;
+  padding: 6px 10px;
+  border: none;
+  font-size: 26px;
+  color: #000;
+  width: auto;          /* IMPORTANT */
+}
+
+
+/* ===== SUBMENU ACTIVE STYLE ===== */
+
 
     @media (max-width: 768px) {
       .main-nav {
@@ -619,29 +894,53 @@ html, body {
       }
     }
 
-   /* Segments Navbar */
-.segments-navbar {
-  position: sticky;
-  top: 100px;   /* equal to header height */
-  z-index: 999;
+/* ===== SUBMENU ACTIVE STYLE ===== */
+.submenu-container a {
+  position: relative;
+  padding-bottom: 4px;
 }
-    
+
+.submenu-container a.active {
+  color: #000;
+  font-weight: 600;
+}
+
+.submenu-container a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #000;
+}
+ 
     
   </style>
   <div class="segments-navbar">
 
-  <!-- Mobile toggle -->
-  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+<button class="segments-toggle" onclick="toggleSegmentsMenu()">
+  <i class="bi bi-list"></i>
+</button>
 
-  <!-- Main Navigation -->
-  <nav class="main-nav sticky-header" id="mainNav">
-    <a href="#" data-submenu="cases">Cases</a>
-    <a href="" class="active" data-submenu="home">Lighting for Home</a>
-    <a href="#" data-submenu="commercial">Commercial Lighting</a>
-    <a href="#" data-submenu="industrial">Industrial Lighting</a>
-    <a href="#" data-submenu="outdoor">Outdoor Lighting</a>
-    <a href="#" data-submenu="catalogues">Catalogues</a>
-  </nav>
+<nav class="main-nav sticky-header" id="segmentsNav">
+  <a href="#" class="active" data-submenu="home" data-link="kitchen-lighting.html">
+    Lighting for Home
+  </a>
+
+  <a href="#" data-submenu="commercial" data-link="office-lighting.html">
+    Commercial Lighting
+  </a>
+
+  <a href="#" data-submenu="industrial" data-link="factorylighting.html">
+    Industrial Lighting
+  </a>
+
+  <a href="#" data-submenu="outdoor" data-link="gardenandlandscapelighting.html">
+    Outdoor Lighting
+  </a>
+</nav>
+
 
   <!-- Submenu Bar -->
   <div class="submenu-container" id="submenu"></div>
@@ -660,7 +959,7 @@ html, body {
       <div class="col col2">
         <img src="img/livingroomlights/2.png" alt="">
         <div class="content">
-          <h2 class="title">Enhance <br>Everyday living</h2>
+          <h2 class="title">Illuminate <br> your living space with style and comfort.</h2>
              </div>
       </div>
       
@@ -668,7 +967,7 @@ html, body {
       <div class="col col3">
         <img src="img/livingroomlights/3.png" alt="">
         <div class="content">
-          <h2 class="title">Choose Residential lighting</h2>
+          <h2 class="title">Transform <br>every corner into a warm, inviting retreat</h2>
         
         </div>
       </div>
@@ -683,7 +982,7 @@ html, body {
   <div class="slide" style="background-image: url('img/livingroomlights/pendentanimiation.png');">
     <div class="vertical-heading">Elegance in Suspension</div>
     <div class="text-content">
-      <p>Suspended lights that blend design andth effortless style.</p>
+      <p>Suspended lights that blend design and the effortless style.</p>
     </div>
   </div>
 </div>
@@ -790,7 +1089,7 @@ html, body {
           <img src="img/livingroomlights/10.png" alt="Downlight 1">
           <div class="overlay"></div>
           <div class="card-content">
-            <h5>Larger downlight for eaves</h5>
+            <h5>Livingroom</h5>
             <!-- <p>- A welcoming impression</p> -->
             <!-- <button class="btn-custom">SOLO MINI G2</button> -->
           </div>
@@ -803,7 +1102,7 @@ html, body {
           <img src="img/livingroomlights/9.png" alt="Downlight 2">
           <div class="overlay"></div>
           <div class="card-content">
-            <h5>Perfect downlights</h5>
+            <h5>Livingroom</h5>
             <!-- <p>- Choose a light source based on your own preference and taste</p> -->
             <!-- <button class="btn-custom">COMFORT QUICK OUTDOOR GU10</button> -->
           </div>
@@ -816,7 +1115,7 @@ html, body {
           <img src="img/livingroomlights/7.png" alt="Facade Lighting">
           <div class="overlay"></div>
           <div class="card-content">
-            <h5>Choose the right facade lighting</h5>
+            <h5>Livingroom</h5>
             <!-- <p>A clean conical design</p> -->
             <!-- <button class="btn-custom">CONE</button> -->
           </div>
@@ -995,14 +1294,14 @@ html, body {
 
 
     <section class="products-section  bg-light">
-    <h2>Did you know that many of our downlights can also be installed outdoors!</h2>
+    <h2>Did you know that the right living room lighting can dramatically enhance both comfort and atmosphere?</h2>
 
     <div class="row g-4">
       <!-- Product 1 -->
       <div class="col-12 col-sm-6 col-md-3">
         <div class="product-card card">
           <img src="img/livingroomlights/1.png" alt="Optic G2 Quick ISO 6 Pack">
-          <div class="product-title">OPTIC G2 QUICK ISO 6 PACK</div>
+          <!-- <div class="product-title">OPTIC G2 QUICK ISO 6 PACK</div> -->
           <!-- <div class="color-dots">
             <div class="dot"></div>
           </div> -->
@@ -1013,7 +1312,7 @@ html, body {
       <div class="col-12 col-sm-6 col-md-3">
         <div class="product-card card">
           <img src="img/livingroomlights/2.png" alt="Optic G2 Quick ISO DALI">
-          <div class="product-title">OPTIC G2 QUICK ISO DALI</div>
+          <!-- <div class="product-title">OPTIC G2 QUICK ISO DALI</div> -->
           <!-- <div class="color-dots">
             <div class="dot"></div>
           </div> -->
@@ -1024,7 +1323,7 @@ html, body {
       <div class="col-12 col-sm-6 col-md-3">
         <div class="product-card card">
           <img src="img/livingroomlights/3.png" alt="Optic G2 Quick ISO">
-          <div class="product-title">OPTIC G2 QUICK ISO</div>
+          <!-- <div class="product-title">OPTIC G2 QUICK ISO</div> -->
           <!-- <div class="color-dots">
             <div class="dot"></div>
             <div class="dot active"></div>
@@ -1036,7 +1335,7 @@ html, body {
       <div class="col-12 col-sm-6 col-md-3">
         <div class="product-card card">
           <img src="img/livingroomlights/4.png" alt="Comfort G4 Quick ISO Tilt 6 Pack">
-          <div class="product-title">COMFORT G4 QUICK ISO TILT 6 PACK</div>
+          <!-- <div class="product-title">COMFORT G4 QUICK ISO TILT 6 PACK</div> -->
           <!-- <div class="color-dots">
             <div class="dot"></div>
           </div> -->
@@ -1047,7 +1346,7 @@ html, body {
       <div class="col-12 col-sm-6 col-md-3">
         <div class="product-card card">
           <img src="img/livingroomlights/5.png" alt="Comfort G4 Quick ISO Tilt DALI">
-          <div class="product-title">COMFORT G4 QUICK ISO TILT DALI</div>
+          <!-- <div class="product-title">COMFORT G4 QUICK ISO TILT DALI</div> -->
           <!-- <div class="color-dots">
             <div class="dot"></div>
           </div> -->
@@ -1058,7 +1357,7 @@ html, body {
       <div class="col-12 col-sm-6 col-md-3">
         <div class="product-card card">
           <img src="img/livingroomlights/6.png" alt="Comfort G4 Quick ISO">
-          <div class="product-title">COMFORT G4 QUICK ISO</div>
+          <!-- <div class="product-title">COMFORT G4 QUICK ISO</div> -->
           <!-- <div class="color-dots">
             <div class="dot"></div>
           </div> -->
@@ -1069,7 +1368,7 @@ html, body {
       <div class="col-12 col-sm-6 col-md-3">
         <div class="product-card card">
           <img src="img/livingroomlights/7.png" alt="Comfort G4 Quick ISO Tilt">
-          <div class="product-title">COMFORT G4 QUICK ISO TILT</div>
+          <!-- <div class="product-title">COMFORT G4 QUICK ISO TILT</div> -->
           <!-- <div class="color-dots">
             <div class="dot"></div>
           </div> -->
@@ -1080,7 +1379,7 @@ html, body {
       <div class="col-12 col-sm-6 col-md-3">
         <div class="product-card card">
           <img src="img/livingroomlights/8.png" alt="Comfort Twist Quick ISO">
-          <div class="product-title">COMFORT TWIST QUICK ISO</div>
+          <!-- <div class="product-title">COMFORT TWIST QUICK ISO</div> -->
           <!-- <div class="color-dots">
             <div class="dot"></div>
             <div class="dot"></div>
@@ -1341,125 +1640,120 @@ html, body {
       .forEach(el => observer.observe(el));
   </script>
 
-     <script>
-    // Submenu data
-     const submenus = {
-      home: [
-        { text: "Living Room Lighting", link: "livingroom-lighting.html" },
-        { text: "Kitchen Lighting", link: "kitchen-lighting.html" },
-        { text: "Bedroom Lighting", link: "bedroom-lighting.html" },
-        { text: "Bathroom Lighting", link: "bathroom-lighting.html" },
-        { text: "Entrance Lighting", link: "entrance-lighting.html" }
-      ],
-      industrial: [
-        { text: "Factory Lighting", link: "factorylighting.html" },
-        { text: "Warehouse Lighting", link: "warehouselighting.html" },
-        { text: "Workshop Lighting", link: "workshoplighting.html" },
-        { text: "Cold Storage Lighting", link: "coldstoragelighting.html" },
-       
-        { text: "Parking & Utility Lighting", link: "parkingutilitylighting.html" }
-     
-      ],
-      commercial: [
-        { text: "Office", link: "office-lighting.html" },
-        { text: "Retail & Showroom Lighting", link: "retail-showroom-lighting.html" },
-        { text: "Healthcare Lighting", link: "healthcare-lighting.html" },
-        { text: "Educational Lighting", link: "education-lighting.html" },
-        { text: "Entertainment & Theatres", link: "entertainments-and-theaters-lighting.html" },
-        { text: "Airport & Transport Hubs", link: "airport-transport-lighting.html" },
-        { text: "Hotel Lighting", link: "hotel-lighting.html" }
-      ],
-      outdoor: [
-        { text: "Garden & Landscape", link: "gardenandlandscapelighting.html" },
-        { text: "Facade & Architectural", link: "facadeandarchitecturallighting.html" },
-        { text: "Outdoor Home Lighting", link: "outdoorhomelighting.html" },
-        { text: "Parking Lot Lighting", link: "parkinglotlighting.html" },
-        { text: "Campus & Institutional", link: "campusandinstitutionallighting.html" },
-        { text: "Resort & Hospitality", link: "resortandhospitalitylighting.html" },
-        { text: "Security & Flood Lighting", link: "securityandfloodlighting.html" },
-        { text: "Sports Ground Lighting", link: "sportsgroundlighting.html" }
-      ]
-    };
-    const mainLinks = document.querySelectorAll(".main-nav a");
-    const submenuContainer = document.getElementById("submenu");
-
-    const header = document.querySelector(".sticky-header"); // your main header
-const segmentsNavbar = document.querySelector(".segments-navbar");
-
-function updateStickyOffset() {
-  const headerHeight = header.offsetHeight;
-  segmentsNavbar.style.top = headerHeight + "px";
+  <script>
+function toggleSegmentsMenu() {
+  document.getElementById("segmentsNav").classList.toggle("show");
 }
-
-window.addEventListener("resize", updateStickyOffset);
-window.addEventListener("load", updateStickyOffset);
+</script>
 
 
-    let activeKey = "home"; // default active
-    let hoverKey = null;    // temporary hover key
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const submenus = {
+    home: [
+      { text: "Kitchen Lighting", link: "kitchen-lighting.html" },
+      { text: "Living Room Lighting", link: "livingroom-lighting.html" },
+      { text: "Bedroom Lighting", link: "bedroom-lighting.html" },
+      { text: "Bathroom Lighting", link: "bathroom-lighting.html" },
+      { text: "Entrance Lighting", link: "entrance-lighting.html" }
+    ],
+    commercial: [
+      { text: "Office", link: "office-lighting.html" },
+      { text: "Retail & Showroom Lighting", link: "retail-showroom-lighting.html" },
+      { text: "Healthcare Lighting", link: "healthcare-lighting.html" },
+      { text: "Educational Lighting", link: "education-lighting.html" },
+      { text: "Entertainment & Theatres", link: "entertainments-and-theaters-lighting.html" },
+      { text: "Airport & Transport Hubs", link: "airport-transport-lighting.html" },
+      { text: "Hotel Lighting", link: "hotel-lighting.html" }
+    ],
+    industrial: [
+      { text: "Factory Lighting", link: "factorylighting.html" },
+      { text: "Warehouse Lighting", link: "warehouselighting.html" },
+      { text: "Workshop Lighting", link: "workshoplighting.html" },
+      { text: "Cold Storage Lighting", link: "coldstoragelighting.html" },
+      { text: "Parking & Utility Lighting", link: "parkingutilitylighting.html" }
+    ],
+    outdoor: [
+      { text: "Garden & Landscape", link: "gardenandlandscapelighting.html" },
+      { text: "Facade & Architectural", link: "facadeandarchitecturallighting.html" },
+      { text: "Outdoor Home Lighting", link: "outdoorhomelighting.html" },
+      { text: "Parking Lot Lighting", link: "parkinglotlighting.html" },
+      { text: "Campus & Institutional Lighting", link: "campusandinstitutionallighting.html" },
+      { text: "Resort & Hospitality", link: "resortandhospitalitylighting.html" },
+      { text: "Street & Security Lighting", link: "securityandfloodlighting.html" },
+      { text: "Sports Ground Lighting", link: "sportsgroundlighting.html" }
+    ]
+  };
 
-    // Function to render submenu
-    function renderSubmenu(items) {
-      submenuContainer.innerHTML = "";
-      if (!items) {
-        submenuContainer.style.display = "none";
-        return;
-      }
-      items.forEach(item => {
-        const a = document.createElement("a");
-        a.href = item.link;
-        a.textContent = item.text;
-        submenuContainer.appendChild(a);
-      });
-      submenuContainer.style.display = "flex";
+  const mainLinks = document.querySelectorAll("#segmentsNav a");
+  const submenuContainer = document.getElementById("submenu");
+  const currentPage = window.location.pathname.split("/").pop();
+
+  let activeKey = "home";      // Active main menu
+  let activeSubLink = currentPage || "livingroom-lighting.html";  // Active submenu
+
+  function renderSubmenu(key) {
+    submenuContainer.innerHTML = "";
+    if (!submenus[key]) {
+      submenuContainer.style.display = "none";
+      return;
     }
 
-    // Show default (active) submenu
-    renderSubmenu(submenus[activeKey]);
+    submenus[key].forEach(item => {
+      const a = document.createElement("a");
+      a.href = item.link;
+      a.textContent = item.text;
 
-    // Hover effect
-    mainLinks.forEach(link => {
-      const key = link.dataset.submenu;
+      // Highlight active submenu
+      if (item.link === activeSubLink) a.classList.add("active");
 
-      link.addEventListener("mouseenter", () => {
-        if (submenus[key]) {
-          hoverKey = key;
-          renderSubmenu(submenus[key]);
-        }
+      // Click submenu → navigate
+      a.addEventListener("click", e => {
+        activeSubLink = item.link;
+        renderSubmenu(activeKey);
+        window.location.href = item.link;
       });
 
-      link.addEventListener("mouseleave", () => {
-        // If submenu itself is not hovered, restore active
-        setTimeout(() => {
-          if (!submenuContainer.matches(":hover")) {
-            hoverKey = null;
-            renderSubmenu(submenus[activeKey]);
-          }
-        }, 100);
-      });
-
-      // Click → set permanent active
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        mainLinks.forEach(l => l.classList.remove("active"));
-        link.classList.add("active");
-        activeKey = key;
-        hoverKey = null;
-        renderSubmenu(submenus[activeKey]);
-      });
+      submenuContainer.appendChild(a);
     });
 
-    // When leaving submenu → restore active
-    submenuContainer.addEventListener("mouseleave", () => {
-      hoverKey = null;
-      renderSubmenu(submenus[activeKey]);
+    submenuContainer.style.display = "flex";
+  }
+
+  /* INITIAL LOAD */
+  renderSubmenu(activeKey);
+
+  mainLinks.forEach(link => {
+    const key = link.dataset.submenu;
+    const navigateTo = link.dataset.link;
+
+    // Hover → show submenu temporarily
+    link.addEventListener("mouseenter", () => {
+      if (submenus[key]) renderSubmenu(key);
     });
 
-    // Mobile menu toggle
-    function toggleMenu() {
-      document.getElementById("mainNav").classList.toggle("show");
-    }
-  </script>
+    // Click → set main menu active and navigate
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      mainLinks.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
+      activeKey = key;
+
+      // Reset submenu highlight to first item if home
+      if (key === "home") activeSubLink = "livingroom-lighting.html";
+      else activeSubLink = submenus[key][0].link;
+
+      renderSubmenu(activeKey);
+      if (navigateTo) window.location.href = navigateTo;
+    });
+  });
+
+  // Restore submenu to active main menu on mouse leave
+  submenuContainer.addEventListener("mouseleave", () => {
+    renderSubmenu(activeKey);
+  });
+});
+</script>
 
     </body>
 

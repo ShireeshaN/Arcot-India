@@ -283,7 +283,6 @@ body {
 
 <!-- Header End -->
 
-
   <style>
   
     .section {
@@ -353,6 +352,39 @@ body {
       padding: 10px;
       
     }
+
+ .segments-toggle {
+  display: none;
+  background: transparent !important;
+  border: none;
+  font-size: 26px;
+  color: #000;
+  padding: 6px 10px;
+  width: auto;          /* IMPORTANT */
+}
+
+@media (max-width: 768px) {
+  .menu-toggle,
+  .segments-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .segments-navbar {
+    background: transparent !important;
+    padding: 0 !important;
+  }
+
+  .main-nav {
+    background: #f2f2f2;   /* menu open ayinappudu matrame */
+    width: 100%;
+  }
+}
+
+
  
 
     /* responsive */
@@ -552,9 +584,19 @@ body {
     }
 
     .main-nav a.active {
-      color: #555;
-      text-decoration: underline;
+    background: #000;          /* dark background */
+  color: #fff !important;    /* white text */
+  padding: 6px 14px;
+  /* border-radius: 20px; */
+  text-decoration: none;
+  font-weight: 600;
     }
+
+    /* Hover (non-active) */
+.main-nav a:not(.active):hover {
+  background: #d0d0d0;
+  border-radius: 20px;
+}
 
     /* Submenu container (black bar) */
     .submenu-container {
@@ -579,18 +621,35 @@ body {
       color: #000000;
     }
 
+    /* SUBMENU ACTIVE */
+.submenu-container a.active {
+  color: #000;
+  font-weight: 600;
+  /* text-decoration: underline; */
+}
+
+/* Submenu hover */
+.submenu-container a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+
+
+
     /* Mobile */
-    .menu-toggle {
-      display: none;
-      background: #f2f2f2;
-      padding: 12px 20px;
-      border: none;
-      /* font-weight: bold; */
-      font-size: 16px;
-      cursor: pointer;
-      width: 100%;
-      text-align: left;
-    }
+   .menu-toggle {
+  background: transparent !important;
+  padding: 6px 10px;
+  border: none;
+  font-size: 26px;
+  color: #000;
+  width: auto;          /* IMPORTANT */
+}
+
+
+/* ===== SUBMENU ACTIVE STYLE ===== */
+
 
     @media (max-width: 768px) {
       .main-nav {
@@ -612,29 +671,53 @@ body {
       }
     }
 
-   /* Segments Navbar */
-.segments-navbar {
-  position: sticky;
-  top: 100px;   /* equal to header height */
-  z-index: 999;
+/* ===== SUBMENU ACTIVE STYLE ===== */
+.submenu-container a {
+  position: relative;
+  padding-bottom: 4px;
 }
-    
+
+.submenu-container a.active {
+  color: #000;
+  font-weight: 600;
+}
+
+.submenu-container a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #000;
+}
+ 
     
   </style>
   <div class="segments-navbar">
 
-  <!-- Mobile toggle -->
-  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+<button class="segments-toggle" onclick="toggleSegmentsMenu()">
+  <i class="bi bi-list"></i>
+</button>
 
-  <!-- Main Navigation -->
-  <nav class="main-nav sticky-header" id="mainNav">
-    <a href="#" data-submenu="cases">Cases</a>
-    <a href="#" class="active" data-submenu="home">Lighting for Home</a>
-    <a href="#" data-submenu="commercial">Commercial Lighting</a>
-    <a href="#" data-submenu="industrial">Industrial Lighting</a>
-    <a href="#" data-submenu="outdoor">Outdoor Lighting</a>
-    <a href="#" data-submenu="catalogues">Catalogues</a>
-  </nav>
+<nav class="main-nav sticky-header" id="segmentsNav">
+  <a href="#" class="active" data-submenu="home" data-link="kitchen-lighting.html">
+    Lighting for Home
+  </a>
+
+  <a href="#" data-submenu="commercial" data-link="office-lighting.html">
+    Commercial Lighting
+  </a>
+
+  <a href="#" data-submenu="industrial" data-link="factorylighting.html">
+    Industrial Lighting
+  </a>
+
+  <a href="#" data-submenu="outdoor" data-link="gardenandlandscapelighting.html">
+    Outdoor Lighting
+  </a>
+</nav>
+
 
   <!-- Submenu Bar -->
   <div class="submenu-container" id="submenu"></div>
