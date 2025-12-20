@@ -1317,6 +1317,32 @@ html , body {
   }
 }
 
+@media (max-width: 768px) {
+  .side-submenu {
+    position: static;
+    display: none;
+    border-left: none;
+  }
+
+  .has-submenu:hover .side-submenu {
+    display: block;
+  }
+}
+
+
+/* Force mega menus closed on mobile initially */
+@media (max-width: 768px) {
+  #applicationsMegaMenu,
+  #megaMenu {
+    display: none;
+  }
+
+  #applicationsMegaMenu.show,
+  #megaMenu.show {
+    display: block;
+  }
+}
+
 
 
     /* header */

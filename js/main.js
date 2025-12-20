@@ -340,6 +340,120 @@ function toggleDropdown(event) {
 }
 
 
+//header 
+
+
+
+
+
+/* =========================
+   COMMON CLOSE FUNCTION
+========================= */
+function closeAllMenus() {
+  document.getElementById("megaMenu")?.classList.remove("show");
+  document.getElementById("applicationsMegaMenu")?.classList.remove("show");
+
+  document
+    .querySelectorAll(".navmenu ul li.dropdown")
+    .forEach(d => d.classList.remove("show"));
+}
+
+/* =========================
+   MOBILE NAV TOGGLE
+========================= */
+function toggleMenu() {
+  const nav = document.getElementById("mainNav");
+  nav.classList.toggle("show");
+
+  if (!nav.classList.contains("show")) {
+    closeAllMenus();
+  }
+}
+
+/* =========================
+   SERVICES MEGA MENU
+========================= */
+function toggleMegaMenu(event) {
+  event.preventDefault();
+  event.stopPropagation();
+
+  const menu = document.getElementById("megaMenu");
+  const isOpen = menu.classList.contains("show");
+
+  closeAllMenus();
+
+  if (!isOpen) menu.classList.add("show");
+}
+
+/* =========================
+   APPLICATIONS MEGA MENU
+========================= */
+function toggleApplicationsMenu(event) {
+  event.preventDefault();
+  event.stopPropagation();
+
+  const menu = document.getElementById("applicationsMegaMenu");
+  const isOpen = menu.classList.contains("show");
+
+  closeAllMenus();
+
+  if (!isOpen) menu.classList.add("show");
+}
+
+/* =========================
+   PRODUCTS / R&D DROPDOWNS
+========================= */
+function toggleDropdown(event) {
+  event.preventDefault();
+  event.stopPropagation();
+
+  const parent = event.currentTarget.parentElement;
+  const isOpen = parent.classList.contains("show");
+
+  closeAllMenus();
+
+  if (!isOpen) parent.classList.add("show");
+}
+
+/* =========================
+   CLICK INSIDE DROPDOWN → DON'T CLOSE
+========================= */
+document
+  .querySelectorAll(".dropdown-menu, .mega-menu")
+  .forEach(menu => {
+    menu.addEventListener("click", e => e.stopPropagation());
+  });
+
+/* =========================
+   OUTSIDE CLICK → CLOSE ALL (GLOBAL)
+========================= */
+document.addEventListener("click", function () {
+  closeAllMenus();
+});
+
+/* =========================
+   SWIPER INIT
+========================= */
+document.addEventListener("DOMContentLoaded", function () {
+  new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    speed: 1500,
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+  });
+});
+
+
+
+
+
+
+
+
 
 
 
