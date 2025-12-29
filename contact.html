@@ -64,7 +64,17 @@
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a></li>
-        <li><a href="solution.html">Solutions</a></li>
+                <li class="dropdown">
+  <a href="#" onclick="toggleDropdown(event)">Products <i class="bi bi-chevron-down ms-1"></i></a>
+  <ul class="dropdown-menu">
+    <li><a href="#">Energy Generation</a></li>
+    <li><a href="#">Power</a></li>
+    <li><a href="lighting-products.html">Lighting</a></li>
+    <li><a href="#">Automation</a></li>
+    
+  </ul>
+</li>
+       
 <li class="dropdown">
   <a href="#" onclick="toggleDropdown(event)">R&D <i class="bi bi-chevron-down ms-1"></i></a>
   <ul class="dropdown-menu">
@@ -76,12 +86,152 @@
   </ul>
 </li>
 
-        <li><a href="applications.html">Applications</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+ <li><a href="solution.html">Solutions</a></li>
+
+        <li>
+  <a href="#" onclick="toggleApplicationsMenu(event)">
+    Applications <i class="bi bi-chevron-down ms-1"></i>
+  </a>
+</li>
+
+        <!-- <li><a href="gallery.html">Gallery</a></li> -->
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </div>
+
+
+  <!-- Applications Mega Menu -->
+<div id="applicationsMegaMenu" class="mega-menu">
+  <div class="row">
+    <div class="underline"></div>
+
+    <div class="service-submenus d-flex flex-wrap">
+
+      <div class="service-group">
+        <h6>Energy</h6>
+        <ul>
+          <li><a href="#">Solar</a></li>
+          <li><a href="#">Wind</a></li>
+          <li><a href="#">Biomass</a></li>
+          <li><a href="#">Hydel </a></li>
+        </ul>
+      </div>
+
+      <div class="service-group">
+        <h6>Power</h6>
+        <ul>
+          <li><a href="#">Transimission</a></li>
+          <li><a href="#">Distribution</a></li>
+          <li><a href="#">HT and LT Panels</a></li>
+          <li><a href="#">Control Panels</a></li>
+        </ul>
+      </div>
+
+<div class="service-group">
+  <h6><a href="lighting.html">Lighting</a></h6>
+  <ul class="submenu-parent">
+
+    <!-- Residential -->
+    <li class="has-submenu">
+      <a href="#.html">
+        Residential <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="kitchen-lighting.html">Kitchen </a></li>
+        <li><a href="livingroom-lighting.html">Living Room</a></li>
+        <li><a href="bedroom-lighting.html">Bedroom</a></li>
+        <li><a href="bathroom-lighting.html">Bathroom</a></li>
+        <li><a href="entrance-lighting.html">Entrance Lighting</a></li>
+      </ul>
+    </li>
+
+    <!-- Commercial -->
+    <li class="has-submenu">
+      <a href="#">
+        Commercial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="office-lighting.html">Office</a></li>
+        <li><a href="retail-showroom-lighting.html">Retail & Showroom Lighting</a></li>
+        <li><a href="healthcare-lighting.html">Healthcare Lighting</a></li>
+        <li><a href="education-lighting.html">Educational Lighting</a></li>
+        <li><a href="entertainments-and-theaters-lighting.html">Entertainment & Theatres</a></li>
+        <li><a href="airport-transport-lighting.html">Airport & Transport Hubs</a></li>
+        <li><a href="hotel-lighting.html">Hotel Lighting</a></li>
+      </ul>
+    </li>
+
+
+        <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Industrial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="factorylighting.html">Factory Lighting</a></li>
+        <li><a href="warehouselighting.html">WarehouseLighting</a></li>
+        <li><a href="workshoplighting.html">Workshop Lighting</a></li>
+        <li><a href="coldstoragelighting.html">Cold Storage Lighting</a></li>
+        <li><a href="parkingutilitylighting.html">Parking & Utility Lighting</a></li>
+        
+      </ul>
+    </li>
+
+
+            <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Outdoor Lighting <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="gardenandlandscapelighting.html">Garden & Landscape Lighting</a></li>
+        <li><a href="facadeandarchitecturallighting.html">Facade & Architectural Lighting</a></li>
+        <li><a href="outdoorhomelighting.html">Outdoor Home Lighting</a></li>
+        <li><a href="parkinglotlighting.html">Parking Lot Lighting</a></li>
+        <li><a href="campusandinstitutionallighting.html">Campus & Institutional Lighting</a></li>
+        <li><a href="resortandhospitalitylighting.html">Resort & Hospitality</a></li>
+        <li><a href="securityandfloodlighting.html">Street and Security Lighting</a></li>
+        <li><a href="sportsgroundlighting.html">Sports Ground Lighting</a></li>
+        
+      </ul>
+    </li>
+
+   
+
+  </ul>
+</div>
+
+      <div class="service-group">
+        <h6>Automation</h6>
+        <ul>
+          <li><a href="#">Residential</a></li>
+          <li><a href="#">Commercial</a></li>
+          <li><a href="#">Industrial</a></li>
+          <li><a href="#">Hospital</a></li>
+          <li><a href="#">Hotel</a></li>
+        </ul>
+      </div>
+
+       <div class="service-group">
+        <h6>R&D</h6>
+        <ul>
+          <li><a href="#">Smartpole</a></li>
+          <li><a href="#">Smart Bollard</a></li>
+          <li><a href="#">Smart Conference Table</a></li>
+          <li><a href="#">Smart Bar Counter</a></li>
+          <li><a href="#">Smart Window leaf AC</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
   <!-- Mega Menu -->
   <div id="megaMenu" class="mega-menu">
@@ -107,19 +257,84 @@
             <li><a href="#">Panel Boards</a></li>
           </ul>
         </div>
-        <div class="service-group">
-          <h6>Lighting</h6>
-          <ul>
-            <li><a href="residential-lighting.html">Residential</a></li>
-            <li><a href="facade-lighting.html">Facade</a></li>
-            <li><a href="commercial-lighting.html">Commercial</a></li>
-            <li><a href="industrial-lighting.html">Industrial</a></li>
-            <li><a href="#">Street</a></li>
-            <li><a href="#">Park</a></li>
-            <li><a href="#">Stadium</a></li>
-            <li><a href="#">Hospital</a></li>
-          </ul>
-        </div>
+<div class="service-group">
+  <h6><a href="lighting.html">Lighting</a></h6>
+  <ul class="submenu-parent">
+
+    <!-- Residential -->
+    <li class="has-submenu">
+      <a href="#">
+        Residential <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="kitchen-lighting.html">Kitchen </a></li>
+        <li><a href="livingroom-lighting.html">Living Room</a></li>
+        <li><a href="bedroom-lighting.html">Bedroom</a></li>
+        <li><a href="bathroom-lighting.html">Bathroom</a></li>
+        <li><a href="entrance-lighting.html">Entrance Lighting</a></li>
+      </ul>
+    </li>
+
+    <!-- Commercial -->
+    <li class="has-submenu">
+      <a href="#">
+        Commercial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="office-lighting.html">Office</a></li>
+        <li><a href="retail-showroom-lighting.html">Retail & Showroom Lighting</a></li>
+        <li><a href="healthcare-lighting.html">Healthcare Lighting</a></li>
+        <li><a href="education-lighting.html">Educational Lighting</a></li>
+        <li><a href="entertainments-and-theaters-lighting.html">Entertainment & Theatres</a></li>
+        <li><a href="airport-transport-lighting.html">Airport & Transport Hubs</a></li>
+        <li><a href="hotel-lighting.html">Hotel Lighting</a></li>
+      </ul>
+    </li>
+
+
+        <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Industrial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="factorylighting.html">Factory Lighting</a></li>
+        <li><a href="warehouselighting.html">WarehouseLighting</a></li>
+        <li><a href="workshoplighting.html">Workshop Lighting</a></li>
+        <li><a href="coldstoragelighting.html">Cold Storage Lighting</a></li>
+        <li><a href="parkingutilitylighting.html">Parking & Utility Lighting</a></li>
+        
+      </ul>
+    </li>
+
+
+            <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Outdoor Lighting <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="gardenandlandscapelighting.html">Garden & Landscape Lighting</a></li>
+        <li><a href="facadeandarchitecturallighting.html">Facade & Architectural Lighting</a></li>
+        <li><a href="outdoorhomelighting.html">Outdoor Home Lighting</a></li>
+        <li><a href="parkinglotlighting.html">Parking Lot Lighting</a></li>
+        <li><a href="campusandinstitutionallighting.html">Campus & Institutional Lighting</a></li>
+        <li><a href="resortandhospitalitylighting.html">Resort & Hospitality</a></li>
+        <li><a href="securityandfloodlighting.html">Street and Security Lighting</a></li>
+        <li><a href="sportsgroundlighting.html">Sports Ground Lighting</a></li>
+        
+      </ul>
+    </li>
+
+   
+
+  </ul>
+</div>
+
         <div class="service-group">
           <h6>Automation</h6>
           <ul>
@@ -127,7 +342,7 @@
             <li><a href="#">Commercial</a></li>
             <li><a href="#">Industrial</a></li>
             <li><a href="#">Hospital</a></li>
-            <li><a href="#">IoT Based Automation</a></li>
+            <!-- <li><a href="#">IoT Based Automation</a></li> -->
             <li><a href="#">Hotel</a></li>
           </ul>
         </div>
@@ -164,7 +379,7 @@
       color: white;
     }
     .contact .form-control {
-      background-color: #1a1a1a;
+      background-color: #fff;
       color: white;
       border: none;
     }
@@ -310,7 +525,7 @@
               <div class="col-12">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="privacyCheck">
-                  <label class="form-check-label" for="privacyCheck">I agree with the site privacy policy</label>
+                  <label class="form-check-label text-white" for="privacyCheck">I agree with the site privacy policy</label>
                 </div>
               </div>
               <div class="col-12">
@@ -380,7 +595,7 @@
       <div class="col-md-6 col-lg-6 col-xl-3">
         <div class="tricky-footer-item d-flex flex-column">
           <h4 class="text-white mb-4">Contact Info</h4>
-          <a href="#"><i class="fa fa-map-marker-alt text-secondary me-2"></i> Apurupa Towers, Road No:36, Jubilee Hills, Hyderabad, Telangana-500033</a>
+          <a href="#"><i class="fa fa-map-marker-alt text-secondary me-2"></i>  Plot No 44, Kavuri Hills, Madhapur, Hyderabad, Telangana-500033</a>
           <a href="mailto:info@arcotindia.com"><i class="fas fa-envelope text-secondary me-2"></i> info@arcotindia.com</a>
           <a href="tel:+919848189899"><i class="fas fa-phone text-secondary me-2"></i> +91 98481 89899</a>
         </div>
