@@ -1343,6 +1343,68 @@ html , body {
   }
 }
 
+/* ===== MOBILE MENU ALIGNMENT FIX ===== */
+@media (max-width: 768px) {
+
+  .navmenu {
+    width: 100%;
+    background: #000;
+  }
+
+  .navmenu.show {
+    display: block;
+  }
+
+  .navmenu ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;   /* 🔥 key fix */
+    padding: 0;
+    margin: 0;
+  }
+
+  .navmenu ul li {
+    width: 100%;
+  }
+
+  .navmenu ul li a {
+    width: 100%;
+    display: block;
+    padding: 14px 20px;       /* equal spacing */
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-align: left;         /* 🔥 left alignment */
+    border-bottom: 1px solid #111;
+  }
+
+  /* Dropdown + Mega trigger arrows stay right */
+  .navmenu ul li a i {
+    float: right;
+  }
+
+  /* Dropdown menu mobile alignment */
+  .navmenu ul li .dropdown-menu {
+    width: 100%;
+    background: #050505;
+  }
+
+  .navmenu ul li .dropdown-menu li a {
+    padding-left: 35px;       /* visual hierarchy */
+    font-size: 11px;
+  }
+
+  /* Applications + Services Mega menu */
+  .mega-menu {
+    width: 100%;
+    padding: 15px 20px;
+  }
+
+  .service-group h6 {
+    margin-top: 15px;
+  }
+
+}
 
 
     /* header */
