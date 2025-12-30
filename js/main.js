@@ -446,6 +446,23 @@ document.addEventListener("DOMContentLoaded", function () {
     fadeEffect: { crossFade: true },
   });
 });
+function toggleMenu() {
+  const nav = document.getElementById("mainNav");
+  const menuBtn = document.getElementById("menuBtn");
+  const icon = menuBtn.querySelector("i");
+
+  nav.classList.toggle("show");
+
+  // Toggle icon
+  if (nav.classList.contains("show")) {
+    icon.classList.remove("bi-list"); // remove hamburger
+    icon.classList.add("bi-x");       // add close icon
+  } else {
+    icon.classList.remove("bi-x");    // remove close
+    icon.classList.add("bi-list");    // add hamburger
+    closeAllMenus();                  // close all submenus
+  }
+}
 
 
 
