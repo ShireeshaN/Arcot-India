@@ -1771,6 +1771,14 @@ goNext();
         height: 60px;
       }
     }
+    /* Mobile view: 2 products per row */
+@media (max-width: 480px) {
+  .lightsegproducts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; /* optional: reduce gap slightly */
+  }
+}
+
   </style>
 
   <div class="lightsegproducts-grid">
@@ -2023,15 +2031,15 @@ goNext();
   </div>
 </div>
 
-<p class="text-end card-link"><a href="lighting-products.html">→ See More Products</a></p>
+<p class=" text-end card-link"><a href="lighting-products.html"><spam class="linkss">→ See More Products</spam></a></p>
 <!-- Lightseg Products Section end -->
 
 <style>
-      .card-link {
-    
-    
-    text-decoration: none;
-    color: inherit;
+
+.linkss{
+ color:#444 !important;
+ text-decoration: none !important;
+padding-right: 20px;
 }
 </style>
 
