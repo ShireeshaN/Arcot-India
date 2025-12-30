@@ -2043,85 +2043,85 @@ padding-right: 20px;
 }
 </style>
 
+
+
 <!-- ⚡ r&d SECTION (Integrated & Premium Layout) -->
+<!-- ⚡ R&D SECTION -->
 <section class="lighting-premium">
-  <div class="lighting-header" data-aos="fade-up">
+
+  <!-- Header -->
+  <div class="lighting-header">
     <h2>Research & Development</h2>
-    <p>At Arcot India, innovation isn’t a department — it’s our DNA.
-          <!-- Our R&D division stands at the crossroads of technology, design, and sustainability, redefining how cities think, connect, and evolve. -->
-          </p>
+    <p>At Arcot India, innovation isn’t a department — it’s our DNA.</p>
   </div>
 
+  <!-- Slider -->
   <div class="lighting-slider">
+
     <!-- Slides -->
-    <div class="lighting-slide active" style="background-image:url('img/randd/1.png')"></div>
-    <div class="lighting-slide" style="background-image:url('img/randd/2.png')"></div>
-    <div class="lighting-slide" style="background-image:url('img/randd/3.png')"></div>
-    <div class="lighting-slide" style="background-image:url('img/randd/4.png')"></div>
-    <div class="lighting-slide" style="background-image:url('img/randd/4.png')"></div>
-    <!-- <div class="lighting-slide" style="background-image:url('img/lighting/stadium_banner_1920x1080 (1).jpg')"></div>
-    <div class="lighting-slide" style="background-image:url('img/lighting/officelighting.png')"></div>
-    <div class="lighting-slide" style="background-image:url('img/lighting/outdoorlighting.png')"></div> -->
+    <div class="lighting-slide active"
+         style="background-image:url('img/randd/1.png')"
+         data-desktop="img/randd/1.png"
+         data-mobile="img/randd/7.png"></div>
+
+    <div class="lighting-slide"
+         data-desktop="img/randd/2.png"
+         data-mobile="img/randd/8.png"></div>
+
+    <div class="lighting-slide"
+         data-desktop="img/randd/3.png"
+         data-mobile="img/randd/9.png"></div>
+
+    <div class="lighting-slide"
+         data-desktop="img/randd/4.png"
+         data-mobile="img/randd/10.png"></div>
+
+    <div class="lighting-slide"
+         data-desktop="img/randd/4.png"
+         data-mobile="img/randd/10.png"></div>
 
     <!-- Content -->
     <div class="lighting-content">
       <h1 id="lighting-title">Smart Pole</h1>
       <h3 id="lighting-subtitle">Where Connectivity Meets Design</h3>
-      <div class="lighting-dots-wrap">
-        <div class="lighting-dots">
-          <div class="lighting-dot active" data-index="0"></div>
-          <div class="lighting-dot" data-index="1"></div>
-          <div class="lighting-dot" data-index="2"></div>
-          <div class="lighting-dot" data-index="3"></div>
-          <div class="lighting-dot" data-index="4"></div>
-          <!--<div class="lighting-dot" data-index="5"></div>
-           <div class="lighting-dot" data-index="6"></div>
-          <div class="lighting-dot" data-index="7"></div> -->
-        </div>
+
+      <div class="lighting-dots">
+        <div class="lighting-dot active" data-index="0"></div>
+        <div class="lighting-dot" data-index="1"></div>
+        <div class="lighting-dot" data-index="2"></div>
+        <div class="lighting-dot" data-index="3"></div>
+        <div class="lighting-dot" data-index="4"></div>
       </div>
     </div>
+
   </div>
-
-
 </section>
 
+<!-- ================= CSS ================= -->
 <style>
-/* === LIGHTING SECTION === */
 .lighting-premium {
-  position: relative;
-  background: linear-gradient(180deg, #fff 0%, #fff 50%, #fff 100%);
-
   font-family: "Poppins", sans-serif;
   overflow: hidden;
-  color: #fff;
 }
 
-/* --- Heading --- */
+/* Header */
 .lighting-header {
-  padding-top: 20px; /* aligned like Power section */
-  text-align: left;
-  position: relative;
-  z-index: 5;
   margin-left: 20px;
-  font-family: "Roboto" , sans-serif;
+  padding-top: 20px;
 }
 
 .lighting-header h2 {
   font-size: 3rem;
-  /* font-weight: 600; */
   color: #111;
-  margin-bottom: 10px;
-  letter-spacing: 0.5px;
 }
 
 .lighting-header p {
   font-size: 1.1rem;
   color: #444;
   max-width: 480px;
-  line-height: 1.6;
 }
 
-/* --- Slider --- */
+/* Slider */
 .lighting-slider {
   position: relative;
   width: 100%;
@@ -2132,11 +2132,9 @@ padding-right: 20px;
 .lighting-slide {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  opacity: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0;
   transition: opacity 1.2s ease-in-out;
 }
 
@@ -2150,19 +2148,25 @@ padding-right: 20px;
   to { transform: scale(1.1); }
 }
 
-/* --- Overlay & Content --- */
+/* Overlay */
 .lighting-slider::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.85) 0%,
+    rgba(0,0,0,0.5) 40%,
+    rgba(0,0,0,0.1) 100%
+  );
   z-index: 1;
 }
 
+/* Content */
 .lighting-content {
   position: absolute;
-  top: 50%;
   left: 4%;
+  top: 50%;
   transform: translateY(-50%);
   z-index: 2;
   color: #fff;
@@ -2171,29 +2175,26 @@ padding-right: 20px;
 .lighting-content h1 {
   font-size: 3rem;
   font-weight: 400;
-  margin-bottom: 10px;
 }
 
 .lighting-content h3 {
   font-size: 1.2rem;
-  font-weight: 300;
-  margin-bottom: 30px;
   color: #ddd;
+  margin-bottom: 30px;
 }
 
-/* --- Dots --- */
+/* Dots */
 .lighting-dots {
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }
 
 .lighting-dot {
   width: 10px;
   height: 10px;
-  background: rgba(255,255,255,0.5);
   border-radius: 50%;
+  background: rgba(255,255,255,0.5);
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .lighting-dot.active {
@@ -2201,108 +2202,110 @@ padding-right: 20px;
   transform: scale(1.3);
 }
 
-/* --- Icons --- */
-.lighting-icons {
-  position: absolute;
-  bottom: 40px;
-  left: 4%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  z-index: 3;
-}
+/* MOBILE (4:5 IMAGES) */
+@media (max-width: 768px) {
 
-.lighting-icon {
-  padding: 10px 20px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: #fff;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.lighting-icon.active {
-  background: #000;
-  border-color: #000;
-}
-
-.lighting-icon:hover {
-  transform: scale(1.05);
-}
-
-/* --- Responsive --- */
-@media (max-width: 992px) {
-  .lighting-header { padding: 60px 20px 30px; }
-  .lighting-content h1 { font-size: 2.2rem; }
-  .lighting-icons { left: 20px; bottom: 25px; }
   .lighting-slider {
+    height: auto;
+    aspect-ratio: 4 / 5;   /* 🔥 exact 4:5 */
+  }
 
-  height: 50vh;
-  overflow: hidden;
+  .lighting-slide {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .lighting-content {
+    left: 6%;
+    bottom: 8%;
+    top: auto;
+    transform: none;
+  }
+
+  .lighting-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .lighting-content h3 {
+    font-size: 1rem;
+  }
+
+  .lighting-header h2 {
+    font-size: 2rem;
+  }
 }
-}
+
 </style>
 
+<!-- ================= JS (SAFE) ================= -->
 <script>
-const lightingSlides = document.querySelectorAll('.lighting-slide');
-const lightingDots = document.querySelectorAll('.lighting-dot');
-const lightingIcons = document.querySelectorAll('.lighting-icon');
-const lightingTitle = document.getElementById('lighting-title');
-const lightingSubtitle = document.getElementById('lighting-subtitle');
+document.addEventListener("DOMContentLoaded", function () {
 
-const lightingTitles = [
-  "Smart Pole","Smart Bollard","Smart Conference Table","Smart Bar Counter",
-  "Smart Window Leaf AC"
-];
-const lightingSubtitles = [
-  "Where Connectivity Meets Design","Grounded in Design. Driven by Data",
-  "Where Collaboration Meets Intelligence","Where Design Pours Innovation",
-  "Reinventing Air. Intelligently · Aesthetic",
-  "Trendy · Attractive · Efficient"
-  // "Productive · Comfortable · Bright","Durable · Weatherproof · Safe"
-];
+  const slides = document.querySelectorAll('.lighting-slide');
+  const dots = document.querySelectorAll('.lighting-dot');
+  const title = document.getElementById('lighting-title');
+  const subtitle = document.getElementById('lighting-subtitle');
 
-let currentLighting = 0, lightingTimer;
+  if (!slides.length) return;
 
-function showLighting(i){
-  lightingSlides.forEach((s,idx)=>s.classList.toggle('active',idx===i));
-  lightingDots.forEach((d,idx)=>d.classList.toggle('active',idx===i));
-  lightingIcons.forEach((ic,idx)=>ic.classList.toggle('active',idx===i));
-  lightingTitle.textContent = lightingTitles[i];
-  lightingSubtitle.textContent = lightingSubtitles[i];
-  currentLighting=i;
-}
+  const titles = [
+    "Smart Pole",
+    "Smart Bollard",
+    "Smart Conference Table",
+    "Smart Bar Counter",
+    "Smart Window Leaf AC"
+  ];
 
-function nextLighting(){
-  currentLighting = (currentLighting + 1) % lightingSlides.length;
-  showLighting(currentLighting);
-}
+  const subtitles = [
+    "Where Connectivity Meets Design",
+    "Grounded in Design · Driven by Data",
+    "Where Collaboration Meets Intelligence",
+    "Where Design Pours Innovation",
+    "Reinventing Air · Intelligently Aesthetic"
+  ];
 
-function startLightingAuto(){
-  lightingTimer=setInterval(nextLighting,5000);
-}
+  let current = 0;
+  let timer;
 
-lightingDots.forEach(d=>{
-  d.addEventListener('click',()=>{
-    clearInterval(lightingTimer);
-    showLighting(+d.dataset.index);
-    startLightingAuto();
+  function setImages() {
+    const mobile = window.innerWidth <= 768;
+    slides.forEach(slide => {
+      const img = mobile ? slide.dataset.mobile : slide.dataset.desktop;
+      if (img) slide.style.backgroundImage = `url('${img}')`;
+    });
+  }
+
+  function showSlide(i) {
+    slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+    dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+    if (title) title.textContent = titles[i] || "";
+    if (subtitle) subtitle.textContent = subtitles[i] || "";
+    current = i;
+  }
+
+  function startAuto() {
+    timer = setInterval(() => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }, 5000);
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      clearInterval(timer);
+      showSlide(+dot.dataset.index);
+      startAuto();
+    });
   });
-});
 
-lightingIcons.forEach(ic=>{
-  ic.addEventListener('click',()=>{
-    clearInterval(lightingTimer);
-    showLighting(+ic.dataset.index);
-    startLightingAuto();
-  });
-});
+  setImages();
+  showSlide(0);
+  startAuto();
 
-showLighting(0);
-startLightingAuto();
+  window.addEventListener('resize', setImages);
+});
 </script>
+
 
 
 
@@ -2664,7 +2667,7 @@ document.addEventListener("DOMContentLoaded", function() {
 .applica-slider-container {
   position: relative;
   width: 100%;
-  height: 800px;
+  height: 650px;
   overflow: hidden;
   margin-top: 20px;
 }
@@ -2736,44 +2739,55 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* 📱 Mobile */
 @media(max-width:768px){
+
   .applications-head {
     margin-left: 5%;
     text-align: left;
   }
+
   .applications-title {
     font-size: 28px;
   }
+
   .applications-subtitle {
     font-size: 14px;
     max-width: 90%;
   }
+
   .applica-slider-container {
     height: 300px;
   }
+
+  /* 🔥 MOBILE RIGHT SIDE CONTENT */
   .applica-content {
-    top: 25%;
-    left: 5%;
+    top: 30%;
     right: 5%;
-    max-width: 90%;
-    text-align: center;
+    left: auto;
+    max-width: 85%;
+    text-align: right;
   }
+
   .applica-content h2 {
     font-size: 22px;
   }
+
   .applica-content p {
     font-size: 14px;
   }
+
   .applica-arrows {
     bottom: 10px;
-    right: 50%;
-    transform: translateX(50%);
+    right: 20px;
+    transform: none;
   }
+
   .applica-arrow-btn {
     width: 35px;
     height: 35px;
     font-size: 16px;
   }
 }
+
 </style>
 <!-- 🌐 APPLICATIONS SECTION end -->
 
