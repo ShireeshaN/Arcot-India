@@ -2309,219 +2309,201 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-<!-- automation-showcase -->
-<section class="automation-showcase">
-  <style>
-    * { box-sizing: border-box; margin:0; padding:0; }
-    .automation-showcase { font-family: "Poppins", sans-serif; 
-    /* background: #f5f5f5;  */
-    overflow-x: hidden; }
+<section class="auto-pro">
 
-    .automation-hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      overflow: hidden;
-      background-color: #fff;
-    }
-
-    .automation-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      z-index: 1;
-    }
-
-    .automation-bg.shrink {
-      animation: bgShrink 2s ease forwards;
-    }
-
-    @keyframes bgShrink {
-      0% { width: 100%; }
-      100% { width: 55%; }
-    }
-
-    .automation-textbox {
-      position: relative;
-      width: 40%;
-      margin-left: auto;
-      padding: 5rem 3rem;
-      opacity: 0;
-      transform: translateX(40px);
-      z-index: 2;
-    }
-
-    .automation-textbox.active {
-      animation: textAppear 0s ease forwards;
-    }
-
-    @keyframes textAppear {
-      0% { opacity: 0; transform: translateX(100px); }
-      100% { opacity: 1; transform: translateX(0); }
-    }
-
-    .automation-textbox h2 {
-      font-weight: 500;
-      font-size: 2rem;
-      line-height: 1.4;
-      color: #222;
-      letter-spacing: 1px;
-      margin-bottom: 1.2rem;
-      text-transform: uppercase;
-    }
-
-    .automation-textbox p {
-      color: #666;
-      font-size: 15px;
-      line-height: 1.8;
-      margin-bottom: 2rem;
-    }
-
-    .btn-automation {
-      background-color: #444;
-      color: #fff;
-      padding: 10px 24px;
-      border-radius: 0;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 14px;
-      transition: 0.3s;
-    }
-
-    .btn-automation:hover { background-color: #000; }
-
-    .automation-next {
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
-      font-size: 2rem;
-      color: #000;
-      background: transparent;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 3;
-      user-select: none;
-    }
-
-    /* Heading Section */
-.automation-head {
-  padding-top: 20px;
-  text-align: left;
-  margin-left: 20px;
+<style>
+.auto-pro{
   font-family: "Poppins", sans-serif;
-  background-color: #fff;
+  background:#fff;
+  padding:80px 0;
 }
 
-.automation-title {
-  font-size: 2.8rem;
-  /* font-weight: 600; */
-  color: #111;
-  margin-bottom: 10px;
-  position: relative;
+.auto-head{
+  max-width:1200px;
+  margin:0 auto 50px;
+  padding:0 20px;
 }
 
-/* .automation-title::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 60px;
-  height: 2px;
-  background: #c7a66b;
-  border-radius: 2px;
-} */
-
-.automation-subtitle {
-  font-size: 1.05rem;
-  color: #444;
-  max-width: 500px;
-  line-height: 1.6;
-  margin-top: 18px;
+.auto-head h2{
+  font-size:42px;
+  font-weight:500;
+  color:#111;
 }
 
-    @media (max-width: 992px) {
-      .automation-hero { flex-direction: column; height: auto; }
-      .automation-bg { width: 45%; height: 70vw; }
-      .automation-textbox { width: 50%; padding: 2rem 1rem; opacity: 1; transform: none; animation: none; }
-      .automation-textbox h2 { font-size: 1rem; }
-      .automation-next { display: none; }
-    }
-  </style>
+.auto-head p{
+  margin-top:10px;
+  max-width:520px;
+  color:#555;
+  line-height:1.6;
+}
 
-    <!-- Heading + Tagline -->
-  <div class="automation-head" data-aos="fade-up">
-    <h2 class="automation-title">Automation</h2>
-    <p class="automation-subtitle">
-      Intelligent control systems for smart homes, industries, and commercial spaces.
-    </p>
+/* Slider */
+.auto-slider{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:60px;
+  padding:0 20px;
+}
+
+.auto-image{
+  width:100%;
+  height:420px;
+  background-size:cover;
+  background-position:center;
+ 
+  transition:0.8s ease;
+}
+
+.auto-content{
+  animation:fadeSlide 0.8s ease;
+}
+
+@keyframes fadeSlide{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.auto-content h3{
+  font-size:28px;
+  font-weight:500;
+  color:#111;
+  margin-bottom:15px;
+}
+
+.auto-content p{
+  color:#666;
+  line-height:1.8;
+  margin-bottom:30px;
+}
+
+.auto-btn{
+  display:inline-block;
+  padding:12px 28px;
+  background:#111;
+  color:#fff;
+  text-transform:uppercase;
+  font-size:14px;
+  letter-spacing:1px;
+  transition:0.3s;
+}
+
+.auto-btn:hover{
+  background:#000;
+}
+
+/* Dots */
+.auto-dots{
+  margin-top:30px;
+  display:flex;
+  gap:10px;
+}
+
+.auto-dots span{
+  width:10px;
+  height:10px;
+  background:#ccc;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.auto-dots span.active{
+  background:#111;
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .auto-slider{
+    grid-template-columns:1fr;
+  }
+  .auto-image{
+    height:280px;
+  }
+  .auto-head h2{
+    font-size:32px;
+  }
+}
+</style>
+
+<div class="auto-head">
+  <h2>Automation</h2>
+  <p>Intelligent control systems crafted for modern homes, commercial spaces and industries.</p>
+</div>
+
+<div class="auto-slider">
+  <div class="auto-image" id="autoImage"></div>
+
+  <div class="auto-content" id="autoContent">
+    <h3 id="autoTitle"></h3>
+    <p id="autoText"></p>
+    <a href="#" class="auto-btn">Know More</a>
+
+    <div class="auto-dots" id="autoDots"></div>
   </div>
+</div>
 
-  <div class="automation-hero">
-    <div class="automation-bg" id="autoBg"></div>
-    <div class="automation-textbox" id="autoTextbox">
-      <h2 id="autoTitle"></h2>
-      <p id="autoDesc"></p>
-      <button class="btn btn-automation" id="autoBtn">Read More</button>
-    </div>
-    <div class="automation-next" id="autoNext">&#10095;</div>
-  </div>
+<script>
+const autoData = [
+  {
+    img:"img/automation/homeautomation.png",
+    title:"Residential Automation",
+    text:"Smart living solutions that integrate lighting, climate, security and energy for effortless comfort."
+  },
+  {
+    img:"img/automation/commercialautomation.png",
+    title:"Commercial Automation",
+    text:"Advanced automation systems designed to improve efficiency, safety and sustainability in workplaces."
+  },
+  {
+    img:"img/automation/industriesautomation.png",
+    title:"Industrial Automation",
+    text:"Precision-driven automation to streamline operations, reduce downtime and enhance productivity."
+  },
+  {
+    img:"img/automation/hospitalautomation.png",
+    title:"Hospital Automation",
+    text:"Reliable automation for healthcare environments, improving patient care and operational efficiency."
+  },
+  {
+    img:"img/automation/hotelautomation.png",
+    title:"Hotel Automation",
+    text:"Luxury automation that personalizes guest experiences while optimizing energy and operations."
+  }
+];
 
-  <script>
-    const automationSlides = [
-      { image: 'img/automation/homeautomation.png', title: 'Residential Automation', text: 'Elevate your lifestyle with intelligent home control — comfort, security, and energy efficiency at your fingertips.', button: 'Know More' },
-      { image: 'img/automation/commercialautomation.png', title: 'Commercial Automation', text: 'Optimize every corner of your workspace with cutting-edge automation that boosts productivity and sustainability.', button: 'Know More' },
-      { image: 'img/automation/industriesautomation.png', title: 'Industrial Automation', text: 'Automate, analyze, and advance your operations with precision-engineered industrial control systems.', button: 'Know More' },
-      { image: 'img/automation/hospitalautomation.png', title: 'Hospital Automation', text: 'Seamless healthcare automation designed to enhance patient care, streamline workflows, and improve outcomes.', button: 'Know More' },
-      { image: 'img/automation/hotelautomation.png', title: 'Hotel Automation', text: 'Transform guest experiences with smart automation — from lighting to comfort, luxury meets innovation.', button: 'Know More' },
-    ];
+let autoIndex = 0;
+const autoImage = document.getElementById("autoImage");
+const autoTitle = document.getElementById("autoTitle");
+const autoText  = document.getElementById("autoText");
+const autoDots  = document.getElementById("autoDots");
 
-    let autoIndex = 0;
-    const autoBg = document.getElementById('autoBg');
-    const autoTextbox = document.getElementById('autoTextbox');
-    const autoTitle = document.getElementById('autoTitle');
-    const autoDesc = document.getElementById('autoDesc');
-    const autoBtn = document.getElementById('autoBtn');
-    const autoNext = document.getElementById('autoNext');
+function renderAuto(i){
+  autoImage.style.backgroundImage = `url(${autoData[i].img})`;
+  autoTitle.textContent = autoData[i].title;
+  autoText.textContent  = autoData[i].text;
 
-    function showAutomationSlide(index) {
-      autoBg.classList.remove('shrink');
-      autoTextbox.classList.remove('active');
+  document.querySelectorAll(".auto-dots span").forEach(d=>d.classList.remove("active"));
+  autoDots.children[i].classList.add("active");
+}
 
-      autoBg.style.backgroundImage = `url('${automationSlides[index].image}')`;
-      autoTitle.textContent = automationSlides[index].title;
-      autoDesc.textContent = automationSlides[index].text;
-      autoBtn.textContent = automationSlides[index].button;
+autoData.forEach((_,i)=>{
+  const dot = document.createElement("span");
+  dot.onclick = ()=>{ autoIndex=i; renderAuto(i); };
+  autoDots.appendChild(dot);
+});
 
-      setTimeout(() => {
-        autoBg.classList.add('shrink');
-        setTimeout(() => autoTextbox.classList.add('active'), 1000);
-      }, 1000);
-    }
+renderAuto(0);
 
-    function nextAutomationSlide() {
-      autoIndex = (autoIndex + 1) % automationSlides.length;
-      showAutomationSlide(autoIndex);
-    }
+setInterval(()=>{
+  autoIndex = (autoIndex+1)%autoData.length;
+  renderAuto(autoIndex);
+},4000);
+</script>
 
-    window.addEventListener('load', () => showAutomationSlide(autoIndex));
-    setInterval(nextAutomationSlide, 3000);
-    autoNext.addEventListener('click', nextAutomationSlide);
-  </script>
 </section>
-<!-- automation-showcase -->
+
 
 
 
