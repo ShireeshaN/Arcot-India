@@ -28,6 +28,10 @@
   <link rel="preload" href="css/style.css" as="style">
   <link rel="stylesheet" href="css/style.css">
   <link href="css/segments.css" rel="stylesheet">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
 
   <!-- Performance-optimized Libraries -->
   <link rel="stylesheet" href="lib/animate/animate.min.css" media="print" onload="this.media='all'">
@@ -1143,22 +1147,36 @@ goNext();
 
 /* --- Responsive --- */
 @media (max-width: 992px) {
-  .power-header {
-    padding: 60px 20px 30px;
-  }
+
   .power-gallery {
     flex-direction: column;
-    height: 50vh;
+    align-items: flex-start;   /* ⬅️ LEFT side */
+    justify-content: center;
+    height: 60vh;
     padding-left: 20px;
   }
-  .power-menu li {
-    font-size: 1.8rem;
+
+  .power-menu {
+    width: 100%;
+    text-align: left;          /* ⬅️ FORCE LEFT */
+  }
+
+  .power-menu ul {
+    width: 100%;
     text-align: left;
   }
-  .power-menu ul{
+
+  .power-menu li {
+    font-size: 1.6rem;
     text-align: left;
+    transform: none;           /* ⬅️ remove desktop slide effect */
+  }
+
+  .power-menu li.active {
+    transform: translateX(6px); /* ⬅️ small shift only */
   }
 }
+
 </style>
 
 <script>
@@ -1350,7 +1368,7 @@ goNext();
 /* LEFT TEXT COLUMN */
 .lightsmans-left {
   flex: 1;
-  max-width: 30%;
+ 
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -3219,6 +3237,7 @@ ScrollTrigger.create({
 
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 
       </body>
