@@ -981,32 +981,237 @@
   </style>
 
 
-<!-- VISION & MISSION SECTION -->
-<section class="vision-mission-section">
-  <h2 class="vision-heading">VISION & MISSION</h2>
-  <div class="vision-divider"></div>
 
-  <div class="vision-container">
-    <!-- VISION -->
-    <div class="vision-card animate-left">
-      <div class="vision-icon"><i class="fas fa-eye"></i></div>
-      <h4>Our Vision</h4>
-      <p>To be a global leader in engineering innovation, delivering smart, sustainable, and scalable infrastructure solutions that transform industries and empower cities.</p>
+
+<!-- abot start -->
+<div class="ourweare-timeline">
+  <div class="ourweare-timeline-title">OUR COMPANY FOUNDATION</div>
+
+  <div class="ourweare-timeline-track">
+
+    <div class="ourweare-timeline-item">
+      <div class="ourweare-timeline-dot"></div>
+      <div class="ourweare-timeline-content">
+        <div class="ourweare-timeline-heading">Our Vision</div>
+        <div class="ourweare-timeline-date">Future Focused</div>
+        <div class="ourweare-timeline-text">
+          To become a globally trusted industrial solutions company by setting
+          benchmarks in quality, innovation, and sustainable manufacturing.
+        </div>
+      </div>
     </div>
 
-    <!-- MISSION -->
-    <div class="vision-card animate-right">
-      <div class="vision-icon"><i class="fas fa-bullseye"></i></div>
-      <h4>Our Mission</h4>
-      <p>To innovate and deliver integrated solutions in power, energy, lighting, automation, and smart city technologies through continuous R&D and exceptional service excellence.</p>
+    <div class="ourweare-timeline-item">
+      <div class="ourweare-timeline-dot"></div>
+      <div class="ourweare-timeline-content">
+        <div class="ourweare-timeline-heading">Our Mission</div>
+        <div class="ourweare-timeline-date">Driven by Excellence</div>
+        <div class="ourweare-timeline-text">
+          To design and deliver reliable industrial products through advanced
+          engineering, skilled expertise, and a strong commitment to customer
+          satisfaction.
+        </div>
+      </div>
     </div>
+
+    <div class="ourweare-timeline-item">
+      <div class="ourweare-timeline-dot"></div>
+      <div class="ourweare-timeline-content">
+        <div class="ourweare-timeline-heading">Core Values</div>
+        <div class="ourweare-timeline-date">What We Stand For</div>
+        <div class="ourweare-timeline-text">
+          Quality-first approach, continuous innovation, ethical practices,
+          and long-term partnerships form the backbone of Arcot Industries.
+        </div>
+      </div>
+    </div>
+
+    <div class="ourweare-timeline-item">
+      <div class="ourweare-timeline-dot"></div>
+      <div class="ourweare-timeline-content">
+        <div class="ourweare-timeline-heading">Our Commitment</div>
+        <div class="ourweare-timeline-date">Industry Ready</div>
+        <div class="ourweare-timeline-text">
+          We are committed to delivering durable, efficient, and scalable
+          industrial solutions that support growth and operational excellence.
+        </div>
+      </div>
+    </div>
+
   </div>
-</section>
+</div>
+<style>
+ /* ===== OURWEARE TIMELINE ===== */
+.ourweare-timeline {
+  max-width: 1100px;
+  margin: 100px auto;
+  padding: 0 20px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #222;
+}
 
+/* Title */
+.ourweare-timeline-title {
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+}
 
+/* Track */
+.ourweare-timeline-track {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding-bottom: 40px;
+}
 
+/* Line */
+.ourweare-timeline-track::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #bcbcbc;
+}
 
+/* Item */
+.ourweare-timeline-item {
+  width: 22%;
+  position: relative;
+  text-align: left;
+  padding-bottom: 20px;
+  animation: itemHighlight 8s infinite ease-in-out;
+}
 
+/* Dot */
+.ourweare-timeline-dot {
+  width: 10px;
+  height: 10px;
+  background: #000;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  animation: dotHighlight 8s infinite ease-in-out;
+}
+
+/* Content */
+.ourweare-timeline-content {
+  margin-top: 30px;
+}
+
+.ourweare-timeline-heading {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.ourweare-timeline-date {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.ourweare-timeline-text {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* ===== STAGGER TIMING ===== */
+.ourweare-timeline-item:nth-child(1),
+.ourweare-timeline-item:nth-child(1) .ourweare-timeline-dot {
+  animation-delay: 0s;
+}
+
+.ourweare-timeline-item:nth-child(2),
+.ourweare-timeline-item:nth-child(2) .ourweare-timeline-dot {
+  animation-delay: 2s;
+}
+
+.ourweare-timeline-item:nth-child(3),
+.ourweare-timeline-item:nth-child(3) .ourweare-timeline-dot {
+  animation-delay: 4s;
+}
+
+.ourweare-timeline-item:nth-child(4),
+.ourweare-timeline-item:nth-child(4) .ourweare-timeline-dot {
+  animation-delay: 6s;
+}
+
+/* ===== MOBILE VIEW ===== */
+@media (max-width: 768px) {
+  .ourweare-timeline {
+    margin: 80px auto;
+  }
+
+  .ourweare-timeline-track {
+    flex-direction: column;
+    padding-left: 20px;
+  }
+
+  .ourweare-timeline-track::before {
+    left: 6px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    height: 100%;
+  }
+
+  .ourweare-timeline-item {
+    width: 100%;
+    display: flex;
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+
+  .ourweare-timeline-dot {
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+
+  .ourweare-timeline-content {
+    margin-top: 0;
+  }
+}
+
+/* ===== KEYFRAMES ===== */
+@keyframes itemHighlight {
+  0%, 15% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  30%, 45% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  60%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes dotHighlight {
+  0%, 15% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  30%, 45% {
+    transform: scale(1.6);
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  }
+  60%, 100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+
+</style>
+
+<!-- about end -->
 
  <!-- Concept Section -->
 <section class="concept-section section-brand">
