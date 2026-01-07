@@ -497,37 +497,46 @@
         </div>
 
         <div class="col-lg-6">
-          <form>
-            <div class="row g-4">
-              <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Your Name">
-              </div>
-              <div class="col-md-6">
-                <input type="email" class="form-control" placeholder="Your Email">
-              </div>
-              <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Phone">
-              </div>
-              <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Project">
-              </div>
-              <div class="col-12">
-                <input type="text" class="form-control" placeholder="Subject">
-              </div>
-              <div class="col-12">
-                <textarea class="form-control" rows="4" placeholder="Message"></textarea>
-              </div>
-              <div class="col-12">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="privacyCheck">
-                  <label class="form-check-label text-white" for="privacyCheck">I agree with the site privacy policy</label>
-                </div>
-              </div>
-              <div class="col-12">
-                <button class="btn btn-primary w-100 py-3 text-dark">Send Message</button>
-              </div>
-            </div>
-          </form>
+<form 
+  action="https://docs.google.com/forms/d/e/1FAIpQLSetsNH4q3BwVa4EdtQsRd7gy1AuDd5YTYpl42vWx6HwP5q1_w/formResponse"
+  method="POST"
+  target="hidden_iframe"
+  onsubmit="submitted=true;"
+>
+  <div class="row g-4">
+
+    <div class="col-md-6">
+      <input type="text" class="form-control" name="entry.602354670" placeholder="Your Name" required>
+    </div>
+
+    <div class="col-md-6">
+      <input type="email" class="form-control" name="entry.257409999" placeholder="Your Email" required>
+    </div>
+
+    <div class="col-md-6">
+      <input type="text" class="form-control" name="entry.1569657613" placeholder="Phone">
+    </div>
+
+    <div class="col-md-6">
+      <input type="text" class="form-control" name="entry.1023087766" placeholder="Project">
+    </div>
+
+    <div class="col-12">
+      <textarea class="form-control" rows="4" name="entry.848202383" placeholder="Message"></textarea>
+    </div>
+
+    <div class="col-12">
+      <button class="btn btn-primary w-100 py-3 text-dark">
+        Send Message
+      </button>
+    </div>
+
+  </div>
+</form>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+
         </div>
 
         <div class="col-12 mt-5">
@@ -729,6 +738,19 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+
+        <script>
+  var submitted = false;
+</script>
+
+<script>
+  document.querySelector("iframe").onload = function () {
+    if (submitted) {
+      alert("Thank you! Your message has been sent.");
+    }
+  };
+</script>
+
     </body>
 
 </html>
