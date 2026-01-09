@@ -58,317 +58,116 @@
 
 
 
-<!-- HEADER START -->
+  <header class="main-header">
+    <div class="header-wrap position-relative">
+      <a href="index.html"><img src="img/logos.webp" alt="Logo" class="logo" loading="lazy"></a>
+      <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
+      <nav class="navmenu" id="mainNav">
+        <ul class="mb-0">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li>
+            <a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a>
+          </li>
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown(event)">Products <i class="bi bi-chevron-down ms-1"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="smart-pole.html">Energy Generation</a></li>
+              <li><a href="#">Power</a></li>
+              <li><a href="#">Lighting</a></li>
+              <li><a href="#">Automation</a></li>
 
-<header class="main-header">
-  <div class="header-wrap position-relative">
-    <a href="index.html">
-      <img src="img/logos.webp" alt="Logo" class="logo" loading="lazy">
-    </a>
-    <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
-    <nav class="navmenu" id="mainNav">
-      <ul class="mb-0">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a></li>
-                <li class="dropdown">
-  <a href="#" onclick="toggleDropdown(event)">Products <i class="bi bi-chevron-down ms-1"></i></a>
-  <ul class="dropdown-menu">
-    <li><a href="#">Energy Generation</a></li>
-    <li><a href="#">Power</a></li>
-    <li><a href="lighting-products.html">Lighting</a></li>
-    <li><a href="#">Automation</a></li>
-    
-  </ul>
-</li>
-       
-<li class="dropdown">
-  <a href="#" onclick="toggleDropdown(event)">R&D <i class="bi bi-chevron-down ms-1"></i></a>
-  <ul class="dropdown-menu">
-    <li><a href="smart-pole.html">Smart Pole</a></li>
-    <li><a href="#">Smart Bollard</a></li>
-    <li><a href="#">Smart Conference Table</a></li>
-    <li><a href="#">Smart Window Leaf AC</a></li>
-    <li><a href="#">Smart Bar Counter</a></li>
-  </ul>
-</li>
+            </ul>
+          </li>
+          <li><a href="solution.html">Solutions</a></li>
 
- <li><a href="solution.html">Solutions</a></li>
-
-        <li>
-  <a href="#" onclick="toggleApplicationsMenu(event)">
-    Applications <i class="bi bi-chevron-down ms-1"></i>
-  </a>
-</li>
-
-        <!-- <li><a href="gallery.html">Gallery</a></li> -->
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-
-
-  <!-- Applications Mega Menu -->
-<div id="applicationsMegaMenu" class="mega-menu">
-  <div class="row">
-    <div class="underline"></div>
-
-    <div class="service-submenus d-flex flex-wrap">
-
-      <div class="service-group">
-        <h6>Energy</h6>
-        <ul>
-          <li><a href="#">Solar</a></li>
-          <li><a href="#">Wind</a></li>
-          <li><a href="#">Biomass</a></li>
-          <li><a href="#">Hydel </a></li>
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown(event)">R&D <i class="bi bi-chevron-down ms-1"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="smart-pole.html">Smart Pole</a></li>
+              <li><a href="#">Smart Bollard</a></li>
+              <li><a href="#">Smart Conference Table</a></li>
+              <li><a href="#">Smart Window Leaf AC</a></li>
+              <li><a href="#">Smart Bar Counter</a></li>
+            </ul>
+          </li>
+          <li><a href="applications.html">Applications</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <!-- <li><a href="#"><i class="bi bi-search"></i></a></li> -->
         </ul>
-      </div>
-
-      <div class="service-group">
-        <h6>Power</h6>
-        <ul>
-          <li><a href="#">Transimission</a></li>
-          <li><a href="#">Distribution</a></li>
-          <li><a href="#">HT and LT Panels</a></li>
-          <li><a href="#">Control Panels</a></li>
-        </ul>
-      </div>
-
-<div class="service-group">
-  <h6><a href="lighting.html">Lighting</a></h6>
-  <ul class="submenu-parent">
-
-    <!-- Residential -->
-    <li class="has-submenu">
-      <a href="#.html">
-        Residential <i class="bi bi-chevron-right ms-1"></i>
-      </a>
-
-      <ul class="side-submenu">
-        <li><a href="kitchen-lighting.html">Kitchen </a></li>
-        <li><a href="livingroom-lighting.html">Living Room</a></li>
-        <li><a href="bedroom-lighting.html">Bedroom</a></li>
-        <li><a href="bathroom-lighting.html">Bathroom</a></li>
-        <li><a href="entrance-lighting.html">Entrance Lighting</a></li>
-      </ul>
-    </li>
-
-    <!-- Commercial -->
-    <li class="has-submenu">
-      <a href="#">
-        Commercial <i class="bi bi-chevron-right ms-1"></i>
-      </a>
-
-      <ul class="side-submenu">
-        <li><a href="office-lighting.html">Office</a></li>
-        <li><a href="retail-showroom-lighting.html">Retail & Showroom Lighting</a></li>
-        <li><a href="healthcare-lighting.html">Healthcare Lighting</a></li>
-        <li><a href="education-lighting.html">Educational Lighting</a></li>
-        <li><a href="entertainments-and-theaters-lighting.html">Entertainment & Theatres</a></li>
-        <li><a href="airport-transport-lighting.html">Airport & Transport Hubs</a></li>
-        <li><a href="hotel-lighting.html">Hotel Lighting</a></li>
-      </ul>
-    </li>
-
-
-        <!-- Industrial -->
-    <li class="has-submenu">
-      <a href="#">
-        Industrial <i class="bi bi-chevron-right ms-1"></i>
-      </a>
-
-      <ul class="side-submenu">
-        <li><a href="factorylighting.html">Factory Lighting</a></li>
-        <li><a href="warehouselighting.html">WarehouseLighting</a></li>
-        <li><a href="workshoplighting.html">Workshop Lighting</a></li>
-        <li><a href="coldstoragelighting.html">Cold Storage Lighting</a></li>
-        <li><a href="parkingutilitylighting.html">Parking & Utility Lighting</a></li>
-        
-      </ul>
-    </li>
-
-
-            <!-- Industrial -->
-    <li class="has-submenu">
-      <a href="#">
-        Outdoor Lighting <i class="bi bi-chevron-right ms-1"></i>
-      </a>
-
-      <ul class="side-submenu">
-        <li><a href="gardenandlandscapelighting.html">Garden & Landscape Lighting</a></li>
-        <li><a href="facadeandarchitecturallighting.html">Facade & Architectural Lighting</a></li>
-        <li><a href="outdoorhomelighting.html">Outdoor Home Lighting</a></li>
-        <li><a href="parkinglotlighting.html">Parking Lot Lighting</a></li>
-        <li><a href="campusandinstitutionallighting.html">Campus & Institutional Lighting</a></li>
-        <li><a href="resortandhospitalitylighting.html">Resort & Hospitality</a></li>
-        <li><a href="securityandfloodlighting.html">Street and Security Lighting</a></li>
-        <li><a href="sportsgroundlighting.html">Sports Ground Lighting</a></li>
-        
-      </ul>
-    </li>
-
-   
-
-  </ul>
-</div>
-
-      <div class="service-group">
-        <h6>Automation</h6>
-        <ul>
-          <li><a href="#">Residential</a></li>
-          <li><a href="#">Commercial</a></li>
-          <li><a href="#">Industrial</a></li>
-          <li><a href="#">Hospital</a></li>
-          <li><a href="#">Hotel</a></li>
-        </ul>
-      </div>
-
-       <div class="service-group">
-        <h6>R&D</h6>
-        <ul>
-          <li><a href="#">Smartpole</a></li>
-          <li><a href="#">Smart Bollard</a></li>
-          <li><a href="#">Smart Conference Table</a></li>
-          <li><a href="#">Smart Bar Counter</a></li>
-          <li><a href="#">Smart Window leaf AC</a></li>
-        </ul>
-      </div>
-
+      </nav>
     </div>
-  </div>
-</div>
+
+    <div id="megaMenu" class="mega-menu">
+      <div class="row">
+
+        <div class="underline"></div>
+        <div class="service-submenus d-flex flex-wrap">
+          <div class="service-group">
+            <h6>Energy</h6>
+            <ul>
+              <li><a href="#">Solar</a></li>
+              <li><a href="#">Wind</a></li>
+              <li><a href="#">Biomass</a></li>
+              <li><a href="#">Hydel Power</a></li>
+            </ul>
+          </div>
+          <div class="service-group">
+            <h6>Power</h6>
+            <ul>
+              <li><a href="transmission.html">transmission</a></li>
+              <li><a href="#">distribution</a></li>
+              <li><a href="#">Low Tention</a></li>
+              <li><a href="#">High Tention</a></li>
+              <li><a href="#">Panel Boards</a></li>
+            </ul>
+          </div>
+          <div class="service-group">
+            <h6>Lighting</h6>
+            <ul>
+              <li><a href="#">Residential</a></li>
+              <li><a href="#">Facade</a></li>
+              <li><a href="#">Commercial</a></li>
+              <li><a href="#">Industrial</a></li>
+              <li><a href="#">Street</a></li>
+              <li><a href="#">Park</a></li>
+              <li><a href="#">Stadium</a></li>
+              <li><a href="#">Hospital</a></li>
+            </ul>
+          </div>
+          <div class="service-group">
+            <h6>Automation</h6>
+            <ul>
+
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Commercial</a></li>
+              <li><a href="#">Industrial</a></li>
+              <li><a href="#">Hospital</a></li>
+              <li><a href="#">IOT Based Automation</a></li>
+              <li><a href="#">Hotel</a></li>
+            </ul>
+          </div>
+          <div class="service-group">
+            <h6>R&D</h6>
+            <ul>
+              <li><a href="smart-pole.html">Smart Pole</a></li>
+              <li><a href="#">Smart Conference Hall</a></li>
+              <li><a href="#">Smart Bollards</a></li>
+              <li><a href="#">Smart Bar Counter</a></li>
+              <li><a href="#">Smart Window Leaf AC
+                </a></li>
+            </ul>
+          </div>
 
 
-  <!-- Mega Menu -->
-  <div id="megaMenu" class="mega-menu">
-    <div class="row">
-      <div class="underline"></div>
-      <div class="service-submenus d-flex flex-wrap">
-        <div class="service-group">
-          <h6>Energy</h6>
-          <ul>
-            <li><a href="#">Solar</a></li>
-            <li><a href="#">Wind</a></li>
-            <li><a href="#">Biomass</a></li>
-            <li><a href="#">Hydel Power</a></li>
-          </ul>
+
+
         </div>
-        <div class="service-group">
-          <h6>Power</h6>
-          <ul>
-            <li><a href="transmission.html">Transmission</a></li>
-            <li><a href="#">Distribution</a></li>
-            <li><a href="#">Low Tension</a></li>
-            <li><a href="#">High Tension</a></li>
-            <li><a href="#">Panel Boards</a></li>
-          </ul>
-        </div>
-<div class="service-group">
-  <h6><a href="lighting.html">Lighting</a></h6>
-  <ul class="submenu-parent">
 
-    <!-- Residential -->
-    <li class="has-submenu">
-      <a href="#">
-        Residential <i class="bi bi-chevron-right ms-1"></i>
-      </a>
-
-      <ul class="side-submenu">
-        <li><a href="kitchen-lighting.html">Kitchen </a></li>
-        <li><a href="livingroom-lighting.html">Living Room</a></li>
-        <li><a href="bedroom-lighting.html">Bedroom</a></li>
-        <li><a href="bathroom-lighting.html">Bathroom</a></li>
-        <li><a href="entrance-lighting.html">Entrance Lighting</a></li>
-      </ul>
-    </li>
-
-    <!-- Commercial -->
-    <li class="has-submenu">
-      <a href="#">
-        Commercial <i class="bi bi-chevron-right ms-1"></i>
-      </a>
-
-      <ul class="side-submenu">
-        <li><a href="office-lighting.html">Office</a></li>
-        <li><a href="retail-showroom-lighting.html">Retail & Showroom Lighting</a></li>
-        <li><a href="healthcare-lighting.html">Healthcare Lighting</a></li>
-        <li><a href="education-lighting.html">Educational Lighting</a></li>
-        <li><a href="entertainments-and-theaters-lighting.html">Entertainment & Theatres</a></li>
-        <li><a href="airport-transport-lighting.html">Airport & Transport Hubs</a></li>
-        <li><a href="hotel-lighting.html">Hotel Lighting</a></li>
-      </ul>
-    </li>
-
-
-        <!-- Industrial -->
-    <li class="has-submenu">
-      <a href="#">
-        Industrial <i class="bi bi-chevron-right ms-1"></i>
-      </a>
-
-      <ul class="side-submenu">
-        <li><a href="factorylighting.html">Factory Lighting</a></li>
-        <li><a href="warehouselighting.html">WarehouseLighting</a></li>
-        <li><a href="workshoplighting.html">Workshop Lighting</a></li>
-        <li><a href="coldstoragelighting.html">Cold Storage Lighting</a></li>
-        <li><a href="parkingutilitylighting.html">Parking & Utility Lighting</a></li>
-        
-      </ul>
-    </li>
-
-
-            <!-- Industrial -->
-    <li class="has-submenu">
-      <a href="#">
-        Outdoor Lighting <i class="bi bi-chevron-right ms-1"></i>
-      </a>
-
-      <ul class="side-submenu">
-        <li><a href="gardenandlandscapelighting.html">Garden & Landscape Lighting</a></li>
-        <li><a href="facadeandarchitecturallighting.html">Facade & Architectural Lighting</a></li>
-        <li><a href="outdoorhomelighting.html">Outdoor Home Lighting</a></li>
-        <li><a href="parkinglotlighting.html">Parking Lot Lighting</a></li>
-        <li><a href="campusandinstitutionallighting.html">Campus & Institutional Lighting</a></li>
-        <li><a href="resortandhospitalitylighting.html">Resort & Hospitality</a></li>
-        <li><a href="securityandfloodlighting.html">Street and Security Lighting</a></li>
-        <li><a href="sportsgroundlighting.html">Sports Ground Lighting</a></li>
-        
-      </ul>
-    </li>
-
-   
-
-  </ul>
-</div>
-
-        <div class="service-group">
-          <h6>Automation</h6>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Commercial</a></li>
-            <li><a href="#">Industrial</a></li>
-            <li><a href="#">Hospital</a></li>
-            <!-- <li><a href="#">IoT Based Automation</a></li> -->
-            <li><a href="#">Hotel</a></li>
-          </ul>
-        </div>
-        <div class="service-group">
-          <h6>R & D</h6>
-          <ul>
-            <li><a href="smart-pole.html">Smart Pole</a></li>
-            <li><a href="#">Smart Conference Hall</a></li>
-            <li><a href="#">Smart Bollards</a></li>
-            <li><a href="#">Smart Bar Counter</a></li>
-            <li><a href="#">Smart Window Leaf AC</a></li>
-          </ul>
-        </div>
-       
       </div>
     </div>
-  </div>
-</header>
-<!-- HEADER END -->
+  </header>
 
 
 
@@ -1022,7 +821,7 @@ body {
     <li><a class="main-cat" href="projector-lighting-products.html">Projector Lights</a></li>
    
      <li><a class="main-cat" href="pendant-light-products.html">Pendant Lights</a></li>
-    <!-- <li><a class="main-cat" href="hanging-linear-products.html">Hanging Linear Lights</a></li> -->
+    <li><a class="main-cat" href="hanging-linear-products.html">Hanging Linear Lights</a></li>
     <li><a class="main-cat" href="designer-lights-products.html">Designer Lights</a></li>
     <li><a class="main-cat" href="gate-lights-products.html">Gate Lights</a></li>
     
@@ -1283,7 +1082,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-19.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/66.png">
         <img class="img2" src="img/productsimgs/wall lights/66.png">
         <h3>WLA19</h3></a>
@@ -1296,7 +1095,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-20.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/67.png">
         <img class="img2" src="img/productsimgs/wall lights/67.png">
         <h3>WLA20</h3></a>
@@ -1309,7 +1108,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-21.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/68.png">
         <img class="img2" src="img/productsimgs/wall lights/68.png">
         <h3>WLA21</h3></a>
@@ -1322,7 +1121,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-22.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/69.png">
         <img class="img2" src="img/productsimgs/wall lights/69.png">
         <h3>WLA22</h3></a>
@@ -1335,7 +1134,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-23.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/70.png">
         <img class="img2" src="img/productsimgs/wall lights/70.png">
         <h3>WLA23</h3></a>
@@ -1348,7 +1147,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-24.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/71.png">
         <img class="img2" src="img/productsimgs/wall lights/71.png">
         <h3>WLA24</h3></a>
@@ -1361,7 +1160,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-25.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/72.png">
         <img class="img2" src="img/productsimgs/wall lights/72.png">
         <h3>WLA25</h3></a>
@@ -1374,7 +1173,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-26.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/73.png">
         <img class="img2" src="img/productsimgs/wall lights/73.png">
         <h3>WLA26</h3></a>
@@ -1387,7 +1186,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-27.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/74.png">
         <img class="img2" src="img/productsimgs/wall lights/74.png">
         <h3>WLA27</h3></a>
@@ -1400,7 +1199,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-28.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/75.png">
         <img class="img2" src="img/productsimgs/wall lights/75.png">
         <h3>WLA28</h3></a>
@@ -1413,7 +1212,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-29.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/76.png">
         <img class="img2" src="img/productsimgs/wall lights/76.png">
         <h3>WLA29</h3></a>
@@ -1426,7 +1225,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-30.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/77.png">
         <img class="img2" src="img/productsimgs/wall lights/77.png">
         <h3>WLA30</h3></a>
@@ -1439,7 +1238,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-31.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/78.png">
         <img class="img2" src="img/productsimgs/wall lights/78.png">
         <h3>WLA31</h3></a>
@@ -1452,7 +1251,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-32.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/79.png">
         <img class="img2" src="img/productsimgs/wall lights/79.png">
         <h3>WLA32</h3></a>
@@ -1465,7 +1264,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-33.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/80.png">
         <img class="img2" src="img/productsimgs/wall lights/80.png">
         <h3>WLA33</h3></a>
@@ -1478,7 +1277,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-34.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/81.png">
         <img class="img2" src="img/productsimgs/wall lights/81.png">
         <h3>WLA34</h3></a>
@@ -1491,7 +1290,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-35.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/82.png">
         <img class="img2" src="img/productsimgs/wall lights/82.png">
         <h3>WLA35</h3></a>
@@ -1504,7 +1303,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-36.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/83.png">
         <img class="img2" src="img/productsimgs/wall lights/83.png">
         <h3>WLA36</h3></a>
@@ -1517,7 +1316,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-37.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/84.png">
         <img class="img2" src="img/productsimgs/wall lights/84.png">
         <h3>WLA37</h3></a>
@@ -1530,7 +1329,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-38.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/85.png">
         <img class="img2" src="img/productsimgs/wall lights/85.png">
         <h3>WLA38</h3></a>
@@ -1543,7 +1342,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-39.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/86.png">
         <img class="img2" src="img/productsimgs/wall lights/86.png">
         <h3>WLA39</h3></a>
@@ -1556,7 +1355,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-40.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/87.png">
         <img class="img2" src="img/productsimgs/wall lights/87.png">
         <h3>WLA40</h3></a>
@@ -1570,7 +1369,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-41.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/88.png">
         <img class="img2" src="img/productsimgs/wall lights/88.png">
         <h3>WLA41</h3></a>
@@ -1584,7 +1383,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-42.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/89.png">
         <img class="img2" src="img/productsimgs/wall lights/89.png">
         <h3>WLA42</h3></a>
@@ -1598,7 +1397,7 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-43.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/90.png">
         <img class="img2" src="img/productsimgs/wall lights/90.png">
         <h3>WLA43</h3></a>
@@ -1612,23 +1411,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-44.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/91.png">
         <img class="img2" src="img/productsimgs/wall lights/91.png">
-        <h3>WLA43</h3></a>
-    </div>   
-
-    
-      <div class="product-card" data-category="cob" data-sub="zoom" data-rep="true"
-    data-type="indoor"
-     data-mount="concealed"
-     data-ip="ip20"
-     data-watt="12w"
-     data-cct="6500k"
-     data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/92.png">
-        <img class="img2" src="img/productsimgs/wall lights/92.png">
         <h3>WLA44</h3></a>
     </div>   
 
@@ -1640,9 +1425,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/93.png">
-        <img class="img2" src="img/productsimgs/wall lights/93.png">
+     data-color="white"><a href="wall-light-45.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/92.png">
+        <img class="img2" src="img/productsimgs/wall lights/92.png">
         <h3>WLA45</h3></a>
     </div>   
 
@@ -1654,9 +1439,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/94.png">
-        <img class="img2" src="img/productsimgs/wall lights/94.png">
+     data-color="white"><a href="wall-light-46.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/93.png">
+        <img class="img2" src="img/productsimgs/wall lights/93.png">
         <h3>WLA46</h3></a>
     </div>   
 
@@ -1668,9 +1453,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/95.png">
-        <img class="img2" src="img/productsimgs/wall lights/95.png">
+     data-color="white"><a href="wall-light-47.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/94.png">
+        <img class="img2" src="img/productsimgs/wall lights/94.png">
         <h3>WLA47</h3></a>
     </div>   
 
@@ -1682,9 +1467,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/96.png">
-        <img class="img2" src="img/productsimgs/wall lights/96.png">
+     data-color="white"><a href="wall-light-48.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/95.png">
+        <img class="img2" src="img/productsimgs/wall lights/95.png">
         <h3>WLA48</h3></a>
     </div>   
 
@@ -1696,10 +1481,24 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-49.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/96.png">
+        <img class="img2" src="img/productsimgs/wall lights/96.png">
+        <h3>WLA49</h3></a>
+    </div>   
+
+    
+      <div class="product-card" data-category="cob" data-sub="zoom" data-rep="true"
+    data-type="indoor"
+     data-mount="concealed"
+     data-ip="ip20"
+     data-watt="12w"
+     data-cct="6500k"
+     data-control="onoff"
+     data-color="white"><a href="wall-light-50.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/97.png">
         <img class="img2" src="img/productsimgs/wall lights/97.png">
-        <h3>WLA49</h3></a>
+        <h3>WLA50</h3></a>
     </div>   
 
 
@@ -1710,22 +1509,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-51.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/98.png">
         <img class="img2" src="img/productsimgs/wall lights/98.png">
-        <h3>WLA50</h3></a>
-    </div>   
-
-     <div class="product-card" data-category="cob" data-sub="zoom" data-rep="true"
-    data-type="indoor"
-     data-mount="concealed"
-     data-ip="ip20"
-     data-watt="12w"
-     data-cct="6500k"
-     data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/99.png">
-        <img class="img2" src="img/productsimgs/wall lights/99.png">
         <h3>WLA51</h3></a>
     </div>   
 
@@ -1736,9 +1522,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/100.png">
-        <img class="img2" src="img/productsimgs/wall lights/100.png">
+     data-color="white"><a href="wall-light-52.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/99.png">
+        <img class="img2" src="img/productsimgs/wall lights/99.png">
         <h3>WLA52</h3></a>
     </div>   
 
@@ -1749,23 +1535,10 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/101.png">
-        <img class="img2" src="img/productsimgs/wall lights/101.png">
+     data-color="white"><a href="wall-light-53.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/100.png">
+        <img class="img2" src="img/productsimgs/wall lights/100.png">
         <h3>WLA53</h3></a>
-    </div>  
-    
-     <div class="product-card" data-category="cob" data-sub="zoom" data-rep="true"
-    data-type="indoor"
-     data-mount="concealed"
-     data-ip="ip20"
-     data-watt="12w"
-     data-cct="6500k"
-     data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/102.png">
-        <img class="img2" src="img/productsimgs/wall lights/102.png">
-        <h3>WLA54</h3></a>
     </div>   
 
      <div class="product-card" data-category="cob" data-sub="zoom" data-rep="true"
@@ -1775,9 +1548,22 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/103.png">
-        <img class="img2" src="img/productsimgs/wall lights/103.png">
+     data-color="white"><a href="wall-light-54.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/101.png">
+        <img class="img2" src="img/productsimgs/wall lights/101.png">
+        <h3>WLA54</h3></a>
+    </div>  
+    
+     <div class="product-card" data-category="cob" data-sub="zoom" data-rep="true"
+    data-type="indoor"
+     data-mount="concealed"
+     data-ip="ip20"
+     data-watt="12w"
+     data-cct="6500k"
+     data-control="onoff"
+     data-color="white"><a href="wall-light-55.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/102.png">
+        <img class="img2" src="img/productsimgs/wall lights/102.png">
         <h3>WLA55</h3></a>
     </div>   
 
@@ -1788,9 +1574,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/104.png">
-        <img class="img2" src="img/productsimgs/wall lights/104.png">
+     data-color="white"><a href="wall-light-56.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/103.png">
+        <img class="img2" src="img/productsimgs/wall lights/103.png">
         <h3>WLA56</h3></a>
     </div>   
 
@@ -1801,9 +1587,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/105.png">
-        <img class="img2" src="img/productsimgs/wall lights/105.png">
+     data-color="white"><a href="wall-light-57.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/104.png">
+        <img class="img2" src="img/productsimgs/wall lights/104.png">
         <h3>WLA57</h3></a>
     </div>   
 
@@ -1814,9 +1600,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/106.png">
-        <img class="img2" src="img/productsimgs/wall lights/106.png">
+     data-color="white"><a href="wall-light-58.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/105.png">
+        <img class="img2" src="img/productsimgs/wall lights/105.png">
         <h3>WLA58</h3></a>
     </div>   
 
@@ -1827,9 +1613,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/107.png">
-        <img class="img2" src="img/productsimgs/wall lights/107.png">
+     data-color="white"><a href="wall-light-59.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/106.png">
+        <img class="img2" src="img/productsimgs/wall lights/106.png">
         <h3>WLA59</h3></a>
     </div>   
 
@@ -1840,9 +1626,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/108.png">
-        <img class="img2" src="img/productsimgs/wall lights/108.png">
+     data-color="white"><a href="wall-light-60.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/107.png">
+        <img class="img2" src="img/productsimgs/wall lights/107.png">
         <h3>WLA60</h3></a>
     </div>   
 
@@ -1853,9 +1639,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/109.png">
-        <img class="img2" src="img/productsimgs/wall lights/109.png">
+     data-color="white"><a href="wall-light-61.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/108.png">
+        <img class="img2" src="img/productsimgs/wall lights/108.png">
         <h3>WLA61</h3></a>
     </div>   
 
@@ -1866,9 +1652,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/110.png">
-        <img class="img2" src="img/productsimgs/wall lights/110.png">
+     data-color="white"><a href="wall-light-62.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/109.png">
+        <img class="img2" src="img/productsimgs/wall lights/109.png">
         <h3>WLA62</h3></a>
     </div>   
 
@@ -1879,9 +1665,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/111.png">
-        <img class="img2" src="img/productsimgs/wall lights/111.png">
+     data-color="white"><a href="wall-light-63.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/110.png">
+        <img class="img2" src="img/productsimgs/wall lights/110.png">
         <h3>WLA63</h3></a>
     </div>   
 
@@ -1892,9 +1678,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/112.png">
-        <img class="img2" src="img/productsimgs/wall lights/112.png">
+     data-color="white"><a href="wall-light-64.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/111.png">
+        <img class="img2" src="img/productsimgs/wall lights/111.png">
         <h3>WLA64</h3></a>
     </div>   
 
@@ -1905,23 +1691,10 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/113.png">
-        <img class="img2" src="img/productsimgs/wall lights/113.png">
+     data-color="white"><a href="wall-light-65.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/112.png">
+        <img class="img2" src="img/productsimgs/wall lights/112.png">
         <h3>WLA65</h3></a>
-    </div>  
-    
-     <div class="product-card" data-category="cob" data-sub="zoom" data-rep="true"
-    data-type="indoor"
-     data-mount="concealed"
-     data-ip="ip20"
-     data-watt="12w"
-     data-cct="6500k"
-     data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/114.png">
-        <img class="img2" src="img/productsimgs/wall lights/114.png">
-        <h3>WLA66</h3></a>
     </div>   
 
      <div class="product-card" data-category="cob" data-sub="zoom" data-rep="true"
@@ -1931,9 +1704,22 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/115.png">
-        <img class="img2" src="img/productsimgs/wall lights/115.png">
+     data-color="white"><a href="wall-light-66.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/113.png">
+        <img class="img2" src="img/productsimgs/wall lights/113.png">
+        <h3>WLA66</h3></a>
+    </div>  
+    
+     <div class="product-card" data-category="cob" data-sub="zoom" data-rep="true"
+    data-type="indoor"
+     data-mount="concealed"
+     data-ip="ip20"
+     data-watt="12w"
+     data-cct="6500k"
+     data-control="onoff"
+     data-color="white"><a href="wall-light-67.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/114.png">
+        <img class="img2" src="img/productsimgs/wall lights/114.png">
         <h3>WLA67</h3></a>
     </div>   
 
@@ -1944,9 +1730,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/116.png">
-        <img class="img2" src="img/productsimgs/wall lights/116.png">
+     data-color="white"><a href="wall-light-68.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/115.png">
+        <img class="img2" src="img/productsimgs/wall lights/115.png">
         <h3>WLA68</h3></a>
     </div>   
 
@@ -1957,23 +1743,10 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/117.png">
-        <img class="img2" src="img/productsimgs/wall lights/117.png">
+     data-color="white"><a href="wall-light-69.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/116.png">
+        <img class="img2" src="img/productsimgs/wall lights/116.png">
         <h3>WLA69</h3></a>
-    </div>   
-
-    <div class="product-card" data-category="cob" data-sub="zoom" data-rep="true"
-    data-type="indoor"
-     data-mount="concealed"
-     data-ip="ip20"
-     data-watt="12w"
-     data-cct="6500k"
-     data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/118.png">
-        <img class="img2" src="img/productsimgs/wall lights/118.png">
-        <h3>WLA70</h3></a>
     </div>   
 
      <div class="product-card" data-category="cob" data-sub="zoom" data-rep="true"
@@ -1983,9 +1756,22 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/119.png">
-        <img class="img2" src="img/productsimgs/wall lights/119.png">
+     data-color="white"><a href="wall-light-70.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/117.png">
+        <img class="img2" src="img/productsimgs/wall lights/117.png">
+        <h3>WLA70</h3></a>
+    </div>   
+
+    <div class="product-card" data-category="cob" data-sub="zoom" data-rep="true"
+    data-type="indoor"
+     data-mount="concealed"
+     data-ip="ip20"
+     data-watt="12w"
+     data-cct="6500k"
+     data-control="onoff"
+     data-color="white"><a href="wall-light-71.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/118.png">
+        <img class="img2" src="img/productsimgs/wall lights/118.png">
         <h3>WLA71</h3></a>
     </div>   
 
@@ -1996,9 +1782,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/120.png">
-        <img class="img2" src="img/productsimgs/wall lights/120.png">
+     data-color="white"><a href="wall-light-72.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/119.png">
+        <img class="img2" src="img/productsimgs/wall lights/119.png">
         <h3>WLA72</h3></a>
     </div>   
 
@@ -2009,9 +1795,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/121.png">
-        <img class="img2" src="img/productsimgs/wall lights/121.png">
+     data-color="white"><a href="wall-light-73.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/120.png">
+        <img class="img2" src="img/productsimgs/wall lights/120.png">
         <h3>WLA73</h3></a>
     </div>   
 
@@ -2022,9 +1808,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/122.png">
-        <img class="img2" src="img/productsimgs/wall lights/122.png">
+     data-color="white"><a href="wall-light-74.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/121.png">
+        <img class="img2" src="img/productsimgs/wall lights/121.png">
         <h3>WLA74</h3></a>
     </div>   
 
@@ -2035,9 +1821,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/123.png">
-        <img class="img2" src="img/productsimgs/wall lights/123.png">
+     data-color="white"><a href="wall-light-75.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/122.png">
+        <img class="img2" src="img/productsimgs/wall lights/122.png">
         <h3>WLA75</h3></a>
     </div>   
 
@@ -2048,9 +1834,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/124.png">
-        <img class="img2" src="img/productsimgs/wall lights/124.png">
+     data-color="white"><a href="wall-light-76.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/123.png">
+        <img class="img2" src="img/productsimgs/wall lights/123.png">
         <h3>WLA76</h3></a>
     </div>   
 
@@ -2061,9 +1847,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/125.png">
-        <img class="img2" src="img/productsimgs/wall lights/125.png">
+     data-color="white"><a href="wall-light-77.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/124.png">
+        <img class="img2" src="img/productsimgs/wall lights/124.png">
         <h3>WLA77</h3></a>
     </div>   
 
@@ -2074,9 +1860,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/126.png">
-        <img class="img2" src="img/productsimgs/wall lights/126.png">
+     data-color="white"><a href="wall-light-78.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/125.png">
+        <img class="img2" src="img/productsimgs/wall lights/125.png">
         <h3>WLA78</h3></a>
     </div>   
 
@@ -2087,9 +1873,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/127.png">
-        <img class="img2" src="img/productsimgs/wall lights/127.png">
+     data-color="white"><a href="wall-light-79.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/126.png">
+        <img class="img2" src="img/productsimgs/wall lights/126.png">
         <h3>WLA79</h3></a>
     </div>   
 
@@ -2100,9 +1886,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/128.png">
-        <img class="img2" src="img/productsimgs/wall lights/128.png">
+     data-color="white"><a href="wall-light-80.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/127.png">
+        <img class="img2" src="img/productsimgs/wall lights/127.png">
         <h3>WLA80</h3></a>
     </div>   
 
@@ -2113,9 +1899,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/129.png">
-        <img class="img2" src="img/productsimgs/wall lights/129.png">
+     data-color="white"><a href="wall-light-81.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/128.png">
+        <img class="img2" src="img/productsimgs/wall lights/128.png">
         <h3>WLA81</h3></a>
     </div>   
 
@@ -2126,9 +1912,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/130.png">
-        <img class="img2" src="img/productsimgs/wall lights/130.png">
+     data-color="white"><a href="wall-light-82.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/129.png">
+        <img class="img2" src="img/productsimgs/wall lights/129.png">
         <h3>WLA82</h3></a>
     </div>   
 
@@ -2139,9 +1925,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/131.png">
-        <img class="img2" src="img/productsimgs/wall lights/131.png">
+     data-color="white"><a href="wall-light-83.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/130.png">
+        <img class="img2" src="img/productsimgs/wall lights/130.png">
         <h3>WLA83</h3></a>
     </div>   
 
@@ -2152,9 +1938,9 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/132.png">
-        <img class="img2" src="img/productsimgs/wall lights/132.png">
+     data-color="white"><a href="wall-light-84.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/131.png">
+        <img class="img2" src="img/productsimgs/wall lights/131.png">
         <h3>WLA84</h3></a>
     </div>   
 
@@ -2165,12 +1951,12 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
+     data-color="white"><a href="wall-light-85.html"  class="card-link">
         <img class="img1" src="img/productsimgs/wall lights/132.png">
         <img class="img2" src="img/productsimgs/wall lights/132.png">
         <h3>WLA85</h3></a>
-    </div>  
-    
+    </div>   
+
      <div class="product-card" data-category="cob" data-sub="zoom" data-rep="true"
     data-type="indoor"
      data-mount="concealed"
@@ -2178,11 +1964,13 @@ body {
      data-watt="12w"
      data-cct="6500k"
      data-control="onoff"
-     data-color="white"><a href="wall-light-18.html"  class="card-link">
-        <img class="img1" src="img/productsimgs/wall lights/133.png">
-        <img class="img2" src="img/productsimgs/wall lights/133.png">
+     data-color="white"><a href="wall-light-86.html"  class="card-link">
+        <img class="img1" src="img/productsimgs/wall lights/132.png">
+        <img class="img2" src="img/productsimgs/wall lights/132.png">
         <h3>WLA86</h3></a>
-    </div>   
+    </div>  
+    
+  
 
 </div> <!-- product-grid ends -->
 
