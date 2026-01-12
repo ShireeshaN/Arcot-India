@@ -1406,6 +1406,149 @@ html , body {
 
 }
 
+/* ===============================
+   MOBILE MENU BASE
+================================ */
+@media (max-width: 768px) {
+
+  .navmenu {
+    display: none;
+    background: #000;
+  }
+
+  .navmenu.show {
+    display: block;
+  }
+
+  .navmenu ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navmenu ul li {
+    width: 100%;
+  }
+
+  .navmenu ul li a {
+    width: 100%;
+    padding: 14px 20px;
+    border-bottom: 1px solid #111;
+    text-align: left;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  /* ===============================
+     DROPDOWN (Products / R&D)
+  ================================ */
+  .dropdown-menu {
+    display: none;
+    position: static;
+    width: 100%;
+    background: #050505;
+  }
+
+  .dropdown.show .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu a {
+    padding-left: 35px;
+    font-size: 11px;
+  }
+
+  /* ===============================
+     MEGA MENU (Services / Applications)
+  ================================ */
+  .mega-menu {
+    display: none;
+    position: static;
+    width: 100%;
+    background: #000;
+    padding: 15px 20px;
+  }
+
+  .mega-menu.show {
+    display: block;
+  }
+
+  .mega-menu,
+  .mega-menu .row {
+    background: #000;
+  }
+
+  /* ===============================
+     SIDE SUBMENU (Lighting)
+  ================================ */
+  .side-submenu {
+    display: none;
+    position: static;
+    background: #000;
+    border-left: none;
+  }
+
+  .side-submenu.show {
+    display: block;
+  }
+
+  .side-submenu a {
+    padding-left: 45px;
+    font-size: 11px;
+  }
+
+  /* ❌ Disable hover completely */
+  .has-submenu:hover .side-submenu {
+    display: none;
+  }
+}
+
+.dropdown.show .dropdown-menu {
+  display: block;
+}
+
+
+
+/* hide close icon default */
+.menu-close { display: none; }
+
+/* mobile – show all */
+@media (max-width: 768px) {
+  .menu-close { display: block; }
+}
+
+/* desktop – only mega menus */
+@media (min-width: 769px) {
+  .dropdown .menu-close { display: none; }
+  .mega-menu .menu-close { display: block; }
+}
+
+.menu-close { display: none; }
+
+@media (max-width: 768px) {
+  .menu-close {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1002;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    display: none;   /* 🔥 default closed */
+  }
+
+  .dropdown.show .dropdown-menu {
+    display: block;  /* open only on click */
+  }
+}
+
+
+
 
     /* header */
 

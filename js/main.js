@@ -347,132 +347,78 @@ function toggleDropdown(event) {
 
 
 /* =========================
-   COMMON CLOSE FUNCTION
+   MOBILE-ONLY DROPDOWN CONTROL
 ========================= */
-function closeAllMenus() {
-  document.getElementById("megaMenu")?.classList.remove("show");
-  document.getElementById("applicationsMegaMenu")?.classList.remove("show");
+function mobileDropdownHandler(e) {
+  if (window.innerWidth > 768) return; // ❌ desktop untouched
 
-  document
-    .querySelectorAll(".navmenu ul li.dropdown")
-    .forEach(d => d.classList.remove("show"));
-}
+  e.preventDefault();
+  e.stopPropagation();
 
-/* =========================
-   MOBILE NAV TOGGLE
-========================= */
-function toggleMenu() {
-  const nav = document.getElementById("mainNav");
-  nav.classList.toggle("show");
+  const trigger = e.currentTarget;
+  let currentMenu =
+    trigger.closest(".dropdown") ||
+    document.querySelector(trigger.dataset.target);
 
-  if (!nav.classList.contains("show")) {
-    closeAllMenus();
+  if (!currentMenu) return;
+
+  const isOpen = currentMenu.classList.contains("show");
+
+  // 🔥 Close all dropdowns first
+  document.querySelectorAll(".dropdown.show, .mega-menu.show").forEach(menu => {
+    menu.classList.remove("show");
+  });
+
+  // 🔥 Open current if it was closed
+  if (!isOpen) {
+    currentMenu.classList.add("show");
   }
 }
 
 /* =========================
-   SERVICES MEGA MENU
+   CLOSE ICON (✕)
 ========================= */
-function toggleMegaMenu(event) {
-  event.preventDefault();
-  event.stopPropagation();
-
-  const menu = document.getElementById("megaMenu");
-  const isOpen = menu.classList.contains("show");
-
-  closeAllMenus();
-
-  if (!isOpen) menu.classList.add("show");
+function closeThis(el) {
+  if (window.innerWidth > 768) return; // desktop untouched
+  const parent = el.closest(".dropdown, .mega-menu");
+  if (parent) parent.classList.remove("show");
 }
 
 /* =========================
-   APPLICATIONS MEGA MENU
+   ATTACH MOBILE HANDLERS
 ========================= */
-function toggleApplicationsMenu(event) {
-  event.preventDefault();
-  event.stopPropagation();
+document.addEventListener("DOMContentLoaded", () => {
 
-  const menu = document.getElementById("applicationsMegaMenu");
-  const isOpen = menu.classList.contains("show");
-
-  closeAllMenus();
-
-  if (!isOpen) menu.classList.add("show");
-}
-
-/* =========================
-   PRODUCTS / R&D DROPDOWNS
-========================= */
-function toggleDropdown(event) {
-  event.preventDefault();
-  event.stopPropagation();
-
-  const parent = event.currentTarget.parentElement;
-  const isOpen = parent.classList.contains("show");
-
-  closeAllMenus();
-
-  if (!isOpen) parent.classList.add("show");
-}
-
-/* =========================
-   CLICK INSIDE DROPDOWN → DON'T CLOSE
-========================= */
-document
-  .querySelectorAll(".dropdown-menu, .mega-menu")
-  .forEach(menu => {
-    menu.addEventListener("click", e => e.stopPropagation());
+  // Products + R&D
+  document.querySelectorAll(".dropdown > a").forEach(link => {
+    link.addEventListener("click", mobileDropdownHandler);
   });
 
-/* =========================
-   OUTSIDE CLICK → CLOSE ALL (GLOBAL)
-========================= */
-document.addEventListener("click", function () {
-  closeAllMenus();
-});
+  // Services
+  document.querySelectorAll('[onclick*="toggleMegaMenu"]').forEach(link => {
+    link.dataset.target = "#megaMenu";
+    link.addEventListener("click", mobileDropdownHandler);
+  });
 
-/* =========================
-   SWIPER INIT
-========================= */
-document.addEventListener("DOMContentLoaded", function () {
-  new Swiper(".mySwiper", {
-    loop: true,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-    speed: 1500,
-    effect: "fade",
-    fadeEffect: { crossFade: true },
+  // Applications
+  document.querySelectorAll('[onclick*="toggleApplicationsMenu"]').forEach(link => {
+    link.dataset.target = "#applicationsMegaMenu";
+    link.addEventListener("click", mobileDropdownHandler);
   });
 });
-function toggleMenu() {
-  const nav = document.getElementById("mainNav");
-  const menuBtn = document.getElementById("menuBtn");
-  const icon = menuBtn.querySelector("i");
 
-  nav.classList.toggle("show");
 
-  // Toggle icon
-  if (nav.classList.contains("show")) {
-    icon.classList.remove("bi-list"); // remove hamburger
-    icon.classList.add("bi-x");       // add close icon
-  } else {
-    icon.classList.remove("bi-x");    // remove close
-    icon.classList.add("bi-list");    // add hamburger
-    closeAllMenus();                  // close all submenus
+/* =========================
+   FORCE CLOSE DROPDOWNS ON MOBILE LOAD
+========================= */
+function resetMobileDropdowns() {
+  if (window.innerWidth <= 768) {
+    document.querySelectorAll(".dropdown, .mega-menu").forEach(menu => {
+      menu.classList.remove("show");
+    });
   }
 }
 
+document.addEventListener("DOMContentLoaded", resetMobileDropdowns);
+window.addEventListener("resize", resetMobileDropdowns);
 
-
-
-
-
-
-
-
-
-
-
-  

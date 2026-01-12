@@ -63,10 +63,11 @@
       <ul class="mb-0">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a></li>
+        <li><a href="#" onclick="toggleMegaMenu(event)" class="mega-trigger">Services <i class="bi bi-chevron-down ms-1"></i></a></li>
                 <li class="dropdown">
-  <a href="#" onclick="toggleDropdown(event)">Products <i class="bi bi-chevron-down ms-1"></i></a>
+  <a href="#" onclick="toggleDropdown(event)"  class="dropdown-trigger">Products <i class="bi bi-chevron-down ms-1"></i></a>
   <ul class="dropdown-menu">
+    <span class="menu-close" onclick="closeThis(this)">✕</span>
     <li><a href="#">Energy Generation</a></li>
     <li><a href="#">Power</a></li>
     <li><a href="lighting-products.html">Lighting</a></li>
@@ -76,20 +77,22 @@
 </li>
        
 <li class="dropdown">
-  <a href="#" onclick="toggleDropdown(event)">R&D <i class="bi bi-chevron-down ms-1"></i></a>
+  <a href="#" onclick="toggleDropdown(event)"  class="dropdown-trigger">R&D <i class="bi bi-chevron-down ms-1"></i></a>
   <ul class="dropdown-menu">
+    <span class="menu-close" onclick="closeThis(this)">✕</span>
     <li><a href="smart-pole.html">Smart Pole</a></li>
     <li><a href="#">Smart Bollard</a></li>
     <li><a href="#">Smart Conference Table</a></li>
     <li><a href="#">Smart Window Leaf AC</a></li>
     <li><a href="#">Smart Bar Counter</a></li>
   </ul>
+
 </li>
 
  <li><a href="solution.html">Solutions</a></li>
 
         <li>
-  <a href="#" onclick="toggleApplicationsMenu(event)">
+  <a href="#" class="mega-trigger" onclick="toggleApplicationsMenu(event)" >
     Applications <i class="bi bi-chevron-down ms-1"></i>
   </a>
 </li>
@@ -103,6 +106,7 @@
 
   <!-- Applications Mega Menu -->
 <div id="applicationsMegaMenu" class="mega-menu">
+  <span class="menu-close" onclick="closeThis(this)">✕</span>
   <div class="row">
     <div class="underline"></div>
 
@@ -235,6 +239,7 @@
 
   <!-- Mega Menu -->
   <div id="megaMenu" class="mega-menu">
+     <span class="menu-close" onclick="closeThis(this)">✕</span>
     <div class="row">
       <div class="underline"></div>
       <div class="service-submenus d-flex flex-wrap">
