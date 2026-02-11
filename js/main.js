@@ -344,81 +344,95 @@ function toggleDropdown(event) {
 
 
 
+/* ===============================
+   UTIL: CLOSE EVERYTHING
+================================ */
+function closeAllMenus() {
+  document.getElementById("megaMenu")?.classList.remove("show");
+  document.getElementById("applicationsMegaMenu")?.classList.remove("show");
 
+  document.querySelectorAll(".dropdown").forEach(d => {
+    d.classList.remove("show");
+  });
+}
 
-/* =========================
-   MOBILE-ONLY DROPDOWN CONTROL
-========================= */
-function mobileDropdownHandler(e) {
-  if (window.innerWidth > 768) return; // ❌ desktop untouched
+/* ===============================
+   MAIN MENU (MOBILE)
+================================ */
+function toggleMenu() {
+  const nav = document.getElementById("mainNav");
+  nav.classList.toggle("show");
 
+  if (!nav.classList.contains("show")) {
+    closeAllMenus();
+  }
+}
+
+/* ===============================
+   SERVICES
+================================ */
+function toggleMegaMenu(e) {
   e.preventDefault();
   e.stopPropagation();
 
-  const trigger = e.currentTarget;
-  let currentMenu =
-    trigger.closest(".dropdown") ||
-    document.querySelector(trigger.dataset.target);
+  const menu = document.getElementById("megaMenu");
+  const isOpen = menu.classList.contains("show");
 
-  if (!currentMenu) return;
+  closeAllMenus();
+  if (!isOpen) menu.classList.add("show");
+}
 
-  const isOpen = currentMenu.classList.contains("show");
+/* ===============================
+   APPLICATIONS
+================================ */
+function toggleApplicationsMenu(e) {
+  e.preventDefault();
+  e.stopPropagation();
 
-  // 🔥 Close all dropdowns first
-  document.querySelectorAll(".dropdown.show, .mega-menu.show").forEach(menu => {
-    menu.classList.remove("show");
-  });
+  const menu = document.getElementById("applicationsMegaMenu");
+  const isOpen = menu.classList.contains("show");
 
-  // 🔥 Open current if it was closed
-  if (!isOpen) {
-    currentMenu.classList.add("show");
+  closeAllMenus();
+  if (!isOpen) menu.classList.add("show");
+}
+
+/* ===============================
+   PRODUCTS / R&D
+================================ */
+function toggleDropdown(e) {
+  e.preventDefault();
+  e.stopPropagation();
+
+  const li = e.target.closest(".dropdown");
+  const isOpen = li.classList.contains("show");
+
+  closeAllMenus();
+  if (!isOpen) li.classList.add("show");
+}
+
+/* ===============================
+   CLOSE ICON
+================================ */
+function closeThis(e) {
+  e?.stopPropagation();
+  closeAllMenus();
+}
+
+/* ===============================
+   OUTSIDE CLICK (🔥 REAL FIX)
+================================ */
+document.addEventListener("click", function (e) {
+
+  const nav = document.querySelector(".navmenu");
+  const megaMenus = document.querySelectorAll(".mega-menu");
+
+  // click inside nav OR mega menus → do nothing
+  if (nav.contains(e.target)) return;
+
+  for (let menu of megaMenus) {
+    if (menu.contains(e.target)) return;
   }
-}
 
-/* =========================
-   CLOSE ICON (✕)
-========================= */
-function closeThis(el) {
-  if (window.innerWidth > 768) return; // desktop untouched
-  const parent = el.closest(".dropdown, .mega-menu");
-  if (parent) parent.classList.remove("show");
-}
-
-/* =========================
-   ATTACH MOBILE HANDLERS
-========================= */
-document.addEventListener("DOMContentLoaded", () => {
-
-  // Products + R&D
-  document.querySelectorAll(".dropdown > a").forEach(link => {
-    link.addEventListener("click", mobileDropdownHandler);
-  });
-
-  // Services
-  document.querySelectorAll('[onclick*="toggleMegaMenu"]').forEach(link => {
-    link.dataset.target = "#megaMenu";
-    link.addEventListener("click", mobileDropdownHandler);
-  });
-
-  // Applications
-  document.querySelectorAll('[onclick*="toggleApplicationsMenu"]').forEach(link => {
-    link.dataset.target = "#applicationsMegaMenu";
-    link.addEventListener("click", mobileDropdownHandler);
-  });
+  // truly outside
+  closeAllMenus();
 });
-
-
-/* =========================
-   FORCE CLOSE DROPDOWNS ON MOBILE LOAD
-========================= */
-function resetMobileDropdowns() {
-  if (window.innerWidth <= 768) {
-    document.querySelectorAll(".dropdown, .mega-menu").forEach(menu => {
-      menu.classList.remove("show");
-    });
-  }
-}
-
-document.addEventListener("DOMContentLoaded", resetMobileDropdowns);
-window.addEventListener("resize", resetMobileDropdowns);
-
