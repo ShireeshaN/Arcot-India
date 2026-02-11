@@ -48,28 +48,183 @@
       <ul class="mb-0">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a></li>
-        <li><a href="solution.html">Solutions</a></li>
-<li class="dropdown">
-  <a href="#" onclick="toggleDropdown(event)">R&D <i class="bi bi-chevron-down ms-1"></i></a>
+        <li><a href="#" onclick="toggleMegaMenu(event)" class="mega-trigger">Services <i class="bi bi-chevron-down ms-1"></i></a></li>
+                <li class="dropdown">
+  <a href="#" onclick="toggleDropdown(event)"  class="dropdown-trigger">Products <i class="bi bi-chevron-down ms-1"></i></a>
   <ul class="dropdown-menu">
+    <span class="menu-close" onclick="closeThis(this)">✕</span>
+    <li><a href="#">Energy Generation</a></li>
+    <li><a href="#">Power</a></li>
+    <li><a href="lighting-products.html">Lighting</a></li>
+    <li><a href="#">Automation</a></li>
+    
+  </ul>
+</li>
+       
+<li class="dropdown">
+  <a href="#" onclick="toggleDropdown(event)"  class="dropdown-trigger">R&D <i class="bi bi-chevron-down ms-1"></i></a>
+  <ul class="dropdown-menu">
+    <span class="menu-close" onclick="closeThis(this)">✕</span>
     <li><a href="smart-pole.html">Smart Pole</a></li>
     <li><a href="#">Smart Bollard</a></li>
     <li><a href="#">Smart Conference Table</a></li>
     <li><a href="#">Smart Window Leaf AC</a></li>
     <li><a href="#">Smart Bar Counter</a></li>
   </ul>
+
 </li>
 
-        <li><a href="applications.html">Applications</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+ <li><a href="solution.html">Solutions</a></li>
+
+        <li>
+  <a href="#" class="mega-trigger" onclick="toggleApplicationsMenu(event)" >
+    Applications <i class="bi bi-chevron-down ms-1"></i>
+  </a>
+</li>
+
+        <!-- <li><a href="gallery.html">Gallery</a></li> -->
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </div>
 
+
+  <!-- Applications Mega Menu -->
+<div id="applicationsMegaMenu" class="mega-menu">
+  <span class="menu-close" onclick="closeThis(this)">✕</span>
+  <div class="row">
+    <div class="underline"></div>
+
+    <div class="service-submenus d-flex flex-wrap">
+
+      <div class="service-group">
+        <h6>Energy</h6>
+        <ul>
+          <li><a href="#">Solar</a></li>
+          <li><a href="#">Wind</a></li>
+          <li><a href="#">Biomass</a></li>
+          <li><a href="#">Hydel </a></li>
+        </ul>
+      </div>
+
+      <div class="service-group">
+        <h6>Power</h6>
+        <ul>
+          <li><a href="#">Transimission</a></li>
+          <li><a href="#">Distribution</a></li>
+          <li><a href="#">HT and LT Panels</a></li>
+          <li><a href="#">Control Panels</a></li>
+        </ul>
+      </div>
+
+<div class="service-group">
+  <h6><a href="lighting.html">Lighting</a></h6>
+  <ul class="submenu-parent">
+
+    <!-- Residential -->
+    <li class="has-submenu">
+      <a href="#.html">
+        Residential <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="kitchen-lighting.html">Kitchen </a></li>
+        <li><a href="livingroom-lighting.html">Living Room</a></li>
+        <li><a href="bedroom-lighting.html">Bedroom</a></li>
+        <li><a href="bathroom-lighting.html">Bathroom</a></li>
+        <li><a href="entrance-lighting.html">Entrance Lighting</a></li>
+      </ul>
+    </li>
+
+    <!-- Commercial -->
+    <li class="has-submenu">
+      <a href="#">
+        Commercial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="office-lighting.html">Office</a></li>
+        <li><a href="retail-showroom-lighting.html">Retail & Showroom Lighting</a></li>
+        <li><a href="healthcare-lighting.html">Healthcare Lighting</a></li>
+        <li><a href="education-lighting.html">Educational Lighting</a></li>
+        <li><a href="entertainments-and-theaters-lighting.html">Entertainment & Theatres</a></li>
+        <li><a href="airport-transport-lighting.html">Airport & Transport Hubs</a></li>
+        <li><a href="hotel-lighting.html">Hotel Lighting</a></li>
+      </ul>
+    </li>
+
+
+        <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Industrial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="factorylighting.html">Factory Lighting</a></li>
+        <li><a href="warehouselighting.html">WarehouseLighting</a></li>
+        <li><a href="workshoplighting.html">Workshop Lighting</a></li>
+        <li><a href="coldstoragelighting.html">Cold Storage Lighting</a></li>
+        <li><a href="parkingutilitylighting.html">Parking & Utility Lighting</a></li>
+        
+      </ul>
+    </li>
+
+
+            <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Outdoor Lighting <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="gardenandlandscapelighting.html">Garden & Landscape Lighting</a></li>
+        <li><a href="facadeandarchitecturallighting.html">Facade & Architectural Lighting</a></li>
+        <li><a href="outdoorhomelighting.html">Outdoor Home Lighting</a></li>
+        <li><a href="parkinglotlighting.html">Parking Lot Lighting</a></li>
+        <li><a href="campusandinstitutionallighting.html">Campus & Institutional Lighting</a></li>
+        <li><a href="resortandhospitalitylighting.html">Resort & Hospitality</a></li>
+        <li><a href="securityandfloodlighting.html">Street and Security Lighting</a></li>
+        <li><a href="sportsgroundlighting.html">Sports Ground Lighting</a></li>
+        
+      </ul>
+    </li>
+
+   
+
+  </ul>
+</div>
+
+      <div class="service-group">
+        <h6>Automation</h6>
+        <ul>
+          <li><a href="#">Residential</a></li>
+          <li><a href="#">Commercial</a></li>
+          <li><a href="#">Industrial</a></li>
+          <li><a href="#">Hospital</a></li>
+          <li><a href="#">Hotel</a></li>
+        </ul>
+      </div>
+
+       <div class="service-group">
+        <h6>R&D</h6>
+        <ul>
+          <li><a href="#">Smartpole</a></li>
+          <li><a href="#">Smart Bollard</a></li>
+          <li><a href="#">Smart Conference Table</a></li>
+          <li><a href="#">Smart Bar Counter</a></li>
+          <li><a href="#">Smart Window leaf AC</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
   <!-- Mega Menu -->
   <div id="megaMenu" class="mega-menu">
+     <span class="menu-close" onclick="closeThis(this)">✕</span>
     <div class="row">
       <div class="underline"></div>
       <div class="service-submenus d-flex flex-wrap">
@@ -92,19 +247,84 @@
             <li><a href="#">Panel Boards</a></li>
           </ul>
         </div>
-        <div class="service-group">
-          <h6>Lighting</h6>
-          <ul>
-            <li><a href="residential-lighting.html">Residential</a></li>
-            <li><a href="facade-lighting.html">Facade</a></li>
-            <li><a href="commercial-lighting.html">Commercial</a></li>
-            <li><a href="industrial-lighting.html">Industrial</a></li>
-            <li><a href="#">Street</a></li>
-            <li><a href="#">Park</a></li>
-            <li><a href="#">Stadium</a></li>
-            <li><a href="#">Hospital</a></li>
-          </ul>
-        </div>
+<div class="service-group">
+  <h6><a href="lighting.html">Lighting</a></h6>
+  <ul class="submenu-parent">
+
+    <!-- Residential -->
+    <li class="has-submenu">
+      <a href="#">
+        Residential <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="kitchen-lighting.html">Kitchen </a></li>
+        <li><a href="livingroom-lighting.html">Living Room</a></li>
+        <li><a href="bedroom-lighting.html">Bedroom</a></li>
+        <li><a href="bathroom-lighting.html">Bathroom</a></li>
+        <li><a href="entrance-lighting.html">Entrance Lighting</a></li>
+      </ul>
+    </li>
+
+    <!-- Commercial -->
+    <li class="has-submenu">
+      <a href="#">
+        Commercial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="office-lighting.html">Office</a></li>
+        <li><a href="retail-showroom-lighting.html">Retail & Showroom Lighting</a></li>
+        <li><a href="healthcare-lighting.html">Healthcare Lighting</a></li>
+        <li><a href="education-lighting.html">Educational Lighting</a></li>
+        <li><a href="entertainments-and-theaters-lighting.html">Entertainment & Theatres</a></li>
+        <li><a href="airport-transport-lighting.html">Airport & Transport Hubs</a></li>
+        <li><a href="hotel-lighting.html">Hotel Lighting</a></li>
+      </ul>
+    </li>
+
+
+        <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Industrial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="factorylighting.html">Factory Lighting</a></li>
+        <li><a href="warehouselighting.html">WarehouseLighting</a></li>
+        <li><a href="workshoplighting.html">Workshop Lighting</a></li>
+        <li><a href="coldstoragelighting.html">Cold Storage Lighting</a></li>
+        <li><a href="parkingutilitylighting.html">Parking & Utility Lighting</a></li>
+        
+      </ul>
+    </li>
+
+
+            <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Outdoor Lighting <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="gardenandlandscapelighting.html">Garden & Landscape Lighting</a></li>
+        <li><a href="facadeandarchitecturallighting.html">Facade & Architectural Lighting</a></li>
+        <li><a href="outdoorhomelighting.html">Outdoor Home Lighting</a></li>
+        <li><a href="parkinglotlighting.html">Parking Lot Lighting</a></li>
+        <li><a href="campusandinstitutionallighting.html">Campus & Institutional Lighting</a></li>
+        <li><a href="resortandhospitalitylighting.html">Resort & Hospitality</a></li>
+        <li><a href="securityandfloodlighting.html">Street and Security Lighting</a></li>
+        <li><a href="sportsgroundlighting.html">Sports Ground Lighting</a></li>
+        
+      </ul>
+    </li>
+
+   
+
+  </ul>
+</div>
+
         <div class="service-group">
           <h6>Automation</h6>
           <ul>
@@ -112,7 +332,7 @@
             <li><a href="#">Commercial</a></li>
             <li><a href="#">Industrial</a></li>
             <li><a href="#">Hospital</a></li>
-            <li><a href="#">IoT Based Automation</a></li>
+            <!-- <li><a href="#">IoT Based Automation</a></li> -->
             <li><a href="#">Hotel</a></li>
           </ul>
         </div>
@@ -339,30 +559,27 @@
 <script>
 const slides = [
   {
-    img:"img/powerimg/t1.jpg",
-    banner:"Capturing calm<br>moments inside modern architecture",
-    title:"Lonely Life at Baltimore"
+    img:"img/powerimg/1.png",
+    banner:"High-voltage solutions for a connected grid<br>",
+
   },
   {
-    img:"img/powerimg/t2.jpg",
-    banner:"Exploring oceans<br>through lens & natural rhythm",
-    title:"A Symphony of Sea"
+    img:"img/powerimg/4.png",
+    banner:"Smart distribution for efficient energy flow",
+   
   },
   {
-    img:"img/powerimg/t3.jpg",
-    banner:"Discovering golden<br>light in wild open spaces",
-    title:"Golden Nature"
+    img:"img/powerimg/7.png",
+    banner:"The backbone of safe power management",
+
   },
+
   {
-    img:"img/powerimg/t4.jpg",
-    banner:"Urban stories<br>told through silent frames",
-    title:"Urban Silence"
+    img:"img/powerimg/8.png",
+    banner:"Complete Control. Zero Compromise",
+   
   },
-  {
-    img:"img/powerimg/t5.jpg",
-    banner:"Endless horizons<br>where sky meets the sea",
-    title:"Endless Horizon"
-  }
+  
 ];
 
 const bg = document.getElementById("bgImage");
@@ -412,73 +629,49 @@ setInterval(updateSlide, duration);
 
     .power-about-v2-section{
       padding:80px 0;
-      height: 680px;
     }
 
     /* LEFT IMAGE COLUMN */
     .power-about-v2-image-wrap{
-      position:relative;
       width:100%;
-      height:580px;
+      height:520px;
+      overflow:hidden;
+      border-radius:8px;
     }
 
     .power-about-v2-image-wrap img{
-      position:absolute;
-      width:70%;
-      height:65%;
+      width:100%;
+      height:100%;
       object-fit:cover;
-      background:#fff;
-      padding:10px;
-      box-sizing:border-box;
+      border-radius:8px;
+      transition:transform .5s ease;
     }
 
-    .power-about-v2-image-wrap img:first-child{
-      top:0;
-      left:0;
-      z-index:1;
-    }
-
-    .power-about-v2-image-wrap img:last-child{
-      bottom:0;
-      right:0;
-      z-index:2;
+    .power-about-v2-image-wrap img:hover{
+      transform:scale(1.05);
     }
 
     /* RIGHT CONTENT */
     .power-about-v2-heading{
-      font-size:20px;
-      letter-spacing:2px;
-      color:#040404;
-      font-weight:300;
-      position:relative;
-      padding-left:40px;
-      margin-bottom:40px;
-      display:inline-block;
-    }
-
-    .power-about-v2-heading::before{
-      content:"";
-      width:25px;
-      height:2px;
-      background:#000;
-      position:absolute;
-      left:0;
-      top:50%;
-      transform:translateY(-50%);
+      font-size:22px;
+      letter-spacing:1px;
+      color:#111;
+      font-weight:600;
+      margin-bottom:30px;
     }
 
     .power-about-v2-text{
-      font-size:14px;
-      color:#666;
+      font-size:15px;
+      color:#555;
       line-height:1.9;
       margin-bottom:18px;
     }
 
     /* FEATURES */
     .power-about-v2-features{
-      margin-top:40px;
+      margin-top:35px;
       display:flex;
-      gap:40px;
+      gap:35px;
       flex-wrap:wrap;
     }
 
@@ -491,137 +684,84 @@ setInterval(updateSlide, duration);
     }
 
     .power-about-v2-feature-icon{
-      width:34px;
-      height:34px;
+      width:36px;
+      height:36px;
       border-radius:50%;
-      border:1px solid #67635c;
+      border:1px solid #ccc;
       display:flex;
       align-items:center;
       justify-content:center;
-      color:#84817c;
       font-size:14px;
     }
 
-   /* ===== MOBILE RESPONSIVE ===== */
+    /* ===== MOBILE ===== */
 
-@media (max-width: 991px) {
+    @media (max-width: 991px){
 
-  .power-about-v2-section{
-    height: auto;
-    padding: 60px 0;
-  }
+      .power-about-v2-image-wrap{
+        height:350px;
+        margin-bottom:30px;
+      }
 
-  .power-about-v2-image-wrap{
-    height: 360px;
-    margin-bottom: 30px;
-  }
+      .power-about-v2-heading{
+        font-size:20px;
+      }
 
-  .power-about-v2-image-wrap img{
-    width: 75%;
-    height: 60%;
-    padding: 6px;
-  }
+      .power-about-v2-text{
+        font-size:14px;
+      }
 
-  .power-about-v2-image-wrap img:first-child{
-    top: 0;
-    left: 0;
-  }
+      .power-about-v2-features{
+        gap:20px;
+      }
+    }
 
-  .power-about-v2-image-wrap img:last-child{
-    bottom: 0;
-    right: 0;
-  }
+    @media (max-width: 575px){
 
-  .power-about-v2-heading{
-    font-size: 18px;
-    margin-bottom: 25px;
-  }
+      .power-about-v2-image-wrap{
+        height:280px;
+      }
 
-  .power-about-v2-text{
-    font-size: 14px;
-    line-height: 1.7;
-  }
-
-  .power-about-v2-features{
-    gap: 20px;
-  }
-
-  .power-about-v2-feature{
-    width: 48%;
-  }
-}
-
-/* ===== SMALL MOBILE ===== */
-
-@media (max-width: 575px) {
-
-  .power-about-v2-image-wrap{
-    height: 300px;
-  }
-
-  .power-about-v2-image-wrap img{
-    width: 85%;
-    height: 55%;
-  }
-
-  .power-about-v2-heading{
-    font-size: 17px;
-    padding-left: 30px;
-  }
-
-  .power-about-v2-heading::before{
-    width: 18px;
-  }
-
-  .power-about-v2-text{
-    font-size: 13.5px;
-  }
-
-  .power-about-v2-features{
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .power-about-v2-feature{
-    width: 100%;
-  }
-}
-
+      .power-about-v2-features{
+        flex-direction:column;
+        gap:15px;
+      }
+    }
 
   </style>
 
   <div class="container">
     <div class="row align-items-center g-5">
 
-      <!-- LEFT IMAGES -->
+      <!-- LEFT SINGLE IMAGE -->
       <div class="col-lg-5">
         <div class="power-about-v2-image-wrap">
-          <img src="images/distribution.jpg" alt="worker">
-          <img src="images/generator.jpg" alt="tools">
+          <img src="img/powerimg/aboutss.png" alt="Power Project">
         </div>
       </div>
 
-      <!-- RIGHT CONTENT -->
+      <!-- RIGHT CONTENT (unchanged) -->
       <div class="col-lg-7">
-        <h2 class="power-about-v2-heading">About POWER SOLUTIONS</h2>
+        <h2 class="power-about-v2-heading">Power Segment – Complete EPC & System Solutions</h2>
 
         <p class="power-about-v2-text">
-          We are a team of professional and skilled experts in all domestic spheres. We offer a wide range of services and are always glad to help with unconventional needs.
+         We deliver end-to-end power transmission, distribution, panel boards, and control panel solutions across extra-high, high, and medium voltage levels.
+From design & engineering to execution, testing, and commissioning, we provide reliable, scalable, and future-ready power infrastructure.
         </p>
 
         <p class="power-about-v2-text">
-          We ensure comfort at home with fast service and fair pricing. Quality, safety and credibility are our core values.
+         We have successfully completed multiple large-scale projects and are currently executing a <strong>765 kV transmission project</strong>, demonstrating our capability to handle India’s highest voltage class systems.
         </p>
 
         <div class="power-about-v2-features">
           <div class="power-about-v2-feature">
             <div class="power-about-v2-feature-icon">⏱</div>
-            <span>Ontime at Services</span>
+            <span>Ontime Services</span>
           </div>
 
           <div class="power-about-v2-feature">
             <div class="power-about-v2-feature-icon">⚡</div>
-            <span>24/7 Services</span>
+            <span>24/7 Support</span>
           </div>
 
           <div class="power-about-v2-feature">
@@ -639,27 +779,41 @@ setInterval(updateSlide, duration);
 
 <!-- g13 -->
  <section class="choose-section">
-    <style>
-
+<style>  
 
 .choose-section{
     max-width:1300px;
-    margin:20px auto;
-    padding:0 0px;
+    margin:80px auto;
+    padding:0 20px;
 }
 
+/* Title */
 .choose-title{
-    font-size:38px;
-    font-weight:300;
-    margin-bottom:15px;
+    font-size:42px;
+    font-weight:600;
+    margin-bottom:40px;
+    text-align:center;
+    letter-spacing:1px;
+    position:relative;
+    padding-top: 40px;
+}
+
+.choose-title::after{
+    content:"";
+    width:70px;
+    height:3px;
+    background:#ff6a00;
+    display:block;
+    margin:15px auto 0;
+    border-radius:2px;
 }
 
 /* GRID */
 .grid-layout{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
-    grid-auto-rows:250px;
-    gap:10px;
+    grid-auto-rows:260px;
+    gap:9px;
 }
 
 /* Cards */
@@ -669,12 +823,23 @@ setInterval(updateSlide, duration);
     padding:24px;
     position:relative;
     overflow:hidden;
+    transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.grid-box:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
 .grid-box img{
     width:100%;
     height:100%;
     object-fit:cover;
+    transition:transform .5s ease;
+}
+
+.grid-box:hover img{
+    transform:scale(1.05);
 }
 
 /* Spans */
@@ -690,11 +855,20 @@ setInterval(updateSlide, duration);
 .overlay{
     position:absolute;
     inset:0;
-    background:linear-gradient(to top, rgba(0,0,0,.7), transparent 60%);
+    background:linear-gradient(to top, rgba(0,0,0,.75), transparent 60%);
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
-    padding:20px;
+    padding:25px;
+}
+.overlay h5 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    color: #ffffff;
+    font-family: sans-serif;
 }
 
 /* Stats */
@@ -703,12 +877,13 @@ setInterval(updateSlide, duration);
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    text-align:center;
 }
 
-.big-number{font-size:44px;font-weight:300;}
-.stat-big{font-size:46px;font-weight:300;}
-.muted{opacity:.75}
-.small-text{font-size:13px;opacity:.8}
+.big-number{font-size:16px;font-weight:400;}
+.stat-big{font-size:16px;font-weight:400;}
+.muted{opacity:.75;font-size:15px;}
+.small-text{font-size:14px;opacity:.8}
 
 /* Platform Image */
 .platform-image img{
@@ -716,28 +891,29 @@ setInterval(updateSlide, duration);
     height:100%;
     object-fit:cover;
 }
-/* ============================
-   RESPONSIVE STYLES
-============================ */
 
-/* Tablets */
+
+/* ============================
+   TABLET
+============================ */
 @media (max-width: 992px) {
 
     .choose-section{
-        padding: 0 15px;
+        margin:60px auto;
+        padding:0 15px;
     }
 
     .choose-title{
-        font-size: 30px;
-        text-align: center;
+        font-size:32px;
+        margin-bottom:30px;
     }
 
     .grid-layout{
         grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 220px;
+        grid-auto-rows:230px;
+        gap:12px;
     }
 
-    /* Reset large spans */
     .span-vertical{
         grid-row: span 1;
     }
@@ -748,25 +924,26 @@ setInterval(updateSlide, duration);
 
     .big-number,
     .stat-big{
-        font-size: 36px;
+        font-size:15px;
     }
 }
 
 
-/* Mobile */
+/* ============================
+   MOBILE
+============================ */
 @media (max-width: 576px) {
 
     .choose-title{
-        font-size: 26px;
+        font-size:26px;
     }
 
     .grid-layout{
         grid-template-columns: 1fr;
-        grid-auto-rows: 200px;
-        gap: 12px;
+        grid-auto-rows:200px;
+        gap:15px;
     }
 
-    /* Remove all spans for clean stacking */
     .span-vertical{
         grid-row: span 1;
     }
@@ -776,78 +953,78 @@ setInterval(updateSlide, duration);
     }
 
     .overlay{
-        padding: 15px;
+        padding:18px;
     }
 
     .overlay h5{
-        font-size: 16px;
+        font-size:16px;
     }
 
     .overlay p,
     .small-text{
-        font-size: 12px;
+        font-size:13px;
     }
 
     .big-number,
     .stat-big{
-        font-size: 32px;
+        font-size:15px;
     }
 
     .muted{
-        font-size: 13px;
+        font-size:13px;
     }
 }
 
 </style>
+
 <h2 class="choose-title">So, why choose us?</h2>
 
 <div class="grid-layout">
 
     <!-- 24 hour -->
     <div class="grid-box p-0">
-        <img src="images/distribution.jpg">
+        <img src="img/powerimg/t1.png">
         <div class="overlay">
-            <h5>24 Hour Turnaround Available</h5>
+            <h5 >Engineering Reliable Transmission Up to 765kV</h5>
         </div>
     </div>
 
     <!-- 500M -->
     <div class="grid-box stat-box">
-        <div class="big-number">500M+</div>
-        <div class="muted">Photos delivered</div>
+        <div class="big-number">Powering Nations Through High-Voltage Excellence</div>
+       
     </div>
 
     <!-- RIGHT BIG IMAGE (spans 2 rows) -->
     <div class="grid-box p-0 span-vertical">
-        <img src="images/generator.jpg">
+        <img src="img/powerimg/p1.png">
         <div class="overlay">
-            <h5>Our Community</h5>
-            <p class="small-text">Creators worldwide</p>
-            <h6 class="mt-2">Trusted by 100+ Creators</h6>
+            <h5>Efficient Distribution. Reliable Delivery</h5>
+           
         </div>
     </div>
 
     <!-- Platform Image (instead of grid boxes) -->
     <div class="grid-box span-horizontal platform-image p-0">
-        <img src="images/panel.jpg" alt="Platform formatted image">
+        <img src="img/powerimg/d1.png" alt="Platform formatted image">
         <div class="overlay">
-            <h5>Perfectly Formatted for Every Platform</h5>
-            <p class="small-text mt-2">Automatically optimized for all social platforms.</p>
+            <h5>Built for Control. Designed for Safety</h5>
+         
         </div>
     </div>
 
     <!-- 85% -->
     <div class="grid-box stat-box">
-        <div class="stat-big">85%</div>
-        <div class="muted">Client retention</div>
+        <div class="stat-big">Power Management with Precision</div>
+        
     </div>
 
     <!-- BOTTOM BIG IMAGE (spans 2 columns) -->
     <div class="grid-box p-0 span-horizontal">
-        <img src="images/powerabout.jpg">
+        <img src="img/powerimg/c1.png">
         <div class="overlay">
-            <h5>Unlimited Revisions</h5>
-            <p class="small-text">We edit until you are satisfied</p>
+            <h5>Integrated Control. Seamless Operations</h5>
+      
         </div>
     </div>
 
@@ -856,167 +1033,121 @@ setInterval(updateSlide, duration);
 </section>
 
 
-<!-- f16 -->
 <section class="mission-section">
 <style>
 
 .mission-section{
-    position:relative;
-    min-height:95vh;
-    background:linear-gradient(135deg,#c3c3c3,#b6b7b9);
-    overflow:hidden;
+    min-height:90vh;
     display:flex;
     align-items:center;
-   margin-bottom: 20px;
+    background:#f4f4f4;
+    margin-bottom:20px;
 }
 
-/* LEFT IMAGE PANEL */
+/* LEFT IMAGE */
 .image-panel{
-    position:absolute;
-    left:0;
-    top:0;
-    width:55%;
-    height:100%;
-    background:url('img/powerimg/t3.jpg') center/cover no-repeat;
-    clip-path:polygon(0 0, 92% 0, 80% 100%, 0% 100%);
-    transform:translateX(-120px);
-    opacity:0;
-    transition:1.2s ease;
+    width:50%;
+    height:90vh;
+    background:url('img/powerimg/abouttrans.png') center/cover no-repeat;
 }
 
-.image-panel.animate{
-    transform:translateX(0);
-    opacity:1;
-}
-
-/* RIGHT CONTENT PANEL */
+/* RIGHT CONTENT */
 .content-panel{
-    margin-left:auto;
-    width:55%;
-    padding:80px 80px 80px 120px;
-    color:#333334;
-    transform:translateX(120px);
-    opacity:0;
-    transition:1.2s ease;
-}
-
-.content-panel.animate{
-    transform:translateX(0);
-    opacity:1;
+    width:50%;
+    padding:80px 100px;
+    color:#333;
 }
 
 .content-panel h1{
-    font-size:26px;
-    font-weight:300;
-    letter-spacing:4px;
-    margin-bottom:30px;
+    font-size:28px;
+    font-weight:600;
+    letter-spacing:3px;
+    margin-bottom:25px;
 }
 
 .content-panel p{
     font-size:15px;
     line-height:1.9;
+    margin-bottom:40px;
     max-width:520px;
-    margin-bottom:45px;
 }
 
 .btn-custom{
-    background:#1c1c1c;
+    background:#111;
     color:#fff;
     padding:14px 36px;
-    border-radius:2px;
     text-decoration:none;
-    font-weight:300;
     letter-spacing:1px;
-    transition:0.3s;
+    transition:0.3s ease;
+    display:inline-block;
 }
 
 .btn-custom:hover{
-    background:#111111;
-    color:#fff;
+    background:#000;
 }
 
-/* ============================= */
+/* ===================== */
+/* TABLET */
+/* ===================== */
 @media(max-width:992px){
+
     .mission-section{
         flex-direction:column;
-        min-height:auto;
     }
 
     .image-panel{
-        position:relative;
         width:100%;
         height:45vh;
-        clip-path:none;
-        transform:translateY(-60px);
-    }
-
-    .image-panel.animate{
-        transform:translateY(0);
     }
 
     .content-panel{
         width:100%;
         padding:50px 40px;
-        transform:translateY(60px);
-        text-align:left;
-    }
-
-    .content-panel.animate{
-        transform:translateY(0);
-    }
-
-    .content-panel h1{
-        font-size:30px;
     }
 }
 
-/* ============================= */
+/* ===================== */
 /* MOBILE */
-/* ============================= */
+/* ===================== */
 @media(max-width:576px){
+
     .image-panel{
-        height:38vh;
+        height:35vh;
     }
 
     .content-panel{
-        padding:35px 22px 45px;
+        padding:35px 22px;
     }
 
     .content-panel h1{
         font-size:22px;
-        letter-spacing:3px;
-        margin-bottom:18px;
     }
 
     .content-panel p{
         font-size:14px;
         line-height:1.7;
-        margin-bottom:30px;
     }
 
     .btn-custom{
         width:100%;
         text-align:center;
-        padding:14px 0;
     }
 }
-</style>
-    <div class="image-panel" id="imagePanel"></div>
 
-    <div class="content-panel" id="contentPanel">
-        <h1>TRANSMISSION</h1>
-        <p>
-            To execute breakthrough solutions that push industry standards in electrical contracting and empower our team to provide exceptional, personalized, aesthetically sound, and innovative results to each client.
-        </p>
-        <a href="Transmission.html" class="btn-custom">LEARN MORE</a>
-    </div>
-<script>
-window.addEventListener('load',()=>{
-    document.getElementById('imagePanel').classList.add('animate');
-    document.getElementById('contentPanel').classList.add('animate');
-});
-</script>
+</style>
+
+<div class="image-panel"></div>
+
+<div class="content-panel">
+    <h1>TRANSMISSION</h1>
+    <p>
+        We execute high-voltage transmission projects from 66kV to 765kV, delivering reliable EPC solutions with precision engineering, structural strength, and timely execution.
+    </p>
+    <a href="Transmission.html" class="btn-custom">LEARN MORE</a>
+</div>
+
 </section>
+
 
 
 <!-- e18 -->
@@ -1030,28 +1161,19 @@ window.addEventListener('load',()=>{
       background-color: rgb(131, 136, 141);
     }
 
-    .power-distri-image-wrapper{
-      position:relative;
-      display:flex;
-      gap:40px;
-    }
-
     .power-distri-img-card{
-      width:280px;
-      height:420px;
+      width:320px;
+      height:450px;
       overflow:hidden;
       box-shadow:0 20px 40px rgba(0,0,0,0.25);
       background:#000;
+      margin:auto;
     }
 
     .power-distri-img-card img{
       width:100%;
       height:100%;
       object-fit:cover;
-    }
-
-    .power-distri-img-left{
-      margin-top:40px;
     }
 
     .power-distri-content{
@@ -1105,15 +1227,10 @@ window.addEventListener('load',()=>{
         padding:60px 20px;
       }
 
-      .power-distri-image-wrapper{
-        justify-content:center;
-        margin-bottom:40px;
-      }
-
       .power-distri-content{
         padding-left:0;
         text-align:center;
-        margin:auto;
+        margin-top:40px;
       }
 
       .power-distri-divider{
@@ -1123,8 +1240,8 @@ window.addEventListener('load',()=>{
 
     @media(max-width:576px){
       .power-distri-img-card{
-        width:220px;
-        height:340px;
+        width:240px;
+        height:360px;
       }
 
       .power-distri-content h2{
@@ -1136,15 +1253,10 @@ window.addEventListener('load',()=>{
   <div class="container">
     <div class="row align-items-center">
 
-      <!-- Images -->
-      <div class="col-lg-6">
-        <div class="power-distri-image-wrapper">
-          <div class="power-distri-img-card power-distri-img-left">
-            <img src="img/powerimg/distri.png" alt="Power Distribution">
-          </div>
-          <div class="power-distri-img-card">
-            <img src="images/distribution.jpg" alt="Power Distribution">
-          </div>
+      <!-- Single Image -->
+      <div class="col-lg-6 text-center">
+        <div class="power-distri-img-card">
+          <img src="img/powerimg/distributionss.png" alt="Power Distribution">
         </div>
       </div>
 
@@ -1155,7 +1267,7 @@ window.addEventListener('load',()=>{
           <div class="power-distri-divider"></div>
 
           <p>
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
           </p>
 
           <a href="distribution.html" class="power-distri-btn">
@@ -1283,13 +1395,13 @@ window.addEventListener('load',()=>{
   <!-- RIGHT IMAGES -->
   <div class="story-images">
     <div class="image-strip">
-      <img src="img/powerimg/distri.png" alt="">
+      <img src="img/powerimg/cp1.png" alt="">
     </div>
     <div class="image-strip">
-      <img src="img/powerimg/line4.jpg" alt="">
+      <img src="img/powerimg/cp2.png" alt="">
     </div>
     <div class="image-strip">
-      <img src="img/powerimg/line5.jpg" alt="">
+      <img src="img/powerimg/cp3.png" alt="">
     </div>
   </div>
 
@@ -1454,7 +1566,7 @@ window.addEventListener('load',()=>{
     <!-- LEFT CONTENT -->
     <div class="col-lg-4 power-panel-left">
 
-        <h1>PANEL BOARDS</h1>
+        <h1 class="text-white">PANEL BOARDS</h1>
 
         <div class="power-panel-divider"></div>
 
