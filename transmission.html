@@ -394,54 +394,38 @@
   height: 100%;
 }
 
-#trans-banner .trans-banner-showcase {
+/* Single image wrapper */
+#trans-banner .trans-banner-single {
   position: relative;
   height: 100%;
   width: 100%;
-  overflow: hidden;
   z-index: 1;
 }
 
-#trans-banner .trans-banner-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transform: scale(0.8) rotateY(30deg);
-  transition: opacity 1s ease, transform 2s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-#trans-banner .trans-banner-slide.active {
-  opacity: 1;
-  transform: scale(1) rotateY(0deg);
-  z-index: 5;
-}
-
-#trans-banner .trans-banner-slide img {
+#trans-banner .trans-banner-single img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(60%) contrast(110%) saturate(120%);
-  transition: transform 8s ease, filter 2s ease;
-}
-
-#trans-banner .trans-banner-slide.active img {
-  transform: scale(1.1);
   filter: brightness(45%) contrast(120%);
+  transform: scale(1.05);
 }
 
+/* Caption */
 #trans-banner .trans-banner-caption {
   position: absolute;
   bottom: 20%;
   left: 10%;
   opacity: 0;
   transform: translateY(40px);
-  transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+  animation: fadeUp 1.5s ease forwards;
+  animation-delay: 0.5s;
 }
 
-#trans-banner .trans-banner-slide.active .trans-banner-caption {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.4s;
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 #trans-banner .trans-banner-caption h2 {
@@ -456,31 +440,6 @@
   margin-top: 15px;
   max-width: 600px;
   line-height: 1.7;
-}
-
-/* Next button */
-#trans-banner .trans-banner-indicator {
-  position: absolute;
-  bottom: 50px;
-  right: 50px;
-  width: 60px;
-  height: 60px;
-  border: 2px solid #00c6ff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.4s ease, transform 0.3s ease;
-}
-
-#trans-banner .trans-banner-indicator:hover {
-  background: #00c6ff;
-  transform: scale(1.1);
-}
-
-#trans-banner .trans-banner-indicator i {
-  font-size: 1.5rem;
 }
 
 @media (max-width: 992px) {
@@ -501,97 +460,38 @@
 
 <canvas id="transBannerParticles"></canvas>
 
-<div class="trans-banner-showcase">
+<div class="trans-banner-single">
+  <img src="img/powerimg/transmission/transmisstionbanner.png">
 
-  <div class="trans-banner-slide active">
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
-    <div class="trans-banner-caption">
-      <h2>Ocean Dreams</h2>
-      <p>Feel the motion of waves and whispers of infinite blue serenity.</p>
-    </div>
+  <div class="trans-banner-caption">
+    <h2>Engineering Power. Delivering Reliability.</h2>
+    <p>Professional banner with smooth particle background and premium dark cinematic feel.</p>
   </div>
-
-  <div class="trans-banner-slide">
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
-    <div class="trans-banner-caption">
-      <h2>Mountain Majesty</h2>
-      <p>Climb beyond limits, where golden sun meets silent peaks.</p>
-    </div>
-  </div>
-
-  <div class="trans-banner-slide">
-    <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff">
-    <div class="trans-banner-caption">
-      <h2>City Glow</h2>
-      <p>Lights, motion, and dreams in the heartbeat of a sleepless city.</p>
-    </div>
-  </div>
-
-  <div class="trans-banner-slide">
-    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308">
-    <div class="trans-banner-caption">
-      <h2>Golden Desert</h2>
-      <p>Where every grain of sand holds stories of eternity.</p>
-    </div>
-  </div>
-
-  <div class="trans-banner-slide">
-    <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7">
-    <div class="trans-banner-caption">
-      <h2>Forest Whisper</h2>
-      <p>Breathe in the rhythm of nature’s eternal calm.</p>
-    </div>
-  </div>
-
-  <div class="trans-banner-slide">
-    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9">
-    <div class="trans-banner-caption">
-      <h2>Dreamscape</h2>
-      <p>Where imagination paints the horizon in surreal hues.</p>
-    </div>
-  </div>
-
-  <div class="trans-banner-indicator" id="transBannerNextBtn">
-    <i class="bi bi-arrow-right"></i>
-  </div>
-
 </div>
 
 <script>
 (function(){
 
-  const transBannerSection = document.getElementById('trans-banner');
-  const transBannerSlides = transBannerSection.querySelectorAll('.trans-banner-slide');
-  const transBannerNextBtn = transBannerSection.querySelector('#transBannerNextBtn');
-  const transBannerCanvas = transBannerSection.querySelector('#transBannerParticles');
-  const transBannerCtx = transBannerCanvas.getContext('2d');
+  const section = document.getElementById('trans-banner');
+  const canvas = document.getElementById('transBannerParticles');
+  const ctx = canvas.getContext('2d');
 
-  let transBannerIndex = 0;
-  let transBannerParticles = [];
-  let transBannerWidth, transBannerHeight;
+  let particles = [];
+  let width, height;
 
-  function transBannerResizeCanvas() {
-    transBannerWidth = transBannerSection.clientWidth;
-    transBannerHeight = transBannerSection.clientHeight;
-    transBannerCanvas.width = transBannerWidth;
-    transBannerCanvas.height = transBannerHeight;
+  function resizeCanvas() {
+    width = section.clientWidth;
+    height = section.clientHeight;
+    canvas.width = width;
+    canvas.height = height;
   }
 
-  function transBannerNextSlide() {
-    transBannerSlides[transBannerIndex].classList.remove('active');
-    transBannerIndex = (transBannerIndex + 1) % transBannerSlides.length;
-    transBannerSlides[transBannerIndex].classList.add('active');
-  }
-
-  setInterval(transBannerNextSlide, 5000);
-  transBannerNextBtn.addEventListener('click', transBannerNextSlide);
-
-  function transBannerCreateParticles() {
-    transBannerParticles = [];
+  function createParticles() {
+    particles = [];
     for (let i = 0; i < 60; i++) {
-      transBannerParticles.push({
-        x: Math.random() * transBannerWidth,
-        y: Math.random() * transBannerHeight,
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
         r: Math.random() * 2 + 0.5,
         dx: (Math.random() - 0.5) * 0.5,
         dy: (Math.random() - 0.5) * 0.5,
@@ -600,34 +500,35 @@
     }
   }
 
-  function transBannerAnimateParticles() {
-    transBannerCtx.clearRect(0, 0, transBannerWidth, transBannerHeight);
-    transBannerParticles.forEach(p => {
-      transBannerCtx.beginPath();
-      transBannerCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      transBannerCtx.fillStyle = `rgba(0,174,255,${p.a})`;
-      transBannerCtx.fill();
+  function animateParticles() {
+    ctx.clearRect(0, 0, width, height);
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(0,174,255,${p.a})`;
+      ctx.fill();
       p.x += p.dx;
       p.y += p.dy;
-      if (p.x < 0 || p.x > transBannerWidth) p.dx *= -1;
-      if (p.y < 0 || p.y > transBannerHeight) p.dy *= -1;
+      if (p.x < 0 || p.x > width) p.dx *= -1;
+      if (p.y < 0 || p.y > height) p.dy *= -1;
     });
-    requestAnimationFrame(transBannerAnimateParticles);
+    requestAnimationFrame(animateParticles);
   }
 
-  transBannerResizeCanvas();
-  transBannerCreateParticles();
-  transBannerAnimateParticles();
+  resizeCanvas();
+  createParticles();
+  animateParticles();
 
   window.addEventListener('resize', () => {
-    transBannerResizeCanvas();
-    transBannerCreateParticles();
+    resizeCanvas();
+    createParticles();
   });
 
 })();
 </script>
 
 </section>
+
 
 
 
@@ -827,7 +728,7 @@
   <div class="trans-services-grid">
 
     <div class="trans-services-card">
-      <div class="trans-services-bg" style="background-image:url('img/powerimg/hvtrlineinstallation.png');"></div>
+      <div class="trans-services-bg" style="background-image:url('img/powerimg/transmission/Highvoltagetransmisstion lines.png');"></div>
       <div class="trans-services-header">
         <h3 class="trans-services-heading">HIGH VOLTAGE TRANSMISSION LINE INSTALLATION</h3>
       </div>
@@ -838,7 +739,7 @@
     </div>
 
     <div class="trans-services-card">
-      <div class="trans-services-bg" style="background-image:url('img/powerimg/overheadundergroundtrlines.png');"></div>
+      <div class="trans-services-bg" style="background-image:url('img/powerimg/transmission/undergroundtmlines.png');"></div>
       <div class="trans-services-header">
         <h3 class="trans-services-heading">OVERHEAD & UNDERGROUND TRANSMISSION LINES</h3>
       </div>
@@ -849,7 +750,7 @@
     </div>
 
     <div class="trans-services-card">
-      <div class="trans-services-bg" style="background-image:url('img/powerimg/substationconnectionworks.png');"></div>
+      <div class="trans-services-bg" style="background-image:url('img/powerimg/transmission/substationconnectionwork.png');"></div>
       <div class="trans-services-header">
         <h3 class="trans-services-heading">SUBSTATION CONNECTION WORKS</h3>
       </div>
@@ -860,7 +761,7 @@
     </div>
 
     <div class="trans-services-card">
-      <div class="trans-services-bg" style="background-image:url('img/powerimg/cablelayingandtermination.png');"></div>
+      <div class="trans-services-bg" style="background-image:url('img/powerimg/transmission/cablelayingtermination.png');"></div>
       <div class="trans-services-header">
         <h3 class="trans-services-heading">CABLE LAYING & TERMINATION</h3>
       </div>
@@ -871,7 +772,7 @@
     </div>
 
     <div class="trans-services-card">
-      <div class="trans-services-bg" style="background-image:url('img/powerimg/testingandcommisioning.png');"></div>
+      <div class="trans-services-bg" style="background-image:url('img/powerimg/transmission/testingandcommisstioning.png');"></div>
       <div class="trans-services-header">
         <h3 class="trans-services-heading">TESTING & COMMISSIONING</h3>
       </div>
@@ -882,7 +783,7 @@
     </div>
 
     <div class="trans-services-card">
-      <div class="trans-services-bg" style="background-image:url('img/powerimg/maintananceandfaultrectification.png');"></div>
+      <div class="trans-services-bg" style="background-image:url('img/powerimg/transmission/maintenanaceandfaultrectification.png');"></div>
       <div class="trans-services-header">
         <h3 class="trans-services-heading">MAINTENANCE & FAULT RECTIFICATION</h3>
       </div>
@@ -906,7 +807,7 @@
   });
   </script>
 </section>
-
+<!-- e15 -->
 
 <!-- f24 -->
 <section class="trans-lines-wrapper">
@@ -1414,12 +1315,12 @@ document.querySelectorAll(".trans-lines-animate-section, .trans-lines-animate-im
 
         <!-- Right Panel -->
         <div class="line-erection-right">
-          <img src="img/powerimg/transmission/trtower erection.png" class="line-erection-image active">
-          <img src="img/powerimg/transmission/conductorstringing.png" class="line-erection-image">
-          <img src="img/powerimg/transmission/insulatorandhardwarefixing.png" class="line-erection-image">
-          <img src="img/powerimg/transmission/sagtensioning.png" class="line-erection-image">
-          <img src="img/powerimg/transmission/linealignment.png" class="line-erection-image">
-          <img src="img/powerimg/transmission/safetycompliance.png" class="line-erection-image">
+          <img src="img/powerimg/transmission/Tower_Pole Erection.png" class="line-erection-image active">
+          <img src="img/powerimg/transmission/Conductor Stringing.png" class="line-erection-image">
+          <img src="img/powerimg/transmission/Insulator & Hardware Fixing.png" class="line-erection-image">
+          <img src="img/powerimg/transmission/Sag Tensioning.png" class="line-erection-image">
+          <img src="img/powerimg/transmission/Line Alignment.png" class="line-erection-image">
+          <img src="img/powerimg/transmission/Safety Compliance.png" class="line-erection-image">
         </div>
 
       </div>
