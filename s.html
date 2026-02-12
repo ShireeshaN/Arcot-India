@@ -1,116 +1,1759 @@
-<section class="bollard-auto-scroll">
-  <button class="scroll-btn left" aria-label="Scroll Left">
-    <i class="bi bi-chevron-left"></i>
-  </button>
+<!DOCTYPE html>
+<html lang="en">
 
-  <div class="scroll-wrapper" id="bollardScroll">
-    <div class="scroll-track">
-      <img src="img/randd/bollards/1000082445.jpg" alt="">
-      <img src="img/randd/bollards/1000082445.jpg" alt="">
-      <img src="img/randd/bollards/1000082445.jpg" alt="">
-      <img src="img/randd/bollards/1000082445.jpg" alt="">
-      <img src="img/randd/bollards/1000082445.jpg" alt="">
-      <img src="img/randd/bollards/1000082445.jpg" alt="">
+<head>
+  <meta charset="utf-8">
+  <title>Arcot Industries Private Limited</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Arcot Industries Hyderabad, Industrial Power Solutions, Smart City India, Automation Systems, Lighting Company India, Solar Power, Engineering Solutions Hyderabad">
+  <meta name="description" content="Arcot Industries delivers cutting-edge solutions in Power, Energy, Lighting, Automation, Smart City Infrastructure, and R&D across India.">
+  <link rel="icon" href="img/fevi.png" type="image/x-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Performance-optimized Libraries -->
+  <link rel="stylesheet" href="lib/animate/animate.min.css" media="print" onload="this.media='all'">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- Font Awesome (latest) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Bootstrap CSS (latest) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Custom CSS -->
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="css/segments.css" rel="stylesheet">
+
+
+</head>
+
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        
+
+    
+<!-- HEADER START -->
+
+<header class="main-header">
+  <div class="header-wrap position-relative">
+    <a href="index.html">
+      <img src="img/logos.webp" alt="Logo" class="logo" loading="lazy">
+    </a>
+    <button class="menu-toggle" onclick="toggleMenu()" id="menuBtn"><i class="bi bi-list"></i></button>
+    <nav class="navmenu" id="mainNav">
+      <ul class="mb-0">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a></li>
+                <li class="dropdown">
+  <a href="#" onclick="toggleDropdown(event)">Products <i class="bi bi-chevron-down ms-1"></i></a>
+  <ul class="dropdown-menu">
+    <li><a href="#">Energy Generation</a></li>
+    <li><a href="#">Power</a></li>
+    <li><a href="lighting-products.html">Lighting</a></li>
+    <li><a href="#">Automation</a></li>
+    
+  </ul>
+</li>
+       
+<li class="dropdown">
+  <a href="#" onclick="toggleDropdown(event)">R&D <i class="bi bi-chevron-down ms-1"></i></a>
+  <ul class="dropdown-menu">
+    <li><a href="smart-pole.html">Smart Pole</a></li>
+    <li><a href="smart-bollard.html">Smart Bollard</a></li>
+    <li><a href="#">Smart Conference Table</a></li>
+    <li><a href="#">Smart Window Leaf AC</a></li>
+    <li><a href="#">Smart Bar Counter</a></li>
+  </ul>
+</li>
+
+ <li><a href="solution.html">Solutions</a></li>
+
+        <li>
+  <a href="#" onclick="toggleApplicationsMenu(event)">
+    Applications <i class="bi bi-chevron-down ms-1"></i>
+  </a>
+</li>
+
+        <!-- <li><a href="gallery.html">Gallery</a></li> -->
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <!-- Applications Mega Menu -->
+<div id="applicationsMegaMenu" class="mega-menu">
+  <div class="row">
+    <div class="underline"></div>
+
+    <div class="service-submenus d-flex flex-wrap">
+
+      <div class="service-group">
+        <h6>Energy</h6>
+        <ul>
+          <li><a href="#">Solar</a></li>
+          <li><a href="#">Wind</a></li>
+          <li><a href="#">Biomass</a></li>
+          <li><a href="#">Hydel </a></li>
+        </ul>
+      </div>
+
+      <div class="service-group">
+        <h6>Power</h6>
+        <ul>
+          <li><a href="#">Transimission</a></li>
+          <li><a href="#">Distribution</a></li>
+          <li><a href="#">HT and LT Panels</a></li>
+          <li><a href="#">Control Panels</a></li>
+        </ul>
+      </div>
+
+<div class="service-group">
+  <h6><a href="lighting.html">Lighting</a></h6>
+  <ul class="submenu-parent">
+
+    <!-- Residential -->
+    <li class="has-submenu">
+      <a href="#.html">
+        Residential <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="kitchen-lighting.html">Kitchen </a></li>
+        <li><a href="livingroom-lighting.html">Living Room</a></li>
+        <li><a href="bedroom-lighting.html">Bedroom</a></li>
+        <li><a href="bathroom-lighting.html">Bathroom</a></li>
+        <li><a href="entrance-lighting.html">Entrance Lighting</a></li>
+      </ul>
+    </li>
+
+    <!-- Commercial -->
+    <li class="has-submenu">
+      <a href="#">
+        Commercial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="office-lighting.html">Office</a></li>
+        <li><a href="retail-showroom-lighting.html">Retail & Showroom Lighting</a></li>
+        <li><a href="healthcare-lighting.html">Healthcare Lighting</a></li>
+        <li><a href="education-lighting.html">Educational Lighting</a></li>
+        <li><a href="entertainments-and-theaters-lighting.html">Entertainment & Theatres</a></li>
+        <li><a href="airport-transport-lighting.html">Airport & Transport Hubs</a></li>
+        <li><a href="hotel-lighting.html">Hotel Lighting</a></li>
+      </ul>
+    </li>
+
+
+        <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Industrial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="factorylighting.html">Factory Lighting</a></li>
+        <li><a href="warehouselighting.html">WarehouseLighting</a></li>
+        <li><a href="workshoplighting.html">Workshop Lighting</a></li>
+        <li><a href="coldstoragelighting.html">Cold Storage Lighting</a></li>
+        <li><a href="parkingutilitylighting.html">Parking & Utility Lighting</a></li>
+        
+      </ul>
+    </li>
+
+
+            <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Outdoor Lighting <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="gardenandlandscapelighting.html">Garden & Landscape Lighting</a></li>
+        <li><a href="facadeandarchitecturallighting.html">Facade & Architectural Lighting</a></li>
+        <li><a href="outdoorhomelighting.html">Outdoor Home Lighting</a></li>
+        <li><a href="parkinglotlighting.html">Parking Lot Lighting</a></li>
+        <li><a href="campusandinstitutionallighting.html">Campus & Institutional Lighting</a></li>
+        <li><a href="resortandhospitalitylighting.html">Resort & Hospitality</a></li>
+        <li><a href="securityandfloodlighting.html">Street and Security Lighting</a></li>
+        <li><a href="sportsgroundlighting.html">Sports Ground Lighting</a></li>
+        
+      </ul>
+    </li>
+
+   
+
+  </ul>
+</div>
+
+      <div class="service-group">
+        <h6>Automation</h6>
+        <ul>
+          <li><a href="#">Residential</a></li>
+          <li><a href="#">Commercial</a></li>
+          <li><a href="#">Industrial</a></li>
+          <li><a href="#">Hospital</a></li>
+          <li><a href="#">Hotel</a></li>
+        </ul>
+      </div>
+
+       <div class="service-group">
+        <h6>R&D</h6>
+        <ul>
+          <li><a href="#">Smartpole</a></li>
+          <li><a href="#">Smart Bollard</a></li>
+          <li><a href="#">Smart Conference Table</a></li>
+          <li><a href="#">Smart Bar Counter</a></li>
+          <li><a href="#">Smart Window leaf AC</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+  <!-- Mega Menu -->
+  <div id="megaMenu" class="mega-menu">
+    <div class="row">
+      <div class="underline"></div>
+      <div class="service-submenus d-flex flex-wrap">
+        <div class="service-group">
+          <h6>Energy</h6>
+          <ul>
+            <li><a href="#">Solar</a></li>
+            <li><a href="#">Wind</a></li>
+            <li><a href="#">Biomass</a></li>
+            <li><a href="#">Hydel Power</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>Power</h6>
+          <ul>
+            <li><a href="transmission.html">Transmission</a></li>
+            <li><a href="#">Distribution</a></li>
+            <li><a href="#">Low Tension</a></li>
+            <li><a href="#">High Tension</a></li>
+            <li><a href="#">Panel Boards</a></li>
+          </ul>
+        </div>
+<div class="service-group">
+  <h6><a href="lighting.html">Lighting</a></h6>
+  <ul class="submenu-parent">
+
+    <!-- Residential -->
+    <li class="has-submenu">
+      <a href="#">
+        Residential <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="kitchen-lighting.html">Kitchen </a></li>
+        <li><a href="livingroom-lighting.html">Living Room</a></li>
+        <li><a href="bedroom-lighting.html">Bedroom</a></li>
+        <li><a href="bathroom-lighting.html">Bathroom</a></li>
+        <li><a href="entrance-lighting.html">Entrance Lighting</a></li>
+      </ul>
+    </li>
+
+    <!-- Commercial -->
+    <li class="has-submenu">
+      <a href="#">
+        Commercial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="office-lighting.html">Office</a></li>
+        <li><a href="retail-showroom-lighting.html">Retail & Showroom Lighting</a></li>
+        <li><a href="healthcare-lighting.html">Healthcare Lighting</a></li>
+        <li><a href="education-lighting.html">Educational Lighting</a></li>
+        <li><a href="entertainments-and-theaters-lighting.html">Entertainment & Theatres</a></li>
+        <li><a href="airport-transport-lighting.html">Airport & Transport Hubs</a></li>
+        <li><a href="hotel-lighting.html">Hotel Lighting</a></li>
+      </ul>
+    </li>
+
+
+        <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Industrial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="factorylighting.html">Factory Lighting</a></li>
+        <li><a href="warehouselighting.html">WarehouseLighting</a></li>
+        <li><a href="workshoplighting.html">Workshop Lighting</a></li>
+        <li><a href="coldstoragelighting.html">Cold Storage Lighting</a></li>
+        <li><a href="parkingutilitylighting.html">Parking & Utility Lighting</a></li>
+        
+      </ul>
+    </li>
+
+
+            <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Outdoor Lighting <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="gardenandlandscapelighting.html">Garden & Landscape Lighting</a></li>
+        <li><a href="facadeandarchitecturallighting.html">Facade & Architectural Lighting</a></li>
+        <li><a href="outdoorhomelighting.html">Outdoor Home Lighting</a></li>
+        <li><a href="parkinglotlighting.html">Parking Lot Lighting</a></li>
+        <li><a href="campusandinstitutionallighting.html">Campus & Institutional Lighting</a></li>
+        <li><a href="resortandhospitalitylighting.html">Resort & Hospitality</a></li>
+        <li><a href="securityandfloodlighting.html">Street and Security Lighting</a></li>
+        <li><a href="sportsgroundlighting.html">Sports Ground Lighting</a></li>
+        
+      </ul>
+    </li>
+
+   
+
+  </ul>
+</div>
+
+        <div class="service-group">
+          <h6>Automation</h6>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Commercial</a></li>
+            <li><a href="#">Industrial</a></li>
+            <li><a href="#">Hospital</a></li>
+            <!-- <li><a href="#">IoT Based Automation</a></li> -->
+            <li><a href="#">Hotel</a></li>
+          </ul>
+        </div>
+        <div class="service-group">
+          <h6>R & D</h6>
+          <ul>
+            <li><a href="smart-pole.html">Smart Pole</a></li>
+            <li><a href="#">Smart Conference Hall</a></li>
+            <li><a href="#">Smart Bollards</a></li>
+            <li><a href="#">Smart Bar Counter</a></li>
+            <li><a href="#">Smart Window Leaf AC</a></li>
+          </ul>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</header>
+<!-- HEADER END -->
+
+
+
+   
+
+
+
+<section class="power-banner">
+  <div class="power-banner-bg">
+    <img src="img/powerimg/aboutss.png" class="active" alt="Power Banner">
+  </div>
+
+  <div class="power-banner-content">
+    <h1>Power Distribution</h1>
+    <p>Reliable • Efficient • Intelligent</p>
+  </div>
+
+  <style>
+    .power-banner {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+  background: #000;
+}
+
+.power-banner-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.power-banner-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* 🔥 FIX */
+  opacity: 1;                /* MUST */
+  display: block;            /* MUST */
+}
+
+.power-banner-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+
+/* OPTIONAL overlay if already used */
+.power-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 2;
+}
+
+  </style>
+
+  <script>
+const images = [
+  "img/powerimg/aboutss.png",
+  "img/powerimg/aboutss2.png"
+];
+
+let index = 0;
+const bgImg = document.querySelector(".power-banner-bg img");
+
+setInterval(() => {
+  index = (index + 1) % images.length;
+  bgImg.src = images[index];
+}, 5000);
+</script>
+
+</section>
+
+
+
+  <!-- f13 -->
+  <section class="power-about-v2-section">
+    <style>
+      .power-about-v2-section {
+        padding: 80px 0;
+      }
+
+      /* LEFT IMAGE COLUMN */
+      .power-about-v2-image-wrap {
+        width: 100%;
+        height: 520px;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .power-about-v2-image-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform .5s ease;
+      }
+
+      .power-about-v2-image-wrap img:hover {
+        transform: scale(1.05);
+      }
+
+      /* RIGHT CONTENT */
+      .power-about-v2-heading {
+        font-size: 22px;
+        letter-spacing: 1px;
+        color: #111;
+        font-weight: 600;
+        margin-bottom: 30px;
+      }
+
+      .power-about-v2-text {
+        font-size: 15px;
+        color: #555;
+        line-height: 1.9;
+        margin-bottom: 18px;
+      }
+
+      /* FEATURES */
+      .power-about-v2-features {
+        margin-top: 35px;
+        display: flex;
+        gap: 35px;
+        flex-wrap: wrap;
+      }
+
+      .power-about-v2-feature {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      .power-about-v2-feature-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+      }
+
+      /* ===== MOBILE ===== */
+
+      @media (max-width: 991px) {
+
+        .power-about-v2-image-wrap {
+          height: 350px;
+          margin-bottom: 30px;
+        }
+
+        .power-about-v2-heading {
+          font-size: 20px;
+        }
+
+        .power-about-v2-text {
+          font-size: 14px;
+        }
+
+        .power-about-v2-features {
+          gap: 20px;
+        }
+      }
+
+      @media (max-width: 575px) {
+
+        .power-about-v2-image-wrap {
+          height: 280px;
+        }
+
+        .power-about-v2-features {
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+    </style>
+
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <!-- LEFT SINGLE IMAGE -->
+        <div class="col-lg-5">
+          <div class="power-about-v2-image-wrap">
+            <img src="img/powerimg/aboutss.png" alt="Power Project">
+          </div>
+        </div>
+
+        <!-- RIGHT CONTENT (unchanged) -->
+        <div class="col-lg-7">
+          <h2 class="power-about-v2-heading">Power Segment – Complete EPC & System Solutions</h2>
+
+          <p class="power-about-v2-text">
+            We deliver end-to-end power transmission, distribution, panel boards, and control panel solutions across
+            extra-high, high, and medium voltage levels.
+            From design & engineering to execution, testing, and commissioning, we provide reliable, scalable, and
+            future-ready power infrastructure.
+          </p>
+
+          <p class="power-about-v2-text">
+            We have successfully completed multiple large-scale projects and are currently executing a <strong>765 kV
+              transmission project</strong>, demonstrating our capability to handle India’s highest voltage class
+            systems.
+          </p>
+
+          <div class="power-about-v2-features">
+            <div class="power-about-v2-feature">
+              <div class="power-about-v2-feature-icon">⏱</div>
+              <span>Ontime Services</span>
+            </div>
+
+            <div class="power-about-v2-feature">
+              <div class="power-about-v2-feature-icon">⚡</div>
+              <span>24/7 Support</span>
+            </div>
+
+            <div class="power-about-v2-feature">
+              <div class="power-about-v2-feature-icon">✔</div>
+              <span>Verified Professionals</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- g13 -->
+  <section class="choose-section">
+    <style>
+      .choose-section {
+        max-width: 1300px;
+        margin: 80px auto;
+        padding: 0 20px;
+      }
+
+      /* Title */
+      .choose-title {
+        font-size: 42px;
+        font-weight: 600;
+        margin-bottom: 40px;
+        text-align: center;
+        letter-spacing: 1px;
+        position: relative;
+        padding-top: 40px;
+      }
+
+      .choose-title::after {
+        content: "";
+        width: 70px;
+        height: 3px;
+        background: #ff6a00;
+        display: block;
+        margin: 15px auto 0;
+        border-radius: 2px;
+      }
+
+      /* GRID */
+      .grid-layout {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 260px;
+        gap: 9px;
+      }
+
+      /* Cards */
+      .grid-box {
+        background: #1f2421;
+        color: #fff;
+        padding: 24px;
+        position: relative;
+        overflow: hidden;
+        transition: transform .3s ease, box-shadow .3s ease;
+      }
+
+      .grid-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .grid-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .5s ease;
+      }
+
+      .grid-box:hover img {
+        transform: scale(1.05);
+      }
+
+      /* Spans */
+      .span-vertical {
+        grid-row: span 2;
+      }
+
+      .span-horizontal {
+        grid-column: span 2;
+      }
+
+      /* Overlay */
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, .75), transparent 60%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 25px;
+      }
+
+      .overlay h5 {
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 8px;
+        letter-spacing: 0.5px;
+        line-height: 1.4;
+        color: #ffffff;
+        font-family: sans-serif;
+      }
+
+      /* Stats */
+      .stat-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .big-number {
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      .stat-big {
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      .muted {
+        opacity: .75;
+        font-size: 15px;
+      }
+
+      .small-text {
+        font-size: 14px;
+        opacity: .8
+      }
+
+      /* Platform Image */
+      .platform-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+
+      /* ============================
+   TABLET
+============================ */
+      @media (max-width: 992px) {
+
+        .choose-section {
+          margin: 60px auto;
+          padding: 0 15px;
+        }
+
+        .choose-title {
+          font-size: 32px;
+          margin-bottom: 30px;
+        }
+
+        .grid-layout {
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-rows: 230px;
+          gap: 12px;
+        }
+
+        .span-vertical {
+          grid-row: span 1;
+        }
+
+        .span-horizontal {
+          grid-column: span 2;
+        }
+
+        .big-number,
+        .stat-big {
+          font-size: 15px;
+        }
+      }
+
+
+      /* ============================
+   MOBILE
+============================ */
+      @media (max-width: 576px) {
+
+        .choose-title {
+          font-size: 26px;
+        }
+
+        .grid-layout {
+          grid-template-columns: 1fr;
+          grid-auto-rows: 200px;
+          gap: 15px;
+        }
+
+        .span-vertical {
+          grid-row: span 1;
+        }
+
+        .span-horizontal {
+          grid-column: span 1;
+        }
+
+        .overlay {
+          padding: 18px;
+        }
+
+        .overlay h5 {
+          font-size: 16px;
+        }
+
+        .overlay p,
+        .small-text {
+          font-size: 13px;
+        }
+
+        .big-number,
+        .stat-big {
+          font-size: 15px;
+        }
+
+        .muted {
+          font-size: 13px;
+        }
+      }
+    </style>
+
+    <h2 class="choose-title">So, why choose us?</h2>
+
+    <div class="grid-layout">
+
+      <!-- 24 hour -->
+      <div class="grid-box p-0">
+        <img src="img/powerimg/t1.png">
+        <div class="overlay">
+          <h5>Engineering Reliable Transmission Up to 765kV</h5>
+        </div>
+      </div>
+
+      <!-- 500M -->
+      <div class="grid-box stat-box">
+        <div class="big-number">Powering Nations Through High-Voltage Excellence</div>
+
+      </div>
+
+      <!-- RIGHT BIG IMAGE (spans 2 rows) -->
+      <div class="grid-box p-0 span-vertical">
+        <img src="img/powerimg/p1.png">
+        <div class="overlay">
+          <h5>Efficient Distribution. Reliable Delivery</h5>
+
+        </div>
+      </div>
+
+      <!-- Platform Image (instead of grid boxes) -->
+      <div class="grid-box span-horizontal platform-image p-0">
+        <img src="img/powerimg/d1.png" alt="Platform formatted image">
+        <div class="overlay">
+          <h5>Built for Control. Designed for Safety</h5>
+
+        </div>
+      </div>
+
+      <!-- 85% -->
+      <div class="grid-box stat-box">
+        <div class="stat-big">Power Management with Precision</div>
+
+      </div>
+
+      <!-- BOTTOM BIG IMAGE (spans 2 columns) -->
+      <div class="grid-box p-0 span-horizontal">
+        <img src="img/powerimg/c1.png">
+        <div class="overlay">
+          <h5>Integrated Control. Seamless Operations</h5>
+
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="mission-section">
+    <style>
+      .mission-section {
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        background: #f4f4f4;
+        margin-bottom: 20px;
+      }
+
+      /* LEFT IMAGE */
+      .image-panel {
+        width: 50%;
+        height: 90vh;
+        background: url('img/powerimg/abouttrans.png') center/cover no-repeat;
+      }
+
+      /* RIGHT CONTENT */
+      .content-panel {
+        width: 50%;
+        padding: 80px 100px;
+        color: #333;
+      }
+
+      .content-panel h1 {
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        margin-bottom: 25px;
+      }
+
+      .content-panel p {
+        font-size: 15px;
+        line-height: 1.9;
+        margin-bottom: 40px;
+        max-width: 520px;
+      }
+
+      .btn-custom {
+        background: #111;
+        color: #fff;
+        padding: 14px 36px;
+        text-decoration: none;
+        letter-spacing: 1px;
+        transition: 0.3s ease;
+        display: inline-block;
+      }
+
+      .btn-custom:hover {
+        background: #000;
+      }
+
+      /* ===================== */
+      /* TABLET */
+      /* ===================== */
+      @media(max-width:992px) {
+
+        .mission-section {
+          flex-direction: column;
+        }
+
+        .image-panel {
+          width: 100%;
+          height: 45vh;
+        }
+
+        .content-panel {
+          width: 100%;
+          padding: 50px 40px;
+        }
+      }
+
+      /* ===================== */
+      /* MOBILE */
+      /* ===================== */
+      @media(max-width:576px) {
+
+        .image-panel {
+          height: 35vh;
+        }
+
+        .content-panel {
+          padding: 35px 22px;
+        }
+
+        .content-panel h1 {
+          font-size: 22px;
+        }
+
+        .content-panel p {
+          font-size: 14px;
+          line-height: 1.7;
+        }
+
+        .btn-custom {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+
+    <div class="image-panel"></div>
+
+    <div class="content-panel">
+      <h1>TRANSMISSION</h1>
+      <p>
+        We execute high-voltage transmission projects from 66kV to 765kV, delivering reliable EPC solutions with
+        precision engineering, structural strength, and timely execution.
+      </p>
+      <a href="Transmission.html" class="btn-custom">LEARN MORE</a>
+    </div>
+
+  </section>
+
+
+
+  <!-- e18 -->
+  <section class="power-distri-section">
+    <style>
+      .power-distri-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 80px 0;
+        background-color: rgb(131, 136, 141);
+      }
+
+      .power-distri-img-card {
+        width: 320px;
+        height: 450px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        background: #000;
+        margin: auto;
+      }
+
+      .power-distri-img-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .power-distri-content {
+        color: #fff;
+        padding-left: 60px;
+        max-width: 520px;
+      }
+
+      .power-distri-content h2 {
+        font-size: 42px;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+
+      .power-distri-divider {
+        width: 50px;
+        height: 3px;
+        background: #ffffff;
+        margin-bottom: 20px;
+      }
+
+      .power-distri-content p {
+        color: #e5e5e5;
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 30px;
+      }
+
+      .power-distri-btn {
+        border: 1px solid #e3e3e3;
+        color: #fff;
+        padding: 10px 24px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: 0.3s;
+        letter-spacing: 1px;
+        font-size: 13px;
+      }
+
+      .power-distri-btn:hover {
+        background: #efefee;
+        color: #000000;
+      }
+
+      /* Responsive */
+      @media(max-width:992px) {
+        .power-distri-section {
+          padding: 60px 20px;
+        }
+
+        .power-distri-content {
+          padding-left: 0;
+          text-align: center;
+          margin-top: 40px;
+        }
+
+        .power-distri-divider {
+          margin: 0 auto 20px;
+        }
+      }
+
+      @media(max-width:576px) {
+        .power-distri-img-card {
+          width: 240px;
+          height: 360px;
+        }
+
+        .power-distri-content h2 {
+          font-size: 32px;
+        }
+      }
+    </style>
+
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- Single Image -->
+        <div class="col-lg-6 text-center">
+          <div class="power-distri-img-card">
+            <img src="img/powerimg/distributionss.png" alt="Power Distribution">
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-6">
+          <div class="power-distri-content">
+            <h2>POWER DISTRIBUTION</h2>
+            <div class="power-distri-divider"></div>
+
+            <p>
+           Power Distribution delivers electricity safely and efficiently from substations to end users, ensuring reliability, protection, and optimal energy management across diverse applications.
+            </p>
+
+            <a href="distribution.html" class="power-distri-btn">
+              READ MORE <span>›</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- e21 -->
+  <section class="story-section">
+
+    <style>
+      /* MAIN LAYOUT */
+      .story-section {
+        display: flex;
+        gap: 60px;
+        padding: 80px;
+        align-items: flex-start;
+      }
+
+      /* LEFT CONTENT */
+      .story-text {
+        flex: 1;
+      }
+
+      .story-text h1 {
+        font-size: 42px;
+        font-weight: 300;
+        margin-bottom: 24px;
+      }
+
+      .story-text p {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #444;
+        margin-bottom: 20px;
+      }
+
+      /* RIGHT IMAGE STRIPS */
+      .story-images {
+        flex: 1;
+        display: flex;
+        gap: 5px;
+        height: 520px;
+      }
+
+      /* IMAGE COLUMN */
+      .image-strip {
+        flex: 1;
+        overflow: hidden;
+        cursor: pointer;
+        transition: flex 0.6s ease;
+        position: relative;
+      }
+
+      .image-strip img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      /* HOVER EFFECT */
+      .story-images:hover .image-strip {
+        flex: 0.6;
+      }
+
+      .story-images .image-strip:hover {
+        flex: 2.2;
+      }
+
+      .story-images .image-strip:hover img {
+        transform: scale(1.05);
+      }
+
+      .btn-custom {
+        background: #6a6969;
+        color: #fff;
+        padding: 14px 36px;
+        text-decoration: none;
+        font-weight: 300;
+        letter-spacing: 1px;
+        transition: 0.3s;
+
+      }
+
+      .btn-custom:hover {
+        background: #111111;
+        color: #fff;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 992px) {
+        .story-section {
+          flex-direction: column;
+          padding: 40px;
+        }
+
+        .story-images {
+          height: 420px;
+        }
+      }
+    </style>
+    <!-- LEFT TEXT -->
+    <div class="story-text">
+      <h1>CONTROL PANELS</h1>
+      <p>
+Control Panels form the backbone of modern electrical and automation systems by providing centralized control, monitoring, and protection of equipment and processes. Designed with precision engineering and high-quality components, they ensure safe power distribution, fault protection, and smooth operation of machinery across industrial, commercial, and infrastructure applications.
+        <br><br>
+      Incorporating advanced control logic, automation, and communication capabilities, modern control panels enable efficient energy management, system diagnostics, and seamless integration with smart technologies. Their robust construction, scalability, and compliance with international standards make them reliable solutions for continuous and mission-critical operations.
+      </p>
+      <a href="controlpanels.html" class="btn-custom">LEARN MORE</a>
+
+    </div>
+
+    <!-- RIGHT IMAGES -->
+    <div class="story-images">
+      <div class="image-strip">
+        <img src="img/powerimg/cp1.png" alt="">
+      </div>
+      <div class="image-strip">
+        <img src="img/powerimg/cp2.png" alt="">
+      </div>
+      <div class="image-strip">
+        <img src="img/powerimg/cp3.png" alt="">
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- g16 -->
+  <div class="container-fluid p-0">
+
+    <style>
+      /* ===== HERO LAYOUT ===== */
+
+      .power-panel-wrapper {
+        height: 90vh;
+        display: flex;
+        overflow: hidden;
+
+      }
+
+      /* LEFT PANEL */
+      .power-panel-left {
+        background: #000;
+        color: #fff;
+        padding: 70px 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .power-panel-left h1 {
+        font-size: 42px;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 25px;
+      }
+
+      .power-panel-divider {
+        width: 60px;
+        height: 2px;
+        background: #555;
+        margin-bottom: 25px;
+      }
+
+      .power-panel-description {
+        font-size: 14px;
+        color: #aaa;
+        line-height: 1.7;
+        max-width: 420px;
+      }
+
+      .power-panel-read-more {
+        margin-top: 40px;
+      }
+
+      .power-panel-read-more a {
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid #444;
+        padding: 10px 26px;
+        font-size: 13px;
+        display: inline-block;
+        transition: .3s;
+      }
+
+      .power-panel-read-more a:hover {
+        background: #fff;
+        color: #000;
+      }
+
+      /* RIGHT IMAGE PANEL */
+
+      .power-panel-right {
+        position: relative;
+        min-height: 100vh;
+        background: #222 url("img/powerimg/panel.png") center/cover no-repeat;
+      }
+
+      .power-panel-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.15);
+      }
+
+      /* ===== ANIMATION ===== */
+
+      .power-panel-left,
+      .power-panel-right {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.9s ease;
+      }
+
+      .power-panel-right {
+        transform: scale(1.05);
+      }
+
+      .power-panel-wrapper.active .power-panel-left {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .power-panel-wrapper.active .power-panel-right {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* stagger text */
+
+      .power-panel-left h1,
+      .power-panel-divider,
+      .power-panel-description,
+      .power-panel-read-more {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
+      }
+
+      .power-panel-wrapper.active .power-panel-left h1 {
+        transition-delay: .2s;
+        opacity: 1;
+        transform: none;
+      }
+
+      .power-panel-wrapper.active .power-panel-divider {
+        transition-delay: .35s;
+        opacity: 1;
+        transform: none;
+      }
+
+      .power-panel-wrapper.active .power-panel-description {
+        transition-delay: .5s;
+        opacity: 1;
+        transform: none;
+      }
+
+      .power-panel-wrapper.active .power-panel-read-more {
+        transition-delay: .65s;
+        opacity: 1;
+        transform: none;
+      }
+
+      /* ===== RESPONSIVE ===== */
+
+      @media(max-width:991px) {
+        .power-panel-wrapper {
+          flex-direction: column;
+        }
+
+        .power-panel-right {
+          min-height: 300px;
+        }
+
+        .power-panel-left {
+          padding: 40px 25px;
+        }
+      }
+    </style>
+
+    <div class="row g-0 power-panel-wrapper">
+
+      <!-- LEFT CONTENT -->
+      <div class="col-lg-4 power-panel-left">
+
+        <h1 class="text-white">PANEL BOARDS</h1>
+
+        <div class="power-panel-divider"></div>
+
+        <div class="power-panel-description">
+         Panel Boards are essential components of electrical distribution systems, designed to safely receive, control, and distribute electrical power to multiple circuits. Engineered with robust construction and precision design, they ensure reliable power flow, effective circuit protection, and operational safety across residential, commercial, industrial, and infrastructure installations.
+        </div>
+
+        <div class="power-panel-read-more">
+          <a href="panelboards.html">READ MORE →</a>
+        </div>
+
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="col-lg-8 power-panel-right">
+        <div class="power-panel-overlay"></div>
+      </div>
+
+    </div>
+
+    <script>
+      window.addEventListener("load", () => {
+        document.querySelector(".power-panel-wrapper").classList.add("active");
+      });
+    </script>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- PROFESSIONAL CORPORATE FOOTER START -->
+<footer class="footer">
+  <div class="footer-top py-5">
+    <div class="container">
+      <div class="row gy-4">
+
+        <!-- Column 1: Navigation -->
+        <div class="col-md-6 col-lg-3">
+          <h5 class="footer-title">Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="solution.html">Solutions</a></li>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Services -->
+        <div class="col-md-6 col-lg-3">
+          <h5 class="footer-title">Services</h5>
+          <ul class="footer-links">
+            <li><a href="#">Energy</a></li>
+            <li><a href="#">Power</a></li>
+            <li><a href="#">Lighting</a></li>
+            <li><a href="#">Automation</a></li>
+            <li><a href="#">Smart City</a></li>
+            <li><a href="#">R & D</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Products -->
+        <div class="col-md-6 col-lg-3">
+          <h5 class="footer-title">Products</h5>
+          <ul class="footer-links">
+            <li><a href="#">Energy Generation</a></li>
+            <li><a href="#">Power</a></li>
+            <li><a href="#">Lighting</a></li>
+            <li><a href="#">Automation</a></li>
+          </ul>
+
+          <h5 class="footer-title mt-3">Applications</h5>
+          <ul class="footer-links">
+            <li><a href="#">Solar</a></li>
+            <li><a href="#">Wind</a></li>
+            <li><a href="#">Biomass</a></li>
+            <li><a href="#">Hydel</a></li>
+            <li><a href="#">HT & LT Panels</a></li>
+            <li><a href="#">Control Panels</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Lighting & R&D -->
+        <div class="col-md-6 col-lg-3">
+          <h5 class="footer-title">Lighting</h5>
+          <ul class="footer-links">
+            <li><a href="kitchen-lighting.html">Residential - Kitchen</a></li>
+            <li><a href="livingroom-lighting.html">Residential - Living Room</a></li>
+            <li><a href="office-lighting.html">Commercial - Office</a></li>
+            <li><a href="retail-showroom-lighting.html">Commercial - Retail</a></li>
+            <li><a href="factorylighting.html">Industrial - Factory</a></li>
+            <li><a href="gardenandlandscapelighting.html">Outdoor - Garden & Landscape</a></li>
+          </ul>
+
+          <h5 class="footer-title mt-3">R & D</h5>
+          <ul class="footer-links">
+            <li><a href="smart-pole.html">Smart Pole</a></li>
+            <li><a href="#">Smart Bollard</a></li>
+            <li><a href="#">Smart Conference Table</a></li>
+            <li><a href="#">Smart Window Leaf AC</a></li>
+            <li><a href="#">Smart Bar Counter</a></li>
+          </ul>
+        </div>
+
+      </div> <!-- row -->
+    </div> <!-- container -->
+  </div> <!-- footer-top -->
+
+  <!-- Footer Contact + Socials -->
+  <div class="footer-middle py-4 border-top border-secondary">
+    <div class="container d-md-flex justify-content-between align-items-center">
+      <div class="footer-contact mb-3 mb-md-0">
+       <p>
+  <i class="fa fa-map-marker-alt me-2"></i>
+  <a href="https://arcotindia.com/" target="_blank">
+    Plot No 44, Kavuri Hills, Madhapur, Hyderabad, Telangana-500033
+  </a>
+</p>
+
+        <p><i class="fas fa-envelope me-2"></i> <a href="mailto:info@arcotindia.com">info@arcotindia.com</a></p>
+       <p><i class="fab fa-whatsapp me-2"></i> 
+  <a href="https://wa.me/919848189899" target="_blank">+91 98481 89899</a>
+</p>
+
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+      </div>
     </div>
   </div>
 
-  <button class="scroll-btn right" aria-label="Scroll Right">
-    <i class="bi bi-chevron-right"></i>
-  </button>
-</section>
+  <!-- Footer Bottom -->
+  <div class="footer-bottom text-center py-3 border-top border-secondary">
+    &copy; 2025 Arcot India. All Rights Reserved. <a href="#">Privacy Policy</a>
+  </div>
+</footer>
+
 <style>
-  .bollard-auto-scroll {
-  position: relative;
-  background: #0b0f14;
-  padding: 90px 0;
-  overflow: visible;
+/* Footer General */
+.footer {
+  background: #1e2226;
+  color: #ccc;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.5px;
 }
 
-/* WRAPPER */
-.scroll-wrapper {
-  overflow: hidden;
-  width: 100%;
-}
-
-/* TRACK */
-.scroll-track {
-  display: flex;
-  gap: 40px;
-  padding: 0 80px;
-  animation: autoScroll 40s linear infinite;
-}
-
-/* IMAGES */
-.scroll-track img {
-  height: 360px;
-  border-radius: 22px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.55);
-  flex-shrink: 0;
-  transition: transform 0.6s ease;
-}
-
-.scroll-track img:hover {
-  transform: scale(1.06);
-}
-
-/* AUTO SCROLL */
-@keyframes autoScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;          /* NO background */
-  border: none;
+.footer-title {
   color: #fff;
-  font-size: 44px;           /* icon size */
-  cursor: pointer;
-  z-index: 99999;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.footer-links {
+  list-style: none;
   padding: 0;
-  transition: color 0.3s ease, transform 0.3s ease;
+  margin: 0;
 }
 
-.scroll-btn:hover {
-  color: #ffffff;
-  transform: translateY(-50%) scale(1.15);
+.footer-links li {
+  margin-bottom: 6px;
 }
 
-.scroll-btn.left { left: 20px; }
-.scroll-btn.right { right: 20px; }
+.footer-links li a {
+  color: #bbb;
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.3s;
+}
 
+.footer-links li a:hover {
+  color: #00bcd4;
+  padding-left: 4px;
+}
 
-/* MOBILE */
+.footer-contact p {
+  margin: 2px 0;
+  font-size: 13px;
+}
+
+.footer-contact a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: #00bcd4;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: transparent;
+  color: #bbb;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  background: #434444;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.footer-bottom a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #00bcd4;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .scroll-track img {
-    height: 260px;
+  .footer-top .row > div {
+    text-align: left;
+  }
+  .footer-middle {
+    flex-direction: column !important;
+    text-align: left;
+  }
+  .footer-social {
+    margin-top: 15px;
   }
 }
-
 </style>
 
+
+<!-- Copyright Start -->
+<div class="tricky-footer-bottom py-4 bg-dark">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-6 text-center text-md-start mb-md-0">
+        <span class="text-body">
+          <a href="https://arcotindia.com/" class="border-bottom text-white">
+            <i class="fas fa-copyright text-light me-2"></i>ARCOT All Rights Reserved.
+          </a>
+        </span>
+      </div>
+      <!-- <div class="col-md-6 text-center text-md-end text-body">
+        Designed By <a class="border-bottom text-white" href="https://arcotindia.com/">ARCOT</a>
+      </div> -->
+    </div>
+  </div>
+</div>
+<!-- Copyright End -->
+
+         
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>    
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+       <script>AOS.init();</script>
+
+
+
 <script>
-const scrollTrack = document.querySelector(".scroll-track");
-const scrollWrapper = document.getElementById("bollardScroll");
+  document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll(".number-value");
 
-let autoScroll = true;
+    const options = {
+      threshold: 0.4
+    };
 
-/* Pause auto scroll on hover */
-scrollWrapper.addEventListener("mouseenter", () => {
-  scrollTrack.style.animationPlayState = "paused";
-});
-scrollWrapper.addEventListener("mouseleave", () => {
-  scrollTrack.style.animationPlayState = "running";
-});
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          let count = 0;
+          const target = parseInt(el.dataset.target);
+          const speed = 3;
 
-/* Manual buttons */
-document.querySelector(".scroll-btn.left").onclick = () => {
-  scrollWrapper.scrollBy({ left: -400, behavior: "smooth" });
-};
+          const updateCount = () => {
+            count++;
+            el.innerText = count + "+";
+            if (count < target) {
+              setTimeout(updateCount, speed * 10);
+            }
+          };
+          updateCount();
+          observer.unobserve(el);
+        }
+      });
+    }, options);
 
-document.querySelector(".scroll-btn.right").onclick = () => {
-  scrollWrapper.scrollBy({ left: 400, behavior: "smooth" });
-};
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  });
 </script>
+
+
+
+
+
+    </body>
+
+</html>
