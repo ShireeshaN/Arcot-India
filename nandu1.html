@@ -1,0 +1,336 @@
+<!-- f27 -->
+ <section class="we-serve-section">
+<style>
+
+/* SECTION */
+.we-serve-section{
+  display:flex;
+  min-height:100vh;
+ 
+}
+
+/* LEFT */
+.we-serve-left-pane{
+  width:30%;
+  padding:80px 60px;
+  margin-top: 150px;
+}
+
+.we-serve-left-pane small{
+  letter-spacing:1px;
+  color:#777;
+}
+
+.we-serve-left-pane h2{
+  font-size:38px;
+  font-weight:300;
+  margin:15px 0;
+}
+
+.we-serve-left-pane p{
+  color:#555;
+  line-height:1.8;
+}
+
+/* RIGHT */
+.we-serve-right-pane{
+  width:70%;
+  background:#f3f7fb;
+  position:relative;
+  overflow:hidden;
+}
+
+/* background image holder */
+.we-serve-bg-preview{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transition:opacity .4s ease;
+  z-index:1;
+}
+
+/* dark overlay for readability */
+.we-serve-bg-preview::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,40,80,.65);
+}
+
+/* list wrapper */
+.we-serve-steps{
+  position:relative;
+  z-index:2;
+}
+
+/* ITEM */
+.we-serve-step{
+  padding:25px 40px;
+  border-bottom:1px solid rgba(0,0,0,.08);
+  cursor:pointer;
+  transition:background .3s ease;
+}
+
+.we-serve-step:hover{
+  background:rgba(255,255,255,.08);
+}
+
+/* active step for auto slideshow or hover */
+.we-serve-step.active{
+  background:rgba(255,255,255,.08);
+}
+
+/* number */
+.we-serve-step-number{
+  font-size:56px;
+  font-weight:300;
+  color:rgba(255,255,255,.25);
+  margin-right:30px;
+  transition: color .3s ease, transform .3s ease;
+}
+
+/* highlighted number when active */
+.we-serve-step.active .we-serve-step-number{
+  color:#fffefe;
+  transform: scale(1.2);
+}
+
+/* text */
+.we-serve-step h5{
+  font-weight:300;
+  color:#fff;
+}
+
+.we-serve-step p{
+  color:#e0e0e0;
+  margin-bottom:0;
+}
+
+/* layout inside item */
+.we-serve-step-inner{
+  display:flex;
+  align-items:flex-start;
+}
+
+/* default text color when no hover */
+.we-serve-right-pane:not(.active) .we-serve-step h5{
+  color:#1b2b3a;
+}
+
+.we-serve-right-pane:not(.active) .we-serve-step p{
+  color:#555;
+}
+
+.we-serve-right-pane:not(.active) .we-serve-step-number{
+  color:rgba(0,0,0,.15);
+}
+
+/* ================================
+   MOBILE RESPONSIVE (<= 768px)
+================================ */
+@media (max-width: 768px){
+
+  .we-serve-section{
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .we-serve-left-pane{
+    width: 100%;
+    padding: 40px 25px 30px;
+    margin-top: 0;
+  }
+
+  .we-serve-left-pane h2{
+    font-size: 28px;
+  }
+
+  .we-serve-right-pane{
+    width: 100%;
+    min-height: 500px;
+  }
+
+  .we-serve-bg-preview{
+    position: absolute;
+  }
+
+  .we-serve-steps{
+    width: 100%;
+  }
+
+  .we-serve-step{
+    padding: 18px 20px;
+  }
+
+  .we-serve-step-inner{
+    gap: 15px;
+  }
+
+  .we-serve-step-number{
+    font-size: 38px;
+    margin-right: 12px;
+  }
+
+  .we-serve-step h5{
+    font-size: 15px;
+  }
+
+  .we-serve-step p{
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+}
+
+@media (max-width: 480px){
+
+  .we-serve-left-pane{
+    padding: 30px 18px 25px;
+  }
+
+  .we-serve-left-pane h2{
+    font-size: 24px;
+  }
+
+  .we-serve-step-number{
+    font-size: 32px;
+  }
+}
+
+</style>
+
+<div class="we-serve-left-pane">
+  <small>OUR REACH ACROSS INDUSTRIES</small>
+  <h2>Industries We Serve</h2>
+  <p>
+  We serve a wide range of industries 
+  by delivering reliable, safe, 
+  and efficient electrical solutions 
+  tailored to their specific power needs.
+  </p>
+</div>
+
+<div class="we-serve-right-pane" id="weServeRightPane">
+
+  <!-- background -->
+  <div class="we-serve-bg-preview" id="weServeBgPreview"></div>
+
+  <div class="we-serve-steps">
+
+    <div class="we-serve-step" data-bg="img/powerimg/distri.png">
+      <div class="we-serve-step-inner">
+        <div class="we-serve-step-number">01</div>
+        <div>
+          <h5>Industrial Plants</h5>
+          <p>Providing reliable electrical infrastructure and services to support continuous and efficient industrial operations.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="we-serve-step" data-bg="img/powerimg/trnas.png">
+      <div class="we-serve-step-inner">
+        <div class="we-serve-step-number">02</div>
+        <div>
+          <h5>Commercial Buildings</h5>
+          <p>Delivering safe and efficient electrical solutions to ensure uninterrupted power for offices, malls, and business facilities.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="we-serve-step" data-bg="img/powerimg/genera.png">
+      <div class="we-serve-step-inner">
+        <div class="we-serve-step-number">03</div>
+        <div>
+          <h5>Infrastructure Projects</h5>
+          <p>Supplying robust electrical systems and services to support large-scale infrastructure and public utility developments.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="we-serve-step" data-bg="img/powerimg/panel.png">
+      <div class="we-serve-step-inner">
+        <div class="we-serve-step-number">04</div>
+        <div>
+          <h5>Hospitals</h5>
+          <p>Ensuring reliable, safe, and uninterrupted power systems to support critical healthcare operations and patient safety.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="we-serve-step" data-bg="img/powerimg/t2.jpg">
+      <div class="we-serve-step-inner">
+        <div class="we-serve-step-number">05</div>
+        <div>
+          <h5>Educational Institutuions</h5>
+          <p>Providing safe and dependable electrical solutions to support uninterrupted learning and campus operations.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="we-serve-step" data-bg="img/powerimg/t3.jpg">
+      <div class="we-serve-step-inner">
+        <div class="we-serve-step-number">06</div>
+        <div>
+          <h5>Residential Layouts</h5>
+          <p>Delivering efficient and reliable electrical distribution systems for safe and comfortable residential living.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const weServeSteps = document.querySelectorAll('.we-serve-step');
+const weServeBg = document.getElementById('weServeBgPreview');
+const weServePane = document.getElementById('weServeRightPane');
+
+let weServeCurrentIndex = 0;
+let weServeAutoInterval;
+let weServeIsHovering = false;
+
+function weServeActivateStep(index){
+  weServeSteps.forEach(s => s.classList.remove('active'));
+  const step = weServeSteps[index];
+  weServeBg.style.backgroundImage = `url(${step.dataset.bg})`;
+  weServeBg.style.opacity = '1';
+  step.classList.add('active');
+  weServePane.classList.add('active');
+  weServeCurrentIndex = index;
+}
+
+function weServeStartAuto(){
+  weServeAutoInterval = setInterval(() => {
+    if(!weServeIsHovering){
+      let next = (weServeCurrentIndex + 1) % weServeSteps.length;
+      weServeActivateStep(next);
+    }
+  }, 3000);
+}
+
+function weServeStopAuto(){
+  clearInterval(weServeAutoInterval);
+}
+
+weServeSteps.forEach((step, index) => {
+  step.addEventListener('mouseenter', () => {
+    weServeIsHovering = true;
+    weServeStopAuto();
+    weServeActivateStep(index);
+  });
+
+  step.addEventListener('mouseleave', () => {
+    weServeIsHovering = false;
+    weServeStartAuto();
+  });
+});
+
+/* initial load */
+weServeActivateStep(0);
+weServeStartAuto();
+</script>
+
+</section>
+<!-- f27 -->
