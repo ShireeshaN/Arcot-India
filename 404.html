@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <title>404 page</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-          <!-- SEO Meta Tags -->
-    <meta name="keywords" content="Arcot Industries contact, Arcot Industries location, Arcot Industries Hyderabad, electrical company contact, smart lighting contact, customer support">
-    <meta name="description" content="Get in touch with Arcot Industries for inquiries about our products, services, or business opportunities. Visit our office or reach out via phone or email.">
-    <meta name="author" content="Arcot Industries">
-    <link rel="icon" href="img/logos.png" type="image/x-icon">
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+ <head>
+  <meta charset="utf-8">
+  <title>Arcot Industries Private Limited</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Arcot Industries Hyderabad, Industrial Power Solutions, Smart City India, Automation Systems, Lighting Company India, Solar Power, Engineering Solutions Hyderabad">
+  <meta name="description" content="Arcot Industries delivers cutting-edge solutions in Power, Energy, Lighting, Automation, Smart City Infrastructure, and R&D across India.">
+  <link rel="icon" href="img/fevi.png" type="image/x-icon">
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"> -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Performance-optimized Libraries -->
+  <link rel="stylesheet" href="lib/animate/animate.min.css" media="print" onload="this.media='all'">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
 
-        <!-- Libraries Stylesheet -->
-        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <!-- Font Awesome (latest) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Bootstrap CSS (latest) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Custom CSS -->
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="css/segments.css" rel="stylesheet">
 
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+</head>
 
     <body>
 
@@ -54,24 +59,174 @@
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="#" onclick="toggleMegaMenu(event)">Services <i class="bi bi-chevron-down ms-1"></i></a></li>
-        <li><a href="solution.html">Solutions</a></li>
+                <li class="dropdown">
+  <a href="#" onclick="toggleDropdown(event)">Products <i class="bi bi-chevron-down ms-1"></i></a>
+  <ul class="dropdown-menu">
+    <li><a href="energy-products.html">Energy Generation</a></li>
+    <li><a href="power-products.html">Power</a></li>
+    <li><a href="lighting-products.html">Lighting</a></li>
+    <li><a href="automation-products.html">Automation</a></li>
+    
+  </ul>
+</li>
+       
 <li class="dropdown">
   <a href="#" onclick="toggleDropdown(event)">R&D <i class="bi bi-chevron-down ms-1"></i></a>
   <ul class="dropdown-menu">
     <li><a href="smart-pole.html">Smart Pole</a></li>
-    <li><a href="#">Smart Bollard</a></li>
-    <li><a href="#">Smart Conference Table</a></li>
-    <li><a href="#">Smart Window Leaf AC</a></li>
-    <li><a href="#">Smart Bar Counter</a></li>
+    <li><a href="smart-bollard.html">Smart Bollard</a></li>
+    <li><a href="smart-conference-table.html">Smart Conference Table</a></li>
+    <li><a href="smart-window-leaf-ac.html">Smart Window Leaf AC</a></li>
+    <li><a href="smart-bar-counter.html">Smart Bar Counter</a></li>
   </ul>
 </li>
 
-        <li><a href="applications.html">Applications</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+ <li><a href="solution.html">Solutions</a></li>
+
+        <li>
+  <a href="#" onclick="toggleApplicationsMenu(event)">
+    Applications <i class="bi bi-chevron-down ms-1"></i>
+  </a>
+</li>
+
+        <!-- <li><a href="gallery.html">Gallery</a></li> -->
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </div>
+
+
+  <!-- Applications Mega Menu -->
+<div id="applicationsMegaMenu" class="mega-menu">
+  <div class="row">
+    <div class="underline"></div>
+
+    <div class="service-submenus d-flex flex-wrap">
+
+      <div class="service-group">
+        <h6>Energy</h6>
+        <ul>
+          <li><a href="solar-applications.html">Solar</a></li>
+          <li><a href="wind-applications.html">Wind</a></li>
+          <li><a href="biomass-applications.html">Biomass</a></li>
+          <li><a href="hydel-applications.html">Hydel </a></li>
+        </ul>
+      </div>
+
+      <div class="service-group">
+        <h6>Power</h6>
+        <ul>
+          <li><a href="transmission-applications.html">Transimission</a></li>
+          <li><a href="distributions-applications.html">Distribution</a></li>
+          <li><a href="controlpanels-applications.html">Control Panels</a></li>
+          <li><a href="panelboards-applications.html">Panel Boards</a></li>
+        </ul>
+      </div>
+
+<div class="service-group">
+  <h6><a href="lighting.html">Lighting</a></h6>
+  <ul class="submenu-parent">
+
+    <!-- Residential -->
+    <li class="has-submenu">
+      <a href="#.html">
+        Residential <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="kitchen-lighting.html">Kitchen </a></li>
+        <li><a href="livingroom-lighting.html">Living Room</a></li>
+        <li><a href="bedroom-lighting.html">Bedroom</a></li>
+        <li><a href="bathroom-lighting.html">Bathroom</a></li>
+        <li><a href="entrance-lighting.html">Entrance Lighting</a></li>
+      </ul>
+    </li>
+
+    <!-- Commercial -->
+    <li class="has-submenu">
+      <a href="#">
+        Commercial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="office-lighting.html">Office</a></li>
+        <li><a href="retail-showroom-lighting.html">Retail & Showroom Lighting</a></li>
+        <li><a href="healthcare-lighting.html">Healthcare Lighting</a></li>
+        <li><a href="education-lighting.html">Educational Lighting</a></li>
+        <li><a href="entertainments-and-theaters-lighting.html">Entertainment & Theatres</a></li>
+        <li><a href="airport-transport-lighting.html">Airport & Transport Hubs</a></li>
+        <li><a href="hotel-lighting.html">Hotel Lighting</a></li>
+      </ul>
+    </li>
+
+
+        <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Industrial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="factorylighting.html">Factory Lighting</a></li>
+        <li><a href="warehouselighting.html">WarehouseLighting</a></li>
+        <li><a href="workshoplighting.html">Workshop Lighting</a></li>
+        <li><a href="coldstoragelighting.html">Cold Storage Lighting</a></li>
+        <li><a href="parkingutilitylighting.html">Parking & Utility Lighting</a></li>
+        
+      </ul>
+    </li>
+
+
+            <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Outdoor Lighting <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="gardenandlandscapelighting.html">Garden & Landscape Lighting</a></li>
+        <li><a href="facadeandarchitecturallighting.html">Facade & Architectural Lighting</a></li>
+        <li><a href="outdoorhomelighting.html">Outdoor Home Lighting</a></li>
+        <li><a href="parkinglotlighting.html">Parking Lot Lighting</a></li>
+        <li><a href="campusandinstitutionallighting.html">Campus & Institutional Lighting</a></li>
+        <li><a href="resortandhospitalitylighting.html">Resort & Hospitality</a></li>
+        <li><a href="securityandfloodlighting.html">Street and Security Lighting</a></li>
+        <li><a href="sportsgroundlighting.html">Sports Ground Lighting</a></li>
+        
+      </ul>
+    </li>
+
+   
+
+  </ul>
+</div>
+
+      <div class="service-group">
+        <h6><a href="automation-services.html">Automation</a></h6>
+        <ul>
+          <li><a href="home-automation-applications.html">Residential</a></li>
+          <li><a href="commercial-automation-applications.html">Commercial</a></li>
+          <li><a href="industrial-automation-applications.html">Industrial</a></li>
+          <li><a href="hospital-automation-applications.html">Hospital</a></li>
+          <li><a href="hotel-automation-applications.html">Hotel</a></li>
+        </ul>
+      </div>
+
+       <div class="service-group">
+        <h6>R&D</h6>
+        <ul>
+          <li><a href="smartpole-applications.html">Smartpole</a></li>
+          <li><a href="smart-bollard-applications.html">Smart Bollard</a></li>
+          <li><a href="smart-conference-table-applications.html">Smart Conference Table</a></li>
+          <li><a href="smartbarcounter-applications.html">Smart Bar Counter</a></li>
+          <li><a href="smartwindowleafac-applications.html">Smart Window leaf AC</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
   <!-- Mega Menu -->
   <div id="megaMenu" class="mega-menu">
@@ -79,56 +234,121 @@
       <div class="underline"></div>
       <div class="service-submenus d-flex flex-wrap">
         <div class="service-group">
-          <h6>Energy</h6>
+          <h6><a href="energy-services.html">Energy</a></h6>
           <ul>
-            <li><a href="#">Solar</a></li>
-            <li><a href="#">Wind</a></li>
-            <li><a href="#">Biomass</a></li>
-            <li><a href="#">Hydel Power</a></li>
+            <li><a href="solar-energy.html">Solar</a></li>
+            <li><a href="wind-energy.html">Wind</a></li>
+            <li><a href="biomass-energy.html">Biomass</a></li>
+            <li><a href="hydel-energy.html">Hydel Power</a></li>
           </ul>
         </div>
         <div class="service-group">
-          <h6>Power</h6>
+          <h6><a href="power.html">Power</a></h6>
           <ul>
             <li><a href="transmission.html">Transmission</a></li>
-            <li><a href="#">Distribution</a></li>
-            <li><a href="#">Low Tension</a></li>
-            <li><a href="#">High Tension</a></li>
-            <li><a href="#">Panel Boards</a></li>
+            <li><a href="distribution.html">Distribution</a></li>
+            <li><a href="controlpanels.html">Control Panels</a></li>
+            <li><a href="panelboards.html">Panel Boards</a></li>
+            
           </ul>
         </div>
+<div class="service-group">
+  <h6><a href="lighting.html">Lighting</a></h6>
+  <ul class="submenu-parent">
+
+    <!-- Residential -->
+    <li class="has-submenu">
+      <a href="#">
+        Residential <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="kitchen-lighting.html">Kitchen </a></li>
+        <li><a href="livingroom-lighting.html">Living Room</a></li>
+        <li><a href="bedroom-lighting.html">Bedroom</a></li>
+        <li><a href="bathroom-lighting.html">Bathroom</a></li>
+        <li><a href="entrance-lighting.html">Entrance Lighting</a></li>
+      </ul>
+    </li>
+
+    <!-- Commercial -->
+    <li class="has-submenu">
+      <a href="#">
+        Commercial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="office-lighting.html">Office</a></li>
+        <li><a href="retail-showroom-lighting.html">Retail & Showroom Lighting</a></li>
+        <li><a href="healthcare-lighting.html">Healthcare Lighting</a></li>
+        <li><a href="education-lighting.html">Educational Lighting</a></li>
+        <li><a href="entertainments-and-theaters-lighting.html">Entertainment & Theatres</a></li>
+        <li><a href="airport-transport-lighting.html">Airport & Transport Hubs</a></li>
+        <li><a href="hotel-lighting.html">Hotel Lighting</a></li>
+      </ul>
+    </li>
+
+
+        <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Industrial <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="factorylighting.html">Factory Lighting</a></li>
+        <li><a href="warehouselighting.html">WarehouseLighting</a></li>
+        <li><a href="workshoplighting.html">Workshop Lighting</a></li>
+        <li><a href="coldstoragelighting.html">Cold Storage Lighting</a></li>
+        <li><a href="parkingutilitylighting.html">Parking & Utility Lighting</a></li>
+        
+      </ul>
+    </li>
+
+
+            <!-- Industrial -->
+    <li class="has-submenu">
+      <a href="#">
+        Outdoor Lighting <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+
+      <ul class="side-submenu">
+        <li><a href="gardenandlandscapelighting.html">Garden & Landscape Lighting</a></li>
+        <li><a href="facadeandarchitecturallighting.html">Facade & Architectural Lighting</a></li>
+        <li><a href="outdoorhomelighting.html">Outdoor Home Lighting</a></li>
+        <li><a href="parkinglotlighting.html">Parking Lot Lighting</a></li>
+        <li><a href="campusandinstitutionallighting.html">Campus & Institutional Lighting</a></li>
+        <li><a href="resortandhospitalitylighting.html">Resort & Hospitality</a></li>
+        <li><a href="securityandfloodlighting.html">Street and Security Lighting</a></li>
+        <li><a href="sportsgroundlighting.html">Sports Ground Lighting</a></li>
+        
+      </ul>
+    </li>
+
+   
+
+  </ul>
+</div>
+
         <div class="service-group">
-          <h6>Lighting</h6>
+          <h6><a href="automation.html">Automation</a></h6>
           <ul>
-            <li><a href="residential-lighting.html">Residential</a></li>
-            <li><a href="facade-lighting.html">Facade</a></li>
-            <li><a href="commercial-lighting.html">Commercial</a></li>
-            <li><a href="industrial-lighting.html">Industrial</a></li>
-            <li><a href="#">Street</a></li>
-            <li><a href="#">Park</a></li>
-            <li><a href="#">Stadium</a></li>
-            <li><a href="#">Hospital</a></li>
+            <li><a href="home-automation-service.html">Home</a></li>
+            <li><a href="commercial-automation-services.html">Commercial</a></li>
+            <li><a href="industrial-automation-services.html">Industrial</a></li>
+            <li><a href="hospital-automation-services.html">Hospital</a></li>
+            <!-- <li><a href="#">IoT Based Automation</a></li> -->
+            <li><a href="hotel-automation-services.html">Hotel</a></li>
           </ul>
         </div>
         <div class="service-group">
-          <h6>Automation</h6>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Commercial</a></li>
-            <li><a href="#">Industrial</a></li>
-            <li><a href="#">Hospital</a></li>
-            <li><a href="#">IoT Based Automation</a></li>
-            <li><a href="#">Hotel</a></li>
-          </ul>
-        </div>
-        <div class="service-group">
-          <h6>R & D</h6>
+          <h6><a href="r_and_d.html">R & D</a></h6>
           <ul>
             <li><a href="smart-pole.html">Smart Pole</a></li>
-            <li><a href="#">Smart Conference Hall</a></li>
-            <li><a href="#">Smart Bollards</a></li>
-            <li><a href="#">Smart Bar Counter</a></li>
-            <li><a href="#">Smart Window Leaf AC</a></li>
+            <li><a href="smart-conference-table.html">Smart Conference Hall</a></li>
+            <li><a href="smart-bollard.html">Smart Bollards</a></li>
+            <li><a href="smart-bar-counter.html">Smart Bar Counter</a></li>
+            <li><a href="smart-window-leaf-ac.html">Smart Window Leaf AC</a></li>
           </ul>
         </div>
        
@@ -212,7 +432,7 @@
                 <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">404 ERROR</h4>
                 <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="applications.html">Pages</a></li>
+                    <!-- <li class="breadcrumb-item"><a href="applications.html">Pages</a></li> -->
                     <li class="breadcrumb-item active text-primary">Contact</li>
                 </ol>    
             </div>
@@ -222,103 +442,235 @@
 
          <!-- Contact Start -->
 
-        <!-- Footer Start -->
-        <div class="container-fluid footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
-            <div class="container py-5">
-                <div class="row g-5 mb-5 align-items-center">
-                 
-                   
-                </div>
-                <div class="row g-5">
-                   
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Quick Links</h4>
-                            <a href="index.html">Home</a>
-                            <a href="about.html">About us</a>
-                            <a href="solution.html">Solutions</a>
-                            <a href="applications.html">Applications</a>
-                            <a href="gallery.html">Gallery</a>
-                            <a href="smart-pole.html">R & D</a>
-                            <a href="contact.html">Contact</a>
-                        </div>
-                    </div>
+<!-- PROFESSIONAL CORPORATE FOOTER START -->
+<footer class="footer">
+  <div class="footer-top py-5">
+    <div class="container">
+      <div class="row gy-4">
 
-                      <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Services</h4>
-                            <a href="#"> Energy</a>
-                            <a href="#"> Power</a>
-                            <a href="#"> Lighting</a>
-                            <a href="#"> Automation</a>
-                            <a href="#"> Smart City</a>
-                             <a href="#"> R & D</a>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Applications</h4>
-                            <a href="applications.html">Energy Generation</a>
-                            <a href="applications.html"> Power</a>
-                            <a href="applications.html"> Lighting</a>
-                            <a href="applications.html"> Indoor Lighting</a>
-                            <a href="applications.html"> Automation</a>
-                              <a href="applications.html"> Smart City</a>
-                               <a href="applications.html"> R & D</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Contact Info</h4>
-                            <a href="#"><i class="fa fa-map-marker-alt text-primary me-2"></i> Apurupa Towers, Road No:36, JubileeHills, Hyderabad, Telangana-500033 </a>
-                            <a href="mailto:info@arcotindia.in"><i class="fas fa-envelope text-primary me-2"></i>info@arcotindia.in </a>
-        
-                            <a href="tel:+91 98481 89899"><i class="fas fa-phone text-primary me-2"></i> +919848189899</a>
-                         
-                        </div>
-                    </div>
+        <!-- Column 1: Navigation -->
+        <div class="col-md-6 col-lg-3">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="solution.html">Solutions</a></li>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
 
-
-                     <div class="col-lg-5">
-                        <div class="d-flex align-items-center justify-content-center justify-content-lg-end pl-5">
-                            <a class="btn btn-light btn-md-square me-3" href="https://www.facebook.com/profile.php?id=61575125369342" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-light btn-md-square me-3" href="https://x.com/Arcotluminaries" target="_blank"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-light btn-md-square me-3" href="https://www.instagram.com/arcotindia/" target="_blank"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-light btn-md-square me-3" href="https://www.linkedin.com/in/arcot-luminaries-b4245935b/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                             <a class="btn btn-light btn-md-square me-3" href="https://www.youtube.com/@Arcotluminaries" target="_blank"><i class="fab fa-youtube"></i></a>
-                             <a class="btn btn-light btn-md-square me-3" href="https://in.pinterest.com/arcotsocialmedia/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-                              <a class="btn btn-light btn-md-square me-3" href="https://wa.me/919848189899"><i class="fab fa-whatsapp"></i></a>
-                              <a class="btn btn-light btn-md-square me-3" href="#"><i class="fab fa-telegram-plane"></i></a>
-                              <a class="btn btn-light btn-md-square me-3" href="https://www.reddit.com/user/Arcotluminaries/"><i class="fab fa-reddit-alien"></i></a>
-                              <a class="btn btn-light btn-md-square me-3" href="https://www.threads.com/@arcotindia">
-  <img src="img/icons/threads.svg" alt="Threads" style="width: 20px; height: 20px;">
-</a>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+           <h5 class="footer-title mt-3">Power</h5>
+          <ul class="footer-links">
+            <li><a href="transmission.html">Transmission</a></li>
+            <li><a href="distribution.html">Distribution</a></li>
+            <li><a href="controlpanels.html">Control Panels</a></li>
+            <li><a href="panelboards.html">Panel Boards</a></li>
+          
+          </ul>
         </div>
-        <!-- Footer End -->
 
+        <!-- Column 2: Services -->
+        <div class="col-md-6 col-lg-3">
+          <h5 class="footer-title">Services</h5>
+          <ul class="footer-links">
+            <li><a href="energy-services.html">Energy</a></li>
+            <li><a href="power.html">Power</a></li>
+            <li><a href="lighting.html">Lighting</a></li>
+            <li><a href="automation.html">Automation</a></li>
+           
+            <li><a href="r_and_d.html">R & D</a></li>
+          </ul>
 
-
-  <!-- Copyright Start -->
-        <div class="container-fluid copyright py-4 bg-dark">
-            <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-body"><a href="https://arcotindia.com/" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>ARCOT </a>, All Right Reserved.</span>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end text-body">
-                     
-                        Designed By <a class="border-bottom text-white" href="https://arcotindia.com/">ARCOT </a>
-                    </div>
-                </div>
-            </div>
+                <h5 class="footer-title mt-3">Energy</h5>
+          <ul class="footer-links">
+            <li><a href="solar-energy.html">Solar</a></li>
+            <li><a href="wind-energy.html">Wind</a></li>
+            <li><a href="biomass-energy.html">Biomass</a></li>
+            <li><a href="hydel-energy.html">Hydel</a></li>
+          
+          </ul>
         </div>
-        <!-- Copyright End -->
+
+        <!-- Column 3: Products -->
+        <div class="col-md-6 col-lg-3">
+          <h5 class="footer-title">Products</h5>
+          <ul class="footer-links">
+            <li><a href="energy-products.html">Energy Generation</a></li>
+            <li><a href="power-products.html">Power</a></li>
+            <li><a href="lighting-products.html">Lighting</a></li>
+            <li><a href="automation-products.html">Automation</a></li>
+          </ul>
+
+          <h5 class="footer-title mt-3">Automation</h5>
+          <ul class="footer-links">
+            <li><a href="home-automation.html">Residential</a></li>
+            <li><a href="commercial-automation.html">Commercial</a></li>
+            <li><a href="industrial-automation.html">Industrial Automation</a></li>
+            <li><a href="hospital-automation.html">Hospital Automation</a></li>
+            <li><a href="hotel-automation.html">Hotel Automation</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Lighting & R&D -->
+        <div class="col-md-6 col-lg-3">
+          <h5 class="footer-title">Lighting</h5>
+          <ul class="footer-links">
+            <li><a href="kitchen-lighting.html">Residential - Kitchen</a></li>
+            <li><a href="livingroom-lighting.html">Residential - Living Room</a></li>
+            <li><a href="office-lighting.html">Commercial - Office</a></li>
+            <li><a href="retail-showroom-lighting.html">Commercial - Retail</a></li>
+            <li><a href="factorylighting.html">Industrial - Factory</a></li>
+            <li><a href="gardenandlandscapelighting.html">Outdoor - Garden & Landscape</a></li>
+          </ul>
+
+          <h5 class="footer-title mt-3">R & D</h5>
+          <ul class="footer-links">
+            <li><a href="smart-pole.html">Smart Pole</a></li>
+            <li><a href="smart-bollard.html">Smart Bollard</a></li>
+            <li><a href="smart-conference-table.html">Smart Conference Table</a></li>
+            <li><a href="smart-window-leaf-ac.html">Smart Window Leaf AC</a></li>
+            <li><a href="smart-bar-counter.html">Smart Bar Counter</a></li>
+          </ul>
+        </div>
+
+      </div> <!-- row -->
+    </div> <!-- container -->
+  </div> <!-- footer-top -->
+
+  <!-- Footer Contact + Socials -->
+  <div class="footer-middle py-4 border-top border-secondary">
+    <div class="container d-md-flex justify-content-between align-items-center">
+      <div class="footer-contact mb-3 mb-md-0">
+       <p>
+  <i class="fa fa-map-marker-alt me-2"></i>
+  <a href="https://arcotindia.com/" target="_blank">
+    Plot No 44, Kavuri Hills, Madhapur, Hyderabad, Telangana-500033
+  </a>
+</p>
+
+        <p><i class="fas fa-envelope me-2"></i> <a href="mailto:info@arcotindia.com">info@arcotindia.com</a></p>
+       <p><i class="fab fa-whatsapp me-2"></i> 
+  <a href="https://wa.me/919848189899" target="_blank">+91 98481 89899</a>
+</p>
+
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=61580887387469"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/Arcotluminaries"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/arcot__lighting/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/arcot-india-private-limited/"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/@Arcot_India"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/919848189899"><i class="fab fa-whatsapp"></i></a>
+        <!-- <a href="#"><i class="fab fa-telegram-plane"></i></a> -->
+        <a href="https://in.pinterest.com/arcotsocialmedia_lightings/"><i class="fab fa-pinterest"></i></a>
+       
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom text-center py-3 border-top border-secondary">
+    &copy; 2025 Arcot India. All Rights Reserved. <a href="#">Privacy Policy</a>
+  </div>
+</footer>
+
+<style>
+/* Footer General */
+.footer {
+  background: #1e2226;
+  color: #ccc;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.footer-title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 6px;
+}
+
+.footer-links li a {
+  color: #bbb;
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links li a:hover {
+  color: #00bcd4;
+  padding-left: 4px;
+}
+
+.footer-contact p {
+  margin: 2px 0;
+  font-size: 13px;
+}
+
+.footer-contact a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: #00bcd4;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: transparent;
+  color: #bbb;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  background: #434444;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.footer-bottom a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #00bcd4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-top .row > div {
+    text-align: left;
+  }
+  .footer-middle {
+    flex-direction: column !important;
+    text-align: left;
+  }
+  .footer-social {
+    margin-top: 15px;
+  }
+}
+</style>
          
          
 
