@@ -499,7 +499,7 @@
 <div class="trans-banner-showcase">
 
   <div class="trans-banner-slide active">
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+    <img src="img/powerimg/controlpanels/banners.png">
     <div class="trans-banner-caption">
       <h2>Ocean Dreams</h2>
       <p>Feel the motion of waves and whispers of infinite blue serenity.</p>
@@ -770,7 +770,7 @@
   <div class="trans-services-grid">
 
     <div class="trans-services-card">
-      <div class="trans-services-bg" style="background-image:url('img/powerimg/t1.jpg');"></div>
+      <div class="trans-services-bg" style="background-image:url('img/powerimg/controlpanels/substationcontrolprotection.png');"></div>
       <div class="trans-services-header">
         <h3 class="trans-services-heading">SUBSTATION CONTROL & PROTECTION PANELS</h3>
       </div>
@@ -785,7 +785,7 @@
     </div>
 
     <div class="trans-services-card">
-      <div class="trans-services-bg" style="background-image:url('img/powerimg/t2.jpg');"></div>
+      <div class="trans-services-bg" style="background-image:url('img/powerimg/controlpanels/controlandrelaypanels.png');"></div>
       <div class="trans-services-header">
         <h3 class="trans-services-heading">CONTROL & RELAY (C&R) PANELS</h3>
       </div>
@@ -800,7 +800,7 @@
     </div>
 
     <div class="trans-services-card">
-      <div class="trans-services-bg" style="background-image:url('img/powerimg/t3.jpg');"></div>
+      <div class="trans-services-bg" style="background-image:url('img/powerimg/controlpanels/scadaautomation.png');"></div>
       <div class="trans-services-header">
         <h3 class="trans-services-heading">SCADA & AUTOMATION PANELS</h3>
       </div>
@@ -815,7 +815,7 @@
     </div>
 
     <div class="trans-services-card">
-      <div class="trans-services-bg" style="background-image:url('img/powerimg/t4.jpg');"></div>
+      <div class="trans-services-bg" style="background-image:url('img/powerimg/controlpanels/synchronizingpanels.png');"></div>
       <div class="trans-services-header">
         <h3 class="trans-services-heading">SYNCHRONIZING PANELS</h3>
       </div>
@@ -831,7 +831,7 @@
     </div>
 
     <div class="trans-services-card">
-      <div class="trans-services-bg" style="background-image:url('img/powerimg/t5.jpg');"></div>
+      <div class="trans-services-bg" style="background-image:url('img/powerimg/controlpanels/ltcontrolpanels.png');"></div>
       <div class="trans-services-header">
         <h3 class="trans-services-heading">LT CONTROL PANELS</h3>
       </div>
@@ -863,26 +863,22 @@
 <section class="control-services-wrapper">
 
 <style>
-/* HEADER */
 .control-services-title{
     display:flex;
     align-items:center;
     gap:15px;
     padding:30px 60px 20px;
 }
-
 .control-services-title h1{
     font-size:32px;
     color:#404040;
     font-weight:200;
 }
-
 .control-services-title span{
     font-style:italic;
     font-weight:300;
 }
 
-/* MAIN WRAPPER */
 .control-services-section{
     padding:0 60px 60px;
 }
@@ -893,7 +889,6 @@
     position:relative;
 }
 
-/* LEFT PANEL */
 .control-services-left{
     width:38%;
     background:#050505;
@@ -912,16 +907,13 @@
 
 .control-services-left ul{
     padding-left:18px;
-    margin-top:10px;
 }
-
 .control-services-left li{
     font-size:13px;
     line-height:1.8;
     margin-bottom:8px;
 }
 
-/* RIGHT IMAGE PANEL */
 .control-services-right{
     width:62%;
     position:relative;
@@ -937,12 +929,10 @@
     opacity:0;
     transition:opacity .6s ease;
 }
-
 .control-services-img.active{
     opacity:1;
 }
 
-/* ARROWS */
 .control-services-arrow{
     position:absolute;
     top:50%;
@@ -955,85 +945,86 @@
     cursor:pointer;
     font-size:18px;
     color:#000;
-    box-shadow:0 4px 12px rgba(0,0,0,.2);
+    background:#fff;
     z-index:10;
 }
+.control-services-arrow.left{ left:10px; }
+.control-services-arrow.right{ right:10px; }
 
-.control-services-arrow.left{ left:1px; }
-.control-services-arrow.right{ right:1px; }
-
-/* RESPONSIVE */
 @media(max-width:992px){
-    .control-services-section{
-        padding: 0;
-    }
-    .control-services-box{
-        flex-direction:column;
-        height:auto;
-    }
+    .control-services-section{ padding:0; }
+    .control-services-box{ flex-direction:column; height:auto; }
     .control-services-left,
-    .control-services-right{
-        width:100%;
-        height:auto;
-    }
-    .control-services-right{
-        height:350px;
-    }
+    .control-services-right{ width:100%; }
+    .control-services-right{ height:350px; }
 }
 </style>
 
-<!-- HEADER -->
 <div class="control-services-title">
     <h1>Types of Control Panels <span> We Offer</span></h1>
 </div>
 
-<!-- SLIDER SECTION -->
 <div class="control-services-section">
-    <div class="control-services-box">
+<div class="control-services-box">
 
-        <!-- LEFT CONTENT -->
-        <div class="control-services-left">
-            <h2 id="controlTitle">LT CONTROL<br>PANELS</h2>
-            <ul id="controlDesc"></ul>
-        </div>
+<div class="control-services-left">
+    <h2 id="controlTitle"></h2>
+    <ul id="controlDesc"></ul>
+</div>
 
-        <!-- RIGHT IMAGES -->
-        <div class="control-services-right">
+<div class="control-services-right">
 
-            <img src="img/powerimg/distri.png" class="control-services-img active">
-            <img src="img/powerimg/genera.png" class="control-services-img">
-            <img src="img/powerimg/panel.png" class="control-services-img">
-            <img src="img/powerimg/poweraboutimg.png" class="control-services-img">
-            <img src="img/powerimg/trnas.png" class="control-services-img">
-                        <img src="img/powerimg/trnas.png" class="control-services-img">
+    <!-- 11 IMAGES -->
+    <img src="img/powerimg/controlpanels/VCB.png" class="control-services-img active">
+    <img src="img/powerimg/controlpanels/11KV soft Starter.png" class="control-services-img">
+    <img src="img/powerimg/controlpanels/APFC.png" class="control-services-img">
+    <img src="img/powerimg/controlpanels/Control panel.png" class="control-services-img">
+    <img src="img/powerimg/controlpanels/Annunciation Panel.png" class="control-services-img">
+    <img src="img/powerimg/controlpanels/rtcc.png" class="control-services-img">
+    <img src="img/powerimg/controlpanels/bUS duct.png" class="control-services-img">
+    <img src="img/powerimg/controlpanels/PCC.png" class="control-services-img">
+    <img src="img/powerimg/controlpanels/mcc.png" class="control-services-img">
+    <img src="img/powerimg/controlpanels/LDB.png" class="control-services-img">
+    <img src="img/powerimg/controlpanels/110 BATTERY PANEL.png" class="control-services-img">
 
+    <div class="control-services-arrow left" onclick="controlPrev()">❮</div>
+    <div class="control-services-arrow right" onclick="controlNext()">❯</div>
 
-            <div class="control-services-arrow left" onclick="controlPrev()">❮</div>
-            <div class="control-services-arrow right" onclick="controlNext()">❯</div>
-        </div>
-
-    </div>
+</div>
+</div>
 </div>
 
 <script>
+document.addEventListener("DOMContentLoaded", function(){
+
 const controlSlides = document.querySelectorAll('.control-services-img');
 
 const controlTitles = [
-    "LT CONTROL<br>PANELS",
-    "MCC PANELS<br>(MOTOR CONTROL CENTERS)",
-    "PCC PANELS<br>(POWER CONTROL CENTERS)",
-    "PCC CONTROL<br>PANELS",
-    "APFC<br>PANELS",
-    "VFD /<br>PANELS"
+"VCB (VACUUM CIRCUIT BREAKER)",
+"11KV SOFT STARTER PANEL",
+"APFC PANEL",
+"CONTROL PANEL",
+"ANNUNCIATION PANEL",
+"RTCC PANEL",
+"BUS DUCT",
+"PCC PANEL",
+"MCC PANEL",
+"LDB (LIGHTING DB)",
+"110V BATTERY PANEL"
 ];
 
 const controlDescs = [
-    ["Main LT Panels","Power Distribution Control","Protection & Metering"],
-    ["Motor Control & Protection","DOL / Star-delta/soft Starter Panels","Industrial Applications"],
-    ["Power distribution & Load Control","High Readability Panels","Industrial & Commercial Use"],
-    ["Automation & Process Control","PLC/HMI Based Panels","Customized Logic Controls"],
-    ["Automatic Power Factor Correction","Energy Efficiency Improvement","Capacitor Bank Control"],
-    ["Variable Frequency Drive Panels","Speed Control of Motors","Energy Saving Solutions"]
+["11KV Protection System","High Fault Interrupting Capacity","Substation Application","Reliable Arc Quenching","Long Service Life"],
+["Smooth Motor Starting","Reduces Inrush Current","Improves Motor Life","Overload Protection","Heavy Duty Industrial Use"],
+["Automatic Power Factor Control","Reduces Penalty Charges","Capacitor Bank Switching","Energy Efficient Design","Microcontroller Based"],
+["PLC / Relay Based Control","Industrial Automation","Customized Logic Design","Safe Operation","Compact Construction"],
+["Fault Indication System","Audio Visual Alarms","Trip Monitoring","Control Room Use","Reliable Event Display"],
+["Transformer Tap Control","Voltage Regulation","Auto / Manual Mode","SCADA Compatible","Utility Applications"],
+["High Current Distribution","Compact Busbar System","Low Voltage Drop","Safe & Efficient","Industrial Use"],
+["Main Power Distribution","High Capacity Handling","Short Circuit Protection","Industrial & Commercial","Modular Structure"],
+["Motor Control Center","DOL / Star Delta","Central Monitoring","Industrial Automation","Reliable Operation"],
+["Lighting Power Distribution","MCB / RCCB Protection","Commercial & Residential Use","Compact DB Design","Safe Wiring System"],
+["110V DC Supply System","Battery Charger Panel","Substation Backup","Auto Float Mode","Protection Circuit Support"]
 ];
 
 let controlIndex = 0;
@@ -1042,11 +1033,10 @@ function showControlSlide(i){
     controlSlides.forEach(s => s.classList.remove('active'));
     controlSlides[i].classList.add('active');
 
-    document.getElementById('controlTitle').innerHTML = controlTitles[i];
+    document.getElementById('controlTitle').innerText = controlTitles[i];
 
     const ul = document.getElementById('controlDesc');
     ul.innerHTML = "";
-
     controlDescs[i].forEach(point=>{
         const li = document.createElement("li");
         li.textContent = point;
@@ -1054,216 +1044,26 @@ function showControlSlide(i){
     });
 }
 
-function controlNext(){
+window.controlNext = function(){
     controlIndex = (controlIndex + 1) % controlSlides.length;
     showControlSlide(controlIndex);
 }
 
-function controlPrev(){
+window.controlPrev = function(){
     controlIndex = (controlIndex - 1 + controlSlides.length) % controlSlides.length;
     showControlSlide(controlIndex);
 }
 
-setInterval(controlNext, 6000);
+setInterval(controlNext,6000);
 showControlSlide(0);
+
+});
 </script>
 
 </section>
 
 
-<!-- g12 -->
-<section class="custom-built-section">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-.custom-built-section{
-    font-family: 'Inter', sans-serif;
-    background: #f5f5f7;
-    padding: 60px 20px;
-}
-
-/* WRAPPER */
-.custom-built-container {
-    max-width: 1200px;
-    margin: auto;
-}
-
-/* HEADER */
-.custom-built-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
-.custom-built-top h1 {
-    font-size: 44px;
-    font-weight: 300;
-    line-height: 1.2;
-    color: #222;
-}
-
-/* SERVICE ROW */
-.custom-built-row {
-    position: relative;
-    display: flex;
-    align-items: center;
-    background: #fff;
-    padding: 25px;
-    margin-bottom: 15px;
-    overflow: hidden;
-    transition: all 0.4s ease;
-}
-
-.custom-built-img {
-    width: 150px;
-    height: 120px;
-    object-fit: cover;
-    flex-shrink: 0;
-    transition: all 0.5s ease;
-}
-
-.custom-built-no {
-    font-size: 20px;
-    font-weight: 300;
-    color: #bbb;
-    margin-left: 25px;
-    flex-shrink: 0;
-    transition: 0.3s ease;
-}
-
-.custom-built-text {
-    margin-left: 35px;
-    max-width: 650px;
-}
-
-.custom-built-title {
-    font-size: 24px;
-    font-weight: 300;
-    color: #111;
-    margin-bottom: 8px;
-}
-
-.custom-built-desc {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.6;
-    opacity: 0;
-    max-height: 0;
-    transition: all 0.5s ease;
-}
-
-/* HOVER EFFECT */
-.custom-built-row:hover {
-    transform: translateY(-5px);
-}
-
-.custom-built-row:hover .custom-built-img {
-    width: 400px;
-    height: 240px;
-    z-index: 2;
-}
-
-.custom-built-row:hover .custom-built-desc {
-    opacity: 1;
-    max-height: 500px;
-    margin-top: 8px;
-}
-
-.custom-built-row:hover .custom-built-no {
-    opacity: 0;
-    transform: translateX(-15px);
-}
-
-/* MOBILE */
-@media(max-width:900px) {
-    .custom-built-row {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .custom-built-img {
-        width: 100%;
-        height: 200px;
-        margin-bottom: 15px;
-    }
-
-    .custom-built-row:hover .custom-built-img {
-        width: 100%;
-        height: 220px;
-    }
-
-    .custom-built-no {
-        margin-left: 0;
-        margin-bottom: 5px;
-    }
-
-    .custom-built-text {
-        margin-left: 0;
-    }
-}
-</style>
-
-<div class="custom-built-container">
-
-    <div class="custom-built-top">
-        <h1>Custom Built & Application - Specific Panels</h1>
-    </div>
-
-    <!-- ITEM 1 -->
-    <div class="custom-built-row">
-        <img src="img/powerimg/line1.jpg" class="custom-built-img">
-        <div class="custom-built-no">01</div>
-        <div class="custom-built-text">
-            <div class="custom-built-title">Customized Panel Design as Per Client Requirement</div>
-            <div class="custom-built-desc">
-                Comprehensive legal guidance for business formations, contracts, mergers, and compliance at competitive rates.
-            </div>
-        </div>
-    </div>
-
-    <!-- ITEM 2 -->
-    <div class="custom-built-row">
-        <img src="img/powerimg/line2.jpg" class="custom-built-img">
-        <div class="custom-built-no">02</div>
-        <div class="custom-built-text">
-            <div class="custom-built-title">Panels as Per Single Line Diagram</div>
-            <div class="custom-built-desc">
-                Safeguard your trademarks, copyrights, patents, and intellectual assets with expert legal protection strategies.
-            </div>
-        </div>
-    </div>
-
-    <!-- ITEM 3 -->
-    <div class="custom-built-row">
-        <img src="img/powerimg/line3.jpg" class="custom-built-img">
-        <div class="custom-built-no">03</div>
-        <div class="custom-built-text">
-            <div class="custom-built-title">Indoor & Outdoor Panels</div>
-            <div class="custom-built-desc">
-                Aggressive legal representation and strategic defense planning for individuals facing criminal charges.
-            </div>
-        </div>
-    </div>
-
-    <!-- ITEM 4 -->
-    <div class="custom-built-row">
-        <img src="img/powerimg/line4.jpg" class="custom-built-img">
-        <div class="custom-built-no">04</div>
-        <div class="custom-built-text">
-            <div class="custom-built-title">IP - Rated Enclosures</div>
-            <div class="custom-built-desc">
-                Expert guidance and representation in civil disputes, property cases, and contractual conflicts.
-            </div>
-        </div>
-    </div>
-
-</div>
-
-</section>
 
 
 
