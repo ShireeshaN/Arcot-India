@@ -5,19 +5,20 @@
   <meta charset="utf-8">
   <title>Arcot Industries Private Limited</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO Meta Tags -->
-  <meta name="keywords" content="Arcot Industries contact, Arcot Industries location, Arcot Industries Hyderabad, electrical company contact, smart lighting contact, customer support">
-  <meta name="description" content="Get in touch with Arcot Industries for inquiries about our products, services, or business opportunities. Visit our office or reach out via phone or email.">
-  <meta name="author" content="Arcot Industries">
-
-  <link rel="icon" href="img/logos.webp" type="image/x-icon">
+  <meta name="keywords" content="Arcot Industries Hyderabad, Industrial Power Solutions, Smart City India, Automation Systems, Lighting Company India, Solar Power, Engineering Solutions Hyderabad">
+  <meta name="description" content="Arcot Industries delivers cutting-edge solutions in Power, Energy, Lighting, Automation, Smart City Infrastructure, and R&D across India.">
+  <link rel="icon" href="img/fevi.png" type="image/x-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Performance-optimized Libraries -->
+  <link rel="stylesheet" href="lib/animate/animate.min.css" media="print" onload="this.media='all'">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
 
   <!-- Font Awesome (latest) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -33,11 +34,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link href="css/segments.css" rel="stylesheet">
 
-  <!-- Performance-optimized Libraries -->
-  <link rel="stylesheet" href="lib/animate/animate.min.css" media="print" onload="this.media='all'">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+
 </head>
 
 
@@ -51,6 +48,9 @@
         </div>
         <!-- Spinner End -->
 
+        
+
+    
 <!-- HEADER START -->
 
 <header class="main-header">
@@ -365,27 +365,994 @@
 
 
 
-        
-
-     
-
 
         <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb2">
+        <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Coming Soon....</h4>
-                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown " data-wow-delay="0.3s">
-                    <li class="breadcrumb-item text-white-50"><a href="index.html"> Return to Home</a></li>
-                    <!-- <li class="breadcrumb-item"><a href="#"></a></li> -->
-                    <!-- <li class="breadcrumb-item active text-white">Contact</li> -->
+                <h1 class="text-white display-6 mb-4 wow fadeInDown" data-wow-delay="0.1s">WIND ENERGY</h1>
+                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                    <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> -->
+                  
                 </ol>    
             </div>
         </div>
         <!-- Header End -->
 
 
-    
-</body>
+<!-- services -->
+<section class="services-section">
+
+<style>
+/* ===== SECTION ===== */
+.services-section{
+    padding:30px 20px;
+    font-family:"Segoe UI", Arial, sans-serif;
+}
+
+/* SECTION TITLE */
+.section-title{
+    text-align:start;
+    font-size:34px;
+    font-weight:400;
+    margin-bottom:40px;
+    color:#00A36C;
+}
+
+/* ===== LAYOUT ===== */
+.services-layout{
+    display:grid;
+    grid-template-columns:420px 1fr;
+    align-items:center;
+}
+
+/* ===== LEFT PANEL ===== */
+.services-left{
+    background:linear-gradient(180deg,#50C878,rgb(65, 163, 127));
+    padding:50px 30px;
+    position:relative;
+    overflow:visible;
+}
+
+/* SERVICE ITEMS */
+.service-item{
+    position:relative;
+    font-size:22px;
+    color:#fff;
+    padding:14px 20px;
+    margin:18px 0;
+    cursor:pointer;
+    z-index:2;
+}
+
+/* PILL */
+.service-item::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:40px;
+    bottom:5px;
+    transform:translateY(-50%);
+    width:0;
+    /* height:56px; */
+    background:#02462d;
+    border-radius:40px;
+    z-index:-1;
+    transition:width .35s ease;
+}
+
+.service-item:hover::before,
+.service-item.active::before{
+    width:430px;
+}
+
+.service-item:hover,
+.service-item.active{
+    padding-left:30px;
+}
+
+/* ===== RIGHT IMAGE AREA ===== */
+.services-right{
+    position:relative;
+    padding-left:60px;
+    height:550px;
+}
+
+/* IMAGE LAYER SYSTEM (NO FLICKER) */
+.service-img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    max-width:900px;
+    height:550px;
+    object-fit:cover;
+    opacity:0;
+    visibility:hidden;
+    transform:translateX(0);
+    transition:
+        opacity .6s ease,
+        transform .6s ease;
+    box-shadow:0 20px 45px rgba(0,0,0,.2);
+}
+
+.service-img.active{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(10px);
+}
+
+/* ===================== MOBILE (DESKTOP-LIKE HOVER) ===================== */
+@media (max-width: 900px) {
+
+  .services-layout{
+    grid-template-columns: 1fr;
+    row-gap: 25px;
+  }
+
+  .services-left{
+    padding: 30px 20px;
+  }
+
+  .service-item{
+    font-size: 18px;
+    padding: 14px 20px;
+  }
+
+  /* SAME PILL AS DESKTOP */
+  .service-item::before{
+    width: 0;
+    height: 52px;
+    border-radius: 40px;
+    transition: width .35s ease;
+  }
+
+  /* ACTIVE = HOVER EFFECT */
+  .service-item.active::before{
+    width: 100%;
+  }
+
+  .service-item.active{
+    padding-left: 30px;
+  }
+
+  .services-right{
+    padding: 0;
+    height: 260px;
+  }
+
+  .service-img{
+    height: 260px;
+    max-width: 100%;
+    transform: none !important;
+  }
+}
+</style>
+
+<div class="container">
+
+    <h2 class="section-title">Our Wind Energy Services</h2>
+
+    <div class="services-layout">
+
+        <!-- LEFT -->
+        <div class="services-left">
+            <div class="service-item active" data-id="1">Wind Power Plant Development</div>
+            <div class="service-item" data-id="2">Wind EPC (Design , Supply & Installation)</div>
+            <div class="service-item" data-id="3">Wind Turbine Installation & Commissioning</div>
+            <div class="service-item" data-id="4">Balance of Plant (BOP) Works</div>
+            <div class="service-item" data-id="5">Operation & Maintanance (O&M)</div>
+            <div class="service-item" data-id="6">Repowering & Upgradation</div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="services-right">
+            <img id="img-1" class="service-img active" src="imgs/biomass.jpg">
+            <img id="img-2" class="service-img" src="imgs/windd.jpg">
+            <img id="img-3" class="service-img" src="imgs/solarpanels.jpg">
+            <img id="img-4" class="service-img" src="imgs/transport.jpg">
+            <img id="img-5" class="service-img" src="imgs/wind.jpg">
+            <img id="img-6" class="service-img" src="imgs/solarpanel.jpg">
+        </div>
+
+    </div>
+</div>
+
+<script>
+const items = document.querySelectorAll('.service-item');
+const images = document.querySelectorAll('.service-img');
+
+let currentIndex = 0;
+let interval;
+
+/* ACTIVATE SLIDE */
+function activate(index){
+    items.forEach(i=>i.classList.remove('active'));
+    images.forEach(img=>img.classList.remove('active'));
+
+    items[index].classList.add('active');
+    images[index].classList.add('active');
+
+    currentIndex = index;
+}
+
+/* AUTO ROTATE */
+function startAuto(){
+    interval = setInterval(()=>{
+        let next = (currentIndex + 1) % items.length;
+        activate(next);
+    }, 4000);
+}
+
+/* STOP AUTO */
+function stopAuto(){
+    clearInterval(interval);
+}
+
+/* MANUAL HOVER */
+items.forEach((item,index)=>{
+    item.addEventListener('mouseenter',()=>{
+        stopAuto();
+        activate(index);
+    });
+    item.addEventListener('mouseleave',startAuto);
+});
+
+/* INIT */
+startAuto();
+</script>
+
+</section>
+
+<!-- types -->
+  <section>
+<!-- ================= HERO ================= -->
+<section class="hero-section">
+  <style>
+/* ================= HERO SECTION ================= */
+.hero-section{
+  background:#188d2f;
+  height:180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero-title{
+  font-size:28px;
+  font-weight:300;
+  color:#ffffff;
+  letter-spacing:1px;
+  margin-bottom:25px;
+}
+
+/* ================= CARDS SECTION ================= */
+.cards-section{
+  margin-top:-50px;
+  padding-bottom:50px;
+}
+
+.cards-section .row > div{
+  display:flex;
+}
+
+/* ================= CARD DESIGN ================= */
+.info-card{
+  background:#fff;
+  padding:40px 30px 30px;
+  box-shadow:0 20px 35px rgba(0,0,0,0.15);
+  display:flex;
+  flex-direction:column;
+  width:100%;
+}
+
+.info-card h3{
+  font-size:22px;
+  font-weight:300;
+  margin-bottom:14px;
+}
+
+/* LIST STYLING */
+.info-card ul{
+  padding-left:18px;
+  margin-bottom:10px;
+}
+
+.info-card ul li{
+  font-size:15px;
+  line-height:1.6;
+  color:#6b7280;
+  margin-bottom:6px;
+}
+
+/* ================= IMAGE ================= */
+.info-card img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  border-radius:2px;
+  margin-top:15px;
+}
+</style>
+  <h2 class="hero-title">Wind Energy Solutions</h2>
+</section>
+
+<!-- ================= CARDS ================= -->
+<section class="cards-section">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="info-card">
+          <h3>On - Shore Wind Power</h3>
+          <ul>
+            <li>Large-Scale Wind Farms</li>
+            <li>High Efficiency Turbines</li>
+            <li>Utility & Industrial Usage</li>
+          </ul>
+          <img src="imgs/solarpanel.jpg" alt="Industrial Microgrid">
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="info-card">
+          <h3>Distributed/Captive Wind Power</h3>
+          <ul>
+            <li>Industrial Captive Consumption</li>
+            <li>Open Access Wind Power</li>
+          </ul>
+          <img src="imgs/wind.jpg" alt="Business Microgrid">
+        </div>
+      </div>
+
+   
+
+    </div>
+  </div>
+</section>
+</section>
+
+
+<!-- Applications -->
+<section class="solar-appln-section">
+<style>
+/* ===== SECTION ===== */
+.solar-appln-section{
+  padding:90px 0 130px;
+  background:#f6f7f8;
+  min-height:100vh;
+}
+
+/* ===== HEADING ===== */
+.solar-appln-head{
+  text-align:center;
+  margin-bottom:60px;
+}
+.solar-appln-head span{
+  font-size:14px;
+  letter-spacing:3px;
+  font-weight:600;
+  color:#0b684e;
+}
+.solar-appln-head h2{
+  font-size:42px;
+  font-weight:300;
+  margin:14px 0 18px;
+  color:#0b684e;
+}
+.solar-appln-line{
+  width:70px;
+  height:3px;
+  background:#096235;
+  margin:auto;
+  border-radius:10px;
+}
+
+/* ===== CARD ===== */
+.solar-appln-card{
+  background:#fff;
+  overflow:hidden;
+  transition:.35s ease;
+  height:100%;
+}
+.solar-appln-card:hover{
+  transform:translateY(-8px);
+}
+
+/* ===== IMAGE ===== */
+.solar-appln-img{
+  position:relative;
+  height:350px;
+}
+.solar-appln-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.solar-appln-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.1));
+  padding:24px;
+  display:flex;
+  align-items:flex-end;
+}
+.solar-appln-overlay h5{
+  color:#fff;
+  font-size:20px;
+  font-weight:300;
+}
+
+/* ===== CONTENT ===== */
+.solar-appln-content{
+  padding:16px;
+}
+.solar-appln-title{
+  font-size:20px;
+  font-weight:300;
+}
+.solar-appln-desc{
+  font-size:15px;
+  color:#666;
+  line-height:1.6;
+}
+
+/* ===== INDICATORS ===== */
+.solar-appln-section .carousel-indicators{
+  bottom:-55px;
+}
+/* ===== CAROUSEL INDICATORS FIX ===== */
+.solar-appln-section .carousel-indicators button {
+  width: 12px !important;       /* width = height for circle */
+  height: 12px !important;
+  border-radius: 50% !important;
+  padding: 0 !important;        /* remove default padding */
+  margin: 0 6px !important;
+  background-color: #cfcfcf !important;
+  opacity: 1 !important;
+  border: none !important;      /* remove default border */
+}
+
+.solar-appln-section .carousel-indicators .active {
+  background-color: #0b684e !important;
+}
+
+/* ===== ARROWS ===== */
+.solar-appln-section .carousel-control-prev,
+.solar-appln-section .carousel-control-next{
+  width:6%;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:991px){
+  .solar-appln-head h2{
+    font-size:32px;
+  }
+  .solar-appln-img{
+    height:260px;
+  }
+}
+</style>
+
+<div class="container">
+
+<!-- HEADING -->
+<div class="solar-appln-head">
+  <span>APPLICATIONS</span>
+  <h2>Wind Applications </h2>
+  <div class="solar-appln-line"></div>
+</div>
+
+<!-- CAROUSEL -->
+<div id="blogCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500" data-bs-pause="hover">
+
+<!-- INDICATORS (ONLY 2 DOTS) -->
+<div class="carousel-indicators">
+  <button type="button" data-bs-target="#blogCarousel" data-bs-slide-to="0" class="active"></button>
+  <button type="button" data-bs-target="#blogCarousel" data-bs-slide-to="1"></button>
+</div>
+
+<div class="carousel-inner">
+
+<!-- SLIDE 1 -->
+<div class="carousel-item active">
+  <div class="row g-4">
+    <div class="col-lg-4">
+      <div class="solar-appln-card">
+        <div class="solar-appln-img">
+          <img src="https://images.unsplash.com/photo-1584270354949-1f8a4d35c1a1">
+          <div class="solar-appln-overlay"><h5>Utility-Scale Power Generation</h5></div>
+        </div>
+        <div class="solar-appln-content">
+          <div class="solar-appln-title">Utility-Scale Power Generation</div>
+          <p class="solar-appln-desc">Large wind farms designed to deliver reliable renewable power to the grid.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="solar-appln-card">
+        <div class="solar-appln-img">
+          <img src="https://images.unsplash.com/photo-1592833159155-efc4fbc07c55">
+          <div class="solar-appln-overlay"><h5>Industrial Captive Power</h5></div>
+        </div>
+        <div class="solar-appln-content">
+          <div class="solar-appln-title">Industrial Captive Power</div>
+          <p class="solar-appln-desc">Dedicated wind power solutions for industries to reduce energy costs and ensure long-term sustainability.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="solar-appln-card">
+        <div class="solar-appln-img">
+          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276">
+          <div class="solar-appln-overlay"><h5>Commercial Consumers</h5></div>
+        </div>
+        <div class="solar-appln-content">
+          <div class="solar-appln-title">Commercial Consumers (Open Access)</div>
+          <p class="solar-appln-desc">Wind energy solutions enabling commercial users to procure clean power through open access mechanisms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="carousel-item">
+  <div class="row g-4">
+    <div class="col-lg-4">
+      <div class="solar-appln-card">
+        <div class="solar-appln-img">
+          <img src="https://images.unsplash.com/photo-1581092919535-7146c3a0e16e">
+          <div class="solar-appln-overlay"><h5>Renewable Energy Parks </h5></div>
+        </div>
+        <div class="solar-appln-content">
+          <div class="solar-appln-title">Renewable Energy Parks </div>
+          <p class="solar-appln-desc">Integrated wind projects developed as part of large-scale renewable energy parks.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="solar-appln-card">
+        <div class="solar-appln-img">
+          <img src="https://images.unsplash.com/photo-1584270354949-1f8a4d35c1a1">
+          <div class="solar-appln-overlay"><h5>Government & Infrastructure Projects</h5></div>
+        </div>
+        <div class="solar-appln-content">
+          <div class="solar-appln-title">Government & Infrastructure Projects</div>
+          <p class="solar-appln-desc">Wind power systems supporting national renewable energy targets and infrastructure development.</p>
+        </div>
+      </div>
+    </div>
+
+   
+  </div>
+</div>
+
+</div>
+
+<!-- ARROWS -->
+<button class="carousel-control-prev" type="button" data-bs-target="#blogCarousel" data-bs-slide="prev"></button>
+<button class="carousel-control-next" type="button" data-bs-target="#blogCarousel" data-bs-slide="next"></button>
+
+</div>
+</div>
+</section>
+
+<!-- epc process -->
+<div class="container py-5">
+
+<style>
+/* ===== TITLE ===== */
+.journey-title{
+    text-align:center;
+    font-size:48px;
+    font-weight:300;
+}
+.journey-title span{ color:#1a8f3c; }
+
+.subtitle{
+    text-align:center;
+    color:#555;
+    margin-bottom:40px;
+}
+
+/* ===== STEPS ===== */
+.steps-wrapper{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.step-box{
+    flex:1;
+    border:1px solid #1a8f3c;
+    padding:18px;
+    text-align:center;
+    color:#1a8f3c;
+    cursor:pointer;
+    transition:.3s ease;
+    background:#fff;
+    position:relative;
+    font-weight:500;
+}
+
+.step-box i{
+    display:block;
+    font-size:26px;
+    margin-bottom:8px;
+}
+
+.step-box.active,
+.step-box:hover{
+    background:linear-gradient(135deg,#1a8f3c,#0f3f24);
+    color:#fff;
+}
+
+.step-box.active::after{
+    content:'';
+    position:absolute;
+    bottom:-10px;
+    left:50%;
+    transform:translateX(-50%);
+    width:14px;
+    height:14px;
+    background:#1a8f3c;
+    border-radius:50%;
+    border:3px solid #fff;
+}
+
+/* inline description (mobile) */
+.step-desc{
+    display:none;
+    margin-top:10px;
+    padding:12px 14px;
+    background:#f6f7f8;
+    border-left:4px solid #1a8f3c;
+    font-size:14px;
+    line-height:1.6;
+    color:#333;
+}
+
+/* ===== DESKTOP CONTENT ===== */
+.content-box{
+    border:1px solid #1a8f3c;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+    min-height:110px;
+}
+.content-box h3{ font-weight:300; }
+
+/* ================= MOBILE ================= */
+@media (max-width:576px){
+
+    .journey-title{ font-size:32px; }
+
+    .subtitle{
+        font-size:14px;
+        padding:0 10px;
+    }
+
+    .steps-wrapper{
+        flex-direction:column;
+        gap:14px;
+    }
+
+    .step-box{
+        text-align:left;
+        padding:16px;
+    }
+
+    /* show description only for active step */
+    .step-box.active .step-desc{
+        display:block;
+    }
+
+    /* hide desktop content on mobile */
+    .content-box{ display:none; }
+
+    .step-box.active::after{ display:none; }
+}
+</style>
+
+<h1 class="journey-title">
+    Our Wind Project – <span>Execution Process</span>
+</h1>
+
+<p class="subtitle">
+    A structured approach that ensures quality, transparency, and long-term solar performance.
+</p>
+
+<!-- STEPS -->
+<div class="steps-wrapper">
+    <div class="step-box active" data-step="0">
+        <i class="bi bi-geo-alt"></i> Wind Assessment
+        <div class="step-desc"></div>
+    </div>
+    <div class="step-box" data-step="1">
+        <i class="bi bi-diagram-3"></i> Site Evaluation
+        <div class="step-desc"></div>
+    </div>
+    <div class="step-box" data-step="2">
+        <i class="bi bi-file-earmark-check"></i> Feasibility Study
+        <div class="step-desc"></div>
+    </div>
+    <div class="step-box" data-step="3">
+        <i class="bi bi-box-seam"></i> Turbine Selection
+        <div class="step-desc"></div>
+    </div>
+    <div class="step-box" data-step="4">
+        <i class="bi bi-tools"></i> Approvals & Grid Tie-up
+        <div class="step-desc"></div>
+    </div>
+    <div class="step-box" data-step="5">
+        <i class="bi bi-graph-up-arrow"></i> Civil Construction
+        <div class="step-desc"></div>
+    </div>
+     <div class="step-box" data-step="5">
+        <i class="bi bi-graph-up-arrow"></i> Turbine Installation
+        <div class="step-desc"></div>
+    </div>
+     <div class="step-box" data-step="5">
+        <i class="bi bi-graph-up-arrow"></i> Commissioning
+        <div class="step-desc"></div>
+    </div>
+</div>
+
+<!-- DESKTOP CONTENT -->
+<div class="content-box" id="stepContent"></div>
+
+<script>
+const steps = document.querySelectorAll('.step-box');
+const contentBox = document.getElementById('stepContent');
+
+const stepData = [
+ { title:"Wind Resource Assessment (WRA)", text:"Accurate analysis of wind data to evaluate site suitability and energy potential." },
+ { title:"Site Identification & Land", text:"Identification of optimal locations with required land availability and access." },
+ { title:"Wind Data Analysis & Energy Yield Assessment", text:"Detailed assessment to estimate annual energy generation and project viability." },
+ { title:" System Design & Turbine Selection", text:"Selection of suitable wind turbines based on site conditions and performance needs." },
+ { title:"Statutory Approvals & Grid Connectivity ", text:"Coordination for regulatory approvals and grid interconnection permissions." },
+ { title:"Civil Works & Foundations", text:"Execution of civil construction including turbine foundations and site infrastructure." },
+ { title:"Turbine Erection & Commisioning", text:"Safe installation of wind turbine components using advanced erection techniques." },
+ { title:"Performance Testing & Handover", text:"Comprehensive testing to ensure optimal performance before final project handover." }
+];
+
+function showStep(index){
+    steps.forEach(s=>{
+        s.classList.remove('active');
+        s.querySelector('.step-desc').innerHTML="";
+    });
+
+    const step = steps[index];
+    step.classList.add('active');
+
+    /* desktop */
+    contentBox.innerHTML = `
+        <h3>${stepData[index].title}</h3>
+        <p>${stepData[index].text}</p>
+    `;
+
+    /* mobile inline */
+    step.querySelector('.step-desc').innerText = stepData[index].text;
+}
+
+/* init first step */
+showStep(0);
+
+/* autoplay */
+let current = 0;
+setInterval(()=>{
+    current = (current+1) % steps.length;
+    showStep(current);
+},3000);
+
+/* click */
+steps.forEach((step,i)=>{
+    step.addEventListener('click',()=>showStep(i));
+});
+</script>
+
+</div>
+
+
+<!-- why choose us? -->
+<section class="why-choose-section">
+
+<style>
+.why-choose-section {
+  position: relative;
+  min-height: 70vh;
+  background: url("imgs/solarpanel.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.why-choose-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.65)
+  );
+}
+
+.why-choose-title {
+  color: #fdfdfd;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.why-choose-subtitle{
+  font-size:14px;
+  letter-spacing:1px;
+  opacity:0.8;
+}
+
+.why-choose-box i {
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.why-choose-box h5 {
+  font-weight: 300;
+  margin-bottom: 35px;
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .why-choose-title {
+    font-size: 28px;
+  }
+
+  .why-choose-subtitle {
+    font-size: 13px;
+  }
+
+  .why-choose-box i {
+    font-size: 38px;
+  }
+
+  .why-choose-box h5 {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .why-choose-title {
+    font-size: 24px;
+  }
+
+  .why-choose-subtitle {
+    font-size: 12px;
+  }
+
+  .why-choose-box i {
+    font-size: 34px;
+  }
+
+  .why-choose-box h5 {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .why-choose-box {
+    margin-bottom: 25px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .why-choose-title {
+    font-size: 20px;
+  }
+
+  .why-choose-subtitle {
+    font-size: 11px;
+  }
+
+  .why-choose-box i {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .why-choose-box h5 {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .why-choose-section {
+    min-height: 50vh;
+    padding: 40px 10px;
+  }
+}
+</style>
+
+<div class="why-choose-overlay"></div>
+
+<div class="container position-relative text-center text-white">
+  <h2 class="why-choose-title">WHY CHOOSE US?</h2>
+  <p class="why-choose-subtitle">
+    Delivering trusted solar solutions with precision & performance
+  </p>
+
+  <div class="row mt-5">
+
+    <div class="col-md-4 why-choose-box">
+      <i class="fa-solid fa-users-gear"></i>
+      <h5>Experienced Wind Project Execution Team</h5>
+    </div>
+
+    <div class="col-md-4 why-choose-box">
+      <i class="fa-solid fa-solar-panel"></i>
+      <h5>Accurate Wind Resource Assessment</h5>
+    </div>
+
+    <div class="col-md-4 why-choose-box">
+      <i class="fa-solid fa-diagram-project"></i>
+      <h5>Proven EPC Capabilities</h5>
+    </div>
+
+    <div class="col-md-4 why-choose-box">
+      <i class="fa-solid fa-file-shield"></i>
+      <h5>Compliance with grid & utility Standards</h5>
+    </div>
+
+    <div class="col-md-4 why-choose-box">
+      <i class="fa-solid fa-hand-holding-dollar"></i>
+      <h5>Strong O&M Support</h5>
+    </div>
+
+    <div class="col-md-4 why-choose-box">
+      <i class="fa-solid fa-headset"></i>
+      <h5>Focus on High Plant Availability</h5>
+    </div>
+
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.why-choose-box').forEach((box, i) => {
+  box.style.opacity = 0;
+  box.style.transform = "translateY(30px)";
+  setTimeout(() => {
+    box.style.transition = "0.8s ease";
+    box.style.opacity = 1;
+    box.style.transform = "translateY(0)";
+  }, i * 200);
+});
+</script>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!-- PROFESSIONAL CORPORATE FOOTER START -->
@@ -618,13 +1585,10 @@
 }
 </style>
 
-
-
-         
          
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+        <a href="#" class="btn btn-secondary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>    
 
         
         <!-- JavaScript Libraries -->
@@ -639,16 +1603,44 @@
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
 
-        <script>
-  var submitted = false;
-</script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+       <script>AOS.init();</script>
+
+
 
 <script>
-  document.querySelector("iframe").onload = function () {
-    if (submitted) {
-      alert("Thank you! Your message has been sent.");
-    }
-  };
+  document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll(".number-value");
+
+    const options = {
+      threshold: 0.4
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          let count = 0;
+          const target = parseInt(el.dataset.target);
+          const speed = 3;
+
+          const updateCount = () => {
+            count++;
+            el.innerText = count + "+";
+            if (count < target) {
+              setTimeout(updateCount, speed * 10);
+            }
+          };
+          updateCount();
+          observer.unobserve(el);
+        }
+      });
+    }, options);
+
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  });
 </script>
 
     </body>

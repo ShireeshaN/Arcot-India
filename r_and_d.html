@@ -379,7 +379,7 @@
 <style>
 
 section {
-  min-height: 100vh;
+ 
   padding: 0px 0px;
   transition: background 1s ease, color 1s ease;
 }
@@ -397,136 +397,11 @@ body{
   color: #111;
 } */
 
-.split span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(50px);
-}
-
-.horizontal-scroll {
-  display: flex;
-  flex-wrap: nowrap;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.panel {
-  flex: 0 0 100vw ;
-  position: relative;
-  overflow: hidden;
-}
-
-.panel img {
-  display: block;
-  width: 100%;
-  height:100%;
-  object-fit: cover;
-  transform: scale(1.15);
-}
-
-.image-mask {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: #111;
-  transform-origin: left;
-  transform: scaleX(1);
-  z-index: 2;
-}
-
-
-section[data-bg] {
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-h1 {
-  font-size: 3rem;
-  font-weight: bold;
-}
-
 
 </style>
 
 
 
-<!-- HORIZONTAL SCROLL SECTION -->
-<section class="horizontal-scroll">
-  <div class="panel image-panel">
-    <div class="image-mask"></div>
-    <img src="img/randd/smartpole.png" alt="Smart Pole">
-  </div>
-  <div class="panel image-panel">
-    <div class="image-mask"></div>
-    <img src="img/randd/smartbollad.png" alt="Smart Bollard">
-  </div>
-  <div class="panel image-panel">
-    <div class="image-mask"></div>
-    <img src="img/randd/smarttable.png" alt="Smart Table">
-  </div>
-
-  <div class="panel image-panel">
-    <div class="image-mask"></div>
-    <img src="img/randd/Bar-counter-4.jpg" alt="Smart Bar Counter">
-     
-  </div>
-  <div class="panel image-panel">
-    <div class="image-mask"></div>
-    <img src="img/randd/windoleaf.png" alt="Smart Window Leaf AC">
-  </div>
-</section>
-
-<script>
-  gsap.registerPlugin(ScrollTrigger);
-
-  const scrollContainer = document.querySelector(".horizontal-scroll");
-  const panels = gsap.utils.toArray(".panel");
-
-  // ✅ Corrected horizontal scroll logic
-  gsap.to(panels, {
-    xPercent: -100 * (panels.length - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: scrollContainer,
-      pin: true,
-      scrub: 1,
-      snap: 1 / (panels.length - 1),
-      end: () => "+=" + scrollContainer.offsetWidth, // dynamic end point
-      anticipatePin: 1, // smoother transition
-      invalidateOnRefresh: true // handles responsive resizing
-    }
-  });
-
-  // ✅ Image reveal animation (unchanged)
-  document.querySelectorAll(".image-panel").forEach(panel => {
-    const img = panel.querySelector("img");
-    const mask = panel.querySelector(".image-mask");
-
-    gsap.set(img, { scale: 1.2 });
-    gsap.set(mask, { scaleX: 1 });
-
-    ScrollTrigger.create({
-      trigger: panel,
-      start: "left center",
-      end: "right center",
-      containerAnimation: ScrollTrigger.getById("horizontalScroll"),
-      onEnter: () => {
-        gsap.timeline()
-          .to(mask, { scaleX: 0, duration: 1.2, ease: "power3.inOut" })
-          .to(img, { scale: 1, duration: 1.2, ease: "power3.inOut" }, "-=1");
-      },
-      onLeaveBack: () => {
-        gsap.timeline()
-          .to(mask, { scaleX: 1, duration: 1.2, ease: "power3.inOut" })
-          .to(img, { scale: 1.2, duration: 1.2, ease: "power3.inOut" }, "-=1");
-      }
-    });
-  });
-
-  // ✅ Make sure body theme doesn’t flicker
-  ScrollTrigger.refresh(true);
-</script>
 
 
 
@@ -551,96 +426,7 @@ h1 {
   </div>
 </section>
 
-<script>
-// FEATURES DATA (with icon class names)
-const features = [
-  {icon:"fa-solid fa-bolt", name:"EV Charger", desc:"Fast, efficient EV charging; solar/wind integration and QR payments."},
-  {icon:"fa-solid fa-triangle-exclamation", name:"Emergency SOS Alert", desc:"Instant SOS with GPS, voice/push activation and ICCC integration."},
-  {icon:"fa-solid fa-plug", name:"Wired Charging", desc:"Weatherproof, safe plug-and-charge with real-time power & metering."},
-  {icon:"fa-solid fa-wifi", name:"Wireless Charging", desc:"Contactless EV charging for convenient public/fleet use."},
-  {icon:"fa-solid fa-wind", name:"Air Quality Sensor", desc:"Real-time PM/CO₂/NO₂ monitoring with IoT reporting and alerts."},
-  {icon:"fa-solid fa-display", name:"Air Quality Screen", desc:"Outdoor AQI display with auto-brightness and public alerts."},
-  {icon:"fa-solid fa-lightbulb", name:"Street Lighting", desc:"Smart dimmable LEDs with motion, schedules and solar option."},
-  {icon:"fa-solid fa-volume-high", name:"PA Loudspeaker", desc:"Weatherproof public address for alerts, announcements and events."},
-  {icon:"fa-solid fa-solar-panel", name:"Power Generation System", desc:"Solar/wind hybrid generation with battery storage."},
-  {icon:"fa-solid fa-tv", name:"RGB Pixel LED Screen", desc:"High-bright dynamic display for ads, alerts and info."},
-  {icon:"fa-solid fa-person-running", name:"Motion Detector", desc:"Day/night movement detection that triggers lights/cameras."},
-  {icon:"fa-solid fa-wifi", name:"Wi-Fi Hotspot", desc:"Public broadband access and IoT connectivity with secure access."},
-  {icon:"fa-solid fa-microphone", name:"Intercom", desc:"Two-way citizen ↔ control center communication (audio/video)."},
-  {icon:"fa-solid fa-tablet-screen-button", name:"Android Touch Screen", desc:"Outdoor info kiosk: maps, tickets, navigation & services."},
-  {icon:"fa-solid fa-robot", name:"AI-Based Voice Communication", desc:"Multilingual voice assistant for info and commands."},
-  {icon:"fa-solid fa-camera", name:"AI-Based Camera", desc:"Smart video analytics (detection, ANPR, alerts) with edge/cloud support."},
-];
 
-const leftContainer = document.getElementById('featuresLeft');
-const rightContainer = document.getElementById('featuresRight');
-const image = document.querySelector('.product-image');
-
-const leftFeatures = features.slice(0, 8);
-const rightFeatures = features.slice(8, 16);
-
-function createFeatureElement(f, i) {
-  const div = document.createElement('div');
-  div.classList.add('feature');
-  if (i === 0) div.classList.add('active');
-  div.innerHTML = `
-    <div class="feature-header">
-      <i class="${f.icon} feature-icon"></i>
-      <span class="feature-title">${f.name}</span>
-    </div>
-    <div class="feature-desc">${f.desc}</div>
-  `;
-  div.addEventListener('click', () => setActiveFeature(i, true));
-  return div;
-}
-
-function setActiveFeature(i, manual=false) {
-  document.querySelectorAll('.feature').forEach(el => el.classList.remove('active'));
-  const allFeatures = document.querySelectorAll('.feature');
-  allFeatures[i].classList.add('active');
-  animateImage();
-  if (manual) {
-    clearInterval(autoCycle);
-    autoCycle = setInterval(nextFeature, 4000);
-  }
-}
-
-function animateImage() {
-  gsap.fromTo(image, 
-    { scale: 1.05, rotateY: 10, opacity: 0.6 },
-    { scale: 1, rotateY: 0, opacity: 1, duration: 1.4, ease: "power3.out" }
-  );
-}
-
-leftFeatures.forEach((f, i) => leftContainer.appendChild(createFeatureElement(f, i)));
-rightFeatures.forEach((f, i) => rightContainer.appendChild(createFeatureElement(f, i + 8)));
-
-gsap.registerPlugin(ScrollTrigger);
-
-// Section animation
-gsap.to(".smartpole-section", {
-  opacity: 1, y: 0, duration: 1.2, ease: "power3.out",
-  scrollTrigger: { trigger: ".smartpole-section", start: "top 80%" }
-});
-
-// Left-right entry
-gsap.from(".features-list", {
-  opacity: 0,
-  x: i => (i === 0 ? -100 : 100),
-  duration: 1.3,
-  stagger: 0.2,
-  ease: "power2.out",
-  scrollTrigger: { trigger: ".features-container", start: "top 85%" }
-});
-
-// AUTO CYCLE
-let currentIndex = 0;
-function nextFeature() {
-  currentIndex = (currentIndex + 1) % features.length;
-  setActiveFeature(currentIndex);
-}
-let autoCycle = setInterval(nextFeature, 4000);
-</script>
 
 
 <style>
@@ -1240,7 +1026,7 @@ let autoCycle = setInterval(nextFeature, 4000);
 .innovation-future {
   position: relative;
   background: radial-gradient(circle at center, #0c0c0c 0%, #000 100%);
-  padding: 160px 20px;
+  padding: 100px 20px 80px;
   color: #fff;
   text-align: center;
   overflow: hidden;
@@ -1393,57 +1179,7 @@ let autoCycle = setInterval(nextFeature, 4000);
 
 
 
-<script>
-gsap.registerPlugin(ScrollTrigger);
 
-// HERO ANIMATION
-gsap.to(".bollard-hero h1", {
-  opacity: 1, y: 0, duration: 1.4, ease: "power3.out", delay: 0.2
-});
-gsap.to(".bollard-hero p", {
-  opacity: 1, y: 0, duration: 1.2, ease: "power3.out", delay: 0.5
-});
-
-// VIDEO ENTRANCE
-gsap.to(".bollard-video", {
-  opacity: 1, y: 0, scale: 1, duration: 1.6, ease: "power3.out",
-  scrollTrigger: { trigger: ".bollard-section", start: "top 85%" }
-});
-
-// FEATURE REVEALS + GLOW COLOR SYNC
-const bollardGlow = document.querySelector(".bollard-glow");
-const bollardPoints = document.querySelectorAll(".bollard-point");
-let bollardIndex = 0;
-
-bollardPoints.forEach((point) => {
-  ScrollTrigger.create({
-    trigger: point,
-    start: "top 85%",
-    onEnter: () => {
-      gsap.to(point, { opacity: 1, y: 0, duration: 1.4, ease: "power3.out" });
-      const color = point.dataset.color;
-      gsap.to(bollardGlow, {
-        background: `radial-gradient(circle, ${color}60, transparent 70%)`,
-        duration: 1.2,
-        ease: "power2.out"
-      });
-    }
-  });
-});
-
-// AUTO LOOP: changes glow + light ambiance over time
-function cycleBollardPoints() {
-  const point = bollardPoints[bollardIndex];
-  const color = point.dataset.color;
-  gsap.to(bollardGlow, {
-    background: `radial-gradient(circle, ${color}80, transparent 70%)`,
-    duration: 1.5,
-    ease: "power2.inOut"
-  });
-  bollardIndex = (bollardIndex + 1) % bollardPoints.length;
-}
-setInterval(cycleBollardPoints, 4000);
-</script>
 
 
 
@@ -1799,7 +1535,149 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
+<script>
+gsap.registerPlugin(ScrollTrigger);
 
+// HERO ANIMATION
+gsap.to(".bollard-hero h1", {
+  opacity: 1, y: 0, duration: 1.4, ease: "power3.out", delay: 0.2
+});
+gsap.to(".bollard-hero p", {
+  opacity: 1, y: 0, duration: 1.2, ease: "power3.out", delay: 0.5
+});
+
+// VIDEO ENTRANCE
+gsap.to(".bollard-video", {
+  opacity: 1, y: 0, scale: 1, duration: 1.6, ease: "power3.out",
+  scrollTrigger: { trigger: ".bollard-section", start: "top 85%" }
+});
+
+// FEATURE REVEALS + GLOW COLOR SYNC
+const bollardGlow = document.querySelector(".bollard-glow");
+const bollardPoints = document.querySelectorAll(".bollard-point");
+let bollardIndex = 0;
+
+bollardPoints.forEach((point) => {
+  ScrollTrigger.create({
+    trigger: point,
+    start: "top 85%",
+    onEnter: () => {
+      gsap.to(point, { opacity: 1, y: 0, duration: 1.4, ease: "power3.out" });
+      const color = point.dataset.color;
+      gsap.to(bollardGlow, {
+        background: `radial-gradient(circle, ${color}60, transparent 70%)`,
+        duration: 1.2,
+        ease: "power2.out"
+      });
+    }
+  });
+});
+
+// AUTO LOOP: changes glow + light ambiance over time
+function cycleBollardPoints() {
+  const point = bollardPoints[bollardIndex];
+  const color = point.dataset.color;
+  gsap.to(bollardGlow, {
+    background: `radial-gradient(circle, ${color}80, transparent 70%)`,
+    duration: 1.5,
+    ease: "power2.inOut"
+  });
+  bollardIndex = (bollardIndex + 1) % bollardPoints.length;
+}
+setInterval(cycleBollardPoints, 4000);
+</script>
+
+
+<script>
+// FEATURES DATA (with icon class names)
+const features = [
+  {icon:"fa-solid fa-bolt", name:"EV Charger", desc:"Fast, efficient EV charging; solar/wind integration and QR payments."},
+  {icon:"fa-solid fa-triangle-exclamation", name:"Emergency SOS Alert", desc:"Instant SOS with GPS, voice/push activation and ICCC integration."},
+  {icon:"fa-solid fa-plug", name:"Wired Charging", desc:"Weatherproof, safe plug-and-charge with real-time power & metering."},
+  {icon:"fa-solid fa-wifi", name:"Wireless Charging", desc:"Contactless EV charging for convenient public/fleet use."},
+  {icon:"fa-solid fa-wind", name:"Air Quality Sensor", desc:"Real-time PM/CO₂/NO₂ monitoring with IoT reporting and alerts."},
+  {icon:"fa-solid fa-display", name:"Air Quality Screen", desc:"Outdoor AQI display with auto-brightness and public alerts."},
+  {icon:"fa-solid fa-lightbulb", name:"Street Lighting", desc:"Smart dimmable LEDs with motion, schedules and solar option."},
+  {icon:"fa-solid fa-volume-high", name:"PA Loudspeaker", desc:"Weatherproof public address for alerts, announcements and events."},
+  {icon:"fa-solid fa-solar-panel", name:"Power Generation System", desc:"Solar/wind hybrid generation with battery storage."},
+  {icon:"fa-solid fa-tv", name:"RGB Pixel LED Screen", desc:"High-bright dynamic display for ads, alerts and info."},
+  {icon:"fa-solid fa-person-running", name:"Motion Detector", desc:"Day/night movement detection that triggers lights/cameras."},
+  {icon:"fa-solid fa-wifi", name:"Wi-Fi Hotspot", desc:"Public broadband access and IoT connectivity with secure access."},
+  {icon:"fa-solid fa-microphone", name:"Intercom", desc:"Two-way citizen ↔ control center communication (audio/video)."},
+  {icon:"fa-solid fa-tablet-screen-button", name:"Android Touch Screen", desc:"Outdoor info kiosk: maps, tickets, navigation & services."},
+  {icon:"fa-solid fa-robot", name:"AI-Based Voice Communication", desc:"Multilingual voice assistant for info and commands."},
+  {icon:"fa-solid fa-camera", name:"AI-Based Camera", desc:"Smart video analytics (detection, ANPR, alerts) with edge/cloud support."},
+];
+
+const leftContainer = document.getElementById('featuresLeft');
+const rightContainer = document.getElementById('featuresRight');
+const image = document.querySelector('.product-image');
+
+const leftFeatures = features.slice(0, 8);
+const rightFeatures = features.slice(8, 16);
+
+function createFeatureElement(f, i) {
+  const div = document.createElement('div');
+  div.classList.add('feature');
+  if (i === 0) div.classList.add('active');
+  div.innerHTML = `
+    <div class="feature-header">
+      <i class="${f.icon} feature-icon"></i>
+      <span class="feature-title">${f.name}</span>
+    </div>
+    <div class="feature-desc">${f.desc}</div>
+  `;
+  div.addEventListener('click', () => setActiveFeature(i, true));
+  return div;
+}
+
+function setActiveFeature(i, manual=false) {
+  document.querySelectorAll('.feature').forEach(el => el.classList.remove('active'));
+  const allFeatures = document.querySelectorAll('.feature');
+  allFeatures[i].classList.add('active');
+  animateImage();
+  if (manual) {
+    clearInterval(autoCycle);
+    autoCycle = setInterval(nextFeature, 4000);
+  }
+}
+
+function animateImage() {
+  gsap.fromTo(image, 
+    { scale: 1.05, rotateY: 10, opacity: 0.6 },
+    { scale: 1, rotateY: 0, opacity: 1, duration: 1.4, ease: "power3.out" }
+  );
+}
+
+leftFeatures.forEach((f, i) => leftContainer.appendChild(createFeatureElement(f, i)));
+rightFeatures.forEach((f, i) => rightContainer.appendChild(createFeatureElement(f, i + 8)));
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Section animation
+gsap.to(".smartpole-section", {
+  opacity: 1, y: 0, duration: 1.2, ease: "power3.out",
+  scrollTrigger: { trigger: ".smartpole-section", start: "top 80%" }
+});
+
+// Left-right entry
+gsap.from(".features-list", {
+  opacity: 0,
+  x: i => (i === 0 ? -100 : 100),
+  duration: 1.3,
+  stagger: 0.2,
+  ease: "power2.out",
+  scrollTrigger: { trigger: ".features-container", start: "top 85%" }
+});
+
+// AUTO CYCLE
+let currentIndex = 0;
+function nextFeature() {
+  currentIndex = (currentIndex + 1) % features.length;
+  setActiveFeature(currentIndex);
+}
+let autoCycle = setInterval(nextFeature, 4000);
+</script>`
 
 
 

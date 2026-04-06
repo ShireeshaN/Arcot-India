@@ -479,22 +479,50 @@
     transform:translateX(10px);
 }
 
-/* ===== MOBILE ===== */
-@media(max-width:900px){
-    .services-layout{
-        grid-template-columns:1fr;
-    }
-    .services-right{
-        padding:30px 0;
-        height:260px;
-    }
-    .service-img{
-        height:260px;
-        transform:none!important;
-    }
-    .service-item::before{
-        width:100%!important;
-    }
+/* ===================== MOBILE (DESKTOP-LIKE HOVER) ===================== */
+@media (max-width: 900px) {
+
+  .services-layout{
+    grid-template-columns: 1fr;
+    row-gap: 25px;
+  }
+
+  .services-left{
+    padding: 30px 20px;
+  }
+
+  .service-item{
+    font-size: 18px;
+    padding: 14px 20px;
+  }
+
+  /* SAME PILL AS DESKTOP */
+  .service-item::before{
+    width: 0;
+    height: 52px;
+    border-radius: 40px;
+    transition: width .35s ease;
+  }
+
+  /* ACTIVE = HOVER EFFECT */
+  .service-item.active::before{
+    width: 100%;
+  }
+
+  .service-item.active{
+    padding-left: 30px;
+  }
+
+  .services-right{
+    padding: 0;
+    height: 260px;
+  }
+
+  .service-img{
+    height: 260px;
+    max-width: 100%;
+    transform: none !important;
+  }
 }
 </style>
 
@@ -663,7 +691,7 @@ startAuto();
         </div>
       </div>
 
-      <!-- Card 2 -->
+      <!--   2 -->
       <div class="col-lg-4 col-md-6">
         <div class="info-card">
           <h3>Off - Grid Solar System</h3>
@@ -782,16 +810,20 @@ startAuto();
 .solar-appln-section .carousel-indicators{
   bottom:-55px;
 }
-.solar-appln-section .carousel-indicators [data-bs-target]{
-  width:12px;
-  height:1px;
-  border-radius:50%;
-  background:#cfcfcf;
-  opacity:1;
-  margin:0 6px;
+/* ===== CAROUSEL INDICATORS FIX ===== */
+.solar-appln-section .carousel-indicators button {
+  width: 12px !important;       /* width = height for circle */
+  height: 12px !important;
+  border-radius: 50% !important;
+  padding: 0 !important;        /* remove default padding */
+  margin: 0 6px !important;
+  background-color: #cfcfcf !important;
+  opacity: 1 !important;
+  border: none !important;      /* remove default border */
 }
-.solar-appln-section .carousel-indicators .active{
-  background:#0b684e;
+
+.solar-appln-section .carousel-indicators .active {
+  background-color: #0b684e !important;
 }
 
 /* ===== ARROWS ===== */
@@ -930,7 +962,7 @@ startAuto();
 </section>
 
 <!-- epc process -->
- <div class="container py-5">
+<div class="container py-5">
 
 <style>
 /* ===== TITLE ===== */
@@ -939,9 +971,8 @@ startAuto();
     font-size:48px;
     font-weight:300;
 }
-.journey-title span{
-    color:#1a8f3c;
-}
+.journey-title span{ color:#1a8f3c; }
+
 .subtitle{
     text-align:center;
     color:#555;
@@ -963,7 +994,7 @@ startAuto();
     text-align:center;
     color:#1a8f3c;
     cursor:pointer;
-    transition:0.3s ease;
+    transition:.3s ease;
     background:#fff;
     position:relative;
     font-weight:500;
@@ -994,16 +1025,56 @@ startAuto();
     border:3px solid #fff;
 }
 
-/* ===== CONTENT BOX ===== */
+/* inline description (mobile) */
+.step-desc{
+    display:none;
+    margin-top:10px;
+    padding:12px 14px;
+    background:#f6f7f8;
+    border-left:4px solid #1a8f3c;
+    font-size:14px;
+    line-height:1.6;
+    color:#333;
+}
+
+/* ===== DESKTOP CONTENT ===== */
 .content-box{
     border:1px solid #1a8f3c;
     padding:30px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
     min-height:110px;
-    transition:0.4s ease;
 }
-.content-box h3{
-    font-weight:300;
+.content-box h3{ font-weight:300; }
+
+/* ================= MOBILE ================= */
+@media (max-width:576px){
+
+    .journey-title{ font-size:32px; }
+
+    .subtitle{
+        font-size:14px;
+        padding:0 10px;
+    }
+
+    .steps-wrapper{
+        flex-direction:column;
+        gap:14px;
+    }
+
+    .step-box{
+        text-align:left;
+        padding:16px;
+    }
+
+    /* show description only for active step */
+    .step-box.active .step-desc{
+        display:block;
+    }
+
+    /* hide desktop content on mobile */
+    .content-box{ display:none; }
+
+    .step-box.active::after{ display:none; }
 }
 </style>
 
@@ -1019,98 +1090,78 @@ startAuto();
 <div class="steps-wrapper">
     <div class="step-box active" data-step="0">
         <i class="bi bi-geo-alt"></i> Site Survey
+        <div class="step-desc"></div>
     </div>
     <div class="step-box" data-step="1">
         <i class="bi bi-diagram-3"></i> System Design
+        <div class="step-desc"></div>
     </div>
     <div class="step-box" data-step="2">
         <i class="bi bi-file-earmark-check"></i> Approvals
+        <div class="step-desc"></div>
     </div>
     <div class="step-box" data-step="3">
         <i class="bi bi-box-seam"></i> Procurement
+        <div class="step-desc"></div>
     </div>
     <div class="step-box" data-step="4">
         <i class="bi bi-tools"></i> Installation
+        <div class="step-desc"></div>
     </div>
     <div class="step-box" data-step="5">
         <i class="bi bi-graph-up-arrow"></i> Testing
+        <div class="step-desc"></div>
     </div>
 </div>
 
-<!-- CONTENT -->
-<div class="content-box" id="stepContent">
-    <h3>Site Survey & Feasibility Study :</h3>
-    <p>
-        Our experts inspect your rooftop, analyze shadow-free areas, and evaluate power needs
-        to ensure technical and financial feasibility.
-    </p>
-</div>
+<!-- DESKTOP CONTENT -->
+<div class="content-box" id="stepContent"></div>
 
 <script>
 const steps = document.querySelectorAll('.step-box');
 const contentBox = document.getElementById('stepContent');
 
-let currentStep = 0;
-let autoInterval;
-
 const stepData = [
-    {
-        title: "Site Survey & Feasibility Study :",
-        text: "Detailed inspection of your site to assess rooftop strength, shading, and energy requirements."
-    },
-    {
-        title: "System Design & Engineering :",
-        text: "Customized solar system layout engineered for maximum efficiency and long-term reliability."
-    },
-    {
-        title: "Approvals & Net Metering :",
-        text: "We manage all statutory approvals, utility coordination, and net-metering documentation."
-    },
-    {
-        title: "Procurement of Tier-1 Components :",
-        text: "Sourcing high-quality panels, inverters, and BOS from globally certified manufacturers."
-    },
-    {
-        title: "Installation & Commissioning :",
-        text: "Professional installation followed by electrical integration and safety compliance checks."
-    },
-    {
-        title: "Performance Testing & Handover :",
-        text: "Final testing, live generation verification, and complete system handover with documentation."
-    }
+ { title:"Site Survey & Feasibility Study", text:"Detailed inspection of your site to assess rooftop strength, shading, and energy requirements." },
+ { title:"System Design & Engineering", text:"Customized solar system layout engineered for maximum efficiency and reliability." },
+ { title:"Approvals & Net Metering", text:"We manage all statutory approvals and utility coordination." },
+ { title:"Procurement of Tier-1 Components", text:"Sourcing high-quality panels, inverters, and BOS from certified manufacturers." },
+ { title:"Installation & Commissioning", text:"Professional installation followed by safety and compliance checks." },
+ { title:"Performance Testing & Handover", text:"Final testing, live generation verification, and documentation handover." }
 ];
 
 function showStep(index){
-    steps.forEach(s => s.classList.remove('active'));
-    steps[index].classList.add('active');
+    steps.forEach(s=>{
+        s.classList.remove('active');
+        s.querySelector('.step-desc').innerHTML="";
+    });
 
+    const step = steps[index];
+    step.classList.add('active');
+
+    /* desktop */
     contentBox.innerHTML = `
         <h3>${stepData[index].title}</h3>
         <p>${stepData[index].text}</p>
     `;
-    currentStep = index;
+
+    /* mobile inline */
+    step.querySelector('.step-desc').innerText = stepData[index].text;
 }
 
-/* AUTO PLAY */
-function startAuto(){
-    autoInterval = setInterval(() => {
-        currentStep = (currentStep + 1) % stepData.length;
-        showStep(currentStep);
-    }, 3000);
-}
-startAuto();
+/* init first step */
+showStep(0);
 
-/* MANUAL CONTROL */
-steps.forEach(step => {
-    step.addEventListener('mouseenter', () => {
-        clearInterval(autoInterval);
-        showStep(step.dataset.step);
-    });
-    step.addEventListener('mouseleave', startAuto);
-    step.addEventListener('click', () => {
-        clearInterval(autoInterval);
-        showStep(step.dataset.step);
-    });
+/* autoplay */
+let current = 0;
+setInterval(()=>{
+    current = (current+1) % steps.length;
+    showStep(current);
+},3000);
+
+/* click */
+steps.forEach((step,i)=>{
+    step.addEventListener('click',()=>showStep(i));
 });
 </script>
 
@@ -1118,7 +1169,6 @@ steps.forEach(step => {
 
 
 <!-- why choose us? -->
-
 <section class="why-choose-section">
 
 <style>
@@ -1164,10 +1214,73 @@ steps.forEach(step => {
   margin-bottom: 35px;
 }
 
-/* Responsive spacing */
+/* Tablets */
+@media (max-width: 992px) {
+  .why-choose-title {
+    font-size: 28px;
+  }
+
+  .why-choose-subtitle {
+    font-size: 13px;
+  }
+
+  .why-choose-box i {
+    font-size: 38px;
+  }
+
+  .why-choose-box h5 {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+}
+
+/* Mobile devices */
 @media (max-width: 768px) {
+  .why-choose-title {
+    font-size: 24px;
+  }
+
+  .why-choose-subtitle {
+    font-size: 12px;
+  }
+
+  .why-choose-box i {
+    font-size: 34px;
+  }
+
+  .why-choose-box h5 {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  
   .why-choose-box {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .why-choose-title {
+    font-size: 20px;
+  }
+
+  .why-choose-subtitle {
+    font-size: 11px;
+  }
+
+  .why-choose-box i {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .why-choose-box h5 {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .why-choose-section {
+    min-height: 50vh;
+    padding: 40px 10px;
   }
 }
 </style>
@@ -1228,6 +1341,11 @@ document.querySelectorAll('.why-choose-box').forEach((box, i) => {
 </script>
 
 </section>
+
+
+
+
+
 
 
 
